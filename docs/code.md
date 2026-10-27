@@ -2,7 +2,7 @@
 
 # Official code and data links
 [Overview](../README.md) · [Full annotations](papers.md)
-Links were inspected as public primary sources. No linked project was installed or executed for this release. Check the original license, dataset access, cost, environment, and version before use.
+Links identify official artifacts; inspection and availability limits are recorded in each note. No linked project was installed or executed for this release. Check the original license, dataset access, cost, environment, and version before use.
 | Work | Artifact | Inspection note |
 | --- | --- | --- |
 | [Phantom Gains: Auditing Self-Improvement Against a Measured Null](papers.md#phantom-gains) | [Open](https://github.com/chengxuphd/phantom-gains) | Official repository linked and inspected; not installed or executed. |
@@ -18,7 +18,7 @@ Links were inspected as public primary sources. No linked project was installed 
 | [ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](papers.md#reasoningbank) | [Open](https://github.com/google-research/reasoning-bank) | Official repository linked and its public page inspected; not executed. |
 | [Memp: Exploring Agent Procedural Memory](papers.md#memp) | [Open](https://github.com/zjunlp/MemP) | Official repository linked and its public page inspected; not executed. |
 | [GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](papers.md#gepa) | [Open](https://github.com/gepa-ai/gepa) | Official repository landing page inspected; no installation or execution performed. |
-| [EvoAgentX: An Automated Framework for Evolving Agentic Workflows](papers.md#evoagentx) | [Open](https://github.com/EvoAgentX/EvoAgentX) | Official repository URL is linked by the paper; direct web retrieval failed in this pass, so availability needs rechecking. Not executed. |
+| [EvoAgentX: An Automated Framework for Evolving Agentic Workflows](papers.md#evoagentx) | [Open](https://github.com/EvoAgentX/EvoAgentX) | Official repository inspected; the original URL redirects to ANative-Lab/EvoAgentX. No code was installed or executed. |
 | [Self-Adapting Language Models](papers.md#seal) | [Open](https://github.com/Continual-Intelligence/SEAL) | Official repository page checked; code and training were not executed. |
 | [Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](papers.md#darwin-godel-machine) | [Open](https://github.com/jennyzzt/dgm) | Official repository landing page inspected; no installation or execution performed. |
 | [Absolute Zero: Reinforced Self-play Reasoning with Zero Data](papers.md#absolute-zero) | [Open](https://github.com/LeapLabTHU/Absolute-Zero-Reasoner) | Official repository page checked; code and training were not executed. |

@@ -652,7 +652,7 @@
       "https://github.com/EvoAgentX/EvoAgentX"
     ],
     "code_url": "https://github.com/EvoAgentX/EvoAgentX",
-    "code_note": "Official repository URL is linked by the paper; direct web retrieval failed in this pass, so availability needs rechecking. Not executed.",
+    "code_note": "Official repository inspected; the original URL redirects to ANative-Lab/EvoAgentX. No code was installed or executed.",
     "topics": [
       "workflows",
       "architecture",

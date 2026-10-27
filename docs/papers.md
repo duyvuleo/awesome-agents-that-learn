@@ -815,7 +815,7 @@
 
 **Boundary.** Integration of optimizers is distinct from demonstrating a new self-improvement mechanism. Curator interpretation: benchmark gains under configured optimization do not establish continual autonomous adaptation in deployment.
 
-**Code / data.** [Official artifact](https://github.com/EvoAgentX/EvoAgentX) — Official repository URL is linked by the paper; direct web retrieval failed in this pass, so availability needs rechecking. Not executed.
+**Code / data.** [Official artifact](https://github.com/EvoAgentX/EvoAgentX) — Official repository inspected; the original URL redirects to ANative-Lab/EvoAgentX. No code was installed or executed.
 
 **Topics:** workflows, architecture, tools, prompts. **Reviewed:** abstract · 2026-10-28.
 

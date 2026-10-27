@@ -96,4 +96,3 @@
 
 ## 2017
 - 2017-10-19 — [Mastering the game of Go without human knowledge](papers.md#alphago-zero)
-

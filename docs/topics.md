@@ -297,4 +297,3 @@ A work may appear in several topics; counts here are not additive.
 - 2025-11-17 — [Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?](papers.md#live-swe-agent) · adjacent · preprint
 - 2025-05-29 — [Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](papers.md#darwin-godel-machine) · core · peer-reviewed
 - 2025-04-21 — [A Self-Improving Coding Agent](papers.md#sica) · core · preprint
-

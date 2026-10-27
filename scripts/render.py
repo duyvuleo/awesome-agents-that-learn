@@ -46,7 +46,7 @@ def generate():
     for r in records:
         if r["kind"] == "benchmark":
             bench.append(f"| {link(r)} | {esc(r['evaluation'])} | {esc(r['limitations'])} |\n")
-    code = [banner, "# Official code and data links\n", "[Overview](../README.md) · [Full annotations](papers.md)\n", "Links were inspected as public primary sources. No linked project was installed or executed for this release. Check the original license, dataset access, cost, environment, and version before use.\n", "| Work | Artifact | Inspection note |\n| --- | --- | --- |\n"]
+    code = [banner, "# Official code and data links\n", "[Overview](../README.md) · [Full annotations](papers.md)\n", "Links identify official artifacts; inspection and availability limits are recorded in each note. No linked project was installed or executed for this release. Check the original license, dataset access, cost, environment, and version before use.\n", "| Work | Artifact | Inspection note |\n| --- | --- | --- |\n"]
     for r in records:
         if r["code_url"]:
             code.append(f"| {link(r)} | [Open]({r['code_url']}) | {esc(r['code_note'])} |\n")
@@ -67,7 +67,7 @@ def generate():
     # Escape '<' so a source title cannot close the script element when embedded.
     catalog_js = "// Generated; edit data/.\nwindow.CATALOG = " + json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c") + ";\n"
     outputs = {"README.md": readme, "docs/papers.md": "\n".join(papers), "docs/topics.md": "".join(topics), "docs/by-year.md": "".join(by_year), "docs/benchmarks.md": "".join(bench), "docs/code.md": "".join(code), "docs/reading-routes.md": "\n".join(reading), "site/catalog.js": catalog_js, "site/catalog.json": json.dumps(payload, ensure_ascii=False, indent=2) + "\n"}
-    return outputs
+    return {name: text.rstrip() + "\n" for name, text in outputs.items()}
 
 
 def main():
