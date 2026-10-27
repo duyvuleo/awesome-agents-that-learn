@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-28 — Visual exploration
+
+- Added a frequency-weighted research-theme word cloud with full-collection counts and clickable topic filters.
+- Added an interactive work–theme graph synchronized with the catalog, including zoom/reset, paper evidence navigation, and a text-list alternative.
+- Made membership semantics explicit: visual edges are topic assignments, not citations or scientific similarity claims.
+
 ## 2026-10-28 — Initial collection
 
 - Added 83 distinct annotated works spanning 2017–2026: 69 papers, 5 surveys, and 9 benchmark papers.

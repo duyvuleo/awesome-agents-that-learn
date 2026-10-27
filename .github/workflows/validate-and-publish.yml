@@ -23,7 +23,9 @@ jobs:
       - run: python scripts/validate.py
       - run: python scripts/render.py --check
       - run: python -m unittest discover -s tests
-      - run: node --check site/app.js
+      - name: Check all explorer JavaScript
+        run: |
+          for script in site/*.js; do node --check "$script"; done
       - if: github.event_name != 'pull_request'
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
       - if: github.event_name != 'pull_request'

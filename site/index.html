@@ -15,7 +15,7 @@
   <a class="skip-link" href="#catalog">Skip to research catalog</a>
   <header class="site-header wrap">
     <a class="brand" href="#" aria-label="Agents That Learn home"><span class="brand-mark" aria-hidden="true">↗</span><span>AGENTS<br>THAT LEARN</span></a>
-    <nav aria-label="Main navigation"><a href="#routes">Reading routes</a><a href="#catalog">Catalog</a><a class="repo-link" href="https://github.com/duyvuleo/awesome-agents-that-learn">GitHub <span aria-hidden="true">↗</span></a></nav>
+    <nav aria-label="Main navigation"><a href="#routes">Reading routes</a><a href="#visuals">Visual map</a><a href="#catalog">Catalog</a><a class="repo-link" href="https://github.com/duyvuleo/awesome-agents-that-learn">GitHub <span aria-hidden="true">↗</span></a></nav>
   </header>
   <main>
     <section class="hero wrap" aria-labelledby="hero-title">
@@ -56,6 +56,26 @@
           <div><label for="route">Reading route</label><select id="route"><option value="">All reading routes</option></select></div>
         </div></details>
         <div class="theme-pills" id="theme-pills" aria-label="Quick theme filters"></div>
+      </div>
+      <div class="visual-discovery" id="visuals">
+        <section class="cloud-section" aria-labelledby="cloud-title">
+          <div class="visual-heading"><div><p class="eyebrow">RESEARCH, AT A GLANCE</p><h3 id="cloud-title">A landscape of ideas.</h3></div><a href="#papers">Skip to the reading list ↓</a></div>
+          <p class="visual-explanation" id="cloud-description">Word size and counts show topic frequency across the full collection. A work can belong to several topics. Select a topic to filter the graph and reading list.</p>
+          <div class="word-cloud" id="word-cloud" aria-label="Topics weighted by number of works in the full collection" aria-describedby="cloud-description"></div>
+          <p class="cloud-selection" id="cloud-selection" role="status" aria-live="polite"></p>
+        </section>
+        <section class="graph-section" aria-labelledby="graph-title">
+          <div class="visual-heading"><div><p class="eyebrow">FOLLOW THE CONNECTIONS</p><h3 id="graph-title">Ideas meet the literature.</h3></div><div class="graph-legend" aria-label="Graph legend"><span><i class="legend-topic" aria-hidden="true"></i>Topic</span><span><i class="legend-work" aria-hidden="true"></i>Work</span><span><i class="legend-line" aria-hidden="true"></i>Membership</span></div></div>
+          <p class="visual-explanation" id="graph-description">Each line connects a work to one of its catalog topics. These are curated topic memberships, not citations or causal relationships. Positions and distances aid navigation; they are not similarity scores. This graph follows every active filter.</p>
+          <div class="graph-toolbar"><p id="graph-count" role="status" aria-live="polite"></p><div class="graph-controls"><button id="graph-zoom-out" type="button" aria-label="Zoom graph out">−</button><span id="graph-zoom-label" aria-live="polite">100%</span><button id="graph-zoom-in" type="button" aria-label="Zoom graph in">+</button><button id="graph-reset" type="button">Reset view</button></div></div>
+          <div class="graph-canvas" id="graph-canvas">
+            <svg id="research-graph" viewBox="0 0 1100 720" role="group" aria-label="Interactive graph of works and their topics" aria-describedby="graph-description graph-help" tabindex="0"><desc>Focus a topic or work to inspect its connections. Activate a topic to filter; activate a work to open its annotated entry.</desc><g id="graph-stage"></g></svg>
+            <div class="graph-empty" id="graph-empty" hidden><span aria-hidden="true">∅</span><h4>No connections in this view.</h4><p>Broaden the search or clear filters to restore the map.</p><button id="graph-empty-clear" type="button">Clear filters</button></div>
+          </div>
+          <div class="graph-inspector" id="graph-inspector" aria-live="polite"><p class="inspector-kicker">EXPLORE A CONNECTION</p><h4>Select a topic. Discover a paper.</h4><p>Hover or focus a node to inspect it. Select a topic to narrow the map; select a work to open its evidence notes below.</p></div>
+          <div class="graph-bottom"><p id="graph-help">Drag the background with a mouse to pan. Use + / − to zoom, or focus the graph and use arrow keys. On a small screen, use the work list below for precise selection. Full topic names appear on focus.</p><a href="#papers">Go to matching works ↓</a></div>
+          <details class="graph-list-alternative"><summary>Browse the graph as a list <span id="graph-list-count"></span></summary><div class="graph-list-controls"><div><label for="graph-work-select">Matching work</label><select id="graph-work-select"><option value="">Choose a work</option></select></div><button id="graph-open-work" type="button" disabled>Open evidence notes <span aria-hidden="true">↓</span></button></div><p>Uses the same filtered works as the graph. Topic buttons in the word cloud provide the corresponding topic list.</p></details>
+        </section>
       </div>
       <div class="catalog-toolbar"><p id="result-count" role="status" aria-live="polite" aria-atomic="true">Loading the catalog…</p><div class="toolbar-actions"><button id="clear-filters" type="button">Clear filters</button><button id="share" type="button">Copy view link</button><button id="export" type="button">Export JSON <span aria-hidden="true">↗</span></button><label class="sort-label" for="sort">Sort<select id="sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label></div></div>
       <p class="inspection-note">“Inspected” describes the sources reviewed for an annotation. It does not mean the code was run or the results independently reproduced.</p>

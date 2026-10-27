@@ -58,7 +58,7 @@ These are complementary starting points, not a leaderboard. Their tasks, feedbac
 - [Source-review notes](docs/review-log.md) and [link-check results](docs/link-checks.md).
 - [Related collections](docs/related-collections.md).
 
-The [interactive explorer](https://duyvuleo.github.io/awesome-agents-that-learn/) supports search, reading routes, topic and evidence filters, and JSON export. Its entries come from the same catalog as these Markdown pages. You can also open `site/index.html` locally; it needs no account, API key, or server.
+The [interactive explorer](https://duyvuleo.github.io/awesome-agents-that-learn/) includes a clickable research-theme word cloud, an interactive paper–topic graph, search, reading routes, evidence filters, and JSON export. The visual links represent catalog topic memberships, not citations or measured similarity. See the [explorer guide](docs/explorer.md) for interaction and count semantics. Its entries come from the same catalog as these Markdown pages. You can also open `site/index.html` locally; it needs no account, API key, or server.
 
 ## Scope and evidence
 

@@ -25,6 +25,11 @@
   const unique = (values) => [...new Set(values)].filter(Boolean);
   const allTopics = unique(papers.flatMap((p) => p.topics || [])).sort((a, b) => label(topics, a).localeCompare(label(topics, b)));
   const allTargets = unique(papers.flatMap((p) => p.update_targets || [])).sort((a, b) => label(targets, a).localeCompare(label(targets, b)));
+  const topicCounts = Object.fromEntries(allTopics.map((id) => [id, papers.filter((p) => (p.topics || []).includes(id)).length]));
+  const graphNames = { foundations: 'Foundations', surveys: 'Surveys', memory: 'Memory', skills: 'Skills', tools: 'Tools', prompts: 'Prompts', workflows: 'Workflows', architecture: 'Architecture', 'model-training': 'Model learning', 'self-play': 'Self-play', 'continual-learning': 'Continual learning', 'recursive-improvement': 'Recursive improvement', evaluation: 'Evaluation', safety: 'Safety', applications: 'Applications' };
+  const graphView = { zoom: 1, x: 0, y: 0 };
+  let graphLayout = { width: 1100, height: 720, cx: 550, cy: 360, narrow: false };
+  let graphDrag = null;
   const node = (tag, className, text) => {
     const el = document.createElement(tag);
     if (className) el.className = className;
@@ -65,6 +70,25 @@
     b.type = 'button'; b.dataset.topic = id; b.setAttribute('aria-pressed', 'false');
     b.addEventListener('click', () => setTheme(id));
     $('theme-pills').append(b);
+  });
+  const countRange = Object.values(topicCounts);
+  const minCount = Math.min(...countRange);
+  const maxCount = Math.max(...countRange);
+  // Alternate larger and smaller topics to keep the cloud balanced without collisions.
+  const weightedTopics = [...allTopics].sort((a, b) => topicCounts[b] - topicCounts[a] || a.localeCompare(b));
+  const cloudOrder = [];
+  while (weightedTopics.length) {
+    cloudOrder.push(weightedTopics.shift());
+    if (weightedTopics.length) cloudOrder.push(weightedTopics.pop());
+  }
+  cloudOrder.forEach((id) => {
+    const b = node('button', 'cloud-word'); b.type = 'button'; b.dataset.topic = id;
+    const weight = (topicCounts[id] - minCount) / (maxCount - minCount || 1);
+    b.style.setProperty('--cloud-size', String(1.1 + Math.sqrt(weight) * 1.25));
+    b.append(node('span', '', label(topics, id)), node('sup', '', topicCounts[id]));
+    b.setAttribute('aria-label', `${label(topics, id)}: ${topicCounts[id]} of ${papers.length} works in the full collection. Toggle topic filter.`);
+    b.setAttribute('aria-pressed', 'false');
+    b.addEventListener('click', () => setTheme(id)); $('word-cloud').append(b);
   });
   routes.forEach((route, index) => {
     const b = node('button', 'route-button'); b.type = 'button'; b.dataset.route = route.id;
@@ -119,6 +143,136 @@
   function evidence(title, value, className = '') {
     const block = node('div', `evidence-block ${className}`.trim());
     block.append(node('h4', '', title), node('p', '', value || 'Not recorded.')); return block;
+  }
+  function focusPaper(id) {
+    const article = $(`paper-${id}`);
+    if (!article) return;
+    article.querySelector('details').open = true;
+    article.tabIndex = -1;
+    article.focus({ preventScroll: true });
+    article.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  }
+  function svgNode(tag, attrs, text) {
+    const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    Object.entries(attrs || {}).forEach(([key, value]) => el.setAttribute(key, String(value)));
+    if (text !== undefined) el.textContent = text;
+    return el;
+  }
+  function graphTransform() {
+    const { zoom, x, y } = graphView;
+    $('graph-stage').setAttribute('transform', `translate(${graphLayout.cx * (1 - zoom) + x} ${graphLayout.cy * (1 - zoom) + y}) scale(${zoom})`);
+    $('graph-zoom-label').textContent = `${Math.round(zoom * 100)}%`;
+    $('graph-zoom-in').disabled = zoom >= 3;
+    $('graph-zoom-out').disabled = zoom <= 0.6;
+  }
+  function graphReset() { graphView.zoom = 1; graphView.x = 0; graphView.y = 0; graphTransform(); }
+  function graphZoom(factor) { graphView.zoom = Math.max(0.6, Math.min(3, Math.round(graphView.zoom * factor * 100) / 100)); graphTransform(); }
+  function resetInspector() {
+    $('graph-inspector').replaceChildren(node('p', 'inspector-kicker', 'EXPLORE A CONNECTION'), node('h4', '', 'Select a topic. Discover a paper.'), node('p', '', 'Hover or focus a node to inspect it. Select a topic to narrow the map; select a work to open its evidence notes below.'));
+  }
+  function inspectNode(type, item, visibleCount) {
+    const inspector = $('graph-inspector'); inspector.replaceChildren();
+    if (type === 'topic') {
+      inspector.append(node('p', 'inspector-kicker', 'CATALOG TOPIC'), node('h4', '', label(topics, item)), node('p', '', `${visibleCount} matching works in this graph; ${topicCounts[item]} of ${papers.length} works in the full collection. Select to toggle this topic filter.`));
+    } else {
+      inspector.append(node('p', 'inspector-kicker', `${kindLabels[item.kind] || item.kind} · ${item.year} · ${item.scope}`), node('h4', '', item.title), node('p', '', item.mechanism));
+      const boundary = node('p', 'inspector-boundary'); boundary.append(node('strong', '', 'Boundary: '), document.createTextNode(item.limitations || 'Not recorded.')); inspector.append(boundary);
+    }
+  }
+  function renderGraph(selectedTopic) {
+    const stage = $('graph-stage'); stage.replaceChildren(); resetInspector();
+    const narrow = matchMedia('(max-width: 700px)').matches;
+    graphLayout = narrow ? { width: 720, height: 980, cx: 360, cy: 490, narrow } : { width: 1100, height: 720, cx: 550, cy: 360, narrow };
+    const { cx, cy } = graphLayout;
+    $('research-graph').setAttribute('viewBox', `0 0 ${graphLayout.width} ${graphLayout.height}`);
+    const represented = allTopics.filter((id) => filtered.some((p) => (p.topics || []).includes(id)));
+    const membershipCount = filtered.reduce((count, p) => count + (p.topics || []).length, 0);
+    $('graph-count').textContent = `${filtered.length} works · ${represented.length} topics · ${membershipCount} membership links`;
+    $('graph-list-count').textContent = `(${filtered.length} works)`;
+    $('graph-empty').hidden = filtered.length > 0;
+    $('research-graph').setAttribute('aria-label', `Interactive topic membership graph: ${filtered.length} works, ${represented.length} topics, ${membershipCount} links`);
+    const select = $('graph-work-select'); const previous = select.value;
+    select.replaceChildren(node('option', '', 'Choose a work')); select.firstChild.value = '';
+    [...filtered].sort((a, b) => a.title.localeCompare(b.title)).forEach((p) => { const o = node('option', '', `${p.title} (${p.year})`); o.value = p.id; select.append(o); });
+    if (filtered.some((p) => p.id === previous)) select.value = previous;
+    $('graph-open-work').disabled = !select.value;
+    if (!filtered.length) { graphTransform(); return; }
+    const topicPositions = new Map();
+    represented.forEach((id, i) => {
+      const angle = -Math.PI / 2 + (i / represented.length) * Math.PI * 2;
+      topicPositions.set(id, { x: cx + Math.sin(angle) * (narrow ? 205 : 380), y: cy + Math.cos(angle) * (narrow ? 365 : 235), angle });
+    });
+    const ordered = [...filtered].sort((a, b) => allTopics.indexOf((a.topics || [])[0]) - allTopics.indexOf((b.topics || [])[0]) || a.title.localeCompare(b.title));
+    const workPositions = new Map();
+    ordered.forEach((p, i) => {
+      const angle = -Math.PI / 2 + ((i + 0.5) / ordered.length) * Math.PI * 2;
+      const stagger = ordered.length > 45 ? (i % 2 ? 20 : -20) : 0;
+      workPositions.set(p.id, { x: cx + Math.sin(angle) * ((narrow ? 130 : 245) + stagger), y: cy + Math.cos(angle) * ((narrow ? 245 : 155) + stagger) });
+    });
+    const edges = svgNode('g', { 'aria-hidden': 'true', class: 'graph-edges' });
+    const edgeRecords = [];
+    ordered.forEach((p) => (p.topics || []).forEach((topic) => {
+      const from = topicPositions.get(topic); const to = workPositions.get(p.id); if (!from) return;
+      const line = svgNode('line', { x1: from.x, y1: from.y, x2: to.x, y2: to.y, class: `graph-membership${topic === selectedTopic ? ' selected-spoke' : ''}`, 'data-topic': topic, 'data-paper': p.id });
+      edges.append(line); edgeRecords.push({ line, topic, paper: p.id });
+    })); stage.append(edges);
+    const nodeRecords = [];
+    function highlight(type, key) {
+      const connections = edgeRecords.filter((e) => type === 'topic' ? e.topic === key : e.paper === key);
+      const connectedTopics = new Set(connections.map((e) => e.topic));
+      const connectedPapers = new Set(connections.map((e) => e.paper));
+      edgeRecords.forEach((e) => {
+        const matched = type === 'topic' ? e.topic === key : e.paper === key;
+        e.line.classList.toggle('is-emphasized', matched); e.line.classList.toggle('is-muted', !matched);
+      });
+      nodeRecords.forEach((n) => n.element.classList.toggle('is-muted', n.type === 'topic' ? !connectedTopics.has(n.id) : !connectedPapers.has(n.id)));
+    }
+    function clearHighlight() {
+      edgeRecords.forEach((e) => e.line.classList.remove('is-emphasized', 'is-muted'));
+      nodeRecords.forEach((n) => n.element.classList.remove('is-muted'));
+    }
+    function interactive(g, type, item, count) {
+      const key = type === 'topic' ? item : item.id;
+      g.setAttribute('tabindex', '0'); g.setAttribute('role', 'button');
+      const fullLabel = type === 'topic' ? `${label(topics, item)}: ${count} matching works. Toggle topic filter.` : `${item.title}, ${item.year}. Open evidence notes.`;
+      g.setAttribute('aria-label', fullLabel); g.append(svgNode('title', {}, fullLabel));
+      const show = () => { highlight(type, key); inspectNode(type, item, count); };
+      const activate = () => {
+        if (type === 'topic') { setTheme(item); $('graph-stage').querySelector(`[data-topic-node="${item}"]`)?.focus({ preventScroll: true }); }
+        else focusPaper(item.id);
+      };
+      g.addEventListener('mouseenter', show); g.addEventListener('focus', show);
+      g.addEventListener('mouseleave', () => { if (!g.matches(':focus')) clearHighlight(); });
+      g.addEventListener('blur', clearHighlight);
+      g.addEventListener('click', activate);
+      g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); activate(); } });
+      nodeRecords.push({ element: g, type, id: key }); return g;
+    }
+    const workLayer = svgNode('g', { class: 'graph-work-nodes' });
+    ordered.forEach((p) => {
+      const pos = workPositions.get(p.id); const g = svgNode('g', { class: 'graph-node graph-work-node', 'data-paper-node': p.id });
+      g.append(svgNode('circle', { cx: pos.x, cy: pos.y, r: narrow ? 17 : 12, class: 'hit-area' }), svgNode('circle', { cx: pos.x, cy: pos.y, r: narrow ? 6.5 : 5.4, class: 'graph-work-dot' }));
+      workLayer.append(interactive(g, 'paper', p, 0));
+    }); stage.append(workLayer);
+    const topicLayer = svgNode('g', { class: 'graph-topic-nodes' });
+    represented.forEach((id) => {
+      const pos = topicPositions.get(id); const count = filtered.filter((p) => (p.topics || []).includes(id)).length;
+      const g = svgNode('g', { class: `graph-node graph-topic-node${id === selectedTopic ? ' is-selected' : ''}`, 'data-topic-node': id, 'aria-pressed': String(id === selectedTopic) });
+      const sine = Math.sin(pos.angle); const cosine = Math.cos(pos.angle);
+      const anchor = narrow || Math.abs(sine) < 0.25 ? 'middle' : sine > 0 ? 'start' : 'end';
+      const lx = pos.x + sine * (narrow ? 20 : 26);
+      // Stagger the bottom-center label so neighboring multiline labels remain distinct on phones.
+      const ly = pos.y + (narrow ? (cosine < -0.35 ? -36 : 35) + (cosine > 0.96 ? 45 : 0) : cosine * 28);
+      g.append(svgNode('circle', { cx: pos.x, cy: pos.y, r: 21, class: 'hit-area' }), svgNode('circle', { cx: pos.x, cy: pos.y, r: 9 + Math.sqrt(count), class: 'graph-topic-dot' }));
+      const words = (graphNames[id] || label(topics, id)).split(' ');
+      const title = svgNode('text', { x: lx, y: ly - (!narrow && cosine < -0.45 ? 12 : 2), class: 'graph-topic-label', 'text-anchor': anchor });
+      if (words.join(' ').length > 16) {
+        const split = Math.ceil(words.length / 2);
+        title.append(svgNode('tspan', { x: lx, dy: '-0.35em' }, words.slice(0, split).join(' ')), svgNode('tspan', { x: lx, dy: '1.15em' }, words.slice(split).join(' ')));
+      } else title.textContent = words.join(' ');
+      g.append(title, svgNode('text', { x: lx, y: ly + (words.join(' ').length > 16 ? (narrow ? 49 : 29) : !narrow && cosine < -0.45 ? 7 : narrow ? 24 : 18), class: 'graph-topic-count', 'text-anchor': anchor }, `${count} works`));
+      topicLayer.append(interactive(g, 'topic', id, count));
+    }); stage.append(topicLayer); graphTransform();
   }
   function sourceLabel(source, i) {
     try {
@@ -181,12 +335,48 @@
     const advanced = ['kind', 'scope', 'depth', 'year', 'route'].filter((id) => s[id]);
     $('advanced-count').textContent = advanced.length ? `(${advanced.length} active)` : '';
     document.querySelectorAll('.theme-pill').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.topic === s.topic)));
+    document.querySelectorAll('.cloud-word').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.topic === s.topic)));
+    $('cloud-selection').textContent = s.topic ? `Selected: ${label(topics, s.topic)}. Counts above remain based on all ${papers.length} works; the graph below shows the filtered view.` : `Full collection: ${papers.length} works across ${allTopics.length} overlapping topics. All other filters apply to the graph and reading list.`;
+    renderGraph(s.topic);
     renderRoute(s.route); writeUrl();
   }
   function clear() { fields.forEach((id) => { $(id).value = id === 'sort' ? 'newest' : ''; }); render(); }
   fields.forEach((id) => $(id).addEventListener(id === 'search' ? 'input' : 'change', render));
   $('clear-filters').addEventListener('click', clear);
   $('empty-clear').addEventListener('click', () => { clear(); $('search').focus(); });
+  $('graph-empty-clear').addEventListener('click', clear);
+  $('graph-zoom-in').addEventListener('click', () => graphZoom(1.25));
+  $('graph-zoom-out').addEventListener('click', () => graphZoom(0.8));
+  $('graph-reset').addEventListener('click', graphReset);
+  $('graph-work-select').addEventListener('change', () => { $('graph-open-work').disabled = !$('graph-work-select').value; });
+  $('graph-open-work').addEventListener('click', () => focusPaper($('graph-work-select').value));
+  $('research-graph').addEventListener('keydown', (e) => {
+    if (e.target !== $('research-graph')) return;
+    const deltas = { ArrowLeft: [35, 0], ArrowRight: [-35, 0], ArrowUp: [0, 35], ArrowDown: [0, -35] };
+    if (deltas[e.key]) { e.preventDefault(); graphView.x += deltas[e.key][0]; graphView.y += deltas[e.key][1]; graphTransform(); }
+    if (e.key === '+' || e.key === '=') { e.preventDefault(); graphZoom(1.25); }
+    if (e.key === '-') { e.preventDefault(); graphZoom(0.8); }
+    if (e.key === '0' || e.key === 'Home') { e.preventDefault(); graphReset(); }
+  });
+  $('research-graph').addEventListener('pointerdown', (e) => {
+    if (e.button !== 0 || e.target.closest('.graph-node')) return;
+    // Preserve ordinary vertical touch scrolling; panning is available with controls and keyboard.
+    if (e.pointerType === 'touch') return;
+    const rect = $('research-graph').getBoundingClientRect();
+    graphDrag = { id: e.pointerId, x: e.clientX, y: e.clientY, startX: graphView.x, startY: graphView.y, scale: graphLayout.width / rect.width };
+    $('research-graph').setPointerCapture(e.pointerId); $('research-graph').classList.add('is-panning');
+  });
+  $('research-graph').addEventListener('pointermove', (e) => {
+    if (!graphDrag || e.pointerId !== graphDrag.id) return;
+    graphView.x = graphDrag.startX + (e.clientX - graphDrag.x) * graphDrag.scale;
+    graphView.y = graphDrag.startY + (e.clientY - graphDrag.y) * graphDrag.scale; graphTransform();
+  });
+  const finishPan = () => { graphDrag = null; $('research-graph').classList.remove('is-panning'); };
+  $('research-graph').addEventListener('pointerup', finishPan);
+  $('research-graph').addEventListener('pointercancel', finishPan);
+  window.addEventListener('resize', () => {
+    if (matchMedia('(max-width: 700px)').matches !== graphLayout.narrow) { graphView.x = 0; graphView.y = 0; graphView.zoom = 1; renderGraph($('topic').value); }
+  });
   $('share').addEventListener('click', async () => {
     const url = viewUrl();
     if (url.protocol === 'file:') { announce('This is a local file view. Publish or open the hosted explorer to share a public link.'); return; }
