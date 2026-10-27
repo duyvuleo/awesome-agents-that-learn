@@ -262,15 +262,18 @@
       const anchor = narrow || Math.abs(sine) < 0.25 ? 'middle' : sine > 0 ? 'start' : 'end';
       const lx = pos.x + sine * (narrow ? 20 : 26);
       // Stagger the bottom-center label so neighboring multiline labels remain distinct on phones.
-      const ly = pos.y + (narrow ? (cosine < -0.35 ? -36 : 35) + (cosine > 0.96 ? 45 : 0) : cosine * 28);
+      let ly = pos.y + (narrow ? (cosine < -0.35 ? -36 : 35) + (cosine > 0.96 ? 45 : 0) : cosine * 28);
       g.append(svgNode('circle', { cx: pos.x, cy: pos.y, r: 21, class: 'hit-area' }), svgNode('circle', { cx: pos.x, cy: pos.y, r: 9 + Math.sqrt(count), class: 'graph-topic-dot' }));
       const words = (graphNames[id] || label(topics, id)).split(' ');
+      const countOffset = words.join(' ').length > 16 ? (narrow ? 43 : 29) : !narrow && cosine < -0.45 ? 7 : narrow ? 24 : 18;
+      // Keep the whole label/count group inside the mobile canvas after filters change hub positions.
+      if (narrow) ly = Math.min(ly, graphLayout.height - 18 - countOffset);
       const title = svgNode('text', { x: lx, y: ly - (!narrow && cosine < -0.45 ? 12 : 2), class: 'graph-topic-label', 'text-anchor': anchor });
       if (words.join(' ').length > 16) {
         const split = Math.ceil(words.length / 2);
         title.append(svgNode('tspan', { x: lx, dy: '-0.35em' }, words.slice(0, split).join(' ')), svgNode('tspan', { x: lx, dy: '1.15em' }, words.slice(split).join(' ')));
       } else title.textContent = words.join(' ');
-      g.append(title, svgNode('text', { x: lx, y: ly + (words.join(' ').length > 16 ? (narrow ? 49 : 29) : !narrow && cosine < -0.45 ? 7 : narrow ? 24 : 18), class: 'graph-topic-count', 'text-anchor': anchor }, `${count} works`));
+      g.append(title, svgNode('text', { x: lx, y: ly + countOffset, class: 'graph-topic-count', 'text-anchor': anchor }, `${count} works`));
       topicLayer.append(interactive(g, 'topic', id, count));
     }); stage.append(topicLayer); graphTransform();
   }
