@@ -10,7 +10,7 @@ The launch is a reviewed snapshot. Maintenance happens on request or through rev
 2. Triage leads against the scope. A generic agent framework or a new leaderboard score is not automatically a learning method.
 3. Open the primary source, verify identity and version, then inspect the mechanism and evaluation before writing strong claims. Keep incomplete leads in the search log.
 4. Check publication and artifact status separately. Update an existing record when its paper is published under a different title.
-5. Edit canonical data, regenerate views, and review the resulting diff. Preserve first-public dates, separate them from review dates, and document material corrections.
+5. Edit the appropriate canonical catalog (`data/papers.json` or `data/systems.json`), regenerate views, and review the resulting diff. For software, re-check license sources, requirements, and the paper relationship; do not turn the inspection date into a release date. Preserve first-public dates, separate them from review dates, and document material corrections.
 6. Run the offline checks below and source checks for new links. Inspect desktop/mobile rendering for UI changes. Publish only reviewed content to the authorized repository.
 
 ```bash
@@ -31,7 +31,7 @@ Open `site/index.html` directly in a browser. The generated `catalog.js` allows 
 python3 -m http.server 8000 --directory site
 ```
 
-Then open http://localhost:8000. Filters and reading routes are encoded in the URL; export retains the full selected annotations. No external fonts, analytics, model APIs, or application backend are needed.
+Then open http://localhost:8000. Filters, reading routes, and the table/cards view are encoded in the URL; export retains the full selected annotations. No external fonts, analytics, model APIs, or application backend are needed.
 
 ## GitHub checks and Pages
 

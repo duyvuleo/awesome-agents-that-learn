@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-28 — Systems, tables, and status badges
+
+- Added 23 separately counted official systems/frameworks with capabilities, requirements, license sources, paper relationships, and explicit not-run status.
+- Added a concise GitHub paper-index table and systems comparison table, preserving full annotations.
+- Added the default explorer table view with expandable evidence and an optional Cards view.
+- Added generated README explorer/status/license/count badges. Benchmark counts identify papers rather than independently verified dataset releases.
+- Integrated systems into search, raw JSON export, the topic cloud, and graph with separate system-node shapes. Research/implementation counts are not independent research-result counts.
+
 ## 2026-10-28 — Visual exploration
 
 - Added a frequency-weighted research-theme word cloud with full-collection counts and clickable topic filters.

@@ -4,7 +4,7 @@
   "repository": "https://github.com/duyvuleo/awesome-agents-that-learn",
   "site": "https://duyvuleo.github.io/awesome-agents-that-learn/",
   "updated": "2026-10-28",
-  "schema_version": 1,
+  "schema_version": 2,
   "topics": {
     "foundations": "Foundations and boundaries",
     "surveys": "Surveys and research maps",
@@ -32,5 +32,12 @@
     "agent-code": "Agent code",
     "multi-agent-organization": "Multi-agent organization",
     "none": "Analysis / no retained update"
+  },
+  "system_categories": {
+    "research-system": "Research implementation",
+    "framework": "Optimization framework",
+    "memory-library": "Memory library",
+    "training-framework": "Training framework",
+    "application": "Agent application"
   }
 }

@@ -73,11 +73,11 @@ def main():
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--primary-only", action="store_true")
     args = parser.parse_args()
-    records = load()
+    records = load() + load("systems.json")
     urls = {r["url"] for r in records}
     if not args.primary_only:
         urls.update(url for r in records for url in r["sources"])
-    expected = {r["url"]: r["title"] for r in records}
+    expected = {r["url"]: r["title"] for r in records if "title" in r}
     results = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, min(args.workers, 8))) as pool:
         jobs = {pool.submit(check, url, expected.get(url)): url for url in sorted(urls)}

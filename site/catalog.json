@@ -5,7 +5,7 @@
     "repository": "https://github.com/duyvuleo/awesome-agents-that-learn",
     "site": "https://duyvuleo.github.io/awesome-agents-that-learn/",
     "updated": "2026-10-28",
-    "schema_version": 1,
+    "schema_version": 2,
     "topics": {
       "foundations": "Foundations and boundaries",
       "surveys": "Surveys and research maps",
@@ -33,6 +33,13 @@
       "agent-code": "Agent code",
       "multi-agent-organization": "Multi-agent organization",
       "none": "Analysis / no retained update"
+    },
+    "system_categories": {
+      "research-system": "Research implementation",
+      "framework": "Optimization framework",
+      "memory-library": "Memory library",
+      "training-framework": "Training framework",
+      "application": "Agent application"
     }
   },
   "papers": [
@@ -2751,6 +2758,1002 @@
       "limitations": "The environment supplies exact rules, legal moves, and a reliable win/loss signal. Curator interpretation: success in this closed game does not establish open-ended language-agent learning.",
       "review_depth": "abstract",
       "checked": "2026-10-28"
+    }
+  ],
+  "systems": [
+    {
+      "id": "system-a-mem",
+      "name": "A-MEM memory system",
+      "category": "memory-library",
+      "url": "https://github.com/WujiangXu/A-mem-sys",
+      "docs_url": null,
+      "related_papers": [
+        "a-mem"
+      ],
+      "relationship_note": "The authors distinguish this reusable memory-system repository from the separate AgenticMemory repository used for paper-result reproduction.",
+      "topics": [
+        "memory",
+        "continual-learning"
+      ],
+      "update_targets": [
+        "memory"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "New memory content, model-generated context/tags, and similarity to existing notes.",
+      "mechanism": "Builds structured memory notes, indexes them in ChromaDB, and links or revises related memories as new information arrives. This adapts the external memory organization.",
+      "capabilities": [
+        "Structured note generation",
+        "Memory linking",
+        "Configurable model backends"
+      ],
+      "evaluation": "The README refers to paper comparisons but directs reproduction work to a different evaluation repository.",
+      "limitations": "Current library functionality is not proof that the paper’s evaluation has been reproduced. The agent and persistent-memory policy still need application-specific integration.",
+      "availability_note": "Public reusable memory-library source; package installation documented; not installed or run.",
+      "license": "MIT",
+      "license_url": "https://github.com/WujiangXu/A-mem-sys/blob/main/LICENSE",
+      "requirements": "Python dependencies, ChromaDB/embedding support, and an OpenAI, Ollama, SGLang, or OpenRouter backend as documented.",
+      "sources": [
+        "https://github.com/WujiangXu/A-mem-sys",
+        "https://github.com/WujiangXu/A-mem-sys/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-absolute-zero",
+      "name": "Absolute Zero Reasoner",
+      "category": "research-system",
+      "url": "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner",
+      "docs_url": "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner/blob/master/README.md",
+      "related_papers": [
+        "absolute-zero"
+      ],
+      "relationship_note": "Official Absolute Zero Reasoner release. The README points to a separate paper branch for original-result replication; the moving development code should not be assumed equivalent.",
+      "topics": [
+        "model-training",
+        "self-play"
+      ],
+      "update_targets": [
+        "model-weights"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Python execution validates generated tasks and answers and supplies proposer/solver rewards.",
+      "mechanism": "Implements reinforced self-play in which a model proposes reasoning tasks and solves them with execution-based verification. Updated weights and a generated task pool support later training iterations.",
+      "capabilities": [
+        "Generate and validate code-based reasoning tasks",
+        "Run proposer/solver self-play training",
+        "Use linked evaluation code, checkpoints, and experiment logs"
+      ],
+      "evaluation": "The paper reports coding and mathematics benchmarks; the repository provides training/evaluation resources and distinguishes its paper branch. No checkpoint or training run was tested here.",
+      "limitations": "The README labels newer development changes as under testing and the raw executor as research-only. Zero newly curated task data does not remove pretraining or engineered supervision.",
+      "availability_note": "Public source and setup documentation inspected; not installed, trained, or executed for this collection.",
+      "license": "MIT",
+      "license_url": "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner/blob/master/LICENSE",
+      "requirements": "GPU training environment with veRL and pretrained weights; documented model-size configurations use multiple 80 GB GPUs. A sandbox executor option requires Docker.",
+      "sources": [
+        "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner",
+        "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner/blob/master/README.md",
+        "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner/blob/master/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-adas",
+      "name": "ADAS / Meta Agent Search",
+      "category": "research-system",
+      "url": "https://github.com/ShengranHu/ADAS",
+      "docs_url": "https://github.com/ShengranHu/ADAS/blob/main/README.md",
+      "related_papers": [
+        "adas"
+      ],
+      "relationship_note": "Official research implementation of Automated Design of Agentic Systems and its Meta Agent Search algorithm; benchmark folders contain separate experiment setups.",
+      "topics": [
+        "architecture",
+        "workflows",
+        "prompts"
+      ],
+      "update_targets": [
+        "agent-code",
+        "workflows",
+        "prompts"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Benchmark evaluation and an archive of previously generated agent designs.",
+      "mechanism": "A fixed meta-agent search procedure writes candidate agent programs, evaluates them, and consults earlier discoveries when proposing new designs. Domain-specific evaluators determine which designs are useful.",
+      "capabilities": [
+        "Search code-represented agent designs",
+        "Retain evaluated discoveries in an archive",
+        "Adapt domain-specific search and scoring functions"
+      ],
+      "evaluation": "The paper reports task and model transfer experiments; the repository documents how to run the domain studies. No search run was executed here.",
+      "limitations": "The search procedure is externally configured rather than itself established as an evolving optimizer. The repository explicitly notes that it executes model-generated code.",
+      "availability_note": "Public source and setup documentation inspected; not installed, trained, or executed for this collection.",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/ShengranHu/ADAS/blob/main/LICENSE",
+      "requirements": "Python 3.11 environment, required dependencies, model access, and the selected domain’s data and evaluation setup.",
+      "sources": [
+        "https://github.com/ShengranHu/ADAS",
+        "https://github.com/ShengranHu/ADAS/blob/main/README.md",
+        "https://github.com/ShengranHu/ADAS/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-aflow",
+      "name": "AFlow",
+      "category": "research-system",
+      "url": "https://github.com/FoundationAgents/AFlow",
+      "docs_url": "https://github.com/FoundationAgents/AFlow/blob/main/README.md",
+      "related_papers": [
+        "aflow"
+      ],
+      "relationship_note": "Official standalone AFlow repository, migrated from MetaGPT; it implements the workflow-search method associated with the paper.",
+      "topics": [
+        "workflows",
+        "architecture",
+        "prompts"
+      ],
+      "update_targets": [
+        "workflows",
+        "prompts",
+        "agent-code"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Validation-set execution scores and retained search history.",
+      "mechanism": "Searches code-represented workflows using a Monte Carlo tree-search variant over configurable operators. An evaluator scores candidate workflows and guides later prompt and structure changes.",
+      "capabilities": [
+        "Search and evaluate agent workflows",
+        "Customize operators and benchmark interfaces",
+        "Inspect released workflow and validation traces"
+      ],
+      "evaluation": "The project provides evaluation code and experiment artifacts for QA, coding, and mathematics tasks; the collection has not rerun them.",
+      "limitations": "The README warns that some operators may contain migration bugs. Repeated validation use and search cost must be separated from the selected workflow’s test performance and inference cost.",
+      "availability_note": "Public source and setup documentation inspected; not installed, trained, or executed for this collection.",
+      "license": "MIT",
+      "license_url": "https://github.com/FoundationAgents/AFlow/blob/main/LICENSE",
+      "requirements": "Documented Python 3.9 environment, model configuration, benchmark data, and task operators/evaluator.",
+      "sources": [
+        "https://github.com/FoundationAgents/AFlow",
+        "https://github.com/FoundationAgents/AFlow/blob/main/README.md",
+        "https://github.com/FoundationAgents/AFlow/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-agent-lightning",
+      "name": "Agent Lightning v1.0",
+      "category": "training-framework",
+      "url": "https://github.com/microsoft/agent-lightning",
+      "docs_url": "https://microsoft.github.io/agent-lightning/stable/00-installation/",
+      "related_papers": [],
+      "relationship_note": "Official Microsoft agent-training framework. Its v1.0 technical report is linked by the project but is not yet a separate literature entry in this catalog; legacy v0.x is maintained on another branch.",
+      "topics": [
+        "model-training",
+        "tools",
+        "workflows",
+        "evaluation"
+      ],
+      "update_targets": [
+        "model-weights"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Task rewards and trajectories collected from agents running their existing harnesses.",
+      "mechanism": "Separates policy training, model-request interception, and agent rollout execution through a trainer, API gateway, and controller. Captured interactions become training samples while the agent retains its tool and control-flow environment.",
+      "capabilities": [
+        "Train policies using real agent harnesses",
+        "Collect model interactions through an API gateway",
+        "Run rollouts locally or as Kubernetes jobs"
+      ],
+      "evaluation": "Project documentation reports search, sandbox, and coding-agent examples. These are project-reported results, not measurements performed or reproduced by this collection.",
+      "limitations": "This is externally configured training infrastructure, not proof of autonomous self-directed improvement. The v1.0 architecture is a documented refactor, so v0.x installation and experiment assumptions should not be transferred automatically.",
+      "availability_note": "Public source and setup documentation inspected; not installed, trained, or executed for this collection.",
+      "license": "MIT",
+      "license_url": "https://github.com/microsoft/agent-lightning/blob/main/LICENSE",
+      "requirements": "NVIDIA CUDA and a compatible verl/vLLM/PyTorch training stack; current setup docs describe W&B logging and local or Kubernetes rollout environments.",
+      "sources": [
+        "https://github.com/microsoft/agent-lightning",
+        "https://github.com/microsoft/agent-lightning/blob/main/README.md",
+        "https://microsoft.github.io/agent-lightning/stable/00-installation/",
+        "https://github.com/microsoft/agent-lightning/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-agent-workflow-memory",
+      "name": "Agent Workflow Memory",
+      "category": "research-system",
+      "url": "https://github.com/zorazrw/agent-workflow-memory",
+      "docs_url": "https://github.com/zorazrw/agent-workflow-memory/tree/main/mind2web",
+      "related_papers": [
+        "agent-workflow-memory"
+      ],
+      "relationship_note": "Author implementation of AWM, with separate Mind2Web and WebArena pipelines.",
+      "topics": [
+        "memory",
+        "skills",
+        "workflows",
+        "applications"
+      ],
+      "update_targets": [
+        "memory",
+        "workflows"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Annotated training examples in offline mode, or prior action trajectories in online mode.",
+      "mechanism": "Induces reusable workflow descriptions from example trajectories and supplies them through agent memory. Offline and online pipelines make the source of experience explicit.",
+      "capabilities": [
+        "Offline workflow induction",
+        "Sequential online induction",
+        "WebArena and Mind2Web integration"
+      ],
+      "evaluation": "The README reports web-task results; inspected subdirectory instructions show the offline and online execution paths.",
+      "limitations": "Web task environments and data must be provisioned separately. The online and offline protocols should not be treated as interchangeable learning evidence.",
+      "availability_note": "Public research source with environment-specific pipelines; not installed or run.",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/zorazrw/agent-workflow-memory/blob/main/LICENSE",
+      "requirements": "Python dependencies, model access, Mind2Web data or WebArena environments, and the documented filtering assets.",
+      "sources": [
+        "https://github.com/zorazrw/agent-workflow-memory",
+        "https://github.com/zorazrw/agent-workflow-memory/tree/main/mind2web",
+        "https://github.com/zorazrw/agent-workflow-memory/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-agent0",
+      "name": "Agent0",
+      "category": "research-system",
+      "url": "https://github.com/aiming-lab/Agent0",
+      "docs_url": "https://github.com/aiming-lab/Agent0/blob/main/Agent0/README.md",
+      "related_papers": [
+        "agent0"
+      ],
+      "relationship_note": "The official repository now hosts the Agent0 series, including a separate vision-language project. This entry describes the Agent0 language-agent subdirectory linked to the cataloged paper.",
+      "topics": [
+        "model-training",
+        "self-play",
+        "tools"
+      ],
+      "update_targets": [
+        "model-weights"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Curriculum rewards, tool interactions, and self-consistency-filtered executor training data.",
+      "mechanism": "Alternates curriculum generation, task filtering, and reinforcement-learning updates of a tool-using executor. A deployed code sandbox supplies execution for multi-turn training trajectories.",
+      "capabilities": [
+        "Train a tool-aware curriculum agent",
+        "Filter generated tasks using self-consistency",
+        "Train an executor through multi-turn RL"
+      ],
+      "evaluation": "The paper and repository report reasoning benchmarks for particular trained models. This catalog did not run training or evaluate a released checkpoint.",
+      "limitations": "Zero data excludes new human-curated task labels, not pretrained weights, reward design, or tools. The documented workflow includes manual checkpoint selection between iterations.",
+      "availability_note": "Public source and setup documentation inspected; not installed, trained, or executed for this collection.",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/aiming-lab/Agent0/blob/main/LICENSE",
+      "requirements": "Training-capable hardware, the documented veRL-based environment, pretrained model weights, and a configured SandboxFusion service.",
+      "sources": [
+        "https://github.com/aiming-lab/Agent0",
+        "https://github.com/aiming-lab/Agent0/blob/main/README.md",
+        "https://github.com/aiming-lab/Agent0/blob/main/Agent0/README.md",
+        "https://github.com/aiming-lab/Agent0/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-darwin-godel-machine",
+      "name": "Darwin Gödel Machine",
+      "category": "research-system",
+      "url": "https://github.com/jennyzzt/dgm",
+      "docs_url": "https://github.com/jennyzzt/dgm/blob/main/README.md",
+      "related_papers": [
+        "darwin-godel-machine"
+      ],
+      "relationship_note": "Official DGM research code, with separate SWE-bench and Polyglot evaluation components and linked experiment logs; current source was not matched to a paper-run commit.",
+      "topics": [
+        "architecture",
+        "recursive-improvement",
+        "applications"
+      ],
+      "update_targets": [
+        "agent-code",
+        "tools",
+        "workflows",
+        "prompts"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Coding-benchmark outcomes and logs from candidate agent variants.",
+      "mechanism": "Runs a coding agent on changes to its own implementation and retains evaluated variants in an archive. Later iterations can build on earlier variants rather than only the most recent agent.",
+      "capabilities": [
+        "Generate and evaluate self-edits to agent code",
+        "Maintain an archive of candidate agents",
+        "Inspect SWE-bench and Polyglot experiment artifacts"
+      ],
+      "evaluation": "The related paper reports coding evaluations and ablations; the repository exposes the research loop and experiment logs. No result was independently reproduced here.",
+      "limitations": "The outer selection/evaluation process and foundation models remain fixed in the inspected study. The repository executes generated code and is a research implementation, not a validated general deployment service.",
+      "availability_note": "Public source and setup documentation inspected; not installed, trained, or executed for this collection.",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/jennyzzt/dgm/blob/main/LICENSE",
+      "requirements": "Python dependencies, Docker, configured model access, and benchmark environment/data preparation.",
+      "sources": [
+        "https://github.com/jennyzzt/dgm",
+        "https://github.com/jennyzzt/dgm/blob/main/README.md",
+        "https://github.com/jennyzzt/dgm/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-dspy",
+      "name": "DSPy",
+      "category": "framework",
+      "url": "https://github.com/stanfordnlp/dspy",
+      "docs_url": "https://dspy.ai/",
+      "related_papers": [
+        "dspy",
+        "gepa"
+      ],
+      "relationship_note": "Official DSPy framework; the original paper and GEPA describe particular optimization methods, not every capability of the current release.",
+      "topics": [
+        "prompts",
+        "workflows",
+        "model-training",
+        "tools"
+      ],
+      "update_targets": [
+        "prompts",
+        "model-weights"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Developer-supplied examples and metrics, with feedback or fine-tuning objectives determined by the chosen optimizer.",
+      "mechanism": "Builds language-model applications from typed signatures and composable Python modules. Optimizers can produce reusable prompts, demonstrations, or tuned model parameters for a supplied task and metric.",
+      "capabilities": [
+        "Compose reasoning, retrieval, and tool-using modules",
+        "Optimize instructions and demonstrations against a metric",
+        "Use optional fine-tuning optimizers"
+      ],
+      "evaluation": "The linked papers report evaluations of specific optimizers; current framework documentation supplies further application examples. This catalog does not test the latest release.",
+      "limitations": "Optimization must be configured with appropriate data, metrics, and models. A compiled program does not by itself become a continuously self-learning deployed agent.",
+      "availability_note": "Public source and setup documentation inspected; not installed, trained, or executed for this collection.",
+      "license": "MIT",
+      "license_url": "https://github.com/stanfordnlp/dspy/blob/main/LICENSE",
+      "requirements": "Python 3.10 or newer, a supported language-model backend, and task examples plus an evaluation metric for optimization.",
+      "sources": [
+        "https://github.com/stanfordnlp/dspy",
+        "https://github.com/stanfordnlp/dspy/blob/main/README.md",
+        "https://dspy.ai/",
+        "https://github.com/stanfordnlp/dspy/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-evoagentx",
+      "name": "EvoAgentX",
+      "category": "framework",
+      "url": "https://github.com/ANative-Lab/EvoAgentX",
+      "docs_url": "https://github.com/ANative-Lab/EvoAgentX/blob/main/README.md",
+      "related_papers": [
+        "evoagentx"
+      ],
+      "relationship_note": "Official framework for the EvoAgentX paper; the old EvoAgentX/EvoAgentX URL redirects to ANative-Lab. Current modules can differ from the evaluated paper version.",
+      "topics": [
+        "workflows",
+        "architecture",
+        "tools",
+        "prompts"
+      ],
+      "update_targets": [
+        "prompts",
+        "tools",
+        "workflows",
+        "multi-agent-organization"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Task-specific evaluator feedback used by integrated workflow and prompt optimizers.",
+      "mechanism": "Combines workflow generation, execution, tool integration, and configurable optimization algorithms. Developers can retain optimized workflow definitions and add task-specific evaluators or operators.",
+      "capabilities": [
+        "Generate, save, load, and run agent workflows",
+        "Integrate tools and human review points",
+        "Apply integrated prompt and workflow optimization"
+      ],
+      "evaluation": "The associated paper reports benchmark comparisons; the repository describes an extensible software framework. Neither its feature list nor this inspection reproduces those comparisons.",
+      "limitations": "Automatic workflow construction is distinct from demonstrated continual learning. Optimizer integrations, task evaluators, and model/tool configurations still determine what can improve.",
+      "availability_note": "Public source and setup documentation inspected; not installed, trained, or executed for this collection.",
+      "license": "MIT; bundled MIT notices are included in LICENSE",
+      "license_url": "https://github.com/ANative-Lab/EvoAgentX/blob/main/LICENSE",
+      "requirements": "Python environment and configured model backend; individual tools can require additional services or execution environments.",
+      "sources": [
+        "https://github.com/ANative-Lab/EvoAgentX",
+        "https://github.com/ANative-Lab/EvoAgentX/blob/main/README.md",
+        "https://github.com/ANative-Lab/EvoAgentX/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-expel",
+      "name": "ExpeL",
+      "category": "research-system",
+      "url": "https://github.com/LeapLabTHU/ExpeL",
+      "docs_url": null,
+      "related_papers": [
+        "expel"
+      ],
+      "relationship_note": "Official ExpeL implementation; repository availability does not establish reproduction of the paper scores.",
+      "topics": [
+        "memory",
+        "skills",
+        "continual-learning"
+      ],
+      "update_targets": [
+        "memory"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Training-task trajectories, success/failure comparisons, and extracted textual insights.",
+      "mechanism": "Collects agent experiences, extracts reusable natural-language lessons, and retrieves lessons and past examples during later inference. The learned state is external to the model weights.",
+      "capabilities": [
+        "Experience gathering",
+        "Insight extraction",
+        "Separate evaluation pipeline"
+      ],
+      "evaluation": "The repository supplies configurations for HotpotQA, FEVER, ALFWorld, and WebShop and links the reported study.",
+      "limitations": "Experience quality and environment feedback shape the extracted insights. Environment setup and current API compatibility were not tested.",
+      "availability_note": "Public research code with train, insight-extraction, and evaluation entry points; not run.",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/LeapLabTHU/ExpeL/blob/main/LICENSE",
+      "requirements": "Documented Python 3.9 environment, model access, task data, and separate ALFWorld/WebShop setup when used.",
+      "sources": [
+        "https://github.com/LeapLabTHU/ExpeL",
+        "https://github.com/LeapLabTHU/ExpeL/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-gepa",
+      "name": "GEPA",
+      "category": "framework",
+      "url": "https://github.com/gepa-ai/gepa",
+      "docs_url": "https://gepa-ai.github.io/gepa/",
+      "related_papers": [
+        "gepa"
+      ],
+      "relationship_note": "Official GEPA implementation; the current optimize_anything interface broadens the text-artifact optimization scope beyond the paper’s core prompt experiments.",
+      "topics": [
+        "prompts",
+        "architecture",
+        "workflows",
+        "evaluation"
+      ],
+      "update_targets": [
+        "prompts",
+        "agent-code",
+        "workflows"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "User-defined evaluation scores and diagnostic traces interpreted by a reflection model.",
+      "mechanism": "Uses reflection over execution feedback to propose textual edits and maintain a population of complementary candidates. Adapters connect the optimizer to prompts, program code, and other text-configured systems.",
+      "capabilities": [
+        "Optimize prompts through DSPy or direct adapters",
+        "Search text artifacts through optimize_anything",
+        "Track budgets, candidate history, and Pareto-based selection"
+      ],
+      "evaluation": "The paper evaluates selected tasks and budgets; project documentation also presents demonstrations and use cases that should be assessed on their own protocols.",
+      "limitations": "The evaluator and search objective are externally supplied. Wider product examples do not establish the original paper’s results for every adapter or prove autonomous deployment learning.",
+      "availability_note": "Public source and setup documentation inspected; not installed, trained, or executed for this collection.",
+      "license": "MIT",
+      "license_url": "https://github.com/gepa-ai/gepa/blob/main/LICENSE",
+      "requirements": "A Python environment, a reflection-model backend, an executable evaluation function, and examples or evaluation cases.",
+      "sources": [
+        "https://github.com/gepa-ai/gepa",
+        "https://github.com/gepa-ai/gepa/blob/main/README.md",
+        "https://gepa-ai.github.io/gepa/",
+        "https://github.com/gepa-ai/gepa/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-hermes-agent",
+      "name": "Hermes Agent",
+      "category": "application",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "docs_url": "https://hermes-agent.nousresearch.com/docs",
+      "related_papers": [
+        "past-bench"
+      ],
+      "relationship_note": "Upstream Hermes application. PAST-Bench studies a Hermes baseline and an experimental Hermes+ variant; this entry is not that benchmark modification or a claim of version equivalence.",
+      "topics": [
+        "memory",
+        "skills",
+        "applications",
+        "continual-learning"
+      ],
+      "update_targets": [
+        "memory",
+        "skills"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Completed task experience, user interaction, periodic memory prompts, and subsequent skill use.",
+      "mechanism": "Documents a persistent agent loop that creates and revises skills, maintains memory, and searches past sessions. Saved skills and memories remain available across later conversations.",
+      "capabilities": [
+        "Persistent memory and skills",
+        "Cross-session search",
+        "CLI, desktop, and messaging surfaces"
+      ],
+      "evaluation": "Project documentation describes the learning loop; PAST-Bench provides a separate, bounded evaluation of selected Hermes configurations.",
+      "limitations": "Project feature claims do not establish indefinite improvement or perfect recall. Actual behavior depends on model, settings, task stream, and the inspected version.",
+      "availability_note": "Public application source with installers and desktop options; not installed or run.",
+      "license": "MIT",
+      "license_url": "https://github.com/NousResearch/hermes-agent/blob/main/LICENSE",
+      "requirements": "A supported local/hosted runtime and model-provider connection; optional cloud services have separate costs and terms.",
+      "sources": [
+        "https://github.com/NousResearch/hermes-agent",
+        "https://hermes-agent.nousresearch.com/",
+        "https://arxiv.org/html/2608.04003v1",
+        "https://hermes-agent.nousresearch.com/docs",
+        "https://github.com/NousResearch/hermes-agent/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-hyperagents",
+      "name": "HyperAgents",
+      "category": "research-system",
+      "url": "https://github.com/facebookresearch/HyperAgents",
+      "docs_url": "https://github.com/facebookresearch/HyperAgents/blob/main/README.md",
+      "related_papers": [
+        "hyperagents"
+      ],
+      "relationship_note": "Official HyperAgents implementation accompanying the Hyperagents paper; task-agent and meta-agent code are separate editable components in the released research setup.",
+      "topics": [
+        "recursive-improvement",
+        "architecture",
+        "evaluation"
+      ],
+      "update_targets": [
+        "agent-code",
+        "workflows",
+        "memory"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Task evaluation and the histories of earlier agent modifications.",
+      "mechanism": "Makes both a task-solving agent and its improvement procedure editable. A fixed outer loop runs candidate changes and evaluation across configured domains.",
+      "capabilities": [
+        "Modify task-agent and meta-agent programs",
+        "Run domain-specific evolution experiments",
+        "Inspect released experiment logs and analysis tools"
+      ],
+      "evaluation": "The paper reports bounded multi-domain and meta-agent transfer experiments. The repository links experiment logs; no log-level audit or evolution run was performed.",
+      "limitations": "The outer task/evaluation boundary remains externally specified; this is not evidence of unconstrained improvement. The source is distributed under a noncommercial share-alike license.",
+      "availability_note": "Public source and setup documentation inspected; not installed, trained, or executed for this collection.",
+      "license": "CC-BY-NC-SA-4.0",
+      "license_url": "https://github.com/facebookresearch/HyperAgents/blob/main/LICENSE.md",
+      "requirements": "Documented Python 3.12 and native build dependencies, Docker, model access, and the chosen domain environment.",
+      "sources": [
+        "https://github.com/facebookresearch/HyperAgents",
+        "https://github.com/facebookresearch/HyperAgents/blob/main/README.md",
+        "https://github.com/facebookresearch/HyperAgents/blob/main/LICENSE.md"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-langmem",
+      "name": "LangMem",
+      "category": "memory-library",
+      "url": "https://github.com/langchain-ai/langmem",
+      "docs_url": "https://langchain-ai.github.io/langmem/",
+      "related_papers": [],
+      "relationship_note": "Standalone official memory/optimization library; no matching research paper is asserted in this catalog.",
+      "topics": [
+        "memory",
+        "prompts",
+        "continual-learning"
+      ],
+      "update_targets": [
+        "memory",
+        "prompts"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Conversation histories, feedback, and extraction/consolidation prompts.",
+      "mechanism": "Supplies primitives for storing and consolidating agent experience, plus prompt-refinement tools. Applications can invoke memory operations during interaction or in background processing.",
+      "capabilities": [
+        "Memory-management tools",
+        "Background consolidation",
+        "Single/multiple prompt optimization"
+      ],
+      "evaluation": "The inspected sources provide API examples and integration guidance, not an independently reviewed learning benchmark.",
+      "limitations": "The quickstart’s in-process store loses data on restart; durable retention requires a database-backed store. Library support alone does not establish a successful learning policy.",
+      "availability_note": "Public Python package and documentation; not installed or run.",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langmem/blob/main/LICENSE",
+      "requirements": "A supported model provider and storage backend; LangGraph integration is supplied, while functional primitives can use other storage.",
+      "sources": [
+        "https://github.com/langchain-ai/langmem",
+        "https://langchain-ai.github.io/langmem/",
+        "https://github.com/langchain-ai/langmem/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-letta",
+      "name": "Letta Code",
+      "category": "application",
+      "url": "https://github.com/letta-ai/letta-code",
+      "docs_url": "https://docs.letta.com/configuration/memory",
+      "related_papers": [
+        "memgpt"
+      ],
+      "relationship_note": "Current Letta source, succeeding the MemGPT/Letta lineage; the historical letta repository identifies its V1 server as retired. Current behavior is not equivalent to the original MemGPT study.",
+      "topics": [
+        "memory",
+        "skills",
+        "prompts",
+        "architecture"
+      ],
+      "update_targets": [
+        "memory",
+        "skills",
+        "prompts",
+        "agent-code"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Conversation experience, explicit user lessons, background reflection, and agent-authored updates.",
+      "mechanism": "Maintains editable, git-backed memory and agent-scoped skills across conversations. Its documented mods mechanism can extend runtime behavior through locally trusted code.",
+      "capabilities": [
+        "MemFS memory versioning",
+        "Background memory consolidation",
+        "Skills and runtime mods"
+      ],
+      "evaluation": "The inspected official material documents mechanisms and user workflows; no learning benchmark of this current harness was independently assessed.",
+      "limitations": "Persistent edits do not guarantee improved task performance. Mods execute with the runtime’s trust and permissions, and features depend on configuration and host support.",
+      "availability_note": "Public application/harness source with npm and Python installation routes; not installed or run.",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/letta-ai/letta-code/blob/main/LICENSE",
+      "requirements": "A supported Node.js or packaged Python installation and configured model access; local, self-hosted, and cloud modes have different requirements.",
+      "sources": [
+        "https://github.com/letta-ai/letta-code",
+        "https://github.com/letta-ai/letta",
+        "https://docs.letta.com/configuration/mods",
+        "https://docs.letta.com/configuration/memory",
+        "https://github.com/letta-ai/letta-code/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-mem0",
+      "name": "Mem0",
+      "category": "memory-library",
+      "url": "https://github.com/mem0ai/mem0",
+      "docs_url": null,
+      "related_papers": [
+        "mem0"
+      ],
+      "relationship_note": "Official Mem0 software repository. The current managed-platform algorithm and SDK should not be assumed identical to the earlier paper implementation.",
+      "topics": [
+        "memory",
+        "applications"
+      ],
+      "update_targets": [
+        "memory"
+      ],
+      "persistence": "across-tasks",
+      "scope": "adjacent",
+      "learning_signal": "User/agent conversation content and retrieved factual context.",
+      "mechanism": "Provides memory storage and retrieval for user, session, and agent context through libraries and a server. The managed platform adds functionality beyond the public SDK.",
+      "capabilities": [
+        "Memory add/search APIs",
+        "Python and TypeScript libraries",
+        "Self-hosted server option"
+      ],
+      "evaluation": "The current README explicitly attributes its headline benchmark scores to the managed platform, including proprietary optimizations.",
+      "limitations": "Those scores cannot be assigned to the open-source SDK unchanged. Factual recall and personalization do not alone establish procedural agent self-improvement.",
+      "availability_note": "Public SDK/server source and package instructions; hosted service is separate; nothing was installed or run.",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mem0ai/mem0/blob/main/LICENSE",
+      "requirements": "Library dependencies and configured model/embedding/storage backends; the server path uses Docker, while cloud use needs service access.",
+      "sources": [
+        "https://github.com/mem0ai/mem0",
+        "https://github.com/mem0ai/mem0/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-memrl",
+      "name": "MemRL",
+      "category": "research-system",
+      "url": "https://github.com/MemTensor/MemRL",
+      "docs_url": null,
+      "related_papers": [
+        "memrl"
+      ],
+      "relationship_note": "Official implementation of MemRL with benchmark entry points; this is not model-weight reinforcement learning.",
+      "topics": [
+        "memory",
+        "continual-learning",
+        "evaluation"
+      ],
+      "update_targets": [
+        "memory"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Environment outcome feedback used to update episodic-memory utility estimates.",
+      "mechanism": "Combines semantic retrieval with learned utility values on episodic memories while keeping the reasoning model fixed. Useful experience can therefore influence later retrieval without parameter updates.",
+      "capabilities": [
+        "Two-phase memory retrieval",
+        "Runtime utility updates",
+        "Four benchmark runners"
+      ],
+      "evaluation": "The README documents HLE, BigCodeBench, ALFWorld, and Lifelong Agent Bench evaluation entry points.",
+      "limitations": "Updating memory utility does not establish that the base model learned new capabilities. Feedback quality and retrieval settings remain part of the evaluated system.",
+      "availability_note": "Public Python research package with configurations and runners; not installed or run.",
+      "license": "MIT",
+      "license_url": "https://github.com/MemTensor/MemRL/blob/main/LICENSE",
+      "requirements": "Documented Python 3.10 setup, language-model and embedding endpoints, plus the chosen benchmark assets.",
+      "sources": [
+        "https://github.com/MemTensor/MemRL",
+        "https://github.com/MemTensor/MemRL/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-reasoningbank",
+      "name": "ReasoningBank",
+      "category": "research-system",
+      "url": "https://github.com/google-research/reasoning-bank",
+      "docs_url": null,
+      "related_papers": [
+        "reasoningbank"
+      ],
+      "relationship_note": "Official software release for ReasoningBank; supplied task integrations are distinct from a general production agent.",
+      "topics": [
+        "memory",
+        "continual-learning",
+        "applications"
+      ],
+      "update_targets": [
+        "memory"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Successful and failed trajectories assessed by model-based correctness judgments.",
+      "mechanism": "Extracts reasoning lessons from agent trajectories and retrieves them for subsequent tasks. Memory-aware test-time scaling supplies additional experiences for consolidation.",
+      "capabilities": [
+        "SWE-Bench integration",
+        "WebArena integration",
+        "Trajectory judging and memory prompts"
+      ],
+      "evaluation": "The release documents the software-engineering and web-browsing settings used by the paper.",
+      "limitations": "The agent judges its own trajectories in parts of the workflow. Current default-branch code and provider configurations were not independently reproduced.",
+      "availability_note": "Public research source with task-specific agent and evaluation directories; not run.",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/google-research/reasoning-bank/blob/main/LICENSE",
+      "requirements": "Python dependencies, supported model-provider access, and benchmark environments; WebArena setup includes BrowserGym and Docker.",
+      "sources": [
+        "https://github.com/google-research/reasoning-bank",
+        "https://github.com/google-research/reasoning-bank/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-seal",
+      "name": "SEAL",
+      "category": "research-system",
+      "url": "https://github.com/Continual-Intelligence/SEAL",
+      "docs_url": "https://github.com/Continual-Intelligence/SEAL/blob/main/README.md",
+      "related_papers": [
+        "seal"
+      ],
+      "relationship_note": "Official Self-Adapting Language Models code, with separate general-knowledge and few-shot study directories; it is an adaptation research framework rather than a general agent application.",
+      "topics": [
+        "model-training",
+        "continual-learning"
+      ],
+      "update_targets": [
+        "model-weights"
+      ],
+      "persistence": "both",
+      "scope": "core",
+      "learning_signal": "Performance measured after applying a generated self-edit to model parameters.",
+      "mechanism": "Trains a model to generate adaptation data or update directives, then evaluates the gradient-based adaptation produced by those edits. The knowledge-incorporation implementation uses temporary LoRA training and evaluation to score candidate edits.",
+      "capabilities": [
+        "Run knowledge-incorporation self-edit experiments",
+        "Study few-shot task adaptation",
+        "Evaluate sequences of continual self-edits"
+      ],
+      "evaluation": "The paper reports knowledge and ARC adaptation studies, including retention tests. The repository contains code, data, and study documentation; these were not executed here.",
+      "limitations": "The related study still observes forgetting, and evaluating edits involves actual model training. The release should not be treated as a stable lifelong-learning service.",
+      "availability_note": "Public source and setup documentation inspected; not installed, trained, or executed for this collection.",
+      "license": "MIT",
+      "license_url": "https://github.com/Continual-Intelligence/SEAL/blob/main/LICENSE",
+      "requirements": "Python 3.12 and training dependencies; the README describes experiments using two A100/H100 GPUs and requires adapting provided SLURM directives to the execution environment.",
+      "sources": [
+        "https://github.com/Continual-Intelligence/SEAL",
+        "https://github.com/Continual-Intelligence/SEAL/blob/main/README.md",
+        "https://github.com/Continual-Intelligence/SEAL/blob/main/LICENSE",
+        "https://github.com/Continual-Intelligence/SEAL/blob/main/general-knowledge/README.md"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-sica",
+      "name": "Self-Improving Coding Agent (SICA)",
+      "category": "research-system",
+      "url": "https://github.com/MaximeRobeyns/self_improving_coding_agent",
+      "docs_url": "https://github.com/MaximeRobeyns/self_improving_coding_agent/blob/master/README.md",
+      "related_papers": [
+        "sica"
+      ],
+      "relationship_note": "Official experiment code for A Self-Improving Coding Agent; current repository behavior was not independently matched to the exact paper evaluation revision.",
+      "topics": [
+        "architecture",
+        "recursive-improvement",
+        "applications"
+      ],
+      "update_targets": [
+        "agent-code",
+        "tools",
+        "workflows"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Configured benchmark scores and archived results from preceding agent versions.",
+      "mechanism": "Alternates evaluating a coding agent, storing its results, and asking it to improve its own codebase. The next iteration uses the modified implementation.",
+      "capabilities": [
+        "Run benchmark-driven self-modification loops",
+        "Inspect event traces in a local execution viewer",
+        "Configure benchmarks and model providers"
+      ],
+      "evaluation": "The paper reports selected coding and synthetic-task experiments; the repository provides loop configuration and trace inspection. No benchmark was run for this catalog.",
+      "limitations": "The repository recommends its Docker environment because the agent can run shell commands. It also identifies run variance and benchmark realism as open work; gains need not transfer beyond the selected tasks.",
+      "availability_note": "Public source and setup documentation inspected; not installed, trained, or executed for this collection.",
+      "license": "MIT",
+      "license_url": "https://github.com/MaximeRobeyns/self_improving_coding_agent/blob/master/LICENSE",
+      "requirements": "Docker, local Python dependencies, a configured supported model provider, and chosen benchmark resources.",
+      "sources": [
+        "https://github.com/MaximeRobeyns/self_improving_coding_agent",
+        "https://github.com/MaximeRobeyns/self_improving_coding_agent/blob/master/README.md",
+        "https://github.com/MaximeRobeyns/self_improving_coding_agent/blob/master/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-skillrl",
+      "name": "SkillRL",
+      "category": "training-framework",
+      "url": "https://github.com/aiming-lab/SkillRL",
+      "docs_url": null,
+      "related_papers": [
+        "skillrl"
+      ],
+      "relationship_note": "Official training code and linked checkpoints for SkillRL; repository licensing does not determine every linked model or dataset license.",
+      "topics": [
+        "skills",
+        "model-training",
+        "continual-learning"
+      ],
+      "update_targets": [
+        "skills",
+        "model-weights"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Successful/failed trajectories, distillation data, and validation failures during reinforcement learning.",
+      "mechanism": "Distills experience into a hierarchical SkillBank and trains an agent policy with retrieved skills. Skill updates and model-parameter learning occur together in the training workflow.",
+      "capabilities": [
+        "Skill data generation",
+        "Template or embedding-based retrieval",
+        "Skill-augmented RL recipes"
+      ],
+      "evaluation": "The repository links SFT/RL checkpoints and documents ALFWorld, WebShop, and search training paths.",
+      "limitations": "This is a training stack, not a training-free memory plug-in. Checkpoint availability and source inspection do not reproduce the reported comparisons.",
+      "availability_note": "Public training source; model and dataset links are provided by the maintainers but were not downloaded.",
+      "license": "MIT",
+      "license_url": "https://github.com/aiming-lab/SkillRL/blob/main/LICENSE",
+      "requirements": "GPU-capable training setup with the documented vLLM/FlashAttention stack, task environments, model checkpoints, and configured provider access.",
+      "sources": [
+        "https://github.com/aiming-lab/SkillRL",
+        "https://github.com/aiming-lab/SkillRL/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "system-voyager",
+      "name": "Voyager",
+      "category": "research-system",
+      "url": "https://github.com/MineDojo/Voyager",
+      "docs_url": null,
+      "related_papers": [
+        "voyager"
+      ],
+      "relationship_note": "Official research implementation of Voyager; the current checkout was not matched to a paper experiment commit.",
+      "topics": [
+        "skills",
+        "tools",
+        "continual-learning",
+        "applications"
+      ],
+      "update_targets": [
+        "skills",
+        "tools"
+      ],
+      "persistence": "across-tasks",
+      "scope": "core",
+      "learning_signal": "Minecraft observations, execution errors, and model-based task verification.",
+      "mechanism": "Explores Minecraft with an automatic curriculum and accumulates executable skills. Retrieved skills and iterative program repair support later tasks without fine-tuning the language model.",
+      "capabilities": [
+        "Executable skill library",
+        "Automatic exploration curriculum",
+        "Checkpoint and skill reuse"
+      ],
+      "evaluation": "The README reports exploration and new-world skill-reuse experiments from the associated study.",
+      "limitations": "The environment uses Minecraft and supplied control APIs. Model-based verification and retained programs are not guaranteed correct; no experiment was reproduced here.",
+      "availability_note": "Public research source with setup instructions and a skill library; not installed or run.",
+      "license": "MIT",
+      "license_url": "https://github.com/MineDojo/Voyager/blob/main/LICENSE",
+      "requirements": "Python 3.9+, Node.js 16.13+, Minecraft with the documented mods, and a supported model API configuration.",
+      "sources": [
+        "https://github.com/MineDojo/Voyager",
+        "https://github.com/MineDojo/Voyager/blob/main/LICENSE"
+      ],
+      "checked": "2026-10-28",
+      "review_depth": "project",
+      "execution_status": "not-run"
     }
   ],
   "routes": [

@@ -7,6 +7,98 @@
 
 83 unique works. Source inspection date: 2026-10-28. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
+## Paper index
+
+Scan the table, then follow **Notes** for the full mechanism, evaluation boundary, and sources. Preview text is shortened for navigation; it is not a substitute for the annotation.
+
+| Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
+| --- | --- | --- | --- | --- | --- |
+| 2026-10-23 | [FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents](https://arxiv.org/abs/2610.33274) | Keeps an immutable history store and constructs a query-specific context from a timeline plus retrieved detail under a fixed token budget. Its fixed rendering rules… | Memory | preprint · abstract | [Notes](#flexa-mem) |
+| 2026-09-15 | [Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](https://arxiv.org/abs/2609.17817) | Studies whether poisoned optimization benchmarks can induce persistent changes that cause self-modifying coding agents to emit vulnerable code on later clean tasks. | Agent code, Prompts / context, Tools | preprint · full-text | [Notes](#trusting-trust-agents) |
+| 2026-09-14 | [ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement](https://arxiv.org/abs/2609.14857) | Evolves five harness modules in separate restricted lineages, then integrates their changes. The evolved agent performs trajectory analysis and code modification; a… | Agent code, Tools, Workflows, Memory | preprint · full-text | [Notes](#modularrsi) |
+| 2026-09-08 | [Safety in Self-Evolving Agents: A Survey](https://arxiv.org/abs/2610.00093) | Uses a transition-centered framework to examine how reusable state acquires influence, changes scope, and propagates failures through later adaptations. | Analysis / no retained update | preprint · abstract | [Notes](#safety-self-evolving-survey) |
+| 2026-08-20 | [Phantom Gains: Auditing Self-Improvement Against a Measured Null](https://arxiv.org/abs/2608.20290) | Runs frozen-model controls through the same pipeline as self-training to estimate how decoding and measurement noise can create apparent per-problem capability changes. | Analysis / no retained update | preprint · abstract | [Notes](#phantom-gains) · [Code](https://github.com/chengxuphd/phantom-gains) |
+| 2026-08-17 | [HyperSkill: Self-Evolving LLM Agents via Hypergraph-Structured Skill Memory](https://arxiv.org/abs/2608.16114) | Connects reusable skills and subtask steps through trajectory-level hyperedges. Retrieval combines subtask and trajectory evidence, while periodic maintenance merges… | Skills, Memory | preprint · abstract | [Notes](#hyperskill) |
+| 2026-08-09 | [Hierarchical Self-Improvement: A Framework for Task-Specific Evolvable Agent Harnesses](https://arxiv.org/abs/2608.08466) | Uses a frozen model at three levels: task execution, harness editing, and editing the strategy used by the harness evolver. Each task family maintains a reusable… | Agent code, Workflows | preprint · abstract | [Notes](#hierarchical-self-improvement) · [Code](https://github.com/TailinZhou/hsi) |
+| 2026-08-05 | [EvolveNet: Collaborative Harness Evolution for Agent Self-Improvement](https://arxiv.org/abs/2608.04968) | Different clients evolve copies of a shared harness on local tasks. A server combines compatible program adaptations and redistributes the result so later evolution can… | Agent code, Workflows | preprint · abstract | [Notes](#evolvenet) |
+| 2026-08-04 | [PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents](https://arxiv.org/abs/2608.04003) | Uses ordered fresh-session tasks with matched retention-on and retention-off conditions, and records evidence for saving, retrieving, and updating persistent state. | Memory, Skills | preprint · full-text | [Notes](#past-bench) · [Code](https://github.com/Gen-Verse/PAST-Bench) |
+| 2026-08-04 | [GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](https://arxiv.org/abs/2608.03764) | Distributes hidden business rules across training tasks and recombines them in held-out tasks, using an automated pipeline to construct environments and deterministic… | Skills, Memory | preprint · full-text | [Notes](#gdpevo) · [Code](https://github.com/Prism-Shadow/GDPevo) |
+| 2026-07-31 | [AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](https://arxiv.org/abs/2608.00155) | Evaluates retained agent state under isolated domain streams, sequential domain shifts, and interleaved tasks, comparing each evolving agent with a no-evolution baseline. | Memory, Skills, Prompts / context, Workflows | preprint · full-text | [Notes](#agentstream) · [Code](https://github.com/Jasper-Yan/AgentStream) |
+| 2026-07-14 | [Self-Improvements in Modern Agentic Systems: A Survey](https://arxiv.org/abs/2607.13104) | Models an agent as a foundation model plus prompts, memory, tools, and control logic, organizing self-induced updates by their target and learning signal. | Analysis / no retained update | preprint · abstract | [Notes](#modern-self-improvement-survey) |
+| 2026-05-26 | [MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation](https://arxiv.org/abs/2605.27366) | Manages a skill lifecycle spanning creation, storage, retrieval, evaluation, and refinement. Per-skill experience persists across tasks so later attempts can reuse and… | Skills, Memory | preprint · abstract | [Notes](#muse-autoskill) |
+| 2026-05-12 | [LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues](https://arxiv.org/abs/2605.12493) | Evaluates whether memory systems recover environment-specific facts, state changes, workflows, pitfalls, and premise conditions from past web-agent trajectories. | Memory | preprint · abstract | [Notes](#longmemeval-v2) |
+| 2026-04-19 | [SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](https://arxiv.org/abs/2604.17308) | Starts agents without skills and carries a library of trajectory- and rubric-derived skill patches through sequential tasks within task families. | Skills | preprint · abstract | [Notes](#skillflow) |
+| 2026-03-19 | [Hyperagents](https://arxiv.org/abs/2603.19461) | Combines the task solver and the agent that modifies it in one editable program. DGM-Hyperagents can therefore revise their own improvement procedure as well as… | Agent code, Workflows, Memory | preprint · full-text | [Notes](#hyperagents) · [Code](https://github.com/facebookresearch/Hyperagents) |
+| 2026-02-09 | [SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](https://arxiv.org/abs/2602.08234) | Distills successful and failed trajectories into a hierarchical skill library, retrieves those skills during policy training, and adds lessons from validation failures.… | Skills, Model weights | preprint · full-text | [Notes](#skillrl) · [Code](https://github.com/aiming-lab/SkillRL) |
+| 2026-02-04 | [Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing](https://arxiv.org/abs/2602.04837) | Treats a group of agents as the unit of evolution, allowing discoveries from different branches to influence later designs. It aims to reuse exploratory diversity that… | Agent code, Workflows | preprint · abstract | [Notes](#group-evolving-agents) |
+| 2026-01-11 | [Dr. Zero: Self-Evolving Search Agents without Training Data](https://arxiv.org/abs/2601.07055) | Co-evolves a proposer that generates diverse, challenging questions and a search-enabled solver. Hop-grouped policy optimization shares baselines among structurally… | Model weights | peer-reviewed · abstract | [Notes](#dr-zero) |
+| 2026-01-08 | [AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering](https://arxiv.org/abs/2601.04620) | Externalizes improvement into a release pipeline that constructs one candidate at a time. Promotion emphasizes which previously passing tasks fail and which failing… | Agent code, Workflows | preprint · abstract | [Notes](#agentdevel) |
+| 2026-01-06 | [MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory](https://arxiv.org/abs/2601.03192) | Uses outcome feedback to adjust the utility of episodic memories while keeping the reasoning model fixed. Two-stage retrieval combines semantic relevance with learned… | Memory | preprint · abstract | [Notes](#memrl) · [Code](https://github.com/MemTensor/MemRL) |
+| 2026 | [Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](https://proceedings.mlr.press/v306/wang26ik.html) | Separates the model generations used to provide rejected and chosen samples so their learning signal does not shrink as both improve together. The paper applies this… | Model weights | peer-reviewed · abstract | [Notes](#temporal-self-rewarding) · [Code](https://github.com/TemporalSelfRewarding/TSR) |
+| 2026 | [Large Language Model Agents Are Not Always Faithful Self-Evolvers](https://proceedings.mlr.press/v306/zhao26aw.html) | Intervenes on raw and condensed experience to test whether an agent’s decisions causally depend on the experience it receives. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#experience-faithfulness) |
+| 2025-11-20 | [Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](https://arxiv.org/abs/2511.16043) | Co-trains a curriculum agent and a tool-using executor in alternating stages. The proposer targets uncertain, diverse tasks, while filtered generated tasks and a code… | Model weights | peer-reviewed · full-text | [Notes](#agent0) · [Code](https://github.com/aiming-lab/Agent0) |
+| 2025-11-17 | [Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?](https://arxiv.org/abs/2511.13646) | Starts with a minimal bash-based agent and permits edits to its own scaffold during task execution. It studies on-the-fly changes to the agent implementation without a… | Agent code, Tools | preprint · abstract | [Notes](#live-swe-agent) |
+| 2025-11-01 | [OpenSIR: Open-Ended Self-Improving Reasoner](https://arxiv.org/abs/2511.00602) | Alternates teacher and student roles within one model, starting from a seed problem. The method rewards exploration of distinct concepts while keeping generated tasks… | Model weights | preprint · abstract | [Notes](#opensir) |
+| 2025-10-06 | [Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](https://arxiv.org/abs/2510.04618) | Separates generation, reflection, and curation to build an evolving playbook. Small structured updates and deduplication preserve reusable strategies without repeatedly… | Prompts / context, Memory | peer-reviewed · full-text | [Notes](#ace) |
+| 2025-09-30 | [Mem-α: Learning Memory Construction via Reinforcement Learning](https://arxiv.org/abs/2509.25911) | Trains an agent to construct and update core, episodic, and semantic memory while processing sequential interaction chunks. Rewards come from answering questions over… | Model weights, Memory | preprint · abstract | [Notes](#mem-alpha) |
+| 2025-09-29 | [ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](https://arxiv.org/abs/2509.25140) | Extracts reusable reasoning lessons from self-judged successful and failed trajectories and retrieves them for later tasks. Memory-aware test-time scaling adds diverse… | Memory | peer-reviewed · full-text | [Notes](#reasoningbank) · [Code](https://github.com/google-research/reasoning-bank) |
+| 2025-08-27 | [Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](https://arxiv.org/abs/2508.19828) | Trains a memory-management agent to add, update, delete, or retain entries, alongside an answer agent that selects and uses relevant memories. Outcome-driven… | Model weights, Memory | preprint · abstract | [Notes](#memory-r1) |
+| 2025-08-26 | [Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark](https://arxiv.org/abs/2508.19005) | Defines experience-driven lifelong learning around exploration, memory, skill abstraction, and internalization, and introduces StuLife as a stateful simulated… | Analysis / no retained update | preprint · full-text | [Notes](#ell-stulife) |
+| 2025-08-10 | [A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](https://arxiv.org/abs/2508.07407) | Describes an evolution loop through inputs, agent systems, environments, and optimizers, then maps techniques and domain-specific applications onto those components. | Analysis / no retained update | preprint · abstract | [Notes](#comprehensive-evolving-survey) |
+| 2025-08-08 | [Memp: Exploring Agent Procedural Memory](https://arxiv.org/abs/2508.06433) | Distills trajectories into both detailed instructions and more abstract procedures. Its procedural-memory pipeline builds, retrieves, revises, and retires entries as… | Memory, Skills | peer-reviewed · abstract | [Notes](#memp) · [Code](https://github.com/zjunlp/MemP) |
+| 2025-08-07 | [R-Zero: Self-Evolving Reasoning LLM from Zero Data](https://arxiv.org/abs/2508.05004) | Initializes challenger and solver models from the same base model, then optimizes their roles separately. Their interaction generates an adaptive training curriculum… | Model weights | peer-reviewed · abstract | [Notes](#r-zero) |
+| 2025-07-28 | [A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence](https://arxiv.org/abs/2507.21046) | Organizes agent adaptation by the component that changes, the stage when it changes, the feedback and algorithm used, and the application setting. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#self-evolving-survey) |
+| 2025-07-25 | [GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](https://arxiv.org/abs/2507.19457) | Reflects on traces to propose prompt edits and selects complementary candidates using a Pareto-based population. The learned instructions alter a compound system while… | Prompts / context | peer-reviewed · abstract | [Notes](#gepa) · [Code](https://github.com/gepa-ai/gepa) |
+| 2025-07-04 | [EvoAgentX: An Automated Framework for Evolving Agentic Workflows](https://arxiv.org/abs/2507.03616) | Integrates workflow generation and execution with optimization methods including TextGrad, AFlow, and MIPRO. The framework supports changes to prompts, tool… | Prompts / context, Tools, Workflows, Multi-agent organization | preprint · abstract | [Notes](#evoagentx) · [Code](https://github.com/EvoAgentX/EvoAgentX) |
+| 2025-06-12 | [Self-Adapting Language Models](https://arxiv.org/abs/2506.10943) | Learns to generate synthetic training material or adaptation directives, then applies gradient updates using those edits. An outer reward-based loop improves the… | Model weights | peer-reviewed · full-text | [Notes](#seal) · [Code](https://github.com/Continual-Intelligence/SEAL) |
+| 2025-06-02 | [Self-Challenging Language Model Agents](https://arxiv.org/abs/2506.01716) | The agent first explores supplied tools as a challenger and constructs Code-as-Task problems containing instructions, a verifier, and passing and failing examples. It… | Model weights | peer-reviewed · abstract | [Notes](#self-challenging-agents) |
+| 2025-05-29 | [Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](https://arxiv.org/abs/2505.22954) | A coding agent rewrites its own implementation, and an archive retains runnable variants as possible parents for later edits. This permits exploration beyond the latest… | Agent code, Tools, Workflows, Prompts / context | peer-reviewed · full-text | [Notes](#darwin-godel-machine) · [Code](https://github.com/jennyzzt/dgm) |
+| 2025-05-17 | [LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners](https://arxiv.org/abs/2505.11942) | Constructs interdependent tasks grounded in reusable skills across database, operating-system, and knowledge-graph environments. | Memory, Skills | preprint · abstract | [Notes](#lifelongagentbench) |
+| 2025-05-06 | [Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://arxiv.org/abs/2505.03335) | A single model proposes and solves code-based tasks, with a code executor validating problems and answers. Reinforcement learning updates both roles while the generated… | Model weights | peer-reviewed · full-text | [Notes](#absolute-zero) · [Code](https://github.com/LeapLabTHU/Absolute-Zero-Reasoner) |
+| 2025-04-28 | [Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/abs/2504.19413) | Extracts and consolidates facts from conversations for later retrieval, with a graph variant for relational information. Persistent conversational state provides a… | Memory | preprint · abstract | [Notes](#mem0) |
+| 2025-04-21 | [A Self-Improving Coding Agent](https://arxiv.org/abs/2504.15228) | Equips a coding agent with tools to edit its own implementation and reuses improved versions in later iterations. Learning changes the surrounding agent code rather than… | Agent code, Tools, Workflows | preprint · full-text | [Notes](#sica) · [Code](https://github.com/MaximeRobeyns/self_improving_coding_agent) |
+| 2025-02-17 | [A-MEM: Agentic Memory for LLM Agents](https://arxiv.org/abs/2502.12110) | Constructs structured notes, links related memories, and updates older contextual descriptions when new information arrives. The evolving note network changes retrieval… | Memory | peer-reviewed · abstract | [Notes](#a-mem) · [Code](https://github.com/WujiangXu/A-mem-sys) |
+| 2024-10-14 | [LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory](https://arxiv.org/abs/2410.10813) | Tests information extraction, cross-session and temporal reasoning, knowledge updates, and abstention from long interaction histories, separating indexing, retrieval… | Memory | peer-reviewed · abstract | [Notes](#longmemeval) · [Code](https://github.com/xiaowu0162/LongMemEval) |
+| 2024-10-14 | [AFlow: Automating Agentic Workflow Generation](https://arxiv.org/abs/2410.10762) | Searches over code-represented workflows using a Monte Carlo tree-search variant. An LLM changes prompts and connections between operations, while the tree retains… | Workflows, Prompts / context, Agent code | peer-reviewed · full-text | [Notes](#aflow) · [Code](https://github.com/FoundationAgents/AFlow) |
+| 2024-10-08 | [AgentSquare: Automatic LLM Agent Search in Modular Design Space](https://arxiv.org/abs/2410.06153) | Defines interchangeable planning, reasoning, tool-use, and memory modules, then searches by evolving and recombining them. A performance predictor reduces evaluations of… | Workflows, Prompts / context, Tools, Memory | peer-reviewed · abstract | [Notes](#agentsquare) · [Code](https://github.com/tsinghua-fib-lab/AgentSquare) |
+| 2024-10-06 | [Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement](https://arxiv.org/abs/2410.04444) | Lets an LLM-based agent inspect and revise its own logic through a self-referential learning framework. The editable artifact is the agent program rather than the… | Agent code, Prompts / context, Workflows | peer-reviewed · abstract | [Notes](#godel-agent) · [Code](https://github.com/Arvid-pku/Godel_Agent) |
+| 2024-09-19 | [Training Language Models to Self-Correct via Reinforcement Learning](https://arxiv.org/abs/2409.12917) | Trains a correction policy on its own response distribution, with an initialization stage and a reward bonus encouraging successful revision. The method targets… | Model weights | peer-reviewed · abstract | [Notes](#score) |
+| 2024-09-11 | [Agent Workflow Memory](https://arxiv.org/abs/2409.07429) | Abstracts reusable subroutines from action trajectories and adds them to the agent context as workflow memory. It supports an offline store built from training examples… | Memory, Workflows | peer-reviewed · full-text | [Notes](#agent-workflow-memory) · [Code](https://github.com/zorazrw/agent-workflow-memory) |
+| 2024-08-15 | [Automated Design of Agentic Systems](https://arxiv.org/abs/2408.08435) | A meta-agent writes new agent programs, evaluates them, and uses the growing archive to propose further designs. Code represents the prompts, control flow, and other… | Agent code, Workflows, Prompts / context | peer-reviewed · abstract | [Notes](#adas) · [Code](https://github.com/ShengranHu/ADAS) |
+| 2024-07-25 | [Recursive Introspection: Teaching Language Model Agents How to Self-Improve](https://arxiv.org/abs/2407.18219) | Turns single-turn problems into multi-turn trajectories and trains the model to revise earlier unsuccessful responses. Its training loop uses reward-weighted supervised… | Model weights | peer-reviewed · full-text | [Notes](#rise) |
+| 2024-07-24 | [AI models collapse when trained on recursively generated data](https://www.nature.com/articles/s41586-024-07566-y) | Analyzes how repeated training on generated data can lose low-probability parts of an original distribution and amplify errors. The paper combines tractable distribution… | Model weights | peer-reviewed · full-text | [Notes](#model-collapse) |
+| 2024-06-26 | [Symbolic Learning Enables Self-Evolving Agents](https://arxiv.org/abs/2406.18532) | Represents an agent as a symbolic network whose editable components include prompts, tools, and their composition. Symbolic optimization uses textual feedback to revise… | Prompts / context, Tools, Workflows | preprint · abstract | [Notes](#symbolic-agent-learning) · [Code](https://github.com/aiwaves-cn/agents) |
+| 2024-06-11 | [TextGrad: Automatic "Differentiation" via Text](https://arxiv.org/abs/2406.07496) | Treats components of a compound AI system as editable variables and routes textual feedback backward to propose updates. Applications include reusable prompt… | Prompts / context, Agent code | peer-reviewed · abstract | [Notes](#textgrad) · [Code](https://github.com/zou-group/textgrad) |
+| 2024-06-06 | [ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search](https://arxiv.org/abs/2406.03816) | Combines process-reward-guided tree search with iterative training of the policy and reward models. Search supplies reasoning traces and step-value targets without… | Model weights | peer-reviewed · abstract | [Notes](#rest-mcts) · [Code](https://github.com/THUDM/ReST-MCTS) |
+| 2024-04-01 | [Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](https://arxiv.org/abs/2404.01413) | Compares replacement of earlier datasets with accumulation of original and synthetic data. It supplies a linear-model analysis and generative-model experiments showing… | Model weights | preprint · full-text | [Notes](#accumulating-data-model-collapse) |
+| 2024-01-18 | [Self-Rewarding Language Models](https://arxiv.org/abs/2401.10020) | Uses one language model both to answer instructions and to score responses, updating it through successive rounds of preference optimization. This couples the response… | Model weights | peer-reviewed · abstract | [Notes](#self-rewarding-lms) |
+| 2024-01-02 | [Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](https://arxiv.org/abs/2401.01335) | Starts with a supervised model and iteratively learns to distinguish its own generated responses from reference demonstrations. Successive model versions provide the… | Model weights | peer-reviewed · abstract | [Notes](#spin) · [Code](https://github.com/uclaml/SPIN) |
+| 2024 | [When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs](https://aclanthology.org/2024.tacl-1.78/) | Separates self-correction questions by feedback source and training assumptions, and examines whether experimental designs support the claimed correction ability. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#self-correction-survey) |
+| 2024 | [Evaluating Very Long-Term Conversational Memory of LLM Agents](https://aclanthology.org/2024.acl-long.747/) | Builds extended conversations from persona and event structures, with human editing, to test recall, event summarization, and multimodal dialogue. | Memory | peer-reviewed · abstract | [Notes](#locomo) · [Code](https://github.com/snap-research/LoCoMo) |
+| 2024 | [Large Language Models Cannot Self-Correct Reasoning Yet](https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html) | Tests intrinsic correction: asking a model to revise its own reasoning using no external correctness signal. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#intrinsic-self-correction) |
+| 2023-10-12 | [MemGPT: Towards LLMs as Operating Systems](https://arxiv.org/abs/2310.08560) | Lets a language-model agent move information between a limited active context and external memory tiers through explicit operations. This supplies persistent state and… | Memory | preprint · abstract | [Notes](#memgpt) |
+| 2023-10-05 | [DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines](https://arxiv.org/abs/2310.03714) | Represents language-model pipelines as declarative modules and compiles demonstrations for their component prompts. The reusable artifact is an optimized pipeline… | Prompts / context | peer-reviewed · abstract | [Notes](#dspy) · [Code](https://github.com/stanfordnlp/dspy) |
+| 2023-10-03 | [Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation](https://arxiv.org/abs/2310.02304) | Begins with an LLM-assisted program improver and applies that improver to its own source. Candidate improvers are assessed through the quality of programs they generate… | Agent code | peer-reviewed · abstract | [Notes](#stop) |
+| 2023-09-28 | [Promptbreeder: Self-Referential Self-Improvement via Prompt Evolution](https://arxiv.org/abs/2309.16797) | Evolves a population of task instructions together with the instructions that produce their mutations. It provides a concrete example of changing part of the improvement… | Prompts / context | peer-reviewed · abstract | [Notes](#promptbreeder) |
+| 2023-09-07 | [Large Language Models as Optimizers](https://arxiv.org/abs/2309.03409) | Uses an LLM to propose candidates from a history of instructions and their measured scores. Selected instructions can be reused on new examples without changing model… | Prompts / context | peer-reviewed · abstract | [Notes](#opro) · [Code](https://github.com/google-deepmind/opro) |
+| 2023-08-20 | [ExpeL: LLM Agents Are Experiential Learners](https://arxiv.org/abs/2308.10144) | Collects training-task trajectories, contrasts successes and failures to extract reusable textual insights, and retrieves relevant experiences for new tasks. Learning… | Memory | peer-reviewed · full-text | [Notes](#expel) · [Code](https://github.com/LeapLabTHU/ExpeL) |
+| 2023-08-17 | [Reinforced Self-Training (ReST) for Language Modeling](https://arxiv.org/abs/2308.08998) | Alternates generating a batch of candidate outputs and improving the policy with offline reinforcement learning. Reusing generated data reduces the need to sample a new… | Model weights | preprint · abstract | [Notes](#rest) |
+| 2023-05-26 | [Large Language Models as Tool Makers](https://arxiv.org/abs/2305.17126) | Separates tool creation from tool use, allowing a stronger model to create reusable programs that a cheaper model can invoke on related requests. A functional cache… | Tools | peer-reviewed · abstract | [Notes](#llms-as-tool-makers) · [Code](https://github.com/ctlllll/LLM-ToolMaker) |
+| 2023-05-25 | [Voyager: An Open-Ended Embodied Agent with Large Language Models](https://arxiv.org/abs/2305.16291) | Builds an expanding library of executable Minecraft skills, retrieved and composed for later tasks. An automatic curriculum proposes objectives, while execution feedback… | Skills, Tools | peer-reviewed · full-text | [Notes](#voyager) · [Code](https://github.com/MineDojo/Voyager) |
+| 2023-05-23 | [CREATOR: Tool Creation for Disentangling Abstract and Concrete Reasoning of Large Language Models](https://arxiv.org/abs/2305.14318) | Decomposes problem solving into tool design, implementation, execution, and revision so an agent can create tools beyond a fixed API inventory. It also examines reuse of… | Tools | peer-reviewed · abstract | [Notes](#creator) · [Code](https://github.com/qiancheng0/CREATOR) |
+| 2023-05-17 | [MemoryBank: Enhancing Large Language Models with Long-Term Memory](https://arxiv.org/abs/2305.10250) | Maintains retrievable interaction memories and user summaries, with time- and importance-sensitive forgetting and reinforcement. The SiliconFriend application combines… | Memory | peer-reviewed · abstract | [Notes](#memorybank) |
+| 2023-04-07 | [Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) | Stores experiences, synthesizes higher-level reflections, and retrieves relevant memories to plan behavior in a simulated town. The accumulated state shapes subsequent… | Memory | peer-reviewed · abstract | [Notes](#generative-agents) · [Code](https://github.com/joonspk-research/generative_agents) |
+| 2023-03-30 | [Self-Refine: Iterative Refinement with Self-Feedback](https://arxiv.org/abs/2303.17651) | Uses the same language model to draft, critique, and revise an answer iteratively without updating model weights. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#self-refine) |
+| 2023-03-20 | [Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366) | Converts task feedback into verbal reflections and carries those reflections into later attempts through an episodic memory buffer. The underlying language-model weights… | Memory | peer-reviewed · full-text | [Notes](#reflexion) · [Code](https://github.com/noahshinn/reflexion) |
+| 2023-02-09 | [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) | Teaches a language model when to call a predefined API, which arguments to produce, and how to incorporate the returned information. The learned capability is stored in… | Model weights | peer-reviewed · abstract | [Notes](#toolformer) |
+| 2023 | [Self-Instruct: Aligning Language Models with Self-Generated Instructions](https://aclanthology.org/2023.acl-long.754/) | Bootstraps an instruction-tuning dataset from the model, filters unsuitable examples, and fine-tunes the original model on the retained data. It is a foundation for… | Model weights | peer-reviewed · abstract | [Notes](#self-instruct) · [Code](https://github.com/yizhongw/self-instruct) |
+| 2022-12-15 | [Constitutional AI: Harmlessness from AI Feedback](https://arxiv.org/abs/2212.08073) | Uses self-critiques and revisions for supervised learning, then learns a preference model from AI comparisons and optimizes the assistant with reinforcement learning.… | Model weights | preprint · abstract | [Notes](#constitutional-ai) |
+| 2022-10-06 | [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629) | Interleaves reasoning traces with actions and observations so a language model can gather information and revise its plan during a task. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#react) |
+| 2022-03-28 | [STaR: Bootstrapping Reasoning With Reasoning](https://arxiv.org/abs/2203.14465) | Generates reasoning traces, keeps traces ending in the reference answer, and fine-tunes on them. Failed problems can be retried with the answer supplied as a hint; each… | Model weights | peer-reviewed · full-text | [Notes](#star) · [Code](https://github.com/ezelikman/STaR) |
+| 2017-10-19 | [Mastering the game of Go without human knowledge](https://www.nature.com/articles/nature24270) | Trains a policy/value network on games generated by its own search, then uses the updated network to improve subsequent search and play. This is an early concrete… | Model weights | peer-reviewed · abstract | [Notes](#alphago-zero) |
+
+## Full annotations
+
 <a id="flexa-mem"></a>
 
 ## FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents
@@ -205,6 +297,8 @@
 
 [Source 1](https://arxiv.org/abs/2608.04003) · [Source 2](https://arxiv.org/html/2608.04003v1) · [Source 3](https://github.com/Gen-Verse/PAST-Bench)
 
+**Related software:** [Hermes Agent](systems.md#system-hermes-agent). See each system's relationship note before equating it with the evaluated paper version.
+
 <a id="gdpevo"></a>
 
 ## GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks
@@ -359,6 +453,8 @@
 
 [Source 1](https://arxiv.org/abs/2603.19461) · [Source 2](https://arxiv.org/html/2603.19461v1) · [Source 3](https://github.com/facebookresearch/Hyperagents)
 
+**Related software:** [HyperAgents](systems.md#system-hyperagents). See each system's relationship note before equating it with the evaluated paper version.
+
 <a id="skillrl"></a>
 
 ## SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning
@@ -380,6 +476,8 @@
 **Topics:** skills, memory, model-training. **Reviewed:** full-text · 2026-10-28.
 
 [Source 1](https://arxiv.org/abs/2602.08234) · [Source 2](https://arxiv.org/html/2602.08234v1) · [Source 3](https://arxiv.org/html/2602.08234v2) · [Source 4](https://github.com/aiming-lab/SkillRL)
+
+**Related software:** [SkillRL](systems.md#system-skillrl). See each system's relationship note before equating it with the evaluated paper version.
 
 <a id="group-evolving-agents"></a>
 
@@ -469,6 +567,8 @@
 
 [Source 1](https://arxiv.org/abs/2601.03192) · [Source 2](https://github.com/MemTensor/MemRL)
 
+**Related software:** [MemRL](systems.md#system-memrl). See each system's relationship note before equating it with the evaluated paper version.
+
 <a id="temporal-self-rewarding"></a>
 
 ## Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future
@@ -534,6 +634,8 @@
 **Topics:** model-training, self-play, tools. **Reviewed:** full-text · 2026-10-28.
 
 [Source 1](https://arxiv.org/abs/2511.16043) · [Source 2](https://arxiv.org/html/2511.16043v2) · [Source 3](https://github.com/aiming-lab/Agent0) · [Source 4](https://proceedings.colm.cc/paper_files/paper/2026/hash/01977a08d8e76cf4df40b5b57407c9eb-Abstract-Conference.html)
+
+**Related software:** [Agent0](systems.md#system-agent0). See each system's relationship note before equating it with the evaluated paper version.
 
 <a id="live-swe-agent"></a>
 
@@ -644,6 +746,8 @@
 **Topics:** memory, skills, continual-learning. **Reviewed:** full-text · 2026-10-28.
 
 [Source 1](https://arxiv.org/abs/2509.25140) · [Source 2](https://arxiv.org/html/2509.25140v1) · [Source 3](https://arxiv.org/html/2509.25140v2) · [Source 4](https://github.com/google-research/reasoning-bank) · [Source 5](https://proceedings.iclr.cc/paper_files/paper/2026/hash/980ea04d23d1f6908964eba2a74afe45-Abstract-Conference.html)
+
+**Related software:** [ReasoningBank](systems.md#system-reasoningbank). See each system's relationship note before equating it with the evaluated paper version.
 
 <a id="memory-r1"></a>
 
@@ -799,6 +903,8 @@
 
 [Source 1](https://arxiv.org/abs/2507.19457) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2026/hash/0e9e708b6f48e14fd0ac29e167413f76-Abstract-Conference.html) · [Source 3](https://github.com/gepa-ai/gepa)
 
+**Related software:** [DSPy](systems.md#system-dspy) · [GEPA](systems.md#system-gepa). See each system's relationship note before equating it with the evaluated paper version.
+
 <a id="evoagentx"></a>
 
 ## EvoAgentX: An Automated Framework for Evolving Agentic Workflows
@@ -821,6 +927,8 @@
 
 [Source 1](https://arxiv.org/abs/2507.03616) · [Source 2](https://github.com/EvoAgentX/EvoAgentX)
 
+**Related software:** [EvoAgentX](systems.md#system-evoagentx). See each system's relationship note before equating it with the evaluated paper version.
+
 <a id="seal"></a>
 
 ## Self-Adapting Language Models
@@ -842,6 +950,8 @@
 **Topics:** model-training, continual-learning. **Reviewed:** full-text · 2026-10-28.
 
 [Source 1](https://arxiv.org/abs/2506.10943) · [Source 2](https://arxiv.org/html/2506.10943v2) · [Source 3](https://proceedings.neurips.cc/paper_files/paper/2025/hash/6b41e04c41726e2a60e456d0a2b961ab-Abstract-Conference.html) · [Source 4](https://jyopari.github.io/posts/seal) · [Source 5](https://github.com/Continual-Intelligence/SEAL)
+
+**Related software:** [SEAL](systems.md#system-seal). See each system's relationship note before equating it with the evaluated paper version.
 
 <a id="self-challenging-agents"></a>
 
@@ -887,6 +997,8 @@
 
 [Source 1](https://arxiv.org/abs/2505.22954) · [Source 2](https://arxiv.org/html/2505.22954v1) · [Source 3](https://github.com/jennyzzt/dgm) · [Source 4](https://proceedings.iclr.cc/paper_files/paper/2026/hash/aa5f5e6eb6f613ec412f1d948dfa21a5-Abstract-Conference.html)
 
+**Related software:** [Darwin Gödel Machine](systems.md#system-darwin-godel-machine). See each system's relationship note before equating it with the evaluated paper version.
+
 <a id="lifelongagentbench"></a>
 
 ## LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners
@@ -931,6 +1043,8 @@
 
 [Source 1](https://arxiv.org/abs/2505.03335) · [Source 2](https://arxiv.org/html/2505.03335v3) · [Source 3](https://proceedings.neurips.cc/paper_files/paper/2025/hash/9837dc00ff67d176373268ed48042d49-Abstract-Conference.html) · [Source 4](https://github.com/LeapLabTHU/Absolute-Zero-Reasoner)
 
+**Related software:** [Absolute Zero Reasoner](systems.md#system-absolute-zero). See each system's relationship note before equating it with the evaluated paper version.
+
 <a id="mem0"></a>
 
 ## Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory
@@ -952,6 +1066,8 @@
 **Topics:** memory, evaluation. **Reviewed:** abstract · 2026-10-28.
 
 [Source 1](https://arxiv.org/abs/2504.19413)
+
+**Related software:** [Mem0](systems.md#system-mem0). See each system's relationship note before equating it with the evaluated paper version.
 
 <a id="sica"></a>
 
@@ -975,6 +1091,8 @@
 
 [Source 1](https://arxiv.org/abs/2504.15228) · [Source 2](https://arxiv.org/html/2504.15228v2) · [Source 3](https://github.com/MaximeRobeyns/self_improving_coding_agent)
 
+**Related software:** [Self-Improving Coding Agent (SICA)](systems.md#system-sica). See each system's relationship note before equating it with the evaluated paper version.
+
 <a id="a-mem"></a>
 
 ## A-MEM: Agentic Memory for LLM Agents
@@ -996,6 +1114,8 @@
 **Topics:** memory. **Reviewed:** abstract · 2026-10-28.
 
 [Source 1](https://arxiv.org/abs/2502.12110) · [Source 2](https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html) · [Source 3](https://github.com/WujiangXu/A-mem-sys)
+
+**Related software:** [A-MEM memory system](systems.md#system-a-mem). See each system's relationship note before equating it with the evaluated paper version.
 
 <a id="longmemeval"></a>
 
@@ -1040,6 +1160,8 @@
 **Topics:** workflows, architecture, prompts. **Reviewed:** full-text · 2026-10-28.
 
 [Source 1](https://arxiv.org/abs/2410.10762) · [Source 2](https://arxiv.org/html/2410.10762v1) · [Source 3](https://proceedings.iclr.cc/paper_files/paper/2025/hash/5492ecbce4439401798dcd2c90be94cd-Abstract-Conference.html) · [Source 4](https://github.com/FoundationAgents/AFlow)
+
+**Related software:** [AFlow](systems.md#system-aflow). See each system's relationship note before equating it with the evaluated paper version.
 
 <a id="agentsquare"></a>
 
@@ -1129,6 +1251,8 @@
 
 [Source 1](https://arxiv.org/abs/2409.07429) · [Source 2](https://arxiv.org/html/2409.07429v1) · [Source 3](https://proceedings.mlr.press/v267/wang25bx.html) · [Source 4](https://github.com/zorazrw/agent-workflow-memory)
 
+**Related software:** [Agent Workflow Memory](systems.md#system-agent-workflow-memory). See each system's relationship note before equating it with the evaluated paper version.
+
 <a id="adas"></a>
 
 ## Automated Design of Agentic Systems
@@ -1150,6 +1274,8 @@
 **Topics:** architecture, workflows. **Reviewed:** abstract · 2026-10-28.
 
 [Source 1](https://arxiv.org/abs/2408.08435) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2025/hash/36b7acf6f6010652b3f2a433774a66fe-Abstract-Conference.html) · [Source 3](https://www.shengranhu.com/ADAS/) · [Source 4](https://github.com/ShengranHu/ADAS)
+
+**Related software:** [ADAS / Meta Agent Search](systems.md#system-adas). See each system's relationship note before equating it with the evaluated paper version.
 
 <a id="rise"></a>
 
@@ -1415,6 +1541,8 @@
 
 [Source 1](https://arxiv.org/abs/2310.08560)
 
+**Related software:** [Letta Code](systems.md#system-letta). See each system's relationship note before equating it with the evaluated paper version.
+
 <a id="dspy"></a>
 
 ## DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines
@@ -1436,6 +1564,8 @@
 **Topics:** foundations, prompts, workflows. **Reviewed:** abstract · 2026-10-28.
 
 [Source 1](https://arxiv.org/abs/2310.03714) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2024/hash/f1cf02ce09757f57c3b93c0db83181e0-Abstract-Conference.html) · [Source 3](https://github.com/stanfordnlp/dspy)
+
+**Related software:** [DSPy](systems.md#system-dspy). See each system's relationship note before equating it with the evaluated paper version.
 
 <a id="stop"></a>
 
@@ -1525,6 +1655,8 @@
 
 [Source 1](https://arxiv.org/abs/2308.10144) · [Source 2](https://arxiv.org/html/2308.10144v3) · [Source 3](https://ojs.aaai.org/index.php/AAAI/article/view/29936) · [Source 4](https://github.com/LeapLabTHU/ExpeL)
 
+**Related software:** [ExpeL](systems.md#system-expel). See each system's relationship note before equating it with the evaluated paper version.
+
 <a id="rest"></a>
 
 ## Reinforced Self-Training (ReST) for Language Modeling
@@ -1590,6 +1722,8 @@
 **Topics:** foundations, skills, tools, continual-learning. **Reviewed:** full-text · 2026-10-28.
 
 [Source 1](https://arxiv.org/abs/2305.16291) · [Source 2](https://arxiv.org/html/2305.16291v2) · [Source 3](https://openreview.net/pdf?id=ehfRiF0R3a) · [Source 4](https://github.com/MineDojo/Voyager)
+
+**Related software:** [Voyager](systems.md#system-voyager). See each system's relationship note before equating it with the evaluated paper version.
 
 <a id="creator"></a>
 

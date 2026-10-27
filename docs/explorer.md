@@ -1,25 +1,46 @@
-# Exploring the research visually
+# Exploring papers and systems
 
-[Overview](../README.md) · [Open the explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
+[Overview](../README.md) · [Open the explorer](https://duyvuleo.github.io/awesome-agents-that-learn/) · [Systems](systems.md)
 
-The explorer provides reading routes, a topic word cloud, a visual relationship graph, and an annotated catalog. They all use the same canonical records; the visuals do not add inferred citations or scientific claims.
+The explorer provides reading routes, a topic word cloud, a relationship graph, and an annotated resource listing. They share the canonical paper and software catalogs; the visuals add no inferred citations or scientific claims.
+
+## Tables, cards, and systems
+
+The default table makes titles, mechanisms, update targets, evidence labels, and source links easy to compare. Expand a row for the full annotation. The Cards option presents the same filtered records in a more spacious layout; selecting a graph node opens the corresponding evidence without changing the selected view. The view choice is included in shared URLs.
+
+Use **Systems** in the navigation or the resource-type filter to inspect software. System details include documented capabilities, requirements, availability, license pointers, evaluation limits, and related papers. Related-resource links work in both directions and clear incompatible filters when necessary to reveal the target.
+
+The collection has 83 research works and 23 systems, for 106 catalog resources. A paper and its implementation can describe the same research program. These are separate resource counts, not 106 independent scientific findings. Systems have inspection dates but no invented release dates; year filters apply to dated research records.
 
 ## Word cloud
 
-The words represent the collection's curated research themes. Sizes and displayed counts use the full collection, even when other filters are active. Larger words indicate more catalog works assigned to that theme. These are topic-membership counts, not raw word frequencies from paper abstracts or measures of scientific importance. One work can belong to several themes, so counts are not additive.
+Words represent curated research themes. Sizes and displayed counts use the full 106-resource collection even when filters are active. Larger words indicate more resources assigned to that theme. These are topic memberships, not raw word frequencies, scientific-importance scores, or independent-research counts. Membership counts overlap.
 
-Select a theme to filter the catalog; select the active theme again to clear it. The current view can also be narrowed by search, update target, resource type, scope, source-inspection depth, recorded year, and reading route.
+Select a theme to filter the graph and listing; select it again to clear it. Other filters include search, update target, resource type, scope, inspection depth, recorded year, and reading route. Reading routes remain sequences of research works.
 
-## Visual graph
+## Relationship graph
 
-The graph follows all active catalog filters and connects the matching works to all of their assigned themes. Selecting one theme therefore does not erase the other themes attached to those works. Topic-node sizes reflect the number of matching works. A line records a catalog membership. Positions and distances are only a navigation layout, not a learned embedding or similarity score. It does not mean that one paper cites another, that the methods are equivalent, that one result causes another, or that either work's claims were independently reproduced.
+The graph follows all active filters and connects each matching resource to all its assigned themes. Circular work nodes represent research publications; square system nodes represent software; topic nodes form the surrounding hubs. Selecting a theme does not erase the other themes belonging to the matched resources.
 
-Select a theme to focus the collection. Select a work to open its mechanism, evaluation boundary, and primary sources in the catalog. Use the graph's controls to inspect a crowded region and reset the view when needed. The ordinary catalog remains the text-based alternative for keyboard and screen-reader use.
+A line records a curated topic assignment, not a citation, implementation dependency, causal relationship, or proof of methodological equivalence. Positions and distances are only a navigation layout, not similarity scores. Topic-node sizes reflect matching resource counts.
 
-## Evidence and sharing
+Select a topic to focus the collection or a resource to open its full evidence. Hover/focus previews retain the evaluation boundary. Zoom/reset controls and desktop background dragging help inspect the graph. On small screens, use the graph's text-list alternative for precise selection; keyboard controls are also available.
 
-Search and filters determine the graph and catalog results; the word cloud retains full-collection counts as a navigation overview. The catalog's result count is the count of unique works. The graph has separate work and topic nodes; distinguish node counts from paper counts. The launch has 83 works, 15 themes, and 235 membership links. Selecting memory plus benchmark yields six works, six represented themes, and 21 memberships; those six works are still the same six shown in the catalog. Topic labels and graph connections are curation judgments, not a literature-wide taxonomy.
+Expected count examples for this edition:
 
-The address encodes catalog filters and the selected reading route. “Copy view link” shares that selection. JSON export contains the full filtered records, including sources, review depth, source dates, and limitations. Opening `site/index.html` locally works without a server; local file links cannot be shared as public URLs.
+| View | Research works | Systems | Represented themes | Membership links |
+| --- | --- | --- | --- | --- |
+| Full collection |83|23|15|308|
+| Systems only |0|23|12|73|
+| Systems + memory |0|9|8|28|
+| Benchmark papers + memory |6|0|6|21|
 
-`abstract` means primary abstract/metadata inspection. `full-text` means selected relevant sections were inspected. Neither label means the code was run or the published result was independently reproduced. The [review log](review-log.md) records the inspected sections, and the [search log](search-log.md) states coverage limits.
+These counts are for navigation and reproducibility of the catalog view, not capability measurements.
+
+## Evidence and export
+
+The address encodes filters, reading route, and table/cards view. “Copy view link” shares that selection. Browser JSON export keeps separate `papers` and `systems` arrays, counts, and the full canonical evidence fields. The CLI's JSON mode returns a flat array of raw matched records. Display adapters never turn system inspection dates into publication years.
+
+`abstract` means primary-abstract/metadata inspection; `full-text` means selected relevant sections were inspected; system `project` labels mean official documentation/source inspection. None means research code was executed or a result independently reproduced. See the [paper review log](review-log.md), [systems review](systems-review.md), and [coverage notes](search-log.md).
+
+Opening `site/index.html` locally works without a server. Local file URLs cannot be shared as public links. README badges are generated from catalog counts; the GitHub validation badge checks repository consistency, not scientific correctness.

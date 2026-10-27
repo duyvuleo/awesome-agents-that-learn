@@ -47,3 +47,7 @@ Useful leads not yet admitted after full source triage include Memento, AgeMem, 
 Ordinary fixed agent frameworks, unverified third-party implementations, commercial claims without a research source, and papers encountered only in aggregator snippets were excluded. Missing official code links mean availability was not established, not that no code exists.
 
 Link-check limitations and restricted responses are recorded in [link checks](link-checks.md). Later corrections should update the affected record, review date, and changelog while preserving what was actually inspected.
+
+## Systems expansion: 2026-10-28
+
+Added 23 official software records after separate README, documentation, and license inspection. They are not added to the 83-work literature count. See the [systems source review](systems-review.md) for selection, current-source differences, and execution limits. Research implementations, optimization frameworks, memory libraries, training frameworks, and applications are labeled separately.

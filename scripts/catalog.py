@@ -32,7 +32,7 @@ def identity(url):
 
 
 def sort_key(record):
-    return (record["year"], len(record["date"]) == 10, record["date"], record["id"])
+    return (record.get("year") or 0, len(record.get("date") or "") == 10, record.get("date") or "", record["id"])
 
 
 def validate_records(records, meta):
@@ -88,5 +88,56 @@ def validate_records(records, meta):
             if dated.year != r["year"] or dated > checked or checked > dt.date.fromisoformat(meta["updated"]):
                 raise ValueError("inconsistent date")
         except (TypeError, ValueError) as exc:
+            errors.append(f"{label}: {exc}")
+    return errors
+
+
+def validate_systems(systems, meta, papers):
+    """Validate software separately from publications; do not invent release dates."""
+    paper_ids = {p["id"] for p in papers}
+    ids, urls, errors = set(paper_ids), set(), []
+    required = {"id", "name", "category", "url", "docs_url", "related_papers", "relationship_note", "topics", "update_targets", "persistence", "scope", "learning_signal", "mechanism", "capabilities", "evaluation", "limitations", "availability_note", "license", "license_url", "requirements", "sources", "checked", "review_depth", "execution_status"}
+    for i, r in enumerate(systems):
+        label = r.get("id", f"system {i}")
+        missing = required - r.keys()
+        if missing:
+            errors.append(f"{label}: missing {sorted(missing)}")
+            continue
+        if not re.fullmatch(r"system-[a-z0-9]+(?:-[a-z0-9]+)*", label) or label in ids:
+            errors.append(f"{label}: invalid or duplicate system id")
+        ids.add(label)
+        if identity(r["url"]) in urls:
+            errors.append(f"{label}: duplicate software identity")
+        urls.add(identity(r["url"]))
+        if r["category"] not in meta["system_categories"]:
+            errors.append(f"{label}: invalid system category")
+        for field in ["name", "relationship_note", "learning_signal", "mechanism", "evaluation", "limitations", "availability_note", "license", "requirements"]:
+            if not isinstance(r[field], str) or not r[field].strip():
+                errors.append(f"{label}: empty {field}")
+        for field, allowed in [("topics", meta["topics"]), ("update_targets", meta["update_targets"])]:
+            if not isinstance(r[field], list) or not r[field] or len(set(r[field])) != len(r[field]) or set(r[field]) - set(allowed):
+                errors.append(f"{label}: invalid {field}")
+        if r["scope"] not in {"core", "adjacent"} or r["persistence"] not in {"across-tasks", "within-task", "both", "not-applicable"}:
+            errors.append(f"{label}: invalid scope or persistence")
+        if r["review_depth"] != "project" or r["execution_status"] != "not-run":
+            errors.append(f"{label}: project inspection must not imply execution")
+        if not isinstance(r["capabilities"], list) or not r["capabilities"] or any(not isinstance(c, str) or not c.strip() for c in r["capabilities"]):
+            errors.append(f"{label}: invalid capabilities")
+        if not isinstance(r["related_papers"], list) or len(set(r["related_papers"])) != len(r["related_papers"]) or set(r["related_papers"]) - paper_ids:
+            errors.append(f"{label}: invalid related paper reference")
+        if not isinstance(r["sources"], list) or not r["sources"]:
+            errors.append(f"{label}: missing sources")
+            continue
+        for field in ["url", "docs_url", "license_url"]:
+            if r[field] and r[field] not in r["sources"]:
+                errors.append(f"{label}: {field} must be in sources")
+        for url in r["sources"]:
+            parsed = urlsplit(url)
+            if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
+                errors.append(f"{label}: invalid public HTTPS URL")
+        try:
+            if dt.date.fromisoformat(r["checked"]) > dt.date.fromisoformat(meta["updated"]):
+                raise ValueError("review date after collection update")
+        except (ValueError, TypeError) as exc:
             errors.append(f"{label}: {exc}")
     return errors

@@ -15,7 +15,7 @@
   <a class="skip-link" href="#catalog">Skip to research catalog</a>
   <header class="site-header wrap">
     <a class="brand" href="#" aria-label="Agents That Learn home"><span class="brand-mark" aria-hidden="true">↗</span><span>AGENTS<br>THAT LEARN</span></a>
-    <nav aria-label="Main navigation"><a href="#routes">Reading routes</a><a href="#visuals">Visual map</a><a href="#catalog">Catalog</a><a class="repo-link" href="https://github.com/duyvuleo/awesome-agents-that-learn">GitHub <span aria-hidden="true">↗</span></a></nav>
+    <nav aria-label="Main navigation"><a href="#routes">Reading routes</a><a href="#visuals">Visual map</a><a class="nav-catalog" href="#catalog">Catalog</a><a id="systems-nav" href="?kind=system#catalog">Systems</a><a class="repo-link" href="https://github.com/duyvuleo/awesome-agents-that-learn">GitHub <span aria-hidden="true">↗</span></a></nav>
   </header>
   <main>
     <section class="hero wrap" aria-labelledby="hero-title">
@@ -23,7 +23,7 @@
         <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> A LIVING RESEARCH COLLECTION</p>
         <h1 id="hero-title">Agents that<br><em>learn.</em></h1>
         <p class="hero-deck">How do AI agents turn experience into lasting capability?</p>
-        <p class="hero-description">Explore the research on self-learning, self-improving, and self-evolving agents. Follow the mechanisms, compare the evidence, and find your next paper.</p>
+        <p class="hero-description">Explore research and systems for self-learning, self-improving, and self-evolving agents. Follow the mechanisms, compare the evidence, and find your next paper or codebase.</p>
         <a class="primary-link" href="#catalog">Explore the research <span aria-hidden="true">↓</span></a>
       </div>
       <div class="learning-map" aria-label="The collection asks what changes, what drives learning, and what evidence supports improvement">
@@ -34,7 +34,7 @@
         <p class="map-footnote">A change is a starting point.<br> Improvement needs evidence.</p>
       </div>
     </section>
-    <div class="stats-band"><div class="wrap stats"><div><strong id="total-count">—</strong><span>annotated works</span></div><div><strong id="topic-count">—</strong><span>research themes</span></div><div><strong id="route-count">—</strong><span>reading routes</span></div><p>Primary sources. Original annotations.<br><span id="last-checked">Source checks recorded per entry.</span></p></div></div>
+    <div class="stats-band"><div class="wrap stats"><div><strong id="total-count">—</strong><span>research works</span></div><div><strong id="system-count">—</strong><span>systems</span></div><div><strong id="topic-count">—</strong><span>research themes</span></div><div><strong id="route-count">—</strong><span>reading routes</span></div><p>Literature and software counted separately.<br><span id="last-checked">Source checks recorded per entry.</span></p></div></div>
     <section class="wrap route-section" id="routes" aria-labelledby="routes-title">
       <div class="section-heading"><div><p class="eyebrow">FIND YOUR WAY IN</p><h2 id="routes-title">Start with a question.</h2></div><p>Guided reading, from an idea<br>to a question worth testing.</p></div>
       <div class="route-grid" id="route-options"></div>
@@ -44,7 +44,7 @@
       <div class="section-heading"><div><p class="eyebrow">THE RESEARCH LIBRARY</p><h2 id="catalog-title">Follow the evidence.</h2></div><a id="guide-link" href="https://github.com/duyvuleo/awesome-agents-that-learn#readme">About this collection <span aria-hidden="true">↗</span></a></div>
       <div class="filter-panel">
         <div class="primary-filters">
-          <div class="search-field"><label for="search">Search the collection</label><input id="search" type="search" placeholder="Try memory, self-play, or a paper title…" autocomplete="off"></div>
+          <div class="search-field"><label for="search">Search the collection</label><input id="search" type="search" placeholder="Try memory, self-play, or a system name…" autocomplete="off"></div>
           <div><label for="topic">Research theme</label><select id="topic"><option value="">All themes</option></select></div>
           <div><label for="target">What changes?</label><select id="target"><option value="">All update targets</option></select></div>
         </div>
@@ -59,29 +59,30 @@
       </div>
       <div class="visual-discovery" id="visuals">
         <section class="cloud-section" aria-labelledby="cloud-title">
-          <div class="visual-heading"><div><p class="eyebrow">RESEARCH, AT A GLANCE</p><h3 id="cloud-title">A landscape of ideas.</h3></div><a href="#papers">Skip to the reading list ↓</a></div>
-          <p class="visual-explanation" id="cloud-description">Word size and counts show topic frequency across the full collection. A work can belong to several topics. Select a topic to filter the graph and reading list.</p>
-          <div class="word-cloud" id="word-cloud" aria-label="Topics weighted by number of works in the full collection" aria-describedby="cloud-description"></div>
+          <div class="visual-heading"><div><p class="eyebrow">RESEARCH, AT A GLANCE</p><h3 id="cloud-title">A landscape of ideas.</h3></div><a href="#papers">Skip to the resource list ↓</a></div>
+          <p class="visual-explanation" id="cloud-description">Word size and counts show topic frequency across all literature and software records. Topics overlap, and a paper and its related system may describe the same research lineage. Select a topic to filter the graph and resource list.</p>
+          <div class="word-cloud" id="word-cloud" aria-label="Topics weighted by number of resources in the full collection" aria-describedby="cloud-description"></div>
           <p class="cloud-selection" id="cloud-selection" role="status" aria-live="polite"></p>
         </section>
         <section class="graph-section" aria-labelledby="graph-title">
-          <div class="visual-heading"><div><p class="eyebrow">FOLLOW THE CONNECTIONS</p><h3 id="graph-title">Ideas meet the literature.</h3></div><div class="graph-legend" aria-label="Graph legend"><span><i class="legend-topic" aria-hidden="true"></i>Topic</span><span><i class="legend-work" aria-hidden="true"></i>Work</span><span><i class="legend-line" aria-hidden="true"></i>Membership</span></div></div>
-          <p class="visual-explanation" id="graph-description">Each line connects a work to one of its catalog topics. These are curated topic memberships, not citations or causal relationships. Positions and distances aid navigation; they are not similarity scores. This graph follows every active filter.</p>
+          <div class="visual-heading"><div><p class="eyebrow">FOLLOW THE CONNECTIONS</p><h3 id="graph-title">Ideas, papers, and systems.</h3></div><div class="graph-legend" aria-label="Graph legend"><span><i class="legend-topic" aria-hidden="true"></i>Topic</span><span><i class="legend-work" aria-hidden="true"></i>Research work</span><span><i class="legend-system" aria-hidden="true"></i>System</span><span><i class="legend-line" aria-hidden="true"></i>Membership</span></div></div>
+          <p class="visual-explanation" id="graph-description">Each line connects a resource to a catalog topic; topic numbers count matching resources. These are curated memberships, not citations, causal links, or paper–software equivalence. Positions and distances aid navigation, not similarity measurement. Every active filter applies.</p>
           <div class="graph-toolbar"><p id="graph-count" role="status" aria-live="polite"></p><div class="graph-controls"><button id="graph-zoom-out" type="button" aria-label="Zoom graph out">−</button><span id="graph-zoom-label" aria-live="polite">100%</span><button id="graph-zoom-in" type="button" aria-label="Zoom graph in">+</button><button id="graph-reset" type="button">Reset view</button></div></div>
           <div class="graph-canvas" id="graph-canvas">
-            <svg id="research-graph" viewBox="0 0 1100 720" role="group" aria-label="Interactive graph of works and their topics" aria-describedby="graph-description graph-help" tabindex="0"><desc>Focus a topic or work to inspect its connections. Activate a topic to filter; activate a work to open its annotated entry.</desc><g id="graph-stage"></g></svg>
+            <svg id="research-graph" viewBox="0 0 1100 720" role="group" aria-label="Interactive graph of research works, systems, and topics" aria-describedby="graph-description graph-help" tabindex="0"><desc>Focus a topic or resource to inspect its connections. Activate a topic to filter; activate a research work or system to open its annotated entry.</desc><g id="graph-stage"></g></svg>
             <div class="graph-empty" id="graph-empty" hidden><span aria-hidden="true">∅</span><h4>No connections in this view.</h4><p>Broaden the search or clear filters to restore the map.</p><button id="graph-empty-clear" type="button">Clear filters</button></div>
           </div>
-          <div class="graph-inspector" id="graph-inspector" aria-live="polite"><p class="inspector-kicker">EXPLORE A CONNECTION</p><h4>Select a topic. Discover a paper.</h4><p>Hover or focus a node to inspect it. Select a topic to narrow the map; select a work to open its evidence notes below.</p></div>
-          <div class="graph-bottom"><p id="graph-help">Drag the background with a mouse to pan. Use + / − to zoom, or focus the graph and use arrow keys. On a small screen, use the work list below for precise selection. Full topic names appear on focus.</p><a href="#papers">Go to matching works ↓</a></div>
-          <details class="graph-list-alternative"><summary>Browse the graph as a list <span id="graph-list-count"></span></summary><div class="graph-list-controls"><div><label for="graph-work-select">Matching work</label><select id="graph-work-select"><option value="">Choose a work</option></select></div><button id="graph-open-work" type="button" disabled>Open evidence notes <span aria-hidden="true">↓</span></button></div><p>Uses the same filtered works as the graph. Topic buttons in the word cloud provide the corresponding topic list.</p></details>
+          <div class="graph-inspector" id="graph-inspector" aria-live="polite"><p class="inspector-kicker">EXPLORE A CONNECTION</p><h4>Discover a paper or system.</h4><p>Hover or focus a node to inspect it. Select a topic to narrow the map; select a resource to open its evidence notes below.</p></div>
+          <div class="graph-bottom"><p id="graph-help">Drag the background with a mouse to pan. Use + / − to zoom, or focus the graph and use arrow keys. On a small screen, use the resource list below for precise selection. Full topic names appear on focus.</p><a href="#papers">Go to matching resources ↓</a></div>
+          <details class="graph-list-alternative"><summary>Browse the graph as a list <span id="graph-list-count"></span></summary><div class="graph-list-controls"><div><label for="graph-work-select">Matching resource</label><select id="graph-work-select"><option value="">Choose a resource</option></select></div><button id="graph-open-work" type="button" disabled>Open evidence notes <span aria-hidden="true">↓</span></button></div><p>Uses the same filtered resources as the graph. Topic buttons in the word cloud provide the corresponding topic list.</p></details>
         </section>
       </div>
       <div class="catalog-toolbar"><p id="result-count" role="status" aria-live="polite" aria-atomic="true">Loading the catalog…</p><div class="toolbar-actions"><button id="clear-filters" type="button">Clear filters</button><button id="share" type="button">Copy view link</button><button id="export" type="button">Export JSON <span aria-hidden="true">↗</span></button><label class="sort-label" for="sort">Sort<select id="sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label></div></div>
+      <div class="resource-view-bar"><div class="view-switch" role="group" aria-label="Resource list view"><button id="view-table" type="button" aria-pressed="true" aria-controls="papers">Table</button><button id="view-cards" type="button" aria-pressed="false" aria-controls="papers">Cards</button></div><p id="view-help">Compare entries in the table. Open Details for the complete annotation.</p></div>
       <p class="inspection-note">“Inspected” describes the sources reviewed for an annotation. It does not mean the code was run or the results independently reproduced.</p>
       <p class="action-status" id="action-status" role="status" aria-live="polite"></p>
-      <div class="paper-grid" id="papers"></div>
-      <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">∅</span><h3>No works match this view.</h3><p>Try a broader search or remove a filter.</p><button id="empty-clear" type="button">Show the full collection</button></div>
+      <div class="resource-results" id="papers"></div>
+      <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">∅</span><h3>No resources match this view.</h3><p>Try a broader search or remove a filter. Year filters apply to literature; system release dates are not recorded.</p><button id="empty-clear" type="button">Show the full collection</button></div>
       <noscript><p class="notice">This explorer needs JavaScript. The complete annotated catalog and reading routes are also available in the <a href="https://github.com/duyvuleo/awesome-agents-that-learn">GitHub repository</a>.</p></noscript>
     </section>
     <section class="wrap closing-note"><span class="eyebrow">READ CRITICALLY. KEEP LEARNING.</span><p>Published papers, available code, and reproduced results are different kinds of evidence. This collection keeps those distinctions visible.</p><a id="contribute-link" href="https://github.com/duyvuleo/awesome-agents-that-learn/blob/main/CONTRIBUTING.md">Suggest a paper or correction <span aria-hidden="true">↗</span></a></section>

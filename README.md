@@ -6,15 +6,23 @@
 
 # Awesome Agents That Learn
 
+[![Interactive explorer: Open](https://img.shields.io/badge/Interactive%20explorer-Open-0f766e?style=flat-square)](https://duyvuleo.github.io/awesome-agents-that-learn/)
+[![Awesome](https://awesome.re/badge.svg)](https://github.com/sindresorhus/awesome/blob/main/awesome.md)
+[![Validate catalog](https://github.com/duyvuleo/awesome-agents-that-learn/actions/workflows/validate-and-publish.yml/badge.svg?branch=main)](https://github.com/duyvuleo/awesome-agents-that-learn/actions/workflows/validate-and-publish.yml)
+[![License: CC0 1.0](https://img.shields.io/badge/License-CC0%201.0-315da7?style=flat-square)](LICENSE)
+[![Research works: 83](https://img.shields.io/badge/Research%20works-83-315da7?style=flat-square)](docs/papers.md)
+[![Systems & frameworks: 23](https://img.shields.io/badge/Systems%20%26%20frameworks-23-0f766e?style=flat-square)](docs/systems.md)
+[![Benchmark papers: 9](https://img.shields.io/badge/Benchmark%20papers-9-b45309?style=flat-square)](docs/benchmarks.md)
+
 **A research guide to self-learning, self-improving, and self-evolving AI agents.**
 
 How do agents turn experience into something useful on the next task? This collection follows the research from reflection and reusable memories to learned skills, agent redesign, self-play, and model updates. Each work explains **what changes, what drives the change, and what evidence supports improvement**.
 
-[Explore the collection](https://duyvuleo.github.io/awesome-agents-that-learn/) · [Start reading](docs/reading-routes.md) · [Browse papers](docs/papers.md) · [Compare benchmarks](docs/benchmarks.md)
+[Explore the collection](https://duyvuleo.github.io/awesome-agents-that-learn/) · [Start reading](docs/reading-routes.md) · [Browse papers](docs/papers.md) · [Compare systems](docs/systems.md) · [Compare benchmarks](docs/benchmarks.md)
 
-**83 annotated works** · 69 papers · 5 surveys · 9 benchmark papers · **8 reading routes**
+**83 research works** (69 papers, 5 surveys, 9 benchmark papers) · **23 systems and frameworks** · **8 reading routes**
 
-Source review: **2026-10-28**. 24 entries include inspection of selected full-text sections; 59 are based on primary abstracts/metadata. No linked research code was executed and no published result was independently reproduced for this release.
+Source review: **2026-10-28**. For research works, 24 entries include inspection of selected full-text sections and 59 are based on primary abstracts/metadata. Systems are separate project-documentation/source inspections. No linked research code was executed and no published result was independently reproduced for this release.
 
 ## Start here
 
@@ -22,6 +30,7 @@ Source review: **2026-10-28**. 24 entries include inspection of selected full-te
 2. Choose a [reading route](docs/reading-routes.md) and compare mechanisms, rather than reading by date alone.
 3. Use the [evaluation guide](docs/evaluation-guide.md) to ask whether gains survive new tasks, a fair baseline, and a fixed budget.
 4. Keep your own notes with the [study template](docs/study-template.md).
+5. Compare [systems and frameworks](docs/systems.md) by capabilities, requirements, license, and paper relationship before choosing an implementation to study.
 
 ## Choose a reading route
 
@@ -35,6 +44,7 @@ Source review: **2026-10-28**. 24 entries include inspection of selected full-te
 | What does it mean to improve the improver? | [Recursive improvement](docs/reading-routes.md#recursive-improvement) |
 | How can we tell whether learning actually helped? | [Evaluation and failure modes](docs/reading-routes.md#evaluation) |
 | Does learning persist without forgetting or drift? | [Continual learning](docs/reading-routes.md#continual-learning) |
+| What software can I inspect or build on? | [Systems and frameworks](docs/systems.md), with availability and version notes |
 
 ## A few entry points
 
@@ -54,11 +64,12 @@ These are complementary starting points, not a leaderboard. Their tasks, feedbac
 
 - [All annotated works](docs/papers.md), [by topic](docs/topics.md), or [by year](docs/by-year.md).
 - [Benchmark comparison](docs/benchmarks.md) and [official code/data links](docs/code.md).
+- [Systems and frameworks](docs/systems.md): research implementations, optimization frameworks, memory libraries, training frameworks, and agent applications.
 - [Search method, coverage, and unresolved leads](docs/search-log.md).
-- [Source-review notes](docs/review-log.md) and [link-check results](docs/link-checks.md).
+- [Paper-review notes](docs/review-log.md), [systems-review notes](docs/systems-review.md), and [link-check results](docs/link-checks.md).
 - [Related collections](docs/related-collections.md).
 
-The [interactive explorer](https://duyvuleo.github.io/awesome-agents-that-learn/) includes a clickable research-theme word cloud, an interactive paper–topic graph, search, reading routes, evidence filters, and JSON export. The visual links represent catalog topic memberships, not citations or measured similarity. See the [explorer guide](docs/explorer.md) for interaction and count semantics. Its entries come from the same catalog as these Markdown pages. You can also open `site/index.html` locally; it needs no account, API key, or server.
+The [interactive explorer](https://duyvuleo.github.io/awesome-agents-that-learn/) includes a clickable research-theme word cloud, an interactive resource–topic graph, search, reading routes, evidence filters, and JSON export. Use the Systems navigation or resource-type filter to browse software. Visual links represent topic memberships, not citations or measured similarity; paper and software nodes can belong to the same research program. See the [explorer guide](docs/explorer.md) for interaction and count semantics. Its entries come from the same catalogs as these Markdown pages. You can also open `site/index.html` locally; it needs no account, API key, or server.
 
 ## Scope and evidence
 
@@ -70,6 +81,8 @@ The focus is modern language-model-based agents that retain or change a reusable
 
 This is a maintained learning collection with documented coverage limits. It is not an exhaustive survey or a ranking of systems.
 
+Systems are counted separately from research works. Their annotations describe inspected official sources, with requirements, license pointers, paper relationships, and version boundaries. Source availability does not establish successful installation, deployment readiness, or reproduction of a paper's scores. No release dates are inferred from inspection dates.
+
 ## Use and contribute
 
 Search offline with Python 3.10 or newer; no third-party packages are required:
@@ -78,11 +91,14 @@ Search offline with Python 3.10 or newer; no third-party packages are required:
 python3 scripts/explore.py "memory" --scope core
 python3 scripts/explore.py --kind benchmark --format json
 python3 scripts/explore.py --target agent-code
+python3 scripts/explore.py --kind system --format json
 ```
 
-Suggest a paper, correct an annotation, or contribute a reading note through an issue or pull request. Read [CONTRIBUTING.md](CONTRIBUTING.md) for source requirements and [maintenance](docs/maintenance.md) for validation commands. The canonical records live in [data/papers.json](data/papers.json); generated pages should not be edited directly.
+Suggest a paper or system, correct an annotation, or contribute a reading note through an issue or pull request. Read [CONTRIBUTING.md](CONTRIBUTING.md) for source requirements and [maintenance](docs/maintenance.md) for validation commands. Canonical records live in [data/papers.json](data/papers.json) and [data/systems.json](data/systems.json); generated pages should not be edited directly.
 
 This collection is AI-assisted and maintainer-owned. Automated validation checks structure and consistency; it does not establish scientific truth. No recurring autonomous update job is configured.
+
+Badge counts come from the canonical catalogs. Benchmark papers are a subset of research works, and systems can implement those same works; these counts are not additive independent research results. The Awesome badge identifies the collection format, not acceptance into a central index. The validation badge reports repository checks, not scientific reproduction.
 
 ## Companion collections
 

@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import re
 from urllib.parse import unquote, urlsplit
-from catalog import ROOT, load, validate_records
+from catalog import ROOT, load, validate_records, validate_systems
 
 
 def anchors(text):
@@ -38,7 +38,8 @@ def validate_links(root=ROOT):
 
 def main():
     records, meta, routes = load(), load("collection.json"), load("routes.json")
-    errors = validate_records(records, meta)
+    systems = load("systems.json")
+    errors = validate_records(records, meta) + validate_systems(systems, meta, records)
     ids = {r["id"] for r in records}
     route_ids = set()
     for route in routes:
@@ -53,7 +54,7 @@ def main():
     errors.extend(validate_links())
     if errors:
         raise SystemExit("\n".join(errors))
-    print(f"Validated {len(records)} works, {len(routes)} routes, metadata, and local Markdown links.")
+    print(f"Validated {len(records)} works, {len(systems)} systems, {len(routes)} routes, metadata, and local Markdown links.")
 
 
 if __name__ == "__main__":

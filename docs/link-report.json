@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-10-27T22:54:07.193054+00:00",
+  "checked_at_utc": "2026-10-27T23:29:46.638333+00:00",
   "scope": "all-catalog-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -940,6 +940,48 @@
       "status": "reachable"
     },
     {
+      "url": "https://docs.letta.com/configuration/memory",
+      "http_status": 200,
+      "final_url": "https://docs.letta.com/configuration/memory",
+      "status": "reachable"
+    },
+    {
+      "url": "https://docs.letta.com/configuration/mods",
+      "http_status": 200,
+      "final_url": "https://docs.letta.com/configuration/mods",
+      "status": "reachable"
+    },
+    {
+      "url": "https://dspy.ai/",
+      "http_status": 200,
+      "final_url": "https://dspy.ai/current/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://gepa-ai.github.io/gepa/",
+      "http_status": 200,
+      "final_url": "https://gepa-ai.github.io/gepa/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ANative-Lab/EvoAgentX",
+      "http_status": 200,
+      "final_url": "https://github.com/ANative-Lab/EvoAgentX",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ANative-Lab/EvoAgentX/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/ANative-Lab/EvoAgentX/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ANative-Lab/EvoAgentX/blob/main/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/ANative-Lab/EvoAgentX/blob/main/README.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/Arvid-pku/Godel_Agent",
       "http_status": 200,
       "final_url": "https://github.com/Arvid-pku/Godel_Agent",
@@ -952,6 +994,24 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/Continual-Intelligence/SEAL/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/Continual-Intelligence/SEAL/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Continual-Intelligence/SEAL/blob/main/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/Continual-Intelligence/SEAL/blob/main/README.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Continual-Intelligence/SEAL/blob/main/general-knowledge/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/Continual-Intelligence/SEAL/blob/main/general-knowledge/README.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/EvoAgentX/EvoAgentX",
       "http_status": 200,
       "final_url": "https://github.com/ANative-Lab/EvoAgentX",
@@ -961,6 +1021,18 @@
       "url": "https://github.com/FoundationAgents/AFlow",
       "http_status": 200,
       "final_url": "https://github.com/FoundationAgents/AFlow",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/FoundationAgents/AFlow/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/FoundationAgents/AFlow/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/FoundationAgents/AFlow/blob/main/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/FoundationAgents/AFlow/blob/main/README.md",
       "status": "reachable"
     },
     {
@@ -982,9 +1054,27 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner/blob/master/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner/blob/master/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner/blob/master/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner/blob/master/README.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/LeapLabTHU/ExpeL",
       "http_status": 200,
       "final_url": "https://github.com/LeapLabTHU/ExpeL",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/LeapLabTHU/ExpeL/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/LeapLabTHU/ExpeL/blob/main/LICENSE",
       "status": "reachable"
     },
     {
@@ -994,15 +1084,51 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/MaximeRobeyns/self_improving_coding_agent/blob/master/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/MaximeRobeyns/self_improving_coding_agent/blob/master/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/MaximeRobeyns/self_improving_coding_agent/blob/master/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/MaximeRobeyns/self_improving_coding_agent/blob/master/README.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/MemTensor/MemRL",
       "http_status": 200,
       "final_url": "https://github.com/MemTensor/MemRL",
       "status": "reachable"
     },
     {
+      "url": "https://github.com/MemTensor/MemRL/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/MemTensor/MemRL/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/MineDojo/Voyager",
       "http_status": 200,
       "final_url": "https://github.com/MineDojo/Voyager",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/MineDojo/Voyager/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/MineDojo/Voyager/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "http_status": 200,
+      "final_url": "https://github.com/NousResearch/hermes-agent",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/NousResearch/hermes-agent/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/NousResearch/hermes-agent/blob/main/LICENSE",
       "status": "reachable"
     },
     {
@@ -1015,6 +1141,18 @@
       "url": "https://github.com/ShengranHu/ADAS",
       "http_status": 200,
       "final_url": "https://github.com/ShengranHu/ADAS",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ShengranHu/ADAS/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/ShengranHu/ADAS/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ShengranHu/ADAS/blob/main/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/ShengranHu/ADAS/blob/main/README.md",
       "status": "reachable"
     },
     {
@@ -1042,15 +1180,45 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/WujiangXu/A-mem-sys/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/WujiangXu/A-mem-sys/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/aiming-lab/Agent0",
       "http_status": 200,
       "final_url": "https://github.com/aiming-lab/Agent0",
       "status": "reachable"
     },
     {
+      "url": "https://github.com/aiming-lab/Agent0/blob/main/Agent0/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/aiming-lab/Agent0/blob/main/Agent0/README.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/aiming-lab/Agent0/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/aiming-lab/Agent0/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/aiming-lab/Agent0/blob/main/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/aiming-lab/Agent0/blob/main/README.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/aiming-lab/SkillRL",
       "http_status": 200,
       "final_url": "https://github.com/aiming-lab/SkillRL",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/aiming-lab/SkillRL/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/aiming-lab/SkillRL/blob/main/LICENSE",
       "status": "reachable"
     },
     {
@@ -1078,6 +1246,24 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/facebookresearch/HyperAgents",
+      "http_status": 200,
+      "final_url": "https://github.com/facebookresearch/HyperAgents",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/facebookresearch/HyperAgents/blob/main/LICENSE.md",
+      "http_status": 200,
+      "final_url": "https://github.com/facebookresearch/HyperAgents/blob/main/LICENSE.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/facebookresearch/HyperAgents/blob/main/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/facebookresearch/HyperAgents/blob/main/README.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/facebookresearch/Hyperagents",
       "http_status": 200,
       "final_url": "https://github.com/facebookresearch/Hyperagents",
@@ -1087,6 +1273,18 @@
       "url": "https://github.com/gepa-ai/gepa",
       "http_status": 200,
       "final_url": "https://github.com/gepa-ai/gepa",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/gepa-ai/gepa/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/gepa-ai/gepa/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/gepa-ai/gepa/blob/main/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/gepa-ai/gepa/blob/main/README.md",
       "status": "reachable"
     },
     {
@@ -1102,15 +1300,93 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/google-research/reasoning-bank/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/google-research/reasoning-bank/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/jennyzzt/dgm",
       "http_status": 200,
       "final_url": "https://github.com/jennyzzt/dgm",
       "status": "reachable"
     },
     {
+      "url": "https://github.com/jennyzzt/dgm/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/jennyzzt/dgm/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/jennyzzt/dgm/blob/main/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/jennyzzt/dgm/blob/main/README.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/joonspk-research/generative_agents",
       "http_status": 200,
       "final_url": "https://github.com/joonspk-research/generative_agents",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/langchain-ai/langmem",
+      "http_status": 200,
+      "final_url": "https://github.com/langchain-ai/langmem",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/langchain-ai/langmem/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/langchain-ai/langmem/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/letta-ai/letta",
+      "http_status": 200,
+      "final_url": "https://github.com/letta-ai/letta",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/letta-ai/letta-code",
+      "http_status": 200,
+      "final_url": "https://github.com/letta-ai/letta-code",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/letta-ai/letta-code/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/letta-ai/letta-code/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/mem0ai/mem0",
+      "http_status": 200,
+      "final_url": "https://github.com/mem0ai/mem0",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/mem0ai/mem0/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/mem0ai/mem0/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/microsoft/agent-lightning",
+      "http_status": 200,
+      "final_url": "https://github.com/microsoft/agent-lightning",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/microsoft/agent-lightning/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/microsoft/agent-lightning/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/microsoft/agent-lightning/blob/main/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/microsoft/agent-lightning/blob/main/README.md",
       "status": "reachable"
     },
     {
@@ -1135,6 +1411,18 @@
       "url": "https://github.com/stanfordnlp/dspy",
       "http_status": 200,
       "final_url": "https://github.com/stanfordnlp/dspy",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/stanfordnlp/dspy/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/stanfordnlp/dspy/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/stanfordnlp/dspy/blob/main/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/stanfordnlp/dspy/blob/main/README.md",
       "status": "reachable"
     },
     {
@@ -1174,9 +1462,33 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/zorazrw/agent-workflow-memory/blob/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/zorazrw/agent-workflow-memory/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/zorazrw/agent-workflow-memory/tree/main/mind2web",
+      "http_status": 200,
+      "final_url": "https://github.com/zorazrw/agent-workflow-memory/tree/main/mind2web",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/zou-group/textgrad",
       "http_status": 200,
       "final_url": "https://github.com/zou-group/textgrad",
+      "status": "reachable"
+    },
+    {
+      "url": "https://hermes-agent.nousresearch.com/",
+      "http_status": 200,
+      "final_url": "https://hermes-agent.nousresearch.com/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://hermes-agent.nousresearch.com/docs",
+      "http_status": 200,
+      "final_url": "https://hermes-agent.nousresearch.com/docs",
       "status": "reachable"
     },
     {
@@ -1189,6 +1501,18 @@
       "url": "https://jyopari.github.io/posts/seal",
       "http_status": 200,
       "final_url": "https://jyopari.github.io/posts/seal",
+      "status": "reachable"
+    },
+    {
+      "url": "https://langchain-ai.github.io/langmem/",
+      "http_status": 200,
+      "final_url": "https://langchain-ai.github.io/langmem/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://microsoft.github.io/agent-lightning/stable/00-installation/",
+      "http_status": 200,
+      "final_url": "https://microsoft.github.io/agent-lightning/stable/00-installation/",
       "status": "reachable"
     },
     {
@@ -1425,13 +1749,13 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=72abf2f5-dca4-4411-9538-bb54e3d1c018",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=b08b9631-2f52-4c0f-8fb4-2eb2676317d3",
       "status": "reachable"
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=dd7d01d5-5625-4851-bf1f-59acc8097394",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=570e1d2b-a242-4db4-980c-e7a4eb9205e7",
       "status": "reachable"
     },
     {
@@ -1443,13 +1767,13 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=a67caae1-39f2-4984-9aae-6baf28df9a25",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=0724e9da-ee11-45ca-8dae-892364ea6ced",
       "status": "reachable"
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=84c21474-dd71-4289-b359-24529c088a94",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=d705ee01-fe47-4f6d-b4d7-a6782067de8a",
       "status": "reachable"
     },
     {

@@ -2,6 +2,7 @@
 
 # Official code and data links
 [Overview](../README.md) · [Full annotations](papers.md)
+For software capabilities, requirements, licensing, and implementation boundaries, see the separate [systems catalog](systems.md). This page lists paper-associated artifact links.
 Links identify official artifacts; inspection and availability limits are recorded in each note. No linked project was installed or executed for this release. Check the original license, dataset access, cost, environment, and version before use.
 | Work | Artifact | Inspection note |
 | --- | --- | --- |

@@ -32,3 +32,24 @@ Each route contains `id`, `title`, `question`, an ordered `steps` array of paper
 The validator checks identifiers, date consistency, controlled vocabularies, HTTPS URLs, required evidence fields, route references, and local navigation. arXiv URL variants and OpenReview forum/PDF identifiers normalize to one identity; no cross-publisher equivalence is inferred without evidence. Public link checks separately inspect reachability and arXiv title similarity. Neither check proves the annotation is scientifically correct.
 
 Dates sort newest first. Within a year, fully dated records precede year-only records; year-only entries are not assigned an invented month. Preserve source URLs, review depth, inspection dates, and limitations in exports. The CLI's JSON export and browser export retain complete records.
+
+## Systems catalog (schema version 2)
+
+`systems.json` is a separate array of software projects, not publications. The explorer payload keeps `papers` and `systems` in separate arrays. An implementation and its paper can represent the same research program; aggregate resource counts are not counts of independent findings.
+
+| System field | Meaning |
+| --- | --- |
+| `id`, `name`, `category` | Globally unique `system-` ID, project name, and category from `collection.json`. |
+| `url`, `docs_url` | Official repository and optional official documentation. |
+| `related_papers`, `relationship_note` | Existing paper IDs and the actual relationship: implementation, successor, evaluated system, or methodological connection. An empty list does not mean there is no paper anywhere. |
+| `capabilities`, `mechanism`, `learning_signal` | Concrete documented features and the mechanism that changes reusable state. External optimization and user-triggered workflows are stated explicitly. |
+| `topics`, `update_targets`, `scope`, `persistence` | The same curated vocabulary used for research works, applied to documented software behavior. |
+| `evaluation`, `limitations` | Project-reported evidence and its boundary, including differences between current source, managed services, and evaluated paper versions. |
+| `availability_note`, `requirements` | Public source/package status, setup dependencies, environment/model/compute prerequisites, and inspection limits. |
+| `license`, `license_url` | License observed in a primary source, or an explicit unknown. Licenses of linked models, datasets, dependencies, and services are separate. |
+| `sources`, `checked`, `review_depth` | Public primary sources, inspection date, and `project` review depth. |
+| `execution_status` | `not-run` for this documentation-only pass. A future execution claim needs a separately reviewed evidence schema/report. |
+
+Systems have no inferred `date` or `year`: an inspection date, repository creation date, or related paper date is not a software release date. Year filters apply to dated research records. Source-inspection status is not a peer-review label. The CLI's JSON output returns the raw canonical records; the browser exports separate `papers` and `systems` arrays and keeps their evidence fields.
+
+System IDs and repository identities must be unique within the software catalog, and related paper IDs must exist. Validators also check license/docs source membership, controlled vocabularies, and the explicit not-run boundary. Publication-paper deduplication remains separate from software identity.
