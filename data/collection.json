@@ -1,0 +1,36 @@
+{
+  "title": "Awesome Agents That Learn",
+  "subtitle": "A research guide to self-learning, self-improving, and self-evolving AI agents.",
+  "repository": "https://github.com/duyvuleo/awesome-agents-that-learn",
+  "site": "https://duyvuleo.github.io/awesome-agents-that-learn/",
+  "updated": "2026-10-28",
+  "schema_version": 1,
+  "topics": {
+    "foundations": "Foundations and boundaries",
+    "surveys": "Surveys and research maps",
+    "memory": "Memory and experience",
+    "skills": "Skill acquisition and reuse",
+    "tools": "Tool creation and learning",
+    "prompts": "Prompt and context optimization",
+    "workflows": "Workflow improvement",
+    "architecture": "Agent architecture",
+    "model-training": "Learning in model weights",
+    "self-play": "Self-play and curricula",
+    "continual-learning": "Continual and lifelong learning",
+    "recursive-improvement": "Improving the improver",
+    "evaluation": "Evaluation and negative results",
+    "safety": "Safety, drift, and integrity",
+    "applications": "Applied learning agents"
+  },
+  "update_targets": {
+    "model-weights": "Model weights",
+    "memory": "Memory",
+    "skills": "Skills",
+    "tools": "Tools",
+    "prompts": "Prompts / context",
+    "workflows": "Workflows",
+    "agent-code": "Agent code",
+    "multi-agent-organization": "Multi-agent organization",
+    "none": "Analysis / no retained update"
+  }
+}

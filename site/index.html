@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A research guide to self-learning, self-improving, and self-evolving AI agents. Explore what changes, what drives learning, and what the evidence establishes.">
+  <meta name="theme-color" content="#172d38">
+  <title>Awesome Agents That Learn — Research Explorer</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="catalog.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#catalog">Skip to research catalog</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#" aria-label="Agents That Learn home"><span class="brand-mark" aria-hidden="true">↗</span><span>AGENTS<br>THAT LEARN</span></a>
+    <nav aria-label="Main navigation"><a href="#routes">Reading routes</a><a href="#catalog">Catalog</a><a class="repo-link" href="https://github.com/duyvuleo/awesome-agents-that-learn">GitHub <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> A LIVING RESEARCH COLLECTION</p>
+        <h1 id="hero-title">Agents that<br><em>learn.</em></h1>
+        <p class="hero-deck">How do AI agents turn experience into lasting capability?</p>
+        <p class="hero-description">Explore the research on self-learning, self-improving, and self-evolving agents. Follow the mechanisms, compare the evidence, and find your next paper.</p>
+        <a class="primary-link" href="#catalog">Explore the research <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="learning-map" aria-label="The collection asks what changes, what drives learning, and what evidence supports improvement">
+        <div class="map-caption"><span>THE LEARNING LOOP</span><span aria-hidden="true">01 — 03</span></div>
+        <div class="map-node"><span class="node-number">01</span><div><h2>Experience</h2><p>Actions, outcomes, feedback</p></div><span class="node-symbol" aria-hidden="true">↘</span></div>
+        <div class="map-node"><span class="node-number">02</span><div><h2>Change</h2><p>Memory, skills, tools, models</p></div><span class="node-symbol" aria-hidden="true">↘</span></div>
+        <div class="map-node"><span class="node-number">03</span><div><h2>Evidence</h2><p>Transfer, retention, limitations</p></div><span class="node-symbol" aria-hidden="true">↺</span></div>
+        <p class="map-footnote">A change is a starting point.<br> Improvement needs evidence.</p>
+      </div>
+    </section>
+    <div class="stats-band"><div class="wrap stats"><div><strong id="total-count">—</strong><span>annotated works</span></div><div><strong id="topic-count">—</strong><span>research themes</span></div><div><strong id="route-count">—</strong><span>reading routes</span></div><p>Primary sources. Original annotations.<br><span id="last-checked">Source checks recorded per entry.</span></p></div></div>
+    <section class="wrap route-section" id="routes" aria-labelledby="routes-title">
+      <div class="section-heading"><div><p class="eyebrow">FIND YOUR WAY IN</p><h2 id="routes-title">Start with a question.</h2></div><p>Guided reading, from an idea<br>to a question worth testing.</p></div>
+      <div class="route-grid" id="route-options"></div>
+      <div class="route-detail" id="route-detail" hidden></div>
+    </section>
+    <section class="wrap catalog-section" id="catalog" aria-labelledby="catalog-title">
+      <div class="section-heading"><div><p class="eyebrow">THE RESEARCH LIBRARY</p><h2 id="catalog-title">Follow the evidence.</h2></div><a id="guide-link" href="https://github.com/duyvuleo/awesome-agents-that-learn#readme">About this collection <span aria-hidden="true">↗</span></a></div>
+      <div class="filter-panel">
+        <div class="primary-filters">
+          <div class="search-field"><label for="search">Search the collection</label><input id="search" type="search" placeholder="Try memory, self-play, or a paper title…" autocomplete="off"></div>
+          <div><label for="topic">Research theme</label><select id="topic"><option value="">All themes</option></select></div>
+          <div><label for="target">What changes?</label><select id="target"><option value="">All update targets</option></select></div>
+        </div>
+        <details class="advanced-filters" id="advanced-filters"><summary>More filters <span id="advanced-count"></span></summary><div class="advanced-grid">
+          <div><label for="kind">Resource type</label><select id="kind"><option value="">All types</option></select></div>
+          <div><label for="scope">Collection scope</label><select id="scope"><option value="">Core + adjacent</option><option value="core">Core</option><option value="adjacent">Adjacent</option></select></div>
+          <div><label for="depth">Source inspection</label><select id="depth"><option value="">All inspection depths</option><option value="full-text">Selected full text</option><option value="abstract">Abstract</option><option value="project">Project documentation</option></select></div>
+          <div><label for="year">Recorded year</label><select id="year"><option value="">All years</option></select></div>
+          <div><label for="route">Reading route</label><select id="route"><option value="">All reading routes</option></select></div>
+        </div></details>
+        <div class="theme-pills" id="theme-pills" aria-label="Quick theme filters"></div>
+      </div>
+      <div class="catalog-toolbar"><p id="result-count" role="status" aria-live="polite" aria-atomic="true">Loading the catalog…</p><div class="toolbar-actions"><button id="clear-filters" type="button">Clear filters</button><button id="share" type="button">Copy view link</button><button id="export" type="button">Export JSON <span aria-hidden="true">↗</span></button><label class="sort-label" for="sort">Sort<select id="sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label></div></div>
+      <p class="inspection-note">“Inspected” describes the sources reviewed for an annotation. It does not mean the code was run or the results independently reproduced.</p>
+      <p class="action-status" id="action-status" role="status" aria-live="polite"></p>
+      <div class="paper-grid" id="papers"></div>
+      <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">∅</span><h3>No works match this view.</h3><p>Try a broader search or remove a filter.</p><button id="empty-clear" type="button">Show the full collection</button></div>
+      <noscript><p class="notice">This explorer needs JavaScript. The complete annotated catalog and reading routes are also available in the <a href="https://github.com/duyvuleo/awesome-agents-that-learn">GitHub repository</a>.</p></noscript>
+    </section>
+    <section class="wrap closing-note"><span class="eyebrow">READ CRITICALLY. KEEP LEARNING.</span><p>Published papers, available code, and reproduced results are different kinds of evidence. This collection keeps those distinctions visible.</p><a id="contribute-link" href="https://github.com/duyvuleo/awesome-agents-that-learn/blob/main/CONTRIBUTING.md">Suggest a paper or correction <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="wrap site-footer"><p>Awesome Agents That Learn <span aria-hidden="true">·</span> Curated by <a href="https://github.com/duyvuleo">duyvuleo</a></p><p>AI-assisted curation <span aria-hidden="true">·</span> <a id="license-link" href="https://github.com/duyvuleo/awesome-agents-that-learn/blob/main/LICENSE">CC0 annotations</a> <span aria-hidden="true">·</span> No tracking</p></footer>
+</body>
+</html>

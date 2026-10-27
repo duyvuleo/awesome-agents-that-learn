@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Cite primary papers for scientific claims. To reference this collection, also record the Git commit you used."
+title: "Awesome Agents That Learn"
+type: software
+authors:
+  - name: "duyvuleo"
+    website: "https://github.com/duyvuleo"
+repository-code: "https://github.com/duyvuleo/awesome-agents-that-learn"
+url: "https://duyvuleo.github.io/awesome-agents-that-learn/"
+license: CC0-1.0
+version: "2026.10.28"
+date-released: "2026-10-28"

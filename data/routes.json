@@ -1,0 +1,270 @@
+[
+  {
+    "id": "foundations",
+    "title": "Foundations and boundaries",
+    "question": "What is the difference between solving a task and learning something reusable?",
+    "steps": [
+      {
+        "paper": "react",
+        "why": "Identify the fixed reasoning/action loop and its observations."
+      },
+      {
+        "paper": "self-refine",
+        "why": "See how an answer can improve while the agent itself stays unchanged."
+      },
+      {
+        "paper": "reflexion",
+        "why": "Trace how verbal feedback affects retries, and ask what survives a new task."
+      },
+      {
+        "paper": "expel",
+        "why": "Follow the transition from individual trajectories to reusable cross-task insights."
+      },
+      {
+        "paper": "voyager",
+        "why": "Compare declarative insights with an executable skill library."
+      },
+      {
+        "paper": "self-evolving-survey",
+        "why": "Place the mechanisms in a broader what/when/how taxonomy."
+      }
+    ],
+    "exercise": "Draw two timelines: one for a single task and one spanning several tasks. Mark every state update and every reset."
+  },
+  {
+    "id": "memory-skills",
+    "title": "Memory and skills",
+    "question": "How can experience become useful knowledge, a procedure, or a reusable tool?",
+    "steps": [
+      {
+        "paper": "expel",
+        "why": "Start with extracting and reusing experience across tasks."
+      },
+      {
+        "paper": "agent-workflow-memory",
+        "why": "Follow workflow induction from successful trajectories."
+      },
+      {
+        "paper": "reasoningbank",
+        "why": "Compare reusable reasoning memories extracted from successes and failures."
+      },
+      {
+        "paper": "memrl",
+        "why": "Separate learning a memory utility estimate from updating the reasoning model."
+      },
+      {
+        "paper": "skillrl",
+        "why": "Contrast external skills with parameter learning and teacher-derived supervision."
+      },
+      {
+        "paper": "skillflow",
+        "why": "Examine whether skill use produces measurable benefit."
+      }
+    ],
+    "exercise": "For three methods, write the stored artifact, admission rule, retrieval rule, revision rule, and evidence that reuse helps."
+  },
+  {
+    "id": "agent-design",
+    "title": "Agent design and optimization",
+    "question": "Which parts of an agent can be optimized, and who performs that optimization?",
+    "steps": [
+      {
+        "paper": "dspy",
+        "why": "Understand compiling a declarative language-model pipeline with reusable parameters."
+      },
+      {
+        "paper": "promptbreeder",
+        "why": "Inspect evolution of prompts and mutation instructions."
+      },
+      {
+        "paper": "gepa",
+        "why": "Compare textual feedback with reward-only search."
+      },
+      {
+        "paper": "adas",
+        "why": "Expand the search from prompts to agent implementation code."
+      },
+      {
+        "paper": "aflow",
+        "why": "Study search over workflow operators and evaluation-driven selection."
+      },
+      {
+        "paper": "ace",
+        "why": "Contrast whole-prompt replacement with incremental context updates."
+      }
+    ],
+    "exercise": "Make an editable/fixed component table. Include proposer, search space, selector, evaluation set, and stopping rule."
+  },
+  {
+    "id": "model-learning",
+    "title": "Learning in model weights",
+    "question": "Where does supervision come from when a model helps generate its own training data?",
+    "steps": [
+      {
+        "paper": "star",
+        "why": "Track answer checks, rationale generation, and fine-tuning."
+      },
+      {
+        "paper": "self-instruct",
+        "why": "Distinguish generated instruction coverage from verified correctness."
+      },
+      {
+        "paper": "rest",
+        "why": "Examine the generation/filtering/learning cycle and its external reward signal."
+      },
+      {
+        "paper": "self-rewarding-lms",
+        "why": "Ask what changes when a model also supplies preference judgments."
+      },
+      {
+        "paper": "score",
+        "why": "Separate a learned correction policy from untrained prompting."
+      },
+      {
+        "paper": "seal",
+        "why": "Study generated self-edits, adaptation rewards, and retention limits."
+      }
+    ],
+    "exercise": "For each loop, label which information is human-provided, pretrained, environment-verified, or model-judged."
+  },
+  {
+    "id": "self-play",
+    "title": "Self-play and curricula",
+    "question": "Can a system generate useful challenges for itself?",
+    "steps": [
+      {
+        "paper": "alphago-zero",
+        "why": "Start with a domain whose rules and outcomes provide exact feedback."
+      },
+      {
+        "paper": "absolute-zero",
+        "why": "Move from game outcomes to executable reasoning tasks and proposer/solver roles."
+      },
+      {
+        "paper": "r-zero",
+        "why": "Inspect a challenger/solver curriculum and its dependence on model-derived signals."
+      },
+      {
+        "paper": "self-challenging-agents",
+        "why": "Study agent-generated tool-use challenges."
+      },
+      {
+        "paper": "agent0",
+        "why": "Compare curriculum and executor co-development under tool-related objectives."
+      },
+      {
+        "paper": "dr-zero",
+        "why": "Examine self-evolution in search, where external information changes the feedback setting."
+      }
+    ],
+    "exercise": "Explain what “zero data” excludes for each method and what prior information or engineered environment remains."
+  },
+  {
+    "id": "recursive-improvement",
+    "title": "Improving the improver",
+    "question": "Does a method change only the solver, or also the process that improves it?",
+    "steps": [
+      {
+        "paper": "stop",
+        "why": "Identify how generated program improvements can feed back into the improvement procedure."
+      },
+      {
+        "paper": "godel-agent",
+        "why": "Inspect self-referential program modification."
+      },
+      {
+        "paper": "darwin-godel-machine",
+        "why": "Study archive-based search and empirical selection of self-edits."
+      },
+      {
+        "paper": "hyperagents",
+        "why": "Trace which meta-agent components become editable and which outer controls remain fixed."
+      },
+      {
+        "paper": "modularrsi",
+        "why": "Inspect modular evolution and frozen downstream evaluation."
+      },
+      {
+        "paper": "trusting-trust-agents",
+        "why": "Test the assumption that an optimization benchmark is a trustworthy teacher."
+      }
+    ],
+    "exercise": "Draw the solver, proposer, selector, and evaluator separately. Highlight what can change and what evidence would demonstrate improvement of the improver."
+  },
+  {
+    "id": "evaluation",
+    "title": "Evaluation and failure modes",
+    "question": "What experiment would convince you that an agent learned something useful?",
+    "steps": [
+      {
+        "paper": "self-correction-survey",
+        "why": "Begin with feedback and fair-comparison pitfalls."
+      },
+      {
+        "paper": "past-bench",
+        "why": "Study matched retained-experience controls with fresh sessions."
+      },
+      {
+        "paper": "experience-faithfulness",
+        "why": "Distinguish a stored lesson from causal use of that lesson."
+      },
+      {
+        "paper": "agentstream",
+        "why": "Compare performance under different task-stream compositions."
+      },
+      {
+        "paper": "gdpevo",
+        "why": "Inspect training/test rule recombination and task-selection effects."
+      },
+      {
+        "paper": "phantom-gains",
+        "why": "Measure a frozen null before interpreting per-problem changes."
+      },
+      {
+        "paper": "trusting-trust-agents",
+        "why": "Include integrity of the learning signal and persistence of bad updates."
+      }
+    ],
+    "exercise": "Draft a matched frozen baseline, a held-out family split, a budget ledger, and one intervention that could falsify your preferred mechanism."
+  },
+  {
+    "id": "continual-learning",
+    "title": "Continual learning, retention, and drift",
+    "question": "Does learning persist when tasks and environments change?",
+    "steps": [
+      {
+        "paper": "lifelongagentbench",
+        "why": "Inspect inter-task dependencies and the limits of replay."
+      },
+      {
+        "paper": "ell-stulife",
+        "why": "Separate a proposed lifelong framework from its evaluated baseline protocol."
+      },
+      {
+        "paper": "longmemeval",
+        "why": "Study updates, temporal reasoning, and abstention in recalled information."
+      },
+      {
+        "paper": "agentstream",
+        "why": "Test whether one domain’s experience helps or interferes with another."
+      },
+      {
+        "paper": "seal",
+        "why": "Examine parameter adaptation and forgetting."
+      },
+      {
+        "paper": "model-collapse",
+        "why": "Understand distributional loss under recursive replacement assumptions."
+      },
+      {
+        "paper": "accumulating-data-model-collapse",
+        "why": "Compare replacement with accumulation, retaining the cost and assumption differences."
+      },
+      {
+        "paper": "safety-self-evolving-survey",
+        "why": "Extend retention questions to unsafe influence, repair, and resumed adaptation."
+      }
+    ],
+    "exercise": "Specify separate measures for factual memory, procedural transfer, backward retention, cost, and safety drift. Do not collapse them into one score."
+  }
+]

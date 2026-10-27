@@ -1,0 +1,25 @@
+name: Suggest a paper or correction
+description: Add a public primary source or improve an existing annotation.
+title: "[Research] "
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Primary source URL
+      description: Paper, proceedings, author project, or official repository.
+    validations:
+      required: true
+  - type: textarea
+    id: relevance
+    attributes:
+      label: What should we add or correct?
+      description: Explain what changes in the agent, the learning signal, and why the source fits.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evaluation and limits
+      description: Include relevant sections, artifact status, and what you have actually checked.
+    validations:
+      required: true

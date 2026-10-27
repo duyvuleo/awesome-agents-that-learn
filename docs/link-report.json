@@ -1,0 +1,1462 @@
+{
+  "checked_at_utc": "2026-10-27T22:54:07.193054+00:00",
+  "scope": "all-catalog-sources",
+  "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
+  "results": [
+    {
+      "url": "https://aclanthology.org/2023.acl-long.754/",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2023.acl-long.754/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2023.findings-emnlp.462/",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2023.findings-emnlp.462/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2024.acl-long.747/",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2024.acl-long.747/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2024.tacl-1.78/",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2024.tacl-1.78/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2025.acl-long.1354/",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2025.acl-long.1354/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2026.findings-acl.866/",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.findings-acl.866/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2203.14465",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2203.14465",
+      "status": "reachable",
+      "expected_title": "STaR: Bootstrapping Reasoning With Reasoning",
+      "observed_title": "STaR: Bootstrapping Reasoning With Reasoning",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2210.03629",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2210.03629",
+      "status": "reachable",
+      "expected_title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "observed_title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2212.08073",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2212.08073",
+      "status": "reachable",
+      "expected_title": "Constitutional AI: Harmlessness from AI Feedback",
+      "observed_title": "Constitutional AI: Harmlessness from AI Feedback",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2302.04761",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2302.04761",
+      "status": "reachable",
+      "expected_title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "observed_title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2303.11366",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2303.11366",
+      "status": "reachable",
+      "expected_title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+      "observed_title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2303.17651",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2303.17651",
+      "status": "reachable",
+      "expected_title": "Self-Refine: Iterative Refinement with Self-Feedback",
+      "observed_title": "Self-Refine: Iterative Refinement with Self-Feedback",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2304.03442",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2304.03442",
+      "status": "reachable",
+      "expected_title": "Generative Agents: Interactive Simulacra of Human Behavior",
+      "observed_title": "Generative Agents: Interactive Simulacra of Human Behavior",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2305.10250",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2305.10250",
+      "status": "reachable",
+      "expected_title": "MemoryBank: Enhancing Large Language Models with Long-Term Memory",
+      "observed_title": "MemoryBank: Enhancing Large Language Models with Long-Term Memory",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2305.14318",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2305.14318",
+      "status": "reachable",
+      "expected_title": "CREATOR: Tool Creation for Disentangling Abstract and Concrete Reasoning of Large Language Models",
+      "observed_title": "CREATOR: Tool Creation for Disentangling Abstract and Concrete Reasoning of Large Language Models",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2305.16291",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2305.16291",
+      "status": "reachable",
+      "expected_title": "Voyager: An Open-Ended Embodied Agent with Large Language Models",
+      "observed_title": "Voyager: An Open-Ended Embodied Agent with Large Language Models",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2305.17126",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2305.17126",
+      "status": "reachable",
+      "expected_title": "Large Language Models as Tool Makers",
+      "observed_title": "Large Language Models as Tool Makers",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2308.08998",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2308.08998",
+      "status": "reachable",
+      "expected_title": "Reinforced Self-Training (ReST) for Language Modeling",
+      "observed_title": "Reinforced Self-Training (ReST) for Language Modeling",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2308.10144",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2308.10144",
+      "status": "reachable",
+      "expected_title": "ExpeL: LLM Agents Are Experiential Learners",
+      "observed_title": "ExpeL: LLM Agents Are Experiential Learners",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2309.03409",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2309.03409",
+      "status": "reachable",
+      "expected_title": "Large Language Models as Optimizers",
+      "observed_title": "Large Language Models as Optimizers",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2309.16797",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2309.16797",
+      "status": "reachable",
+      "expected_title": "Promptbreeder: Self-Referential Self-Improvement via Prompt Evolution",
+      "observed_title": "Promptbreeder: Self-Referential Self-Improvement Via Prompt Evolution",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2310.02304",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2310.02304",
+      "status": "reachable",
+      "expected_title": "Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation",
+      "observed_title": "Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2310.03714",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2310.03714",
+      "status": "reachable",
+      "expected_title": "DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines",
+      "observed_title": "DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2310.08560",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2310.08560",
+      "status": "reachable",
+      "expected_title": "MemGPT: Towards LLMs as Operating Systems",
+      "observed_title": "MemGPT: Towards LLMs as Operating Systems",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2401.01335",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2401.01335",
+      "status": "reachable",
+      "expected_title": "Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models",
+      "observed_title": "Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2401.10020",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2401.10020",
+      "status": "reachable",
+      "expected_title": "Self-Rewarding Language Models",
+      "observed_title": "Self-Rewarding Language Models",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2404.01413",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2404.01413",
+      "status": "reachable",
+      "expected_title": "Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data",
+      "observed_title": "Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2406.03816",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2406.03816",
+      "status": "reachable",
+      "expected_title": "ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search",
+      "observed_title": "ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2406.07496",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2406.07496",
+      "status": "reachable",
+      "expected_title": "TextGrad: Automatic \"Differentiation\" via Text",
+      "observed_title": "TextGrad: Automatic \"Differentiation\" via Text",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2406.18532",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2406.18532",
+      "status": "reachable",
+      "expected_title": "Symbolic Learning Enables Self-Evolving Agents",
+      "observed_title": "Symbolic Learning Enables Self-Evolving Agents",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2407.18219",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2407.18219",
+      "status": "reachable",
+      "expected_title": "Recursive Introspection: Teaching Language Model Agents How to Self-Improve",
+      "observed_title": "Recursive Introspection: Teaching Language Model Agents How to Self-Improve",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2408.08435",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2408.08435",
+      "status": "reachable",
+      "expected_title": "Automated Design of Agentic Systems",
+      "observed_title": "Automated Design of Agentic Systems",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2409.07429",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2409.07429",
+      "status": "reachable",
+      "expected_title": "Agent Workflow Memory",
+      "observed_title": "Agent Workflow Memory",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2409.12917",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2409.12917",
+      "status": "reachable",
+      "expected_title": "Training Language Models to Self-Correct via Reinforcement Learning",
+      "observed_title": "Training Language Models to Self-Correct via Reinforcement Learning",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2410.04444",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2410.04444",
+      "status": "reachable",
+      "expected_title": "Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement",
+      "observed_title": "G\\\"odel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2410.06153",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2410.06153",
+      "status": "reachable",
+      "expected_title": "AgentSquare: Automatic LLM Agent Search in Modular Design Space",
+      "observed_title": "AgentSquare: Automatic LLM Agent Search in Modular Design Space",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2410.10762",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2410.10762",
+      "status": "reachable",
+      "expected_title": "AFlow: Automating Agentic Workflow Generation",
+      "observed_title": "AFlow: Automating Agentic Workflow Generation",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2410.10813",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2410.10813",
+      "status": "reachable",
+      "expected_title": "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory",
+      "observed_title": "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2502.12110",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2502.12110",
+      "status": "reachable",
+      "expected_title": "A-MEM: Agentic Memory for LLM Agents",
+      "observed_title": "A-MEM: Agentic Memory for LLM Agents",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2504.15228",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2504.15228",
+      "status": "reachable",
+      "expected_title": "A Self-Improving Coding Agent",
+      "observed_title": "A Self-Improving Coding Agent",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2504.19413",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2504.19413",
+      "status": "reachable",
+      "expected_title": "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+      "observed_title": "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2505.03335",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2505.03335",
+      "status": "reachable",
+      "expected_title": "Absolute Zero: Reinforced Self-play Reasoning with Zero Data",
+      "observed_title": "Absolute Zero: Reinforced Self-play Reasoning with Zero Data",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2505.11942",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2505.11942",
+      "status": "reachable",
+      "expected_title": "LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners",
+      "observed_title": "LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2505.22954",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2505.22954",
+      "status": "reachable",
+      "expected_title": "Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents",
+      "observed_title": "Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2506.01716",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2506.01716",
+      "status": "reachable",
+      "expected_title": "Self-Challenging Language Model Agents",
+      "observed_title": "Self-Challenging Language Model Agents",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2506.10943",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2506.10943",
+      "status": "reachable",
+      "expected_title": "Self-Adapting Language Models",
+      "observed_title": "Self-Adapting Language Models",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2507.03616",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2507.03616",
+      "status": "reachable",
+      "expected_title": "EvoAgentX: An Automated Framework for Evolving Agentic Workflows",
+      "observed_title": "EvoAgentX: An Automated Framework for Evolving Agentic Workflows",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2507.19457",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2507.19457",
+      "status": "reachable",
+      "expected_title": "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning",
+      "observed_title": "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2507.21046",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2507.21046",
+      "status": "reachable",
+      "expected_title": "A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence",
+      "observed_title": "A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2508.05004",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2508.05004",
+      "status": "reachable",
+      "expected_title": "R-Zero: Self-Evolving Reasoning LLM from Zero Data",
+      "observed_title": "R-Zero: Self-Evolving Reasoning LLM from Zero Data",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2508.06433",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2508.06433",
+      "status": "reachable",
+      "expected_title": "Memp: Exploring Agent Procedural Memory",
+      "observed_title": "Memp: Exploring Agent Procedural Memory",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2508.07407",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2508.07407",
+      "status": "reachable",
+      "expected_title": "A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems",
+      "observed_title": "A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2508.19005",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2508.19005",
+      "status": "reachable",
+      "expected_title": "Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark",
+      "observed_title": "Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2508.19828",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2508.19828",
+      "status": "reachable",
+      "expected_title": "Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning",
+      "observed_title": "Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2509.25140",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2509.25140",
+      "status": "reachable",
+      "expected_title": "ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory",
+      "observed_title": "ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2509.25911",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2509.25911",
+      "status": "reachable",
+      "expected_title": "Mem-α: Learning Memory Construction via Reinforcement Learning",
+      "observed_title": "Mem-{\\alpha}: Learning Memory Construction via Reinforcement Learning",
+      "title_similarity": 0.955,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2510.04618",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2510.04618",
+      "status": "reachable",
+      "expected_title": "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models",
+      "observed_title": "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2511.00602",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2511.00602",
+      "status": "reachable",
+      "expected_title": "OpenSIR: Open-Ended Self-Improving Reasoner",
+      "observed_title": "OpenSIR: Open-Ended Self-Improving Reasoner",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2511.13646",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2511.13646",
+      "status": "reachable",
+      "expected_title": "Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?",
+      "observed_title": "Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2511.16043",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2511.16043",
+      "status": "reachable",
+      "expected_title": "Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning",
+      "observed_title": "Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2601.03192",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2601.03192",
+      "status": "reachable",
+      "expected_title": "MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory",
+      "observed_title": "MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2601.04620",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2601.04620",
+      "status": "reachable",
+      "expected_title": "AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering",
+      "observed_title": "AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2601.07055",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2601.07055",
+      "status": "reachable",
+      "expected_title": "Dr. Zero: Self-Evolving Search Agents without Training Data",
+      "observed_title": "Dr. Zero: Self-Evolving Search Agents without Training Data",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2602.04837",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2602.04837",
+      "status": "reachable",
+      "expected_title": "Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing",
+      "observed_title": "Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2602.08234",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2602.08234",
+      "status": "reachable",
+      "expected_title": "SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning",
+      "observed_title": "SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2603.19461",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2603.19461",
+      "status": "reachable",
+      "expected_title": "Hyperagents",
+      "observed_title": "Hyperagents",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2604.17308",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2604.17308",
+      "status": "reachable",
+      "expected_title": "SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents",
+      "observed_title": "SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2605.12493",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2605.12493",
+      "status": "reachable",
+      "expected_title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues",
+      "observed_title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2605.27366",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2605.27366",
+      "status": "reachable",
+      "expected_title": "MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation",
+      "observed_title": "MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2607.13104",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2607.13104",
+      "status": "reachable",
+      "expected_title": "Self-Improvements in Modern Agentic Systems: A Survey",
+      "observed_title": "Self-Improvements in Modern Agentic Systems: A Survey",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.00155",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2608.00155",
+      "status": "reachable",
+      "expected_title": "AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?",
+      "observed_title": "AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.03764",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2608.03764",
+      "status": "reachable",
+      "expected_title": "GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks",
+      "observed_title": "GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.04003",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2608.04003",
+      "status": "reachable",
+      "expected_title": "PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents",
+      "observed_title": "PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.04968",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2608.04968",
+      "status": "reachable",
+      "expected_title": "EvolveNet: Collaborative Harness Evolution for Agent Self-Improvement",
+      "observed_title": "EvolveNet: Collaborative Harness Evolution for Agent Self-Improvement",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.08466",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2608.08466",
+      "status": "reachable",
+      "expected_title": "Hierarchical Self-Improvement: A Framework for Task-Specific Evolvable Agent Harnesses",
+      "observed_title": "Hierarchical Self-Improvement: A Framework for Task-Specific Evolvable Agent Harnesses",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.16114",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2608.16114",
+      "status": "reachable",
+      "expected_title": "HyperSkill: Self-Evolving LLM Agents via Hypergraph-Structured Skill Memory",
+      "observed_title": "HyperSkill: Self-Evolving LLM Agents via Hypergraph-Structured Skill Memory",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.20290",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2608.20290",
+      "status": "reachable",
+      "expected_title": "Phantom Gains: Auditing Self-Improvement Against a Measured Null",
+      "observed_title": "Phantom Gains: Auditing Self-Improvement Against a Measured Null",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.14857",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.14857",
+      "status": "reachable",
+      "expected_title": "ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement",
+      "observed_title": "ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.17817",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.17817",
+      "status": "reachable",
+      "expected_title": "Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks",
+      "observed_title": "Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.00093",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.00093",
+      "status": "reachable",
+      "expected_title": "Safety in Self-Evolving Agents: A Survey",
+      "observed_title": "Safety in Self-Evolving Agents: A Survey",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.33274",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.33274",
+      "status": "reachable",
+      "expected_title": "FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents",
+      "observed_title": "FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/html/2303.11366v4",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2303.11366v4",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2305.16291v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2305.16291v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2308.10144v3",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2308.10144v3",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2404.01413v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2404.01413v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2407.18219v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2407.18219v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2409.07429v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2409.07429v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2410.10762v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2410.10762v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2504.15228v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2504.15228v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2505.03335v3",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2505.03335v3",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2505.22954v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2505.22954v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2506.10943v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2506.10943v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2508.19005v6",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2508.19005v6",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2509.25140v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2509.25140v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2509.25140v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2509.25140v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2510.04618v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2510.04618v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2511.16043v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2511.16043v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2602.08234v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2602.08234v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2602.08234v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2602.08234v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2603.19461v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2603.19461v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2608.00155v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2608.00155v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2608.03764v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2608.03764v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2608.04003v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2608.04003v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.14857v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2609.14857v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.17817v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2609.17817v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://discovery.ucl.ac.uk/id/eprint/10045895/",
+      "http_status": 200,
+      "final_url": "https://discovery.ucl.ac.uk/id/eprint/10045895/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Arvid-pku/Godel_Agent",
+      "http_status": 200,
+      "final_url": "https://github.com/Arvid-pku/Godel_Agent",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Continual-Intelligence/SEAL",
+      "http_status": 200,
+      "final_url": "https://github.com/Continual-Intelligence/SEAL",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/EvoAgentX/EvoAgentX",
+      "http_status": 200,
+      "final_url": "https://github.com/ANative-Lab/EvoAgentX",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/FoundationAgents/AFlow",
+      "http_status": 200,
+      "final_url": "https://github.com/FoundationAgents/AFlow",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Gen-Verse/PAST-Bench",
+      "http_status": 200,
+      "final_url": "https://github.com/Gen-Verse/PAST-Bench",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Jasper-Yan/AgentStream",
+      "http_status": 200,
+      "final_url": "https://github.com/Jasper-Yan/AgentStream",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner",
+      "http_status": 200,
+      "final_url": "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/LeapLabTHU/ExpeL",
+      "http_status": 200,
+      "final_url": "https://github.com/LeapLabTHU/ExpeL",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/MaximeRobeyns/self_improving_coding_agent",
+      "http_status": 200,
+      "final_url": "https://github.com/MaximeRobeyns/self_improving_coding_agent",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/MemTensor/MemRL",
+      "http_status": 200,
+      "final_url": "https://github.com/MemTensor/MemRL",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/MineDojo/Voyager",
+      "http_status": 200,
+      "final_url": "https://github.com/MineDojo/Voyager",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Prism-Shadow/GDPevo",
+      "http_status": 200,
+      "final_url": "https://github.com/Prism-Shadow/GDPevo",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ShengranHu/ADAS",
+      "http_status": 200,
+      "final_url": "https://github.com/ShengranHu/ADAS",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/THUDM/ReST-MCTS",
+      "http_status": 200,
+      "final_url": "https://github.com/THUDM/ReST-MCTS",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/TailinZhou/hsi",
+      "http_status": 200,
+      "final_url": "https://github.com/TailinZhou/hsi",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/TemporalSelfRewarding/TSR",
+      "http_status": 200,
+      "final_url": "https://github.com/TemporalSelfRewarding/TSR",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/WujiangXu/A-mem-sys",
+      "http_status": 200,
+      "final_url": "https://github.com/WujiangXu/A-mem-sys",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/aiming-lab/Agent0",
+      "http_status": 200,
+      "final_url": "https://github.com/aiming-lab/Agent0",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/aiming-lab/SkillRL",
+      "http_status": 200,
+      "final_url": "https://github.com/aiming-lab/SkillRL",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/aiwaves-cn/agents",
+      "http_status": 200,
+      "final_url": "https://github.com/aiwaves-cn/agents",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/chengxuphd/phantom-gains",
+      "http_status": 200,
+      "final_url": "https://github.com/chengxuphd/phantom-gains",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ctlllll/LLM-ToolMaker",
+      "http_status": 200,
+      "final_url": "https://github.com/ctlllll/LLM-ToolMaker",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ezelikman/STaR",
+      "http_status": 200,
+      "final_url": "https://github.com/ezelikman/STaR",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/facebookresearch/Hyperagents",
+      "http_status": 200,
+      "final_url": "https://github.com/facebookresearch/Hyperagents",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/gepa-ai/gepa",
+      "http_status": 200,
+      "final_url": "https://github.com/gepa-ai/gepa",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/google-deepmind/opro",
+      "http_status": 200,
+      "final_url": "https://github.com/google-deepmind/opro",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/google-research/reasoning-bank",
+      "http_status": 200,
+      "final_url": "https://github.com/google-research/reasoning-bank",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/jennyzzt/dgm",
+      "http_status": 200,
+      "final_url": "https://github.com/jennyzzt/dgm",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/joonspk-research/generative_agents",
+      "http_status": 200,
+      "final_url": "https://github.com/joonspk-research/generative_agents",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/noahshinn/reflexion",
+      "http_status": 200,
+      "final_url": "https://github.com/noahshinn/reflexion",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/qiancheng0/CREATOR",
+      "http_status": 200,
+      "final_url": "https://github.com/qiancheng0/CREATOR",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/snap-research/LoCoMo",
+      "http_status": 200,
+      "final_url": "https://github.com/snap-research/LoCoMo",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/stanfordnlp/dspy",
+      "http_status": 200,
+      "final_url": "https://github.com/stanfordnlp/dspy",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/tsinghua-fib-lab/AgentSquare",
+      "http_status": 200,
+      "final_url": "https://github.com/tsinghua-fib-lab/AgentSquare",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/uclaml/SPIN",
+      "http_status": 200,
+      "final_url": "https://github.com/uclaml/SPIN",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/xiaowu0162/LongMemEval",
+      "http_status": 200,
+      "final_url": "https://github.com/xiaowu0162/LongMemEval",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/yizhongw/self-instruct",
+      "http_status": 200,
+      "final_url": "https://github.com/yizhongw/self-instruct",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/zjunlp/MemP",
+      "http_status": 200,
+      "final_url": "https://github.com/zjunlp/MemP",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/zorazrw/agent-workflow-memory",
+      "http_status": 200,
+      "final_url": "https://github.com/zorazrw/agent-workflow-memory",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/zou-group/textgrad",
+      "http_status": 200,
+      "final_url": "https://github.com/zou-group/textgrad",
+      "status": "reachable"
+    },
+    {
+      "url": "https://iclr.cc/virtual/2023/poster/11003",
+      "http_status": 200,
+      "final_url": "https://iclr.cc/virtual/2023/poster/11003",
+      "status": "reachable"
+    },
+    {
+      "url": "https://jyopari.github.io/posts/seal",
+      "http_status": 200,
+      "final_url": "https://jyopari.github.io/posts/seal",
+      "status": "reachable"
+    },
+    {
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/29936",
+      "http_status": 200,
+      "final_url": "https://ojs.aaai.org/index.php/AAAI/article/view/29936",
+      "status": "reachable"
+    },
+    {
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/29946",
+      "http_status": 200,
+      "final_url": "https://ojs.aaai.org/index.php/AAAI/article/view/29946",
+      "status": "reachable"
+    },
+    {
+      "url": "https://openreview.net/pdf?id=46Zgqo4QIU",
+      "http_status": 403,
+      "status": "restricted-or-transient"
+    },
+    {
+      "url": "https://openreview.net/pdf?id=ehfRiF0R3a",
+      "http_status": 403,
+      "status": "restricted-or-transient"
+    },
+    {
+      "url": "https://openreview.net/pdf?id=qV83K9d5WB",
+      "http_status": 403,
+      "status": "restricted-or-transient"
+    },
+    {
+      "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/01977a08d8e76cf4df40b5b57407c9eb-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/01977a08d8e76cf4df40b5b57407c9eb-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/8204f54f6cd8f0db1765a274e94ceaac-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/8204f54f6cd8f0db1765a274e94ceaac-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/3339f19c5fcee3ad74502947a32be9e6-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/3339f19c5fcee3ad74502947a32be9e6-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/f1cf02ce09757f57c3b93c0db83181e0-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/f1cf02ce09757f57c3b93c0db83181e0-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/d813d324dbf0598bbdc9c8e79740ed01-Paper-Conference.pdf",
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/d813d324dbf0598bbdc9c8e79740ed01-Paper-Conference.pdf",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/0ae94013da7cd459402fd77874e09ee3-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/0ae94013da7cd459402fd77874e09ee3-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/36b7acf6f6010652b3f2a433774a66fe-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/36b7acf6f6010652b3f2a433774a66fe-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/5492ecbce4439401798dcd2c90be94cd-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/5492ecbce4439401798dcd2c90be94cd-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/871ac99fdc5282d0301934d23945ebaa-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/871ac99fdc5282d0301934d23945ebaa-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/0e9e708b6f48e14fd0ac29e167413f76-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/0e9e708b6f48e14fd0ac29e167413f76-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/8a94ff6f922d995d7d3f4ebf4143e442-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/8a94ff6f922d995d7d3f4ebf4143e442-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/980ea04d23d1f6908964eba2a74afe45-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/980ea04d23d1f6908964eba2a74afe45-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/aa5f5e6eb6f613ec412f1d948dfa21a5-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/aa5f5e6eb6f613ec412f1d948dfa21a5-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/d49b9aacebda61051166335af6fd3061-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/d49b9aacebda61051166335af6fd3061-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.mlr.press/v235/chen24j.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.mlr.press/v235/chen24j.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.mlr.press/v235/fernando24a.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.mlr.press/v235/fernando24a.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.mlr.press/v235/yuan24d.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.mlr.press/v235/yuan24d.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.mlr.press/v267/wang25bx.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.mlr.press/v267/wang25bx.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.mlr.press/v306/wang26ik.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.mlr.press/v306/wang26ik.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.mlr.press/v306/zhao26aw.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.mlr.press/v306/zhao26aw.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.neurips.cc/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/639a9a172c044fbb64175b5fad42e9a5-Paper-Conference.pdf",
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/639a9a172c044fbb64175b5fad42e9a5-Paper-Conference.pdf",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/76ec4dc30e9faaf0e4b6093eaa377218-Paper-Conference.pdf",
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/76ec4dc30e9faaf0e4b6093eaa377218-Paper-Conference.pdf",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/639d992f819c2b40387d4d5170b8ffd7-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/639d992f819c2b40387d4d5170b8ffd7-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/6b41e04c41726e2a60e456d0a2b961ab-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/6b41e04c41726e2a60e456d0a2b961ab-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/9837dc00ff67d176373268ed48042d49-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/9837dc00ff67d176373268ed48042d49-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/a5a305fac88fb4ae40969cfec5eef48d-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/a5a305fac88fb4ae40969cfec5eef48d-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://snap-research.github.io/locomo/",
+      "http_status": 200,
+      "final_url": "https://snap-research.github.io/locomo/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://uist.acm.org/2023/proceedings/",
+      "http_status": 200,
+      "final_url": "https://uist.acm.org/2023/proceedings/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://www.jmlr.org/tmlr/papers/",
+      "http_status": 200,
+      "final_url": "https://www.jmlr.org/tmlr/papers/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://www.nature.com/articles/nature24270",
+      "http_status": 200,
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=72abf2f5-dca4-4411-9538-bb54e3d1c018",
+      "status": "reachable"
+    },
+    {
+      "url": "https://www.nature.com/articles/s41586-024-07566-y",
+      "http_status": 200,
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=dd7d01d5-5625-4851-bf1f-59acc8097394",
+      "status": "reachable"
+    },
+    {
+      "url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported",
+      "http_status": 200,
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported",
+      "status": "reachable"
+    },
+    {
+      "url": "https://www.nature.com/articles/s41586-025-08661-4",
+      "http_status": 200,
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=a67caae1-39f2-4984-9aae-6baf28df9a25",
+      "status": "reachable"
+    },
+    {
+      "url": "https://www.nature.com/articles/s41586-025-08905-3",
+      "http_status": 200,
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=84c21474-dd71-4289-b359-24529c088a94",
+      "status": "reachable"
+    },
+    {
+      "url": "https://www.shengranhu.com/ADAS/",
+      "http_status": 200,
+      "final_url": "https://www.shengranhu.com/ADAS/",
+      "status": "reachable"
+    }
+  ]
+}
