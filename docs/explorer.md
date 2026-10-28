@@ -6,7 +6,7 @@ The explorer provides reading routes, a topic word cloud, a relationship graph, 
 
 ## Tables, cards, and systems
 
-The default table makes titles, mechanisms, update targets, evidence labels, and source links easy to compare. Expand a row for the full annotation. The Cards option presents the same filtered records in a more spacious layout; selecting a graph node opens the corresponding evidence without changing the selected view. The view choice is included in shared URLs.
+The default table makes titles, mechanisms, update targets, evidence labels, and source links easy to compare. Expand a row for a readable overview, key facts, source actions, and the main limitation. Capabilities/setup, evaluation/related work, and source-review notes open separately on demand. The Cards option presents the same filtered records in a more spacious layout; selecting a graph node opens the corresponding evidence without changing the selected view. The view choice is included in shared URLs.
 
 Use **Systems** in the navigation or the resource-type filter to inspect software. System details include documented capabilities, requirements, availability, license pointers, evaluation limits, and related papers. Related-resource links work in both directions and clear incompatible filters when necessary to reveal the target.
 
@@ -24,7 +24,7 @@ The graph follows all active filters and connects each matching resource to all 
 
 A line records a curated topic assignment, not a citation, implementation dependency, causal relationship, or proof of methodological equivalence. Positions and distances are only a navigation layout, not similarity scores. Topic-node sizes reflect matching resource counts.
 
-Select a topic to focus the collection or a resource to open its full evidence. Hover/focus previews retain the evaluation boundary. Zoom/reset controls and desktop background dragging help inspect the graph. On small screens, use the graph's text-list alternative for precise selection; keyboard controls are also available.
+Select a topic to focus the collection or a resource to open its full evidence. Short recall names such as Voyager, DGM, and SEAL aid navigation; full titles remain available on focus and in the annotation. The traversal list uses these short names together with resource types. Hover/focus previews retain the evaluation boundary. Zoom/reset controls and desktop background dragging help inspect the graph. On small screens, use the graph's text-list alternative for precise selection; keyboard controls are also available.
 
 Expected count examples for this edition:
 

@@ -31,6 +31,7 @@
   const expandedResources = new Set();
   let announcementTimer;
   const label = (map, key) => typeof map[key] === 'string' ? map[key] : (map[key]?.label || map[key]?.title || key.replaceAll('-', ' '));
+  const recallName = (resource) => resource.short_name || resource.name || resource.title;
   const unique = (values) => [...new Set(values)].filter(Boolean);
   const allTopics = unique(resources.flatMap((p) => p.topics || [])).sort((a, b) => label(topics, a).localeCompare(label(topics, b)));
   const allTargets = unique(resources.flatMap((p) => p.update_targets || [])).sort((a, b) => label(targets, a).localeCompare(label(targets, b)));
@@ -197,7 +198,9 @@
       inspector.append(node('p', 'inspector-kicker', 'CATALOG TOPIC'), node('h4', '', label(topics, item)), node('p', '', `${visibleCount} matching resources in this graph; ${topicCounts[item]} of ${resources.length} resources in the full collection (${corpusLabel}). Select to toggle this topic filter.`));
     } else {
       const context = item.kind === 'system' ? 'System · documentation inspected · not executed' : `${kindLabels[item.kind] || item.kind} · ${item.year} · ${item.scope}`;
-      inspector.append(node('p', 'inspector-kicker', context), node('h4', '', item.title), node('p', '', item.mechanism));
+      inspector.append(node('p', 'inspector-kicker', context), node('h4', '', recallName(item)));
+      if (recallName(item) !== item.title) inspector.append(node('p', 'inspector-full-title', item.title));
+      inspector.append(node('p', '', item.mechanism));
       const boundary = node('p', 'inspector-boundary'); boundary.append(node('strong', '', 'Boundary: '), document.createTextNode(item.limitations || 'Not recorded.')); inspector.append(boundary);
     }
   }
@@ -212,11 +215,15 @@
     const counts = resourceCounts(filtered);
     $('graph-count').textContent = `${counts.literature} research works + ${counts.systems} systems · ${represented.length} topics · ${membershipCount} membership links`;
     $('graph-list-count').textContent = `(${filtered.length} resources)`;
+    $('graph-name-policy').textContent = filtered.length <= 12 ? 'Short names are shown in this focused map. Full titles remain available on hover or keyboard focus.' : 'Hover or focus a resource to recall its name. Filter to 12 or fewer resources to show names together.';
     $('graph-empty').hidden = filtered.length > 0;
     $('research-graph').setAttribute('aria-label', `Interactive topic membership graph: ${counts.literature} research works, ${counts.systems} systems, ${represented.length} topics, ${membershipCount} links`);
     const select = $('graph-work-select'); const previous = select.value;
     select.replaceChildren(node('option', '', 'Choose a resource')); select.firstChild.value = '';
-    [...filtered].sort((a, b) => a.title.localeCompare(b.title)).forEach((p) => { const o = node('option', '', `${p.title} (${p.kind === 'system' ? 'system' : p.year})`); o.value = p.id; select.append(o); });
+    [...filtered].sort((a, b) => recallName(a).localeCompare(recallName(b)) || a.title.localeCompare(b.title)).forEach((p) => {
+      const o = node('option', '', `${recallName(p)} · ${kindLabels[p.kind] || p.kind}${p.kind === 'system' ? '' : ` · ${p.year}`}`);
+      o.value = p.id; o.title = p.title; select.append(o);
+    });
     if (filtered.some((p) => p.id === previous)) select.value = previous;
     $('graph-open-work').disabled = !select.value;
     if (!filtered.length) { graphTransform(); return; }
@@ -240,6 +247,38 @@
       edges.append(line); edgeRecords.push({ line, topic, paper: p.id });
     })); stage.append(edges);
     const nodeRecords = [];
+    const recallLabels = new Map();
+    const autoNames = ordered.length <= 12;
+    const recallLayer = svgNode('g', { class: 'graph-recall-labels', 'aria-hidden': 'true' });
+    function arrangeRecallLabels(activeId = null) {
+      recallLabels.forEach((record) => record.group.setAttribute('visibility', 'hidden'));
+      const requested = autoNames ? ordered.map((p) => p.id) : activeId ? [activeId] : [];
+      if (activeId && requested.includes(activeId)) {
+        requested.splice(requested.indexOf(activeId), 1);
+        requested.unshift(activeId);
+      }
+      const occupied = [...topicLayer.querySelectorAll('.graph-topic-label,.graph-topic-count')].map((el) => {
+        const b = el.getBBox(); return { x: b.x - 5, y: b.y - 4, width: b.width + 10, height: b.height + 8 };
+      });
+      const intersects = (a, b) => a.x < b.x + b.width && a.x + a.width > b.x && a.y < b.y + b.height && a.y + a.height > b.y;
+      requested.forEach((id) => {
+        const record = recallLabels.get(id); if (!record) return;
+        const pos = workPositions.get(id); const bounds = record.text.getBBox();
+        const width = bounds.width + 12; const height = bounds.height + 8;
+        const gap = narrow ? 18 : 13; const direction = pos.x < cx ? 1 : -1;
+        const candidates = [];
+        for (const dy of [0, -height - 8, height + 8, -2 * height - 16, 2 * height + 16]) {
+          for (const side of [direction, -direction]) candidates.push({ x: side > 0 ? pos.x + gap : pos.x - gap - width, y: pos.y - height / 2 + dy, width, height });
+        }
+        candidates.push({ x: cx - width / 2, y: cy - height / 2, width, height });
+        const blockers = [...occupied, ...ordered.filter((p) => p.id !== id).map((p) => { const point = workPositions.get(p.id); return { x: point.x - 9, y: point.y - 9, width: 18, height: 18 }; })];
+        const placement = candidates.find((candidate) => candidate.x >= 12 && candidate.y >= 12 && candidate.x + width <= graphLayout.width - 12 && candidate.y + height <= graphLayout.height - 12 && blockers.every((b) => !intersects(candidate, b)));
+        if (!placement) return; // Focus/inspector and the HTML list always retain the complete name.
+        record.group.setAttribute('transform', `translate(${placement.x + 6 - bounds.x} ${placement.y + 4 - bounds.y})`);
+        record.group.setAttribute('visibility', 'visible');
+        occupied.push(placement);
+      });
+    }
     function highlight(type, key) {
       const connections = edgeRecords.filter((e) => type === 'topic' ? e.topic === key : e.paper === key);
       const connectedTopics = new Set(connections.map((e) => e.topic));
@@ -249,15 +288,17 @@
         e.line.classList.toggle('is-emphasized', matched); e.line.classList.toggle('is-muted', !matched);
       });
       nodeRecords.forEach((n) => n.element.classList.toggle('is-muted', n.type === 'topic' ? !connectedTopics.has(n.id) : !connectedPapers.has(n.id)));
+      arrangeRecallLabels(type === 'topic' ? null : key);
     }
     function clearHighlight() {
       edgeRecords.forEach((e) => e.line.classList.remove('is-emphasized', 'is-muted'));
       nodeRecords.forEach((n) => n.element.classList.remove('is-muted'));
+      arrangeRecallLabels();
     }
     function interactive(g, type, item, count) {
       const key = type === 'topic' ? item : item.id;
       g.setAttribute('tabindex', '0'); g.setAttribute('role', 'button');
-      const fullLabel = type === 'topic' ? `${label(topics, item)}: ${count} matching resources. Toggle topic filter.` : `${item.title}, ${item.kind === 'system' ? 'system; not executed' : item.year}. Open evidence notes.`;
+      const fullLabel = type === 'topic' ? `${label(topics, item)}: ${count} matching resources. Toggle topic filter.` : `${recallName(item)}${recallName(item) !== item.title ? ` — ${item.title}` : ''}; ${kindLabels[item.kind] || item.kind}, ${item.kind === 'system' ? 'not executed' : item.year}. Open evidence notes.`;
       g.setAttribute('aria-label', fullLabel); g.append(svgNode('title', {}, fullLabel));
       const show = () => { highlight(type, key); inspectNode(type, item, count); };
       const activate = () => {
@@ -280,6 +321,19 @@
       const size = narrow ? 12 : 10;
       g.append(isSystem ? svgNode('rect', { x: pos.x - size / 2, y: pos.y - size / 2, width: size, height: size, rx: 1.5, class: 'graph-system-dot' }) : svgNode('circle', { cx: pos.x, cy: pos.y, r: narrow ? 6.5 : 5.4, class: 'graph-work-dot' }));
       workLayer.append(interactive(g, 'paper', p, 0));
+      const duplicate = ordered.filter((entry) => recallName(entry).toLocaleLowerCase() === recallName(p).toLocaleLowerCase()).length > 1;
+      const name = `${recallName(p)}${duplicate ? ` · ${kindLabels[p.kind] || p.kind}` : ''}`;
+      const limit = narrow ? 17 : 23;
+      const words = name.split(/\s+/); const lines = [''];
+      words.forEach((word) => {
+        const current = lines.length - 1;
+        if (lines[current] && `${lines[current]} ${word}`.length > limit && lines.length < 2) lines.push(word);
+        else lines[current] += `${lines[current] ? ' ' : ''}${word}`;
+      });
+      const labelGroup = svgNode('g', { class: 'graph-recall-label', 'data-recall-for': p.id, visibility: 'hidden' });
+      const text = svgNode('text', { class: 'graph-recall-text', 'font-size': narrow ? 27 : 14 });
+      lines.forEach((line, i) => text.append(svgNode('tspan', { x: 0, dy: i ? '1.2em' : 0 }, line.length > limit ? `${line.slice(0, limit - 1)}…` : line)));
+      labelGroup.append(text); recallLayer.append(labelGroup); recallLabels.set(p.id, { group: labelGroup, text });
     }); stage.append(workLayer);
     const topicLayer = svgNode('g', { class: 'graph-topic-nodes' });
     represented.forEach((id) => {
@@ -302,7 +356,7 @@
       } else title.textContent = words.join(' ');
       g.append(title, svgNode('text', { x: lx, y: ly + countOffset, class: 'graph-topic-count', 'text-anchor': anchor }, String(count)));
       topicLayer.append(interactive(g, 'topic', id, count));
-    }); stage.append(topicLayer); graphTransform();
+    }); stage.append(topicLayer, recallLayer); arrangeRecallLabels(); graphTransform();
   }
   function sourceLabel(source, i) {
     try {
@@ -331,16 +385,45 @@
     const status = isSystem ? 'Not executed' : p.status === 'peer-reviewed' ? 'Peer reviewed' : p.status === 'technical-report' ? 'Technical report' : 'Preprint';
     metadata.append(node('span', '', status), node('span', 'depth', depthLabels[p.review_depth] || 'Inspection depth not recorded')); article.append(metadata);
     const details = node('details', 'paper-details'); details.append(node('summary', '', isSystem ? 'Capabilities, requirements & evidence' : 'Learning mechanism, evaluation & sources'));
+    const overview = node('div', 'detail-overview');
+    const facts = node('dl', 'detail-keyfacts');
+    const fact = (name, value, href) => {
+      const item = node('div'); item.append(node('dt', '', name));
+      const description = node('dd'); description.append(href && safeUrl(href) ? link(value, href) : document.createTextNode(value || 'Not recorded.'));
+      item.append(description); facts.append(item);
+    };
+    fact('What changes', (p.update_targets || []).map((id) => label(targets, id)).join(', ') || 'Not applicable');
+    fact('Persistence', persistenceLabels[p.persistence] || p.persistence);
+    if (isSystem) fact('License', textValue(p.license) || 'Not verified.', p.license_url);
+    else fact('Source date', p.date || String(p.year || 'Not recorded'));
+    overview.append(facts);
+    const actions = node('div', 'detail-primary-actions');
+    actions.append(link(isSystem ? 'Official repository ↗' : 'Read the paper ↗', p.url, 'detail-primary-link'));
+    if (!isSystem && p.code_url && p.code_url !== p.url && safeUrl(p.code_url)) actions.append(link('Official code ↗', p.code_url, 'detail-secondary-link'));
+    if (isSystem && p.docs_url && p.docs_url !== p.url && safeUrl(p.docs_url)) actions.append(link('Documentation ↗', p.docs_url, 'detail-secondary-link'));
+    overview.append(actions, evidence('Evidence boundary', p.limitations, 'boundary detail-main-boundary'));
+    details.append(overview);
+    const section = (title) => {
+      const disclosure = node('details', 'evidence-section');
+      disclosure.append(node('summary', '', title));
+      const body = node('div', 'evidence-section-body'); disclosure.append(body); details.append(disclosure);
+      return body;
+    };
+    const setup = section(isSystem ? 'Capabilities & setup' : 'Learning signal & artifacts');
     if (isSystem) {
       const capabilities = node('div', 'evidence-block'); capabilities.append(node('h4', '', 'Documented capabilities'));
       const list = node('ul', 'system-capabilities');
       (Array.isArray(p.capabilities) ? p.capabilities : [p.capabilities]).filter(Boolean).forEach((value) => list.append(node('li', '', textValue(value))));
       if (list.childElementCount) capabilities.append(list); else capabilities.append(node('p', '', 'Not recorded.'));
-      details.append(capabilities, evidence('Requirements', textValue(p.requirements)));
-      const license = node('div', 'evidence-block'); license.append(node('h4', '', 'Repository license'));
-      const licenseText = textValue(p.license) || 'Not verified.';
-      license.append(p.license_url && safeUrl(p.license_url) ? link(licenseText, p.license_url, 'artifact-link') : node('p', '', licenseText)); details.append(license);
-      const related = node('div', 'evidence-block'); related.append(node('h4', '', 'Related research'));
+      setup.append(capabilities, evidence('Requirements', textValue(p.requirements)));
+    }
+    setup.append(evidence('Learning signal', p.learning_signal));
+    setup.append(evidence(isSystem ? 'Availability and inspection' : 'Artifact availability', p.code_note || 'Artifact availability was not verified.'));
+    const evaluation = section(isSystem ? 'Evaluation & related research' : 'Evaluation & related systems');
+    evaluation.append(evidence('Evaluation', p.evaluation));
+    if (p.venue) evaluation.append(evidence('Publication / venue note', p.venue));
+    if (isSystem) {
+      const related = node('div', 'evidence-block'); related.append(node('h4', '', 'Paper relationship'));
       if (p.relationship_note) related.append(node('p', '', p.relationship_note));
       const relatedList = node('ul', 'source-list');
       (p.related_papers || []).forEach((id) => {
@@ -350,14 +433,8 @@
       });
       if (relatedList.childElementCount) related.append(relatedList);
       related.append(node('p', 'relationship-boundary', 'A linked paper and this software record may describe the same research lineage. Source inspection does not establish independent reproduction or version equivalence.'));
-      details.append(related);
-    }
-    details.append(evidence('What changes', (p.update_targets || []).map((id) => label(targets, id)).join(', ') || 'Not applicable'));
-    details.append(evidence('Persistence', persistenceLabels[p.persistence] || p.persistence));
-    details.append(evidence('Learning signal', p.learning_signal));
-    details.append(evidence('Evaluation', p.evaluation));
-    details.append(evidence('Evidence boundary', p.limitations, 'boundary'));
-    if (!isSystem) {
+      evaluation.append(related);
+    } else {
       const relatedSystems = systems.filter((system) => (system.related_papers || []).includes(p.id));
       if (relatedSystems.length) {
         const related = node('div', 'evidence-block'); related.append(node('h4', '', 'Related systems'));
@@ -367,17 +444,15 @@
           button.addEventListener('click', () => openRelatedPaper(system.id)); li.append(button); list.append(li);
         });
         related.append(list, node('p', 'relationship-boundary', 'These are separate software records from the same research lineage, not independent replications. See each record for version and execution limits.'));
-        details.append(related);
+        evaluation.append(related);
       }
     }
-    if (p.venue) details.append(evidence('Publication / venue note', p.venue));
-    const artifacts = node('div', 'evidence-block'); artifacts.append(node('h4', '', 'Official artifacts'));
-    if (p.code_url && safeUrl(p.code_url)) artifacts.append(link('Visit the official repository ↗', p.code_url, 'artifact-link'));
-    artifacts.append(node('p', '', p.code_note || 'Artifact availability was not verified.')); details.append(artifacts);
-    if (isSystem && p.docs_url && safeUrl(p.docs_url)) artifacts.append(link('Read official documentation ↗', p.docs_url, 'artifact-link system-docs-link'));
+    const review = section('Sources & review notes');
     const sources = node('div', 'evidence-block'); sources.append(node('h4', '', 'Sources inspected'));
-    const ul = node('ul', 'source-list'); unique(p.sources || [p.url]).forEach((source, i) => { if (!safeUrl(source)) return; const li = node('li'); li.append(link(sourceLabel(source, i), source)); ul.append(li); }); sources.append(ul); details.append(sources);
-    details.append(node('p', 'source-footnote', isSystem ? `Project sources checked: ${p.checked || 'not recorded'}. Software was not executed. No release date is asserted.` : `Source date: ${p.date || p.year}. Sources checked: ${p.checked || 'not recorded'}.`));
+    const ul = node('ul', 'source-list'); unique(p.sources || [p.url]).forEach((source, i) => { if (!safeUrl(source)) return; const li = node('li'); li.append(link(sourceLabel(source, i), source)); ul.append(li); }); sources.append(ul); review.append(sources);
+    review.append(evidence('Research themes', (p.topics || []).map((id) => label(topics, id)).join(', ')));
+    if (isSystem && p.category) review.append(evidence('System category', label(meta.system_categories || {}, p.category)));
+    review.append(node('p', 'source-footnote', isSystem ? `Project sources checked: ${p.checked || 'not recorded'}. Software was not executed. No release date is asserted.` : `Source date: ${p.date || p.year}. Sources checked: ${p.checked || 'not recorded'}.`));
     details.addEventListener('toggle', () => {
       if (details.open) expandedResources.add(p.id); else expandedResources.delete(p.id);
     });
@@ -461,7 +536,7 @@
     const selectedRoute = routes.find((r) => r.id === s.route);
     const routeIds = selectedRoute ? new Set((selectedRoute.steps || []).map((step) => step.paper)) : null;
     filtered = resources.filter((p) => {
-      const searchable = [p.title, p.id, p.mechanism, p.evaluation, p.limitations, p.learning_signal, p.venue, p.category, textValue(p.capabilities), textValue(p.requirements), textValue(p.license), p.relationship_note, ...(p.topics || []).map((id) => label(topics, id)), ...(p.update_targets || []).map((id) => label(targets, id))].join(' ').toLocaleLowerCase();
+      const searchable = [p.title, recallName(p), p.id, p.mechanism, p.evaluation, p.limitations, p.learning_signal, p.venue, p.category, textValue(p.capabilities), textValue(p.requirements), textValue(p.license), p.relationship_note, ...(p.topics || []).map((id) => label(topics, id)), ...(p.update_targets || []).map((id) => label(targets, id))].join(' ').toLocaleLowerCase();
       return terms.every((term) => searchable.includes(term)) && (!s.topic || (p.topics || []).includes(s.topic)) && (!s.target || (p.update_targets || []).includes(s.target)) && (!s.kind || p.kind === s.kind) && (!s.scope || p.scope === s.scope) && (!s.depth || p.review_depth === s.depth) && (!s.year || String(p.year) === s.year) && (!routeIds || routeIds.has(p.id));
     });
     filtered.sort((a, b) => {
@@ -503,7 +578,10 @@
   $('graph-zoom-in').addEventListener('click', () => graphZoom(1.25));
   $('graph-zoom-out').addEventListener('click', () => graphZoom(0.8));
   $('graph-reset').addEventListener('click', graphReset);
-  $('graph-work-select').addEventListener('change', () => { $('graph-open-work').disabled = !$('graph-work-select').value; });
+  $('graph-work-select').addEventListener('change', () => {
+    $('graph-open-work').disabled = !$('graph-work-select').value;
+    const selected = byId.get($('graph-work-select').value); if (selected) inspectNode('paper', selected, 0);
+  });
   $('graph-open-work').addEventListener('click', () => focusPaper($('graph-work-select').value));
   $('research-graph').addEventListener('keydown', (e) => {
     if (e.target !== $('research-graph')) return;

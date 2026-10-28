@@ -44,8 +44,8 @@ def generate():
     paper_table = "| Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |\n| --- | --- | --- | --- | --- | --- |\n"
     for r in records:
         notes = f"[Notes](#{r['id']})" + (f" · [Code]({r['code_url']})" if r["code_url"] else "")
-        paper_table += f"| {r['date']} | [{esc(r['title'])}]({r['url']}) | {esc(compact(r['mechanism']))} | {esc(', '.join(meta['update_targets'][t] for t in r['update_targets']))} | {r['status']} · {r['review_depth']} | {notes} |\n"
-    papers.extend(["## Paper index\n", "Scan the table, then follow **Notes** for the full mechanism, evaluation boundary, and sources. Preview text is shortened for navigation; it is not a substitute for the annotation.\n", paper_table, "## Full annotations\n"])
+        paper_table += f"| {r['date']} | **{esc(r['short_name'])}**<br>[{esc(r['title'])}]({r['url']}) | {esc(compact(r['mechanism']))} | {esc(', '.join(meta['update_targets'][t] for t in r['update_targets']))} | {r['status']} · {r['review_depth']} | {notes} |\n"
+    papers.extend(["## Paper index\n", "Scan the table, then follow **Notes** for the full mechanism, evaluation boundary, and sources. Bold recall names are navigation labels; linked full titles remain authoritative. Preview text is shortened for navigation, not a substitute for the annotation.\n", paper_table, "## Full annotations\n"])
     for r in records:
         sources = " · ".join(f"[Source {i+1}]({url})" for i, url in enumerate(r["sources"]))
         code = f"[Official artifact]({r['code_url']}) — {r['code_note']}" if r["code_url"] else r["code_note"]

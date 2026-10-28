@@ -28,7 +28,8 @@
     "evaluation": "The primary abstract reports comparisons with memory baselines across six foundation models.",
     "limitations": "This review covers the abstract and official memory-system page. Interpretation: reorganizing a memory store is a form of adaptation, but it is not sufficient evidence of growing procedural skill or reliable long-term retention.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "A-MEM"
   },
   {
     "id": "absolute-zero",
@@ -61,7 +62,8 @@
     "evaluation": "Experiments compare coding and mathematics reasoning across base-model families and scales, with ablations of task types and proposer design.",
     "limitations": "Zero data refers to new task and answer supervision during this training stage; the system starts from pretrained models and uses an engineered executor and task format. Curator interpretation: bounded benchmark gains do not establish unlimited improvement.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Absolute Zero"
   },
   {
     "id": "accumulating-data-model-collapse",
@@ -93,7 +95,8 @@
     "evaluation": "The study includes small transformer language models on TinyStories, molecular diffusion, image variational autoencoders, and controlled analytical models.",
     "limitations": "The bounded-error theorem is for its stated linear setting, and retaining growing datasets changes resource requirements. Curator interpretation: these results challenge universal collapse claims without certifying arbitrary self-training or agent-memory loops.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Accumulation vs. collapse"
   },
   {
     "id": "ace",
@@ -127,7 +130,8 @@
     "evaluation": "Experiments cover AppWorld and financial-analysis tasks; offline adaptation and sequential predict-then-update evaluation are reported separately.",
     "limitations": "Adaptation depends on the reflector extracting useful lessons and can accumulate noise. Online test-stream learning is a different protocol from evaluating a frozen agent on independent tasks.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "ACE"
   },
   {
     "id": "adas",
@@ -162,7 +166,8 @@
     "evaluation": "Experiments cover coding, science, and math, with reported transfer of discovered designs across tasks and models.",
     "limitations": "The meta-agent search procedure is fixed; improving a task agent is distinct from improving the mechanism that invents agents. The reported transfer remains bounded by the evaluated domains and models.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "ADAS"
   },
   {
     "id": "aflow",
@@ -198,7 +203,8 @@
     "evaluation": "Six QA, coding, and math datasets are divided into development and test subsets; the paper also compares execution costs and transfer between executor models.",
     "limitations": "The study focuses on reasoning tasks with accessible evaluators and commonly used operators. Search costs and repeated validation exposure should be considered separately from the inference cost of the selected workflow.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "AFlow"
   },
   {
     "id": "agent-workflow-memory",
@@ -233,7 +239,8 @@
     "evaluation": "The authors evaluate Mind2Web and WebArena, including cross-task, cross-website, and cross-domain splits and workflow-representation ablations.",
     "limitations": "Online memory admission uses a learned success evaluator, so stored workflows can inherit its errors. Interpretation: sequential test-time learning should be compared under the same task order and feedback access.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "AWM"
   },
   {
     "id": "agent0",
@@ -267,7 +274,8 @@
     "evaluation": "The paper tests two Qwen base-model sizes on mathematics and general-reasoning suites, comparing tool-enabled baselines and other self-evolving methods.",
     "limitations": "No new human-annotated training tasks are required, but pretrained weights, reward design, and tool infrastructure remain inputs. Curator interpretation: majority-derived pseudo-labels need independent correctness checks, and peak training scores are not evidence of indefinite improvement.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Agent0"
   },
   {
     "id": "agentdevel",
@@ -299,7 +307,8 @@
     "evaluation": "The abstract reports execution-heavy benchmark experiments with fewer regressions and auditable version histories.",
     "limitations": "This is an external improvement pipeline rather than in-agent autonomous learning. The abstract review does not establish the benchmark composition, statistical uncertainty, or protection against every regression.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "AgentDevel"
   },
   {
     "id": "agentsquare",
@@ -336,7 +345,8 @@
     "evaluation": "The authors compare generated agents on six benchmarks spanning web, embodied, tool-use, and game tasks.",
     "limitations": "Optimization operates within predefined module interfaces and an external search framework. Curator interpretation: gains under these tasks do not establish unrestricted architectural invention or continual learning after deployment.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "AgentSquare"
   },
   {
     "id": "agentstream",
@@ -374,7 +384,8 @@
     "evaluation": "Crosses five methods with three model backbones and six benchmarks; method benefits vary with the model and stream composition.",
     "limitations": "The paper limits model-strength conclusions to its framework and selected benchmarks. Streaming performance is not proof of indefinite retention or deployment reliability.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "AgentStream"
   },
   {
     "id": "alphago-zero",
@@ -406,7 +417,8 @@
     "evaluation": "The authors evaluate playing strength against earlier Go programs, including the previously published champion-defeating AlphaGo.",
     "limitations": "The environment supplies exact rules, legal moves, and a reliable win/loss signal. Curator interpretation: success in this closed game does not establish open-ended language-agent learning.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "AlphaGo Zero"
   },
   {
     "id": "comprehensive-evolving-survey",
@@ -437,7 +449,8 @@
     "evaluation": "Reviews methods alongside evaluation, safety, and ethical considerations.",
     "limitations": "Review coverage and categories reflect the authors’ literature selection; the framework does not itself demonstrate lifelong capability growth.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Agent evolution survey"
   },
   {
     "id": "constitutional-ai",
@@ -468,7 +481,8 @@
     "evaluation": "The authors report human evaluations of helpfulness and harmlessness for trained assistants.",
     "limitations": "The constitution and training procedure are designed externally. Curator interpretation: this supports AI-assisted alignment training, not unsupervised value discovery or a guarantee that safety persists through later self-modification.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Constitutional AI"
   },
   {
     "id": "creator",
@@ -500,7 +514,8 @@
     "evaluation": "The authors evaluate MATH, TabMWP, and the introduced Creation Challenge dataset, with tool-use and reasoning baselines.",
     "limitations": "Much of the framework concerns solving and repairing an individual problem. Interpretation: tool-transfer experiments should be separated from claims of a continually improving cross-task agent.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "CREATOR"
   },
   {
     "id": "darwin-godel-machine",
@@ -537,7 +552,8 @@
     "evaluation": "The paper evaluates SWE-bench Verified and Polyglot subsets, ablates self-improvement and archive exploration, and studies transfer across foundation models.",
     "limitations": "Foundation models, archive management, and parent selection remain fixed in the inspected study. Staged search and evaluation use benchmark subsets, so the reported curves should not be interpreted as a fully separate hidden-task deployment evaluation.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "DGM"
   },
   {
     "id": "dr-zero",
@@ -570,7 +586,8 @@
     "evaluation": "The authors compare the trained search agents with supervised alternatives on several question-answering benchmarks.",
     "limitations": "Without training data means without human-annotated task data, not without external information: the search engine supplies a knowledge environment. This abstract-level review does not independently test search freshness, citation fidelity, or long-term robustness.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Dr. Zero"
   },
   {
     "id": "dspy",
@@ -603,7 +620,8 @@
     "evaluation": "The paper studies math reasoning and retrieval-based question-answering pipelines, comparing compiled programs with hand-written prompts and demonstrations.",
     "limitations": "Compilation is externally configured optimization; the paper does not establish an agent that autonomously maintains learning after deployment. The proceedings landing page uses a title variant ending in State-of-the-Art Pipelines.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "DSPy"
   },
   {
     "id": "ell-stulife",
@@ -636,7 +654,8 @@
     "evaluation": "The primary evaluation resets agent context between tasks; retained information must be explicitly stored and retrieved through environmental tools such as calendars and drafts.",
     "limitations": "The main results measure the specified stateless-agent baseline in a designed simulation. They should not be presented as a trained lifelong learner’s learning curve or as proof that a memory-equipped learner cannot succeed.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "ELL / StuLife"
   },
   {
     "id": "evoagentx",
@@ -672,7 +691,8 @@
     "evaluation": "The authors evaluate QA, coding, and math workflows on HotpotQA, MBPP, and MATH, with additional GAIA tasks.",
     "limitations": "Integration of optimizers is distinct from demonstrating a new self-improvement mechanism. Curator interpretation: benchmark gains under configured optimization do not establish continual autonomous adaptation in deployment.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "EvoAgentX"
   },
   {
     "id": "evolvenet",
@@ -704,7 +724,8 @@
     "evaluation": "The revised abstract reports five experimental settings and ablations separating adaptation composition from selecting a single specialist.",
     "limitations": "The theoretical results are conditional on assumptions about retaining and composing improvements. Curator interpretation: sharing code adaptations without raw workloads does not by itself establish a formal privacy guarantee.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "EvolveNet"
   },
   {
     "id": "expel",
@@ -738,7 +759,8 @@
     "evaluation": "The paper evaluates HotpotQA, ALFWorld, and WebShop, examines insight and retrieval ablations, and studies transfer from question answering to fact verification.",
     "limitations": "The investigated environments have textual observations and are deterministic. The authors note that larger lifelong insight stores would need additional retrieval beyond fitting all insights into context.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "ExpeL"
   },
   {
     "id": "experience-faithfulness",
@@ -769,7 +791,8 @@
     "evaluation": "Across several frameworks, backbones, and environments, the authors find that condensed experience can be ignored or misinterpreted even when raw experience influences behavior.",
     "limitations": "The interventions support conclusions within the tested systems. High end-task scores alone do not reveal whether the intended learning pathway caused a gain.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Experience faithfulness"
   },
   {
     "id": "flexa-mem",
@@ -799,7 +822,8 @@
     "evaluation": "The abstract reports AppWorld task-completion experiments and LongMemEval and LoCoMo QA, including an unused-task evaluation with predictions fixed beforehand.",
     "limitations": "The method adapts the presented context rather than learning its own update policy. It is included as an adjacent comparison for separating memory access gains from agent self-learning.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "FlexA-Mem"
   },
   {
     "id": "gdpevo",
@@ -834,7 +858,8 @@
     "evaluation": "Compares agent/model combinations and supervision types on generated enterprise workflow tasks and analyzes rule transfer.",
     "limitations": "Construction calibrates task groups partly for an expected improvement range, which can favor detectable learning gains. These are generated business scenarios, not a live enterprise deployment study.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "GDPevo"
   },
   {
     "id": "generative-agents",
@@ -867,7 +892,8 @@
     "evaluation": "The authors assess behavioral believability and emergent coordination in a sandbox populated by simulated agents, including architecture ablations.",
     "limitations": "Believability is a different outcome from task competence or factual correctness. This is an adjacent foundation for persistent reflective memory, not a demonstration of open-ended capability improvement.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Generative Agents"
   },
   {
     "id": "gepa",
@@ -900,7 +926,8 @@
     "evaluation": "The final proceedings abstract reports comparisons with GRPO and MIPROv2 across six tasks, plus inference-time code optimization.",
     "limitations": "The headline comparison concerns the reported models, tasks, and budgets; it is not a general ranking of prompt optimization and reinforcement learning. Curator interpretation: total evaluation and reflector costs matter alongside rollout counts.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "GEPA"
   },
   {
     "id": "godel-agent",
@@ -934,7 +961,8 @@
     "evaluation": "The paper reports experiments in mathematical reasoning and agent tasks, with performance, efficiency, and generalization comparisons.",
     "limitations": "Empirical task gains are not formal proofs that a modification is beneficial. The ACL proceedings title uses Recursively Self-Improvement; it is the same research lineage as the linked arXiv record.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Gödel Agent"
   },
   {
     "id": "group-evolving-agents",
@@ -966,7 +994,8 @@
     "evaluation": "Evaluations use SWE-bench Verified and Polyglot, with model-transfer and framework-bug recovery analyses.",
     "limitations": "The evidence concerns coding agents under the study budgets. Curator interpretation: experience sharing during search is distinct from a deployed multi-agent team continually learning in an open environment.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Group-Evolving Agents"
   },
   {
     "id": "hierarchical-self-improvement",
@@ -999,7 +1028,8 @@
     "evaluation": "BALROG experiments report gains on several game environments, held-out BabaIsAI sub-suites, and no improvement on NLE.",
     "limitations": "The authors identify limits from feedback quality and the frozen model capability. The outer anchor remains fixed, and held-out results concern the particular task-family splits.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Hierarchical improvement"
   },
   {
     "id": "hyperagents",
@@ -1034,7 +1064,8 @@
     "evaluation": "The study includes coding, paper-review prediction, robotics reward design, and math-solution grading, with held-out task evaluations and cross-domain tests of the meta-agent.",
     "limitations": "The main experiments retain a fixed task distribution and outer selection/evaluation protocol. The paper establishes bounded transfer of improvement procedures, not unconstrained or indefinitely accelerating self-improvement.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Hyperagents"
   },
   {
     "id": "hyperskill",
@@ -1065,7 +1096,8 @@
     "evaluation": "The authors compare memory baselines on xBench, GAIA, and WebWalkerQA with two language-model backbones.",
     "limitations": "This annotation is based on the primary abstract. Interpretation: benchmark comparisons do not independently establish long-term retention or safe pruning under changing task distributions.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "HyperSkill"
   },
   {
     "id": "intrinsic-self-correction",
@@ -1095,7 +1127,8 @@
     "evaluation": "The studied reasoning settings show weak correction and, in some cases, degradation after revision.",
     "limitations": "The result concerns the tested models, prompts, and tasks; it does not rule out externally grounded feedback, learned correction, or durable agent learning.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Self-correction limits"
   },
   {
     "id": "lifelongagentbench",
@@ -1127,7 +1160,8 @@
     "evaluation": "Tests experience reuse and a group self-consistency mechanism; ordinary replay is limited by irrelevant context and context length.",
     "limitations": "Performance on these task sequences should be separated from general lifelong learning. The abstract does not establish a complete audit of forgetting or long-term deployment.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "LifelongAgentBench"
   },
   {
     "id": "live-swe-agent",
@@ -1159,7 +1193,8 @@
     "evaluation": "The authors report software-repair evaluations on SWE-bench Verified and SWE-bench Pro.",
     "limitations": "The abstract establishes adaptation during a task, not durable learning carried between independent tasks. Current leaderboard rankings and results from different model versions should not be inferred from the paper.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Live-SWE-agent"
   },
   {
     "id": "llms-as-tool-makers",
@@ -1192,7 +1227,8 @@
     "evaluation": "The paper compares task accuracy and serving cost on reasoning problems, including BIG-Bench tasks.",
     "limitations": "Results depend on the selected task families and how tool-making costs are amortized. Interpretation: reusable tool creation does not establish unrestricted autonomous software evolution.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "LLMs as Tool Makers"
   },
   {
     "id": "locomo",
@@ -1224,7 +1260,8 @@
     "evaluation": "Compares memory approaches on the LoCoMo conversational benchmark.",
     "limitations": "Recall from generated and edited conversations differs from learning a reusable procedure or improving an agent. Dataset statistics differ between paper and project versions; pin the artifact before comparing scores.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "LoCoMo"
   },
   {
     "id": "longmemeval",
@@ -1256,7 +1293,8 @@
     "evaluation": "Evaluates memory designs and downstream question answering over controlled histories with scalable length.",
     "limitations": "Recall and evidence use are components of learning agents, not direct proof of procedural improvement. History version, reader, retrieval budget, and grader must be matched for comparisons.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "LongMemEval"
   },
   {
     "id": "longmemeval-v2",
@@ -1287,7 +1325,8 @@
     "evaluation": "Compares retrieval and coding-agent evidence gathering on questions derived from specialized environments, including accuracy and latency tradeoffs.",
     "limitations": "This is a context-gathering and question-answering benchmark. Better answers do not alone demonstrate successful live task execution or sustained autonomous skill acquisition; the paper is marked work in progress.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "LongMemEval-V2"
   },
   {
     "id": "mem-alpha",
@@ -1318,7 +1357,8 @@
     "evaluation": "The authors compare memory-augmented baselines and report generalization from training histories to substantially longer evaluation histories.",
     "limitations": "The abstract supports long-context memory construction under a QA objective. Interpretation: longer-context generalization should not be equated with cross-domain procedural learning or autonomous objective selection.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Mem-α"
   },
   {
     "id": "mem0",
@@ -1348,7 +1388,8 @@
     "evaluation": "The paper compares memory systems, retrieval approaches, and full-context baselines on LoCoMo using answer-quality, latency, and token-cost measures.",
     "limitations": "The reported evaluation concerns conversational recall and QA. The title’s production-readiness wording is an author characterization; this review does not establish deployment reliability or procedural self-improvement.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Mem0"
   },
   {
     "id": "memgpt",
@@ -1379,7 +1420,8 @@
     "evaluation": "The authors evaluate document analysis beyond the active context window and memory across multiple chat sessions.",
     "limitations": "This is an adjacent memory architecture: remembered facts and context management do not alone establish accumulation of reusable task competence. Current software descended from the research may differ from the evaluated version.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "MemGPT"
   },
   {
     "id": "memory-r1",
@@ -1410,7 +1452,8 @@
     "evaluation": "The current abstract reports evaluation on LoCoMo, MSC, and LongMemEval across several model scales and question types.",
     "limitations": "Evidence reviewed here is the current abstract, not an audit of the training split or reward implementation. Conversation-memory QA gains do not establish improvement on long-horizon tool-use tasks.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Memory-R1"
   },
   {
     "id": "memorybank",
@@ -1441,7 +1484,8 @@
     "evaluation": "The paper combines qualitative user-dialogue analysis with quantitative tests on model-generated long-term conversations.",
     "limitations": "Simulated dialogue and personalization outcomes are not clinical validation or evidence of general task-skill improvement. The memory mechanism should be distinguished from separate model tuning.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "MemoryBank"
   },
   {
     "id": "memp",
@@ -1475,7 +1519,8 @@
     "evaluation": "The paper studies TravelPlanner and ALFWorld and reports transfer of procedural memory from a stronger model to a weaker one.",
     "limitations": "The reported gains concern analogous tasks in two benchmark environments. Interpretation: cross-model reuse does not by itself demonstrate transfer to unrelated task families or indefinite retention.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Memp"
   },
   {
     "id": "memrl",
@@ -1506,7 +1551,8 @@
     "evaluation": "The authors report results on HLE, BigCodeBench, ALFWorld, and Lifelong Agent Bench.",
     "limitations": "The abstract and official repository were inspected; training/evaluation separation and statistical uncertainty were not independently audited. Benchmark gains do not settle the stability-plasticity problem in general.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "MemRL"
   },
   {
     "id": "model-collapse",
@@ -1539,7 +1585,8 @@
     "evaluation": "Experiments include Gaussian mixtures, variational autoencoders, and repeated language-model fine-tuning, with differing amounts of original data retained.",
     "limitations": "The theoretical replacement setting and finite experiments have specific data-mixing assumptions. Curator interpretation: this is a warning about recursive data use, not a proof that every verified or data-accumulating self-learning loop must fail.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Model collapse"
   },
   {
     "id": "modern-self-improvement-survey",
@@ -1571,7 +1618,8 @@
     "evaluation": "Synthesizes model and scaffold adaptation, applications, and evaluation problems.",
     "limitations": "A survey’s deployment discussion is not independent deployment validation. Different update mechanisms still require different controls and measures.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Agent self-improvement survey"
   },
   {
     "id": "modularrsi",
@@ -1607,7 +1655,8 @@
     "evaluation": "Evolution uses a separately constructed task collection; the frozen learned library is evaluated on TerminalBench 2.0 and SWE-bench Verified, including cross-model transfer.",
     "limitations": "The reported benchmark separation depends on the documented curation and similarity-screening procedure. Infrastructure is outside the editable scope, and downstream evaluation allows function selection but no further function modification.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "ModularRSI"
   },
   {
     "id": "muse-autoskill",
@@ -1639,7 +1688,8 @@
     "evaluation": "The revised abstract reports SkillsBench and SkillLearnBench comparisons and transfer of generated skills to another agent.",
     "limitations": "The comparison with human-authored skills is explicitly reported on a successfully covered subset. Interpretation: that subset result should not be presented as an overall advantage across all tasks.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "MUSE-Autoskill"
   },
   {
     "id": "opensir",
@@ -1669,7 +1719,8 @@
     "evaluation": "The current paper reports mathematical benchmark improvements for instruction and reasoning models and transfer to selected general-reasoning evaluations.",
     "limitations": "The paper’s open-ended framing should be read against its finite training runs and benchmark suite. This abstract-level review does not establish correctness of all generated problems or unbounded discovery.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "OpenSIR"
   },
   {
     "id": "opro",
@@ -1701,7 +1752,8 @@
     "evaluation": "Prompt optimization is evaluated on GSM8K and BIG-Bench Hard, alongside illustrative numerical and combinatorial optimization tasks.",
     "limitations": "This is an external prompt-search procedure, not evidence of autonomous lifelong agent learning. Curator interpretation: the chosen objective and development data constrain what the search can improve.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "OPRO"
   },
   {
     "id": "past-bench",
@@ -1737,7 +1789,8 @@
     "evaluation": "Tests personal-agent frameworks across memory, procedural reuse, information gathering, and update, with diagnostic interventions in Hermes+.",
     "limitations": "The controlled families and model-dependent gains test prerequisites for recursive improvement, not an open-ended recursive process. Task scores and intended mechanism evidence are separate outcomes.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "PAST-Bench"
   },
   {
     "id": "phantom-gains",
@@ -1768,7 +1821,8 @@
     "evaluation": "Audits repeated low-rank self-training and matched alternatives, proposing per-problem tests against pooled baseline replicates.",
     "limitations": "The reported measurement failures are valuable controls for study design; results from one training setup do not establish that every self-training method fails.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Phantom Gains"
   },
   {
     "id": "promptbreeder",
@@ -1800,7 +1854,8 @@
     "evaluation": "Evaluations cover arithmetic, commonsense reasoning, and hate-speech classification.",
     "limitations": "The foundation model and surrounding evolutionary procedure remain fixed. Prompt-level self-reference should not be read as evidence of unbounded improvement of the complete agent.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Promptbreeder"
   },
   {
     "id": "r-zero",
@@ -1831,7 +1886,8 @@
     "evaluation": "The authors report mathematical and general-domain reasoning improvements across multiple backbone models.",
     "limitations": "The framework still depends on pretrained models and the designed reward procedure. This abstract-level review does not independently validate generated task correctness, long-run stability, or open-world transfer.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "R-Zero"
   },
   {
     "id": "react",
@@ -1862,7 +1918,8 @@
     "evaluation": "Experiments cover question answering, fact verification, ALFWorld, and WebShop with comparisons to reasoning-only and acting-only approaches.",
     "limitations": "Included as a baseline agent loop. The prompted interaction loop does not itself establish persistent self-learning between tasks.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "ReAct"
   },
   {
     "id": "reasoningbank",
@@ -1897,7 +1954,8 @@
     "evaluation": "The study evaluates sequential web-browsing and software-engineering tasks, with memory baselines, failure-trajectory ablations, and test-time-compute comparisons.",
     "limitations": "The learning signal relies on model judgments rather than access to ground truth during the task stream. Interpretation: memory gains should be compared under matched compute budgets, task order, and protection against retrieving the current task’s answer.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "ReasoningBank"
   },
   {
     "id": "reflexion",
@@ -1930,7 +1988,8 @@
     "evaluation": "The study evaluates repeated attempts on ALFWorld, HotpotQA, and programming tasks, with ablations of reflection and feedback.",
     "limitations": "The central experiments improve retries of the same task; they do not establish a durable cross-task learning library. Feedback sources differ by task, and the paper uses bounded memory.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Reflexion"
   },
   {
     "id": "rest",
@@ -1960,7 +2019,8 @@
     "evaluation": "The reported experiments focus on machine translation, assessed using automatic metrics and human evaluation.",
     "limitations": "This is externally organized model training on a specific application. Curator interpretation: the study does not establish a lifelong agent or a reward signal that itself improves without outside specification.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "ReST"
   },
   {
     "id": "rest-mcts",
@@ -1993,7 +2053,8 @@
     "evaluation": "The authors compare search methods at matched search budgets and report multi-iteration self-training results for three language models.",
     "limitations": "Oracle final answers remain available, and inferred step rewards depend on the search procedure. Curator interpretation: removing manual process labels does not remove external supervision.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "ReST-MCTS*"
   },
   {
     "id": "rise",
@@ -2025,7 +2086,8 @@
     "evaluation": "Math-reasoning experiments compare sequential improvement with single-turn strategies under comparable inference budgets and examine iterative training and distribution shift.",
     "limitations": "The learned correction policy persists in weights, while the revisions at deployment concern the current problem. Some data-collection variants use a stronger model; this is not recursive modification of the learning algorithm itself.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "RISE"
   },
   {
     "id": "safety-self-evolving-survey",
@@ -2057,7 +2119,8 @@
     "evaluation": "Reviews evidence for admission, retrieval, activation, containment, and repair; identifies comparatively weak evidence for repairing descendants and evaluating resumed learning.",
     "limitations": "The framework proposes how to organize longitudinal safety assessment; it does not certify that a learning system remains safe.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Agent evolution safety"
   },
   {
     "id": "score",
@@ -2088,7 +2151,8 @@
     "evaluation": "The authors evaluate self-correction on MATH and HumanEval using Gemini models.",
     "limitations": "The training produces a reusable correction capability; a test-time revision is still a within-problem operation. Curator interpretation: these benchmarks do not show autonomous lifelong improvement across changing environments.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "SCoRe"
   },
   {
     "id": "seal",
@@ -2122,7 +2186,8 @@
     "evaluation": "Experiments cover knowledge incorporation and few-shot ARC adaptation; the paper also tests retention after sequential knowledge edits.",
     "limitations": "ARC evaluation uses a small subset selected for solvability under suitable adaptation settings. Sequential edits still show forgetting, and evaluating each candidate edit requires model tuning; the paper does not establish stable lifelong adaptation.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "SEAL"
   },
   {
     "id": "self-challenging-agents",
@@ -2154,7 +2219,8 @@
     "evaluation": "The authors evaluate multi-turn tool use on M3ToolEval and TauBench.",
     "limitations": "Tool interfaces and the learning framework are supplied externally. Curator interpretation: tests of a generated verifier cannot establish that every generated task captures its intended semantics or that gains transfer to arbitrary tools.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Self-Challenging Agents"
   },
   {
     "id": "self-correction-survey",
@@ -2185,7 +2251,8 @@
     "evaluation": "The reviewed evidence favors reliable external feedback or trained correction in many settings, while questioning broad claims for prompted intrinsic correction.",
     "limitations": "This is a review of the literature available in 2024, not a universal impossibility theorem or a measurement of current models.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Self-correction survey"
   },
   {
     "id": "self-evolving-survey",
@@ -2218,7 +2285,8 @@
     "evaluation": "Synthesizes published methods, benchmarks, and open questions rather than evaluating one new learner.",
     "limitations": "A taxonomy is an organizing aid, not evidence that every included system improves continually. The title’s superintelligence framing is a research aspiration.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "What/when/how survey"
   },
   {
     "id": "self-instruct",
@@ -2249,7 +2317,8 @@
     "evaluation": "The paper evaluates instruction following on Super-NaturalInstructions and expert-written novel tasks, including human assessment.",
     "limitations": "The generator inherits its pretrained capabilities and biases, and dataset filtering is part of the learning system. Curator interpretation: better instruction following alone is not evidence of continual agent learning.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Self-Instruct"
   },
   {
     "id": "self-refine",
@@ -2281,7 +2350,8 @@
     "evaluation": "The paper compares iterative refinement with one-shot generation on several generation and reasoning tasks using human and automatic assessments.",
     "limitations": "These are within-task output improvements. They do not establish retained learning on later tasks, and the evaluation conditions differ from studies of intrinsic reasoning correction.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Self-Refine"
   },
   {
     "id": "self-rewarding-lms",
@@ -2313,7 +2383,8 @@
     "evaluation": "The paper reports instruction-following and reward-quality improvements across three iterations, including AlpacaEval 2.0 evaluation.",
     "limitations": "The evidence concerns bounded iterations and selected evaluation protocols. Curator interpretation: agreement with an evolving self-judge is not an independent guarantee of correctness or indefinite improvement.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Self-Rewarding LMs"
   },
   {
     "id": "sica",
@@ -2348,7 +2419,8 @@
     "evaluation": "The paper reports gains on a random SWE-bench Verified subset, LiveCodeBench, and synthetic agent tasks.",
     "limitations": "The software-repair result uses a fixed 50-task subset and a five-minute timeout. The authors note that faster file editing explains part of the gain, with limited improvements on reasoning tasks; repeated benchmark evaluation is distinct from held-out deployment transfer.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "SICA"
   },
   {
     "id": "skillflow",
@@ -2379,7 +2451,8 @@
     "evaluation": "Measures task success, skill discovery, revision, and reuse across a structured set of task families, with benefits differing substantially across models.",
     "limitations": "Skill invocation is not evidence of useful learning: the paper reports high use with small gains or regression. Family-specific evaluation does not establish broad transfer.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "SkillFlow"
   },
   {
     "id": "skillrl",
@@ -2414,7 +2487,8 @@
     "evaluation": "The authors evaluate ALFWorld, WebShop, and seven search-augmented QA datasets, including component and teacher-model analyses.",
     "limitations": "The method uses a teacher and reward-bearing environments, so it is not training-free or supervision-free. Interpretation: its recursive skill refresh is not evidence that the system can redesign its own learning algorithm.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "SkillRL"
   },
   {
     "id": "spin",
@@ -2446,7 +2520,8 @@
     "evaluation": "The authors report results on Open LLM Leaderboard tasks, MT-Bench, and Big-Bench datasets.",
     "limitations": "No additional human annotation is required by the loop, but existing human demonstrations remain its target distribution. Curator interpretation: this is not learning from zero prior human data.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "SPIN"
   },
   {
     "id": "star",
@@ -2478,7 +2553,8 @@
     "evaluation": "Experiments cover arithmetic, CommonsenseQA, and GSM8K, with comparisons to direct-answer fine-tuning and prompted reasoning.",
     "limitations": "The method needs training questions, reference answers, and a small rationale seed. Correct final answers do not independently certify that every intermediate explanation is valid.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "STaR"
   },
   {
     "id": "stop",
@@ -2510,7 +2586,8 @@
     "evaluation": "The study reports improvements on a small set of algorithmic tasks and separately examines attempts to bypass a sandbox.",
     "limitations": "The authors explicitly retain a fixed language model, so the result is bounded scaffold self-improvement. Performance on the small task set does not establish an indefinitely accelerating process.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "STOP"
   },
   {
     "id": "symbolic-agent-learning",
@@ -2545,7 +2622,8 @@
     "evaluation": "The abstract describes proof-of-concept experiments on standard benchmarks and more complex tasks.",
     "limitations": "These are natural-language analogues of gradient-based learning, not mathematical derivatives of a differentiable objective. The reviewed abstract does not establish unrestricted long-term learning after deployment.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Symbolic agent learning"
   },
   {
     "id": "temporal-self-rewarding",
@@ -2577,7 +2655,8 @@
     "evaluation": "The authors compare model families and sizes at matched compute and report instruction-following and selected out-of-distribution reasoning, QA, and coding results.",
     "limitations": "This review inspected the proceedings abstract and repository landing page. Curator interpretation: reported task transfer does not establish a calibrated self-judge or unlimited improvement over future generations.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Temporal self-rewarding"
   },
   {
     "id": "textgrad",
@@ -2611,7 +2690,8 @@
     "evaluation": "The paper reports studies in question answering, code generation, molecule design, and treatment-plan optimization.",
     "limitations": "Output refinement and reusable system learning are different experimental settings. Curator interpretation: success under an LLM critic does not by itself establish correctness or clinical validity.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "TextGrad"
   },
   {
     "id": "toolformer",
@@ -2643,7 +2723,8 @@
     "evaluation": "The paper evaluates zero-shot downstream tasks using tools such as a calculator, question answering, search, translation, and a calendar.",
     "limitations": "The available APIs and initial demonstrations are supplied by researchers. Curator interpretation: learning to invoke these tools is distinct from autonomously creating new tools or learning continually after deployment.",
     "review_depth": "abstract",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Toolformer"
   },
   {
     "id": "trusting-trust-agents",
@@ -2677,7 +2758,8 @@
     "evaluation": "Presents proof-of-concept studies on a modified Darwin Gödel Machine, SICA, and Hyperagents, including continued evolution after poison removal.",
     "limitations": "These are constructed attacks under specified agent and benchmark conditions, not an estimate of attack prevalence. Clean subsequent tasks do not reliably remove contaminated components in the studied cases.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Poisoned benchmarks"
   },
   {
     "id": "voyager",
@@ -2713,6 +2795,7 @@
     "evaluation": "The authors compare exploration, technology-tree progress, ablations, and reuse of learned skills on new tasks in another Minecraft world.",
     "limitations": "Results concern a simulator with supplied control APIs. The paper reports inaccurate self-verification and impossible proposed tasks, so its retained library is not guaranteed correct.",
     "review_depth": "full-text",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "short_name": "Voyager"
   }
 ]

@@ -59,6 +59,12 @@ class CatalogTests(unittest.TestCase):
         self.assertIn(f"Systems & frameworks: {len(load('systems.json'))}", readme)
         self.assertNotIn("{{BADGES}}", readme)
 
+    def test_recall_names_are_short_unique_and_do_not_replace_titles(self):
+        for records, title_field in [(load(), "title"), (load("systems.json"), "name")]:
+            names = [r["short_name"].casefold() for r in records]
+            self.assertEqual(len(names), len(set(names)))
+            self.assertTrue(all(r[title_field] and 0 < len(r["short_name"]) <= 40 for r in records))
+
     def test_duplicate_arxiv_versions_rejected(self):
         records = copy.deepcopy(load()[:1])
         records[0]["url"] = "https://arxiv.org/abs/2501.12345"

@@ -37,7 +37,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "A-MEM"
   },
   {
     "id": "system-absolute-zero",
@@ -78,7 +79,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "Absolute Zero Reasoner"
   },
   {
     "id": "system-adas",
@@ -122,7 +124,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "ADAS"
   },
   {
     "id": "system-aflow",
@@ -166,7 +169,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "AFlow"
   },
   {
     "id": "system-agent-lightning",
@@ -208,7 +212,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "Agent Lightning"
   },
   {
     "id": "system-agent-workflow-memory",
@@ -252,7 +257,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "AWM"
   },
   {
     "id": "system-agent0",
@@ -295,7 +301,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "Agent0"
   },
   {
     "id": "system-darwin-godel-machine",
@@ -340,7 +347,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "DGM"
   },
   {
     "id": "system-dspy",
@@ -386,7 +394,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "DSPy"
   },
   {
     "id": "system-evoagentx",
@@ -432,7 +441,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "EvoAgentX"
   },
   {
     "id": "system-expel",
@@ -473,7 +483,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "ExpeL"
   },
   {
     "id": "system-gepa",
@@ -519,7 +530,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "GEPA"
   },
   {
     "id": "system-hermes-agent",
@@ -565,7 +577,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "Hermes Agent"
   },
   {
     "id": "system-hyperagents",
@@ -609,7 +622,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "Hyperagents"
   },
   {
     "id": "system-langmem",
@@ -650,7 +664,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "LangMem"
   },
   {
     "id": "system-letta",
@@ -698,7 +713,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "Letta Code"
   },
   {
     "id": "system-mem0",
@@ -738,7 +754,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "Mem0"
   },
   {
     "id": "system-memrl",
@@ -779,7 +796,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "MemRL"
   },
   {
     "id": "system-reasoningbank",
@@ -820,7 +838,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "ReasoningBank"
   },
   {
     "id": "system-seal",
@@ -862,7 +881,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "SEAL"
   },
   {
     "id": "system-sica",
@@ -906,7 +926,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "SICA"
   },
   {
     "id": "system-skillrl",
@@ -948,7 +969,8 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "SkillRL"
   },
   {
     "id": "system-voyager",
@@ -991,6 +1013,7 @@
     ],
     "checked": "2026-10-28",
     "review_depth": "project",
-    "execution_status": "not-run"
+    "execution_status": "not-run",
+    "short_name": "Voyager"
   }
 ]

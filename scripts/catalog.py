@@ -36,8 +36,8 @@ def sort_key(record):
 
 
 def validate_records(records, meta):
-    errors, ids, primary_ids = [], set(), set()
-    required = {"id", "title", "date", "year", "kind", "status", "venue", "url", "sources", "code_url", "code_note", "topics", "scope", "update_targets", "persistence", "learning_signal", "mechanism", "evaluation", "limitations", "review_depth", "checked"}
+    errors, ids, primary_ids, short_names = [], set(), set(), set()
+    required = {"id", "title", "short_name", "date", "year", "kind", "status", "venue", "url", "sources", "code_url", "code_note", "topics", "scope", "update_targets", "persistence", "learning_signal", "mechanism", "evaluation", "limitations", "review_depth", "checked"}
     enums = {
         "kind": {"paper", "survey", "benchmark"},
         "status": {"preprint", "peer-reviewed", "technical-report"},
@@ -56,6 +56,11 @@ def validate_records(records, meta):
         if label in ids:
             errors.append(f"{label}: duplicate id")
         ids.add(label)
+        short = r["short_name"]
+        if not isinstance(short, str) or not short.strip() or len(short) > 40 or short.casefold() in short_names:
+            errors.append(f"{label}: invalid or duplicate recall name")
+        elif isinstance(short, str):
+            short_names.add(short.casefold())
         key = identity(r["url"])
         if key in primary_ids:
             errors.append(f"{label}: duplicate primary work {key}")
@@ -95,8 +100,8 @@ def validate_records(records, meta):
 def validate_systems(systems, meta, papers):
     """Validate software separately from publications; do not invent release dates."""
     paper_ids = {p["id"] for p in papers}
-    ids, urls, errors = set(paper_ids), set(), []
-    required = {"id", "name", "category", "url", "docs_url", "related_papers", "relationship_note", "topics", "update_targets", "persistence", "scope", "learning_signal", "mechanism", "capabilities", "evaluation", "limitations", "availability_note", "license", "license_url", "requirements", "sources", "checked", "review_depth", "execution_status"}
+    ids, urls, errors, short_names = set(paper_ids), set(), [], set()
+    required = {"id", "name", "short_name", "category", "url", "docs_url", "related_papers", "relationship_note", "topics", "update_targets", "persistence", "scope", "learning_signal", "mechanism", "capabilities", "evaluation", "limitations", "availability_note", "license", "license_url", "requirements", "sources", "checked", "review_depth", "execution_status"}
     for i, r in enumerate(systems):
         label = r.get("id", f"system {i}")
         missing = required - r.keys()
@@ -106,6 +111,11 @@ def validate_systems(systems, meta, papers):
         if not re.fullmatch(r"system-[a-z0-9]+(?:-[a-z0-9]+)*", label) or label in ids:
             errors.append(f"{label}: invalid or duplicate system id")
         ids.add(label)
+        short = r["short_name"]
+        if not isinstance(short, str) or not short.strip() or len(short) > 40 or short.casefold() in short_names:
+            errors.append(f"{label}: invalid or duplicate recall name")
+        elif isinstance(short, str):
+            short_names.add(short.casefold())
         if identity(r["url"]) in urls:
             errors.append(f"{label}: duplicate software identity")
         urls.add(identity(r["url"]))

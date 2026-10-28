@@ -53,3 +53,7 @@ Dates sort newest first. Within a year, fully dated records precede year-only re
 Systems have no inferred `date` or `year`: an inspection date, repository creation date, or related paper date is not a software release date. Year filters apply to dated research records. Source-inspection status is not a peer-review label. The CLI's JSON output returns the raw canonical records; the browser exports separate `papers` and `systems` arrays and keeps their evidence fields.
 
 System IDs and repository identities must be unique within the software catalog, and related paper IDs must exist. Validators also check license/docs source membership, controlled vocabularies, and the explicit not-run boundary. Publication-paper deduplication remains separate from software identity.
+
+## Short recall names
+
+Both catalogs include `short_name`, a concise navigation label used by the graph and paper-index table. Familiar method names are preferred; surveys and analyses may use curator-supplied descriptive labels. These labels are not necessarily official paper titles or author-defined acronyms. The full title/name and primary source remain authoritative. Recall names are unique within each catalog and at most 40 characters; a paper and its software may share a label because their resource types differ.

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-28 — Easier-to-read evidence details
+
+- Simplified expanded entries to an overview, key facts, main limitation, and source actions.
+- Grouped the complete capabilities/setup, evaluation/related work, and source-review information into separate disclosures.
+- Retained the repository tables, evidence fields, and interactive filters.
+- Added short recall names to all research/software records and the paper-index table, with graph labels and traversal support.
+
 ## 2026-10-28 — Systems, tables, and status badges
 
 - Added 23 separately counted official systems/frameworks with capabilities, requirements, license sources, paper relationships, and explicit not-run status.
