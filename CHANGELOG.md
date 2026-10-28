@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-29 — Memory, online learning, and evaluation coverage
+
+- Added 26 source-reviewed works: 25 papers and one workflow survey; 25 additions received selected full-text inspection.
+- Closed all eleven named launch leads and added recent memory composition, online adapter learning, harness evolution, and evaluation studies.
+- Preserved negative results, fixed-component boundaries, teacher/data requirements, and version-specific protocols.
+- Verified ELL / StuLife’s Findings of EMNLP 2026 publication while keeping its earlier full-text inspection explicit.
+- Extended four reading routes and regenerated the repository tables, badges, and explorer data.
+- Corrected generated index headings to distinguish catalog updates from each entry's actual source-inspection date.
+- Research total: 109 works; software total remains 23. No research code was run.
+
 ## 2026-10-28 — Easier-to-read evidence details
 
 - Simplified expanded entries to an overview, key facts, main limitation, and source actions.

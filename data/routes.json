@@ -123,6 +123,10 @@
       {
         "paper": "seal",
         "why": "Study generated self-edits, adaptation rewards, and retention limits."
+      },
+      {
+        "paper": "ascent",
+        "why": "Compare persistent online adapter updates with external training and within-task retries."
       }
     ],
     "exercise": "For each loop, label which information is human-provided, pretrained, environment-verified, or model-judged."
@@ -187,6 +191,10 @@
       {
         "paper": "trusting-trust-agents",
         "why": "Test the assumption that an optimization benchmark is a trustworthy teacher."
+      },
+      {
+        "paper": "rsi-evaluation-audit",
+        "why": "Distinguish final-system gains from repeated loops and same-start comparisons of improvers."
       }
     ],
     "exercise": "Draw the solver, proposer, selector, and evaluator separately. Highlight what can change and what evidence would demonstrate improvement of the improver."
@@ -223,6 +231,10 @@
       {
         "paper": "trusting-trust-agents",
         "why": "Include integrity of the learning signal and persistence of bad updates."
+      },
+      {
+        "paper": "pace",
+        "why": "Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee."
       }
     ],
     "exercise": "Draft a matched frozen baseline, a held-out family split, a budget ledger, and one intervention that could falsify your preferred mechanism."
@@ -263,6 +275,10 @@
       {
         "paper": "safety-self-evolving-survey",
         "why": "Extend retention questions to unsafe influence, repair, and resumed adaptation."
+      },
+      {
+        "paper": "self-evolving-continual-learners",
+        "why": "Test for interference and forgetting when memory, shared prompts, or harness files evolve."
       }
     ],
     "exercise": "Specify separate measures for factual memory, procedural transfer, backward retention, cost, and safety drift. Do not collapse them into one score."

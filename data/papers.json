@@ -207,6 +207,76 @@
     "short_name": "AFlow"
   },
   {
+    "id": "agemem",
+    "title": "Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents",
+    "date": "2026-01-05",
+    "year": 2026,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "ACL 2026",
+    "url": "https://arxiv.org/abs/2601.01885",
+    "sources": [
+      "https://arxiv.org/abs/2601.01885",
+      "https://arxiv.org/html/2601.01885v3",
+      "https://aclanthology.org/2026.acl-long.981/",
+      "https://github.com/y1y5/AgeMem"
+    ],
+    "code_url": "https://github.com/y1y5/AgeMem",
+    "code_note": "Official repository linked from arXiv and its public page inspected; not executed.",
+    "topics": [
+      "memory",
+      "model-training",
+      "continual-learning"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights",
+      "memory",
+      "prompts"
+    ],
+    "persistence": "both",
+    "learning_signal": "Task success and memory-quality rewards, with penalties for redundant storage, tool use, and context growth.",
+    "mechanism": "Trains an agent to select long-term memory edits and short-term context operations as tools. Three progressive stages and step-wise GRPO assign delayed task rewards to earlier memory decisions; the resulting policy manages external memory during use.",
+    "evaluation": "Evaluates Qwen2.5-7B and Qwen3-4B agents on ALFWorld, ScienceWorld, PDDL, BabyAI, and HotpotQA, with memory-quality, efficiency, and ablation comparisons.",
+    "limitations": "The memory-operation vocabulary is fixed. The authors distinguish controlled cross-domain transfer from persistent real-user or long-term dialogue deployments, which remain future evaluation settings.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "AgeMem"
+  },
+  {
+    "id": "agent-r",
+    "title": "Agent-R: Training Language Model Agents to Reflect via Iterative Self-Training",
+    "date": "2025-01-20",
+    "year": 2025,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2501.11425",
+    "sources": [
+      "https://arxiv.org/abs/2501.11425",
+      "https://arxiv.org/html/2501.11425v3"
+    ],
+    "code_url": null,
+    "code_note": "Official runnable code was not independently established in this review; this does not imply that no release exists.",
+    "topics": [
+      "model-training",
+      "foundations",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights"
+    ],
+    "persistence": "both",
+    "learning_signal": "Environment terminal rewards, tree-search alternatives, and actor-selected error locations.",
+    "mechanism": "Uses Monte Carlo tree search to pair unsuccessful and successful paths. The current actor selects a revision point, and spliced correction trajectories support iterative supervised training of an error-recovery policy.",
+    "evaluation": "The authors test three training iterations on WebShop, ScienceWorld, and TextCraft, comparing task reward, recovery from truncated failures, and action-loop behavior.",
+    "limitations": "Training also uses ShareGPT data and manually written revision connectors. The evaluated setup uses a specific backbone and reward-bearing environments; learning to revise a trajectory is distinct from modifying the learning algorithm.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "Agent-R"
+  },
+  {
     "id": "agent-workflow-memory",
     "title": "Agent Workflow Memory",
     "date": "2024-09-11",
@@ -388,6 +458,42 @@
     "short_name": "AgentStream"
   },
   {
+    "id": "aide2",
+    "title": "Recursive self-improvement of AI research agents",
+    "date": "2026-09-22",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2609.26457",
+    "sources": [
+      "https://arxiv.org/abs/2609.26457",
+      "https://arxiv.org/html/2609.26457v1"
+    ],
+    "code_url": null,
+    "code_note": "Official implementation availability was not established in this review; no code was executed.",
+    "topics": [
+      "recursive-improvement",
+      "architecture",
+      "applications",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "agent-code",
+      "workflows",
+      "prompts"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Grades from evaluator-held-out task data under fixed per-task budgets, with separate public feedback for inner optimization.",
+    "mechanism": "Searches research-agent harness rewrites, retaining the best incumbent for further edits. The editable agent controls search and context management; the outer selection rule remains fixed.",
+    "evaluation": "Reports seven accepted rewrites in the main eight-day run, transfer to ALE-Bench, MLE-Bench, FML-Bench and WeatherBench 2, and a separate comparison using an evolved agent as the outer optimizer.",
+    "limitations": "The outer-optimizer comparison is inconclusive with three seeds per arm. Noisy grades can accept false improvements. Harness gains do not establish accelerating self-improvement or independent reproduction.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "AIDE²"
+  },
+  {
     "id": "alphago-zero",
     "title": "Mastering the game of Go without human knowledge",
     "date": "2017-10-19",
@@ -419,6 +525,77 @@
     "review_depth": "abstract",
     "checked": "2026-10-28",
     "short_name": "AlphaGo Zero"
+  },
+  {
+    "id": "ascent",
+    "title": "ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience",
+    "date": "2026-10-04",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2610.05303",
+    "sources": [
+      "https://arxiv.org/abs/2610.05303",
+      "https://arxiv.org/html/2610.05303v1",
+      "https://artificer-ai-lab.github.io/ASCENT/",
+      "https://github.com/artificer-ai-lab/ASCENT"
+    ],
+    "code_url": "https://github.com/artificer-ai-lab/ASCENT",
+    "code_note": "Official repository page inspected; no installation, training, or result reproduction performed.",
+    "topics": [
+      "model-training",
+      "continual-learning",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Completed execution trajectories accepted by an environment verifier, with action-validity feedback.",
+    "mechanism": "After one scored attempt per task, a frozen copy of the initial model reads accepted experience with hindsight. Its token distributions train persistent LoRA adapters for subsequent tasks; invalid-action turns are removed from the privileged teacher input.",
+    "evaluation": "The authors report success, interaction cost, ablations, and held-out scene transfer on ALFWorld and WebShop with two model sizes, plus AppWorld experiments.",
+    "limitations": "The method needs an available verifier and update compute. WebShop adaptation accepts scores of at least 0.9 although reported exact success requires 1.0; outcome acceptance does not identify causally useful actions or prove a shortest solution.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "ASCENT"
+  },
+  {
+    "id": "autoskill",
+    "title": "AutoSkill: Experience-Driven Lifelong Learning via Skill Self-Evolution",
+    "date": "2026-03-01",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2603.01145",
+    "sources": [
+      "https://arxiv.org/abs/2603.01145",
+      "https://arxiv.org/html/2603.01145v2",
+      "https://github.com/ECNU-ICALK/AutoSkill"
+    ],
+    "code_url": "https://github.com/ECNU-ICALK/AutoSkill",
+    "code_note": "Official repository linked by the paper and its public page inspected; not executed.",
+    "topics": [
+      "memory",
+      "skills",
+      "continual-learning"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "skills",
+      "memory",
+      "prompts"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Dialogue histories, recurring user preferences, corrections, and model judgments about extraction and merging.",
+    "mechanism": "Extracts explicit instruction skills from interactions, retrieves them for later requests, and merges related updates into versioned skill artifacts. A persistent skill bank changes while the underlying language model stays fixed.",
+    "evaluation": "The inspected v2 reports SkillBank statistics from four language/model subsets of WildChat and qualitative examples of extracted and repeatedly revised skills.",
+    "limitations": "Artifact counts and case studies demonstrate construction and maintenance, not a controlled estimate of improved downstream task success or long-term retention. This AutoSkill is distinct from MUSE-Autoskill and similarly named video-QA work.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "AutoSkill"
   },
   {
     "id": "comprehensive-evolving-survey",
@@ -629,12 +806,13 @@
     "date": "2025-08-26",
     "year": 2025,
     "kind": "benchmark",
-    "status": "preprint",
-    "venue": "",
+    "status": "peer-reviewed",
+    "venue": "Findings of EMNLP 2026",
     "url": "https://arxiv.org/abs/2508.19005",
     "sources": [
       "https://arxiv.org/abs/2508.19005",
-      "https://arxiv.org/html/2508.19005v6"
+      "https://arxiv.org/html/2508.19005v6",
+      "https://aclanthology.org/2026.findings-emnlp.770/"
     ],
     "code_url": null,
     "code_note": "Official runnable code was not verified in this source review.",
@@ -651,10 +829,10 @@
     "persistence": "not-applicable",
     "learning_signal": "Benchmark task success, long-term retention through environmental tools, and proactive initiative metrics.",
     "mechanism": "Defines experience-driven lifelong learning around exploration, memory, skill abstraction, and internalization, and introduces StuLife as a stateful simulated student-life environment. Its framework is a research agenda and evaluation setting rather than a single demonstrated learning algorithm.",
-    "evaluation": "The primary evaluation resets agent context between tasks; retained information must be explicitly stored and retrieved through environmental tools such as calendars and drafts.",
-    "limitations": "The main results measure the specified stateless-agent baseline in a designed simulation. They should not be presented as a trained lifelong learner’s learning curve or as proof that a memory-equipped learner cannot succeed.",
+    "evaluation": "The inspected preprint v6 resets agent context between tasks; retained information must be explicitly stored and retrieved through environmental tools such as calendars and drafts. The later published abstract additionally describes context-engineering comparisons, whose full protocol was not reviewed here.",
+    "limitations": "The selected full-text review concerns the preprint v6 baseline in a designed simulation, not a trained lifelong learner’s learning curve. The renamed Findings of EMNLP 2026 version has verified publication metadata; its full experimental revision was not inspected.",
     "review_depth": "full-text",
-    "checked": "2026-10-28",
+    "checked": "2026-10-29",
     "short_name": "ELL / StuLife"
   },
   {
@@ -726,6 +904,43 @@
     "review_depth": "abstract",
     "checked": "2026-10-28",
     "short_name": "EvolveNet"
+  },
+  {
+    "id": "evox",
+    "title": "EvoX: Meta-Evolution for Automated Discovery",
+    "date": "2026-02-26",
+    "year": 2026,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "COLM 2026",
+    "url": "https://arxiv.org/abs/2602.23413",
+    "sources": [
+      "https://arxiv.org/abs/2602.23413",
+      "https://arxiv.org/html/2602.23413v2",
+      "https://proceedings.colm.cc/paper_files/paper/2026/hash/fc9f83d9925e6885e8f1ae1e17b3c44b-Abstract-Conference.html",
+      "https://github.com/skydiscover-ai/skydiscover"
+    ],
+    "code_url": "https://github.com/skydiscover-ai/skydiscover",
+    "code_note": "Official SkyDiscover repository linked by the paper and inspected; it also contains other algorithms. Not executed.",
+    "topics": [
+      "recursive-improvement",
+      "architecture",
+      "prompts",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "agent-code",
+      "prompts"
+    ],
+    "persistence": "within-task",
+    "learning_signal": "Task-evaluator scores, execution artifacts, and changes in population performance over search windows.",
+    "mechanism": "Co-evolves candidate programs and the search strategy that selects parents, variation operators, and examples. Stagnation triggers strategy revisions informed by earlier strategies and current population state.",
+    "evaluation": "Evaluates 196 mathematical, systems, and algorithmic optimization tasks, with three runs and generally 100 iterations for open-framework comparisons.",
+    "limitations": "Search adapts within each optimization problem; cross-task lifelong retention is not established. AlphaEvolve comparisons use published scores with an undisclosed iteration budget. Evaluators and outer monitoring rules remain supplied.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "EvoX"
   },
   {
     "id": "expel",
@@ -824,6 +1039,41 @@
     "review_depth": "abstract",
     "checked": "2026-10-28",
     "short_name": "FlexA-Mem"
+  },
+  {
+    "id": "g-memory",
+    "title": "G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems",
+    "date": "2025-06-09",
+    "year": 2025,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "NeurIPS 2025",
+    "url": "https://arxiv.org/abs/2506.07398",
+    "sources": [
+      "https://arxiv.org/abs/2506.07398",
+      "https://arxiv.org/html/2506.07398v2",
+      "https://proceedings.neurips.cc/paper_files/paper/2025/hash/136a45cd9b841bf785625709a19c6508-Abstract-Conference.html",
+      "https://github.com/bingreeky/GMemory"
+    ],
+    "code_url": "https://github.com/bingreeky/GMemory",
+    "code_note": "Author-linked public repository page inspected; not executed.",
+    "topics": [
+      "memory",
+      "continual-learning",
+      "architecture"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Collaborative interaction traces and environment feedback, including task success or failure.",
+    "mechanism": "Organizes multi-agent experience into linked interaction, query, and insight graphs. Bidirectional traversal retrieves abstract guidance and condensed role-specific histories; completed episodes update the hierarchy for later queries.",
+    "evaluation": "Reports five benchmarks spanning embodied action, knowledge QA, and games, using three language-model backbones and three multi-agent frameworks, alongside cost and component analyses.",
+    "limitations": "This changes the memory supplied to existing teams; it does not establish autonomous redesign of their coordination or models. The authors leave broader domain validation, including medical QA, for future work.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "G-Memory"
   },
   {
     "id": "gdpevo",
@@ -1164,6 +1414,43 @@
     "short_name": "LifelongAgentBench"
   },
   {
+    "id": "lifemem",
+    "title": "LifeMem: Enabling Lifelong Experience Reuse for LLM Agents",
+    "date": "2026-09-11",
+    "year": 2026,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "EMNLP 2026",
+    "url": "https://arxiv.org/abs/2609.12655",
+    "sources": [
+      "https://arxiv.org/abs/2609.12655",
+      "https://arxiv.org/html/2609.12655v1",
+      "https://aclanthology.org/2026.emnlp-main.1024/",
+      "https://github.com/BITHLP/LifeMem"
+    ],
+    "code_url": "https://github.com/BITHLP/LifeMem",
+    "code_note": "Author-linked public repository page inspected; no installation, execution, or dataset download.",
+    "topics": [
+      "memory",
+      "skills",
+      "continual-learning",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "skills"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Accumulated interaction trajectories and language-model judgments of shared workflows and reusable skills.",
+    "mechanism": "Clusters trajectories by procedural workflow, updates and splits clusters as experience grows, and distills transferable skills. Inference retrieves both environment-aligned examples and abstract skills without retraining the acting model.",
+    "evaluation": "Uses ten environments across embodied action, tools, search, data analysis, and browsing, with 12,489 training and 1,230 test instances; measures performance, backward transfer, ablations, and two held-out transfer settings.",
+    "limitations": "Experience construction includes model-generated and human-reviewed trajectories, rather than only autonomous deployment experience. Task order affects outcomes, and some domain/backbone combinations retain negative backward transfer. Million-experience deployment efficiency is not established.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "LifeMem"
+  },
+  {
     "id": "live-swe-agent",
     "title": "Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?",
     "date": "2025-11-17",
@@ -1392,6 +1679,76 @@
     "short_name": "Mem0"
   },
   {
+    "id": "memcomposer",
+    "title": "MemComposer: Learning to Assemble Memories for LLM Agents via Reinforcement Learning",
+    "date": "2026-10-15",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2610.21091",
+    "sources": [
+      "https://arxiv.org/abs/2610.21091",
+      "https://arxiv.org/html/2610.21091v2",
+      "https://github.com/Makr-Xie/MemComposer"
+    ],
+    "code_url": "https://github.com/Makr-Xie/MemComposer",
+    "code_note": "Author-linked public repository page inspected; not executed.",
+    "topics": [
+      "memory",
+      "model-training",
+      "prompts"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights",
+      "prompts"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Downstream task-success rewards from complete agent interactions, plus selection-size and output-format penalties.",
+    "mechanism": "Trains a memory-composition policy to choose the number, identity, and ordering of retrieved experiences. GRPO-based Experience Policy Optimization updates the composer while keeping the executor, retriever, and memory bank fixed.",
+    "evaluation": "Reports three tau-squared-bench domains with 4B and 8B executors, memory-token costs, ordering ablations, and transfer across domains, executors, and memory sources.",
+    "limitations": "This is external policy training, not continual growth of the memory bank. Frontier-scale executors and non-procedural memories are untested; sequence rewards confound selection and ordering, and several per-executor performance-gap confidence intervals include zero.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "MemComposer"
+  },
+  {
+    "id": "memento",
+    "title": "Memento: Fine-tuning LLM Agents without Fine-tuning LLMs",
+    "date": "2025-08-22",
+    "year": 2025,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2508.16153",
+    "sources": [
+      "https://arxiv.org/abs/2508.16153",
+      "https://arxiv.org/html/2508.16153v2",
+      "https://github.com/Memento-Teams/Memento"
+    ],
+    "code_url": "https://github.com/Memento-Teams/Memento",
+    "code_note": "The author-linked Agent-on-the-Fly repository redirects to Memento-Teams/Memento; public page inspected, not executed.",
+    "topics": [
+      "memory",
+      "continual-learning",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "model-weights"
+    ],
+    "persistence": "both",
+    "learning_signal": "Task outcomes attached to stored plans; the parametric variant trains a separate case-selection network from binary success feedback.",
+    "mechanism": "A planner-executor agent stores completed cases and reuses them in subsequent planning. Retrieval can use fixed similarity or a learned Q-function; underlying LLM weights remain frozen, while the optional retrieval network changes.",
+    "evaluation": "Reports deep-research and QA evaluations, memory ablations, and transfer. GAIA validation accumulates cases over three passes; the test run uses the validation-built case bank.",
+    "limitations": "Validation Pass@3 and test accuracy use different protocols. The parametric variant performs gradient updates outside the LLM, so the whole system should not be described as parameter-free. Long-horizon Level 3 tasks remain difficult.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "Memento"
+  },
+  {
     "id": "memgpt",
     "title": "MemGPT: Towards LLMs as Operating Systems",
     "date": "2023-10-12",
@@ -1553,6 +1910,44 @@
     "review_depth": "abstract",
     "checked": "2026-10-28",
     "short_name": "MemRL"
+  },
+  {
+    "id": "meta-context-engineering",
+    "title": "Meta Context Engineering via Agentic Skill Evolution",
+    "date": "2026-01-29",
+    "year": 2026,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "ICML 2026",
+    "url": "https://arxiv.org/abs/2601.21557",
+    "sources": [
+      "https://arxiv.org/abs/2601.21557",
+      "https://arxiv.org/html/2601.21557v2",
+      "https://proceedings.mlr.press/v306/ye26g.html",
+      "https://github.com/metaevo-ai/meta-context-engineering"
+    ],
+    "code_url": "https://github.com/metaevo-ai/meta-context-engineering",
+    "code_note": "Current author repository inspected; it points to a separate mce-artifact repository for paper experiments. Not executed.",
+    "topics": [
+      "prompts",
+      "skills",
+      "recursive-improvement",
+      "architecture"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "prompts",
+      "skills",
+      "agent-code"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Training rollouts and validation utility for candidate context functions and their engineering skills.",
+    "mechanism": "A meta-agent revises context-engineering skills; a base agent executes them to construct context as files and code. History-informed evolutionary selection retains useful context functions and corresponding skills.",
+    "evaluation": "Tests finance, chemistry, medicine, law, and safety-classification datasets, with offline and online variants and component ablations.",
+    "limitations": "Full iterative skill evolution applies to offline experiments; single-pass online processing uses a different variant. The authors identify reasoning-heavy tasks and long, complex trajectories as limitations. Domain tests do not establish clinical or legal validity.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "MCE"
   },
   {
     "id": "model-collapse",
@@ -1756,6 +2151,38 @@
     "short_name": "OPRO"
   },
   {
+    "id": "pace",
+    "title": "PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents",
+    "date": "2026-06-06",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2606.08106",
+    "sources": [
+      "https://arxiv.org/abs/2606.08106",
+      "https://arxiv.org/html/2606.08106v1"
+    ],
+    "code_url": null,
+    "code_note": "Official runnable code was not verified in this source review.",
+    "topics": [
+      "evaluation",
+      "prompts"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "prompts"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Paired candidate/incumbent correctness on development instances.",
+    "mechanism": "Places a sequential statistical gate between proposed prompt edits and retention. A betting-based evidence process accepts an edit only after its paired outcomes cross a threshold; otherwise the incumbent remains.",
+    "evaluation": "Author experiments use Qwen2.5 prompt evolution on GSM8K, SVAMP, and ARC-Challenge, with planted-gain and stochastic regimes and a separate audit pool. Statistical gates reduce noisy commitments relative to greedy selection.",
+    "limitations": "The guarantee is per candidate under a conditional paired-null assumption, not a guarantee for the whole adaptive search. Experiments cover one model family and prompt edits; the finite audit and development-set coverage limit interpretation. Small genuine gains may be rejected.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "PACE"
+  },
+  {
     "id": "past-bench",
     "title": "PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents",
     "date": "2026-08-04",
@@ -1890,6 +2317,75 @@
     "short_name": "R-Zero"
   },
   {
+    "id": "ragen",
+    "title": "RAGEN: Understanding Self-Evolution in LLM Agents via Multi-Turn Reinforcement Learning",
+    "date": "2025-04-24",
+    "year": 2025,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2504.20073",
+    "sources": [
+      "https://arxiv.org/abs/2504.20073",
+      "https://arxiv.org/html/2504.20073v2",
+      "https://github.com/mll-lab-nu/RAGEN"
+    ],
+    "code_url": "https://github.com/mll-lab-nu/RAGEN",
+    "code_note": "Official repository page inspected; no installation, training, or result reproduction performed.",
+    "topics": [
+      "model-training",
+      "evaluation",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Environment rewards on multi-turn trajectories, with reward variability and gradient diagnostics guiding stabilization.",
+    "mechanism": "StarPO optimizes reasoning-action trajectories with reinforcement learning. The study identifies repetitive reasoning collapse and tests StarPO-S interventions including rollout filtering, a critic, and gradient stabilization.",
+    "evaluation": "Version 2 studies Bandit, Sokoban, FrozenLake, and WebShop, varying optimization, rollout design, rewards, and generalization conditions.",
+    "limitations": "The paper reports small-scale tasks and no multimodal evaluation. Better rewards do not guarantee meaningful reasoning. The linked repository now includes RAGEN-2 and additional environments; its current branch is not a pinned reproduction of this paper.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "RAGEN"
+  },
+  {
+    "id": "re-rest",
+    "title": "Re-ReST: Reflection-Reinforced Self-Training for Language Agents",
+    "date": "2024-06-03",
+    "year": 2024,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "EMNLP 2024",
+    "url": "https://arxiv.org/abs/2406.01495",
+    "sources": [
+      "https://arxiv.org/abs/2406.01495",
+      "https://arxiv.org/html/2406.01495v3",
+      "https://aclanthology.org/2024.emnlp-main.861/",
+      "https://github.com/PlusLabNLP/Re-ReST"
+    ],
+    "code_url": "https://github.com/PlusLabNLP/Re-ReST",
+    "code_note": "Official repository page inspected; no installation, training, or result reproduction performed.",
+    "topics": [
+      "model-training",
+      "foundations",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "External training-time feedback such as answer correctness, environment outcomes, and unit tests.",
+    "mechanism": "Trains a separate reflector to repair unsuccessful model-generated examples. Accepted original and repaired trajectories then fine-tune the agent, so improvement is retained in its parameters; the main inference path needs only the trained agent.",
+    "evaluation": "Experiments cover multi-hop question answering, ALFWorld, code generation, visual question answering, and image generation, with reflector and preference-training analyses.",
+    "limitations": "Feedback and task inputs are supplied during training. The reflector shares the model family but not weights with the agent. A separate self-consistency inference variant should not be confused with the main training-only use of reflection.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "Re-ReST"
+  },
+  {
     "id": "react",
     "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
     "date": "2022-10-06",
@@ -1992,6 +2488,40 @@
     "short_name": "Reflexion"
   },
   {
+    "id": "rem-experience-memory",
+    "title": "REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents",
+    "date": "2026-10-19",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "Author reports NeurIPS 2026 CLEA workshop acceptance; venue record not independently verified.",
+    "url": "https://arxiv.org/abs/2610.27377",
+    "sources": [
+      "https://arxiv.org/abs/2610.27377",
+      "https://arxiv.org/html/2610.27377v1"
+    ],
+    "code_url": null,
+    "code_note": "An official implementation was not independently verified in this review; this does not establish that none exists.",
+    "topics": [
+      "memory",
+      "evaluation",
+      "applications"
+    ],
+    "scope": "adjacent",
+    "update_targets": [
+      "memory",
+      "prompts"
+    ],
+    "persistence": "both",
+    "learning_signal": "Completed trajectories supply structured experience; a hand-written in-loop struggle signal controls when detailed records enter context.",
+    "mechanism": "Consolidates past coding traces into phased documents, injects a retrieved document at task start, and exposes a detailed implementation record only when the agent struggles. The detailed record is evicted after one exposure.",
+    "evaluation": "Studies 99 SWE-ContextBench Lite tasks, with three replicates for the principal Sonnet 4.5 conditions, retrieval comparisons, ablations, and additional model contrasts.",
+    "limitations": "Experiments reuse a fixed experience pool rather than an online-growing memory. Recall-policy contrasts do not reach p<0.05 at this sample size; several secondary conditions run once. Retrieval baselines use different configurations, and stronger agents can be harmed by memory. All tasks retrieve same-repository experience; similarity to gold patches was not measured.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "REM"
+  },
+  {
     "id": "rest",
     "title": "Reinforced Self-Training (ReST) for Language Modeling",
     "date": "2023-08-17",
@@ -2088,6 +2618,38 @@
     "review_depth": "full-text",
     "checked": "2026-10-28",
     "short_name": "RISE"
+  },
+  {
+    "id": "rsi-evaluation-audit",
+    "title": "Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims",
+    "date": "2026-10-20",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2610.27610",
+    "sources": [
+      "https://arxiv.org/abs/2610.27610",
+      "https://arxiv.org/html/2610.27610v1"
+    ],
+    "code_url": null,
+    "code_note": "Official runnable code was not verified in this source review.",
+    "topics": [
+      "evaluation",
+      "recursive-improvement"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "none"
+    ],
+    "persistence": "not-applicable",
+    "learning_signal": "Not applicable: a study of reported evaluation designs.",
+    "mechanism": "Codes whether self-improvement studies evaluate final artifacts, repeat the entire learning loop, or compare earlier and later improvers from identical starting artifacts at matched budgets.",
+    "evaluation": "The authors analyze 114 eligible studies from an arXiv phrase-based search frozen on 17 October 2026, including 90 RSI-labeled studies. Only four of 26 improver claimants report the specified same-start comparison; separate human coding checks selected evidence.",
+    "limitations": "This measures reporting within a restricted literature frame, not the success rate of all self-improving agents. AI-assisted coding outside the adjudicated sample and improver-comparison set was not individually human-checked; coding disagreements materially affect estimates.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "RSI evidence audit"
   },
   {
     "id": "safety-self-evolving-survey",
@@ -2255,6 +2817,79 @@
     "short_name": "Self-correction survey"
   },
   {
+    "id": "self-evolving-continual-learners",
+    "title": "Are Self-Evolving Agents Continual Learners?",
+    "date": "2026-10-19",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2610.25858",
+    "sources": [
+      "https://arxiv.org/abs/2610.25858",
+      "https://arxiv.org/html/2610.25858v1"
+    ],
+    "code_url": null,
+    "code_note": "Official runnable code was not independently established in this review; this does not imply that no release exists.",
+    "topics": [
+      "continual-learning",
+      "evaluation",
+      "memory",
+      "prompts",
+      "architecture"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "prompts",
+      "agent-code"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Environment task-success feedback used by the evaluated evolvers; held-out checkpoint tests measure retention and interference.",
+    "mechanism": "Evaluates frozen-model agents that update retrieved experience, a shared prompt, or harness files on drifting streams. It separates gains on current tasks from interference with unseen families and forgetting of earlier ones.",
+    "evaluation": "ReasoningBank, GEPA, and Meta-Harness are compared with a common Gemini 3.6 Flash backbone on four streams built from BIRD, BFCL, and ScienceWorld, with disjoint held-out evaluations.",
+    "limitations": "Findings concern these implementations, one backbone, and constructed drift schedules. The retrieval baseline always injects its nearest memory without a similarity threshold; global edits and conflicting workflows expose different failure modes, not a universal impossibility result.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "Continual learning limits"
+  },
+  {
+    "id": "self-evolving-defense",
+    "title": "Self-Evolving Defense: Continual Security Policy Learning for LLM Agents",
+    "date": "2026-09-29",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2609.36603",
+    "sources": [
+      "https://arxiv.org/abs/2609.36603",
+      "https://arxiv.org/html/2609.36603v1",
+      "https://github.com/Infini-AI-Lab/SED"
+    ],
+    "code_url": "https://github.com/Infini-AI-Lab/SED",
+    "code_note": "Author-linked repository and setup documentation inspected; not installed or executed.",
+    "topics": [
+      "memory",
+      "safety",
+      "continual-learning",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "prompts"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "An external judge flags harmful completed trajectories; model components synthesize and organize defensive policies.",
+    "mechanism": "Stores failure episodes and distills them into a hierarchical policy memory. Relevant policies condition later tasks while the acting model stays frozen.",
+    "evaluation": "The authors evaluate eight benchmarks spanning jailbreaks, prompt injection, and coding, plus adaptive attackers and a frozen-memory control. Each benchmark starts with empty memory; updates occur only after completed episodes.",
+    "limitations": "The reported protocol does not establish cross-benchmark retention. Retrieval and enforcement failures remain, and learning depends on the external judge. DTap additionally uses a pre-tool guard, which must be retained when interpreting comparisons.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "SED"
+  },
+  {
     "id": "self-evolving-survey",
     "title": "A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence",
     "date": "2025-07-28",
@@ -2387,6 +3022,41 @@
     "short_name": "Self-Rewarding LMs"
   },
   {
+    "id": "selfop",
+    "title": "SelfOp: An Optimization Algorithm for Self-Improving Security Agents",
+    "date": "2026-09-19",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2609.22792",
+    "sources": [
+      "https://arxiv.org/abs/2609.22792",
+      "https://arxiv.org/html/2609.22792v1"
+    ],
+    "code_url": null,
+    "code_note": "Official implementation availability was not established in this review; no code was executed.",
+    "topics": [
+      "prompts",
+      "skills",
+      "applications",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "prompts",
+      "skills"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Execution outcomes, vulnerability metadata, and cross-instance agreement among textual critiques.",
+    "mechanism": "Traces errors backward through outcomes, trajectories, and context, then clusters critiques to revise persistent skill instructions and reference documents. Model weights and the execution harness remain fixed.",
+    "evaluation": "Studies CyberGym vulnerability reproduction, component ablations, checkpoint selection, and cross-model transfer; the held-out test subset contains 80 tasks.",
+    "limitations": "Evaluation covers a cost-limited benchmark subset. Baselines are adapted to shared supervision. Stopping avoids validation during the final optimization run, but its noise floor and window were empirically calibrated using earlier runs with validation scoring. Other security tasks remain future work.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "SelfOp"
+  },
+  {
     "id": "sica",
     "title": "A Self-Improving Coding Agent",
     "date": "2025-04-21",
@@ -2491,6 +3161,70 @@
     "short_name": "SkillRL"
   },
   {
+    "id": "socratic-zero",
+    "title": "Socratic-Zero : Bootstrapping Reasoning via Data-Free Agent Co-evolution",
+    "date": "2025-09-29",
+    "year": 2025,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2509.24726",
+    "sources": [
+      "https://arxiv.org/abs/2509.24726",
+      "https://arxiv.org/html/2509.24726v1"
+    ],
+    "code_url": null,
+    "code_note": "Official runnable code was not independently established in this review; this does not imply that no release exists.",
+    "topics": [
+      "self-play",
+      "model-training"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "A fixed stronger teacher's correctness judgments, reference solutions, and failure-targeted generated problems.",
+    "mechanism": "Updates a solver through online preference learning and trains a generator to imitate useful teacher-generated curricula. The teacher remains frozen while the solver and generator change.",
+    "evaluation": "The authors compare solver accuracy on seven mathematical and three general-reasoning benchmarks and assess synthetic data through downstream student training.",
+    "limitations": "Despite the title, experiments use 100 MATH seed questions, initial supervised tuning on 1,500 problems, and a Qwen3-235B teacher. Mean@32 evaluation and teacher-derived judgments should be preserved when interpreting comparisons; this is not learning without prior data or an external teacher.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "Socratic-Zero"
+  },
+  {
+    "id": "spice",
+    "title": "SPICE: Self-Play In Corpus Environments Improves Reasoning",
+    "date": "2025-10-28",
+    "year": 2025,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2510.24684",
+    "sources": [
+      "https://arxiv.org/abs/2510.24684",
+      "https://arxiv.org/html/2510.24684v1"
+    ],
+    "code_url": null,
+    "code_note": "Official runnable code was not independently established in this review; this does not imply that no release exists.",
+    "topics": [
+      "self-play",
+      "model-training"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Document-extracted answers, answer-equivalence checks, and a reward favoring tasks near the solver's capability frontier.",
+    "mechanism": "A shared model alternates between a document-grounded challenger and a reasoner without document access. Role-specific reinforcement-learning updates improve question generation and solving together.",
+    "evaluation": "Four Qwen and OctoThinker base models are tested on mathematics and general-reasoning suites, with corpus, task-format, and challenger-reward ablations.",
+    "limitations": "Experiments use a selected 20,000-document corpus and a fixed training horizon. Curator interpretation: dependence on document quality, generated answers, and verification remains; these experiments do not establish indefinite improvement.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "SPICE"
+  },
+  {
     "id": "spin",
     "title": "Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models",
     "date": "2024-01-02",
@@ -2524,6 +3258,41 @@
     "short_name": "SPIN"
   },
   {
+    "id": "spiral",
+    "title": "SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning",
+    "date": "2025-06-30",
+    "year": 2025,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "ICLR 2026",
+    "url": "https://arxiv.org/abs/2506.24119",
+    "sources": [
+      "https://arxiv.org/abs/2506.24119",
+      "https://arxiv.org/html/2506.24119v3",
+      "https://proceedings.iclr.cc/paper_files/paper/2026/hash/3ba7c8c36b71b2fc31fae3361aefefbf-Abstract-Conference.html",
+      "https://github.com/spiral-rl/spiral"
+    ],
+    "code_url": "https://github.com/spiral-rl/spiral",
+    "code_note": "Official repository page inspected; no installation, training, or result reproduction performed.",
+    "topics": [
+      "self-play",
+      "model-training",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Terminal game outcomes and role-conditioned advantage estimates.",
+    "mechanism": "One shared language-model policy plays both sides of zero-sum games and receives online policy-gradient updates. Separate baselines for each role stabilize training as the opposing policy improves.",
+    "evaluation": "The study trains on TicTacToe, Kuhn Poker, and Simple Negotiation and evaluates transfer to mathematical and general reasoning benchmarks across several Qwen and Llama configurations.",
+    "limitations": "The curriculum depends on engineered games and pretrained models. The authors report substantial compute, training plateaus, and limited academic-benchmark transfer evidence; game rewards can favor strategies other than the intended reasoning skill.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "SPIRAL"
+  },
+  {
     "id": "star",
     "title": "STaR: Bootstrapping Reasoning With Reasoning",
     "date": "2022-03-28",
@@ -2555,6 +3324,40 @@
     "review_depth": "full-text",
     "checked": "2026-10-28",
     "short_name": "STaR"
+  },
+  {
+    "id": "steplearn",
+    "title": "Learn Now, Use Next, Trust Later: Prequential Test-Time Learning for LLM Agents",
+    "date": "2026-09-28",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2609.35911",
+    "sources": [
+      "https://arxiv.org/abs/2609.35911",
+      "https://arxiv.org/html/2609.35911v1"
+    ],
+    "code_url": null,
+    "code_note": "Official runnable code was not independently established in this review; this does not imply that no release exists.",
+    "topics": [
+      "memory",
+      "continual-learning",
+      "evaluation",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory"
+    ],
+    "persistence": "both",
+    "learning_signal": "Observed action transitions and prospective checks of predicted effects in later, non-source episodes.",
+    "mechanism": "Extracts testable policy hypotheses that can guide the next decision, while keeping persistent reuse behind an evidence gate. Candidate predictions are frozen before later observations; counterevidence can withdraw promoted guidance. Model weights remain fixed.",
+    "evaluation": "The paper compares two actor configurations and learning baselines across five rounds on WebArena-Lite and ALFWorld, including first-attempt analysis, safeguards ablations, and costs.",
+    "limitations": "Evaluation repeats tasks and excludes ten WebArena-Lite cases. Promotion relies on environment-specific evidence adapters; predictive validation does not by itself establish causal policy utility. Longer changing streams remain future work.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "StepLearn"
   },
   {
     "id": "stop",
@@ -2727,6 +3530,42 @@
     "short_name": "Toolformer"
   },
   {
+    "id": "trove",
+    "title": "TroVE: Inducing Verifiable and Efficient Toolboxes for Solving Programmatic Tasks",
+    "date": "2024-01-23",
+    "year": 2024,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "ICML 2024",
+    "url": "https://arxiv.org/abs/2401.12869",
+    "sources": [
+      "https://arxiv.org/abs/2401.12869",
+      "https://arxiv.org/html/2401.12869v1",
+      "https://proceedings.mlr.press/v235/wang24az.html",
+      "https://github.com/zorazrw/trove"
+    ],
+    "code_url": "https://github.com/zorazrw/trove",
+    "code_note": "Official repository linked by the paper and its public page inspected; not executed.",
+    "topics": [
+      "skills",
+      "tools",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "tools",
+      "skills"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Agreement among executed candidate outputs, program simplicity, and observed tool reuse.",
+    "mechanism": "Samples solutions that import existing functions, create new ones, or use only supplied primitives. Execution agreement and simplicity select a solution whose functions join a reusable toolbox; periodic trimming removes low-use functions without model training.",
+    "evaluation": "Tests 11 math, table-QA, and visual-reasoning datasets. A separate study asks six people to verify 100 table-QA solutions and measures verification time and accuracy.",
+    "limitations": "Supplied primitives and demonstrations constrain the tool space. Agreement is not proof of correctness, and the human study does not establish universal reliability. Some comparisons reuse previously reported baseline scores.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "TroVE"
+  },
+  {
     "id": "trusting-trust-agents",
     "title": "Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks",
     "date": "2026-09-15",
@@ -2760,6 +3599,45 @@
     "review_depth": "full-text",
     "checked": "2026-10-28",
     "short_name": "Poisoned benchmarks"
+  },
+  {
+    "id": "verse",
+    "title": "VERSE: Verified Self-Evolving Optimizer for Agent Harnesses",
+    "date": "2026-10-02",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2610.02616",
+    "sources": [
+      "https://arxiv.org/abs/2610.02616",
+      "https://arxiv.org/html/2610.02616v1",
+      "https://github.com/wzekai/VERSE"
+    ],
+    "code_url": "https://github.com/wzekai/VERSE",
+    "code_note": "Official repository and README inspected; released harnesses and result files were not independently audited or executed.",
+    "topics": [
+      "recursive-improvement",
+      "architecture",
+      "evaluation",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "agent-code",
+      "prompts",
+      "skills",
+      "tools",
+      "memory"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Executed draft checks, failure replay and perturbation, training regressions, and validation summaries.",
+    "mechanism": "Updates an executor harness and the optimizer's own prompts, skills, tools, hooks, and notes. Verification tools test proposed fixes and diagnoses before submission while both models remain frozen.",
+    "evaluation": "Adds VERSE to four reimplemented harness optimizers, evaluating held-out SWE-rebench and newer multilingual tasks; also studies Terminal-Bench and component ablations.",
+    "limitations": "Selection rules and core verification tools remain fixed. Matched candidate counts do not imply equal total compute. Reimplemented baselines differ from their original systems; self-evolution benefits vary by host, and noisy outcome changes often fail to reproduce.",
+    "review_depth": "full-text",
+    "checked": "2026-10-29",
+    "short_name": "VERSE"
   },
   {
     "id": "voyager",
@@ -2797,5 +3675,39 @@
     "review_depth": "full-text",
     "checked": "2026-10-28",
     "short_name": "Voyager"
+  },
+  {
+    "id": "workflow-optimization-survey",
+    "title": "From Static Templates to Dynamic Runtime Graphs: A Survey of Workflow Optimization for LLM Agents",
+    "date": "2026-03-23",
+    "year": 2026,
+    "kind": "survey",
+    "status": "peer-reviewed",
+    "venue": "Findings of EMNLP 2026",
+    "url": "https://arxiv.org/abs/2603.22386",
+    "sources": [
+      "https://arxiv.org/abs/2603.22386",
+      "https://aclanthology.org/2026.findings-emnlp.1393/"
+    ],
+    "code_url": null,
+    "code_note": "Official implementation availability was not established in this review; no code was executed.",
+    "topics": [
+      "surveys",
+      "workflows",
+      "architecture",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "none"
+    ],
+    "persistence": "not-applicable",
+    "learning_signal": "Not applicable: literature synthesis and evaluation framework.",
+    "mechanism": "Organizes workflow optimization by when structure is determined, which components change, and which feedback governs changes. Separates reusable templates, per-run graphs, and execution traces.",
+    "evaluation": "Proposes reporting that combines downstream task performance with structural properties, cost, robustness, and variation across inputs.",
+    "limitations": "A taxonomy and reporting proposal do not independently validate surveyed methods. Runtime graph changes can be specific to one task and should not automatically be interpreted as persistent learning.",
+    "review_depth": "abstract",
+    "checked": "2026-10-29",
+    "short_name": "Workflow optimization survey"
   }
 ]

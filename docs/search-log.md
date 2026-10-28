@@ -42,7 +42,7 @@ The publication audit upgraded ReAct, the what/when/how survey, ReasoningBank, a
 
 The collection emphasizes modern LLM-based agents. It does not exhaust classical reinforcement learning, meta-learning, artificial life, robotics, or continual-learning theory. Within the modern literature, discovery depends on indexing, terminology, citation trails, and source access. Recent work and full-text coverage will need continuing review.
 
-Useful leads not yet admitted after full source triage include Memento, AgeMem, G-Memory, TroVE, AutoSkill, Agent-R, RAGEN, Re-ReST, SPIRAL, SPICE, Socratic-Zero, and additional longitudinal/robotics benchmarks. The breadth of a related list is not evidence that every lead meets this collection's scope. Additional passes should prioritize mechanisms and missing evaluation settings rather than a target count.
+At launch, leads awaiting full source triage included Memento, AgeMem, G-Memory, TroVE, AutoSkill, Agent-R, RAGEN, Re-ReST, SPIRAL, SPICE, Socratic-Zero, and additional longitudinal/robotics benchmarks. The breadth of a related list is not evidence that every lead meets this collection's scope. Additional passes should prioritize mechanisms and missing evaluation settings rather than a target count.
 
 Ordinary fixed agent frameworks, unverified third-party implementations, commercial claims without a research source, and papers encountered only in aggregator snippets were excluded. Missing official code links mean availability was not established, not that no code exists.
 
@@ -51,3 +51,15 @@ Link-check limitations and restricted responses are recorded in [link checks](li
 ## Systems expansion: 2026-10-28
 
 Added 23 official software records after separate README, documentation, and license inspection. They are not added to the 83-work literature count. See the [systems source review](systems-review.md) for selection, current-source differences, and execution limits. Research implementations, optimization frameworks, memory libraries, training frameworks, and applications are labeled separately.
+
+## Literature expansion: 2026-10-29
+
+Added **26 works** after primary-source review: 25 papers and one survey. The collection now contains **109 research works** (94 papers, six surveys, nine benchmark papers) and 23 separately counted software projects. Twenty-five additions received selected full-text inspection; the workflow survey has an abstract/metadata review. All eleven explicitly named launch leads have now been reviewed and admitted, with important qualifications retained.
+
+The search targeted 31 July–29 October 2026, supplemented by older omissions and recent publication records. Mechanism-specific variants covered memory and experience reuse, skill/tool acquisition, context optimization, harness evolution, model updates, self-play, continual learning, and evaluation/integrity. Discovery combined arXiv records and revisions with ACL Anthology, ICLR, ICML/PMLR, NeurIPS, COLM, and author-linked artifacts. The COLM table of contents and reference trails supplied additional leads beyond initial search results. This remains a partial catch-up, not a complete enumeration of the window or a claim of exhaustive coverage.
+
+Recent additions include [ASCENT](papers.md#ascent), [LifeMem](papers.md#lifemem), [MemComposer](papers.md#memcomposer), [REM](papers.md#rem-experience-memory), [StepLearn](papers.md#steplearn), [AIDE²](papers.md#aide2), [SelfOp](papers.md#selfop), [VERSE](papers.md#verse), [SED](papers.md#self-evolving-defense), and two studies of learning/evaluation limits. Older additions recover memory, tools, reflection training, and self-play anchors. [PACE](papers.md#pace) adds statistical acceptance under noisy feedback. Four reading routes now include relevant new evaluation or online-learning perspectives.
+
+Publication metadata also resolves ELL / StuLife to Findings of EMNLP 2026 under a revised title. Its earlier full-text inspection is retained separately from the newly inspected publication abstract; experiment equivalence between versions is not assumed.
+
+Remaining high-priority gaps include PEAM and other continual robot-learning studies; ProactAgent, MASkills, APEX-EM, and the value of memory; SAGE and memory-security diagnostics; and additional harness/skill systems found in current proceedings. Some primary-page fetches failed, and broad journal/proceedings enumeration remains incomplete. New artifacts were inspected only to the depth stated per paper; no new software entry or executed result is implied.

@@ -88,6 +88,8 @@ Where does supervision come from when a model helps generate its own training da
 
 6. **[Self-Adapting Language Models](papers.md#seal)** — Study generated self-edits, adaptation rewards, and retention limits.
 
+7. **[ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience](papers.md#ascent)** — Compare persistent online adapter updates with external training and within-task retries.
+
 
 **Study exercise:** For each loop, label which information is human-provided, pretrained, environment-verified, or model-judged.
 
@@ -130,6 +132,8 @@ Does a method change only the solver, or also the process that improves it?
 
 6. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Test the assumption that an optimization benchmark is a trustworthy teacher.
 
+7. **[Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](papers.md#rsi-evaluation-audit)** — Distinguish final-system gains from repeated loops and same-start comparisons of improvers.
+
 
 **Study exercise:** Draw the solver, proposer, selector, and evaluator separately. Highlight what can change and what evidence would demonstrate improvement of the improver.
 
@@ -152,6 +156,8 @@ What experiment would convince you that an agent learned something useful?
 6. **[Phantom Gains: Auditing Self-Improvement Against a Measured Null](papers.md#phantom-gains)** — Measure a frozen null before interpreting per-problem changes.
 
 7. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Include integrity of the learning signal and persistence of bad updates.
+
+8. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
 
 
 **Study exercise:** Draft a matched frozen baseline, a held-out family split, a budget ledger, and one intervention that could falsify your preferred mechanism.
@@ -177,6 +183,8 @@ Does learning persist when tasks and environments change?
 7. **[Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](papers.md#accumulating-data-model-collapse)** — Compare replacement with accumulation, retaining the cost and assumption differences.
 
 8. **[Safety in Self-Evolving Agents: A Survey](papers.md#safety-self-evolving-survey)** — Extend retention questions to unsafe influence, repair, and resumed adaptation.
+
+9. **[Are Self-Evolving Agents Continual Learners?](papers.md#self-evolving-continual-learners)** — Test for interference and forgetting when memory, shared prompts, or harness files evolve.
 
 
 **Study exercise:** Specify separate measures for factual memory, procedural transfer, backward retention, cost, and safety drift. Do not collapse them into one score.
