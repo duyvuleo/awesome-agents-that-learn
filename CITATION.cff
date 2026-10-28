@@ -3,7 +3,8 @@ message: "Cite primary papers for scientific claims. To reference this collectio
 title: "Awesome Agents That Learn"
 type: software
 authors:
-  - name: "duyvuleo"
+  - family-names: "Hoang"
+    given-names: "Cong Duy Vu"
     website: "https://github.com/duyvuleo"
 repository-code: "https://github.com/duyvuleo/awesome-agents-that-learn"
 url: "https://duyvuleo.github.io/awesome-agents-that-learn/"
