@@ -178,13 +178,15 @@ Does learning persist when tasks and environments change?
 
 5. **[Self-Adapting Language Models](papers.md#seal)** — Examine parameter adaptation and forgetting.
 
-6. **[AI models collapse when trained on recursively generated data](papers.md#model-collapse)** — Understand distributional loss under recursive replacement assumptions.
+6. **[Memory Anchors for Continual Robot Learning](papers.md#memory-anchors)** — Connect forgetting to replay selection and conflicting action labels in continual robot learning.
 
-7. **[Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](papers.md#accumulating-data-model-collapse)** — Compare replacement with accumulation, retaining the cost and assumption differences.
+7. **[AI models collapse when trained on recursively generated data](papers.md#model-collapse)** — Understand distributional loss under recursive replacement assumptions.
 
-8. **[Safety in Self-Evolving Agents: A Survey](papers.md#safety-self-evolving-survey)** — Extend retention questions to unsafe influence, repair, and resumed adaptation.
+8. **[Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](papers.md#accumulating-data-model-collapse)** — Compare replacement with accumulation, retaining the cost and assumption differences.
 
-9. **[Are Self-Evolving Agents Continual Learners?](papers.md#self-evolving-continual-learners)** — Test for interference and forgetting when memory, shared prompts, or harness files evolve.
+9. **[Safety in Self-Evolving Agents: A Survey](papers.md#safety-self-evolving-survey)** — Extend retention questions to unsafe influence, repair, and resumed adaptation.
+
+10. **[Are Self-Evolving Agents Continual Learners?](papers.md#self-evolving-continual-learners)** — Test for interference and forgetting when memory, shared prompts, or harness files evolve.
 
 
 **Study exercise:** Specify separate measures for factual memory, procedural transfer, backward retention, cost, and safety drift. Do not collapse them into one score.

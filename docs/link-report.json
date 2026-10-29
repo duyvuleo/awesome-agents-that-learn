@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-10-28T22:25:02.617245+00:00",
+  "checked_at_utc": "2026-10-29T22:08:06.056693+00:00",
   "scope": "all-catalog-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -52,9 +52,21 @@
       "status": "reachable"
     },
     {
+      "url": "https://aclanthology.org/2026.emnlp-main.2100/",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.emnlp-main.2100/",
+      "status": "reachable"
+    },
+    {
       "url": "https://aclanthology.org/2026.findings-acl.866/",
       "http_status": 200,
       "final_url": "https://aclanthology.org/2026.findings-acl.866/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2026.findings-emnlp.1326/",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.findings-emnlp.1326/",
       "status": "reachable"
     },
     {
@@ -64,9 +76,39 @@
       "status": "reachable"
     },
     {
+      "url": "https://aclanthology.org/2026.findings-emnlp.1453/",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.findings-emnlp.1453/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2026.findings-emnlp.1455/",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.findings-emnlp.1455/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2026.findings-emnlp.1996/",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.findings-emnlp.1996/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2026.findings-emnlp.2198/",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.findings-emnlp.2198/",
+      "status": "reachable"
+    },
+    {
       "url": "https://aclanthology.org/2026.findings-emnlp.770/",
       "http_status": 200,
       "final_url": "https://aclanthology.org/2026.findings-emnlp.770/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2026.findings-emnlp.775/",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.findings-emnlp.775/",
       "status": "reachable"
     },
     {
@@ -756,6 +798,16 @@
       "title_check": "match"
     },
     {
+      "url": "https://arxiv.org/abs/2602.03224",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2602.03224",
+      "status": "reachable",
+      "expected_title": "TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking",
+      "observed_title": "TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
       "url": "https://arxiv.org/abs/2602.04837",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2602.04837",
@@ -816,12 +868,42 @@
       "title_check": "match"
     },
     {
+      "url": "https://arxiv.org/abs/2603.28052",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2603.28052",
+      "status": "reachable",
+      "expected_title": "Meta-Harness: End-to-End Optimization of Model Harnesses",
+      "observed_title": "Meta-Harness: End-to-End Optimization of Model Harnesses",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2603.29093",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2603.29093",
+      "status": "reachable",
+      "expected_title": "APEX-EM: Non-Parametric Online Learning for Autonomous Agents via Structured Procedural-Episodic Experience Replay",
+      "observed_title": "APEX-EM: Non-Parametric Online Learning for Autonomous Agents via Structured Procedural-Episodic Experience Replay",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
       "url": "https://arxiv.org/abs/2604.17308",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2604.17308",
       "status": "reachable",
       "expected_title": "SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents",
       "observed_title": "SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2604.20572",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2604.20572",
+      "status": "reachable",
+      "expected_title": "Ask Only When Needed: Proactive Retrieval from Memory and Skills for Experience-Driven Lifelong Agents",
+      "observed_title": "Ask Only When Needed: Proactive Retrieval from Memory and Skills for Experience-Driven Lifelong Agents",
       "title_similarity": 1.0,
       "title_check": "match"
     },
@@ -846,6 +928,16 @@
       "title_check": "match"
     },
     {
+      "url": "https://arxiv.org/abs/2605.27762",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2605.27762",
+      "status": "reachable",
+      "expected_title": "PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft",
+      "observed_title": "PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
       "url": "https://arxiv.org/abs/2606.08106",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2606.08106",
@@ -862,6 +954,16 @@
       "status": "reachable",
       "expected_title": "Self-Improvements in Modern Agentic Systems: A Survey",
       "observed_title": "Self-Improvements in Modern Agentic Systems: A Survey",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2607.21596",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2607.21596",
+      "status": "reachable",
+      "expected_title": "FlowEvo: Self-Evolving Agents through the Co-Evolution of Workflows and Executable Skills",
+      "observed_title": "FlowEvo: Self-Evolving Agents through the Co-Evolution of Workflows and Executable Skills",
       "title_similarity": 1.0,
       "title_check": "match"
     },
@@ -936,6 +1038,56 @@
       "title_check": "match"
     },
     {
+      "url": "https://arxiv.org/abs/2608.21899",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2608.21899",
+      "status": "reachable",
+      "expected_title": "CIDER: Continual Interactive Distillation for Embodied Reinforcement Learning",
+      "observed_title": "CIDER: Continual Interactive Distillation for Embodied Reinforcement Learning",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.26545",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2608.26545",
+      "status": "reachable",
+      "expected_title": "Memory Anchors for Continual Robot Learning",
+      "observed_title": "Memory Anchors for Continual Robot Learning",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.00621",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.00621",
+      "status": "reachable",
+      "expected_title": "Control-Data Flow Separation: Stable Prompt Optimization in Multi-Agent LLMs",
+      "observed_title": "Control-Data Flow Separation: Stable Prompt Optimization in Multi-Agent LLMs",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.02094",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.02094",
+      "status": "reachable",
+      "expected_title": "MASkills: Continual Skills Optimization for Multi-Agent LLM Systems",
+      "observed_title": "MASkills: Continual Skills Optimization for Multi-Agent LLM Systems",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.05736",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.05736",
+      "status": "reachable",
+      "expected_title": "Beyond Prompts: Measuring and Optimizing LLM Tool-Agent Harnesses",
+      "observed_title": "Beyond Prompts: Measuring and Optimizing LLM Tool-Agent Harnesses",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
       "url": "https://arxiv.org/abs/2609.12655",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2609.12655",
@@ -996,6 +1148,16 @@
       "title_check": "match"
     },
     {
+      "url": "https://arxiv.org/abs/2609.36043",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.36043",
+      "status": "reachable",
+      "expected_title": "SAGE: A Statistical Acceptance Gate for Self-Evolving Agents",
+      "observed_title": "SAGE: A Statistical Acceptance Gate for Self-Evolving Agents",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
       "url": "https://arxiv.org/abs/2609.36603",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2609.36603",
@@ -1032,6 +1194,26 @@
       "status": "reachable",
       "expected_title": "ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience",
       "observed_title": "ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.10498",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.10498",
+      "status": "reachable",
+      "expected_title": "EmbodiedRSI: Active Continual Robot Learning Through Hypothesis-Guided Co-Evolution",
+      "observed_title": "EmbodiedRSI: Active Continual Robot Learning Through Hypothesis-Guided Co-Evolution",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.14224",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.14224",
+      "status": "reachable",
+      "expected_title": "Harness^2: Recursive Agent Harnessing for an Open World",
+      "observed_title": "Harness^2: Recursive Agent Harnessing for an Open World",
       "title_similarity": 1.0,
       "title_check": "match"
     },
@@ -1076,12 +1258,72 @@
       "title_check": "match"
     },
     {
+      "url": "https://arxiv.org/abs/2610.29121",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.29121",
+      "status": "reachable",
+      "expected_title": "Recursive Self-Improvement on a Budget: Scoring Code Edits Before They Run",
+      "observed_title": "Recursive Self-Improvement on a Budget: Scoring Code Edits Before They Run",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.29823",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.29823",
+      "status": "reachable",
+      "expected_title": "MemoryTax: The Bitter Lesson of Agent Memory",
+      "observed_title": "MemoryTax: The Bitter Lesson of Agent Memory",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.31303",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.31303",
+      "status": "reachable",
+      "expected_title": "The Value of Memory in Language Agents",
+      "observed_title": "The Value of Memory in Language Agents",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
       "url": "https://arxiv.org/abs/2610.33274",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2610.33274",
       "status": "reachable",
       "expected_title": "FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents",
       "observed_title": "FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.34673",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.34673",
+      "status": "reachable",
+      "expected_title": "Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents",
+      "observed_title": "Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.34767",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.34767",
+      "status": "reachable",
+      "expected_title": "The Right Fact, the Wrong Decision: SciValidityBench for Scientific Agent Memory",
+      "observed_title": "The Right Fact, the Wrong Decision: SciValidityBench for Scientific Agent Memory",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35598",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.35598",
+      "status": "reachable",
+      "expected_title": "Evolve on Graph: Self-Evolving Knowledge Graph Reasoning without Question Annotations",
+      "observed_title": "Evolve on Graph: Self-Evolving Knowledge Graph Reasoning without Question Annotations",
       "title_similarity": 1.0,
       "title_check": "match"
     },
@@ -1248,6 +1490,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/html/2602.03224v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2602.03224v2",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/html/2602.08234v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2602.08234v1",
@@ -1278,9 +1526,39 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/html/2603.28052v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2603.28052v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2603.29093v3",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2603.29093v3",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2604.20572v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2604.20572v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2605.27762v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2605.27762v2",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/html/2606.08106v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2606.08106v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2607.21596v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2607.21596v2",
       "status": "reachable"
     },
     {
@@ -1299,6 +1577,36 @@
       "url": "https://arxiv.org/html/2608.04003v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2608.04003v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2608.21899v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2608.21899v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2608.26545v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2608.26545v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.00621v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2609.00621v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.02094v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2609.02094v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.05736v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2609.05736v2",
       "status": "reachable"
     },
     {
@@ -1338,6 +1646,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/html/2609.36043v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2609.36043v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/html/2609.36603v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2609.36603v1",
@@ -1353,6 +1667,18 @@
       "url": "https://arxiv.org/html/2610.05303v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2610.05303v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2610.10498v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2610.10498v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2610.14224v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2610.14224v1",
       "status": "reachable"
     },
     {
@@ -1380,6 +1706,42 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/html/2610.29121v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2610.29121v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2610.29823v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2610.29823v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2610.31303v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2610.31303v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2610.34673v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2610.34673v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2610.34767v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2610.34767v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2610.35598v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2610.35598v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://discovery.ucl.ac.uk/id/eprint/10045895/",
       "http_status": 200,
       "final_url": "https://discovery.ucl.ac.uk/id/eprint/10045895/",
@@ -1401,6 +1763,18 @@
       "url": "https://dspy.ai/",
       "http_status": 200,
       "final_url": "https://dspy.ai/current/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://eurekaarrow.github.io/",
+      "http_status": 200,
+      "final_url": "https://eurekaarrow.github.io/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://geeksongs.github.io/agentic_robotics/",
+      "http_status": 200,
+      "final_url": "https://geeksongs.github.io/agentic_robotics/",
       "status": "reachable"
     },
     {
@@ -1461,6 +1835,18 @@
       "url": "https://github.com/Continual-Intelligence/SEAL/blob/main/general-knowledge/README.md",
       "http_status": 200,
       "final_url": "https://github.com/Continual-Intelligence/SEAL/blob/main/general-knowledge/README.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/DEFENSE-SEU/FlowEvo",
+      "http_status": 200,
+      "final_url": "https://github.com/DEFENSE-SEU/FlowEvo",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/DaRL-GenAI/MASkills",
+      "http_status": 200,
+      "final_url": "https://github.com/DaRL-GenAI/MASkills",
       "status": "reachable"
     },
     {
@@ -1620,6 +2006,18 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/SII-YUCHENG2002/tame_code",
+      "http_status": 200,
+      "final_url": "https://github.com/SII-YUCHENG2002/tame_code",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/SciValidityBench/SciValidityBench",
+      "http_status": 200,
+      "final_url": "https://github.com/SciValidityBench/SciValidityBench",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/ShengranHu/ADAS",
       "http_status": 200,
       "final_url": "https://github.com/ShengranHu/ADAS",
@@ -1635,6 +2033,12 @@
       "url": "https://github.com/ShengranHu/ADAS/blob/main/README.md",
       "http_status": 200,
       "final_url": "https://github.com/ShengranHu/ADAS/blob/main/README.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Szy5/EoG",
+      "http_status": 200,
+      "final_url": "https://github.com/Szy5/EoG",
       "status": "reachable"
     },
     {
@@ -1701,6 +2105,18 @@
       "url": "https://github.com/aiming-lab/SkillRL/blob/main/LICENSE",
       "http_status": 200,
       "final_url": "https://github.com/aiming-lab/SkillRL/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/airbnb/agent-harness-optimizer",
+      "http_status": 200,
+      "final_url": "https://github.com/airbnb/agent-harness-optimizer",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/airbnb/agent-harness-optimizer/blob/main/REPRODUCIBILITY.md",
+      "http_status": 200,
+      "final_url": "https://github.com/airbnb/agent-harness-optimizer/blob/main/REPRODUCIBILITY.md",
       "status": "reachable"
     },
     {
@@ -1785,6 +2201,12 @@
       "url": "https://github.com/google-deepmind/opro",
       "http_status": 200,
       "final_url": "https://github.com/google-deepmind/opro",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/google-research/harness2",
+      "http_status": 200,
+      "final_url": "https://github.com/google-research/harness2",
       "status": "reachable"
     },
     {
@@ -1926,6 +2348,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/stanford-iris-lab/meta-harness",
+      "http_status": 200,
+      "final_url": "https://github.com/stanford-iris-lab/meta-harness",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/stanfordnlp/dspy",
       "http_status": 200,
       "final_url": "https://github.com/stanfordnlp/dspy",
@@ -1977,6 +2405,12 @@
       "url": "https://github.com/yizhongw/self-instruct",
       "http_status": 200,
       "final_url": "https://github.com/yizhongw/self-instruct",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/yuntian-group/cdsep",
+      "http_status": 200,
+      "final_url": "https://github.com/yuntian-group/cdsep",
       "status": "reachable"
     },
     {
@@ -2085,6 +2519,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/0bcf9cf6ffe26bba3af99e18be0e1d8d-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/0bcf9cf6ffe26bba3af99e18be0e1d8d-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
       "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/8204f54f6cd8f0db1765a274e94ceaac-Abstract-Conference.html",
       "http_status": 200,
       "final_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/8204f54f6cd8f0db1765a274e94ceaac-Abstract-Conference.html",
@@ -2094,6 +2534,12 @@
       "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/fc9f83d9925e6885e8f1ae1e17b3c44b-Abstract-Conference.html",
       "http_status": 200,
       "final_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/fc9f83d9925e6885e8f1ae1e17b3c44b-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/fde1a69a5b6e554b2f1f727197d2651d-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/fde1a69a5b6e554b2f1f727197d2651d-Abstract-Conference.html",
       "status": "reachable"
     },
     {
@@ -2295,6 +2741,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://raw.githubusercontent.com/SII-YUCHENG2002/tame_code/main/README.md",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/SII-YUCHENG2002/tame_code/main/README.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://snap-research.github.io/locomo/",
       "http_status": 200,
       "final_url": "https://snap-research.github.io/locomo/",
@@ -2315,37 +2767,37 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=4569d02f-327d-4e53-af22-94e8b7bab93e",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=ed3074fb-b85f-41c0-bb29-85e4b58ca275",
       "status": "restricted-or-transient",
-      "note": "Manual review: redirect reports cookies_not_supported despite HTTP 200; source content was not verified by this request."
+      "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=e95ab4e5-576e-4177-89b1-2477d498e96a",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=60b6fe0c-a1a5-437e-a621-f3368d7cf7d8",
       "status": "restricted-or-transient",
-      "note": "Manual review: redirect reports cookies_not_supported despite HTTP 200; source content was not verified by this request."
+      "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported",
       "http_status": 200,
       "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported",
       "status": "restricted-or-transient",
-      "note": "Manual review: redirect reports cookies_not_supported despite HTTP 200; source content was not verified by this request."
+      "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=f182f451-4896-4ed0-85b8-49499fd40304",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=898f29cc-d8e9-4a26-8089-6dbb2c226856",
       "status": "restricted-or-transient",
-      "note": "Manual review: redirect reports cookies_not_supported despite HTTP 200; source content was not verified by this request."
+      "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=d2ea4363-50c9-4f1c-a2ea-fec3b0ac31b5",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=89d2c65f-bb38-465a-a995-c25eccc600eb",
       "status": "restricted-or-transient",
-      "note": "Manual review: redirect reports cookies_not_supported despite HTTP 200; source content was not verified by this request."
+      "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.shengranhu.com/ADAS/",

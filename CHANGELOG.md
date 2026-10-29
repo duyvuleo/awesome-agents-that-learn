@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-30 — Continual robotics, memory, and harness evaluation
+
+- Added 20 selected-full-text reviews: 19 papers and SciValidityBench, bringing the catalog to 129 research works and 23 software records.
+- Expanded continual robotics, memory selection/governance, harness optimization, graph self-play, and evaluation evidence; extended the continual-learning reading route.
+- Recorded publication aliases and material limits involving human demonstrations, scoring paths, validation reuse, and model-generated judgments.
+- Fixed source-link classification for HTTP-200 cookie-error redirects and added a regression check.
+- Preserved all previous per-entry inspection dates and execution records. No research code was run.
+
 ## 2026-10-29 — Memory, online learning, and evaluation coverage
 
 - Added 26 source-reviewed works: 25 papers and one workflow survey; 25 additions received selected full-text inspection.

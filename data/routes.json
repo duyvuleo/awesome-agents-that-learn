@@ -265,6 +265,10 @@
         "why": "Examine parameter adaptation and forgetting."
       },
       {
+        "paper": "memory-anchors",
+        "why": "Connect forgetting to replay selection and conflicting action labels in continual robot learning."
+      },
+      {
         "paper": "model-collapse",
         "why": "Understand distributional loss under recursive replacement assumptions."
       },

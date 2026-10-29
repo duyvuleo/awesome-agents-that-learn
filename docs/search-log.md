@@ -63,3 +63,15 @@ Recent additions include [ASCENT](papers.md#ascent), [LifeMem](papers.md#lifemem
 Publication metadata also resolves ELL / StuLife to Findings of EMNLP 2026 under a revised title. Its earlier full-text inspection is retained separately from the newly inspected publication abstract; experiment equivalence between versions is not assumed.
 
 Remaining high-priority gaps include PEAM and other continual robot-learning studies; ProactAgent, MASkills, APEX-EM, and the value of memory; SAGE and memory-security diagnostics; and additional harness/skill systems found in current proceedings. Some primary-page fetches failed, and broad journal/proceedings enumeration remains incomplete. New artifacts were inspected only to the depth stated per paper; no new software entry or executed result is implied.
+
+## Literature expansion: 2026-10-30
+
+Added **20 works** after selected primary full-text review: 19 papers and one benchmark paper. The catalog now contains **129 research works** (113 papers, six surveys, ten benchmark papers), with 23 separately counted software records. The additions cover memory selection and governance, skill/workflow optimization, agent harnesses, continual robotics, graph-grounded self-play, and evaluation limits.
+
+Discovery used overlapping 22–30 October queries alongside unresolved leads from the first 90-day catch-up. Multiple mechanism variants searched arXiv and official proceedings, with targeted TMLR, TACL, AAAI, and NAACL checks and author-source follow-up. TMLR and COLM listings were inspected beyond opening results. Journal listings supplied useful leads, but several linked OpenReview pages were access-restricted. A successful query or listing check is not a complete venue audit; pending full-text reviews remain open.
+
+Recent additions include [AgentMemRec](papers.md#agentmemrec), [EoG](papers.md#evolve-on-graph), [SciValidityBench](papers.md#scivaliditybench), [The Value of Memory](papers.md#value-of-memory), and [MemoryTax](papers.md#memorytax). Earlier omissions include ProactAgent, MASkills, APEX-EM, PRISM, control–data separation, FlowEvo, Meta-Harness, Harness², SAGE, TAME, Memory Anchors, CIDER, PEAM, and EmbodiedRSI. An additional code-edit selection study distinguishes a fixed learned predictor from an evolving improver. The continual-learning route now includes robot replay selection.
+
+Annotations preserve important comparison limits: supplied rewards and demonstrations, frozen versus online memory, manual validation tuning, limited task sequences, model-judged correctness, unequal scoring paths, and unclear checkpoint-selection separation. No research code was executed. Existing ASCENT, MemComposer, LifeMem, SPIRAL, PACE, and RSI-audit records were spot-checked without changes; this is not a systematic withdrawal audit.
+
+Remaining priorities include GameSmith and search distillation, ReSight, recent multi-agent memory/configuration methods, MLE-World, additional safety benchmarks, and unresolved journal articles. PEAM's publication-title alias and the reviewed preprint version are documented separately. The 90-day catch-up and broader venue enumeration remain incomplete.

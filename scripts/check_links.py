@@ -15,7 +15,7 @@ import re
 import unicodedata
 import urllib.error
 import urllib.request
-from urllib.parse import urlsplit
+from urllib.parse import parse_qs, urlsplit
 from catalog import ROOT, load
 
 
@@ -36,8 +36,9 @@ def normalized(title):
 
 def is_access_gate(url):
     """Known login/challenge redirects are not accessible source content."""
-    path = urlsplit(url).path.lower()
-    return any(segment in {"challenge", "login", "signin", "authorize", "captcha"} for segment in path.split("/"))
+    parsed = urlsplit(url)
+    cookie_error = "cookies_not_supported" in parse_qs(parsed.query).get("error", [])
+    return cookie_error or any(segment in {"challenge", "login", "signin", "authorize", "captcha"} for segment in parsed.path.lower().split("/"))
 
 
 def check(url, expected=None):

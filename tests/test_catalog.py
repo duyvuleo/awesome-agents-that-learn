@@ -1,12 +1,13 @@
 import copy
 import sys
 import unittest
+from unittest.mock import MagicMock, patch
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from catalog import identity, load, validate_records, validate_systems
 from explore import select
-from check_links import normalized, is_access_gate
+from check_links import check, normalized, is_access_gate
 from render import generate
 
 
@@ -98,6 +99,18 @@ class CatalogTests(unittest.TestCase):
         self.assertTrue(is_access_gate("https://openreview.net/challenge?redirect=/pdf?id=abc"))
         self.assertTrue(is_access_gate("https://publisher.example/authorize?target=paper"))
         self.assertFalse(is_access_gate("https://arxiv.org/abs/2501.12345"))
+
+    def test_cookie_error_redirect_with_http_success_is_restricted(self):
+        response = MagicMock()
+        response.status = 200
+        response.url = "https://www.nature.com/articles/example?error=cookies_not_supported&code=example"
+        response.__enter__.return_value = response
+        with patch("check_links.urllib.request.urlopen", return_value=response):
+            result = check("https://www.nature.com/articles/example")
+        self.assertEqual(result["http_status"], 200)
+        self.assertEqual(result["status"], "restricted-or-transient")
+        self.assertIn("not verified", result["note"])
+        self.assertFalse(is_access_gate("https://example.org/article?topic=cookies_not_supported"))
 
 
 if __name__ == "__main__":

@@ -45,7 +45,7 @@ LoCoMo's project and proceedings describe different dataset statistics; the anno
 
 ## Targeted full-text expansion: 2026-10-29
 
-The 26 additions contain 25 selected full-text reviews and one primary-abstract/venue review. Current totals are 49 selected full-text and 60 abstract/metadata reviews. These labels describe source inspection; no research implementation was executed and no result was independently reproduced.
+The 26 additions contain 25 selected full-text reviews and one primary-abstract/venue review. After that pass, totals were 49 selected full-text and 60 abstract/metadata reviews. These labels describe source inspection; no research implementation was executed and no result was independently reproduced.
 
 | Work | Inspected version and sections | Boundary emphasized |
 | --- | --- | --- |
@@ -82,3 +82,40 @@ The [workflow optimization survey](papers.md#workflow-optimization-survey) recei
 [ELL / StuLife's official Findings of EMNLP 2026 record](https://aclanthology.org/2026.findings-emnlp.770/) uses “A Benchmark for Self-Evolving Agents via Experience-Driven Lifelong Learning.” The original arXiv title, first-public date, and stable catalog identity are retained. The publication abstract adds context-engineering comparisons; its large PDF could not be inspected in this pass. The launch's v6 full-text baseline review must not be treated as inspection of that later protocol.
 
 Memento's original author repository redirects to Memento-Teams/Memento. MCE's current repository points separately to a paper-artifact repository. RAGEN's current source includes RAGEN-2, which remains a separate literature lead. REM's workshop acceptance is author-reported pending a venue record. These checks do not establish installation, paper-version equivalence, licensing compatibility, or reproduction.
+
+## Targeted full-text expansion: 2026-10-30
+
+All 20 additions received selected methods, evaluation, and limitation inspection. Totals after this pass are 69 selected full-text and 60 abstract/metadata reviews. These are source reviews, not independent reproductions.
+
+| Work | Inspected version and sections | Boundary emphasized |
+| --- | --- | --- |
+| [ProactAgent](papers.md#proactagent) | arXiv v2, §§2–3, Appendices B and E; Findings EMNLP record | Reward-bearing replay, cold-start data, and shaped retrieval credit. |
+| [MASkills](papers.md#maskills) | arXiv v1, §§3–5 selected methods/transfer; Findings EMNLP record | Textual-gradient analogy and validation-gate tolerance. |
+| [APEX-EM](papers.md#apex-em) | arXiv v3, §§3–4, selected Appendices D/E/F/L/M/Q; Findings EMNLP record | Repeated-epoch cumulative success versus frozen-memory transfer. |
+| [AgentMemRec](papers.md#agentmemrec) | arXiv v1, §§4–7 | Gold-supervised ranker and static memory-selection evaluation. |
+| [PRISM](papers.md#beyond-prompts-prism) | arXiv v2, §§3–5, limitations; Findings EMNLP metadata and official reproducibility guide | Different Telecom scoring paths and bounded harness-edit surface. |
+| [Control–data separation](papers.md#control-data-flow-separation) | arXiv v1, §§3–5 selected methods/experiments, limitations; Findings EMNLP record | Protocol validity versus task correctness; schemas remain fixed. |
+| [FlowEvo](papers.md#flowevo) | arXiv v2, §§3–5; COLM record and author README | Online skill accumulation versus separate frozen-bank analyses. |
+| [Code-edit readout](papers.md#rsi-budget-code-scoring) | arXiv v1, §§2–3 and 6 | Fixed predictor, disjoint score roles, and end-to-end budget uncertainty. |
+| [Meta-Harness](papers.md#meta-harness) | arXiv v1, §§3–5; COLM record and author README | TerminalBench search/final task reuse versus separate transfer tests. |
+| [Harness²](papers.md#harness2) | arXiv v1, §§2–3, analysis, Appendices F/G; author README | Persistent library versus reset execution harness and fixed stage rules. |
+| [Memory Anchors](papers.md#memory-anchors) | arXiv v1, §§3–6 selected methods/experiments | Required past data and bounded simulation/real-robot sequences. |
+| [CIDER](papers.md#cider) | arXiv v1, §§3–6 | Human-assisted acquisition and six-task retention evidence. |
+| [PEAM](papers.md#peam) | arXiv v2, §§3–4 and limitations; Findings EMNLP metadata | Three-category isolation and fixed consolidation rules. |
+| [EmbodiedRSI](papers.md#embodiedrsi) | arXiv v1, §§3–4; author project | Memory-manager training and human demonstrations before harness transfer. |
+| [EoG](papers.md#evolve-on-graph) | arXiv v1, §§3–4, Appendix C; author README | Supplied graph/query patterns and validation/test separation uncertainty. |
+| [SAGE](papers.md#sage-acceptance-gate) | arXiv v1, §§3–5 | Fixed-comparison error control and manual tuning. |
+| [The Value of Memory](papers.md#value-of-memory) | arXiv v2, §§3, 5–6, 8 | Small diagnostics, post-hoc controls, and one-owner case evidence. |
+| [MemoryTax](papers.md#memorytax) | arXiv v1, §§2, 4–6, Appendix A overview | Single runs and unequal access to photo evidence. |
+| [TAME](papers.md#tame-memory) | arXiv v2, §§3–5, Appendix B; EMNLP record and author README | Shared-bank revision and frozen trustworthiness evaluation. |
+| [SciValidityBench](papers.md#scivaliditybench) | arXiv v1, §§3–4, Appendix B, ethics/reproducibility; author README | Synthetic histories, supplied compilation, and state-use evaluation. |
+
+Independent source checks of selected annotations confirmed the main qualifications for SAGE, TAME, EmbodiedRSI, EoG, The Value of Memory, and SciValidityBench.
+
+### Versions and publication identities
+
+[PEAM's published title](https://aclanthology.org/2026.findings-emnlp.1326/) uses “for Continual Skill Learning via Internalization of Experience in Minecraft”; the linked arXiv title uses “through Contrastive Internalization of Experience in Minecraft.” Matching authors and the author page connect them as one work. The full-text review concerns arXiv v2; the proceedings PDF was inaccessible, so version-equivalent experiments are not assumed.
+
+FlowEvo's primary history lists 18 April 2026 as its first date despite its July-form identifier. Dates follow the source history. TAME v2 replaces the initial dual-memory account with a shared trust-aware bank, and APEX-EM v3 adds comparison distinctions absent from older indexed summaries. PRISM's verified venue is Findings of EMNLP 2026. EmbodiedRSI's project also uses the name EmbodiedEvo; it is retained as one identity.
+
+EoG's current README describes validation using WebQSP/CWQ test questions. This limits what the inspected artifact establishes about checkpoint selection; it is not an assertion that a particular published run leaked test labels. Harness²'s documented network defaults likewise call for separate contamination controls without proving contamination in the paper. No source inspection here establishes artifact completeness or reproduction.
