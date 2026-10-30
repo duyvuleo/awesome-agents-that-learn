@@ -32,6 +32,41 @@
     "short_name": "A-MEM"
   },
   {
+    "id": "a-memguard",
+    "title": "A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory",
+    "date": "2025-09-29",
+    "year": 2025,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "ICML 2026",
+    "url": "https://arxiv.org/abs/2510.02373",
+    "sources": [
+      "https://arxiv.org/abs/2510.02373",
+      "https://arxiv.org/html/2510.02373v1",
+      "https://proceedings.mlr.press/v306/wei26ac.html",
+      "https://github.com/TangciuYueng/AMemGuard"
+    ],
+    "code_url": "https://github.com/TangciuYueng/AMemGuard",
+    "code_note": "Author-linked repository and README inspected; not installed or executed.",
+    "topics": [
+      "memory",
+      "safety",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Divergence among reasoning paths generated from retrieved memories and detected anomalous paths retained as lessons.",
+    "mechanism": "Validates retrieved memories through parallel reasoning-path comparisons and keeps detected failure patterns in a separate lesson store. Later actions consult those lessons without changing the core agent architecture.",
+    "evaluation": "Reports direct and indirect memory-poisoning tests with ReAct-StrategyQA, EHRAgent, and WebShop, two backbones, retrieval variants, benign-task utility, and collaborative-agent extensions.",
+    "limitations": "The threat model assumes mostly benign memory and limited attacker control. The abstract’s over-95% reduction should not be read as uniform end-to-end protection: Table 1 retains substantial task-level attack success despite strong retrieval-stage suppression. Consensus and lesson extraction remain model-dependent.",
+    "review_depth": "full-text",
+    "checked": "2026-10-31",
+    "short_name": "A-MemGuard"
+  },
+  {
     "id": "absolute-zero",
     "title": "Absolute Zero: Reinforced Self-play Reasoning with Zero Data",
     "date": "2025-05-06",
@@ -704,6 +739,73 @@
     "short_name": "PRISM"
   },
   {
+    "id": "calimem",
+    "title": "CaliMem: Search-Efficient Data Agent via Calibrated Memory",
+    "date": "2026-10-25",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2610.34500",
+    "sources": [
+      "https://arxiv.org/abs/2610.34500",
+      "https://arxiv.org/html/2610.34500v1"
+    ],
+    "code_url": null,
+    "code_note": "Official runnable code was not independently verified in this source review; this does not establish that none exists.",
+    "topics": [
+      "memory",
+      "evaluation",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory"
+    ],
+    "persistence": "within-task",
+    "learning_signal": "Measured downstream training/evaluation scores and residuals against predictions recorded before each curation experiment.",
+    "mechanism": "Retains evidence and revisable claims throughout a data-curation search. Before evaluating a proposed data policy, the agent predicts its score; observed discrepancies prompt it to narrow or revise claims while the surrounding scaffold remains fixed.",
+    "evaluation": "Reports biological data-curation tasks and general/code instruction tuning, with memory/prediction ablations and a separate forecasting diagnostic. Searches run for ten or fifteen iterations.",
+    "limitations": "Each iteration uses one noisy downstream training run and consumes evaluation feedback. Curator interpretation: within-run gains do not establish cross-task learning or uniformly independent final-test selection. Costs grow with downstream training; prediction agreement alone does not verify scientific claims.",
+    "review_depth": "full-text",
+    "checked": "2026-10-31",
+    "short_name": "CaliMem"
+  },
+  {
+    "id": "cepo",
+    "title": "CEPO: A General Framework for Improving Prompt Optimization in Multi-Agent Systems",
+    "date": "2026-10-26",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2610.34722",
+    "sources": [
+      "https://arxiv.org/abs/2610.34722",
+      "https://arxiv.org/html/2610.34722v1"
+    ],
+    "code_url": null,
+    "code_note": "The inspected paper plans a code release upon acceptance; no official released implementation was verified.",
+    "topics": [
+      "prompts",
+      "architecture",
+      "workflows",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "prompts"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Training-example feedback and validation scores used by supplied prompt optimizers.",
+    "mechanism": "Separates a shared coordination prompt from agent-specific execution prompts. Role-aligned instructions guide existing optimizers to tune coordination first, then selected execution prompts, retaining a reusable prompt set around the existing multi-agent system.",
+    "evaluation": "Applies the framework to four optimizers across eleven document, math, code, and video benchmarks, with guidance-swap, prompt-length, budget, and team-size controls.",
+    "limitations": "Search algorithms, role guidance, and labeled data remain supplied. Document benchmarks use custom document-level splits and model-judged answers; team-size scaling controls concern one document system. Curator interpretation: this is external prompt optimization, not autonomous redesign of the learning procedure.",
+    "review_depth": "full-text",
+    "checked": "2026-10-31",
+    "short_name": "CEPO"
+  },
+  {
     "id": "cider",
     "title": "CIDER: Continual Interactive Distillation for Embodied Reinforcement Learning",
     "date": "2026-08-22",
@@ -735,6 +837,40 @@
     "review_depth": "full-text",
     "checked": "2026-10-30",
     "short_name": "CIDER"
+  },
+  {
+    "id": "collabmem",
+    "title": "COLLABMEM: A Diagnostic Benchmark for Collaborative Memory Operations in Multi-Agent LLM Systems",
+    "date": "2026",
+    "year": 2026,
+    "kind": "benchmark",
+    "status": "peer-reviewed",
+    "venue": "EMNLP 2026",
+    "url": "https://aclanthology.org/2026.emnlp-main.1194/",
+    "sources": [
+      "https://aclanthology.org/2026.emnlp-main.1194/",
+      "https://aclanthology.org/2026.emnlp-main.1194.pdf"
+    ],
+    "code_url": null,
+    "code_note": "Official runnable code was not verified in this source review; no research code was executed.",
+    "topics": [
+      "memory",
+      "evaluation",
+      "safety",
+      "architecture"
+    ],
+    "scope": "adjacent",
+    "update_targets": [
+      "memory"
+    ],
+    "persistence": "not-applicable",
+    "learning_signal": "Fixed event traces, access/authority labels, and gold probes evaluate memory operations; no policy-learning loop is tested.",
+    "mechanism": "Holds the interaction trace and answering layer fixed to isolate sharing, access, routing, provenance, conflict resolution, and retention. TMS-GRAPH++ supplies role-filtered views with current-value and writer information.",
+    "evaluation": "Uses 58 hand-authored seed scenarios plus scaled, adversarial, and compositional probes; compares mechanism reimplementations separately from official SDK memory primitives.",
+    "limitations": "Controlled traces and minimal sharing policies are not native multi-agent product deployments. Human checking covers a stratified sample; the paper acknowledges that its compression metric inadequately reflects compression capability. Year-only dating preserves the inspected publication precision.",
+    "review_depth": "full-text",
+    "checked": "2026-10-31",
+    "short_name": "COLLABMEM"
   },
   {
     "id": "comprehensive-evolving-survey",
@@ -905,6 +1041,41 @@
     "review_depth": "full-text",
     "checked": "2026-10-28",
     "short_name": "DGM"
+  },
+  {
+    "id": "discernmem",
+    "title": "Remembering Is Not Enough: Refining Memories and Learning When to Use Them in Multi-Agent Systems",
+    "date": "2026-10-27",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2610.36652",
+    "sources": [
+      "https://arxiv.org/abs/2610.36652",
+      "https://arxiv.org/html/2610.36652v1",
+      "https://github.com/ECNU-ICALK/DiscernMem"
+    ],
+    "code_url": "https://github.com/ECNU-ICALK/DiscernMem",
+    "code_note": "Paper-linked repository and README inspected; not installed or executed.",
+    "topics": [
+      "memory",
+      "continual-learning",
+      "evaluation",
+      "architecture"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Automatically scored paired replays, historical task checks, and model judgments of rule defects or applicability.",
+    "mechanism": "Repairs role-owned behavioral memories and separately learns conditions for using or avoiding them. A task is scored before its experience updates memory; model weights, roles, and communication structure stay fixed.",
+    "evaluation": "Tests three multi-agent hosts on four QA, code-generation, and planning benchmarks with one backbone and fixed-order task streams. Baseline figures are inherited from the ConMem study.",
+    "limitations": "Replay requires repeatable, automatically scored tasks and adds execution cost. Memories are tested individually, missing interactions among rules. Avoidance conditions only accumulate, so mistaken scope judgments can persist; changing teams and task distributions remain untested.",
+    "review_depth": "full-text",
+    "checked": "2026-10-31",
+    "short_name": "DiscernMem"
   },
   {
     "id": "dr-zero",
@@ -1122,6 +1293,40 @@
     "short_name": "EoG"
   },
   {
+    "id": "evolvemas",
+    "title": "EvolveMAS: A Unified Self-Evolution Framework for Decentralized Multi-Agent Systems",
+    "date": "2026-10-25",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2610.34450",
+    "sources": [
+      "https://arxiv.org/abs/2610.34450",
+      "https://arxiv.org/html/2610.34450v1"
+    ],
+    "code_url": null,
+    "code_note": "The paper links an anonymous artifact, but its contents were not readable through the available page fetch; no code was executed.",
+    "topics": [
+      "memory",
+      "architecture",
+      "continual-learning",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory"
+    ],
+    "persistence": "both",
+    "learning_signal": "Local interaction traces, task-native episode outcomes, and model-distilled partner profiles and interaction strategies.",
+    "mechanism": "Pairs each agent with an external MemoryAgent that maintains isolated episodic, semantic, and working state. Turn-level updates inform ongoing actions; episode-end distillation retains reusable interaction knowledge without changing model weights or the memory schema.",
+    "evaluation": "Compares cooperative coding/reasoning, negotiation, and hidden-role games across five benchmarks, with within/cross-episode ablations and a separate conversational-memory study.",
+    "limitations": "Several evaluation sets are small; BBH uses one fixed seed. Transferred baseline implementations are adapted to frozen-model conditions, and conversational-memory grading differs from standard LoCoMo. These bounded interactions do not establish safe or indefinite decentralized learning.",
+    "review_depth": "full-text",
+    "checked": "2026-10-31",
+    "short_name": "EvolveMAS"
+  },
+  {
     "id": "evolvenet",
     "title": "EvolveNet: Collaborative Harness Evolution for Agent Self-Improvement",
     "date": "2026-08-05",
@@ -1259,6 +1464,40 @@
     "short_name": "Experience faithfulness"
   },
   {
+    "id": "exprag",
+    "title": "Retrieval-Augmented LLM Agents: Learning to Learn from Experience",
+    "date": "2026-03-18",
+    "year": 2026,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "EMNLP 2026",
+    "url": "https://arxiv.org/abs/2603.18272",
+    "sources": [
+      "https://arxiv.org/abs/2603.18272",
+      "https://arxiv.org/html/2603.18272v2",
+      "https://aclanthology.org/2026.emnlp-main.57/"
+    ],
+    "code_url": null,
+    "code_note": "Official runnable code was not independently verified in this source review; this does not establish that none exists.",
+    "topics": [
+      "memory",
+      "model-training",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights"
+    ],
+    "persistence": "both",
+    "learning_signal": "Supervised assistant-token targets from environment trajectories, augmented with retrieved experience during LoRA training.",
+    "mechanism": "Trains the policy to use full retrieved trajectories instead of adding memory only at inference. The main retrieval bank stays read-only; separate experiments reuse a first attempt as context for a second without parameter updates.",
+    "evaluation": "Compares inference-only retrieval and retrieval-aware fine-tuning on ALFWorld and ScienceWorld, including easy-to-hard task-group transfer, retrieval ablations, and imperfect or self-generated experience.",
+    "limitations": "Main hard-task evaluations retrieve matched hard-task expert traces despite easy-only policy training. Self-experience covers one retry and hurts ScienceWorld despite helping ALFWorld. Cross-paper headline comparisons are qualitative; long-term heterogeneous memory accumulation is not evaluated.",
+    "review_depth": "full-text",
+    "checked": "2026-10-31",
+    "short_name": "ExpRAG"
+  },
+  {
     "id": "flexa-mem",
     "title": "FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents",
     "date": "2026-10-23",
@@ -1362,6 +1601,39 @@
     "review_depth": "full-text",
     "checked": "2026-10-29",
     "short_name": "G-Memory"
+  },
+  {
+    "id": "gamesmith",
+    "title": "GameSmith: Scaling Zero-Sum Self-Play with Synthesised Games",
+    "date": "2026-09-26",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2610.13995",
+    "sources": [
+      "https://arxiv.org/abs/2610.13995",
+      "https://arxiv.org/html/2610.13995v1"
+    ],
+    "code_url": null,
+    "code_note": "An official runnable implementation was not verified in this review; no research code was executed.",
+    "topics": [
+      "self-play",
+      "model-training",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Game-engine outcomes, stronger-teacher self-play traces, and a corpus-informed advantage baseline.",
+    "mechanism": "Synthesizes games inside fixed reward and observation templates, checks replay and independent implementations, then distills teacher trajectories into a student. Subsequent student self-play updates its weights using the Crab estimator.",
+    "evaluation": "Reports 29 game families and 336 variants, four language-model configurations, thirteen reasoning benchmarks, corpus scaling, and matched teacher/token controls.",
+    "limitations": "The pipeline uses three engineered templates and a Qwen3-32B teacher. Independent implementations can share specification errors, which the manual audit observed. Transfer differs by backbone: a non-game data control performs better on Mistral. These tests do not establish indefinite self-improvement.",
+    "review_depth": "full-text",
+    "checked": "2026-10-31",
+    "short_name": "GameSmith"
   },
   {
     "id": "gdpevo",
@@ -2212,6 +2484,44 @@
     "short_name": "Memory-R1"
   },
   {
+    "id": "memoryarena",
+    "title": "MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks",
+    "date": "2026-02-18",
+    "year": 2026,
+    "kind": "benchmark",
+    "status": "peer-reviewed",
+    "venue": "ICML 2026",
+    "url": "https://arxiv.org/abs/2602.16313",
+    "sources": [
+      "https://arxiv.org/abs/2602.16313",
+      "https://arxiv.org/html/2602.16313v2",
+      "https://proceedings.mlr.press/v306/he26am.html",
+      "https://github.com/ZexueHe/MemoryArena/blob/main/README.md",
+      "https://github.com/ZexueHe/MemoryArena"
+    ],
+    "code_url": "https://github.com/ZexueHe/MemoryArena",
+    "code_note": "Paper-linked preview repository README inspected; no environment or memory service was installed or run.",
+    "topics": [
+      "memory",
+      "continual-learning",
+      "evaluation",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "skills"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Earlier task actions and observations supply experience needed for later dependent subtasks.",
+    "mechanism": "Constructs multi-session tasks in which earlier choices and discoveries constrain later execution. Persistent memory connects sessions; comparisons separate long-context history, external memory systems, and retrieval-based stores.",
+    "evaluation": "Evaluates bundled shopping, group travel, progressive search, and sequential mathematical/physical reasoning using completion, progress, dependency-depth, and latency measures.",
+    "limitations": "These constructed task chains do not establish indefinite lifelong learning. Benefits vary by backend and domain; low task success can reflect reasoning or planning failures as well as memory. Section 4.3 describes gains in web search and formal reasoning, but Table 3 shows backend- and metric-dependent effects.",
+    "review_depth": "full-text",
+    "checked": "2026-10-31",
+    "short_name": "MemoryArena"
+  },
+  {
     "id": "memorybank",
     "title": "MemoryBank: Enhancing Large Language Models with Long-Term Memory",
     "date": "2023-05-17",
@@ -2417,6 +2727,42 @@
     "review_depth": "full-text",
     "checked": "2026-10-30",
     "short_name": "Meta-Harness"
+  },
+  {
+    "id": "mle-world",
+    "title": "MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model",
+    "date": "2026-10-27",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2610.37175",
+    "sources": [
+      "https://arxiv.org/abs/2610.37175",
+      "https://arxiv.org/html/2610.37175v1",
+      "https://mle-world.github.io/",
+      "https://github.com/ko120/MLE_World"
+    ],
+    "code_url": "https://github.com/ko120/MLE_World",
+    "code_note": "Paper-linked project and repository README inspected; no model/data download, installation, or execution.",
+    "topics": [
+      "model-training",
+      "workflows",
+      "evaluation",
+      "applications"
+    ],
+    "scope": "adjacent",
+    "update_targets": [
+      "model-weights"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Earlier executed programs paired with terminal logs, exception classes, and validation scores train a separate surrogate.",
+    "mechanism": "Fine-tunes a world model to predict execution feedback from code and task context. Its predictions guide candidate search, while confidence gates real runs and final submissions remain execution-verified. The trained predictor is reused rather than continually updated during search.",
+    "evaluation": "Tests prediction on held-out programs and five search policies over seventeen MLE-bench Lite tasks, with three search seeds per task and separate confidence-gating controls.",
+    "limitations": "Main tasks were seen during surrogate training on roughly 500,000 executions. Base AIDE lacks that corpus knowledge; a corpus-aware agent baseline is untested. Three unseen-task prediction tests do not establish general cross-task search transfer, and prediction errors can misdirect optimization.",
+    "review_depth": "full-text",
+    "checked": "2026-10-31",
+    "short_name": "MLE-World"
   },
   {
     "id": "model-collapse",
@@ -3064,6 +3410,44 @@
     "review_depth": "full-text",
     "checked": "2026-10-29",
     "short_name": "REM"
+  },
+  {
+    "id": "resight",
+    "title": "ReSight: Task-Driven Self-Improving Memory for Embodied Agents",
+    "date": "2026-10-24",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2610.33487",
+    "sources": [
+      "https://arxiv.org/abs/2610.33487",
+      "https://arxiv.org/html/2610.33487v1"
+    ],
+    "code_url": null,
+    "code_note": "An official runnable implementation was not verified in this review; no research code was executed.",
+    "topics": [
+      "memory",
+      "skills",
+      "tools",
+      "architecture",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "skills",
+      "tools",
+      "agent-code"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Retained sensory evidence, executor failures, and coding-agent exploration/replay without task reference answers.",
+    "mechanism": "Preserves robot keyframes while a coding agent builds reusable memory-processing programs, query tools, and skills. Explore–Distill–Mount registers these capabilities for a fixed execution model and adds derived memory fields for later queries.",
+    "evaluation": "Studies GOAT-core retrieval, OC-NaVQA and FindingDory expansion, separate frozen-capability reuse on held-out episodes, and queries over real robot patrol memories.",
+    "limitations": "The main FindingDory expansion uses exploration episodes; separate excluded episodes test reuse. Exploration has a larger independent compute budget. Real-robot memory-query scores are separate from downstream physical execution, and repeated expansion under changing long-term demand remains untested.",
+    "review_depth": "full-text",
+    "checked": "2026-10-31",
+    "short_name": "ReSight"
   },
   {
     "id": "rest",
@@ -3938,6 +4322,39 @@
     "review_depth": "full-text",
     "checked": "2026-10-29",
     "short_name": "SPIRAL"
+  },
+  {
+    "id": "spsd",
+    "title": "Self-Play Search Distillation for Large Language Model Reasoning",
+    "date": "2026-09-25",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2609.30936",
+    "sources": [
+      "https://arxiv.org/abs/2609.30936",
+      "https://arxiv.org/pdf/2609.30936"
+    ],
+    "code_url": null,
+    "code_note": "An official runnable implementation was not verified in this review; no research code was executed.",
+    "topics": [
+      "self-play",
+      "model-training",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Replay-checked decisions, alternatives, and branch outcomes from separately trained EfficientZero search experts.",
+    "mechanism": "Converts expert self-play search into an offline corpus of action-choice traces and state questions. Supervised tuning or on-policy self-distillation transfers this information into an LLM; the LLM does not participate in expert self-play or receive search traces at inference.",
+    "evaluation": "Tests four source games, fifteen disjoint held-out games, six mathematics suites, rule variants, and training-duration comparisons across Qwen and Llama configurations.",
+    "limitations": "Supervision depends on engineered games and external search experts. Mathematical results mix pass@1 and AVG@32 protocols, transfer varies by backbone, and longer supervised training can lose earlier gains. Curator interpretation: replay validity is not proof of globally optimal decisions.",
+    "review_depth": "full-text",
+    "checked": "2026-10-31",
+    "short_name": "SPSD"
   },
   {
     "id": "star",

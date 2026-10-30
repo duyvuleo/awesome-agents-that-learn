@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-31 — Memory governance, self-play, and evaluation
+
+- Added twelve selected-full-text reviews: ten papers and two benchmarks; total 141 research works and 23 software records.
+- Expanded memory repair/use, task-local curation, multi-agent prompt optimization, surrogate-guided search, self-play distillation, and embodied memory.
+- Added A-MemGuard, MemoryArena, and COLLABMEM with explicit attack-stage, backend, and evaluation-harness limitations.
+- Preserved historical inspection dates and citation authorship; no research code was executed.
+
 ## 2026-10-30 — Continual robotics, memory, and harness evaluation
 
 - Added 20 selected-full-text reviews: 19 papers and SciValidityBench, bringing the catalog to 129 research works and 23 software records.

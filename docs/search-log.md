@@ -75,3 +75,15 @@ Recent additions include [AgentMemRec](papers.md#agentmemrec), [EoG](papers.md#e
 Annotations preserve important comparison limits: supplied rewards and demonstrations, frozen versus online memory, manual validation tuning, limited task sequences, model-judged correctness, unequal scoring paths, and unclear checkpoint-selection separation. No research code was executed. Existing ASCENT, MemComposer, LifeMem, SPIRAL, PACE, and RSI-audit records were spot-checked without changes; this is not a systematic withdrawal audit.
 
 Remaining priorities include GameSmith and search distillation, ReSight, recent multi-agent memory/configuration methods, MLE-World, additional safety benchmarks, and unresolved journal articles. PEAM's publication-title alias and the reviewed preprint version are documented separately. The 90-day catch-up and broader venue enumeration remain incomplete.
+
+## Literature expansion: 2026-10-31
+
+Added **12 works** after selected full-text review: ten papers and two benchmark papers. The collection now contains **141 research works** (123 papers, six surveys, twelve benchmark papers) and 23 separately counted software records.
+
+Discovery covered overlapping 23–31 October queries across memory/experience, skills/tools, prompts/harnesses, model learning, self-play, continual learning, and evaluation/safety. arXiv, official ACL and ICML records, and author artifacts supplied complementary evidence. Multiple query variants and citation trails broadened the initial results; result totals and cursor pagination were unavailable in the indexed search route, so neither saturation nor complete coverage is claimed. The earlier 90-day catch-up remains open.
+
+Recent additions include DiscernMem, CaliMem, MLE-World, CEPO, EvolveMAS, and ReSight. GameSmith and SPSD add qualified self-play/training perspectives; ExpRAG distinguishes retrieval-aware training from inference-only reuse. A-MemGuard, MemoryArena, and COLLABMEM close evaluation/security gaps. COLLABMEM's previously inaccessible proceedings PDF was read successfully in this pass.
+
+The annotations distinguish within-task optimization, persistent memory changes, offline model training, and fixed surrogate-assisted search. They retain model/benchmark-dependent outcomes, inherited baselines, training-corpus access differences, and attack-stage distinctions. Selected existing records were checked without changing their historical inspection dates. No linked research code was executed, and no result was reproduced.
+
+Unresolved leads include Skill∞, MultiEvoSkill, MiniWeb, obsolete-fact memory evaluation, additional harness studies, and broader journal/venue coverage. Discovery records remain leads until their primary evidence is reviewed; recent-date search results alone do not establish publication dates or completeness.

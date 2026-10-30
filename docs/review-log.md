@@ -119,3 +119,30 @@ Independent source checks of selected annotations confirmed the main qualificati
 FlowEvo's primary history lists 18 April 2026 as its first date despite its July-form identifier. Dates follow the source history. TAME v2 replaces the initial dual-memory account with a shared trust-aware bank, and APEX-EM v3 adds comparison distinctions absent from older indexed summaries. PRISM's verified venue is Findings of EMNLP 2026. EmbodiedRSI's project also uses the name EmbodiedEvo; it is retained as one identity.
 
 EoG's current README describes validation using WebQSP/CWQ test questions. This limits what the inspected artifact establishes about checkpoint selection; it is not an assertion that a particular published run leaked test labels. Harness²'s documented network defaults likewise call for separate contamination controls without proving contamination in the paper. No source inspection here establishes artifact completeness or reproduction.
+
+## Targeted full-text expansion: 2026-10-31
+
+The twelve additions received selected full-text reviews, bringing the totals to 81 full-text and 60 abstract/metadata reviews. No research implementation or experiment was executed.
+
+| Work | Inspected source and material | Boundary emphasized |
+| --- | --- | --- |
+| [DiscernMem](papers.md#discernmem) | arXiv v1, §§3–4 and limitations; author README | Fixed task order/backbone, inherited baselines, and accumulating avoidance conditions. |
+| [CaliMem](papers.md#calimem) | arXiv v1, §§2–6 selected methods/evaluation, Appendices B/E | Memory persists within one search; repeated noisy evaluation feedback. |
+| [ExpRAG](papers.md#exprag) | arXiv v2, §§2–5, Table 1 and Appendix F; EMNLP record | Fixed expert banks, matched hard-task traces, and task-dependent retry benefits. |
+| [GameSmith](papers.md#gamesmith) | arXiv v1, §§4–5, Appendices A.3 and C.3–C.4 | Fixed game templates, teacher distillation, and model-dependent transfer. |
+| [SPSD](papers.md#spsd) | arXiv v1 PDF, §§4–7 and Appendix C | Expert self-play precedes offline LLM training; evaluation protocols differ. |
+| [ReSight](papers.md#resight) | arXiv v1, §§3–5 | Exploration episodes versus separate frozen-tool reuse; memory queries versus physical execution. |
+| [MLE-World](papers.md#mle-world) | arXiv v1, §§3–7 and Appendix D; author sources | Prior execution corpus and seen-task surrogate training. |
+| [CEPO](papers.md#cepo) | arXiv v1, §§3–5, ethics/reproducibility | Supplied role guidance, optimizers, labels, and dataset splits. |
+| [EvolveMAS](papers.md#evolvemas) | arXiv v1, §§3–4, Appendices A/F | Fixed schema/models, adapted baselines, and bounded interactions. |
+| [A-MemGuard](papers.md#a-memguard) | arXiv v1, §§3–5 and Table 1; ICML record and author README | Mostly-benign memory assumption; retrieval and end-to-end attack success differ. |
+| [MemoryArena](papers.md#memoryarena) | arXiv v2, §§3–4 and Table 3; ICML record and preview README | Interdependent execution tests; memory gains vary by backend and task. |
+| [COLLABMEM](papers.md#collabmem) | EMNLP proceedings PDF, §§3–6 and limitations, pp. 3–8 | Controlled memory-layer comparisons, not native product deployments. |
+
+### Headline and protocol qualifications
+
+A-MemGuard's abstract reports attack-success reductions above 95%, but Table 1 separates retrieval, thought, and task outcomes. For GPT-4o-mini with DPR on EHRAgent, retrieval attack success falls from 100% to 2.13%, while task-level success remains 36.17%. The annotation therefore does not generalize retrieval suppression to uniform end-to-end protection. MemoryArena §4.3 describes gains in web search and formal reasoning, while Table 3 shows backend- and metric-dependent results; the annotation retains that heterogeneity rather than treating every memory system as beneficial.
+
+COLLABMEM's average-score finding is consistent with Table 5 within its fixed harness; it does not establish a universal product ranking. Its limitations explicitly question the compression metric. The inspected official record supports a year-only date, without an invented submission day. MemoryArena's proceedings and v2 HTML omit the title's MemoryArena prefix; the linked arXiv record retains it. They remain one work.
+
+GameSmith uses a stronger teacher and engineered game templates; SPSD trains language models from separately trained search experts rather than putting the language model into expert self-play. ReSight separates exploration-set expansion from held-out reuse. ExpRAG's self-experience helps ALFWorld but hurts ScienceWorld. MLE-World's primary search tasks were seen in surrogate training, and its baseline lacks the same prior execution corpus. These qualifications limit the corresponding headline claims without treating untested generalization as a demonstrated failure.

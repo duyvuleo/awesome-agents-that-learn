@@ -10,9 +10,9 @@
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/sindresorhus/awesome/blob/main/awesome.md)
 [![Validate catalog](https://github.com/duyvuleo/awesome-agents-that-learn/actions/workflows/validate-and-publish.yml/badge.svg?branch=main)](https://github.com/duyvuleo/awesome-agents-that-learn/actions/workflows/validate-and-publish.yml)
 [![License: CC0 1.0](https://img.shields.io/badge/License-CC0%201.0-315da7?style=flat-square)](LICENSE)
-[![Research works: 129](https://img.shields.io/badge/Research%20works-129-315da7?style=flat-square)](docs/papers.md)
+[![Research works: 141](https://img.shields.io/badge/Research%20works-141-315da7?style=flat-square)](docs/papers.md)
 [![Systems & frameworks: 23](https://img.shields.io/badge/Systems%20%26%20frameworks-23-0f766e?style=flat-square)](docs/systems.md)
-[![Benchmark papers: 10](https://img.shields.io/badge/Benchmark%20papers-10-b45309?style=flat-square)](docs/benchmarks.md)
+[![Benchmark papers: 12](https://img.shields.io/badge/Benchmark%20papers-12-b45309?style=flat-square)](docs/benchmarks.md)
 
 **A research guide to self-learning, self-improving, and self-evolving AI agents.**
 
@@ -20,9 +20,9 @@ How do agents turn experience into something useful on the next task? This colle
 
 [Explore the collection](https://duyvuleo.github.io/awesome-agents-that-learn/) · [Start reading](docs/reading-routes.md) · [Browse papers](docs/papers.md) · [Compare systems](docs/systems.md) · [Compare benchmarks](docs/benchmarks.md)
 
-**129 research works** (113 papers, 6 surveys, 10 benchmark papers) · **23 systems and frameworks** · **8 reading routes**
+**141 research works** (123 papers, 6 surveys, 12 benchmark papers) · **23 systems and frameworks** · **8 reading routes**
 
-Source review: **2026-10-30**. For research works, 69 entries include inspection of selected full-text sections and 60 are based on primary abstracts/metadata. Systems are separate project-documentation/source inspections. No linked research code was executed and no published result was independently reproduced for this release.
+Source review: **2026-10-31**. For research works, 81 entries include inspection of selected full-text sections and 60 are based on primary abstracts/metadata. Systems are separate project-documentation/source inspections. No linked research code was executed and no published result was independently reproduced for this release.
 
 ## Start here
 
