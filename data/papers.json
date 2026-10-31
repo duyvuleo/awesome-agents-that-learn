@@ -873,6 +873,43 @@
     "short_name": "COLLABMEM"
   },
   {
+    "id": "combee",
+    "title": "Combee: Scaling Prompt Learning for Self-Improving Language Model Agents",
+    "date": "2026-04-05",
+    "year": 2026,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "COLM 2026",
+    "url": "https://arxiv.org/abs/2604.04247",
+    "sources": [
+      "https://arxiv.org/abs/2604.04247",
+      "https://arxiv.org/html/2604.04247v2",
+      "https://proceedings.colm.cc/paper_files/paper/2026/hash/fe24df54d5ccd95cdf830a309f2bf5c0-Abstract-Conference.html",
+      "https://gepa-ai.github.io/gepa/blog/2026/04/09/gepa-at-scale-with-combee/"
+    ],
+    "code_url": null,
+    "code_note": "Author blog describes ACE/GEPA integrations; a pinned runnable paper implementation was not independently verified or executed.",
+    "topics": [
+      "prompts",
+      "workflows",
+      "memory",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "prompts",
+      "memory"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Textual reflections from task executions, downstream scores, and measured iteration latency.",
+    "mechanism": "Adds a scaling layer to existing generate-reflect-update methods: hierarchical parallel aggregation, duplicated/shuffled reflections, and latency-based batch selection produce reusable context updates without weight training.",
+    "evaluation": "Tests ACE and GEPA on AppWorld, Terminal-Bench, Formula, and FiNER, including held-out tasks, aggregation controls, cost measurements, and selected repeated-run analyses.",
+    "limitations": "The largest speedup does not preserve identical accuracy: Terminal-Bench Combee scores below sequential ACE. Rare or conflicting reflections can still be lost. The batch controller uses single-trial profiling and a fixed threshold; asynchronous execution and broader framework transfer remain untested.",
+    "review_depth": "full-text",
+    "checked": "2026-11-01",
+    "short_name": "Combee"
+  },
+  {
     "id": "comprehensive-evolving-survey",
     "title": "A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems",
     "date": "2025-08-10",
@@ -1221,6 +1258,44 @@
     "short_name": "EmbodiedRSI"
   },
   {
+    "id": "emma",
+    "title": "EMMA: Structured Episodic Memory for Multi-Agent Workflow Synthesis",
+    "date": "2026-10-25",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2610.35966",
+    "sources": [
+      "https://arxiv.org/abs/2610.35966",
+      "https://arxiv.org/html/2610.35966v1"
+    ],
+    "code_url": null,
+    "code_note": "Official runnable code was not independently verified in this review; nothing was installed or executed.",
+    "topics": [
+      "memory",
+      "skills",
+      "architecture",
+      "workflows",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "skills",
+      "prompts",
+      "multi-agent-organization"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Ground-truth training-task outcomes and model reflection assigning failures to controller, agent, or skill scope.",
+    "mechanism": "Learns controller routing memory, specialist-agent prompts, and procedural skills through one scoped edit at a time. Programmatic guards constrain edits, while a controller selects memories and synthesizes task-specific execution steps.",
+    "evaluation": "Uses one fixed-order training pass, then freezes memory for held-out KramaBench, AppWorld, and BBEH-mini evaluations across five backbones, with memory-level and adaptation ablations.",
+    "limitations": "Accepted edits persist even when the repaired attempt remains unsuccessful. Guards constrain format and scope rather than guaranteeing utility. Test-time comparison arms differ in feedback access and adaptation split, so they do not isolate persistence alone; indefinite online learning is untested.",
+    "review_depth": "full-text",
+    "checked": "2026-11-01",
+    "short_name": "EMMA"
+  },
+  {
     "id": "evoagentx",
     "title": "EvoAgentX: An Automated Framework for Evolving Agentic Workflows",
     "date": "2025-07-04",
@@ -1430,6 +1505,41 @@
     "review_depth": "full-text",
     "checked": "2026-10-28",
     "short_name": "ExpeL"
+  },
+  {
+    "id": "experience-driven-safety",
+    "title": "On Safety Risks in Experience-Driven Self-Evolving Agents",
+    "date": "2026-04-18",
+    "year": 2026,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "Findings of ACL 2026",
+    "url": "https://arxiv.org/abs/2604.16968",
+    "sources": [
+      "https://arxiv.org/abs/2604.16968",
+      "https://arxiv.org/html/2604.16968v1",
+      "https://aclanthology.org/2026.findings-acl.2091/"
+    ],
+    "code_url": null,
+    "code_note": "Official runnable code was not verified in this review; no implementation was installed or executed.",
+    "topics": [
+      "memory",
+      "safety",
+      "evaluation",
+      "continual-learning"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Benign execution experience and, in mixed-stream experiments, execution or refusal experiences retained by the evaluated frameworks.",
+    "mechanism": "Studies safety changes when offline Agent Workflow Memory or online ReasoningBank supplies accumulated experience to frozen models. Varying experience size and a length-matched prompt control probe the contribution of retrieved content.",
+    "evaluation": "Tests web and simulated household settings using BrowserART, Agent-SafetyBench, and SafeAgentBench, with several model backbones and mixed benign/harmful experience streams.",
+    "limitations": "Results cover two frameworks and finite runs up to 800 steps, using automated safety grading. Refusal experience reduces unsafe behavior but can increase over-refusal. Curator interpretation: attribution and prompt controls support a bounded explanation, not universal causality or inevitable failure of every learning agent.",
+    "review_depth": "full-text",
+    "checked": "2026-11-01",
+    "short_name": "Experience-driven safety"
   },
   {
     "id": "experience-faithfulness",
@@ -2315,6 +2425,42 @@
     "short_name": "Mem0"
   },
   {
+    "id": "membrane",
+    "title": "Membrane: A Self-Evolving Contrastive Safety Memory for LLM Agent Defense",
+    "date": "2026-06-04",
+    "year": 2026,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "EMNLP 2026",
+    "url": "https://arxiv.org/abs/2606.05743",
+    "sources": [
+      "https://arxiv.org/abs/2606.05743",
+      "https://arxiv.org/html/2606.05743v2",
+      "https://aclanthology.org/2026.emnlp-main.2651/",
+      "https://github.com/brightjade/membrane"
+    ],
+    "code_url": "https://github.com/brightjade/membrane",
+    "code_note": "Author repository README inspected; research code and attack data were not executed or downloaded.",
+    "topics": [
+      "memory",
+      "safety",
+      "continual-learning",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Paired harmful/benign examples, guard decisions, and feedback about jailbreaks or false refusals.",
+    "mechanism": "An external guard retrieves cells pairing unsafe conditions with benign exceptions. A planner and writer revise the cell store under structural validation, while model weights remain fixed.",
+    "evaluation": "Reports HarmBench and AgentHarm tests with development-set memory frozen for primary comparisons, plus separate evolving-memory streams, transfer, poisoning, and component studies.",
+    "limitations": "AgentHarm headline metrics measure refusal/admission, not completed harmful tool actions. Online streams receive preconstructed benign counterparts. Text-only English tests and limited attacker capabilities do not establish robustness against an adversary controlling both guard prompts and memory.",
+    "review_depth": "full-text",
+    "checked": "2026-11-01",
+    "short_name": "Membrane"
+  },
+  {
     "id": "memcomposer",
     "title": "MemComposer: Learning to Assemble Memories for LLM Agents via Reinforcement Learning",
     "date": "2026-10-15",
@@ -2383,6 +2529,43 @@
     "review_depth": "full-text",
     "checked": "2026-10-29",
     "short_name": "Memento"
+  },
+  {
+    "id": "memevolve",
+    "title": "MemEvolve: Meta-Evolution of Agent Memory Systems",
+    "date": "2025-12-21",
+    "year": 2025,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "ICML 2026",
+    "url": "https://arxiv.org/abs/2512.18746",
+    "sources": [
+      "https://arxiv.org/abs/2512.18746",
+      "https://arxiv.org/html/2512.18746v1",
+      "https://proceedings.mlr.press/v306/zhang26fa.html",
+      "https://github.com/bingreeky/MemEvolve"
+    ],
+    "code_url": "https://github.com/bingreeky/MemEvolve",
+    "code_note": "Paper-linked official repository and EvolveLab README inspected; not installed or executed.",
+    "topics": [
+      "memory",
+      "architecture",
+      "recursive-improvement",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "agent-code"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Task success, token cost, latency, and trajectory diagnoses guide architecture selection and redesign.",
+    "mechanism": "Searches implementations of encoding, storage, retrieval, and management while each candidate accumulates experience. Pareto selection and a fixed diagnose-and-design operator retain and modify memory architectures inside a supplied interface.",
+    "evaluation": "Tests GAIA, WebWalkerQA, xBench-DeepSearch, and TaskCraft, including transfer of fixed TaskCraft-evolved architectures across datasets, backbones, and agent frameworks.",
+    "limitations": "The inspected search uses three outer iterations, fixed selection, and empty candidate memories at each iteration. Pass@1–3 budgets differ across reported rows. Transfer remains within related research/search tasks; evolving a memory interface does not establish improvement of the outer evolution procedure.",
+    "review_depth": "full-text",
+    "checked": "2026-11-01",
+    "short_name": "MemEvolve"
   },
   {
     "id": "memgpt",
@@ -2653,6 +2836,44 @@
     "short_name": "MemRL"
   },
   {
+    "id": "memskill",
+    "title": "MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents",
+    "date": "2026-02-02",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "NeurIPS 2026 acceptance reported by authors; official title listing found but article record not inspected",
+    "url": "https://arxiv.org/abs/2602.02474",
+    "sources": [
+      "https://arxiv.org/abs/2602.02474",
+      "https://arxiv.org/html/2602.02474v2",
+      "https://github.com/ViktorAxelsen/MemSkill",
+      "https://neurips.cc/Downloads/2026"
+    ],
+    "code_url": "https://github.com/ViktorAxelsen/MemSkill",
+    "code_note": "Author-linked repository README inspected; current source was not executed or audited as a pinned paper reproduction.",
+    "topics": [
+      "memory",
+      "skills",
+      "model-training",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights",
+      "skills",
+      "memory"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Downstream F1 or task success trains a separate skill-selection controller; hard training cases guide LLM-authored skill revisions.",
+    "mechanism": "A PPO-trained controller selects memory-operation skills for a fixed executor. A fixed designer periodically refines the skill bank, with rollback based on stabilized training rewards. The skills describe how to remember, rather than the memories themselves.",
+    "evaluation": "Evaluates conversational memory and ALFWorld, with LoCoMo-to-LongMemEval/HotpotQA and cross-model transfer; ALFWorld training uses offline expert trajectories.",
+    "limitations": "LongMemEval excludes abstention questions and uses validation to tune configurations; ALFWorld includes demonstrations. The system trains controller parameters, so it is not wholly training-free. Benchmark transfer does not establish online lifelong deployment or privacy/access-control guarantees.",
+    "review_depth": "full-text",
+    "checked": "2026-11-01",
+    "short_name": "MemSkill"
+  },
+  {
     "id": "meta-context-engineering",
     "title": "Meta Context Engineering via Agentic Skill Evolution",
     "date": "2026-01-29",
@@ -2727,6 +2948,42 @@
     "review_depth": "full-text",
     "checked": "2026-10-30",
     "short_name": "Meta-Harness"
+  },
+  {
+    "id": "metta",
+    "title": "METTA: Memory-Enhanced Test-Time Adaptation for Meta-Reinforcement Learning",
+    "date": "2026-10-22",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2610.31656",
+    "sources": [
+      "https://arxiv.org/abs/2610.31656",
+      "https://arxiv.org/html/2610.31656v1"
+    ],
+    "code_url": null,
+    "code_note": "Official runnable code was not established in this review; no installation, training, or research execution was performed.",
+    "topics": [
+      "foundations",
+      "memory",
+      "model-training",
+      "continual-learning",
+      "applications"
+    ],
+    "scope": "adjacent",
+    "update_targets": [
+      "memory",
+      "model-weights"
+    ],
+    "persistence": "both",
+    "learning_signal": "Environment rewards train slow parameters with PPO; self-supervised prediction updates fast neural-memory parameters during interaction.",
+    "mechanism": "Combines within-episode fast-weight updates with summaries retained across episodes of one task trial. Meta-training learns the policy and memory machinery across tasks; meta-testing freezes those slow parameters while adapting temporary memory.",
+    "evaluation": "Tests simulated HalfCheetah velocity control, Meta-World manipulation, and sparse-reward PointMaze, including held-out task families, memory ablations, efficiency, and five training seeds.",
+    "limitations": "Fast memory resets each episode and summary history resets each trial; this is not persistent learning across deployment tasks. ML10/ML45 expose goal coordinates, and nonstationary task streams remain future work. Attention aggregation is quadratic in episode count even though timestep processing is linear.",
+    "review_depth": "full-text",
+    "checked": "2026-11-01",
+    "short_name": "METTA"
   },
   {
     "id": "mle-world",
@@ -2902,6 +3159,39 @@
     "short_name": "MUSE-Autoskill"
   },
   {
+    "id": "on-policy-self-training",
+    "title": "On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models",
+    "date": "2026-10-23",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2610.32770",
+    "sources": [
+      "https://arxiv.org/abs/2610.32770",
+      "https://arxiv.org/html/2610.32770v1"
+    ],
+    "code_url": null,
+    "code_note": "Official runnable code was not established in this review; no installation, training, or research execution was performed.",
+    "topics": [
+      "model-training",
+      "self-play",
+      "evaluation"
+    ],
+    "scope": "adjacent",
+    "update_targets": [
+      "model-weights"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Self-generated questions, candidate answers and reasoning traces, consistency filters, and token distributions from a privileged EMA teacher.",
+    "mechanism": "Seeds generation with broad topics, removes unstable or already-solved questions, and self-distills on student rollouts. Student and teacher weights carry across rounds; the teacher is an exponential average rather than an external stronger model.",
+    "evaluation": "Compares training objectives on shared synthetic data, language reasoning and out-of-domain retention, visual question answering, and hallucination benchmarks, with filtering and teacher-context ablations.",
+    "limitations": "Data-free refers to curated textual questions and answers: topics are hand-chosen and visual training requires unlabeled images. Consistent mistakes can pass verification. Retention is mixed: the all-domain mixture improves the average but loses 4.9 points on MATH-500; small-model tests do not establish unbounded improvement.",
+    "review_depth": "full-text",
+    "checked": "2026-11-01",
+    "short_name": "OPST"
+  },
+  {
     "id": "opensir",
     "title": "OpenSIR: Open-Ended Self-Improving Reasoner",
     "date": "2025-11-01",
@@ -2964,6 +3254,46 @@
     "review_depth": "abstract",
     "checked": "2026-10-28",
     "short_name": "OPRO"
+  },
+  {
+    "id": "optimize-anything",
+    "title": "optimize_anything: A Universal API for Optimizing any Text Parameter",
+    "date": "2026-05-19",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "ACM CAIS 2026 reported in paper and author artifact; publisher record inaccessible",
+    "url": "https://arxiv.org/abs/2605.19633",
+    "sources": [
+      "https://arxiv.org/abs/2605.19633",
+      "https://arxiv.org/html/2605.19633v1",
+      "https://github.com/gepa-ai/gepa",
+      "https://github.com/gepa-ai/optimize-anything-artifact"
+    ],
+    "code_url": "https://github.com/gepa-ai/gepa",
+    "code_note": "Paper-linked GEPA framework and separate author artifact repository inspected; neither executed or reproduced.",
+    "topics": [
+      "prompts",
+      "architecture",
+      "skills",
+      "workflows",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "prompts",
+      "agent-code",
+      "skills",
+      "workflows"
+    ],
+    "persistence": "both",
+    "learning_signal": "Supplied evaluator scores and domain-specific diagnostics such as execution traces, errors, and per-example results.",
+    "mechanism": "Exposes single-task search, shared multi-task search, and reusable-artifact optimization through one interface. Its default GEPA backend retains a Pareto frontier and uses reflective proposals to revise textual artifacts around fixed models.",
+    "evaluation": "Reports coding-agent skills, agent architecture, prompt learning, cloud scheduling, kernel generation, and mathematical optimization, with feedback, transfer, and proposer ablations.",
+    "limitations": "Evaluators and diagnostic feedback require domain expertise. Multi-task search can hurt unrelated problems, as in circle packing; proposal quality and evaluation cost vary. Curator interpretation: a general optimization interface does not establish autonomous improvement of its search algorithm.",
+    "review_depth": "full-text",
+    "checked": "2026-11-01",
+    "short_name": "optimize_anything"
   },
   {
     "id": "pace",
@@ -3071,6 +3401,39 @@
     "review_depth": "full-text",
     "checked": "2026-10-30",
     "short_name": "PEAM"
+  },
+  {
+    "id": "permemsafe",
+    "title": "PerMemSafe: Benchmarking Implicit Personalized Safety of Long Horizon Self-Evolving Agents",
+    "date": "2026",
+    "year": 2026,
+    "kind": "benchmark",
+    "status": "peer-reviewed",
+    "venue": "Findings of ACL 2026",
+    "url": "https://aclanthology.org/2026.findings-acl.320/",
+    "sources": [
+      "https://aclanthology.org/2026.findings-acl.320/",
+      "https://aclanthology.org/2026.findings-acl.320.pdf"
+    ],
+    "code_url": null,
+    "code_note": "Official runnable code was not verified in this review; no implementation was installed or executed.",
+    "topics": [
+      "memory",
+      "safety",
+      "evaluation"
+    ],
+    "scope": "adjacent",
+    "update_targets": [
+      "memory"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Changing implicit user-risk cues in constructed multi-session conversations, with annotated safety contexts for evaluation.",
+    "mechanism": "Separates recognizing implicit personalized risks from tracking their changes over time. The accompanying SentinelMem retains explicit fact-state transitions and separates preference information from safety constraints.",
+    "evaluation": "Compares full-context models and five memory frameworks on safety perception and dynamic evolution, scoring retrieval, personalized response safety, and helpfulness; model grading is checked against a human sample.",
+    "limitations": "Conversations are synthetic and text-only. Budget limits restrict memory-framework backbones; judge agreement on a sample does not establish reliability for all cases. Response-level scores are not clinical outcomes or evidence of safe autonomous action, and year-only dating avoids inventing a first-public day.",
+    "review_depth": "full-text",
+    "checked": "2026-11-01",
+    "short_name": "PerMemSafe"
   },
   {
     "id": "phantom-gains",
@@ -3546,6 +3909,42 @@
     "review_depth": "full-text",
     "checked": "2026-10-28",
     "short_name": "RISE"
+  },
+  {
+    "id": "robocat",
+    "title": "RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation",
+    "date": "2023-06-20",
+    "year": 2023,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "TMLR 2024",
+    "url": "https://arxiv.org/abs/2306.11706",
+    "sources": [
+      "https://arxiv.org/abs/2306.11706",
+      "https://arxiv.org/html/2306.11706v2",
+      "https://jmlr.org/tmlr/papers/"
+    ],
+    "code_url": null,
+    "code_note": "Official runnable code was not established in this review; no installation, training, or research execution was performed.",
+    "topics": [
+      "foundations",
+      "model-training",
+      "skills",
+      "continual-learning",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Human demonstrations, goal-relabeled robot trajectories, and learned success detectors used during data collection.",
+    "mechanism": "Fine-tunes a visual goal-conditioned generalist into task-specific policies, collects additional trajectories with them, then retrains a generalist on old and new data. Reusable improvement resides in model weights rather than an expanding executable skill library.",
+    "evaluation": "Reports simulation and real-robot manipulation across embodiments, adaptation to new tasks, and an isolated comparison of demonstrations alone versus demonstrations plus self-generated data.",
+    "limitations": "The reported loop demonstrates one successful iteration and uses 100–1000 teleoperated demonstrations per new task. Humans start and stop collection; robot policies stay frozen during physical interaction. Controlled laboratory backgrounds and imperfect success detectors limit generalization and safety claims.",
+    "review_depth": "full-text",
+    "checked": "2026-11-01",
+    "short_name": "RoboCat"
   },
   {
     "id": "rsi-budget-code-scoring",
@@ -4154,6 +4553,43 @@
     "review_depth": "abstract",
     "checked": "2026-10-28",
     "short_name": "SkillFlow"
+  },
+  {
+    "id": "skillopt",
+    "title": "SkillOpt: Executive Strategy for Self-Evolving Agent Skills",
+    "date": "2026-05-22",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2605.23904",
+    "sources": [
+      "https://arxiv.org/abs/2605.23904",
+      "https://arxiv.org/html/2605.23904v2",
+      "https://microsoft.github.io/SkillOpt/",
+      "https://github.com/microsoft/SkillOpt"
+    ],
+    "code_url": "https://github.com/microsoft/SkillOpt",
+    "code_note": "Paper-linked project and official repository inspected; newer SkillOpt-Sleep features are separate from the reviewed paper experiments. Not executed.",
+    "topics": [
+      "skills",
+      "prompts",
+      "evaluation",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "skills",
+      "prompts"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Scored task rollouts, optimizer-model critiques, and separate selection-set scores gate retained text edits.",
+    "mechanism": "An external optimizer revises one skill document through bounded edits, rejected-edit memory, and slow epoch-level updates. The target model and execution harness stay fixed; a selected text artifact is reused on later tasks.",
+    "evaluation": "Reports six benchmarks, seven target models, and direct-chat/Codex/Claude Code settings, plus component, budget, and nearby model/harness/task-transfer comparisons.",
+    "limitations": "Requires reliable scoring and selection data plus substantial optimization calls. Zero extra deployment model calls does not mean zero training cost. A single skill can be insufficient for heterogeneous domains, and near-domain transfer is not unrestricted continual improvement.",
+    "review_depth": "full-text",
+    "checked": "2026-11-01",
+    "short_name": "SkillOpt"
   },
   {
     "id": "skillrl",

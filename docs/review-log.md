@@ -146,3 +146,30 @@ A-MemGuard's abstract reports attack-success reductions above 95%, but Table 1 s
 COLLABMEM's average-score finding is consistent with Table 5 within its fixed harness; it does not establish a universal product ranking. Its limitations explicitly question the compression metric. The inspected official record supports a year-only date, without an invented submission day. MemoryArena's proceedings and v2 HTML omit the title's MemoryArena prefix; the linked arXiv record retains it. They remain one work.
 
 GameSmith uses a stronger teacher and engineered game templates; SPSD trains language models from separately trained search experts rather than putting the language model into expert self-play. ReSight separates exploration-set expansion from held-out reuse. ExpRAG's self-experience helps ALFWorld but hurts ScienceWorld. MLE-World's primary search tasks were seen in surrogate training, and its baseline lacks the same prior execution corpus. These qualifications limit the corresponding headline claims without treating untested generalization as a demonstrated failure.
+
+## Monthly audit: selected full-text reviews, 2026-11-01
+
+Twelve additions received selected original-source review. Totals are now 93 selected full-text and 60 abstract/metadata reviews. Metadata screening of venue listings is recorded separately in the search log and does not increase these review-depth counts.
+
+| Work | Inspected version/material | Boundary emphasized |
+| --- | --- | --- |
+| [MemEvolve](papers.md#memevolve) | arXiv v1, §§3–5; ICML record and author README | Fixed outer search, candidate-memory resets, and pass-budget differences. |
+| [MemSkill](papers.md#memskill) | arXiv v2, §§3–4, Appendices B/F; author README | Trained controller, fixed executor/designer, expert trajectories and validation tuning. |
+| [SkillOpt](papers.md#skillopt) | arXiv v2, §§3–4, Appendices B/C; author project | Optimization cost versus deployment calls; current Sleep features are separate. |
+| [optimize_anything](papers.md#optimize-anything) | arXiv v1, §§3–5 and 7–8; author framework/artifact | Supplied evaluators and diagnostic design; uneven multi-task transfer. |
+| [EMMA](papers.md#emma) | arXiv v1, §§3, 5–6, Tables 2–5 | Persistent edits can survive failed repairs; comparator feedback/splits differ. |
+| [Combee](papers.md#combee) | arXiv v2, §§3–4, Appendices B/E/H; COLM record | Speed–accuracy tradeoff and single-trial latency profiling. |
+| [METTA](papers.md#metta) | arXiv v1, §§2–5, Appendices B/C | Fast-state and trial-history resets versus persistent slow weights. |
+| [OPST](papers.md#on-policy-self-training) | arXiv v1, §§3–4 and 6, Appendices A.5–A.6 | Hand-chosen topics, unlabeled images, consistency verification and mixed retention. |
+| [RoboCat](papers.md#robocat) | arXiv v2, §§2, 4–5, 7 and broader impact; TMLR accepted list | One demonstrated iteration, human demonstrations and controlled collection. |
+| [Experience-driven safety](papers.md#experience-driven-safety) | arXiv v1, §§3–5, 7 and limitations; Findings ACL record | Two frameworks, automated grading and bounded evolution horizons. |
+| [Membrane](papers.md#membrane) | arXiv v2, §§3–5 and limitations; EMNLP record and author README | Frozen primary tables, separately evolving streams, refusal-based headline metrics. |
+| [PerMemSafe](papers.md#permemsafe) | Findings ACL PDF, §§3–5 and limitations, pp. 3–8 | Synthetic text, sampled judge verification and response-level safety. |
+
+### Interpretation and identity notes
+
+Combee's abstract allows matching or approaching baseline quality; Table 2 shows that its largest Terminal-Bench speedup accompanies lower accuracy than sequential ACE. The annotation preserves that tradeoff without calling the statements contradictory. OPST improves average out-of-domain retention while its all-domain mixture loses 4.9 points on MATH-500; its annotation retains both the aggregate benefit and that counterexample. RoboCat's self-improvement evidence includes one successful loop iteration with human-managed data collection, not unrestricted online learning.
+
+Membrane's main AgentHarm attack-success metric is non-refusal, while a separate appendix reports native graded outcomes. Its annotation therefore qualifies the headline metric rather than claiming execution outcomes were never studied. Online evolution receives paired benign counterparts, and fully adaptive prompt-plus-memory control lies outside the tested threat model. PerMemSafe measures personalized response safety in constructed conversations; those scores do not establish clinical outcomes or safe autonomous action. Experience-driven safety findings are kept within the evaluated memory frameworks and finite horizons.
+
+MemSkill's NeurIPS 2026 acceptance remains author-reported despite an official title listing, because the detailed venue record was not inspected. optimize_anything remains a preprint entry with an author-reported ACM CAIS note because the publisher record was inaccessible. Combee's proceedings title adds “Parallel” and uses “LLM Agents”; author and paper identity connect it to the retained arXiv title. RoboCat's TMLR accepted-list record confirms its publication, while its linked OpenReview page remains restricted. Missing code URLs remain unverified availability, not evidence that no release exists.

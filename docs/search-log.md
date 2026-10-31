@@ -87,3 +87,27 @@ Recent additions include DiscernMem, CaliMem, MLE-World, CEPO, EvolveMAS, and Re
 The annotations distinguish within-task optimization, persistent memory changes, offline model training, and fixed surrogate-assisted search. They retain model/benchmark-dependent outcomes, inherited baselines, training-corpus access differences, and attack-stage distinctions. Selected existing records were checked without changing their historical inspection dates. No linked research code was executed, and no result was reproduced.
 
 Unresolved leads include Skill∞, MultiEvoSkill, MiniWeb, obsolete-fact memory evaluation, additional harness studies, and broader journal/venue coverage. Discovery records remain leads until their primary evidence is reviewed; recent-date search results alone do not establish publication dates or completeness.
+
+## Monthly coverage audit: 2026-11-01
+
+Added **12 works** after selected full-text review: eleven papers and one benchmark paper. The catalog now contains **153 research works** (134 papers, six surveys, thirteen benchmark papers) and 23 separately counted software records. Daily discovery used an overlapping 24 October–1 November window; the monthly audit targeted publications listed from November 2025 through October 2026 and followed older foundational citation trails.
+
+This pass screened the full returned title listings below with mechanism-specific keywords, then compared candidate identities with the catalog and prioritized original-paper reading. Counts describe fetched metadata and filters, not eligible studies, confirmed omissions, independent findings, or recall. Different source families used different topic filters; cross-venue versions and event-volume headers may overlap.
+
+| Listing screened | Parsed title records/anchors | Keyword candidates |
+| --- | ---: | ---: |
+| [ACL 2026 event volumes](https://aclanthology.org/events/acl-2026/) | 6,419 | 290 |
+| [EMNLP 2026 event volumes](https://aclanthology.org/events/emnlp-2026/) | 7,070 | 414 |
+| [ICLR 2026](https://proceedings.iclr.cc/paper_files/paper/2026) | 5,351 | 187 |
+| [ICML 2026](https://proceedings.mlr.press/v306/) | 6,553 | 206 |
+| [NeurIPS 2025 main conference](https://proceedings.neurips.cc/paper_files/paper/2025/vol38-main-conference) | 5,823 | 159 |
+| [COLM 2026](https://proceedings.colm.cc/paper_files/paper/2026) | 856 | 170 |
+| [TMLR, November 2025–October 2026](https://jmlr.org/tmlr/papers/) | 2,041 | 107 |
+| [TACL 2026](https://aclanthology.org/volumes/2026.tacl-1/) | 118 | 8 |
+| [AAAI 2026, 48 listed issues](https://ojs.aaai.org/index.php/AAAI/issue/archive) | 4,920 | 371 |
+
+The fetched Anthology index listed NAACL 2025 as its latest NAACL event; the requested 2026 route was unavailable. No 2026 volume was invented. Large-page tool limits were resolved through ordinary public HTTP access where possible. Candidate eligibility and full-text review remain incomplete, and mechanisms absent from titles can still be missed.
+
+The audit also compared selected references from [Learning to Remember](https://arxiv.org/abs/2610.35089), the existing safety survey, and related survey collections. The safety-survey companion's 683 metadata records supplied a broader comparison set; year-only and unresolved identities remain leads. MemEvolve, MemSkill, SkillOpt, optimize_anything, EMMA, and Combee address memory and optimization gaps. METTA and OPST clarify temporary adaptation versus reusable model training. RoboCat was recovered as an older embodied-learning anchor, with its original 2023 date retained. Three safety works add bounded evidence about benign experience, contrastive guards, and personalized memory risks.
+
+Remaining priorities include Skill∞, AgentEvolver, MARSHAL, Search Self-Play, SiriuS, UI-Genie, additional harness methods, and unreviewed metadata candidates. Title inventories are preserved for follow-up rather than treated as automatic admissions. This completes the stated listing-screen operations and selected reviews, not an exhaustive twelve-month literature review or a complete correction/withdrawal audit. No linked research code was executed.

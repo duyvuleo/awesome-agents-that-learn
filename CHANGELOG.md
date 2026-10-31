@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-01 — Monthly coverage audit and recovered anchors
+
+- Screened returned title listings across major 2025–2026 venues and compared survey/collection references; retained eligibility and full-text gaps explicitly.
+- Added twelve selected-full-text reviews: eleven papers and PerMemSafe, including MemEvolve, MemSkill, SkillOpt, optimize_anything, EMMA, Combee, METTA, OPST, and the older RoboCat anchor.
+- Added bounded safety evidence for benign experience, contrastive guards, and personalized memory risks.
+- Total: 153 research works and 23 software records. Prior inspection dates and citation authorship are preserved; no research code was executed.
+
 ## 2026-10-31 — Memory governance, self-play, and evaluation
 
 - Added twelve selected-full-text reviews: ten papers and two benchmarks; total 141 research works and 23 software records.
