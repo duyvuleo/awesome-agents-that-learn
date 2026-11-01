@@ -173,3 +173,32 @@ Combee's abstract allows matching or approaching baseline quality; Table 2 shows
 Membrane's main AgentHarm attack-success metric is non-refusal, while a separate appendix reports native graded outcomes. Its annotation therefore qualifies the headline metric rather than claiming execution outcomes were never studied. Online evolution receives paired benign counterparts, and fully adaptive prompt-plus-memory control lies outside the tested threat model. PerMemSafe measures personalized response safety in constructed conversations; those scores do not establish clinical outcomes or safe autonomous action. Experience-driven safety findings are kept within the evaluated memory frameworks and finite horizons.
 
 MemSkill's NeurIPS 2026 acceptance remains author-reported despite an official title listing, because the detailed venue record was not inspected. optimize_anything remains a preprint entry with an author-reported ACM CAIS note because the publisher record was inaccessible. Combee's proceedings title adds “Parallel” and uses “LLM Agents”; author and paper identity connect it to the retained arXiv title. RoboCat's TMLR accepted-list record confirms its publication, while its linked OpenReview page remains restricted. Missing code URLs remain unverified availability, not evidence that no release exists.
+
+## Monday source review: 2026-11-02
+
+Twelve selected full-text additions bring the totals to 105 full-text and 60 abstract/metadata reviews. The separate Group-Evolving Agents update verifies publication metadata only.
+
+| Work | Inspected version/material | Boundary emphasized |
+| --- | --- | --- |
+| [Skill∞](papers.md#skill-infinity) | arXiv v1, §§3–4, limitations and Appendices B/C/E/G; author README | Fixed external scores/caps; task-level validation does not establish a separate meta-task test split. |
+| [MultiEvoSkill](papers.md#multievoskill) | arXiv v1, §§3–4, limitations and Appendix B | Workflow-node F1 differs from interactive task success; model review is not proof. |
+| [MiniWeb](papers.md#miniweb) | arXiv v1, §§3–4, 6, Appendices H/J | Planner dependence, privileged generation and filtered live-web evaluation. |
+| [CoHARL](papers.md#coharl) | arXiv v1, §§3–4, Appendices B/C/E–G | Fixed training/evaluation framework, single training runs and separate terminal training. |
+| [Retrospective harness study](papers.md#retrospective-harness-study) | arXiv v1, §§III–VI | Human selection/labeling and targeted behavior rather than consistent task-success gains. |
+| [Policy–harness geometry](papers.md#policy-harness-geometry) | arXiv v2, §§2–3, 5–7, Appendix F; author README | Exact control theory versus stronger-teacher ceiling proxies in coding tasks. |
+| [Reasoning Cache](papers.md#reasoning-cache) | arXiv v2, §§3–7, Appendix E; ICML record and author README | Within-problem inference, supplied mathematical supervision and revised grading. |
+| [Self-evolution gap](papers.md#self-evolution-generalization-gap) | arXiv v2, §§2–6, Appendix A; ICML record | Restricted offline setup and a larger-model near-oracle exception. |
+| [Robot RSI failure study](papers.md#robot-rsi-123-rounds) | arXiv v1, §§2–4, 6, 10 and round-ledger overview | One simulated run, human harness repairs and unresolved target task. |
+| [Memory Tax: net value](papers.md#memory-tax-net-value) | arXiv v1, §§3–5, limitations, Appendices A/B/C | Static long-history tasks, relative retrieval scope and heterogeneous results. |
+| [Curriculum or easy start?](papers.md#quadruped-curriculum-benchmark) | arXiv v1, §§3–7 and budget protocol; author repository | Equal student steps do not equal total simulation compute. |
+| [REUSE](papers.md#reuse-evaluation) | arXiv v2, §2 assumptions/theorem, §3 and §5 | Independent evaluation sample, decision-only protected feedback and finite classification holdout. |
+
+### Interpretation and publication distinctions
+
+Skill∞ revises a meta-skill, but external scores, budgets, and reviewer responsibilities remain fixed. Its task-level training/validation protocol does not establish disjoint meta-training and meta-test tasks. MultiEvoSkill's WikiHow, ToolAlpaca, and WebShop adapters score workflow nodes; their F1 scores must not be relabeled interactive success. MiniWeb explicitly reports that skill-only fine-tuning fails to transfer well to full tasks; planner composition and filtered benchmark denominators matter.
+
+Reasoning Cache's title refers to continued improvement within one problem using trained summary-conditioned inference, not ongoing deployment weight updates. Its v2 changed IMO-AnswerBench grading after earlier parser errors. The generalization-gap study reports both plateaus and a larger-model revision condition near oracle supervision. The robotics case study does not eliminate human intervention: people repaired the evaluator and surrounding machinery, and one target task never succeeded.
+
+Memory Tax (arXiv 2610.34073) is distinct from MemoryTax (2610.29823), with different authors and experiments. Its main settings are long-history memory benchmarks, including non-conversational state changes; a stronger retrieval baseline does not establish that memory is generally unnecessary. The quadruped study finds no universally best curriculum and counts student environment steps; PAIRED's antagonist adds simulation work. REUSE derives simultaneous error control under explicit independence and protected-feedback assumptions. Its Covertype holdout estimates population improvement, and its adapted comparison schemes are not executions of the original SICA/DGM/PACE systems. Selected draft-informed cross-checks supported these qualifications.
+
+[Group-Evolving Agents' official COLM record](https://proceedings.colm.cc/paper_files/paper/2026/hash/87b321515dc33137ffcc5d1654b7d182-Abstract-Conference.html) matches the existing work's title, core author identity, and abstract. It remains one record with its original first-public date; publication metadata was upgraded without claiming a new full-text review or reproduction. The retrospective harness study's linked archive was inaccessible, and Skill∞'s repository promises a future code release; neither was promoted to runnable-code evidence.

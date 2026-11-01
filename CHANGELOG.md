@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-02 — Monday web, harness, and evaluation catch-up
+
+- Added twelve selected-full-text reviews: eleven papers and one quadruped-curriculum benchmark; total 165 research works and 23 software records.
+- Expanded web/GUI skills, joint policy/harness learning, negative robotics results, memory-value controls, and reliable evaluation under benchmark reuse.
+- Verified Group-Evolving Agents at COLM 2026 while preserving its abstract-review depth and scientific annotation.
+- Recorded bounded follow-up on monthly title inventories and remaining ninety-day coverage gaps. No research code was executed.
+
 ## 2026-11-01 — Monthly coverage audit and recovered anchors
 
 - Screened returned title listings across major 2025–2026 venues and compared survey/collection references; retained eligibility and full-text gaps explicitly.

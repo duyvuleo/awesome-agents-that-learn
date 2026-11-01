@@ -4,7 +4,7 @@
     "subtitle": "A research guide to self-learning, self-improving, and self-evolving AI agents.",
     "repository": "https://github.com/duyvuleo/awesome-agents-that-learn",
     "site": "https://duyvuleo.github.io/awesome-agents-that-learn/",
-    "updated": "2026-11-01",
+    "updated": "2026-11-02",
     "schema_version": 2,
     "topics": {
       "foundations": "Foundations and boundaries",
@@ -43,6 +43,76 @@
     }
   },
   "papers": [
+    {
+      "id": "quadruped-curriculum-benchmark",
+      "title": "Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds",
+      "date": "2026-10-29",
+      "year": 2026,
+      "kind": "benchmark",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2610.40364",
+      "sources": [
+        "https://arxiv.org/abs/2610.40364",
+        "https://arxiv.org/html/2610.40364v1",
+        "https://github.com/Solvro/ml-wojtek-ued"
+      ],
+      "code_url": "https://github.com/Solvro/ml-wojtek-ued",
+      "code_note": "Paper-linked repository inspected; simulator, robot models, and training code were not installed or run.",
+      "topics": [
+        "self-play",
+        "model-training",
+        "evaluation",
+        "applications"
+      ],
+      "scope": "adjacent",
+      "update_targets": [
+        "model-weights"
+      ],
+      "persistence": "not-applicable",
+      "learning_signal": "Student rewards and curriculum-specific regret, learning-progress, replay, or terrain-difficulty rules.",
+      "mechanism": "Places fourteen curriculum and environment-design methods around a common PPO learner, including easy-start randomization controls. A shared terrain space separates adaptive level selection from simply exposing the learner to easier levels.",
+      "evaluation": "Runs five simulated quadrupeds with five training seeds per method, evaluating random terrain, unseen structured terrain, hard-level performance, repeatability, and costs.",
+      "limitations": "Comparisons match student environment steps, not total simulation compute: PAIRED adds an antagonist. One student architecture and robot-specific budgets are used; no physical transfer is tested. No curriculum leads every setting, and easy starts do not explain every held-out-terrain result.",
+      "review_depth": "full-text",
+      "checked": "2026-11-02",
+      "short_name": "Curriculum or easy start?"
+    },
+    {
+      "id": "policy-harness-geometry",
+      "title": "Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces",
+      "date": "2026-10-27",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2610.37255",
+      "sources": [
+        "https://arxiv.org/abs/2610.37255",
+        "https://arxiv.org/html/2610.37255v2",
+        "https://github.com/2020-qqtcg/HRP"
+      ],
+      "code_url": "https://github.com/2020-qqtcg/HRP",
+      "code_note": "Paper-linked repository README inspected; controlled experiments and coding-agent integrations were not installed or executed.",
+      "topics": [
+        "foundations",
+        "architecture",
+        "model-training",
+        "evaluation"
+      ],
+      "scope": "adjacent",
+      "update_targets": [
+        "none"
+      ],
+      "persistence": "not-applicable",
+      "learning_signal": "Task rewards support controlled policy training; sampled actions and stronger-teacher probes estimate deployment mismatch.",
+      "mechanism": "Decomposes regularized return into an interface-specific optimum and policy mismatch under a finite semantic-control model. It tests how presentation or execution changes can alter frozen-model behavior and how further training changes harness rankings.",
+      "evaluation": "Uses exact-control MiniWoB++ experiments with six harnesses, adaptation and sampling controls, plus five coding harnesses on Terminal-Bench Lite.",
+      "limitations": "The theory assumes a specified KL-regularized control problem. Coding-agent ceilings are stronger-teacher proxies sampled on three tasks, not solved optima. Mismatch estimation requires substantial query budgets; observed ranking agreement does not establish universal prediction or autonomous harness optimization.",
+      "review_depth": "full-text",
+      "checked": "2026-11-02",
+      "short_name": "Policy–harness geometry"
+    },
     {
       "id": "mle-world",
       "title": "MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model",
@@ -115,6 +185,80 @@
       "short_name": "DiscernMem"
     },
     {
+      "id": "coharl",
+      "title": "CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning",
+      "date": "2026-10-27",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2610.36469",
+      "sources": [
+        "https://arxiv.org/abs/2610.36469",
+        "https://arxiv.org/html/2610.36469v1"
+      ],
+      "code_url": null,
+      "code_note": "Official runnable code was not established in this review; no installation, training, or research execution was performed.",
+      "topics": [
+        "architecture",
+        "model-training",
+        "workflows",
+        "evaluation",
+        "applications"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "model-weights",
+        "agent-code",
+        "prompts"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Task rewards and execution traces train a shared policy and guide a separate, stronger harness-code proposer.",
+      "mechanism": "Collects reinforcement-learning rollouts across a scheduled harness population while periodically proposing executable revisions. Accepted versions enter at update boundaries; a historical accuracy-cost archive informs later proposals.",
+      "evaluation": "Reports temporally held-out SWE-rebench, transfer to SWE-bench Verified, separately trained Terminal-Bench agents, and controls for search, training, and population use.",
+      "limitations": "Training framework, evaluator, and action-format family remain fixed. Evidence uses one policy-model setting and single training runs, without confidence intervals or complete total-compute comparisons. Validation reuse and stale archive scores can bias selection; terminal results are not zero-shot SWE transfer.",
+      "review_depth": "full-text",
+      "checked": "2026-11-02",
+      "short_name": "CoHARL"
+    },
+    {
+      "id": "skill-infinity",
+      "title": "Skill$^{\\infty}$: Recursive Self-Improvement for Agent Skill Optimization",
+      "date": "2026-10-26",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2610.35434",
+      "sources": [
+        "https://arxiv.org/abs/2610.35434",
+        "https://arxiv.org/html/2610.35434v1",
+        "https://github.com/taowangcheng/Skill-Infinity"
+      ],
+      "code_url": null,
+      "code_note": "Author-linked repository inspected; its README says code will be released soon. No runnable release was verified or executed.",
+      "topics": [
+        "skills",
+        "recursive-improvement",
+        "prompts",
+        "evaluation"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "skills",
+        "prompts",
+        "agent-code"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Automatically scored task rollouts, gains of inner skill optimizations, and isolated model-review feedback.",
+      "mechanism": "Encodes skill optimization in an editable meta-skill. An agent uses that procedure to revise task skills and the meta-skill itself, then reuses the refined optimizer across tasks through native skill discovery.",
+      "evaluation": "Tests 83 SkillsBench tasks and three KernelBench problems, comparing refined versus seed meta-skills, additional model/harness settings, and candidate-budget scaling.",
+      "limitations": "Scores and budget caps remain external, and reliable automatic verifiers are required. Following the evolving procedure depends on model adherence and review rather than enforced execution. Overall gains vary by domain; finite meta-skill refinement does not establish indefinite accelerating improvement. Task-level training/validation is described, but disjoint meta-training/meta-test tasks are not established by the inspected protocol.",
+      "review_depth": "full-text",
+      "checked": "2026-11-02",
+      "short_name": "Skill∞"
+    },
+    {
       "id": "scivaliditybench",
       "title": "The Right Fact, the Wrong Decision: SciValidityBench for Scientific Agent Memory",
       "date": "2026-10-26",
@@ -148,6 +292,76 @@
       "review_depth": "full-text",
       "checked": "2026-10-30",
       "short_name": "SciValidityBench"
+    },
+    {
+      "id": "retrospective-harness-study",
+      "title": "How Do Coding-Agent Harnesses Self-Evolve? An Empirical Study of Retrospective Adaptation",
+      "date": "2026-10-26",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2610.34938",
+      "sources": [
+        "https://arxiv.org/abs/2610.34938",
+        "https://arxiv.org/html/2610.34938v1"
+      ],
+      "code_url": null,
+      "code_note": "The paper links a Zenodo artifact, but its archive page was inaccessible in this review; no code or session artifact was executed.",
+      "topics": [
+        "architecture",
+        "memory",
+        "evaluation",
+        "applications"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "agent-code",
+        "prompts"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Completed coding-session traces generate proposals; researchers select changes and define later behavioral checks.",
+      "mechanism": "Studies individually retained harness adaptations proposed by a retrospective skill, including context instructions and known-failure files. Fresh sessions with and without each change test whether the targeted action recurs on later same-repository issues.",
+      "evaluation": "Analyzes 125 proposals from thirty SWE-bench Verified sessions, implements twenty-four proposals, and evaluates twelve adaptations in thirteen transfer events, with five sessions per harness.",
+      "limitations": "Human selection and evaluation remain central. Repeated-work reduction is a behavioral proxy, not proof of better task success or lower latency. Targeted task selection, partly unblinded labeling, one agent, and small samples limit generalization; some changes add unrelated work.",
+      "review_depth": "full-text",
+      "checked": "2026-11-02",
+      "short_name": "Retrospective harness study"
+    },
+    {
+      "id": "miniweb",
+      "title": "Back to Basics: A Skill-Centric Approach to Generalist Web Agents",
+      "date": "2026-10-26",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2610.35823",
+      "sources": [
+        "https://arxiv.org/abs/2610.35823",
+        "https://arxiv.org/html/2610.35823v1"
+      ],
+      "code_url": null,
+      "code_note": "Official runnable code was not independently verified in this review; no research code was executed.",
+      "topics": [
+        "skills",
+        "tools",
+        "model-training",
+        "evaluation",
+        "applications"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "model-weights"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Human-demonstration guides and generated browser trajectories admitted through privileged environment-state checks.",
+      "mechanism": "Builds skill-level web tasks and generates verified practice trajectories. A LoRA-trained executor performs short interactions delegated by an untrained planner, so reusable capability is stored in weights rather than an evolving external skill library.",
+      "evaluation": "Tests ten open-weight agents, held-out MiniWeb websites, and external web benchmarks, comparing skill-only training, planner composition, matched-size task-centric data, and grader validity.",
+      "limitations": "Skill-only fine-tuning does not improve full-task success and lowers external-benchmark performance; planner composition is essential. Generation uses human guides and privileged site knowledge. Live-web scores use filtered subsets and are not comparable to full benchmark sets; larger-model scaling is untested.",
+      "review_depth": "full-text",
+      "checked": "2026-11-02",
+      "short_name": "MiniWeb / MiniWebAgent"
     },
     {
       "id": "evolve-on-graph",
@@ -250,6 +464,72 @@
       "review_depth": "full-text",
       "checked": "2026-10-30",
       "short_name": "AgentMemRec"
+    },
+    {
+      "id": "multievoskill",
+      "title": "MultiEvoSkill: Structure-Aware Multi-Agent Skill Evolution for Generalizable Skill Artifacts",
+      "date": "2026-10-25",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2610.34260",
+      "sources": [
+        "https://arxiv.org/abs/2610.34260",
+        "https://arxiv.org/html/2610.34260v1"
+      ],
+      "code_url": null,
+      "code_note": "Official runnable code was not independently verified in this review; no research code was executed.",
+      "topics": [
+        "skills",
+        "workflows",
+        "architecture",
+        "evaluation"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "skills"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Multi-model execution traces, reflected issues, and paired parent/candidate scores on fixed selection assignments.",
+      "mechanism": "Compiles procedural skills into typed graphs, combines debated graph edits, and gates the merged candidate through behavioral, structural, and model-based semantic checks. The retained artifact is frozen for downstream use without model-weight updates.",
+      "evaluation": "Reports five benchmark comparisons and component ablations. WikiHow, ToolAlpaca, and WebShop use workflow-node F1 adapters; SearchQA uses answer F1 and SpreadsheetBench uses hard instance accuracy.",
+      "limitations": "Workflow-node scores are not interactive task success. Reused selection data can overfit, semantic review can fail, and configured tolerances permit some regression. The paper’s finite four-epoch search and state-similarity stopping do not prove optimality or monotonic improvement on unseen tasks.",
+      "review_depth": "full-text",
+      "checked": "2026-11-02",
+      "short_name": "MultiEvoSkill"
+    },
+    {
+      "id": "memory-tax-net-value",
+      "title": "Memory Tax: Dissecting the Net Value of Agent Memory",
+      "date": "2026-10-25",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2610.34073",
+      "sources": [
+        "https://arxiv.org/abs/2610.34073",
+        "https://arxiv.org/html/2610.34073v1"
+      ],
+      "code_url": null,
+      "code_note": "Official runnable implementation was not verified in this review; no research code was executed.",
+      "topics": [
+        "memory",
+        "evaluation"
+      ],
+      "scope": "adjacent",
+      "update_targets": [
+        "none"
+      ],
+      "persistence": "not-applicable",
+      "learning_signal": "Not applicable: comparative analysis of memory construction, retrieval, and downstream use.",
+      "mechanism": "Compares processed memory with retrieval over raw histories, separating queries helped by memory from queries it loses. Gold-evidence probes, retrieval replay, and writer-reader swaps examine preservation, accessibility, and backbone sensitivity.",
+      "evaluation": "Tests three long-history memory benchmarks with three backbones, configuration controls, and additional experiential/world-model memory settings; experiential tests freeze training-derived memory.",
+      "limitations": "Most benchmarks are static, offline, and English; several use subsets. Retrieval scope is normalized by each store rather than equal absolute tokens, and model judges assess answers. Results are configuration- and task-dependent, not proof that memory is generally unnecessary. This differs from the single-conversation MemoryTax paper.",
+      "review_depth": "full-text",
+      "checked": "2026-11-02",
+      "short_name": "Memory Tax: net value"
     },
     {
       "id": "evolvemas",
@@ -990,6 +1270,39 @@
       "short_name": "SAGE acceptance gate"
     },
     {
+      "id": "reuse-evaluation",
+      "title": "Which Self-Improvements Should We Trust? Reliable Self-Improvement When Agents Reuse Their Benchmarks",
+      "date": "2026-09-27",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2609.33180",
+      "sources": [
+        "https://arxiv.org/abs/2609.33180",
+        "https://arxiv.org/html/2609.33180v2"
+      ],
+      "code_url": null,
+      "code_note": "Official runnable implementation was not verified in this review; no research code was executed.",
+      "topics": [
+        "evaluation",
+        "recursive-improvement",
+        "model-training"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "model-weights"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Paired incumbent-candidate scores on a protected evaluation set; only promotion decisions from that set return to the proposer.",
+      "mechanism": "Allocates a global error budget over possible candidate and promotion histories, accepting updates only after paired tests pass. Audit certificates stay hidden from the proposer; the paper derives simultaneous guarantees under an independent evaluation sample and decision-only feedback.",
+      "evaluation": "Tests LLM-proposed classification-pipeline revisions on Covertype for 200 rounds and 30 seeds per evaluation-set size; a separate holdout estimates accepted improvements.",
+      "limitations": "Guarantees require bounded scores, an independent identically distributed evaluation sample, and strict feedback isolation. Experiments concern classification, and baselines are adapted styles rather than original agent systems. Finite holdout estimates are not known population truth; coding-agent and safety-metric transfer remain untested.",
+      "review_depth": "full-text",
+      "checked": "2026-11-02",
+      "short_name": "REUSE"
+    },
+    {
       "id": "gamesmith",
       "title": "GameSmith: Scaling Zero-Sum Self-Play with Synthesised Games",
       "date": "2026-09-26",
@@ -1054,6 +1367,43 @@
       "review_depth": "full-text",
       "checked": "2026-10-31",
       "short_name": "SPSD"
+    },
+    {
+      "id": "robot-rsi-123-rounds",
+      "title": "What Stops Recursive Self-Improvement in Robotics? Lessons from 123 Rounds of Agentic Skill Discovery",
+      "date": "2026-09-23",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2609.31760",
+      "sources": [
+        "https://arxiv.org/abs/2609.31760",
+        "https://arxiv.org/html/2609.31760v1"
+      ],
+      "code_url": null,
+      "code_note": "Official runnable code was not independently verified in this review; no research implementation was executed.",
+      "topics": [
+        "recursive-improvement",
+        "skills",
+        "tools",
+        "evaluation",
+        "applications"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "agent-code",
+        "skills",
+        "tools"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Simulator-state diagnoses, recorded failures, replay and paired tests, and logged skill outcomes.",
+      "mechanism": "Coding agents revise task programs and skill implementations or request external model providers. Accepted revisions feed later rounds, while humans repair the evaluators, tests, memory machinery, and actuator descriptions.",
+      "evaluation": "Reports one 123-round RoboCasa experiment over three kitchen tasks with an additional held-out task. Some local skills improve, but the target fridge task never succeeds; the record analyzes early-step bottlenecks and evaluator failures.",
+      "limitations": "One simulator, layout, and unreplicated run provide no matched-budget causal estimate. Human repairs and model/provider changes share the timeline. Suggested design remedies are hypotheses, and simulated skill discovery is not evidence of autonomous real-robot learning or improvement of the outer evaluation procedure.",
+      "review_depth": "full-text",
+      "checked": "2026-11-02",
+      "short_name": "Robot RSI failure study"
     },
     {
       "id": "aide2",
@@ -1790,6 +2140,40 @@
       "short_name": "Membrane"
     },
     {
+      "id": "self-evolution-generalization-gap",
+      "title": "On the Generalization Gap in Self-Evolving Language Model Reasoning",
+      "date": "2026-05-31",
+      "year": 2026,
+      "kind": "paper",
+      "status": "peer-reviewed",
+      "venue": "ICML 2026",
+      "url": "https://arxiv.org/abs/2606.01075",
+      "sources": [
+        "https://arxiv.org/abs/2606.01075",
+        "https://arxiv.org/html/2606.01075v2",
+        "https://proceedings.mlr.press/v306/qi26a.html"
+      ],
+      "code_url": null,
+      "code_note": "Official runnable code was not independently verified in this review; no research implementation was executed.",
+      "topics": [
+        "model-training",
+        "evaluation",
+        "self-play"
+      ],
+      "scope": "adjacent",
+      "update_targets": [
+        "model-weights"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Preference labels and revision feedback generated by the same base model from supplied unlabeled prompts; oracle labels form comparison arms.",
+      "mechanism": "Compares single-round verification, feedback-guided revision, repeated preference training, and curricula inside a controlled generator-verifier loop. Retained changes are trained policy weights rather than an evolving agent harness.",
+      "evaluation": "Studies easy-to-hard Knights and Knaves reasoning and OpenThoughts-based training with mathematical/generalization tests. Gains often plateau below oracle supervision; a larger-model revision condition nearly closes the gap.",
+      "limitations": "The restricted offline setup is not an impossibility result for all self-improvement. Open-ended tests cannot isolate verifier error from prompt-distribution shifts, and online-RL comparison rows use different starting models and supervision. Improved pass@1 with nearly unchanged pass@32 limits claims about expanded solution coverage.",
+      "review_depth": "full-text",
+      "checked": "2026-11-02",
+      "short_name": "Self-evolution gap"
+    },
+    {
       "id": "peam",
       "title": "PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft",
       "date": "2026-05-26",
@@ -2479,11 +2863,12 @@
       "date": "2026-02-04",
       "year": 2026,
       "kind": "paper",
-      "status": "preprint",
-      "venue": "",
+      "status": "peer-reviewed",
+      "venue": "COLM 2026",
       "url": "https://arxiv.org/abs/2602.04837",
       "sources": [
-        "https://arxiv.org/abs/2602.04837"
+        "https://arxiv.org/abs/2602.04837",
+        "https://proceedings.colm.cc/paper_files/paper/2026/hash/87b321515dc33137ffcc5d1654b7d182-Abstract-Conference.html"
       ],
       "code_url": null,
       "code_note": "Official code availability was not established in this source review.",
@@ -2503,7 +2888,7 @@
       "evaluation": "Evaluations use SWE-bench Verified and Polyglot, with model-transfer and framework-bug recovery analyses.",
       "limitations": "The evidence concerns coding agents under the study budgets. Curator interpretation: experience sharing during search is distinct from a deployed multi-agent team continually learning in an open environment.",
       "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "checked": "2026-11-02",
       "short_name": "Group-Evolving Agents"
     },
     {
@@ -2542,6 +2927,42 @@
       "review_depth": "full-text",
       "checked": "2026-10-30",
       "short_name": "TAME"
+    },
+    {
+      "id": "reasoning-cache",
+      "title": "Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon RL",
+      "date": "2026-02-03",
+      "year": 2026,
+      "kind": "paper",
+      "status": "peer-reviewed",
+      "venue": "ICML 2026",
+      "url": "https://arxiv.org/abs/2602.03773",
+      "sources": [
+        "https://arxiv.org/abs/2602.03773",
+        "https://arxiv.org/html/2602.03773v2",
+        "https://proceedings.mlr.press/v306/wu26as.html",
+        "https://github.com/IanYHWu/rc"
+      ],
+      "code_url": "https://github.com/IanYHWu/rc",
+      "code_note": "Author repository README inspected; inference/training code and checkpoints were not installed, downloaded, or executed.",
+      "topics": [
+        "model-training",
+        "memory",
+        "evaluation"
+      ],
+      "scope": "adjacent",
+      "update_targets": [
+        "model-weights",
+        "memory"
+      ],
+      "persistence": "both",
+      "learning_signal": "Correctness rewards on supplied mathematical prompt-answer pairs, with generated reasoning summaries reused during training.",
+      "mechanism": "Alternates bounded reasoning attempts with summary updates for the same problem. GRPO trains summary-conditioned generation, and a replay buffer supplies later-turn summaries; inference expands the reasoning budget without updating weights.",
+      "evaluation": "Tests mathematical benchmarks and FrontierScience, budget extrapolation, summary/replay ablations, and integration with other inference scaffolds. The main trained model uses a two-stage mathematics curriculum.",
+      "limitations": "Continual improvement here is longer within-problem inference, not persistent deployment learning. Myopic rewards can miss exploration useful only later, and summarization quality depends on the backbone. Version 2 changes IMO-AnswerBench grading after the earlier parser rejected valid answers.",
+      "review_depth": "full-text",
+      "checked": "2026-11-02",
+      "short_name": "Reasoning Cache"
     },
     {
       "id": "memskill",

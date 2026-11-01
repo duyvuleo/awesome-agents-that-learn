@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-10-31T23:43:45.172417+00:00",
+  "checked_at_utc": "2026-11-01T22:11:15.026359+00:00",
   "scope": "all-catalog-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -890,6 +890,16 @@
       "title_check": "match"
     },
     {
+      "url": "https://arxiv.org/abs/2602.03773",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2602.03773",
+      "status": "reachable",
+      "expected_title": "Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon RL",
+      "observed_title": "Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon RL",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
       "url": "https://arxiv.org/abs/2602.04837",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2602.04837",
@@ -1076,6 +1086,16 @@
       "status": "reachable",
       "expected_title": "PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft",
       "observed_title": "PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2606.01075",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2606.01075",
+      "status": "reachable",
+      "expected_title": "On the Generalization Gap in Self-Evolving Language Model Reasoning",
+      "observed_title": "On the Generalization Gap in Self-Evolving Language Model Reasoning",
       "title_similarity": 1.0,
       "title_check": "match"
     },
@@ -1300,6 +1320,26 @@
       "title_check": "match"
     },
     {
+      "url": "https://arxiv.org/abs/2609.31760",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.31760",
+      "status": "reachable",
+      "expected_title": "What Stops Recursive Self-Improvement in Robotics? Lessons from 123 Rounds of Agentic Skill Discovery",
+      "observed_title": "What Stops Recursive Self-Improvement in Robotics? Lessons from 123 Rounds of Agentic Skill Discovery",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.33180",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.33180",
+      "status": "reachable",
+      "expected_title": "Which Self-Improvements Should We Trust? Reliable Self-Improvement When Agents Reuse Their Benchmarks",
+      "observed_title": "Which Self-Improvements Should We Trust? Reliable Self-Improvement When Agents Reuse Their Benchmarks",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
       "url": "https://arxiv.org/abs/2609.35911",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2609.35911",
@@ -1500,6 +1540,26 @@
       "title_check": "match"
     },
     {
+      "url": "https://arxiv.org/abs/2610.34073",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.34073",
+      "status": "reachable",
+      "expected_title": "Memory Tax: Dissecting the Net Value of Agent Memory",
+      "observed_title": "Memory Tax: Dissecting the Net Value of Agent Memory",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.34260",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.34260",
+      "status": "reachable",
+      "expected_title": "MultiEvoSkill: Structure-Aware Multi-Agent Skill Evolution for Generalizable Skill Artifacts",
+      "observed_title": "MultiEvoSkill: Structure-Aware Multi-Agent Skill Evolution for Generalizable Skill Artifacts",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
       "url": "https://arxiv.org/abs/2610.34450",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2610.34450",
@@ -1550,6 +1610,26 @@
       "title_check": "match"
     },
     {
+      "url": "https://arxiv.org/abs/2610.34938",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.34938",
+      "status": "reachable",
+      "expected_title": "How Do Coding-Agent Harnesses Self-Evolve? An Empirical Study of Retrospective Adaptation",
+      "observed_title": "How Do Coding-Agent Harnesses Self-Evolve? An Empirical Study of Retrospective Adaptation",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35434",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.35434",
+      "status": "reachable",
+      "expected_title": "Skill$^{\\infty}$: Recursive Self-Improvement for Agent Skill Optimization",
+      "observed_title": "Skill$^{\\infty}$: Recursive Self-Improvement for Agent Skill Optimization",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
       "url": "https://arxiv.org/abs/2610.35598",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2610.35598",
@@ -1560,12 +1640,32 @@
       "title_check": "match"
     },
     {
+      "url": "https://arxiv.org/abs/2610.35823",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.35823",
+      "status": "reachable",
+      "expected_title": "Back to Basics: A Skill-Centric Approach to Generalist Web Agents",
+      "observed_title": "Back to Basics: A Skill-Centric Approach to Generalist Web Agents",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
       "url": "https://arxiv.org/abs/2610.35966",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2610.35966",
       "status": "reachable",
       "expected_title": "EMMA: Structured Episodic Memory for Multi-Agent Workflow Synthesis",
       "observed_title": "EMMA: Structured Episodic Memory for Multi-Agent Workflow Synthesis",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36469",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.36469",
+      "status": "reachable",
+      "expected_title": "CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning",
+      "observed_title": "CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning",
       "title_similarity": 1.0,
       "title_check": "match"
     },
@@ -1586,6 +1686,26 @@
       "status": "reachable",
       "expected_title": "MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model",
       "observed_title": "MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.37255",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.37255",
+      "status": "reachable",
+      "expected_title": "Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces",
+      "observed_title": "Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.40364",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2610.40364",
+      "status": "reachable",
+      "expected_title": "Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds",
+      "observed_title": "Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds",
       "title_similarity": 1.0,
       "title_check": "match"
     },
@@ -1782,6 +1902,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/html/2602.03773v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2602.03773v2",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/html/2602.08234v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2602.08234v1",
@@ -1869,6 +1995,12 @@
       "url": "https://arxiv.org/html/2605.27762v2",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2605.27762v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2606.01075v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2606.01075v2",
       "status": "reachable"
     },
     {
@@ -1965,6 +2097,18 @@
       "url": "https://arxiv.org/html/2609.26457v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2609.26457v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.31760v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2609.31760v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.33180v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2609.33180v2",
       "status": "reachable"
     },
     {
@@ -2076,6 +2220,18 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/html/2610.34073v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2610.34073v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2610.34260v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2610.34260v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/html/2610.34450v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2610.34450v1",
@@ -2106,15 +2262,39 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/html/2610.34938v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2610.34938v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2610.35434v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2610.35434v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/html/2610.35598v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2610.35598v1",
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/html/2610.35823v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2610.35823v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/html/2610.35966v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2610.35966v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2610.36469v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2610.36469v1",
       "status": "reachable"
     },
     {
@@ -2127,6 +2307,18 @@
       "url": "https://arxiv.org/html/2610.37175v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2610.37175v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2610.37255v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2610.37255v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2610.40364v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2610.40364v1",
       "status": "reachable"
     },
     {
@@ -2181,6 +2373,12 @@
       "url": "https://gepa-ai.github.io/gepa/blog/2026/04/09/gepa-at-scale-with-combee/",
       "http_status": 200,
       "final_url": "https://gepa-ai.github.io/gepa/blog/2026/04/09/gepa-at-scale-with-combee/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/2020-qqtcg/HRP",
+      "http_status": 200,
+      "final_url": "https://github.com/2020-qqtcg/HRP",
       "status": "reachable"
     },
     {
@@ -2289,6 +2487,12 @@
       "url": "https://github.com/Gen-Verse/PAST-Bench",
       "http_status": 200,
       "final_url": "https://github.com/Gen-Verse/PAST-Bench",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/IanYHWu/rc",
+      "http_status": 200,
+      "final_url": "https://github.com/IanYHWu/rc",
       "status": "reachable"
     },
     {
@@ -2439,6 +2643,12 @@
       "url": "https://github.com/ShengranHu/ADAS/blob/main/README.md",
       "http_status": 200,
       "final_url": "https://github.com/ShengranHu/ADAS/blob/main/README.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Solvro/ml-wojtek-ued",
+      "http_status": 200,
+      "final_url": "https://github.com/Solvro/ml-wojtek-ued",
       "status": "reachable"
     },
     {
@@ -2832,6 +3042,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/taowangcheng/Skill-Infinity",
+      "http_status": 200,
+      "final_url": "https://github.com/taowangcheng/Skill-Infinity",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/tsinghua-fib-lab/AgentSquare",
       "http_status": 200,
       "final_url": "https://github.com/tsinghua-fib-lab/AgentSquare",
@@ -3015,6 +3231,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/87b321515dc33137ffcc5d1654b7d182-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/87b321515dc33137ffcc5d1654b7d182-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
       "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/fc9f83d9925e6885e8f1ae1e17b3c44b-Abstract-Conference.html",
       "http_status": 200,
       "final_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/fc9f83d9925e6885e8f1ae1e17b3c44b-Abstract-Conference.html",
@@ -3153,6 +3375,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://proceedings.mlr.press/v306/qi26a.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.mlr.press/v306/qi26a.html",
+      "status": "reachable"
+    },
+    {
       "url": "https://proceedings.mlr.press/v306/wang26ik.html",
       "http_status": 200,
       "final_url": "https://proceedings.mlr.press/v306/wang26ik.html",
@@ -3162,6 +3390,12 @@
       "url": "https://proceedings.mlr.press/v306/wei26ac.html",
       "http_status": 200,
       "final_url": "https://proceedings.mlr.press/v306/wei26ac.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.mlr.press/v306/wu26as.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.mlr.press/v306/wu26as.html",
       "status": "reachable"
     },
     {
@@ -3275,14 +3509,14 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=0acd6e2f-19c2-4168-9bf3-2678774fee13",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=9294b454-23d6-4776-b222-da9020061cd6",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=c8340795-c3bb-4556-a9d1-3fc71be06818",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=d6806476-6de5-41fd-9e65-9e612e75052a",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -3296,14 +3530,14 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=c113794c-a005-44db-87f4-ae0d021fa5c3",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=32a87d3e-a10d-497d-a96b-028410c50d14",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=c7a43649-2bcb-4e2c-ad1d-11dab661cc4d",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=0ffeb11b-84d2-4587-be94-7d63b6d4afa5",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
