@@ -4,7 +4,7 @@
     "subtitle": "A research guide to self-learning, self-improving, and self-evolving AI agents.",
     "repository": "https://github.com/duyvuleo/awesome-agents-that-learn",
     "site": "https://duyvuleo.github.io/awesome-agents-that-learn/",
-    "updated": "2026-11-02",
+    "updated": "2026-11-04",
     "schema_version": 2,
     "topics": {
       "foundations": "Foundations and boundaries",
@@ -43,6 +43,114 @@
     }
   },
   "papers": [
+    {
+      "id": "continual-harness-forgetting",
+      "title": "Can Coding Agents Sustain Continual Evolution without Forgetting?",
+      "date": "2026-11-02",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.03219",
+      "sources": [
+        "https://arxiv.org/abs/2611.03219",
+        "https://arxiv.org/html/2611.03219v1",
+        "https://github.com/THU-Agent/continual-harness-evolution"
+      ],
+      "code_url": "https://github.com/THU-Agent/continual-harness-evolution",
+      "code_note": "Paper-linked repository and setup documentation inspected; contains adaptations of AHE and Meta-Harness, not an independently reproduced run.",
+      "topics": [
+        "architecture",
+        "workflows",
+        "continual-learning",
+        "evaluation",
+        "applications"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "agent-code",
+        "prompts",
+        "tools"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Task execution traces and benchmark outcomes drive harness edits; prior-task reevaluation measures retention.",
+      "mechanism": "Studies sequential evolution of Mini-SWE-Agent prompts, control flow, and tools with a fixed backbone. Adapted AHE and Meta-Harness optimize one task type and then another; manual trace analysis and edit ablations investigate verification, workflow, and budget conflicts.",
+      "evaluation": "Examines six source-to-target directions among sampled SWE-bench Verified, paraphrased SWT-Bench, and FeatureBench tasks. Reports severe earlier-task losses and analyzes 520 execution trajectories.",
+      "limitations": "Uses one backbone and reused subsets of 50, 50, and 30 tasks; no disjoint held-out evaluation is described. Scores are not full-benchmark results. These are study-specific implementations and pairwise transitions, not evidence that every harness or longer task sequence must forget.",
+      "review_depth": "full-text",
+      "checked": "2026-11-04",
+      "short_name": "Harness forgetting"
+    },
+    {
+      "id": "omce",
+      "title": "Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents",
+      "date": "2026-11-01",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.01747",
+      "sources": [
+        "https://arxiv.org/abs/2611.01747",
+        "https://arxiv.org/html/2611.01747v1"
+      ],
+      "code_url": null,
+      "code_note": "An official implementation was not established in the inspected sources; no code was executed.",
+      "topics": [
+        "memory",
+        "continual-learning",
+        "workflows",
+        "evaluation"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "memory",
+        "model-weights"
+      ],
+      "persistence": "both",
+      "learning_signal": "Task outcomes update linear bandit estimates; trajectories and feedback drive language-model memory revisions.",
+      "mechanism": "Retains episodes and distilled guidance across tasks. A contextual bandit learns whether to solve directly, retrieve cases, retrieve guidance, or distill guidance before solving. Only the small routing models and external memories change; the backbone LLM stays frozen. An optional retry loop also reuses failures within a task.",
+      "evaluation": "Compares four backbones on BigCodeBench, SWE-bench Verified, MultiChallenge, and six BBEH tasks, separating first-attempt success from success within four attempts. Shared-memory and frozen-controller ablations examine routing.",
+      "limitations": "One run per benchmark/backbone; 100 BigCodeBench tuning tasks remain in its evaluation stream. Outcomes require test or judge feedback, and token accounting excludes evaluator calls. Gains vary by setting; the action space and learning procedure remain fixed.",
+      "review_depth": "full-text",
+      "checked": "2026-11-04",
+      "short_name": "OMCE"
+    },
+    {
+      "id": "skill-plus-plus",
+      "title": "Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement",
+      "date": "2026-10-31",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.00544",
+      "sources": [
+        "https://arxiv.org/abs/2611.00544",
+        "https://arxiv.org/html/2611.00544v1"
+      ],
+      "code_url": null,
+      "code_note": "An official implementation was not established in the inspected sources; no code was executed.",
+      "topics": [
+        "skills",
+        "prompts",
+        "continual-learning",
+        "evaluation"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "skills",
+        "prompts"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Incoming skill bodies, similar earlier skills, and body-derived synthetic queries guide metadata rewriting without evaluation labels.",
+      "mechanism": "Rewrites an incoming skill’s name and description to clarify supported capabilities and scope relative to nearby skills. The revised metadata persists in the growing library; earlier metadata, skill bodies, and router weights stay fixed.",
+      "evaluation": "Tests incremental versions of SRA-Bench, SkillRet, and SkillRouter across five routers, plus native Codex CLI skill selection. A separate 150-query, 87-skill check measures hidden-test task success.",
+      "limitations": "Main outcomes measure required-skill selection, not completed tasks. The principal stream deliberately adds confusable non-substitutes, using model judgments during construction. Random additions show smaller gains. End-task validation uses an early library and an added workflow prompt; it does not establish success at maximum library size.",
+      "review_depth": "full-text",
+      "checked": "2026-11-04",
+      "short_name": "Skill++"
+    },
     {
       "id": "quadruped-curriculum-benchmark",
       "title": "Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds",
@@ -327,6 +435,40 @@
       "review_depth": "full-text",
       "checked": "2026-11-02",
       "short_name": "Retrospective harness study"
+    },
+    {
+      "id": "obsolete-facts-memory",
+      "title": "When Retrieval Is Not Enough: Obsolete Facts in Agent Memory",
+      "date": "2026-10-26",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "Author reports PALM workshop at NeurIPS 2026; primary venue record not verified.",
+      "url": "https://arxiv.org/abs/2610.36308",
+      "sources": [
+        "https://arxiv.org/abs/2610.36308",
+        "https://arxiv.org/html/2610.36308v1",
+        "https://github.com/oleeviyababu/Memory_Conflict"
+      ],
+      "code_url": "https://github.com/oleeviyababu/Memory_Conflict",
+      "code_note": "Paper-linked repository and saved-result inventory inspected; experiments and analysis scripts were not executed.",
+      "topics": [
+        "memory",
+        "evaluation",
+        "continual-learning"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "none"
+      ],
+      "persistence": "not-applicable",
+      "learning_signal": "No retained learning update; controlled evidence substitutions and benchmark answers diagnose use of revised facts.",
+      "mechanism": "Separates retrieving the newest statement from selecting it correctly. Varies BM25 evidence budgets, then replaces an unrelated statement with an obsolete competitor while keeping the latest statement, reader, prompt, and four-statement count fixed.",
+      "evaluation": "Studies single-hop FactConsolidation at 6K and 32K history lengths. A paired 74-question intervention finds stale-answer failures in two Qwen models despite the correction remaining visible.",
+      "limitations": "Prompt development reused the intervention cohort. Synthetic stale facts often agree with pretrained world knowledge, so chronology alone is not isolated. Gold-assisted support audits are diagnostic; substring scoring has documented errors. Shared histories, short update chains, and one model family limit generalization.",
+      "review_depth": "full-text",
+      "checked": "2026-11-04",
+      "short_name": "Obsolete facts"
     },
     {
       "id": "miniweb",
@@ -3475,6 +3617,43 @@
       "review_depth": "full-text",
       "checked": "2026-10-29",
       "short_name": "SPICE"
+    },
+    {
+      "id": "search-self-play",
+      "title": "Search Self-Play: Pushing the Frontier of Agent Capability without Supervision",
+      "date": "2025-10-21",
+      "year": 2025,
+      "kind": "paper",
+      "status": "peer-reviewed",
+      "venue": "ICLR 2026",
+      "url": "https://arxiv.org/abs/2510.18821",
+      "sources": [
+        "https://arxiv.org/abs/2510.18821",
+        "https://arxiv.org/html/2510.18821v3",
+        "https://proceedings.iclr.cc/paper_files/paper/2026/hash/6ac12f42db406e6be14d669884e73212-Abstract-Conference.html",
+        "https://proceedings.iclr.cc/paper_files/paper/2026/file/6ac12f42db406e6be14d669884e73212-Paper-Conference.pdf",
+        "https://github.com/Qwen-Applications/SSP"
+      ],
+      "code_url": "https://github.com/Qwen-Applications/SSP",
+      "code_note": "Current paper-linked repository and training/service documentation inspected; nothing installed or executed.",
+      "topics": [
+        "self-play",
+        "model-training",
+        "tools",
+        "applications"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "model-weights"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Model-judged answer correctness rewards the solver; solver difficulty rewards the proposer after retrieval-based question filtering.",
+      "mechanism": "Trains one model in proposer and solver roles. The proposer builds search questions around supplied answers; a retrieval-augmented check filters questions before REINFORCE and GRPO updates retain new behavior in model weights.",
+      "evaluation": "Reports pass@1 on seven QA benchmarks using local Wikipedia retrieval, including initial training, further training of search-specialized checkpoints, and fixed-opponent and verification ablations.",
+      "limitations": "Without supervision does not mean without external information: 50,000 seed answers come from public training sets, and Qwen2.5-32B supplies default verification and judgment. Evaluation samples 500 questions per dataset except Bamboogle’s 125. A fixed corpus and ten-call search budget constrain transfer; model verification is not proof of question validity.",
+      "review_depth": "full-text",
+      "checked": "2026-11-04",
+      "short_name": "Search Self-Play"
     },
     {
       "id": "ace",
@@ -6820,12 +6999,20 @@
           "why": "Separate learning a memory utility estimate from updating the reasoning model."
         },
         {
+          "paper": "omce",
+          "why": "Compare memory-utility scoring with learning when to retrieve, distill, or skip experience."
+        },
+        {
           "paper": "skillrl",
           "why": "Contrast external skills with parameter learning and teacher-derived supervision."
         },
         {
           "paper": "skillflow",
           "why": "Examine whether skill use produces measurable benefit."
+        },
+        {
+          "paper": "skill-plus-plus",
+          "why": "Separate retaining a skill from keeping it selectable as the library grows; compare routing with task success."
         }
       ],
       "exercise": "For three methods, write the stored artifact, admission rule, retrieval rule, revision rule, and evidence that reuse helps."
@@ -6922,6 +7109,10 @@
         {
           "paper": "agent0",
           "why": "Compare curriculum and executor co-development under tool-related objectives."
+        },
+        {
+          "paper": "search-self-play",
+          "why": "Audit seed answers, external retrieval, and model verification in a search proposer–solver loop."
         },
         {
           "paper": "dr-zero",
@@ -7050,6 +7241,10 @@
         {
           "paper": "self-evolving-continual-learners",
           "why": "Test for interference and forgetting when memory, shared prompts, or harness files evolve."
+        },
+        {
+          "paper": "continual-harness-forgetting",
+          "why": "Compare this small-subset harness study with the preceding held-out stream evaluation; trace conflicts in task-specific checks."
         }
       ],
       "exercise": "Specify separate measures for factual memory, procedural transfer, backward retention, cost, and safety drift. Do not collapse them into one score."

@@ -3,6 +3,9 @@
 # Papers by year
 [Overview](../README.md) · [Full annotations](papers.md)
 ## 2026
+- 2026-11-02 — [Can Coding Agents Sustain Continual Evolution without Forgetting?](papers.md#continual-harness-forgetting)
+- 2026-11-01 — [Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](papers.md#omce)
+- 2026-10-31 — [Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](papers.md#skill-plus-plus)
 - 2026-10-29 — [Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds](papers.md#quadruped-curriculum-benchmark)
 - 2026-10-27 — [Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces](papers.md#policy-harness-geometry)
 - 2026-10-27 — [MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model](papers.md#mle-world)
@@ -11,6 +14,7 @@
 - 2026-10-26 — [Skill$^{\infty}$: Recursive Self-Improvement for Agent Skill Optimization](papers.md#skill-infinity)
 - 2026-10-26 — [The Right Fact, the Wrong Decision: SciValidityBench for Scientific Agent Memory](papers.md#scivaliditybench)
 - 2026-10-26 — [How Do Coding-Agent Harnesses Self-Evolve? An Empirical Study of Retrospective Adaptation](papers.md#retrospective-harness-study)
+- 2026-10-26 — [When Retrieval Is Not Enough: Obsolete Facts in Agent Memory](papers.md#obsolete-facts-memory)
 - 2026-10-26 — [Back to Basics: A Skill-Centric Approach to Generalist Web Agents](papers.md#miniweb)
 - 2026-10-26 — [Evolve on Graph: Self-Evolving Knowledge Graph Reasoning without Question Annotations](papers.md#evolve-on-graph)
 - 2026-10-26 — [CEPO: A General Framework for Improving Prompt Optimization in Multi-Agent Systems](papers.md#cepo)
@@ -103,6 +107,7 @@
 - 2025-11-17 — [Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?](papers.md#live-swe-agent)
 - 2025-11-01 — [OpenSIR: Open-Ended Self-Improving Reasoner](papers.md#opensir)
 - 2025-10-28 — [SPICE: Self-Play In Corpus Environments Improves Reasoning](papers.md#spice)
+- 2025-10-21 — [Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](papers.md#search-self-play)
 - 2025-10-06 — [Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](papers.md#ace)
 - 2025-09-30 — [Mem-α: Learning Memory Construction via Reinforcement Learning](papers.md#mem-alpha)
 - 2025-09-29 — [Socratic-Zero : Bootstrapping Reasoning via Data-Free Agent Co-evolution](papers.md#socratic-zero)

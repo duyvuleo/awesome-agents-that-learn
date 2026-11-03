@@ -202,3 +202,19 @@ Reasoning Cache's title refers to continued improvement within one problem using
 Memory Tax (arXiv 2610.34073) is distinct from MemoryTax (2610.29823), with different authors and experiments. Its main settings are long-history memory benchmarks, including non-conversational state changes; a stronger retrieval baseline does not establish that memory is generally unnecessary. The quadruped study finds no universally best curriculum and counts student environment steps; PAIRED's antagonist adds simulation work. REUSE derives simultaneous error control under explicit independence and protected-feedback assumptions. Its Covertype holdout estimates population improvement, and its adapted comparison schemes are not executions of the original SICA/DGM/PACE systems. Selected draft-informed cross-checks supported these qualifications.
 
 [Group-Evolving Agents' official COLM record](https://proceedings.colm.cc/paper_files/paper/2026/hash/87b321515dc33137ffcc5d1654b7d182-Abstract-Conference.html) matches the existing work's title, core author identity, and abstract. It remains one record with its original first-public date; publication metadata was upgraded without claiming a new full-text review or reproduction. The retrospective harness study's linked archive was inaccessible, and Skill∞'s repository promises a future code release; neither was promoted to runnable-code evidence.
+
+## 2026-11-04 — Memory control, skill routing, and retention
+
+Five additions received selected full-text review; the catalog now has 110 full-text and 60 abstract/metadata research reviews. No linked research code was executed or result independently reproduced.
+
+| Work | Primary material inspected | Evidence boundary retained |
+| --- | --- | --- |
+| [OMCE](papers.md#omce) | arXiv v1, §§3–4, Appendices F/G/H | Single runs, tuning/evaluation overlap, judge costs and fixed controller design. |
+| [Skill++](papers.md#skill-plus-plus) | arXiv v1, §§3–4, Appendices B/C | Deliberately confusable additions; routing versus the smaller task-success check. |
+| [Harness forgetting](papers.md#continual-harness-forgetting) | arXiv v1, §§2–4, Appendices A/B; author README | Reused small subsets and adapted implementations, without a described held-out split. |
+| [Obsolete facts](papers.md#obsolete-facts-memory) | arXiv v1, §§2–4, Appendices A/B; author README | Within-cohort intervention, prior-knowledge confounding and diagnostic gold access. |
+| [Search Self-Play](papers.md#search-self-play) | arXiv v3, §§3–4, Appendix A; ICLR record and selected proceedings methods; author README | Training-set seed answers, larger-model verification and bounded local retrieval. |
+
+Search Self-Play retains its first preprint date, 21 October 2025. The official ICLR title capitalizes “Self-Play”; arXiv uses “Self-play”. The inspected current manuscript is v3 (19 May 2026), and its current artifact link is Qwen-Applications/SSP. Obsolete Facts remains labeled preprint because its author-reported PALM workshop acceptance was not independently confirmed in a primary venue record.
+
+Prior inspection dates and all software execution records were preserved. MemEvolve, Absolute Zero, and the Learning to Remember survey received metadata/version spot checks without timestamp-only edits. Reading routes now connect memory routing, skill selection, search self-play, and harness retention.

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-04 — Memory routing, skill selection, and forgetting
+
+- Added five selected-full-text paper reviews: OMCE, Skill++, a continual harness-forgetting study, Obsolete Facts, and Search Self-Play; total 170 research works and 23 software records.
+- Preserved evaluation limits concerning routing proxies, reused test subsets, prior-knowledge confounding, and externally supplied training answers.
+- Extended three reading routes and continued unresolved venue-inventory and citation leads.
+- Preserved prior review dates and software execution records. No research code was executed.
+
 ## 2026-11-02 — Monday web, harness, and evaluation catch-up
 
 - Added twelve selected-full-text reviews: eleven papers and one quadruped-curriculum benchmark; total 165 research works and 23 software records.

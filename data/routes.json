@@ -53,12 +53,20 @@
         "why": "Separate learning a memory utility estimate from updating the reasoning model."
       },
       {
+        "paper": "omce",
+        "why": "Compare memory-utility scoring with learning when to retrieve, distill, or skip experience."
+      },
+      {
         "paper": "skillrl",
         "why": "Contrast external skills with parameter learning and teacher-derived supervision."
       },
       {
         "paper": "skillflow",
         "why": "Examine whether skill use produces measurable benefit."
+      },
+      {
+        "paper": "skill-plus-plus",
+        "why": "Separate retaining a skill from keeping it selectable as the library grows; compare routing with task success."
       }
     ],
     "exercise": "For three methods, write the stored artifact, admission rule, retrieval rule, revision rule, and evidence that reuse helps."
@@ -155,6 +163,10 @@
       {
         "paper": "agent0",
         "why": "Compare curriculum and executor co-development under tool-related objectives."
+      },
+      {
+        "paper": "search-self-play",
+        "why": "Audit seed answers, external retrieval, and model verification in a search proposer–solver loop."
       },
       {
         "paper": "dr-zero",
@@ -283,6 +295,10 @@
       {
         "paper": "self-evolving-continual-learners",
         "why": "Test for interference and forgetting when memory, shared prompts, or harness files evolve."
+      },
+      {
+        "paper": "continual-harness-forgetting",
+        "why": "Compare this small-subset harness study with the preceding held-out stream evaluation; trace conflicts in task-specific checks."
       }
     ],
     "exercise": "Specify separate measures for factual memory, procedural transfer, backward retention, cost, and safety drift. Do not collapse them into one score."

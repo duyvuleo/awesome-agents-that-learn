@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-165 unique works. Catalog updated: 2026-11-02; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+170 unique works. Catalog updated: 2026-11-04; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -13,6 +13,9 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-02 | **Harness forgetting**<br>[Can Coding Agents Sustain Continual Evolution without Forgetting?](https://arxiv.org/abs/2611.03219) | Studies sequential evolution of Mini-SWE-Agent prompts, control flow, and tools with a fixed backbone. Adapted AHE and Meta-Harness optimize one task type and then… | Agent code, Prompts / context, Tools | preprint · full-text | [Notes](#continual-harness-forgetting) · [Code](https://github.com/THU-Agent/continual-harness-evolution) |
+| 2026-11-01 | **OMCE**<br>[Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](https://arxiv.org/abs/2611.01747) | Retains episodes and distilled guidance across tasks. A contextual bandit learns whether to solve directly, retrieve cases, retrieve guidance, or distill guidance before… | Memory, Model weights | preprint · full-text | [Notes](#omce) |
+| 2026-10-31 | **Skill++**<br>[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](https://arxiv.org/abs/2611.00544) | Rewrites an incoming skill’s name and description to clarify supported capabilities and scope relative to nearby skills. The revised metadata persists in the growing… | Skills, Prompts / context | preprint · full-text | [Notes](#skill-plus-plus) |
 | 2026-10-29 | **Curriculum or easy start?**<br>[Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds](https://arxiv.org/abs/2610.40364) | Places fourteen curriculum and environment-design methods around a common PPO learner, including easy-start randomization controls. A shared terrain space separates… | Model weights | preprint · full-text | [Notes](#quadruped-curriculum-benchmark) · [Code](https://github.com/Solvro/ml-wojtek-ued) |
 | 2026-10-27 | **Policy–harness geometry**<br>[Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces](https://arxiv.org/abs/2610.37255) | Decomposes regularized return into an interface-specific optimum and policy mismatch under a finite semantic-control model. It tests how presentation or execution… | Analysis / no retained update | preprint · full-text | [Notes](#policy-harness-geometry) · [Code](https://github.com/2020-qqtcg/HRP) |
 | 2026-10-27 | **MLE-World**<br>[MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model](https://arxiv.org/abs/2610.37175) | Fine-tunes a world model to predict execution feedback from code and task context. Its predictions guide candidate search, while confidence gates real runs and final… | Model weights | preprint · full-text | [Notes](#mle-world) · [Code](https://github.com/ko120/MLE_World) |
@@ -21,6 +24,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-26 | **Skill∞**<br>[Skill$^{\infty}$: Recursive Self-Improvement for Agent Skill Optimization](https://arxiv.org/abs/2610.35434) | Encodes skill optimization in an editable meta-skill. An agent uses that procedure to revise task skills and the meta-skill itself, then reuses the refined optimizer… | Skills, Prompts / context, Agent code | preprint · full-text | [Notes](#skill-infinity) |
 | 2026-10-26 | **SciValidityBench**<br>[The Right Fact, the Wrong Decision: SciValidityBench for Scientific Agent Memory](https://arxiv.org/abs/2610.34767) | Generates scientific histories in which a remembered fact may be invalid to use. A supplied compiler exposes decision-governing relations, separating raw records… | Memory | preprint · full-text | [Notes](#scivaliditybench) · [Code](https://github.com/SciValidityBench/SciValidityBench) |
 | 2026-10-26 | **Retrospective harness study**<br>[How Do Coding-Agent Harnesses Self-Evolve? An Empirical Study of Retrospective Adaptation](https://arxiv.org/abs/2610.34938) | Studies individually retained harness adaptations proposed by a retrospective skill, including context instructions and known-failure files. Fresh sessions with and… | Agent code, Prompts / context | preprint · full-text | [Notes](#retrospective-harness-study) |
+| 2026-10-26 | **Obsolete facts**<br>[When Retrieval Is Not Enough: Obsolete Facts in Agent Memory](https://arxiv.org/abs/2610.36308) | Separates retrieving the newest statement from selecting it correctly. Varies BM25 evidence budgets, then replaces an unrelated statement with an obsolete competitor… | Analysis / no retained update | preprint · full-text | [Notes](#obsolete-facts-memory) · [Code](https://github.com/oleeviyababu/Memory_Conflict) |
 | 2026-10-26 | **MiniWeb / MiniWebAgent**<br>[Back to Basics: A Skill-Centric Approach to Generalist Web Agents](https://arxiv.org/abs/2610.35823) | Builds skill-level web tasks and generates verified practice trajectories. A LoRA-trained executor performs short interactions delegated by an untrained planner, so… | Model weights | preprint · full-text | [Notes](#miniweb) |
 | 2026-10-26 | **EoG**<br>[Evolve on Graph: Self-Evolving Knowledge Graph Reasoning without Question Annotations](https://arxiv.org/abs/2610.35598) | One shared model alternates between proposing graph-grounded questions and solving them through graph tools. Symbolic task generation and question checks feed… | Model weights | preprint · full-text | [Notes](#evolve-on-graph) · [Code](https://github.com/Szy5/EoG) |
 | 2026-10-26 | **CEPO**<br>[CEPO: A General Framework for Improving Prompt Optimization in Multi-Agent Systems](https://arxiv.org/abs/2610.34722) | Separates a shared coordination prompt from agent-specific execution prompts. Role-aligned instructions guide existing optimizers to tune coordination first, then… | Prompts / context | preprint · full-text | [Notes](#cepo) |
@@ -111,6 +115,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-11-17 | **Live-SWE-agent**<br>[Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?](https://arxiv.org/abs/2511.13646) | Starts with a minimal bash-based agent and permits edits to its own scaffold during task execution. It studies on-the-fly changes to the agent implementation without a… | Agent code, Tools | preprint · abstract | [Notes](#live-swe-agent) |
 | 2025-11-01 | **OpenSIR**<br>[OpenSIR: Open-Ended Self-Improving Reasoner](https://arxiv.org/abs/2511.00602) | Alternates teacher and student roles within one model, starting from a seed problem. The method rewards exploration of distinct concepts while keeping generated tasks… | Model weights | preprint · abstract | [Notes](#opensir) |
 | 2025-10-28 | **SPICE**<br>[SPICE: Self-Play In Corpus Environments Improves Reasoning](https://arxiv.org/abs/2510.24684) | A shared model alternates between a document-grounded challenger and a reasoner without document access. Role-specific reinforcement-learning updates improve question… | Model weights | preprint · full-text | [Notes](#spice) |
+| 2025-10-21 | **Search Self-Play**<br>[Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](https://arxiv.org/abs/2510.18821) | Trains one model in proposer and solver roles. The proposer builds search questions around supplied answers; a retrieval-augmented check filters questions before… | Model weights | peer-reviewed · full-text | [Notes](#search-self-play) · [Code](https://github.com/Qwen-Applications/SSP) |
 | 2025-10-06 | **ACE**<br>[Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](https://arxiv.org/abs/2510.04618) | Separates generation, reflection, and curation to build an evolving playbook. Small structured updates and deduplication preserve reusable strategies without repeatedly… | Prompts / context, Memory | peer-reviewed · full-text | [Notes](#ace) |
 | 2025-09-30 | **Mem-α**<br>[Mem-α: Learning Memory Construction via Reinforcement Learning](https://arxiv.org/abs/2509.25911) | Trains an agent to construct and update core, episodic, and semantic memory while processing sequential interaction chunks. Rewards come from answering questions over… | Model weights, Memory | preprint · abstract | [Notes](#mem-alpha) |
 | 2025-09-29 | **Socratic-Zero**<br>[Socratic-Zero : Bootstrapping Reasoning via Data-Free Agent Co-evolution](https://arxiv.org/abs/2509.24726) | Updates a solver through online preference learning and trains a generator to imitate useful teacher-generated curricula. The teacher remains frozen while the solver and… | Model weights | preprint · full-text | [Notes](#socratic-zero) |
@@ -180,6 +185,72 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2017-10-19 | **AlphaGo Zero**<br>[Mastering the game of Go without human knowledge](https://www.nature.com/articles/nature24270) | Trains a policy/value network on games generated by its own search, then uses the updated network to improve subsequent search and play. This is an early concrete… | Model weights | peer-reviewed · abstract | [Notes](#alphago-zero) |
 
 ## Full annotations
+
+<a id="continual-harness-forgetting"></a>
+
+## Can Coding Agents Sustain Continual Evolution without Forgetting?
+
+**2026-11-02 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.03219)
+
+**Mechanism.** Studies sequential evolution of Mini-SWE-Agent prompts, control flow, and tools with a fixed backbone. Adapted AHE and Meta-Harness optimize one task type and then another; manual trace analysis and edit ablations investigate verification, workflow, and budget conflicts.
+
+**What changes:** Agent code, Prompts / context, Tools. **Persistence:** across-tasks. **Learning signal:** Task execution traces and benchmark outcomes drive harness edits; prior-task reevaluation measures retention.
+
+**Evaluation.** Examines six source-to-target directions among sampled SWE-bench Verified, paraphrased SWT-Bench, and FeatureBench tasks. Reports severe earlier-task losses and analyzes 520 execution trajectories.
+
+**Boundary.** Uses one backbone and reused subsets of 50, 50, and 30 tasks; no disjoint held-out evaluation is described. Scores are not full-benchmark results. These are study-specific implementations and pairwise transitions, not evidence that every harness or longer task sequence must forget.
+
+**Code / data.** [Official artifact](https://github.com/THU-Agent/continual-harness-evolution) — Paper-linked repository and setup documentation inspected; contains adaptations of AHE and Meta-Harness, not an independently reproduced run.
+
+**Topics:** architecture, workflows, continual-learning, evaluation, applications. **Reviewed:** full-text · 2026-11-04.
+
+[Source 1](https://arxiv.org/abs/2611.03219) · [Source 2](https://arxiv.org/html/2611.03219v1) · [Source 3](https://github.com/THU-Agent/continual-harness-evolution)
+
+<a id="omce"></a>
+
+## Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents
+
+**2026-11-01 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.01747)
+
+**Mechanism.** Retains episodes and distilled guidance across tasks. A contextual bandit learns whether to solve directly, retrieve cases, retrieve guidance, or distill guidance before solving. Only the small routing models and external memories change; the backbone LLM stays frozen. An optional retry loop also reuses failures within a task.
+
+**What changes:** Memory, Model weights. **Persistence:** both. **Learning signal:** Task outcomes update linear bandit estimates; trajectories and feedback drive language-model memory revisions.
+
+**Evaluation.** Compares four backbones on BigCodeBench, SWE-bench Verified, MultiChallenge, and six BBEH tasks, separating first-attempt success from success within four attempts. Shared-memory and frozen-controller ablations examine routing.
+
+**Boundary.** One run per benchmark/backbone; 100 BigCodeBench tuning tasks remain in its evaluation stream. Outcomes require test or judge feedback, and token accounting excludes evaluator calls. Gains vary by setting; the action space and learning procedure remain fixed.
+
+**Code / data.** An official implementation was not established in the inspected sources; no code was executed.
+
+**Topics:** memory, continual-learning, workflows, evaluation. **Reviewed:** full-text · 2026-11-04.
+
+[Source 1](https://arxiv.org/abs/2611.01747) · [Source 2](https://arxiv.org/html/2611.01747v1)
+
+<a id="skill-plus-plus"></a>
+
+## Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement
+
+**2026-10-31 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.00544)
+
+**Mechanism.** Rewrites an incoming skill’s name and description to clarify supported capabilities and scope relative to nearby skills. The revised metadata persists in the growing library; earlier metadata, skill bodies, and router weights stay fixed.
+
+**What changes:** Skills, Prompts / context. **Persistence:** across-tasks. **Learning signal:** Incoming skill bodies, similar earlier skills, and body-derived synthetic queries guide metadata rewriting without evaluation labels.
+
+**Evaluation.** Tests incremental versions of SRA-Bench, SkillRet, and SkillRouter across five routers, plus native Codex CLI skill selection. A separate 150-query, 87-skill check measures hidden-test task success.
+
+**Boundary.** Main outcomes measure required-skill selection, not completed tasks. The principal stream deliberately adds confusable non-substitutes, using model judgments during construction. Random additions show smaller gains. End-task validation uses an early library and an added workflow prompt; it does not establish success at maximum library size.
+
+**Code / data.** An official implementation was not established in the inspected sources; no code was executed.
+
+**Topics:** skills, prompts, continual-learning, evaluation. **Reviewed:** full-text · 2026-11-04.
+
+[Source 1](https://arxiv.org/abs/2611.00544) · [Source 2](https://arxiv.org/html/2611.00544v1)
 
 <a id="quadruped-curriculum-benchmark"></a>
 
@@ -356,6 +427,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** architecture, memory, evaluation, applications. **Reviewed:** full-text · 2026-11-02.
 
 [Source 1](https://arxiv.org/abs/2610.34938) · [Source 2](https://arxiv.org/html/2610.34938v1)
+
+<a id="obsolete-facts-memory"></a>
+
+## When Retrieval Is Not Enough: Obsolete Facts in Agent Memory
+
+**2026-10-26 · preprint · Author reports PALM workshop at NeurIPS 2026; primary venue record not verified. · core · paper**
+
+[Primary source](https://arxiv.org/abs/2610.36308)
+
+**Mechanism.** Separates retrieving the newest statement from selecting it correctly. Varies BM25 evidence budgets, then replaces an unrelated statement with an obsolete competitor while keeping the latest statement, reader, prompt, and four-statement count fixed.
+
+**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** No retained learning update; controlled evidence substitutions and benchmark answers diagnose use of revised facts.
+
+**Evaluation.** Studies single-hop FactConsolidation at 6K and 32K history lengths. A paired 74-question intervention finds stale-answer failures in two Qwen models despite the correction remaining visible.
+
+**Boundary.** Prompt development reused the intervention cohort. Synthetic stale facts often agree with pretrained world knowledge, so chronology alone is not isolated. Gold-assisted support audits are diagnostic; substring scoring has documented errors. Shared histories, short update chains, and one model family limit generalization.
+
+**Code / data.** [Official artifact](https://github.com/oleeviyababu/Memory_Conflict) — Paper-linked repository and saved-result inventory inspected; experiments and analysis scripts were not executed.
+
+**Topics:** memory, evaluation, continual-learning. **Reviewed:** full-text · 2026-11-04.
+
+[Source 1](https://arxiv.org/abs/2610.36308) · [Source 2](https://arxiv.org/html/2610.36308v1) · [Source 3](https://github.com/oleeviyababu/Memory_Conflict)
 
 <a id="miniweb"></a>
 
@@ -2346,6 +2439,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** self-play, model-training. **Reviewed:** full-text · 2026-10-29.
 
 [Source 1](https://arxiv.org/abs/2510.24684) · [Source 2](https://arxiv.org/html/2510.24684v1)
+
+<a id="search-self-play"></a>
+
+## Search Self-Play: Pushing the Frontier of Agent Capability without Supervision
+
+**2025-10-21 · peer-reviewed · ICLR 2026 · core · paper**
+
+[Primary source](https://arxiv.org/abs/2510.18821)
+
+**Mechanism.** Trains one model in proposer and solver roles. The proposer builds search questions around supplied answers; a retrieval-augmented check filters questions before REINFORCE and GRPO updates retain new behavior in model weights.
+
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Model-judged answer correctness rewards the solver; solver difficulty rewards the proposer after retrieval-based question filtering.
+
+**Evaluation.** Reports pass@1 on seven QA benchmarks using local Wikipedia retrieval, including initial training, further training of search-specialized checkpoints, and fixed-opponent and verification ablations.
+
+**Boundary.** Without supervision does not mean without external information: 50,000 seed answers come from public training sets, and Qwen2.5-32B supplies default verification and judgment. Evaluation samples 500 questions per dataset except Bamboogle’s 125. A fixed corpus and ten-call search budget constrain transfer; model verification is not proof of question validity.
+
+**Code / data.** [Official artifact](https://github.com/Qwen-Applications/SSP) — Current paper-linked repository and training/service documentation inspected; nothing installed or executed.
+
+**Topics:** self-play, model-training, tools, applications. **Reviewed:** full-text · 2026-11-04.
+
+[Source 1](https://arxiv.org/abs/2510.18821) · [Source 2](https://arxiv.org/html/2510.18821v3) · [Source 3](https://proceedings.iclr.cc/paper_files/paper/2026/hash/6ac12f42db406e6be14d669884e73212-Abstract-Conference.html) · [Source 4](https://proceedings.iclr.cc/paper_files/paper/2026/file/6ac12f42db406e6be14d669884e73212-Paper-Conference.pdf) · [Source 5](https://github.com/Qwen-Applications/SSP)
 
 <a id="ace"></a>
 

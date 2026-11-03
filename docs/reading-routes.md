@@ -42,9 +42,13 @@ How can experience become useful knowledge, a procedure, or a reusable tool?
 
 4. **[MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory](papers.md#memrl)** — Separate learning a memory utility estimate from updating the reasoning model.
 
-5. **[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl)** — Contrast external skills with parameter learning and teacher-derived supervision.
+5. **[Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](papers.md#omce)** — Compare memory-utility scoring with learning when to retrieve, distill, or skip experience.
 
-6. **[SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](papers.md#skillflow)** — Examine whether skill use produces measurable benefit.
+6. **[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl)** — Contrast external skills with parameter learning and teacher-derived supervision.
+
+7. **[SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](papers.md#skillflow)** — Examine whether skill use produces measurable benefit.
+
+8. **[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](papers.md#skill-plus-plus)** — Separate retaining a skill from keeping it selectable as the library grows; compare routing with task success.
 
 
 **Study exercise:** For three methods, write the stored artifact, admission rule, retrieval rule, revision rule, and evidence that reuse helps.
@@ -109,7 +113,9 @@ Can a system generate useful challenges for itself?
 
 5. **[Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](papers.md#agent0)** — Compare curriculum and executor co-development under tool-related objectives.
 
-6. **[Dr. Zero: Self-Evolving Search Agents without Training Data](papers.md#dr-zero)** — Examine self-evolution in search, where external information changes the feedback setting.
+6. **[Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](papers.md#search-self-play)** — Audit seed answers, external retrieval, and model verification in a search proposer–solver loop.
+
+7. **[Dr. Zero: Self-Evolving Search Agents without Training Data](papers.md#dr-zero)** — Examine self-evolution in search, where external information changes the feedback setting.
 
 
 **Study exercise:** Explain what “zero data” excludes for each method and what prior information or engineered environment remains.
@@ -187,6 +193,8 @@ Does learning persist when tasks and environments change?
 9. **[Safety in Self-Evolving Agents: A Survey](papers.md#safety-self-evolving-survey)** — Extend retention questions to unsafe influence, repair, and resumed adaptation.
 
 10. **[Are Self-Evolving Agents Continual Learners?](papers.md#self-evolving-continual-learners)** — Test for interference and forgetting when memory, shared prompts, or harness files evolve.
+
+11. **[Can Coding Agents Sustain Continual Evolution without Forgetting?](papers.md#continual-harness-forgetting)** — Compare this small-subset harness study with the preceding held-out stream evaluation; trace conflicts in task-specific checks.
 
 
 **Study exercise:** Specify separate measures for factual memory, procedural transfer, backward retention, cost, and safety drift. Do not collapse them into one score.
