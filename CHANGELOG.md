@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-05 — Multiple-theme explorer filters
+
+- Added checkbox theme selection with Match any / Match all, synchronized across quick filters, the word cloud, graph nodes, and resource tags.
+- Share links retain multiple themes and matching mode; existing single-theme links still work. Exports include the selected theme list.
+- Added theme-only clearing and keyboard-accessible selection controls.
+
 ## 2026-11-05 — Artifact evaluation, embodied memory, and runtime learning
 
 - Added five papers: Artifact-to-Capability, MUSE scientific memory, LIFE, Exo, and MARSHAL; total 175 research works.

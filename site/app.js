@@ -21,8 +21,10 @@
   const byId = new Map(resources.map((resource) => [resource.id, resource]));
   const topics = meta.topics || {};
   const targets = meta.update_targets || {};
-  const fields = ['search', 'topic', 'target', 'kind', 'scope', 'depth', 'year', 'route', 'sort'];
-  const queryKeys = { search: 'q', topic: 'topic', target: 'target', kind: 'kind', scope: 'scope', depth: 'depth', year: 'year', route: 'route', sort: 'sort' };
+  const themeFilters = window.ThemeFilters;
+  const selectedThemes = new Set();
+  const fields = ['search', 'target', 'kind', 'scope', 'depth', 'year', 'route', 'sort'];
+  const queryKeys = { search: 'q', target: 'target', kind: 'kind', scope: 'scope', depth: 'depth', year: 'year', route: 'route', sort: 'sort' };
   const kindLabels = { paper: 'Paper', survey: 'Survey', benchmark: 'Benchmark', system: 'System', project: 'Project' };
   const depthLabels = { 'full-text': 'Selected full text inspected', abstract: 'Abstract inspected', project: 'Project documentation inspected' };
   const persistenceLabels = { 'across-tasks': 'Across tasks', 'within-task': 'Within a task', both: 'Within and across tasks', 'not-applicable': 'Not applicable' };
@@ -62,7 +64,12 @@
   const option = (selectId, value, text) => {
     const el = node('option', '', text); el.value = value; $(selectId).append(el);
   };
-  allTopics.forEach((id) => option('topic', id, label(topics, id)));
+  allTopics.forEach((id) => {
+    const choice = node('label', 'theme-option');
+    const checkbox = node('input'); checkbox.type = 'checkbox'; checkbox.value = id; checkbox.dataset.topic = id;
+    checkbox.addEventListener('change', () => setTheme(id));
+    choice.append(checkbox, node('span', '', label(topics, id))); $('theme-options').append(choice);
+  });
   allTargets.forEach((id) => option('target', id, label(targets, id)));
   unique(resources.map((p) => p.kind)).sort().forEach((kind) => option('kind', kind, kind === 'system' ? 'Systems' : kindLabels[kind] || kind));
   unique(papers.map((p) => p.year)).sort((a, b) => b - a).forEach((year) => option('year', String(year), String(year)));
@@ -78,7 +85,11 @@
   $('contribute-link').href = `${repo.replace(/\/$/, '')}/blob/main/CONTRIBUTING.md`;
   $('license-link').href = `${repo.replace(/\/$/, '')}/blob/main/LICENSE`;
 
-  const setTheme = (id) => { $('topic').value = $('topic').value === id ? '' : id; render(); };
+  function setTheme(id) {
+    if (!allTopics.includes(id)) return;
+    if (selectedThemes.has(id)) selectedThemes.delete(id); else selectedThemes.add(id);
+    render();
+  }
   allTopics.forEach((id) => {
     const b = node('button', 'theme-pill', label(topics, id));
     b.type = 'button'; b.dataset.topic = id; b.setAttribute('aria-pressed', 'false');
@@ -113,9 +124,12 @@
     $('route-options').append(b);
   });
 
-  function state() { return Object.fromEntries(fields.map((id) => [id, $(id).value])); }
+  function state() { return { ...Object.fromEntries(fields.map((id) => [id, $(id).value])), topics: [...selectedThemes].sort(), topic_match: $('topic-match').value }; }
   function readUrl() {
     const params = new URLSearchParams(location.search);
+    const themeState = themeFilters.read(params, allTopics);
+    selectedThemes.clear(); themeState.topics.forEach((id) => selectedThemes.add(id));
+    $('topic-match').value = themeState.mode;
     resourceView = params.get('view') === 'cards' ? 'cards' : 'table';
     fields.forEach((id) => {
       const value = params.get(queryKeys[id]) || (id === 'sort' ? 'newest' : '');
@@ -130,6 +144,7 @@
       const value = $(id).value;
       if (value && !(id === 'sort' && value === 'newest')) url.searchParams.set(queryKeys[id], value);
     });
+    themeFilters.write(url.searchParams, [...selectedThemes], $('topic-match').value);
     if (resourceView === 'cards') url.searchParams.set('view', 'cards');
     return url;
   }
@@ -190,7 +205,7 @@
   function graphReset() { graphView.zoom = 1; graphView.x = 0; graphView.y = 0; graphTransform(); }
   function graphZoom(factor) { graphView.zoom = Math.max(0.6, Math.min(3, Math.round(graphView.zoom * factor * 100) / 100)); graphTransform(); }
   function resetInspector() {
-    $('graph-inspector').replaceChildren(node('p', 'inspector-kicker', 'EXPLORE A CONNECTION'), node('h4', '', 'Discover a paper or system.'), node('p', '', 'Hover or focus a node to inspect it. Select a topic to narrow the map; select a resource to open its evidence notes below.'));
+    $('graph-inspector').replaceChildren(node('p', 'inspector-kicker', 'EXPLORE A CONNECTION'), node('h4', '', 'Discover a paper or system.'), node('p', '', 'Hover or focus a node to inspect it. Toggle topics to update the selected themes; select a resource to open its evidence notes below.'));
   }
   function inspectNode(type, item, visibleCount) {
     const inspector = $('graph-inspector'); inspector.replaceChildren();
@@ -204,7 +219,7 @@
       const boundary = node('p', 'inspector-boundary'); boundary.append(node('strong', '', 'Boundary: '), document.createTextNode(item.limitations || 'Not recorded.')); inspector.append(boundary);
     }
   }
-  function renderGraph(selectedTopic) {
+  function renderGraph() {
     const stage = $('graph-stage'); stage.replaceChildren(); resetInspector();
     const narrow = matchMedia('(max-width: 700px)').matches;
     graphLayout = narrow ? { width: 720, height: 980, cx: 360, cy: 490, narrow } : { width: 1100, height: 720, cx: 550, cy: 360, narrow };
@@ -243,7 +258,7 @@
     const edgeRecords = [];
     ordered.forEach((p) => (p.topics || []).forEach((topic) => {
       const from = topicPositions.get(topic); const to = workPositions.get(p.id); if (!from) return;
-      const line = svgNode('line', { x1: from.x, y1: from.y, x2: to.x, y2: to.y, class: `graph-membership${topic === selectedTopic ? ' selected-spoke' : ''}`, 'data-topic': topic, 'data-paper': p.id });
+      const line = svgNode('line', { x1: from.x, y1: from.y, x2: to.x, y2: to.y, class: `graph-membership${selectedThemes.has(topic) ? ' selected-spoke' : ''}`, 'data-topic': topic, 'data-paper': p.id });
       edges.append(line); edgeRecords.push({ line, topic, paper: p.id });
     })); stage.append(edges);
     const nodeRecords = [];
@@ -338,7 +353,7 @@
     const topicLayer = svgNode('g', { class: 'graph-topic-nodes' });
     represented.forEach((id) => {
       const pos = topicPositions.get(id); const count = filtered.filter((p) => (p.topics || []).includes(id)).length;
-      const g = svgNode('g', { class: `graph-node graph-topic-node${id === selectedTopic ? ' is-selected' : ''}`, 'data-topic-node': id, 'aria-pressed': String(id === selectedTopic) });
+      const g = svgNode('g', { class: `graph-node graph-topic-node${selectedThemes.has(id) ? ' is-selected' : ''}`, 'data-topic-node': id, 'aria-pressed': String(selectedThemes.has(id)) });
       const sine = Math.sin(pos.angle); const cosine = Math.cos(pos.angle);
       const anchor = narrow || Math.abs(sine) < 0.25 ? 'middle' : sine > 0 ? 'start' : 'end';
       const lx = pos.x + sine * (narrow ? 20 : 26);
@@ -379,7 +394,7 @@
     const title = node('h3'); title.append(link(p.title, p.url)); article.append(top, title, node('p', 'paper-summary', p.mechanism));
     if (isSystem && p.category) article.append(node('p', 'system-category', label(meta.system_categories || {}, p.category)));
     const tags = node('div', 'paper-tags');
-    (p.topics || []).forEach((id) => { const b = node('button', 'paper-tag', label(topics, id)); b.type = 'button'; b.setAttribute('aria-label', `Filter by ${label(topics, id)}`); b.addEventListener('click', () => { $('topic').value = id; render(); $('topic').focus(); }); tags.append(b); });
+    (p.topics || []).forEach((id) => { const b = node('button', 'paper-tag', label(topics, id)); b.type = 'button'; b.setAttribute('aria-label', `Toggle theme: ${label(topics, id)}`); b.setAttribute('aria-pressed', String(selectedThemes.has(id))); b.addEventListener('click', () => { setTheme(id); $('theme-summary').focus({ preventScroll: true }); }); tags.append(b); });
     article.append(tags);
     const metadata = node('div', 'paper-meta');
     const status = isSystem ? 'Not executed' : p.status === 'peer-reviewed' ? 'Peer reviewed' : p.status === 'technical-report' ? 'Technical report' : 'Preprint';
@@ -537,7 +552,7 @@
     const routeIds = selectedRoute ? new Set((selectedRoute.steps || []).map((step) => step.paper)) : null;
     filtered = resources.filter((p) => {
       const searchable = [p.title, recallName(p), p.id, p.mechanism, p.evaluation, p.limitations, p.learning_signal, p.venue, p.category, textValue(p.capabilities), textValue(p.requirements), textValue(p.license), p.relationship_note, ...(p.topics || []).map((id) => label(topics, id)), ...(p.update_targets || []).map((id) => label(targets, id))].join(' ').toLocaleLowerCase();
-      return terms.every((term) => searchable.includes(term)) && (!s.topic || (p.topics || []).includes(s.topic)) && (!s.target || (p.update_targets || []).includes(s.target)) && (!s.kind || p.kind === s.kind) && (!s.scope || p.scope === s.scope) && (!s.depth || p.review_depth === s.depth) && (!s.year || String(p.year) === s.year) && (!routeIds || routeIds.has(p.id));
+      return terms.every((term) => searchable.includes(term)) && themeFilters.matches(p.topics, s.topics, s.topic_match) && (!s.target || (p.update_targets || []).includes(s.target)) && (!s.kind || p.kind === s.kind) && (!s.scope || p.scope === s.scope) && (!s.depth || p.review_depth === s.depth) && (!s.year || String(p.year) === s.year) && (!routeIds || routeIds.has(p.id));
     });
     filtered.sort((a, b) => {
       if (s.sort === 'title') return a.title.localeCompare(b.title);
@@ -552,23 +567,39 @@
     $('empty-state').hidden = filtered.length !== 0;
     $('export').disabled = filtered.length === 0;
     const active = fields.filter((id) => id !== 'sort' && s[id]);
-    $('clear-filters').disabled = active.length === 0 && s.sort === 'newest';
+    $('clear-filters').disabled = active.length === 0 && !s.topics.length && s.topic_match === 'any' && s.sort === 'newest';
     const advanced = ['kind', 'scope', 'depth', 'year', 'route'].filter((id) => s[id]);
     $('advanced-count').textContent = advanced.length ? `(${advanced.length} active)` : '';
-    document.querySelectorAll('.theme-pill').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.topic === s.topic)));
-    document.querySelectorAll('.cloud-word').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.topic === s.topic)));
-    $('cloud-selection').textContent = s.topic ? `Selected: ${label(topics, s.topic)}. Cloud counts remain based on the full collection (${corpusLabel}); the graph shows this filtered view.` : `Full collection: ${corpusLabel} across ${allTopics.length} overlapping topics. Filters apply to the graph and resource list.`;
-    renderGraph(s.topic);
+    document.querySelectorAll('.theme-pill').forEach((b) => b.setAttribute('aria-pressed', String(selectedThemes.has(b.dataset.topic))));
+    document.querySelectorAll('.cloud-word').forEach((b) => b.setAttribute('aria-pressed', String(selectedThemes.has(b.dataset.topic))));
+    document.querySelectorAll('#theme-options input').forEach((input) => { input.checked = selectedThemes.has(input.value); });
+    const selectedLabels = allTopics.filter((id) => selectedThemes.has(id)).map((id) => label(topics, id));
+    const themeSummary = selectedLabels.length ? `${s.topic_match === 'all' ? 'Match all' : 'Match any'}: ${selectedLabels.join(' · ')}` : 'All themes · Select one or more';
+    $('theme-summary-text').textContent = selectedLabels.length === 1 ? selectedLabels[0] : selectedLabels.length ? `${selectedLabels.length} themes selected` : 'All themes';
+    $('theme-selection').textContent = themeSummary;
+    $('clear-themes').disabled = !selectedLabels.length;
+    $('cloud-selection').textContent = selectedLabels.length ? `${themeSummary}. Cloud counts remain based on the full collection (${corpusLabel}); the graph shows this filtered view.` : `Full collection: ${corpusLabel} across ${allTopics.length} overlapping topics. Filters apply to the graph and resource list.`;
+    renderGraph();
     renderRoute(s.route); writeUrl();
   }
-  function clear() { fields.forEach((id) => { $(id).value = id === 'sort' ? 'newest' : ''; }); render(); }
+  function resetFilters() { selectedThemes.clear(); $('topic-match').value = 'any'; fields.forEach((id) => { $(id).value = id === 'sort' ? 'newest' : ''; }); }
+  function clear() { resetFilters(); render(); }
   fields.forEach((id) => $(id).addEventListener(id === 'search' ? 'input' : 'change', render));
+  $('topic-match').addEventListener('change', render);
+  $('clear-themes').addEventListener('click', () => { selectedThemes.clear(); render(); $('theme-summary').focus({ preventScroll: true }); });
+  document.addEventListener('click', (event) => { if (!$('theme-picker').contains(event.target)) $('theme-picker').open = false; });
+  $('theme-picker').addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') { event.preventDefault(); $('theme-picker').open = false; $('theme-summary').focus(); }
+  });
+  $('theme-picker').addEventListener('focusout', (event) => {
+    if (event.relatedTarget && !$('theme-picker').contains(event.relatedTarget)) $('theme-picker').open = false;
+  });
   ['table', 'cards'].forEach((view) => $(`view-${view}`).addEventListener('click', () => {
     resourceView = view; renderResourceList(); writeUrl();
   }));
   $('clear-filters').addEventListener('click', clear);
   $('systems-nav').addEventListener('click', (e) => {
-    e.preventDefault(); fields.forEach((id) => { $(id).value = id === 'sort' ? 'newest' : ''; });
+    e.preventDefault(); resetFilters();
     $('kind').value = 'system'; $('advanced-filters').open = true; render();
     $('catalog').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
     $('kind').focus({ preventScroll: true });
@@ -608,7 +639,7 @@
   $('research-graph').addEventListener('pointerup', finishPan);
   $('research-graph').addEventListener('pointercancel', finishPan);
   window.addEventListener('resize', () => {
-    if (matchMedia('(max-width: 700px)').matches !== graphLayout.narrow) { graphView.x = 0; graphView.y = 0; graphView.zoom = 1; renderGraph($('topic').value); }
+    if (matchMedia('(max-width: 700px)').matches !== graphLayout.narrow) { graphView.x = 0; graphView.y = 0; graphView.zoom = 1; renderGraph(); }
   });
   $('share').addEventListener('click', async () => {
     const url = viewUrl();
