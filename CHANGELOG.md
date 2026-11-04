@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-05 — Artifact evaluation, embodied memory, and runtime learning
+
+- Added five papers: Artifact-to-Capability, MUSE scientific memory, LIFE, Exo, and MARSHAL; total 175 research works.
+- Updated Hyperagents from selected v2 evidence, preserving the first date and earlier source.
+- Added Exo’s paper-pinned research implementation with verified license, requirements, and current-version boundaries; total 24 software records.
+- Extended two reading routes and retained inherited experiments, offline construction, limited transfer, and safety assumptions explicitly. No research code was executed.
+
 ## 2026-11-04 — Memory routing, skill selection, and forgetting
 
 - Added five selected-full-text paper reviews: OMCE, Skill++, a continual harness-forgetting study, Obsolete Facts, and Search Self-Play; total 170 research works and 23 software records.

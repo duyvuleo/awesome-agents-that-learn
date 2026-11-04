@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Research papers](papers.md) · [Filter systems in the explorer](https://duyvuleo.github.io/awesome-agents-that-learn/?kind=system#catalog)
 
-23 software records. Catalog updated: 2026-11-04; individual inspection dates are recorded per entry. Systems are counted separately from the 170 research works; a paper and its software can describe the same research program. These are documentation/source inspections, not installations, reproductions, or deployment endorsements. No release date is inferred from the review date.
+24 software records. Catalog updated: 2026-11-05; individual inspection dates are recorded per entry. Systems are counted separately from the 175 research works; a paper and its software can describe the same research program. These are documentation/source inspections, not installations, reproductions, or deployment endorsements. No release date is inferred from the review date.
 
 ## Compare at a glance
 
@@ -21,6 +21,7 @@
 | [Darwin Gödel Machine](#system-darwin-godel-machine) | Research implementation | Agent code, Tools, Workflows, Prompts / context | Apache-2.0 |
 | [DSPy](#system-dspy) | Optimization framework | Prompts / context, Model weights | MIT |
 | [EvoAgentX](#system-evoagentx) | Optimization framework | Prompts / context, Tools, Workflows, Multi-agent organization | MIT; bundled MIT notices are included in LICENSE |
+| [Exo self-evolution experiment](#system-exo) | Research implementation | Agent code, Tools, Workflows, Memory | MIT |
 | [ExpeL](#system-expel) | Research implementation | Memory | Apache-2.0 |
 | [GEPA](#system-gepa) | Optimization framework | Prompts / context, Agent code, Workflows | MIT |
 | [Hermes Agent](#system-hermes-agent) | Agent application | Memory, Skills | MIT |
@@ -364,6 +365,39 @@ No associated work in the current paper catalog.
 **Source inspection:** 2026-10-28 · project · not-run. **Topics:** workflows, architecture, tools, prompts.
 
 [Source 1](https://github.com/ANative-Lab/EvoAgentX) · [Source 2](https://github.com/ANative-Lab/EvoAgentX/blob/main/README.md) · [Source 3](https://github.com/ANative-Lab/EvoAgentX/blob/main/LICENSE)
+
+
+<a id="system-exo"></a>
+
+## Exo self-evolution experiment
+
+**Research implementation · core · source inspected · not run**
+
+[Official repository](https://github.com/exoharness/exo) · [Documentation](https://raw.githubusercontent.com/exoharness/exo/c5c1963a3445417e64938c139da88edd9154075d/README.md)
+
+**Learning mechanism.** The inspected research snapshot exposes harness source and runtime history to the agent and documents rebuild/restart, retained state, and sandbox recovery. Edits can change subsequent execution and later tasks.
+
+**Capabilities.** Inspect and revise harness source during tasks; Retain conversation and tool-event history across ordinary restarts; Rebuild executors and restore sandbox snapshots
+
+**What changes:** Agent code, Tools, Workflows, Memory. **Persistence:** both. **Learning signal:** Task observations, retained execution history, failures, and recorded model usage guide self-edits.
+
+**Paper relationship.** Research implementation at the paper-cited c5c1963 snapshot. Current official docs identify the self-evolving harness as an earlier experiment; the current default branch is not assumed to reproduce that snapshot.
+
+[Exo: An Architecture for Self-Improving Systems at Runtime](papers.md#exo-runtime)
+
+**Evaluation evidence.** The related paper reports game, application, service-incident, and coding evaluations. Source and documentation were inspected; no experiment was reproduced.
+
+**Boundary.** The paper’s default guardian tests build success only. Broad development write access does not enforce its protection assumptions, and snapshots cannot reverse external effects. Current hosting documentation is under construction and covers a changed architecture.
+
+**Availability.** Public pinned source, README, and license inspected. No installation, service launch, model call, or research-code execution.
+
+**Requirements.** The research snapshot documents Git, Docker, Node/pnpm and Rust toolchains via mise, plus a supported OpenAI or OpenRouter model endpoint. Current setup documentation differs.
+
+**License.** [MIT](https://raw.githubusercontent.com/exoharness/exo/c5c1963a3445417e64938c139da88edd9154075d/LICENSE). Linked models, datasets, services, and dependencies can have separate terms.
+
+**Source inspection:** 2026-11-05 · project · not-run. **Topics:** architecture, recursive-improvement, workflows, applications.
+
+[Source 1](https://github.com/exoharness/exo) · [Source 2](https://github.com/exoharness/exo/tree/c5c1963a3445417e64938c139da88edd9154075d) · [Source 3](https://raw.githubusercontent.com/exoharness/exo/c5c1963a3445417e64938c139da88edd9154075d/README.md) · [Source 4](https://raw.githubusercontent.com/exoharness/exo/c5c1963a3445417e64938c139da88edd9154075d/LICENSE) · [Source 5](https://exoharness.ai/docs/) · [Source 6](https://exoharness.ai/docs/development/) · [Source 7](https://arxiv.org/pdf/2611.00463v1)
 
 
 <a id="system-expel"></a>

@@ -52,8 +52,11 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="memory"></a>
 
-## Memory and experience (71)
+## Memory and experience (74)
+- 2026-11-03 — [Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](papers.md#artifact-to-capability) · core · preprint
 - 2026-11-01 — [Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](papers.md#omce) · core · preprint
+- 2026-10-30 — [Learning to Live: A Step Toward Lifelong Embodied Intelligence](papers.md#life-embodied) · core · preprint
+- 2026-10-28 — [MUSE: Multi-Level Memory with Selective Runtime Injection for Scientific Coding Agents](papers.md#muse-scientific-memory) · core · preprint
 - 2026-10-27 — [Remembering Is Not Enough: Refining Memories and Learning When to Use Them in Multi-Agent Systems](papers.md#discernmem) · core · preprint
 - 2026-10-26 — [The Right Fact, the Wrong Decision: SciValidityBench for Scientific Agent Memory](papers.md#scivaliditybench) · adjacent · preprint
 - 2026-10-26 — [How Do Coding-Agent Harnesses Self-Evolve? An Empirical Study of Retrospective Adaptation](papers.md#retrospective-harness-study) · core · preprint
@@ -127,8 +130,10 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="skills"></a>
 
-## Skill acquisition and reuse (40)
+## Skill acquisition and reuse (42)
+- 2026-11-03 — [Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](papers.md#artifact-to-capability) · core · preprint
 - 2026-10-31 — [Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](papers.md#skill-plus-plus) · core · preprint
+- 2026-10-30 — [Learning to Live: A Step Toward Lifelong Embodied Intelligence](papers.md#life-embodied) · core · preprint
 - 2026-10-26 — [Skill$^{\infty}$: Recursive Self-Improvement for Agent Skill Optimization](papers.md#skill-infinity) · core · preprint
 - 2026-10-26 — [Back to Basics: A Skill-Centric Approach to Generalist Web Agents](papers.md#miniweb) · core · preprint
 - 2026-10-25 — [MultiEvoSkill: Structure-Aware Multi-Agent Skill Evolution for Generalizable Skill Artifacts](papers.md#multievoskill) · core · preprint
@@ -171,7 +176,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="tools"></a>
 
-## Tool creation and learning (20)
+## Tool creation and learning (21)
+- 2026-10-30 — [Learning to Live: A Step Toward Lifelong Embodied Intelligence](papers.md#life-embodied) · core · preprint
 - 2026-10-26 — [Back to Basics: A Skill-Centric Approach to Generalist Web Agents](papers.md#miniweb) · core · preprint
 - 2026-10-26 — [Evolve on Graph: Self-Evolving Knowledge Graph Reasoning without Question Annotations](papers.md#evolve-on-graph) · core · preprint
 - 2026-10-24 — [ReSight: Task-Driven Self-Improving Memory for Embodied Agents](papers.md#resight) · core · preprint
@@ -225,9 +231,11 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="workflows"></a>
 
-## Workflow improvement (25)
+## Workflow improvement (27)
 - 2026-11-02 — [Can Coding Agents Sustain Continual Evolution without Forgetting?](papers.md#continual-harness-forgetting) · core · preprint
 - 2026-11-01 — [Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](papers.md#omce) · core · preprint
+- 2026-10-30 — [Exo: An Architecture for Self-Improving Systems at Runtime](papers.md#exo-runtime) · core · preprint
+- 2026-10-28 — [MUSE: Multi-Level Memory with Selective Runtime Injection for Scientific Coding Agents](papers.md#muse-scientific-memory) · core · preprint
 - 2026-10-27 — [MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model](papers.md#mle-world) · adjacent · preprint
 - 2026-10-27 — [CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning](papers.md#coharl) · core · preprint
 - 2026-10-26 — [CEPO: A General Framework for Improving Prompt Optimization in Multi-Agent Systems](papers.md#cepo) · core · preprint
@@ -254,8 +262,9 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="architecture"></a>
 
-## Agent architecture (47)
+## Agent architecture (48)
 - 2026-11-02 — [Can Coding Agents Sustain Continual Evolution without Forgetting?](papers.md#continual-harness-forgetting) · core · preprint
+- 2026-10-30 — [Exo: An Architecture for Self-Improving Systems at Runtime](papers.md#exo-runtime) · core · preprint
 - 2026-10-27 — [Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces](papers.md#policy-harness-geometry) · adjacent · preprint
 - 2026-10-27 — [Remembering Is Not Enough: Refining Memories and Learning When to Use Them in Multi-Agent Systems](papers.md#discernmem) · core · preprint
 - 2026-10-27 — [CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning](papers.md#coharl) · core · preprint
@@ -305,7 +314,7 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="model-training"></a>
 
-## Learning in model weights (58)
+## Learning in model weights (59)
 - 2026-10-29 — [Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds](papers.md#quadruped-curriculum-benchmark) · adjacent · preprint
 - 2026-10-27 — [Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces](papers.md#policy-harness-geometry) · adjacent · preprint
 - 2026-10-27 — [MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model](papers.md#mle-world) · adjacent · preprint
@@ -339,6 +348,7 @@ A work may appear in several topics; counts here are not additive.
 - 2025-11-01 — [OpenSIR: Open-Ended Self-Improving Reasoner](papers.md#opensir) · core · preprint
 - 2025-10-28 — [SPICE: Self-Play In Corpus Environments Improves Reasoning](papers.md#spice) · core · preprint
 - 2025-10-21 — [Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](papers.md#search-self-play) · core · peer-reviewed
+- 2025-10-17 — [MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs](papers.md#marshal) · core · peer-reviewed
 - 2025-09-30 — [Mem-α: Learning Memory Construction via Reinforcement Learning](papers.md#mem-alpha) · core · preprint
 - 2025-09-29 — [Socratic-Zero : Bootstrapping Reasoning via Data-Free Agent Co-evolution](papers.md#socratic-zero) · core · preprint
 - 2025-08-27 — [Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](papers.md#memory-r1) · core · preprint
@@ -367,7 +377,7 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="self-play"></a>
 
-## Self-play and curricula (21)
+## Self-play and curricula (22)
 - 2026-10-29 — [Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds](papers.md#quadruped-curriculum-benchmark) · adjacent · preprint
 - 2026-10-26 — [Evolve on Graph: Self-Evolving Knowledge Graph Reasoning without Question Annotations](papers.md#evolve-on-graph) · core · preprint
 - 2026-10-23 — [On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models](papers.md#on-policy-self-training) · adjacent · preprint
@@ -380,6 +390,7 @@ A work may appear in several topics; counts here are not additive.
 - 2025-11-01 — [OpenSIR: Open-Ended Self-Improving Reasoner](papers.md#opensir) · core · preprint
 - 2025-10-28 — [SPICE: Self-Play In Corpus Environments Improves Reasoning](papers.md#spice) · core · preprint
 - 2025-10-21 — [Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](papers.md#search-self-play) · core · peer-reviewed
+- 2025-10-17 — [MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs](papers.md#marshal) · core · peer-reviewed
 - 2025-09-29 — [Socratic-Zero : Bootstrapping Reasoning via Data-Free Agent Co-evolution](papers.md#socratic-zero) · core · preprint
 - 2025-08-07 — [R-Zero: Self-Evolving Reasoning LLM from Zero Data](papers.md#r-zero) · core · peer-reviewed
 - 2025-06-30 — [SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](papers.md#spiral) · core · peer-reviewed
@@ -392,10 +403,11 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="continual-learning"></a>
 
-## Continual and lifelong learning (42)
+## Continual and lifelong learning (43)
 - 2026-11-02 — [Can Coding Agents Sustain Continual Evolution without Forgetting?](papers.md#continual-harness-forgetting) · core · preprint
 - 2026-11-01 — [Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](papers.md#omce) · core · preprint
 - 2026-10-31 — [Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](papers.md#skill-plus-plus) · core · preprint
+- 2026-10-30 — [Learning to Live: A Step Toward Lifelong Embodied Intelligence](papers.md#life-embodied) · core · preprint
 - 2026-10-27 — [Remembering Is Not Enough: Refining Memories and Learning When to Use Them in Multi-Agent Systems](papers.md#discernmem) · core · preprint
 - 2026-10-26 — [When Retrieval Is Not Enough: Obsolete Facts in Agent Memory](papers.md#obsolete-facts-memory) · core · preprint
 - 2026-10-25 — [EvolveMAS: A Unified Self-Evolution Framework for Decentralized Multi-Agent Systems](papers.md#evolvemas) · core · preprint
@@ -438,7 +450,9 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="recursive-improvement"></a>
 
-## Improving the improver (23)
+## Improving the improver (25)
+- 2026-11-03 — [Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](papers.md#artifact-to-capability) · core · preprint
+- 2026-10-30 — [Exo: An Architecture for Self-Improving Systems at Runtime](papers.md#exo-runtime) · core · preprint
 - 2026-10-26 — [Skill$^{\infty}$: Recursive Self-Improvement for Agent Skill Optimization](papers.md#skill-infinity) · core · preprint
 - 2026-10-21 — [Recursive Self-Improvement on a Budget: Scoring Code Edits Before They Run](papers.md#rsi-budget-code-scoring) · core · preprint
 - 2026-10-20 — [Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](papers.md#rsi-evaluation-audit) · core · preprint
@@ -465,11 +479,14 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="evaluation"></a>
 
-## Evaluation and negative results (88)
+## Evaluation and negative results (92)
+- 2026-11-03 — [Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](papers.md#artifact-to-capability) · core · preprint
 - 2026-11-02 — [Can Coding Agents Sustain Continual Evolution without Forgetting?](papers.md#continual-harness-forgetting) · core · preprint
 - 2026-11-01 — [Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](papers.md#omce) · core · preprint
 - 2026-10-31 — [Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](papers.md#skill-plus-plus) · core · preprint
+- 2026-10-30 — [Exo: An Architecture for Self-Improving Systems at Runtime](papers.md#exo-runtime) · core · preprint
 - 2026-10-29 — [Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds](papers.md#quadruped-curriculum-benchmark) · adjacent · preprint
+- 2026-10-28 — [MUSE: Multi-Level Memory with Selective Runtime Injection for Scientific Coding Agents](papers.md#muse-scientific-memory) · core · preprint
 - 2026-10-27 — [Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces](papers.md#policy-harness-geometry) · adjacent · preprint
 - 2026-10-27 — [MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model](papers.md#mle-world) · adjacent · preprint
 - 2026-10-27 — [Remembering Is Not Enough: Refining Memories and Learning When to Use Them in Multi-Agent Systems](papers.md#discernmem) · core · preprint
@@ -537,6 +554,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026 — [Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness) · core · peer-reviewed
 - 2026 — [COLLABMEM: A Diagnostic Benchmark for Collaborative Memory Operations in Multi-Agent LLM Systems](papers.md#collabmem) · adjacent · peer-reviewed
 - 2025-12-21 — [MemEvolve: Meta-Evolution of Agent Memory Systems](papers.md#memevolve) · core · peer-reviewed
+- 2025-10-17 — [MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs](papers.md#marshal) · core · peer-reviewed
 - 2025-09-29 — [A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory](papers.md#a-memguard) · core · peer-reviewed
 - 2025-08-26 — [Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark](papers.md#ell-stulife) · core · peer-reviewed
 - 2025-07-25 — [GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](papers.md#gepa) · core · peer-reviewed
@@ -575,9 +593,12 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="applications"></a>
 
-## Applied learning agents (43)
+## Applied learning agents (46)
 - 2026-11-02 — [Can Coding Agents Sustain Continual Evolution without Forgetting?](papers.md#continual-harness-forgetting) · core · preprint
+- 2026-10-30 — [Learning to Live: A Step Toward Lifelong Embodied Intelligence](papers.md#life-embodied) · core · preprint
+- 2026-10-30 — [Exo: An Architecture for Self-Improving Systems at Runtime](papers.md#exo-runtime) · core · preprint
 - 2026-10-29 — [Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds](papers.md#quadruped-curriculum-benchmark) · adjacent · preprint
+- 2026-10-28 — [MUSE: Multi-Level Memory with Selective Runtime Injection for Scientific Coding Agents](papers.md#muse-scientific-memory) · core · preprint
 - 2026-10-27 — [MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model](papers.md#mle-world) · adjacent · preprint
 - 2026-10-27 — [CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning](papers.md#coharl) · core · preprint
 - 2026-10-26 — [The Right Fact, the Wrong Decision: SciValidityBench for Scientific Agent Memory](papers.md#scivaliditybench) · adjacent · preprint

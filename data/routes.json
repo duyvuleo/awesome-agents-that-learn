@@ -197,6 +197,10 @@
         "why": "Trace which meta-agent components become editable and which outer controls remain fixed."
       },
       {
+        "paper": "exo-runtime",
+        "why": "Compare runtime harness edits with the fixed mechanisms that retain history and activate replacements."
+      },
+      {
         "paper": "modularrsi",
         "why": "Inspect modular evolution and frozen downstream evaluation."
       },
@@ -227,6 +231,10 @@
       {
         "paper": "experience-faithfulness",
         "why": "Distinguish a stored lesson from causal use of that lesson."
+      },
+      {
+        "paper": "artifact-to-capability",
+        "why": "Distinguish changed behavior, legal actions, useful decisions, and preservation when artifacts are combined."
       },
       {
         "paper": "agentstream",

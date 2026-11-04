@@ -133,3 +133,13 @@ Discovery revisited 26 October–4 November with multiple mechanism terms across
 Follow-up also screened positions 31–45 of the preserved 93-title training inventory filter, extending the earlier 30-title slice. This was title triage only; relevance and full-text decisions remain queued. Search Self-Play was recovered from the existing ICLR lead, retaining its older first-public date. Backward references supplied Self-Harness and skill-interference leads, while newer work citing Search Self-Play supplied additional search-training candidates.
 
 Priority follow-ups include MARSHAL, SELF-HARMONY, CUA-Master, LIFE, MUSE, AgentPRO, CLR-Bench, and the effects of recursive self-training on confidence. Search snippets and related lists were used only for discovery. Remaining inventory tails, the unfinished ninety-day audit, and source-access limits remain open; no exhaustive coverage claim is made.
+
+## Daily discovery and version follow-up: 2026-11-05
+
+Added five papers and one research implementation: **175 research works** (155 papers, six surveys, fourteen benchmark papers) and **24 software records**. Hyperagents also received a substantive v2 annotation update. Two reading routes were extended.
+
+Discovery overlapped 28 October–5 November across all nine mechanism families, using arXiv and independent official proceedings/journal searches. Narrower variants followed empty or noisy harness, self-play, and safety queries. Current primary records, author repositories, and backward/forward citation trails supplied follow-up evidence. Search date filters are imperfect, and empty revision searches do not imply an absence of revised work: a direct Hyperagents record check found v2, which was then inspected.
+
+Artifact-to-Capability adds controlled negative findings; MUSE and LIFE extend scientific and embodied coverage; Exo clarifies runtime changes and fixed activation controls. MARSHAL closes an older self-play lead with its first 2025 date retained. The existing ReSight record was checked to keep LIFE’s inherited results explicit. ACE’s current version metadata was spot-checked without relabeling its prior full-text review.
+
+Unresolved leads include Meta², SelfImprove-Bench, EVOLVE guardrail evolution, MemHarmBench, EpiAgent, CUA-Master, SELF-HARMONY, and outstanding venue-inventory candidates. Citation expansion recovered additional artifact-use and scientific-memory leads. Complete ninety-day coverage, venue-tail eligibility, and a full correction/withdrawal census remain unfinished; no exhaustive coverage claim is made.

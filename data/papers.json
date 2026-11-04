@@ -630,6 +630,42 @@
     "short_name": "APEX-EM"
   },
   {
+    "id": "artifact-to-capability",
+    "title": "Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment",
+    "date": "2026-11-03",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.04952",
+    "sources": [
+      "https://arxiv.org/abs/2611.04952",
+      "https://arxiv.org/html/2611.04952v1"
+    ],
+    "code_url": null,
+    "code_note": "An official runnable artifact was not established in the inspected sources; no code was executed.",
+    "topics": [
+      "evaluation",
+      "memory",
+      "skills",
+      "recursive-improvement"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "skills",
+      "agent-code"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Game outcomes and traces drive the evaluated evolvers; independent game rules diagnose retained artifacts.",
+    "mechanism": "Tests artifact formation, behavioral change, useful action selection, preservation during composition, and extension across versions. Frozen-system interventions compare identical board states, complete games, and successive code versions rather than treating accumulated artifacts or higher scores as sufficient evidence of learning.",
+    "evaluation": "Studies Gomoku adaptations of Reflexion, Voyager, and DGM with one shared backbone, 1,876 fixed states, game traces, and a version lineage. Finds legality-only gains, conflicting skill composition, and later loss of previously passing states.",
+    "limitations": "These are study-specific adaptations in one rule-enumerable game, not replications of the original systems. Many diagnostic states come from DGM evolution games. Longer evolution, repeated training runs, other backbones, and open-ended transfer remain untested; the five-property definition is a proposed diagnostic framework.",
+    "review_depth": "full-text",
+    "checked": "2026-11-05",
+    "short_name": "Artifact-to-Capability"
+  },
+  {
     "id": "ascent",
     "title": "ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience",
     "date": "2026-10-04",
@@ -1547,6 +1583,46 @@
     "short_name": "EvoX"
   },
   {
+    "id": "exo-runtime",
+    "title": "Exo: An Architecture for Self-Improving Systems at Runtime",
+    "date": "2026-10-30",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.00463",
+    "sources": [
+      "https://arxiv.org/abs/2611.00463",
+      "https://arxiv.org/pdf/2611.00463v1",
+      "https://github.com/exoharness/exo",
+      "https://github.com/exoharness/exo/tree/c5c1963a3445417e64938c139da88edd9154075d",
+      "https://exoharness.ai/docs/"
+    ],
+    "code_url": "https://github.com/exoharness/exo/tree/c5c1963a3445417e64938c139da88edd9154075d",
+    "code_note": "Paper-pinned snapshot c5c1963 and its README inspected. Current docs distinguish this earlier self-evolution experiment from the evolving hosting runtime; not executed.",
+    "topics": [
+      "architecture",
+      "recursive-improvement",
+      "workflows",
+      "evaluation",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "agent-code",
+      "tools",
+      "workflows"
+    ],
+    "persistence": "both",
+    "learning_signal": "Execution history, model cost, failures, and task feedback inform runtime code and policy revisions.",
+    "mechanism": "Allows an agent to edit its harness and improvement procedures while working. A separate mechanism retains history and controls activation; tools, context policies, and other edits can persist into later tasks without changing model weights.",
+    "evaluation": "Studies open-world game objectives, AppWorld scenario variants, SREGym incidents, and a coding-task sequence. Graded-task controls share the starting policy with editing disabled.",
+    "limitations": "Game results use one standalone/transfer pair per objective; low-reuse quests cost more. AppWorld/SREGym transfer stays within scenarios or fault families; coding has no separate holdout. The default guardian checks builds, not correctness, and the broadly writable development configuration does not enforce the paper’s protection assumptions.",
+    "review_depth": "full-text",
+    "checked": "2026-11-05",
+    "short_name": "Exo"
+  },
+  {
     "id": "expel",
     "title": "ExpeL: LLM Agents Are Experiential Learners",
     "date": "2023-08-20",
@@ -2079,6 +2155,7 @@
     "sources": [
       "https://arxiv.org/abs/2603.19461",
       "https://arxiv.org/html/2603.19461v1",
+      "https://arxiv.org/pdf/2603.19461v2",
       "https://github.com/facebookresearch/Hyperagents"
     ],
     "code_url": "https://github.com/facebookresearch/Hyperagents",
@@ -2097,10 +2174,10 @@
     "persistence": "across-tasks",
     "learning_signal": "Task evaluation and archived improvement histories, including transfer tests for the meta-agent.",
     "mechanism": "Combines the task solver and the agent that modifies it in one editable program. DGM-Hyperagents can therefore revise their own improvement procedure as well as task-solving code.",
-    "evaluation": "The study includes coding, paper-review prediction, robotics reward design, and math-solution grading, with held-out task evaluations and cross-domain tests of the meta-agent.",
-    "limitations": "The main experiments retain a fixed task distribution and outer selection/evaluation protocol. The paper establishes bounded transfer of improvement procedures, not unconstrained or indefinitely accelerating self-improvement.",
+    "evaluation": "Studies coding, paper-review prediction, robotics reward design, and math-solution grading. The reviewed v2 separately transfers the task agent and meta agent; meta-only transfer recovers nearly all combined-transfer benefit in its 50-iteration math-grading test.",
+    "limitations": "The transfer test holds the meta agent fixed while it generates task-agent variants. Initial math graders fail output formatting, affecting the starting score. Main experiments retain fixed task distributions and outer selection/evaluation; bounded transfer does not establish unbounded or self-accelerating improvement.",
     "review_depth": "full-text",
-    "checked": "2026-10-28",
+    "checked": "2026-11-05",
     "short_name": "Hyperagents"
   },
   {
@@ -2165,6 +2242,45 @@
     "review_depth": "abstract",
     "checked": "2026-10-28",
     "short_name": "Self-correction limits"
+  },
+  {
+    "id": "life-embodied",
+    "title": "Learning to Live: A Step Toward Lifelong Embodied Intelligence",
+    "date": "2026-10-30",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.00180",
+    "sources": [
+      "https://arxiv.org/abs/2611.00180",
+      "https://arxiv.org/html/2611.00180v1",
+      "https://arxiv.org/abs/2610.33487"
+    ],
+    "code_url": null,
+    "code_note": "The paper-linked LIFE repository returned HTTP 404 in two public retrieval checks. Implementation availability remains unverified; nothing was executed.",
+    "topics": [
+      "memory",
+      "skills",
+      "tools",
+      "continual-learning",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "skills",
+      "tools",
+      "model-weights"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Temporal labels train perception adapters; selected observations, task difficulty, and execution feedback support memory and tool construction.",
+    "mechanism": "Combines a separately trained streaming perception gate, evidence-preserving robot memory, and ReSight’s Explore–Distill–Mount process. Retained observations can acquire new indexes, and solutions can become reusable tools and skills. Runtime memory/tool updates are distinct from the gate’s offline LoRA training.",
+    "evaluation": "Tests perception and selective writing on streaming benchmarks, reuses ReSight capability-expansion experiments, and evaluates six questions three times each over one recorded day of robot video.",
+    "limitations": "The integrated study reconstructs memory offline; it does not test actions changing future observations. Capability-expansion results are inherited from ReSight, not independent new experiments. Answer-time savings exclude memory construction, and scoring/input protocols differ between configurations. Reliable multi-day autonomous learning remains open.",
+    "review_depth": "full-text",
+    "checked": "2026-11-05",
+    "short_name": "LIFE"
   },
   {
     "id": "lifelongagentbench",
@@ -2400,6 +2516,41 @@
     "review_depth": "abstract",
     "checked": "2026-10-28",
     "short_name": "LongMemEval-V2"
+  },
+  {
+    "id": "marshal",
+    "title": "MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs",
+    "date": "2025-10-17",
+    "year": 2025,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "ICLR 2026",
+    "url": "https://arxiv.org/abs/2510.15414",
+    "sources": [
+      "https://arxiv.org/abs/2510.15414",
+      "https://arxiv.org/html/2510.15414v3",
+      "https://proceedings.iclr.cc/paper_files/paper/2026/hash/0b1b52b624ce69e0241eac91f8df0bce-Abstract-Conference.html",
+      "https://github.com/thu-nics/MARSHAL"
+    ],
+    "code_url": "https://github.com/thu-nics/MARSHAL",
+    "code_note": "Official repository, project linkage, and training documentation inspected; no code or checkpoints were executed.",
+    "topics": [
+      "model-training",
+      "self-play",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Game outcomes plus engineered action-format and response-length rewards guide online reinforcement learning.",
+    "mechanism": "Updates one language model through cooperative and competitive self-play. Turn-level returns are centered within player-role groups to assign credit across multi-turn games. The learned weights are then placed in fixed debate or cooperation frameworks.",
+    "evaluation": "Trains on Tic-Tac-Toe, Kuhn Poker, and Mini Hanabi; evaluates harder held-out games and zero-shot mathematics/QA in MAD and AutoGen. Includes fixed-opponent and credit-assignment ablations, with Qwen3-4B main and 8B extension results.",
+    "limitations": "Training uses two-player games and designed rewards; it does not evolve the downstream workflow. Hanabi evaluation is self-play, not a test with arbitrary unseen partners. Benefits vary by benchmark and framework; larger populations and practical collaborative software/research environments remain future work.",
+    "review_depth": "full-text",
+    "checked": "2026-11-05",
+    "short_name": "MARSHAL"
   },
   {
     "id": "maskills",
@@ -3334,6 +3485,42 @@
     "review_depth": "abstract",
     "checked": "2026-10-28",
     "short_name": "MUSE-Autoskill"
+  },
+  {
+    "id": "muse-scientific-memory",
+    "title": "MUSE: Multi-Level Memory with Selective Runtime Injection for Scientific Coding Agents",
+    "date": "2026-10-28",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2610.38332",
+    "sources": [
+      "https://arxiv.org/abs/2610.38332",
+      "https://arxiv.org/html/2610.38332v1",
+      "https://github.com/hr-jin/MUSE"
+    ],
+    "code_url": "https://github.com/hr-jin/MUSE",
+    "code_note": "Author README documents memory components and agent callbacks; benchmark environments and verifiers are separate. Not installed or executed.",
+    "topics": [
+      "memory",
+      "workflows",
+      "applications",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "prompts"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Historical task requirements, trajectories, submissions, and success/failure feedback support lesson extraction and review.",
+    "mechanism": "Builds global, approach-level, and implementation-level memories from source attempts. After offline consolidation, the banks are frozen. New tasks receive global and problem-matched guidance; an LLM gate can inject a relevant implementation lesson and check suggestion after tool interactions. Agent weights and tools stay fixed.",
+    "evaluation": "Uses shared source trajectories and disjoint test problems across PDEAgent-Bench, KernelBenchX, KernelGenBench-MS, and SWE-bench Science, with gate/level ablations and transfer between kernel benchmarks.",
+    "limitations": "The study uses one solving backbone and agent setup. Gate ablation changes both selection and generated advice. Memory stays frozen during testing, so results do not demonstrate continual online memory improvement. Kernel acceleration counts all test tasks that are both correct and at least 1.01 times faster, and transfer remains within related kernel tasks.",
+    "review_depth": "full-text",
+    "checked": "2026-11-05",
+    "short_name": "MUSE scientific memory"
   },
   {
     "id": "obsolete-facts-memory",

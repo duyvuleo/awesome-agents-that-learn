@@ -37,3 +37,9 @@ A code repository, an installable package, a working local setup, a replicated p
 ## Coverage and maintenance
 
 This is a focused software companion to the literature rather than an exhaustive agent-platform directory. Generic fixed agent frameworks are not included merely because they can use tools or memory. Revisit repository redirects, current architecture, licensing, runtime requirements, and paper relationships during later maintenance. Update the existing system record when its source moves; do not create a duplicate to inflate coverage.
+
+## 2026-11-05 — Exo research snapshot
+
+Added one [Exo software record](systems.md#system-exo), bringing the software catalog to 24. The paper-cited c5c1963 snapshot’s README and MIT license were inspected alongside current official documentation. Requirements describe that research snapshot; current docs identify its self-evolving harness as an earlier experiment and warn that installation documentation remains incomplete.
+
+The record distinguishes documented code editing and recovery from tested safety: the paper’s default guardian checks builds, and its protection argument assumes authority boundaries not enforced by the broadly writable development setup. No software was installed or executed. All 23 earlier inspection dates and execution records were preserved.

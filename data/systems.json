@@ -445,6 +445,57 @@
     "short_name": "EvoAgentX"
   },
   {
+    "id": "system-exo",
+    "name": "Exo self-evolution experiment",
+    "category": "research-system",
+    "url": "https://github.com/exoharness/exo",
+    "docs_url": "https://raw.githubusercontent.com/exoharness/exo/c5c1963a3445417e64938c139da88edd9154075d/README.md",
+    "related_papers": [
+      "exo-runtime"
+    ],
+    "relationship_note": "Research implementation at the paper-cited c5c1963 snapshot. Current official docs identify the self-evolving harness as an earlier experiment; the current default branch is not assumed to reproduce that snapshot.",
+    "topics": [
+      "architecture",
+      "recursive-improvement",
+      "workflows",
+      "applications"
+    ],
+    "update_targets": [
+      "agent-code",
+      "tools",
+      "workflows",
+      "memory"
+    ],
+    "persistence": "both",
+    "scope": "core",
+    "learning_signal": "Task observations, retained execution history, failures, and recorded model usage guide self-edits.",
+    "mechanism": "The inspected research snapshot exposes harness source and runtime history to the agent and documents rebuild/restart, retained state, and sandbox recovery. Edits can change subsequent execution and later tasks.",
+    "capabilities": [
+      "Inspect and revise harness source during tasks",
+      "Retain conversation and tool-event history across ordinary restarts",
+      "Rebuild executors and restore sandbox snapshots"
+    ],
+    "evaluation": "The related paper reports game, application, service-incident, and coding evaluations. Source and documentation were inspected; no experiment was reproduced.",
+    "limitations": "The paper’s default guardian tests build success only. Broad development write access does not enforce its protection assumptions, and snapshots cannot reverse external effects. Current hosting documentation is under construction and covers a changed architecture.",
+    "availability_note": "Public pinned source, README, and license inspected. No installation, service launch, model call, or research-code execution.",
+    "license": "MIT",
+    "license_url": "https://raw.githubusercontent.com/exoharness/exo/c5c1963a3445417e64938c139da88edd9154075d/LICENSE",
+    "requirements": "The research snapshot documents Git, Docker, Node/pnpm and Rust toolchains via mise, plus a supported OpenAI or OpenRouter model endpoint. Current setup documentation differs.",
+    "sources": [
+      "https://github.com/exoharness/exo",
+      "https://github.com/exoharness/exo/tree/c5c1963a3445417e64938c139da88edd9154075d",
+      "https://raw.githubusercontent.com/exoharness/exo/c5c1963a3445417e64938c139da88edd9154075d/README.md",
+      "https://raw.githubusercontent.com/exoharness/exo/c5c1963a3445417e64938c139da88edd9154075d/LICENSE",
+      "https://exoharness.ai/docs/",
+      "https://exoharness.ai/docs/development/",
+      "https://arxiv.org/pdf/2611.00463v1"
+    ],
+    "checked": "2026-11-05",
+    "review_depth": "project",
+    "execution_status": "not-run",
+    "short_name": "Exo"
+  },
+  {
     "id": "system-expel",
     "name": "ExpeL",
     "category": "research-system",

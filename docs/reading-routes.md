@@ -134,11 +134,13 @@ Does a method change only the solver, or also the process that improves it?
 
 4. **[Hyperagents](papers.md#hyperagents)** — Trace which meta-agent components become editable and which outer controls remain fixed.
 
-5. **[ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement](papers.md#modularrsi)** — Inspect modular evolution and frozen downstream evaluation.
+5. **[Exo: An Architecture for Self-Improving Systems at Runtime](papers.md#exo-runtime)** — Compare runtime harness edits with the fixed mechanisms that retain history and activate replacements.
 
-6. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Test the assumption that an optimization benchmark is a trustworthy teacher.
+6. **[ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement](papers.md#modularrsi)** — Inspect modular evolution and frozen downstream evaluation.
 
-7. **[Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](papers.md#rsi-evaluation-audit)** — Distinguish final-system gains from repeated loops and same-start comparisons of improvers.
+7. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Test the assumption that an optimization benchmark is a trustworthy teacher.
+
+8. **[Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](papers.md#rsi-evaluation-audit)** — Distinguish final-system gains from repeated loops and same-start comparisons of improvers.
 
 
 **Study exercise:** Draw the solver, proposer, selector, and evaluator separately. Highlight what can change and what evidence would demonstrate improvement of the improver.
@@ -155,15 +157,17 @@ What experiment would convince you that an agent learned something useful?
 
 3. **[Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness)** — Distinguish a stored lesson from causal use of that lesson.
 
-4. **[AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](papers.md#agentstream)** — Compare performance under different task-stream compositions.
+4. **[Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](papers.md#artifact-to-capability)** — Distinguish changed behavior, legal actions, useful decisions, and preservation when artifacts are combined.
 
-5. **[GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](papers.md#gdpevo)** — Inspect training/test rule recombination and task-selection effects.
+5. **[AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](papers.md#agentstream)** — Compare performance under different task-stream compositions.
 
-6. **[Phantom Gains: Auditing Self-Improvement Against a Measured Null](papers.md#phantom-gains)** — Measure a frozen null before interpreting per-problem changes.
+6. **[GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](papers.md#gdpevo)** — Inspect training/test rule recombination and task-selection effects.
 
-7. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Include integrity of the learning signal and persistence of bad updates.
+7. **[Phantom Gains: Auditing Self-Improvement Against a Measured Null](papers.md#phantom-gains)** — Measure a frozen null before interpreting per-problem changes.
 
-8. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
+8. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Include integrity of the learning signal and persistence of bad updates.
+
+9. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
 
 
 **Study exercise:** Draft a matched frozen baseline, a held-out family split, a budget ledger, and one intervention that could falsify your preferred mechanism.
