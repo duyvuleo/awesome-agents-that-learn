@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-06 — Research transfer, adaptive memory, and skill safety
+
+- Added four papers and one benchmark paper: Continual AutoResearch, Route to Remember, Meta², Benign skill safety, and Self-Harmony; total 180 research works and 24 software records.
+- Retained limits on final research gains, memory retention/cost, task-local harness edits, safety metrics, and transductive model adaptation.
+- Extended two reading routes and continued venue-inventory and unresolved-lead screening. Prior inspection/execution records and the multi-theme explorer were preserved. No research code was executed.
+
 ## 2026-11-05 — Multiple-theme explorer filters
 
 - Added checkbox theme selection with Match any / Match all, synchronized across quick filters, the word cloud, graph nodes, and resource tags.

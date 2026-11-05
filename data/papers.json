@@ -737,6 +737,40 @@
     "short_name": "AutoSkill"
   },
   {
+    "id": "benign-skill-misalignment",
+    "title": "Can Benign Skills Induce Misaligned Behavior in LLM Agents?",
+    "date": "2026-11-03",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.04299",
+    "sources": [
+      "https://arxiv.org/abs/2611.04299",
+      "https://arxiv.org/html/2611.04299v1"
+    ],
+    "code_url": null,
+    "code_note": "An official runnable artifact was not established in this review; no attacks or research code were executed.",
+    "topics": [
+      "skills",
+      "safety",
+      "evaluation",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "skills"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Successful benign traces and benign validation feedback build and refine skills; harmful-task outcomes are reserved for evaluation.",
+    "mechanism": "Compares fixed-model agents with and without reusable benign skills under matched requests and tools, then studies benign-feedback skill evolution, retrieval relevance, content ablations, and a pre-execution guard. Measures executed safety violations separately from completion of harmful objectives.",
+    "evaluation": "Studies five backbones on AgentHarm, LPS-Bench, and SafeAgentBench. Reports utility gains alongside increased unsafe-action rates, including violations in trajectories that never complete the harmful objective.",
+    "limitations": "Harmful requests are supplied at evaluation; this is not spontaneous misconduct during benign use. Unresolved trajectories without identified violations are excluded from unsafe-action rates. Some judgments use an LLM; content ablations also change length and wording. The guard terminates blocked runs, reduces benign utility, and leaves residual violations.",
+    "review_depth": "full-text",
+    "checked": "2026-11-06",
+    "short_name": "Benign skill safety"
+  },
+  {
     "id": "beyond-prompts-prism",
     "title": "Beyond Prompts: Measuring and Optimizing LLM Tool-Agent Harnesses",
     "date": "2026-09-04",
@@ -1045,6 +1079,40 @@
     "review_depth": "abstract",
     "checked": "2026-10-28",
     "short_name": "Constitutional AI"
+  },
+  {
+    "id": "continual-autoresearch",
+    "title": "From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?",
+    "date": "2026-11-03",
+    "year": 2026,
+    "kind": "benchmark",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.05108",
+    "sources": [
+      "https://arxiv.org/abs/2611.05108",
+      "https://arxiv.org/html/2611.05108v1"
+    ],
+    "code_url": null,
+    "code_note": "The manuscript promises code with its camera-ready version; a runnable release was not established. Nothing was executed.",
+    "topics": [
+      "memory",
+      "continual-learning",
+      "evaluation",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Visible development data and execution feedback guide research; hidden test scores are computed afterward.",
+    "mechanism": "Compares persistent sessions and workspaces with reset instances of the same research agent on matched task streams and time budgets. Separate first-solution, search-efficiency, and final-selection metrics distinguish reuse from better research outcomes. Insight-card interventions isolate explicit memory from session continuity.",
+    "evaluation": "Evaluates five native CLI agents across nine ML task families, typically with 30-minute budgets and three-to-five-task streams. Persistence improves aggregate search efficiency, but final-performance gains vary; stricter initialization controls remove the general search advantage.",
+    "limitations": "Four agents use one matched run pair per stream; one agent has three repeats. Cross-agent differences also include harness differences. The explicit-memory ablation covers one stream, and short related-task sequences do not establish long-term or open-ended scientific improvement.",
+    "review_depth": "full-text",
+    "checked": "2026-11-06",
+    "short_name": "Continual AutoResearch"
   },
   {
     "id": "continual-harness-forgetting",
@@ -3209,6 +3277,46 @@
     "short_name": "Meta-Harness"
   },
   {
+    "id": "meta-square",
+    "title": "Meta$^2$: Precomputing Reusable Knowledge for Online Harness Evolution in Long-Horizon Agents",
+    "date": "2026-11-03",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.05139",
+    "sources": [
+      "https://arxiv.org/abs/2611.05139",
+      "https://arxiv.org/html/2611.05139v1",
+      "https://meta-square.github.io/"
+    ],
+    "code_url": null,
+    "code_note": "Author project page inspected through public HTTP; an implementation release was not established. No code was executed.",
+    "topics": [
+      "prompts",
+      "skills",
+      "workflows",
+      "architecture",
+      "recursive-improvement",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "skills",
+      "prompts",
+      "tools",
+      "workflows"
+    ],
+    "persistence": "both",
+    "learning_signal": "Training-rollout contrasts and privileged training verifier information shape reusable guidance; online decisions use visible task progress.",
+    "mechanism": "Offline reflection learns a textual meta-skill about when to keep or change a harness. At deployment, a separate evolver uses that frozen guidance at checkpoints to edit notices, instructions, hooks, or tools. Each edit affects the current run; the next task starts from the seed harness.",
+    "evaluation": "Tests 60 held-out Terminal-Bench 2.1 tasks with five runs each and 75 DeepSWE 1.1 tasks with three runs each. Includes component and checkpoint-frequency ablations and separate offline/online costs.",
+    "limitations": "Run-level contrasts do not isolate individual edits causally. Guidance is rebuilt for each benchmark/backbone, so the second-model result is not zero-shot transfer. Models, edit channels, checkpoint interface, and offline update procedure remain fixed; broader domain transfer and ongoing meta-skill learning are untested.",
+    "review_depth": "full-text",
+    "checked": "2026-11-06",
+    "short_name": "Meta²"
+  },
+  {
     "id": "metta",
     "title": "METTA: Memory-Enhanced Test-Time Adaptation for Meta-Reinforcement Learning",
     "date": "2026-10-22",
@@ -4591,6 +4699,41 @@
     "short_name": "Robot RSI failure study"
   },
   {
+    "id": "route-to-remember",
+    "title": "Route to Remember: Adaptive Memory Selection for LLM Agents",
+    "date": "2026-11-03",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "Author reports NeurIPS 2026 PALM workshop; primary venue record not verified.",
+    "url": "https://arxiv.org/abs/2611.05636",
+    "sources": [
+      "https://arxiv.org/abs/2611.05636",
+      "https://arxiv.org/html/2611.05636v1"
+    ],
+    "code_url": null,
+    "code_note": "An official implementation was not established in the inspected sources; no code or training was run.",
+    "topics": [
+      "memory",
+      "model-training",
+      "continual-learning",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights",
+      "memory"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Memory-derived synthetic questions and a frozen base-model teacher conditioned on recent memory guide per-user adapter updates.",
+    "mechanism": "Distills session information into a persistent LoRA adapter using student-generated answers scored by a context-conditioned teacher. A verify-then-regenerate reader checks the adapter’s answer against a merged text store and uses the adapter-free model to regenerate unsupported answers.",
+    "evaluation": "Compares weight and text memory on 1,438 native HaluMem questions, delayed re-asks, and LoCoMo, with training-recipe, routing, and model-scale analyses.",
+    "limitations": "Recent-fact gains weaken as memories age. Routing improves overall accuracy but lowers the HaluMem conflict-category score. Refusal depends on synthetic unknown-answer training, and the paper identifies judge/rubric errors. Lower read-token use is not a complete cost result: writing is expensive and token accounting omits distillation compute.",
+    "review_depth": "full-text",
+    "checked": "2026-11-06",
+    "short_name": "Route to Remember"
+  },
+  {
     "id": "rsi-budget-code-scoring",
     "title": "Recursive Self-Improvement on a Budget: Scoring Code Edits Before They Run",
     "date": "2026-10-21",
@@ -5067,6 +5210,42 @@
     "review_depth": "abstract",
     "checked": "2026-10-28",
     "short_name": "What/when/how survey"
+  },
+  {
+    "id": "self-harmony",
+    "title": "Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning",
+    "date": "2025-11-03",
+    "year": 2025,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "ICLR 2026",
+    "url": "https://arxiv.org/abs/2511.01191",
+    "sources": [
+      "https://arxiv.org/abs/2511.01191",
+      "https://arxiv.org/html/2511.01191v2",
+      "https://proceedings.iclr.cc/paper_files/paper/2026/hash/86178c06fd59ebc58dc31f8edb3c54af-Abstract-Conference.html",
+      "https://proceedings.iclr.cc/paper_files/paper/2026/file/86178c06fd59ebc58dc31f8edb3c54af-Paper-Conference.pdf",
+      "https://github.com/physicsru/self_harmony"
+    ],
+    "code_url": "https://github.com/physicsru/self_harmony",
+    "code_note": "Paper-linked repository, training instructions, and implementation overview inspected; no installation, model download, or training.",
+    "topics": [
+      "model-training",
+      "self-play",
+      "evaluation"
+    ],
+    "scope": "adjacent",
+    "update_targets": [
+      "model-weights"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Agreement among model answers to original and reframed questions supplies pseudo-labels, with format/diversity reward terms.",
+    "mechanism": "One model plays solver and reframer roles, pooling answer frequencies with a harmonic-mean selector. Reinforcement learning updates shared model parameters from original-solution and fused reframe-and-solve trajectories; each benchmark gets its own adapted model.",
+    "evaluation": "Compares five Qwen/Llama models on six reasoning benchmarks under label-free adaptation, reporting mean pass@1 over multiple rollouts plus pseudo-label, semantic-shift, and component analyses.",
+    "limitations": "Training uses the same unlabeled questions later scored in evaluation, so results are transductive rather than unseen-task generalization. View agreement is not independent correctness verification, and paraphrases can change meaning. Rollout-count matching does not establish equal total compute; some unstable baselines report peak rather than final scores.",
+    "review_depth": "full-text",
+    "checked": "2026-11-06",
+    "short_name": "Self-Harmony"
   },
   {
     "id": "self-instruct",

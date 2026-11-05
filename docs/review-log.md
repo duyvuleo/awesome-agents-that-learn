@@ -237,3 +237,19 @@ LIFE explicitly reuses ReSight’s capability-expansion results; the added perce
 Exo’s arXiv metadata title is retained; its PDF uses “Exo: A Harness Architecture for Runtime Self-Improvement”. The HTML conversion ends before completing the evaluation, so the PDF supplied that evidence. The paper cites source snapshot c5c1963, whose README and MIT license were inspected. Current official documentation calls the self-evolving harness an earlier experiment and describes a changed hosting runtime. The new software record preserves this relationship.
 
 Hyperagents retains its first-public date and prior v1 source. The current v2 annotation makes the component-transfer control and formatting-sensitive initial score explicit. This is a selected source review, not a rerun or complete version diff. Other existing inspection dates and execution records are unchanged.
+
+## 2026-11-06 — Research transfer, weight memory, and skill safety
+
+Five additions received selected full-text review: four papers and one benchmark paper. The catalog now has 120 selected-full-text and 60 abstract/metadata reviews. No linked code, agent experiments, attacks, or model training were executed.
+
+| Work | Material inspected | Boundary retained |
+| --- | --- | --- |
+| [Continual AutoResearch](papers.md#continual-autoresearch) | arXiv v1, §§3–6 and reproducibility statement | Earlier useful initialization differs from better final research outcomes; short streams and limited repeats. |
+| [Route to Remember](papers.md#route-to-remember) | arXiv v1, §§3–5, Appendix A.1–A.5 | Delayed forgetting, conflict-category regression, judge artifacts and uncounted training compute. |
+| [Meta²](papers.md#meta-square) | arXiv v1, §§3–4, Appendices B/C/F; author project | Frozen guidance, task-local edits, privileged training information and per-backbone reconstruction. |
+| [Benign skill safety](papers.md#benign-skill-misalignment) | arXiv v1, §§2–6, Appendix A.1–A.6 | Harmful evaluation requests, unresolved-judgment exclusions and bundled content changes. |
+| [Self-Harmony](papers.md#self-harmony) | arXiv v2, §§3–4, Appendix E.2; ICLR record/PDF and author README | Adaptation and evaluation share unlabeled questions; consistency is not a correctness oracle. |
+
+Self-Harmony’s first date remains 3 November 2025, and its ICLR 2026 status is supported by the official proceedings. Route to Remember retains a preprint label: its PALM workshop reference was author-reported, with no independently verified venue record in this pass. Its annotations describe the reported question set rather than asserting complete benchmark coverage.
+
+Continual AutoResearch promises a future code release. Meta²’s project page was accessible through ordinary public HTTP after the web reader failed; no implementation link was established. These access and availability observations are separate from scientific evidence. Existing paper/system inspection dates and execution records were preserved.

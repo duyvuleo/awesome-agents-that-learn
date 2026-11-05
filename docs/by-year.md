@@ -3,6 +3,10 @@
 # Papers by year
 [Overview](../README.md) · [Full annotations](papers.md)
 ## 2026
+- 2026-11-03 — [Route to Remember: Adaptive Memory Selection for LLM Agents](papers.md#route-to-remember)
+- 2026-11-03 — [Meta$^2$: Precomputing Reusable Knowledge for Online Harness Evolution in Long-Horizon Agents](papers.md#meta-square)
+- 2026-11-03 — [From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?](papers.md#continual-autoresearch)
+- 2026-11-03 — [Can Benign Skills Induce Misaligned Behavior in LLM Agents?](papers.md#benign-skill-misalignment)
 - 2026-11-03 — [Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](papers.md#artifact-to-capability)
 - 2026-11-02 — [Can Coding Agents Sustain Continual Evolution without Forgetting?](papers.md#continual-harness-forgetting)
 - 2026-11-01 — [Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](papers.md#omce)
@@ -109,6 +113,7 @@
 - 2025-12-21 — [MemEvolve: Meta-Evolution of Agent Memory Systems](papers.md#memevolve)
 - 2025-11-20 — [Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](papers.md#agent0)
 - 2025-11-17 — [Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?](papers.md#live-swe-agent)
+- 2025-11-03 — [Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](papers.md#self-harmony)
 - 2025-11-01 — [OpenSIR: Open-Ended Self-Improving Reasoner](papers.md#opensir)
 - 2025-10-28 — [SPICE: Self-Play In Corpus Environments Improves Reasoning](papers.md#spice)
 - 2025-10-21 — [Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](papers.md#search-self-play)

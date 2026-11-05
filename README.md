@@ -10,9 +10,9 @@
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/sindresorhus/awesome/blob/main/awesome.md)
 [![Validate catalog](https://github.com/duyvuleo/awesome-agents-that-learn/actions/workflows/validate-and-publish.yml/badge.svg?branch=main)](https://github.com/duyvuleo/awesome-agents-that-learn/actions/workflows/validate-and-publish.yml)
 [![License: CC0 1.0](https://img.shields.io/badge/License-CC0%201.0-315da7?style=flat-square)](LICENSE)
-[![Research works: 175](https://img.shields.io/badge/Research%20works-175-315da7?style=flat-square)](docs/papers.md)
+[![Research works: 180](https://img.shields.io/badge/Research%20works-180-315da7?style=flat-square)](docs/papers.md)
 [![Systems & frameworks: 24](https://img.shields.io/badge/Systems%20%26%20frameworks-24-0f766e?style=flat-square)](docs/systems.md)
-[![Benchmark papers: 14](https://img.shields.io/badge/Benchmark%20papers-14-b45309?style=flat-square)](docs/benchmarks.md)
+[![Benchmark papers: 15](https://img.shields.io/badge/Benchmark%20papers-15-b45309?style=flat-square)](docs/benchmarks.md)
 
 **A research guide to self-learning, self-improving, and self-evolving AI agents.**
 
@@ -20,9 +20,9 @@ How do agents turn experience into something useful on the next task? This colle
 
 [Explore the collection](https://duyvuleo.github.io/awesome-agents-that-learn/) · [Start reading](docs/reading-routes.md) · [Browse papers](docs/papers.md) · [Compare systems](docs/systems.md) · [Compare benchmarks](docs/benchmarks.md)
 
-**175 research works** (155 papers, 6 surveys, 14 benchmark papers) · **24 systems and frameworks** · **8 reading routes**
+**180 research works** (159 papers, 6 surveys, 15 benchmark papers) · **24 systems and frameworks** · **8 reading routes**
 
-Source review: **2026-11-05**. For research works, 115 entries include inspection of selected full-text sections and 60 are based on primary abstracts/metadata. Systems are separate project-documentation/source inspections. No linked research code was executed and no published result was independently reproduced for this release.
+Source review: **2026-11-06**. For research works, 120 entries include inspection of selected full-text sections and 60 are based on primary abstracts/metadata. Systems are separate project-documentation/source inspections. No linked research code was executed and no published result was independently reproduced for this release.
 
 ## Start here
 

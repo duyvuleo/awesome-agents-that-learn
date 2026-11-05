@@ -57,6 +57,10 @@
         "why": "Compare memory-utility scoring with learning when to retrieve, distill, or skip experience."
       },
       {
+        "paper": "route-to-remember",
+        "why": "Compare external experience routing with learned factual adapters; inspect forgetting, fallback retrieval, and write cost."
+      },
+      {
         "paper": "skillrl",
         "why": "Contrast external skills with parameter learning and teacher-derived supervision."
       },
@@ -131,6 +135,10 @@
       {
         "paper": "seal",
         "why": "Study generated self-edits, adaptation rewards, and retention limits."
+      },
+      {
+        "paper": "self-harmony",
+        "why": "Distinguish label-free adaptation to test questions from transfer to unseen tasks, and agreement from correctness."
       },
       {
         "paper": "ascent",

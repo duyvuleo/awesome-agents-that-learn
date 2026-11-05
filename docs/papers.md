@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-175 unique works. Catalog updated: 2026-11-05; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+180 unique works. Catalog updated: 2026-11-06; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -13,6 +13,10 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-03 | **Route to Remember**<br>[Route to Remember: Adaptive Memory Selection for LLM Agents](https://arxiv.org/abs/2611.05636) | Distills session information into a persistent LoRA adapter using student-generated answers scored by a context-conditioned teacher. A verify-then-regenerate reader… | Model weights, Memory | preprint · full-text | [Notes](#route-to-remember) |
+| 2026-11-03 | **Meta²**<br>[Meta$^2$: Precomputing Reusable Knowledge for Online Harness Evolution in Long-Horizon Agents](https://arxiv.org/abs/2611.05139) | Offline reflection learns a textual meta-skill about when to keep or change a harness. At deployment, a separate evolver uses that frozen guidance at checkpoints to edit… | Skills, Prompts / context, Tools, Workflows | preprint · full-text | [Notes](#meta-square) |
+| 2026-11-03 | **Continual AutoResearch**<br>[From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?](https://arxiv.org/abs/2611.05108) | Compares persistent sessions and workspaces with reset instances of the same research agent on matched task streams and time budgets. Separate first-solution… | Memory | preprint · full-text | [Notes](#continual-autoresearch) |
+| 2026-11-03 | **Benign skill safety**<br>[Can Benign Skills Induce Misaligned Behavior in LLM Agents?](https://arxiv.org/abs/2611.04299) | Compares fixed-model agents with and without reusable benign skills under matched requests and tools, then studies benign-feedback skill evolution, retrieval relevance… | Skills | preprint · full-text | [Notes](#benign-skill-misalignment) |
 | 2026-11-03 | **Artifact-to-Capability**<br>[Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](https://arxiv.org/abs/2611.04952) | Tests artifact formation, behavioral change, useful action selection, preservation during composition, and extension across versions. Frozen-system interventions compare… | Memory, Skills, Agent code | preprint · full-text | [Notes](#artifact-to-capability) |
 | 2026-11-02 | **Harness forgetting**<br>[Can Coding Agents Sustain Continual Evolution without Forgetting?](https://arxiv.org/abs/2611.03219) | Studies sequential evolution of Mini-SWE-Agent prompts, control flow, and tools with a fixed backbone. Adapted AHE and Meta-Harness optimize one task type and then… | Agent code, Prompts / context, Tools | preprint · full-text | [Notes](#continual-harness-forgetting) · [Code](https://github.com/THU-Agent/continual-harness-evolution) |
 | 2026-11-01 | **OMCE**<br>[Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](https://arxiv.org/abs/2611.01747) | Retains episodes and distilled guidance across tasks. A contextual bandit learns whether to solve directly, retrieve cases, retrieve guidance, or distill guidance before… | Memory, Model weights | preprint · full-text | [Notes](#omce) |
@@ -117,6 +121,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-12-21 | **MemEvolve**<br>[MemEvolve: Meta-Evolution of Agent Memory Systems](https://arxiv.org/abs/2512.18746) | Searches implementations of encoding, storage, retrieval, and management while each candidate accumulates experience. Pareto selection and a fixed diagnose-and-design… | Memory, Agent code | peer-reviewed · full-text | [Notes](#memevolve) · [Code](https://github.com/bingreeky/MemEvolve) |
 | 2025-11-20 | **Agent0**<br>[Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](https://arxiv.org/abs/2511.16043) | Co-trains a curriculum agent and a tool-using executor in alternating stages. The proposer targets uncertain, diverse tasks, while filtered generated tasks and a code… | Model weights | peer-reviewed · full-text | [Notes](#agent0) · [Code](https://github.com/aiming-lab/Agent0) |
 | 2025-11-17 | **Live-SWE-agent**<br>[Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?](https://arxiv.org/abs/2511.13646) | Starts with a minimal bash-based agent and permits edits to its own scaffold during task execution. It studies on-the-fly changes to the agent implementation without a… | Agent code, Tools | preprint · abstract | [Notes](#live-swe-agent) |
+| 2025-11-03 | **Self-Harmony**<br>[Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](https://arxiv.org/abs/2511.01191) | One model plays solver and reframer roles, pooling answer frequencies with a harmonic-mean selector. Reinforcement learning updates shared model parameters from… | Model weights | peer-reviewed · full-text | [Notes](#self-harmony) · [Code](https://github.com/physicsru/self_harmony) |
 | 2025-11-01 | **OpenSIR**<br>[OpenSIR: Open-Ended Self-Improving Reasoner](https://arxiv.org/abs/2511.00602) | Alternates teacher and student roles within one model, starting from a seed problem. The method rewards exploration of distinct concepts while keeping generated tasks… | Model weights | preprint · abstract | [Notes](#opensir) |
 | 2025-10-28 | **SPICE**<br>[SPICE: Self-Play In Corpus Environments Improves Reasoning](https://arxiv.org/abs/2510.24684) | A shared model alternates between a document-grounded challenger and a reasoner without document access. Role-specific reinforcement-learning updates improve question… | Model weights | preprint · full-text | [Notes](#spice) |
 | 2025-10-21 | **Search Self-Play**<br>[Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](https://arxiv.org/abs/2510.18821) | Trains one model in proposer and solver roles. The proposer builds search questions around supplied answers; a retrieval-augmented check filters questions before… | Model weights | peer-reviewed · full-text | [Notes](#search-self-play) · [Code](https://github.com/Qwen-Applications/SSP) |
@@ -190,6 +195,94 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2017-10-19 | **AlphaGo Zero**<br>[Mastering the game of Go without human knowledge](https://www.nature.com/articles/nature24270) | Trains a policy/value network on games generated by its own search, then uses the updated network to improve subsequent search and play. This is an early concrete… | Model weights | peer-reviewed · abstract | [Notes](#alphago-zero) |
 
 ## Full annotations
+
+<a id="route-to-remember"></a>
+
+## Route to Remember: Adaptive Memory Selection for LLM Agents
+
+**2026-11-03 · preprint · Author reports NeurIPS 2026 PALM workshop; primary venue record not verified. · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.05636)
+
+**Mechanism.** Distills session information into a persistent LoRA adapter using student-generated answers scored by a context-conditioned teacher. A verify-then-regenerate reader checks the adapter’s answer against a merged text store and uses the adapter-free model to regenerate unsupported answers.
+
+**What changes:** Model weights, Memory. **Persistence:** across-tasks. **Learning signal:** Memory-derived synthetic questions and a frozen base-model teacher conditioned on recent memory guide per-user adapter updates.
+
+**Evaluation.** Compares weight and text memory on 1,438 native HaluMem questions, delayed re-asks, and LoCoMo, with training-recipe, routing, and model-scale analyses.
+
+**Boundary.** Recent-fact gains weaken as memories age. Routing improves overall accuracy but lowers the HaluMem conflict-category score. Refusal depends on synthetic unknown-answer training, and the paper identifies judge/rubric errors. Lower read-token use is not a complete cost result: writing is expensive and token accounting omits distillation compute.
+
+**Code / data.** An official implementation was not established in the inspected sources; no code or training was run.
+
+**Topics:** memory, model-training, continual-learning, evaluation. **Reviewed:** full-text · 2026-11-06.
+
+[Source 1](https://arxiv.org/abs/2611.05636) · [Source 2](https://arxiv.org/html/2611.05636v1)
+
+<a id="meta-square"></a>
+
+## Meta$^2$: Precomputing Reusable Knowledge for Online Harness Evolution in Long-Horizon Agents
+
+**2026-11-03 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.05139)
+
+**Mechanism.** Offline reflection learns a textual meta-skill about when to keep or change a harness. At deployment, a separate evolver uses that frozen guidance at checkpoints to edit notices, instructions, hooks, or tools. Each edit affects the current run; the next task starts from the seed harness.
+
+**What changes:** Skills, Prompts / context, Tools, Workflows. **Persistence:** both. **Learning signal:** Training-rollout contrasts and privileged training verifier information shape reusable guidance; online decisions use visible task progress.
+
+**Evaluation.** Tests 60 held-out Terminal-Bench 2.1 tasks with five runs each and 75 DeepSWE 1.1 tasks with three runs each. Includes component and checkpoint-frequency ablations and separate offline/online costs.
+
+**Boundary.** Run-level contrasts do not isolate individual edits causally. Guidance is rebuilt for each benchmark/backbone, so the second-model result is not zero-shot transfer. Models, edit channels, checkpoint interface, and offline update procedure remain fixed; broader domain transfer and ongoing meta-skill learning are untested.
+
+**Code / data.** Author project page inspected through public HTTP; an implementation release was not established. No code was executed.
+
+**Topics:** prompts, skills, workflows, architecture, recursive-improvement, evaluation. **Reviewed:** full-text · 2026-11-06.
+
+[Source 1](https://arxiv.org/abs/2611.05139) · [Source 2](https://arxiv.org/html/2611.05139v1) · [Source 3](https://meta-square.github.io/)
+
+<a id="continual-autoresearch"></a>
+
+## From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?
+
+**2026-11-03 · preprint · core · benchmark**
+
+[Primary source](https://arxiv.org/abs/2611.05108)
+
+**Mechanism.** Compares persistent sessions and workspaces with reset instances of the same research agent on matched task streams and time budgets. Separate first-solution, search-efficiency, and final-selection metrics distinguish reuse from better research outcomes. Insight-card interventions isolate explicit memory from session continuity.
+
+**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Visible development data and execution feedback guide research; hidden test scores are computed afterward.
+
+**Evaluation.** Evaluates five native CLI agents across nine ML task families, typically with 30-minute budgets and three-to-five-task streams. Persistence improves aggregate search efficiency, but final-performance gains vary; stricter initialization controls remove the general search advantage.
+
+**Boundary.** Four agents use one matched run pair per stream; one agent has three repeats. Cross-agent differences also include harness differences. The explicit-memory ablation covers one stream, and short related-task sequences do not establish long-term or open-ended scientific improvement.
+
+**Code / data.** The manuscript promises code with its camera-ready version; a runnable release was not established. Nothing was executed.
+
+**Topics:** memory, continual-learning, evaluation, applications. **Reviewed:** full-text · 2026-11-06.
+
+[Source 1](https://arxiv.org/abs/2611.05108) · [Source 2](https://arxiv.org/html/2611.05108v1)
+
+<a id="benign-skill-misalignment"></a>
+
+## Can Benign Skills Induce Misaligned Behavior in LLM Agents?
+
+**2026-11-03 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.04299)
+
+**Mechanism.** Compares fixed-model agents with and without reusable benign skills under matched requests and tools, then studies benign-feedback skill evolution, retrieval relevance, content ablations, and a pre-execution guard. Measures executed safety violations separately from completion of harmful objectives.
+
+**What changes:** Skills. **Persistence:** across-tasks. **Learning signal:** Successful benign traces and benign validation feedback build and refine skills; harmful-task outcomes are reserved for evaluation.
+
+**Evaluation.** Studies five backbones on AgentHarm, LPS-Bench, and SafeAgentBench. Reports utility gains alongside increased unsafe-action rates, including violations in trajectories that never complete the harmful objective.
+
+**Boundary.** Harmful requests are supplied at evaluation; this is not spontaneous misconduct during benign use. Unresolved trajectories without identified violations are excluded from unsafe-action rates. Some judgments use an LLM; content ablations also change length and wording. The guard terminates blocked runs, reduces benign utility, and leaves residual violations.
+
+**Code / data.** An official runnable artifact was not established in this review; no attacks or research code were executed.
+
+**Topics:** skills, safety, evaluation, applications. **Reviewed:** full-text · 2026-11-06.
+
+[Source 1](https://arxiv.org/abs/2611.04299) · [Source 2](https://arxiv.org/html/2611.04299v1)
 
 <a id="artifact-to-capability"></a>
 
@@ -2490,6 +2583,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** architecture, tools, applications. **Reviewed:** abstract · 2026-10-28.
 
 [Source 1](https://arxiv.org/abs/2511.13646)
+
+<a id="self-harmony"></a>
+
+## Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning
+
+**2025-11-03 · peer-reviewed · ICLR 2026 · adjacent · paper**
+
+[Primary source](https://arxiv.org/abs/2511.01191)
+
+**Mechanism.** One model plays solver and reframer roles, pooling answer frequencies with a harmonic-mean selector. Reinforcement learning updates shared model parameters from original-solution and fused reframe-and-solve trajectories; each benchmark gets its own adapted model.
+
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Agreement among model answers to original and reframed questions supplies pseudo-labels, with format/diversity reward terms.
+
+**Evaluation.** Compares five Qwen/Llama models on six reasoning benchmarks under label-free adaptation, reporting mean pass@1 over multiple rollouts plus pseudo-label, semantic-shift, and component analyses.
+
+**Boundary.** Training uses the same unlabeled questions later scored in evaluation, so results are transductive rather than unseen-task generalization. View agreement is not independent correctness verification, and paraphrases can change meaning. Rollout-count matching does not establish equal total compute; some unstable baselines report peak rather than final scores.
+
+**Code / data.** [Official artifact](https://github.com/physicsru/self_harmony) — Paper-linked repository, training instructions, and implementation overview inspected; no installation, model download, or training.
+
+**Topics:** model-training, self-play, evaluation. **Reviewed:** full-text · 2026-11-06.
+
+[Source 1](https://arxiv.org/abs/2511.01191) · [Source 2](https://arxiv.org/html/2511.01191v2) · [Source 3](https://proceedings.iclr.cc/paper_files/paper/2026/hash/86178c06fd59ebc58dc31f8edb3c54af-Abstract-Conference.html) · [Source 4](https://proceedings.iclr.cc/paper_files/paper/2026/file/86178c06fd59ebc58dc31f8edb3c54af-Paper-Conference.pdf) · [Source 5](https://github.com/physicsru/self_harmony)
 
 <a id="opensir"></a>
 

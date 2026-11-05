@@ -143,3 +143,13 @@ Discovery overlapped 28 October–5 November across all nine mechanism families,
 Artifact-to-Capability adds controlled negative findings; MUSE and LIFE extend scientific and embodied coverage; Exo clarifies runtime changes and fixed activation controls. MARSHAL closes an older self-play lead with its first 2025 date retained. The existing ReSight record was checked to keep LIFE’s inherited results explicit. ACE’s current version metadata was spot-checked without relabeling its prior full-text review.
 
 Unresolved leads include Meta², SelfImprove-Bench, EVOLVE guardrail evolution, MemHarmBench, EpiAgent, CUA-Master, SELF-HARMONY, and outstanding venue-inventory candidates. Citation expansion recovered additional artifact-use and scientific-memory leads. Complete ninety-day coverage, venue-tail eligibility, and a full correction/withdrawal census remain unfinished; no exhaustive coverage claim is made.
+
+## Daily discovery and retained-state follow-up: 2026-11-06
+
+Added **five works**: four papers and Continual AutoResearch as a benchmark paper. The collection now contains **180 research works** (159 papers, six surveys, fifteen benchmark papers) and 24 software records. Two reading routes were extended.
+
+The discovery window overlapped 29 October–6 November. Multiple mechanism terms covered memory/experience, skills/tools, prompts/context, harnesses/workflows, parameter adaptation, self-play/curricula, lifelong learning, recursive improvement, and evaluation/safety. arXiv searches were complemented by official proceedings/journal records, primary version checks, and author artifacts. Focused harness and weight-memory variants reduced noise in broader queries. Empty revision and citation searches remain inconclusive.
+
+The preserved training inventory received a further title screen of positions 46–60 of its 93-title filter; candidate eligibility and full-text work remain open. This continues the earlier slices rather than treating a listing as a completed literature review. Meta² and Self-Harmony closed queued leads. New research-learning, memory, and benign-skill safety papers supplied complementary evidence, including negative findings.
+
+Memento, MemRL, ReasoningBank, and the safety survey received metadata/version spot checks without timestamp-only catalog edits. References from the new papers connect them to existing survey themes and anchors, and supply leads on procedural distillation, compiled memory, and continual research. Priority follow-ups include ScienceCUA, WASP-Mem, Reglos, MDSKILL, Harness-S, TinyAstral, and unresolved evaluation studies. Complete date-window recall, venue-tail reviews, and a full revision/withdrawal census remain unfinished.

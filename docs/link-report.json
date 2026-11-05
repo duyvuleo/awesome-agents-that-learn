@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-04T23:09:52.752438+00:00",
+  "checked_at_utc": "2026-11-05T22:14:06.206610+00:00",
   "scope": "all-catalog-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -806,6 +806,16 @@
       "status": "reachable",
       "expected_title": "OpenSIR: Open-Ended Self-Improving Reasoner",
       "observed_title": "OpenSIR: Open-Ended Self-Improving Reasoner",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2511.01191",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2511.01191",
+      "status": "reachable",
+      "expected_title": "Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning",
+      "observed_title": "Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning",
       "title_similarity": 1.0,
       "title_check": "match"
     },
@@ -1800,12 +1810,52 @@
       "title_check": "match"
     },
     {
+      "url": "https://arxiv.org/abs/2611.04299",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2611.04299",
+      "status": "reachable",
+      "expected_title": "Can Benign Skills Induce Misaligned Behavior in LLM Agents?",
+      "observed_title": "Can Benign Skills Induce Misaligned Behavior in LLM Agents?",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
       "url": "https://arxiv.org/abs/2611.04952",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2611.04952",
       "status": "reachable",
       "expected_title": "Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment",
       "observed_title": "Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05108",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2611.05108",
+      "status": "reachable",
+      "expected_title": "From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?",
+      "observed_title": "From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05139",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2611.05139",
+      "status": "reachable",
+      "expected_title": "Meta$^2$: Precomputing Reusable Knowledge for Online Harness Evolution in Long-Horizon Agents",
+      "observed_title": "Meta$^2$: Precomputing Reusable Knowledge for Online Harness Evolution in Long-Horizon Agents",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05636",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2611.05636",
+      "status": "reachable",
+      "expected_title": "Route to Remember: Adaptive Memory Selection for LLM Agents",
+      "observed_title": "Route to Remember: Adaptive Memory Selection for LLM Agents",
       "title_similarity": 1.0,
       "title_check": "match"
     },
@@ -1975,6 +2025,12 @@
       "url": "https://arxiv.org/html/2510.24684v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2510.24684v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2511.01191v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2511.01191v2",
       "status": "reachable"
     },
     {
@@ -2470,9 +2526,33 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/html/2611.04299v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2611.04299v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/html/2611.04952v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2611.04952v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2611.05108v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2611.05108v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2611.05139v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2611.05139v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2611.05636v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2611.05636v1",
       "status": "reachable"
     },
     {
@@ -3208,6 +3288,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/physicsru/self_harmony",
+      "http_status": 200,
+      "final_url": "https://github.com/physicsru/self_harmony",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/qiancheng0/CREATOR",
       "http_status": 200,
       "final_url": "https://github.com/qiancheng0/CREATOR",
@@ -3382,6 +3468,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://meta-square.github.io/",
+      "http_status": 200,
+      "final_url": "https://meta-square.github.io/",
+      "status": "reachable"
+    },
+    {
       "url": "https://microsoft.github.io/SkillOpt/",
       "http_status": 200,
       "final_url": "https://microsoft.github.io/SkillOpt/",
@@ -3529,6 +3621,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/86178c06fd59ebc58dc31f8edb3c54af-Paper-Conference.pdf",
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/86178c06fd59ebc58dc31f8edb3c54af-Paper-Conference.pdf",
+      "status": "reachable"
+    },
+    {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/0b1b52b624ce69e0241eac91f8df0bce-Abstract-Conference.html",
       "http_status": 200,
       "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/0b1b52b624ce69e0241eac91f8df0bce-Abstract-Conference.html",
@@ -3550,6 +3648,12 @@
       "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/6ac12f42db406e6be14d669884e73212-Abstract-Conference.html",
       "http_status": 200,
       "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/6ac12f42db406e6be14d669884e73212-Abstract-Conference.html",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/86178c06fd59ebc58dc31f8edb3c54af-Abstract-Conference.html",
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/86178c06fd59ebc58dc31f8edb3c54af-Abstract-Conference.html",
       "status": "reachable"
     },
     {
@@ -3759,14 +3863,14 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=20be8380-7063-4a29-a854-80a5266e2c76",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=875d0989-cff4-4179-ab00-595d43adb012",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=a3e0f427-8922-4aa4-ba36-af3d252a4396",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=fd8995b2-6dab-4bdf-889d-1e4da6b0647f",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -3780,14 +3884,14 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=45fe5ece-eca4-4b7f-997f-555a8e7cb67b",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=02568ab3-502f-40c6-80c1-4e5a5ea01ee6",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=8f941c5c-7eae-47f7-9180-d324725aed58",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=0976fef0-0f46-4451-9f9a-ff41132b20e3",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
