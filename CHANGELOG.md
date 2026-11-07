@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-07 — Evidence-driven QA memory application
+
+- Added agent-qa as a documentation-reviewed application with persistent memidex app knowledge; total 180 research works and 25 separately counted software records.
+- Distinguished local evidence-gated promotion, CI proposals, optional replay/canary checks, and version-specific retrieval limits. No agent-qa runtime or benchmark was executed.
+- Preserved all existing research and system annotations, inspection dates, and reading routes.
+
 ## 2026-11-06 — Research transfer, adaptive memory, and skill safety
 
 - Added four papers and one benchmark paper: Continual AutoResearch, Route to Remember, Meta², Benign skill safety, and Self-Harmony; total 180 research works and 24 software records.

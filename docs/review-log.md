@@ -253,3 +253,12 @@ Five additions received selected full-text review: four papers and one benchmark
 Self-Harmony’s first date remains 3 November 2025, and its ICLR 2026 status is supported by the official proceedings. Route to Remember retains a preprint label: its PALM workshop reference was author-reported, with no independently verified venue record in this pass. Its annotations describe the reported question set rather than asserting complete benchmark coverage.
 
 Continual AutoResearch promises a future code release. Meta²’s project page was accessible through ordinary public HTTP after the web reader failed; no implementation link was established. These access and availability observations are separate from scientific evidence. Existing paper/system inspection dates and execution records were preserved.
+
+
+## Standalone QA application: 2026-11-07
+
+| System | Material inspected | Boundary retained |
+| --- | --- | --- |
+| [agent-qa](systems.md#system-agent-qa) | Official repository and LICENSE.md; self-improvement (The loop; Local runs and CI); memidex (What it remembers; Limits in v0.2); learning (The promotion gate); architecture (Search levels); serving (The brief; Procedures); eval corpus (What changes once it exists; The checks); quickstart (Before you start) | Public documentation and license inspection only. Persistent app knowledge is distinct from code/prompt rewriting or model training; corpus checks are conditional, CI proposes, and documented v0.2 retrieval limits remain explicit. |
+
+Affiliation: this entry was proposed on behalf of vostride, the team behind agent-qa. No paper relationship was established, no release date was inferred from the review date, and no installation, deployment or benchmark result was independently verified.

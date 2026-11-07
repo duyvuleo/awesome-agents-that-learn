@@ -153,3 +153,12 @@ The discovery window overlapped 29 October–6 November. Multiple mechanism term
 The preserved training inventory received a further title screen of positions 46–60 of its 93-title filter; candidate eligibility and full-text work remain open. This continues the earlier slices rather than treating a listing as a completed literature review. Meta² and Self-Harmony closed queued leads. New research-learning, memory, and benign-skill safety papers supplied complementary evidence, including negative findings.
 
 Memento, MemRL, ReasoningBank, and the safety survey received metadata/version spot checks without timestamp-only catalog edits. References from the new papers connect them to existing survey themes and anchors, and supply leads on procedural distillation, compiled memory, and continual research. Priority follow-ups include ScienceCUA, WASP-Mem, Reglos, MDSKILL, Harness-S, TinyAstral, and unresolved evaluation studies. Complete date-window recall, venue-tail reviews, and a full revision/withdrawal census remain unfinished.
+
+
+## Standalone application source review: 2026-11-07
+
+Added [agent-qa](systems.md#system-agent-qa), proposed on behalf of vostride, as a standalone application example of retained QA experience. This was a focused review of the project's public documentation, repository and actual license; no new literature search or paper relationship is claimed. Research-work counts remain 180, with 25 separately counted software records.
+
+The reusable state consists of app facts, cautions and procedures in memidex. The source distinguishes final run verdicts from later learning, local promotion from CI proposals, and default evidence checks from the optional corpus-based replay/canary protocol. The core/application and topic labels are curator interpretations of that documented behavior. Earlier source dates and reading routes are unchanged; this addition does not change the existing routes' paper-based interpretation.
+
+Some online pages retain explicit v0.2 search and cross-workspace limits. The annotation preserves these boundaries instead of treating current documentation as an audit of every release. No linked product runtime, model call or benchmark was executed.
