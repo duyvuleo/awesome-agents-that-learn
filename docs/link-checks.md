@@ -4,9 +4,11 @@
 
 The report records public HTTP requests and, for canonical arXiv abstract URLs, comparison of the page's citation title with the catalog title. It includes final redirect URLs and access failures. The scientific annotations were reviewed separately; HTTP success is not a scientific verification or a runnable-code check.
 
-Latest paper-and-systems pass (2026-11-06): **536 source URLs checked; 528 reachable and 8 restricted responses**. No 404/410 response or arXiv title-review flag was found. The report includes the systems' official documentation/license sources and an exact UTC timestamp. HTTP success describes transport access; known challenge/login redirects are classified as restricted.
+Latest paper-and-systems pass (2026-11-09): **562 source URLs checked; 517 reachable, 8 restricted responses, and 37 inconclusive requests**. No 404/410 response or arXiv title-review flag was found. All 26 newly added source URLs were reachable, and 179 canonical arXiv titles matched. The report includes the systems' official documentation/license sources and an exact UTC timestamp.
 
 Restricted sources include OpenReview PDFs for Voyager, Large Language Models as Tool Makers, and STOP, plus five Nature URL variants that redirected to cookie-error pages despite HTTP 200. The checker now recognizes those query-based access gates automatically; this includes an already-listed cookie-error URL. Their status remains access-restricted/inconclusive rather than “dead.” Publication evidence includes indexed primary PDF content and author records as described in [review notes](review-log.md). No access restriction was bypassed.
+
+The 37 inconclusive requests concern unchanged COLM, ICLR and NeurIPS proceedings sources that were reachable in the prior published report. Each was matched to its existing catalog record; selected independent page reads returned either primary content or further timeouts. Their historical publication evidence is retained, and no inaccessible source was relabeled as dead.
 
 Run a new check with:
 

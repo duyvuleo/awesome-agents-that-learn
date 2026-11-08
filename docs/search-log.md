@@ -153,3 +153,23 @@ The discovery window overlapped 29 October–6 November. Multiple mechanism term
 The preserved training inventory received a further title screen of positions 46–60 of its 93-title filter; candidate eligibility and full-text work remain open. This continues the earlier slices rather than treating a listing as a completed literature review. Meta² and Self-Harmony closed queued leads. New research-learning, memory, and benign-skill safety papers supplied complementary evidence, including negative findings.
 
 Memento, MemRL, ReasoningBank, and the safety survey received metadata/version spot checks without timestamp-only catalog edits. References from the new papers connect them to existing survey themes and anchors, and supply leads on procedural distillation, compiled memory, and continual research. Priority follow-ups include ScienceCUA, WASP-Mem, Reglos, MDSKILL, Harness-S, TinyAstral, and unresolved evaluation studies. Complete date-window recall, venue-tail reviews, and a full revision/withdrawal census remain unfinished.
+
+## Daily discovery and skill/revision evidence: 2026-11-07
+
+Added **six papers**, bringing the collection to **186 research works** (165 papers, six surveys, fifteen benchmark papers) and 24 software records. Three reading routes were extended.
+
+The overlapping discovery window was 30 October–7 November. Mechanism variants covered memory reuse, skill/tool acquisition, context optimization, harness/workflow evolution, parameter learning, self-play/curricula, continual learning, recursive improvement, and evaluation/safety. arXiv records were complemented by official proceedings/journal searches and author repositories. Newly indexed IJCNLP-AACL records supplied additional leads; their venue-wide review remains unfinished.
+
+BASM and SkillRubricsRL add published evidence about skill boundaries and credit assignment. Coalition-Aware Skill Reliability, recovered through related-work discovery and verified in its primary manuscript, explicitly studies joint skill effects and transfer masking. MemoRepair and StateGraph distinguish recorded dependency repair from inferred dependency revision. Beneath the Surface adds recent evidence about harness regressions, component interactions and transfer. Older first-public dates were retained.
+
+MemSkill, SkillRL, the continual harness-forgetting study and the what/when/how survey received primary version checks without changing historical inspection dates. Backward references and newer work around these anchors supplied further leads. Remaining priorities include targeted agent-training guidance, HarnessFlow, RSI-Env, SCOPE web exploration, skill-shift evaluation and unreviewed venue-inventory tails. Indexed queries have no reliable result-total or pagination guarantee; this is bounded discovery, not exhaustive date-window coverage or a complete correction/withdrawal census.
+
+## Continued discovery and Monday catch-up: 2026-11-08–09
+
+Four further works bring the collection to **190 research works** (168 papers, six surveys, sixteen benchmark papers), with 24 separately counted software records. The ten additions reviewed on 7–9 November include both recent work and recovered earlier omissions.
+
+Discovery continued over the overlapping 30 October–9 November window across all nine mechanism families. The Monday pass additionally targeted 11 August–9 November, rotating toward continual robotics, demonstration and human-feedback learning, scientific verification, and negative results. Indexed arXiv queries were complemented by official proceedings/journal records, author artifacts and citation trails. These bounded checks do not establish complete ninety-day coverage.
+
+Positions 61–75 of the preserved 93-title training inventory received title triage, leaving eighteen positions in that filtered inventory. Candidate eligibility and body reviews remain unfinished. DexFlyWheel's official NeurIPS 2025 record and SkillShift-Bench's EMNLP 2026 record were inspected as follow-up leads; neither was automatically admitted from metadata.
+
+Targeted guidance and HarnessFlow close queued training and architecture leads. ReScopeBench and RIFAR add experience-maintenance and robot-replay perspectives. Current CIDER, Memory Anchors, PEAM and Meta-Harness records were spot-checked without changing their historical review dates. Unresolved source identities, venue tails, artifact availability and full correction/withdrawal coverage remain open.

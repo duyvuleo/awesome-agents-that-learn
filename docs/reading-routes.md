@@ -52,6 +52,8 @@ How can experience become useful knowledge, a procedure, or a reusable tool?
 
 9. **[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](papers.md#skill-plus-plus)** — Separate retaining a skill from keeping it selectable as the library grows; compare routing with task success.
 
+10. **[Coalition-Aware Skill Reliability for Self-Evolving Agents](papers.md#coalition-skill-reliability)** — Test whether a useful skill stays useful in another bank or deployment domain.
+
 
 **Study exercise:** For three methods, write the stored artifact, admission rule, retrieval rule, revision rule, and evidence that reuse helps.
 
@@ -72,6 +74,8 @@ Which parts of an agent can be optimized, and who performs that optimization?
 5. **[AFlow: Automating Agentic Workflow Generation](papers.md#aflow)** — Study search over workflow operators and evaluation-driven selection.
 
 6. **[Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](papers.md#ace)** — Contrast whole-prompt replacement with incremental context updates.
+
+7. **[HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](papers.md#harnessflow)** — Compare fixed tree-search control with the executable harnesses it optimizes, including search and deployment costs.
 
 
 **Study exercise:** Make an editable/fixed component table. Include proposer, search space, selector, evaluation set, and stopping rule.
@@ -173,6 +177,8 @@ What experiment would convince you that an agent learned something useful?
 
 9. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
 
+10. **[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)** — Separate average success, covered tasks, regressions, component interactions and search replication.
+
 
 **Study exercise:** Draft a matched frozen baseline, a held-out family split, a budget ledger, and one intervention that could falsify your preferred mechanism.
 
@@ -203,6 +209,10 @@ Does learning persist when tasks and environments change?
 10. **[Are Self-Evolving Agents Continual Learners?](papers.md#self-evolving-continual-learners)** — Test for interference and forgetting when memory, shared prompts, or harness files evolve.
 
 11. **[Can Coding Agents Sustain Continual Evolution without Forgetting?](papers.md#continual-harness-forgetting)** — Compare this small-subset harness study with the preceding held-out stream evaluation; trace conflicts in task-specific checks.
+
+12. **[MEMOREPAIR: Barrier-First Cascade Repair in Agentic Memory](papers.md#memorepair)** — Trace how a corrected source affects stored descendants and what complete provenance assumes.
+
+13. **[Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](papers.md#rescopebench)** — Track selective revision after silent environmental changes, separating saved knowledge from completed tasks.
 
 
 **Study exercise:** Specify separate measures for factual memory, procedural transfer, backward retention, cost, and safety drift. Do not collapse them into one score.

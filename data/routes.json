@@ -71,6 +71,10 @@
       {
         "paper": "skill-plus-plus",
         "why": "Separate retaining a skill from keeping it selectable as the library grows; compare routing with task success."
+      },
+      {
+        "paper": "coalition-skill-reliability",
+        "why": "Test whether a useful skill stays useful in another bank or deployment domain."
       }
     ],
     "exercise": "For three methods, write the stored artifact, admission rule, retrieval rule, revision rule, and evidence that reuse helps."
@@ -103,6 +107,10 @@
       {
         "paper": "ace",
         "why": "Contrast whole-prompt replacement with incremental context updates."
+      },
+      {
+        "paper": "harnessflow",
+        "why": "Compare fixed tree-search control with the executable harnesses it optimizes, including search and deployment costs."
       }
     ],
     "exercise": "Make an editable/fixed component table. Include proposer, search space, selector, evaluation set, and stopping rule."
@@ -263,6 +271,10 @@
       {
         "paper": "pace",
         "why": "Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee."
+      },
+      {
+        "paper": "beneath-surface-agent-evolution",
+        "why": "Separate average success, covered tasks, regressions, component interactions and search replication."
       }
     ],
     "exercise": "Draft a matched frozen baseline, a held-out family split, a budget ledger, and one intervention that could falsify your preferred mechanism."
@@ -315,6 +327,14 @@
       {
         "paper": "continual-harness-forgetting",
         "why": "Compare this small-subset harness study with the preceding held-out stream evaluation; trace conflicts in task-specific checks."
+      },
+      {
+        "paper": "memorepair",
+        "why": "Trace how a corrected source affects stored descendants and what complete provenance assumes."
+      },
+      {
+        "paper": "rescopebench",
+        "why": "Track selective revision after silent environmental changes, separating saved knowledge from completed tasks."
       }
     ],
     "exercise": "Specify separate measures for factual memory, procedural transfer, backward retention, cost, and safety drift. Do not collapse them into one score."

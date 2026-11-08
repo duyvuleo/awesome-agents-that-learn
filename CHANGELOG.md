@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-09 — Skill reliability, adaptive harnesses, and continual learning
+
+- Added ten source-reviewed works: BASM, SkillRubricsRL, MemoRepair, StateGraph, Coalition-Aware Skill Reliability, Beneath the Surface, Targeted Guidance, ReScopeBench, RIFAR, and HarnessFlow.
+- Total: 190 research works (168 papers, six surveys, sixteen benchmark papers) and 24 software records.
+- Extended reading routes and retained limits on skill interactions, dependency repair, adaptation signals, task retention, and total compute.
+- Preserved individual inspection dates from 7–9 November and all earlier records. No research code was executed.
+
 ## 2026-11-06 — Research transfer, adaptive memory, and skill safety
 
 - Added four papers and one benchmark paper: Continual AutoResearch, Route to Remember, Meta², Benign skill safety, and Self-Harmony; total 180 research works and 24 software records.

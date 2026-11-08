@@ -737,6 +737,84 @@
     "short_name": "AutoSkill"
   },
   {
+    "year": 2026,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "Findings of EMNLP 2026",
+    "code_url": null,
+    "code_note": "Official implementation availability was not established in this review; no code was executed.",
+    "scope": "core",
+    "persistence": "across-tasks",
+    "review_depth": "full-text",
+    "checked": "2026-11-07",
+    "id": "basm",
+    "short_name": "BASM",
+    "title": "When Not to Imitate: Boundary-Aware Skill Memory for Reliable Tool-Use LLM Agents",
+    "date": "2026-08-23",
+    "url": "https://arxiv.org/abs/2608.22339",
+    "sources": [
+      "https://arxiv.org/abs/2608.22339",
+      "https://arxiv.org/html/2608.22339v1",
+      "https://aclanthology.org/2026.findings-emnlp.1141/",
+      "https://aclanthology.org/2026.findings-emnlp.1141.pdf"
+    ],
+    "topics": [
+      "memory",
+      "skills",
+      "tools",
+      "evaluation",
+      "safety"
+    ],
+    "update_targets": [
+      "skills",
+      "memory"
+    ],
+    "learning_signal": "Offline successful trajectories and nearby failures supply procedures, applicability conditions and recovery notes.",
+    "mechanism": "Builds a reusable skill library with explicit conditions, risk cues and avoidance rules. Retrieval exposes relevant boundaries under a context budget; runtime checks can block or revise tool calls, with local repair hints after failures. Model weights remain fixed.",
+    "evaluation": "Tests BFCL, AppWorld and AgentDojo across four model scales, with tool-choice probes, boundary-attention interventions and component controls.",
+    "limitations": "Library construction is offline, and structural validation does not certify boundary semantics. Safety and utility differ: Qwen3-8B's AgentDojo utility remains below the memory-free baseline despite lower attack success. Dynamic API changes and long-running delayed feedback are untested."
+  },
+  {
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "arXiv preprint",
+    "code_url": "https://github.com/simple-agent-lab/RSIHub",
+    "code_note": "Paper-linked RSIHub framework README inspected. Current framework availability does not establish a pinned reproduction of this paper's artifacts or results; nothing was executed.",
+    "scope": "core",
+    "persistence": "across-tasks",
+    "review_depth": "full-text",
+    "checked": "2026-11-07",
+    "id": "beneath-surface-agent-evolution",
+    "short_name": "Beneath the Surface",
+    "title": "Beneath the Surface: What We Overlook When We Talk About Agent Evolution",
+    "date": "2026-11-05",
+    "url": "https://arxiv.org/abs/2611.07624",
+    "sources": [
+      "https://arxiv.org/abs/2611.07624",
+      "https://arxiv.org/html/2611.07624v1",
+      "https://github.com/simple-agent-lab/RSIHub"
+    ],
+    "topics": [
+      "architecture",
+      "workflows",
+      "prompts",
+      "skills",
+      "recursive-improvement",
+      "evaluation"
+    ],
+    "update_targets": [
+      "agent-code",
+      "prompts",
+      "skills",
+      "workflows"
+    ],
+    "learning_signal": "Training/validation task feedback and archived traces drive harness edits; post-hoc diagnostics inform fixed evolution-operator revisions.",
+    "mechanism": "Separates repeated success, task coverage, regressions, component interactions and candidate retention in harness evolution. EvoAudit diagnoses archived runs; AGE installs four fixed operator revisions into an A-Evolve recipe while preserving model and evaluator contracts.",
+    "evaluation": "Compares four adapted evolution recipes across two harnesses and two task domains, with eight-pass evaluations, component interventions and frozen transfer tests.",
+    "limitations": "Repeated evaluations are not independent evolution runs: AGE uses search seed zero and twenty generations. Operator redesign bundles four changes and uses evidence from the studied settings. Transfer varies by metric and domain; framework-adapted recipes are not unchanged original implementations."
+  },
+  {
     "id": "benign-skill-misalignment",
     "title": "Can Benign Skills Induce Misaligned Behavior in LLM Agents?",
     "date": "2026-11-03",
@@ -907,6 +985,43 @@
     "review_depth": "full-text",
     "checked": "2026-10-30",
     "short_name": "CIDER"
+  },
+  {
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "arXiv preprint",
+    "code_url": null,
+    "code_note": "The inspected paper promises an audit toolkit, method code and trained checkpoints; a released official implementation was not established. No code was executed.",
+    "scope": "core",
+    "persistence": "across-tasks",
+    "review_depth": "full-text",
+    "checked": "2026-11-07",
+    "id": "coalition-skill-reliability",
+    "short_name": "Coalition skill reliability",
+    "title": "Coalition-Aware Skill Reliability for Self-Evolving Agents",
+    "date": "2026-08-23",
+    "url": "https://arxiv.org/abs/2608.22610",
+    "sources": [
+      "https://arxiv.org/abs/2608.22610",
+      "https://arxiv.org/html/2608.22610v1",
+      "https://arxiv.org/pdf/2608.22610v1"
+    ],
+    "topics": [
+      "skills",
+      "memory",
+      "model-training",
+      "continual-learning",
+      "evaluation"
+    ],
+    "update_targets": [
+      "skills",
+      "model-weights"
+    ],
+    "learning_signal": "Source outcome rewards and sampled skill-coalition knockout scores; unlabeled target-query retrieval similarity guides transfer masking.",
+    "mechanism": "Changes MemSkill's bank-admission score to include sampled joint skill effects while retaining its trained controller. Before deployment, a separate greedy procedure rebuilds target memories and masks skills whose removal improves a retrieval-quality proxy; the retained bank and mask persist.",
+    "evaluation": "Studies LoCoMo, LongMemEval, HotpotQA and ALFWorld with three seeds, coalition audits and six-bank target masking; the gate study covers twelve proposals.",
+    "limitations": "Evidence concerns one MemSkill-based setup and small banks. The highlighted target-side utility reversal has an interval including zero. Retrieval similarity is a proxy, and masking adds quadratic memory rebuild work before inference. This does not establish online adaptation to changing APIs or general skill compositions."
   },
   {
     "id": "coharl",
@@ -2178,6 +2293,42 @@
     "short_name": "Harness²"
   },
   {
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "arXiv preprint",
+    "code_url": null,
+    "code_note": "Official implementation availability was not established in this review; no research code was executed.",
+    "scope": "core",
+    "persistence": "across-tasks",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
+    "id": "harnessflow",
+    "short_name": "HarnessFlow",
+    "title": "HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents",
+    "date": "2026-11-04",
+    "url": "https://arxiv.org/abs/2611.06254",
+    "sources": [
+      "https://arxiv.org/abs/2611.06254",
+      "https://arxiv.org/html/2611.06254v1"
+    ],
+    "topics": [
+      "architecture",
+      "workflows",
+      "prompts",
+      "evaluation"
+    ],
+    "update_targets": [
+      "agent-code",
+      "prompts",
+      "workflows"
+    ],
+    "learning_signal": "Automatic validation scores, prior code edits and execution traces; a supplied component library supports proposals.",
+    "mechanism": "Uses a fixed coding agent and tree-based selection policy to search complete executable harnesses. The archive retains successful and unsuccessful refinements; the highest-validation harness is reused with a fixed executor model.",
+    "evaluation": "Uses fifteen candidate attempts per benchmark across six agent, coding and web benchmarks, disjoint validation/test splits, component controls and an additional executor setting.",
+    "limitations": "A stronger model proposes edits, and the outer search rules remain fixed. Execution-cost comparisons exclude harness search. The second-executor study reruns optimization rather than transferring a frozen harness; matched candidate counts are not equal end-to-end compute."
+  },
+  {
     "id": "hierarchical-self-improvement",
     "title": "Hierarchical Self-Improvement: A Framework for Task-Specific Evolvable Agent Harnesses",
     "date": "2026-08-09",
@@ -2893,6 +3044,43 @@
     "review_depth": "abstract",
     "checked": "2026-10-28",
     "short_name": "MemGPT"
+  },
+  {
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "arXiv preprint",
+    "code_url": null,
+    "code_note": "Official implementation availability was not established in this review; no code was executed.",
+    "scope": "core",
+    "persistence": "across-tasks",
+    "review_depth": "full-text",
+    "checked": "2026-11-07",
+    "id": "memorepair",
+    "short_name": "MemoRepair",
+    "title": "MEMOREPAIR: Barrier-First Cascade Repair in Agentic Memory",
+    "date": "2026-05-08",
+    "url": "https://arxiv.org/abs/2605.07242",
+    "sources": [
+      "https://arxiv.org/abs/2605.07242",
+      "https://arxiv.org/html/2605.07242v1"
+    ],
+    "topics": [
+      "memory",
+      "skills",
+      "continual-learning",
+      "safety",
+      "evaluation"
+    ],
+    "update_targets": [
+      "memory",
+      "skills",
+      "model-weights"
+    ],
+    "learning_signal": "Explicit deletion, correction or interface-migration events, recorded dependencies and artifact-specific validation.",
+    "mechanism": "Withdraws an invalidated artifact's recorded descendants before repair, rebuilds successors from retained support, and republishes only validated dependency-closed selections. A fixed cost–value tradeoff reduces selection to a min-cut; optional neural-artifact repairs use supplied unlearning operators.",
+    "evaluation": "Uses ToolBench/StableToolBench and MemoryArena traces to compare stale exposure, successor recovery and repair cost, including a ToolLLaMA adapter repair study.",
+    "limitations": "Isolation assumes complete influence provenance and adequate validators; missing edges can leave stale descendants visible. The reported task diagnostic is constructed from repair/exposure sets, not native end-to-end task success. Costs exclude the withdrawal barrier, and parameter erasure is not guaranteed."
   },
   {
     "id": "memory-anchors",
@@ -4422,6 +4610,43 @@
     "short_name": "REM"
   },
   {
+    "year": 2026,
+    "status": "preprint",
+    "venue": "arXiv preprint",
+    "scope": "core",
+    "persistence": "across-tasks",
+    "review_depth": "full-text",
+    "checked": "2026-11-08",
+    "id": "rescopebench",
+    "short_name": "ReScopeBench",
+    "title": "Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments",
+    "date": "2026-11-03",
+    "kind": "benchmark",
+    "url": "https://arxiv.org/abs/2611.05450",
+    "sources": [
+      "https://arxiv.org/abs/2611.05450",
+      "https://arxiv.org/html/2611.05450v1",
+      "https://github.com/JoeYing1019/ReScopeBench"
+    ],
+    "code_url": "https://github.com/JoeYing1019/ReScopeBench",
+    "code_note": "Paper-linked repository and README inspected; no installation, benchmark execution or result reproduction.",
+    "topics": [
+      "memory",
+      "skills",
+      "continual-learning",
+      "evaluation",
+      "applications"
+    ],
+    "update_targets": [
+      "memory",
+      "skills"
+    ],
+    "learning_signal": "Tool observations and permitted later outcome feedback; private reference inventories are used only for scoring.",
+    "mechanism": "Pairs task streams with retained versus cleared memory, skills and retrievable history. Silent environmental changes invalidate selected experience; separate metrics track task outcomes and saved structural/rule knowledge.",
+    "evaluation": "Tests twenty models on 352 tasks across eighteen simulated environments with twenty-six controlled changes, using programmatic task graders and model-judged memory coverage.",
+    "limitations": "Each model–environment comparison uses one stream per condition, and action-induced environment states may diverge. Coverage is not the precision of all stored content; recovery time measures first completion rather than sustained correctness. Background skill review adds computation outside foreground tool counts, and simulated applications are not live deployments."
+  },
+  {
     "id": "resight",
     "title": "ReSight: Task-Driven Self-Improving Memory for Embodied Agents",
     "date": "2026-10-24",
@@ -4591,6 +4816,42 @@
     "review_depth": "full-text",
     "checked": "2026-11-02",
     "short_name": "REUSE"
+  },
+  {
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "arXiv preprint",
+    "code_url": null,
+    "code_note": "Official implementation availability was not established in this review; no research code was executed.",
+    "scope": "core",
+    "persistence": "across-tasks",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
+    "id": "rifar",
+    "short_name": "RIFAR",
+    "title": "RIFAR: Reliability-Informed and Forgetting-Aware Replay for Continual Robot Learning with World-Action Models",
+    "date": "2026-10-02",
+    "url": "https://arxiv.org/abs/2610.03079",
+    "sources": [
+      "https://arxiv.org/abs/2610.03079",
+      "https://arxiv.org/html/2610.03079v3"
+    ],
+    "topics": [
+      "memory",
+      "model-training",
+      "continual-learning",
+      "applications",
+      "evaluation"
+    ],
+    "update_targets": [
+      "model-weights",
+      "memory"
+    ],
+    "learning_signal": "New-task demonstrations, inverse-dynamics consistency of generated replay and action-prediction drift after adaptation.",
+    "mechanism": "Retains short historical demonstration prefixes, generates replay trajectories and screens their action–visual consistency. After initial new-task adaptation, replay prioritizes reliable trajectories showing greater action drift. Both the policy and reliability model receive staged updates.",
+    "evaluation": "Studies three LIBERO suites and a three-task Franka sequence, comparing retention, acquisition and historical-data storage with real-data and generative replay.",
+    "limitations": "Relies on demonstrations and fixed task sequences. The v3 reliability model learns from generated replay and can inherit its errors; rollout termination can be premature. Full real-data replay remains stronger on several metrics. Retained-history savings do not measure total training or generation cost."
   },
   {
     "id": "rise",
@@ -5594,6 +5855,43 @@
     "short_name": "SkillRL"
   },
   {
+    "year": 2026,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "Findings of EMNLP 2026",
+    "code_url": "https://github.com/gminiheimdallr-a11y/SkillRubricsRL",
+    "code_note": "Author-linked repository inspected: its README promises a future code release. No implementation was installed or executed.",
+    "scope": "core",
+    "persistence": "across-tasks",
+    "review_depth": "full-text",
+    "checked": "2026-11-07",
+    "id": "skillrubricsrl",
+    "short_name": "SkillRubricsRL",
+    "title": "SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning",
+    "date": "2026",
+    "url": "https://aclanthology.org/2026.findings-emnlp.471/",
+    "sources": [
+      "https://aclanthology.org/2026.findings-emnlp.471/",
+      "https://aclanthology.org/2026.findings-emnlp.471.pdf",
+      "https://github.com/gminiheimdallr-a11y/SkillRubricsRL"
+    ],
+    "topics": [
+      "skills",
+      "memory",
+      "model-training",
+      "evaluation"
+    ],
+    "update_targets": [
+      "model-weights",
+      "skills",
+      "memory"
+    ],
+    "learning_signal": "Environment rewards and model-judged skill-fulfillment rubrics train the policy; perturbed-skill rollout outcomes update retrieval utilities.",
+    "mechanism": "Pairs each skill with execution criteria, trains an acting policy with combined outcome and fulfillment rewards, and evolves the skill bank from failures. Marginal utility guides retrieval; later mixed skill-on/off training encourages behavior that persists without prompt-time skills.",
+    "evaluation": "Evaluates ALFWorld and WebShop, component ablations, skill-on/off deployment and a small human agreement check of the rubric judge.",
+    "limitations": "Best reported metrics come from different skill-on/off conditions. Utility probes give marginal effects, not complete interaction attribution. The cost table excludes actor training, local rollouts and one external model's charges. The inspected repository remains a placeholder."
+  },
+  {
     "id": "socratic-zero",
     "title": "Socratic-Zero : Bootstrapping Reasoning via Data-Free Agent Co-evolution",
     "date": "2025-09-29",
@@ -5792,6 +6090,40 @@
     "short_name": "STaR"
   },
   {
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "arXiv preprint",
+    "code_url": null,
+    "code_note": "Official implementation availability was not established in this review; no code was executed.",
+    "scope": "core",
+    "persistence": "across-tasks",
+    "review_depth": "full-text",
+    "checked": "2026-11-07",
+    "id": "stategraph",
+    "short_name": "StateGraph",
+    "title": "A State Change Is Local, Its Consequences Are Not: Dependency-Aware State Revision for Long-Term Agent Memory",
+    "date": "2026-11-02",
+    "url": "https://arxiv.org/abs/2611.02912",
+    "sources": [
+      "https://arxiv.org/abs/2611.02912",
+      "https://arxiv.org/html/2611.02912v1"
+    ],
+    "topics": [
+      "memory",
+      "continual-learning",
+      "evaluation",
+      "safety"
+    ],
+    "update_targets": [
+      "memory"
+    ],
+    "learning_signal": "New evidence, scoped state conflicts and model judgments of dependency strength and alternative support.",
+    "mechanism": "Maintains versioned memory states, proposes support dependencies from interaction histories, and checks them with counterfactual model judgments. Revisions propagate selectively, retaining independent support and historical states instead of invalidating every related record.",
+    "evaluation": "Reports dependency and cascade-revision tests on 50 constructed StateChangeBench cases with one backbone, plus supplementary memory benchmarks.",
+    "limitations": "The same model proposes and verifies dependencies. Run counts and the double-annotated subset size were not retained; action-decision and premise-gate results were omitted because their aggregation could not be reconstructed. Small depth strata lack significance tests, and closure consistency is not independent correctness evidence."
+  },
+  {
     "id": "steplearn",
     "title": "Learn Now, Use Next, Trust Later: Prequential Test-Time Learning for LLM Agents",
     "date": "2026-09-28",
@@ -5930,6 +6262,39 @@
     "review_depth": "full-text",
     "checked": "2026-10-30",
     "short_name": "TAME"
+  },
+  {
+    "year": 2026,
+    "status": "preprint",
+    "venue": "arXiv preprint",
+    "scope": "core",
+    "persistence": "across-tasks",
+    "review_depth": "full-text",
+    "checked": "2026-11-08",
+    "id": "targeted-guidance",
+    "short_name": "Targeted guidance",
+    "title": "Stabilizing On-Policy Targeted Guidance in Agentic Reinforcement Learning",
+    "date": "2026-11-03",
+    "kind": "paper",
+    "url": "https://arxiv.org/abs/2611.05266",
+    "sources": [
+      "https://arxiv.org/abs/2611.05266",
+      "https://arxiv.org/html/2611.05266v2"
+    ],
+    "code_url": null,
+    "code_note": "Official implementation availability was not established; no code or training was executed.",
+    "topics": [
+      "model-training",
+      "tools",
+      "evaluation"
+    ],
+    "update_targets": [
+      "model-weights"
+    ],
+    "learning_signal": "Coding rewards, auxiliary criterion rewards and designed textual hints on failing agent turns.",
+    "mechanism": "Combines GRPO with on-policy distillation from the same model conditioned on localized feedback. Distillation applies only to failing turns and includes reasoning tokens; learned behavior persists in model weights.",
+    "evaluation": "Studies tool-format correction, final-response style and interleaved per-turn requirements in a multi-turn coding harness using an SFT-adapted Qwen3-Coder-30B.",
+    "limitations": "Hints and reward criteria are supplied. High distillation weights can still collapse performance. Table uncertainty is variability over the last training steps, not independent training runs. Broad held-out agent transfer and autonomous learning of the feedback procedure are not established."
   },
   {
     "id": "temporal-self-rewarding",

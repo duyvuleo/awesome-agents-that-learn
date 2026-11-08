@@ -253,3 +253,37 @@ Five additions received selected full-text review: four papers and one benchmark
 Self-Harmony’s first date remains 3 November 2025, and its ICLR 2026 status is supported by the official proceedings. Route to Remember retains a preprint label: its PALM workshop reference was author-reported, with no independently verified venue record in this pass. Its annotations describe the reported question set rather than asserting complete benchmark coverage.
 
 Continual AutoResearch promises a future code release. Meta²’s project page was accessible through ordinary public HTTP after the web reader failed; no implementation link was established. These access and availability observations are separate from scientific evidence. Existing paper/system inspection dates and execution records were preserved.
+
+## 2026-11-07 — Skill interactions, memory revision, and evolution regressions
+
+Six additions received selected full-text review, for **126 full-text and 60 abstract/metadata reviews**. No linked research code, agents, attacks or model training were executed.
+
+| Work | Primary material inspected | Evidence boundary retained |
+| --- | --- | --- |
+| [BASM](papers.md#basm) | arXiv v1, §§3–5 and limitations; Findings EMNLP record/PDF | Offline library construction; schema checks versus semantics; utility/safety tradeoff. |
+| [SkillRubricsRL](papers.md#skillrubricsrl) | Findings EMNLP PDF, §§3–4 and Appendix A.2–A.3; author README | Skill-on/off results, model-judged rubrics, partial cost accounting and unreleased code. |
+| [MemoRepair](papers.md#memorepair) | arXiv v1, §§2–5 | Complete provenance, constructed task diagnostic and operator-level cost boundary. |
+| [StateGraph](papers.md#stategraph) | arXiv v1, §§3–6 and limitations | Inferred support, missing run/annotation records and omitted action evaluation. |
+| [Coalition skill reliability](papers.md#coalition-skill-reliability) | arXiv v1 HTML and nine-page PDF, §§3–5 | Bank-level sampled knockouts, target proxy, twelve proposals and uncertain target reversal. |
+| [Beneath the Surface](papers.md#beneath-surface-agent-evolution) | arXiv v1, §§3–8 and Appendices A/B.4/D/E; RSIHub README | Adapted recipes, repeated evaluation versus search replication, fixed bundled revisions. |
+
+BASM's AgentDojo safety gain does not imply uniform utility improvement. SkillRubricsRL's strongest metrics span different deployment conditions, and its paper-linked repository currently promises future code. Its year-only date reflects verified publication precision, without an invented preprint day.
+
+MemoRepair's min-cut result applies to a fixed scalarized selection problem; its task diagnostic is derived from repaired and stale artifact sets. StateGraph preserves historical states and alternative support, but its closure measure relies on model judgments. Coalition skill reliability's abstract invokes Shapley marginals, whereas the implemented CASS gate uses a sampled bank-level knockout average; the annotation follows the method. Its referenced appendices were not present in the inspected nine-page PDF, so no appendix-level verification is claimed.
+
+Beneath the Surface calls its diagnostic workflow EvoAudit and the resulting fixed operator recipe AGE. The author-linked RSIHub is shared infrastructure; its current default branch was not audited for paper-version equivalence. Prior source-review dates and all software execution records were preserved.
+
+## 2026-11-08–09 — Targeted training, experience lifecycles, and replay
+
+Four further additions received selected full-text review: three papers and one benchmark paper. The resulting collection has **130 full-text and 60 abstract/metadata reviews**. Individual inspection dates remain attached to the records.
+
+| Work | Primary material inspected | Evidence boundary retained |
+| --- | --- | --- |
+| [Targeted guidance](papers.md#targeted-guidance) | arXiv v2, §§3–6; primary version record | Designed hints, failure-only distillation, training-step variability and remaining collapse risk. |
+| [ReScopeBench](papers.md#rescopebench) | arXiv v1, §§2–3, Appendix B and selected C; author README | One stream per condition, diverging environment state, reference coverage and first-completion recovery. |
+| [RIFAR](papers.md#rifar) | arXiv v3, §§3–4, limitations and selected Appendices A–C | Trainable reliability model, demonstration dependence, residual replay errors and storage-versus-compute distinction. |
+| [HarnessFlow](papers.md#harnessflow) | arXiv v1, §§2–4/6 and Appendices B–D | Fixed outer optimizer, stronger proposer, disjoint task splits and search-cost exclusion. |
+
+RIFAR retains its 2 October first-public date and the current v3 title. Its reliability model is updated sequentially in v3; the earlier v1 description of a frozen model was not carried into the annotation. HarnessFlow's additional executor experiment reruns search rather than demonstrating transfer of an unchanged harness. Targeted guidance retains its original 3 November date despite the v2 revision on 4 November.
+
+ReScopeBench separates programmatically scored task outcomes from model-judged coverage of saved experience. Its simulated applications do not establish live deployment, and background skill review is outside foreground tool-call counts. No linked implementation, training procedure or benchmark was executed.
