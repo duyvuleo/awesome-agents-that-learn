@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-09 — Expanded Meta-Harness and Meta² evidence reviews
+
+- Read both papers and full substantive appendices, refining transfer, causal, replication, cost and artifact boundaries.
+- Broader audit: 92 of 190 works complete, 98 pending.
+
 ## 2026-11-09 — Expanded MemEvolve and MCE evidence reviews
 
 - Reviewed both final ICML papers and substantive appendices, updating transfer, cost, component-ablation and task-scope qualifications.

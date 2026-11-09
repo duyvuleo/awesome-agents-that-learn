@@ -236,10 +236,11 @@
       "sources": [
         "https://arxiv.org/abs/2611.05139",
         "https://arxiv.org/html/2611.05139v1",
-        "https://meta-square.github.io/"
+        "https://meta-square.github.io/",
+        "https://arxiv.org/pdf/2611.05139v1"
       ],
       "code_url": null,
-      "code_note": "Author project page inspected through public HTTP; an implementation release was not established. No code was executed.",
+      "code_note": "Author project page inspected on 2026-11-09 and explicitly labels code as coming soon. The full paper includes prompts, algorithms and learned Meta-Skills, but no released implementation or independent execution was established.",
       "topics": [
         "prompts",
         "skills",
@@ -256,12 +257,12 @@
         "workflows"
       ],
       "persistence": "both",
-      "learning_signal": "Training-rollout contrasts and privileged training verifier information shape reusable guidance; online decisions use visible task progress.",
-      "mechanism": "Offline reflection learns a textual meta-skill about when to keep or change a harness. At deployment, a separate evolver uses that frozen guidance at checkpoints to edit notices, instructions, hooks, or tools. Each edit affects the current run; the next task starts from the seed harness.",
-      "evaluation": "Tests 60 held-out Terminal-Bench 2.1 tasks with five runs each and 75 DeepSWE 1.1 tasks with three runs each. Includes component and checkpoint-frequency ablations and separate offline/online costs.",
-      "limitations": "Run-level contrasts do not isolate individual edits causally. Guidance is rebuilt for each benchmark/backbone, so the second-model result is not zero-shot transfer. Models, edit channels, checkpoint interface, and offline update procedure remain fixed; broader domain transfer and ongoing meta-skill learning are untested.",
+      "learning_signal": "Training-only terminal verifier outcomes and privileged verifier-informed rollouts supply act, avoid and hold contrasts. Fixed reflection, aggregation and update prompts turn them into reusable guidance; online decisions use the active trace and permitted workspace evidence.",
+      "mechanism": "Learns a textual Meta-Skill offline, then freezes it to guide a separate evolver at checkpoints within each task. Bounded notices, instructions, hooks and tools alter the ongoing run without resetting its environment. Harness edits are discarded between runs; the model and offline learning procedure stay fixed.",
+      "evaluation": "ArXiv v1 tests 60 held-out Terminal-Bench tasks with five repetitions and 75 DeepSWE tasks with three. It reports repetition-level variation, component/reset and checkpoint ablations, and separate construction/deployment costs. A second backbone uses a separately learned Meta-Skill.",
+      "limitations": "Independent rollout contrasts do not identify an edit’s causal effect; the appendix also discloses worker-prompt and segmentation differences in no-evolver comparisons. Repeated evaluation does not measure variation in rebuilding the Meta-Skill. Costs depend on reuse volume, and code, audit effectiveness and broader transfer remain unverified.",
       "review_depth": "full-text",
-      "checked": "2026-11-06",
+      "checked": "2026-11-09",
       "short_name": "Meta²"
     },
     {
@@ -3365,10 +3366,12 @@
         "https://arxiv.org/abs/2603.28052",
         "https://arxiv.org/html/2603.28052v1",
         "https://proceedings.colm.cc/paper_files/paper/2026/hash/fde1a69a5b6e554b2f1f727197d2651d-Abstract-Conference.html",
-        "https://github.com/stanford-iris-lab/meta-harness"
+        "https://github.com/stanford-iris-lab/meta-harness",
+        "https://arxiv.org/pdf/2603.28052v1",
+        "https://github.com/stanford-iris-lab/meta-harness-tbench2-artifact"
       ],
       "code_url": "https://github.com/stanford-iris-lab/meta-harness",
-      "code_note": "Official repository inspected; it provides two reference experiments and links a separate TerminalBench artifact. Not executed.",
+      "code_note": "Official framework and separate TerminalBench artifact READMEs inspected on 2026-11-09. The latter reports 89 tasks × five trials for its Opus result; the framework calls its release cleaned-up code with limited testing. No code, containers, model calls or benchmarks executed.",
       "topics": [
         "architecture",
         "prompts",
@@ -3382,12 +3385,12 @@
         "workflows"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Task scores and filesystem-accessible source code and execution traces from prior candidates.",
-      "mechanism": "An external coding-agent proposer inspects earlier harness implementations and failures, then revises context, memory, retrieval, or tool-loop code. A population and Pareto frontier retain reusable harnesses around frozen models.",
-      "evaluation": "Evaluates online text classification, retrieval-augmented mathematical reasoning, and TerminalBench-2; classification and math include transfer to new datasets or models.",
-      "limitations": "TerminalBench-2 uses the same 89 tasks for search and final scoring, unlike the held-out transfer experiments. Results depend on one strong proposer, and current cleaned-up source is not an independently verified reproduction.",
+      "learning_signal": "Search-task scores and filesystem-accessible candidate source code, execution traces and earlier failures guide a fixed external coding-agent proposer. Raw-trace access is compared with scores-only and summarized feedback.",
+      "mechanism": "The proposer writes reusable Python harnesses that change context construction, memory retrieval and tool-loop behavior around frozen models. An interface gate and fixed evaluation loop populate an archive and Pareto frontier; the proposer can inspect any earlier candidate without a prescribed parent rule.",
+      "evaluation": "ArXiv v1 evaluates classification on held-out examples and nine new datasets, retrieval on 200 held-out math problems, and TerminalBench-2 search. The math harness is tested on five models, four unseen during search. Candidate-level comparisons support raw-trace access; code and search-log examples expose discovered policies.",
+      "limitations": "TerminalBench search and final scoring reuse the same 89 tasks. Classification medians summarize candidates, not independent search runs; fewer evaluations need not mean lower total compute. Math gains vary by model and comparator. One strong proposer, ambiguous search-size descriptions and limited release testing constrain reproducibility.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-09",
       "short_name": "Meta-Harness"
     },
     {
