@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Memory access and skill evaluation reviews
+
+- Upgraded FlexA-Mem, HyperSkill, MUSE-Autoskill and SkillFlow through full-text and appendix appraisal.
+- Recovered three artifact links and qualified reward provenance, development exposure, coverage-conditioned scores, task reuse and verifier/reporting limits.
+- Counts remain 190 works: 178 full-text and 12 abstract/metadata reviews. Forty-eight broader appraisals are complete; 142 remain.
+
 ## 2026-11-09 — Workflow and harness review depth
 
 - Upgraded Symbolic agent learning, EvoAgentX, Live-SWE-agent and EvolveNet through full-text and appendix review.

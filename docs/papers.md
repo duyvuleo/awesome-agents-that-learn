@@ -49,7 +49,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-25 | **CaliMem**<br>[CaliMem: Search-Efficient Data Agent via Calibrated Memory](https://arxiv.org/abs/2610.34500) | Retains evidence and revisable claims throughout a data-curation search. Before evaluating a proposed data policy, the agent predicts its score; observed discrepancies… | Memory | preprint · full-text | [Notes](#calimem) |
 | 2026-10-24 | **ReSight**<br>[ReSight: Task-Driven Self-Improving Memory for Embodied Agents](https://arxiv.org/abs/2610.33487) | Preserves robot keyframes while a coding agent builds reusable memory-processing programs, query tools, and skills. Explore–Distill–Mount registers these capabilities… | Memory, Skills, Tools, Agent code | preprint · full-text | [Notes](#resight) |
 | 2026-10-23 | **OPST**<br>[On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models](https://arxiv.org/abs/2610.32770) | Seeds generation with broad topics, removes unstable or already-solved questions, and self-distills on student rollouts. Student and teacher weights carry across rounds… | Model weights | preprint · full-text | [Notes](#on-policy-self-training) |
-| 2026-10-23 | **FlexA-Mem**<br>[FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents](https://arxiv.org/abs/2610.33274) | Keeps an immutable history store and constructs a query-specific context from a timeline plus retrieved detail under a fixed token budget. Its fixed rendering rules… | Memory | preprint · abstract | [Notes](#flexa-mem) |
+| 2026-10-23 | **FlexA-Mem**<br>[FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents](https://arxiv.org/abs/2610.33274) | Preserves raw history alongside LLM-written records and links, then renders a compact timeline plus retrieved detail under a token budget. A fixed fit-or-degrade rule… | Memory | preprint · full-text | [Notes](#flexa-mem) · [Code](https://github.com/WujiangXu/Flex-Amem) |
 | 2026-10-22 | **Value of memory**<br>[The Value of Memory in Language Agents](https://arxiv.org/abs/2610.31303) | Separates information retained in memory from value realized by a particular reader, accounting for recovery, revision, future demand, and decision costs. Proposes… | Analysis / no retained update | preprint · full-text | [Notes](#value-of-memory) |
 | 2026-10-22 | **METTA**<br>[METTA: Memory-Enhanced Test-Time Adaptation for Meta-Reinforcement Learning](https://arxiv.org/abs/2610.31656) | Combines within-episode fast-weight updates with summaries retained across episodes of one task trial. Meta-training learns the policy and memory machinery across tasks… | Memory, Model weights | preprint · full-text | [Notes](#metta) |
 | 2026-10-21 | **Code-edit readout**<br>[Recursive Self-Improvement on a Budget: Scoring Code Edits Before They Run](https://arxiv.org/abs/2610.29121) | Fits a linear predictor of candidate-edit utility from parent scores and projected diff embeddings, then freezes it. The predictor chooses which scaffold edit to… | Agent code, Prompts / context | preprint · full-text | [Notes](#rsi-budget-code-scoring) |
@@ -84,7 +84,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-08-23 | **BASM**<br>[When Not to Imitate: Boundary-Aware Skill Memory for Reliable Tool-Use LLM Agents](https://arxiv.org/abs/2608.22339) | Builds a reusable skill library with explicit conditions, risk cues and avoidance rules. Retrieval exposes relevant boundaries under a context budget; runtime checks can… | Skills, Memory | peer-reviewed · full-text | [Notes](#basm) |
 | 2026-08-22 | **CIDER**<br>[CIDER: Continual Interactive Distillation for Embodied Reinforcement Learning](https://arxiv.org/abs/2608.21899) | Interleaves online actor-critic learning with distillation from the preceding consolidated policy. Gradient routing separates acquisition and retention updates while… | Model weights | preprint · full-text | [Notes](#cider) |
 | 2026-08-20 | **Phantom Gains**<br>[Phantom Gains: Auditing Self-Improvement Against a Measured Null](https://arxiv.org/abs/2608.20290) | Measures apparent per-problem changes in frozen-model controls before interpreting changes after self-training. It uses sampled solve rates, a hysteresis-based… | Analysis / no retained update | preprint · full-text | [Notes](#phantom-gains) · [Code](https://github.com/chengxuphd/phantom-gains) |
-| 2026-08-17 | **HyperSkill**<br>[HyperSkill: Self-Evolving LLM Agents via Hypergraph-Structured Skill Memory](https://arxiv.org/abs/2608.16114) | Connects reusable skills and subtask steps through trajectory-level hyperedges. Retrieval combines subtask and trajectory evidence, while periodic maintenance merges… | Skills, Memory | preprint · abstract | [Notes](#hyperskill) |
+| 2026-08-17 | **HyperSkill**<br>[HyperSkill: Self-Evolving LLM Agents via Hypergraph-Structured Skill Memory](https://arxiv.org/abs/2608.16114) | Stores task decompositions and reusable natural-language skills in trajectory hyperedges. Task-level and subtask-level retrieval select lessons, while co-occurrence… | Skills, Memory | preprint · full-text | [Notes](#hyperskill) · [Code](https://github.com/rux001/HyperSkill) |
 | 2026-08-09 | **Hierarchical improvement**<br>[Hierarchical Self-Improvement: A Framework for Task-Specific Evolvable Agent Harnesses](https://arxiv.org/abs/2608.08466) | Uses a frozen model at three levels: task execution, harness editing, and editing the strategy used by the harness evolver. Each task family maintains a reusable… | Agent code, Workflows | preprint · abstract | [Notes](#hierarchical-self-improvement) · [Code](https://github.com/TailinZhou/hsi) |
 | 2026-08-05 | **EvolveNet**<br>[EvolveNet: Collaborative Harness Evolution for Agent Self-Improvement](https://arxiv.org/abs/2608.04968) | Clients modify a shared executable harness using frozen models; a server integrates globally useful and domain-conditional edits, validates the merge, and redistributes… | Agent code, Workflows | preprint · full-text | [Notes](#evolvenet) · [Code](https://github.com/junnie00/EvolveNet) |
 | 2026-08-04 | **PAST-Bench**<br>[PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents](https://arxiv.org/abs/2608.04003) | Uses ordered fresh-session tasks with matched retention-on and retention-off conditions, and records evidence for saving, retrieving, and updating persistent state. | Memory, Skills | preprint · full-text | [Notes](#past-bench) · [Code](https://github.com/Gen-Verse/PAST-Bench) |
@@ -95,13 +95,13 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-06-04 | **Membrane**<br>[Membrane: A Self-Evolving Contrastive Safety Memory for LLM Agent Defense](https://arxiv.org/abs/2606.05743) | An external guard retrieves cells pairing unsafe conditions with benign exceptions. A planner and writer revise the cell store under structural validation, while model… | Memory | peer-reviewed · full-text | [Notes](#membrane) · [Code](https://github.com/brightjade/membrane) |
 | 2026-05-31 | **Self-evolution gap**<br>[On the Generalization Gap in Self-Evolving Language Model Reasoning](https://arxiv.org/abs/2606.01075) | Compares single-round verification, feedback-guided revision, repeated preference training, and curricula inside a controlled generator-verifier loop. Retained changes… | Model weights | peer-reviewed · full-text | [Notes](#self-evolution-generalization-gap) |
 | 2026-05-26 | **PEAM**<br>[PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft](https://arxiv.org/abs/2605.27762) | A deliberative model collects experience for category-specific LoRA adapters. Behavioral cloning and trajectory-preference training internalize selected skills; the fast… | Memory, Model weights | peer-reviewed · full-text | [Notes](#peam) |
-| 2026-05-26 | **MUSE-Autoskill**<br>[MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation](https://arxiv.org/abs/2605.27366) | Manages a skill lifecycle spanning creation, storage, retrieval, evaluation, and refinement. Per-skill experience persists across tasks so later attempts can reuse and… | Skills, Memory | preprint · abstract | [Notes](#muse-autoskill) |
+| 2026-05-26 | **MUSE-Autoskill**<br>[MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation](https://arxiv.org/abs/2605.27366) | A fixed-weight agent creates and maintains portable skill packages with optional scripts/tests, per-skill experience and shared memory. Catalog-guided loading and… | Skills, Memory | preprint · full-text | [Notes](#muse-autoskill) |
 | 2026-05-22 | **SkillOpt**<br>[SkillOpt: Executive Strategy for Self-Evolving Agent Skills](https://arxiv.org/abs/2605.23904) | An external optimizer revises one skill document through bounded edits, rejected-edit memory, and slow epoch-level updates. The target model and execution harness stay… | Skills, Prompts / context | preprint · full-text | [Notes](#skillopt) · [Code](https://github.com/microsoft/SkillOpt) |
 | 2026-05-19 | **optimize_anything**<br>[optimize_anything: A Universal API for Optimizing any Text Parameter](https://arxiv.org/abs/2605.19633) | Exposes single-task search, shared multi-task search, and reusable-artifact optimization through one interface. Its default GEPA backend retains a Pareto frontier and… | Prompts / context, Agent code, Skills, Workflows | preprint · full-text | [Notes](#optimize-anything) · [Code](https://github.com/gepa-ai/gepa) |
 | 2026-05-12 | **LongMemEval-V2**<br>[LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues](https://arxiv.org/abs/2605.12493) | Streams stored web-agent trajectories into memory and asks the system to return bounded evidence for a fixed reader. AgentRunbook-R indexes state slices, transitions and… | Memory | preprint · full-text | [Notes](#longmemeval-v2) · [Code](https://github.com/xiaowu0162/LongMemEval-V2) |
 | 2026-05-08 | **MemoRepair**<br>[MEMOREPAIR: Barrier-First Cascade Repair in Agentic Memory](https://arxiv.org/abs/2605.07242) | Withdraws an invalidated artifact's recorded descendants before repair, rebuilds successors from retained support, and republishes only validated dependency-closed… | Memory, Skills, Model weights | preprint · full-text | [Notes](#memorepair) |
 | 2026-04-22 | **ProactAgent**<br>[Ask Only When Needed: Proactive Retrieval from Memory and Skills for Experience-Driven Lifelong Agents](https://arxiv.org/abs/2604.20572) | Interleaves GRPO policy updates with typed factual, episodic, and skill-memory extraction. Replaying a shared interaction prefix creates a no-retrieval branch whose… | Model weights, Memory, Skills | peer-reviewed · full-text | [Notes](#proactagent) |
-| 2026-04-19 | **SkillFlow**<br>[SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](https://arxiv.org/abs/2604.17308) | Starts agents without skills and carries a library of trajectory- and rubric-derived skill patches through sequential tasks within task families. | Skills | preprint · abstract | [Notes](#skillflow) |
+| 2026-04-19 | **SkillFlow**<br>[SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](https://arxiv.org/abs/2604.17308) | Starts each workflow family with an empty skill library, solves its tasks in difficulty order, and carries additions, revisions and deletions to subsequent tasks.… | Skills | preprint · full-text | [Notes](#skillflow) · [Code](https://github.com/ZhangZi-a/SkillFlow) |
 | 2026-04-18 | **FlowEvo**<br>[FlowEvo: Self-Evolving Agents through the Co-Evolution of Workflows and Executable Skills](https://arxiv.org/abs/2607.21596) | Compiles successful workflows into persistent executable skills. Later tasks either replay compatible skills or use them as context for new workflows; lifecycle rules… | Skills, Tools, Memory, Workflows | peer-reviewed · full-text | [Notes](#flowevo) · [Code](https://github.com/DEFENSE-SEU/FlowEvo) |
 | 2026-04-18 | **Experience-driven safety**<br>[On Safety Risks in Experience-Driven Self-Evolving Agents](https://arxiv.org/abs/2604.16968) | Studies safety changes when offline Agent Workflow Memory or online ReasoningBank supplies accumulated experience to frozen models. Varying experience size and a… | Memory | peer-reviewed · full-text | [Notes](#experience-driven-safety) |
 | 2026-04-05 | **Combee**<br>[Combee: Scaling Prompt Learning for Self-Improving Language Model Agents](https://arxiv.org/abs/2604.04247) | Adds a scaling layer to existing generate-reflect-update methods: hierarchical parallel aggregation, duplicated/shuffled reflections, and latency-based batch selection… | Prompts / context, Memory | peer-reviewed · full-text | [Notes](#combee) |
@@ -1008,19 +1008,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.33274)
 
-**Mechanism.** Keeps an immutable history store and constructs a query-specific context from a timeline plus retrieved detail under a fixed token budget. Its fixed rendering rules provide a useful baseline for learned memory systems.
+**Mechanism.** Preserves raw history alongside LLM-written records and links, then renders a compact timeline plus retrieved detail under a token budget. A fixed fit-or-degrade rule selects raw units or excerpts; a separate piece-retrieval mode serves factual QA. Timeline merges still require LLM calls.
 
-**What changes:** Memory. **Persistence:** both. **Learning signal:** New history records and current queries; rendering follows a fixed rule.
+**What changes:** Memory. **Persistence:** both. **Learning signal:** New history units and current queries guide fixed storage and rendering rules; no learned update policy or model-weight training is used.
 
-**Evaluation.** The abstract reports AppWorld task-completion experiments and LongMemEval and LoCoMo QA, including an unused-task evaluation with predictions fixed beforehand.
+**Evaluation.** ArXiv v1 compares budgeted AppWorld execution, SWE-bench repair and LongMemEval/LoCoMo recall, with component controls, token accounting and additional models. A frozen-design confirmation uses 147 previously unused AppWorld tasks and five prespecified predictions.
 
-**Boundary.** The method adapts the presented context rather than learning its own update policy. It is included as an adjacent comparison for separating memory access gains from agent self-learning.
+**Boundary.** Recovery mode is selected by task type, not learned per query. Earlier benchmark results informed design; only three of five confirmation predictions pass correction. Keyword retrieval matches factual QA at much lower construction cost, and full history is cheaper in the tested settings. Most configurations have one run and gains vary by model/budget.
 
-**Code / data.** Code availability not verified in this review.
+**Code / data.** [Official artifact](https://github.com/WujiangXu/Flex-Amem) — Official paper-linked repository and setup/reproduction README inspected on 2026-11-09; no data, models or experiments downloaded or run. Fixed rendering is distinct from a learned self-improvement policy.
 
-**Topics:** memory, evaluation. **Reviewed:** abstract · 2026-10-28.
+**Topics:** memory, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.33274)
+[Source 1](https://arxiv.org/abs/2610.33274) · [Source 2](https://arxiv.org/pdf/2610.33274v1) · [Source 3](https://github.com/WujiangXu/Flex-Amem)
 
 <a id="value-of-memory"></a>
 
@@ -1778,19 +1778,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2608.16114)
 
-**Mechanism.** Connects reusable skills and subtask steps through trajectory-level hyperedges. Retrieval combines subtask and trajectory evidence, while periodic maintenance merges redundant skills and prunes low-utility entries.
+**Mechanism.** Stores task decompositions and reusable natural-language skills in trajectory hyperedges. Task-level and subtask-level retrieval select lessons, while co-occurrence ranks skills. With fixed model weights, outcome-weighted pruning and merging maintain the graph after episodes; retrieved context stays fixed within an episode.
 
-**What changes:** Skills, Memory. **Persistence:** across-tasks. **Learning signal:** Trajectory relationships and quality or utility signals used during memory maintenance.
+**What changes:** Skills, Memory. **Persistence:** across-tasks. **Learning signal:** Ground-truth task outcomes and execution length update skill utility in the main experiments; a separate variant uses self-judged outcomes.
 
-**Evaluation.** The authors compare memory baselines on xBench, GAIA, and WebWalkerQA with two language-model backbones.
+**Evaluation.** ArXiv v1 compares ten adapted memory baselines on 100 xBench, 165 GAIA and 170 WebWalkerQA tasks using two backbones in a fixed sequential order. It studies retrieval/structure ablations, maintenance settings, cost, graph growth and ground-truth versus self-judged feedback.
 
-**Boundary.** This annotation is based on the primary abstract. Interpretation: benchmark comparisons do not independently establish long-term retention or safe pruning under changing task distributions.
+**Boundary.** Single-order cumulative curves do not establish causal compounding or long-term retention. Retrieval budgets differ from baselines and the flat-memory ablation changes multiple components. Headline gains are against no memory, with ties to some stronger baselines. Self-judging lowers scores, latency can rise, and some prose/figure descriptions disagree.
 
-**Code / data.** Code availability not verified in this review.
+**Code / data.** [Official artifact](https://github.com/rux001/HyperSkill) — Official paper-linked repository and setup/runner README inspected on 2026-11-09; no code, models or benchmark data executed or downloaded. Source availability is not an independent reproduction.
 
-**Topics:** skills, memory. **Reviewed:** abstract · 2026-10-28.
+**Topics:** skills, memory. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2608.16114)
+[Source 1](https://arxiv.org/abs/2608.16114) · [Source 2](https://arxiv.org/pdf/2608.16114v1) · [Source 3](https://github.com/rux001/HyperSkill)
 
 <a id="hierarchical-self-improvement"></a>
 
@@ -2022,19 +2022,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2605.27366)
 
-**Mechanism.** Manages a skill lifecycle spanning creation, storage, retrieval, evaluation, and refinement. Per-skill experience persists across tasks so later attempts can reuse and adapt earlier work.
+**Mechanism.** A fixed-weight agent creates and maintains portable skill packages with optional scripts/tests, per-skill experience and shared memory. Catalog-guided loading and context compression support reuse; checks can trigger package edits. Most observed generated packages are textual procedures rather than tested code.
 
-**What changes:** Skills, Memory. **Persistence:** across-tasks. **Learning signal:** Accumulated skill-use experience and feedback from evaluating created skills.
+**What changes:** Skills, Memory. **Persistence:** across-tasks. **Learning signal:** Source trajectories, generated tests when present, runtime checks and per-skill notes guide skill creation/refinement; a separate sequential-memory diagnostic supplies verifier feedback.
 
-**Evaluation.** The revised abstract reports SkillsBench and SkillLearnBench comparisons and transfer of generated skills to another agent.
+**Evaluation.** ArXiv v2 compares four GPT-5.5-backed runtimes on 75 SkillsBench tasks with five runs each and 100 SkillLearnBench instances. It separates same-task skill re-evaluation, transfer to Hermes, coverage/cost diagnostics and a task-sequential memory-on/off experiment with two-pass verifier feedback.
 
-**Boundary.** The comparison with human-authored skills is explicitly reported on a successfully covered subset. Interpretation: that subset result should not be presented as an overall advantage across all tasks.
+**Boundary.** The 85.24% result covers only 47 successfully generated-skill tasks; all-task self-created performance is 53.42%, below human skills at 59.67%. Source and reuse tasks coincide, and transfer changes runtime rather than backbone. Only 8% of MUSE packages contain tests. Restricted coverage, brittle skills and incomplete cost traces limit generalization.
 
 **Code / data.** Code availability not verified in this review.
 
-**Topics:** skills, memory, evaluation. **Reviewed:** abstract · 2026-10-28.
+**Topics:** skills, memory, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2605.27366)
+[Source 1](https://arxiv.org/abs/2605.27366) · [Source 2](https://arxiv.org/pdf/2605.27366v2)
 
 <a id="skillopt"></a>
 
@@ -2154,19 +2154,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2604.17308)
 
-**Mechanism.** Starts agents without skills and carries a library of trajectory- and rubric-derived skill patches through sequential tasks within task families.
+**Mechanism.** Starts each workflow family with an empty skill library, solves its tasks in difficulty order, and carries additions, revisions and deletions to subsequent tasks. Library state resets between families; the execution models are not weight-trained. Skill use is detected through reads or calls of stored files.
 
-**What changes:** Skills. **Persistence:** across-tasks. **Learning signal:** Trajectories, task outcomes, and evaluation rubrics.
+**What changes:** Skills. **Persistence:** across-tasks. **Learning signal:** Completed-task trajectories and externally supplied verifier-derived rubrics drive a fixed prompt that generates skill-file patches.
 
-**Evaluation.** Measures task success, skill discovery, revision, and reuse across a structured set of task families, with benefits differing substantially across models.
+**Evaluation.** ArXiv v1 constructs 166 tasks in twenty families with common workflow structure, model-assisted generation and human review. Eleven model/native-harness combinations compare vanilla execution with skill evolution, including family-level outcomes, library growth, cost and an Opus raw-history control.
 
-**Boundary.** Skill invocation is not evidence of useful learning: the paper reports high use with small gains or regression. Family-specific evaluation does not establish broad transfer.
+**Boundary.** This tests short related-task curricula, not retention across interleaved task families. Native harnesses differ and repeated-run/order uncertainty is not reported. High skill usage can accompany regression. The raw-history control has inconsistent reported values, and appendix verifier-toolchain failures complicate attribution of some errors.
 
-**Code / data.** No implementation link independently inspected for this entry; this does not establish that none exists.
+**Code / data.** [Official artifact](https://github.com/ZhangZi-a/SkillFlow) — Official paper-linked repository and benchmark/runner README inspected on 2026-11-09; no skill code, containers or datasets executed/downloaded. Released artifacts are not independently reproduced.
 
-**Topics:** evaluation, skills, continual-learning. **Reviewed:** abstract · 2026-10-28.
+**Topics:** evaluation, skills, continual-learning. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2604.17308)
+[Source 1](https://arxiv.org/abs/2604.17308) · [Source 2](https://arxiv.org/pdf/2604.17308v1) · [Source 3](https://github.com/ZhangZi-a/SkillFlow)
 
 <a id="flowevo"></a>
 

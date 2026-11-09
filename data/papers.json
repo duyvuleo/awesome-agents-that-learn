@@ -1976,10 +1976,12 @@
     "venue": "",
     "url": "https://arxiv.org/abs/2610.33274",
     "sources": [
-      "https://arxiv.org/abs/2610.33274"
+      "https://arxiv.org/abs/2610.33274",
+      "https://arxiv.org/pdf/2610.33274v1",
+      "https://github.com/WujiangXu/Flex-Amem"
     ],
-    "code_url": null,
-    "code_note": "Code availability not verified in this review.",
+    "code_url": "https://github.com/WujiangXu/Flex-Amem",
+    "code_note": "Official paper-linked repository and setup/reproduction README inspected on 2026-11-09; no data, models or experiments downloaded or run. Fixed rendering is distinct from a learned self-improvement policy.",
     "topics": [
       "memory",
       "evaluation"
@@ -1989,12 +1991,12 @@
       "memory"
     ],
     "persistence": "both",
-    "learning_signal": "New history records and current queries; rendering follows a fixed rule.",
-    "mechanism": "Keeps an immutable history store and constructs a query-specific context from a timeline plus retrieved detail under a fixed token budget. Its fixed rendering rules provide a useful baseline for learned memory systems.",
-    "evaluation": "The abstract reports AppWorld task-completion experiments and LongMemEval and LoCoMo QA, including an unused-task evaluation with predictions fixed beforehand.",
-    "limitations": "The method adapts the presented context rather than learning its own update policy. It is included as an adjacent comparison for separating memory access gains from agent self-learning.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "New history units and current queries guide fixed storage and rendering rules; no learned update policy or model-weight training is used.",
+    "mechanism": "Preserves raw history alongside LLM-written records and links, then renders a compact timeline plus retrieved detail under a token budget. A fixed fit-or-degrade rule selects raw units or excerpts; a separate piece-retrieval mode serves factual QA. Timeline merges still require LLM calls.",
+    "evaluation": "ArXiv v1 compares budgeted AppWorld execution, SWE-bench repair and LongMemEval/LoCoMo recall, with component controls, token accounting and additional models. A frozen-design confirmation uses 147 previously unused AppWorld tasks and five prespecified predictions.",
+    "limitations": "Recovery mode is selected by task type, not learned per query. Earlier benchmark results informed design; only three of five confirmation predictions pass correction. Keyword retrieval matches factual QA at much lower construction cost, and full history is cheaper in the tested settings. Most configurations have one run and gains vary by model/budget.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "FlexA-Mem"
   },
   {
@@ -2440,10 +2442,12 @@
     "venue": "",
     "url": "https://arxiv.org/abs/2608.16114",
     "sources": [
-      "https://arxiv.org/abs/2608.16114"
+      "https://arxiv.org/abs/2608.16114",
+      "https://arxiv.org/pdf/2608.16114v1",
+      "https://github.com/rux001/HyperSkill"
     ],
-    "code_url": null,
-    "code_note": "Code availability not verified in this review.",
+    "code_url": "https://github.com/rux001/HyperSkill",
+    "code_note": "Official paper-linked repository and setup/runner README inspected on 2026-11-09; no code, models or benchmark data executed or downloaded. Source availability is not an independent reproduction.",
     "topics": [
       "skills",
       "memory"
@@ -2454,12 +2458,12 @@
       "memory"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Trajectory relationships and quality or utility signals used during memory maintenance.",
-    "mechanism": "Connects reusable skills and subtask steps through trajectory-level hyperedges. Retrieval combines subtask and trajectory evidence, while periodic maintenance merges redundant skills and prunes low-utility entries.",
-    "evaluation": "The authors compare memory baselines on xBench, GAIA, and WebWalkerQA with two language-model backbones.",
-    "limitations": "This annotation is based on the primary abstract. Interpretation: benchmark comparisons do not independently establish long-term retention or safe pruning under changing task distributions.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Ground-truth task outcomes and execution length update skill utility in the main experiments; a separate variant uses self-judged outcomes.",
+    "mechanism": "Stores task decompositions and reusable natural-language skills in trajectory hyperedges. Task-level and subtask-level retrieval select lessons, while co-occurrence ranks skills. With fixed model weights, outcome-weighted pruning and merging maintain the graph after episodes; retrieved context stays fixed within an episode.",
+    "evaluation": "ArXiv v1 compares ten adapted memory baselines on 100 xBench, 165 GAIA and 170 WebWalkerQA tasks using two backbones in a fixed sequential order. It studies retrieval/structure ablations, maintenance settings, cost, graph growth and ground-truth versus self-judged feedback.",
+    "limitations": "Single-order cumulative curves do not establish causal compounding or long-term retention. Retrieval budgets differ from baselines and the flat-memory ablation changes multiple components. Headline gains are against no memory, with ties to some stronger baselines. Self-judging lowers scores, latency can rise, and some prose/figure descriptions disagree.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "HyperSkill"
   },
   {
@@ -3815,7 +3819,8 @@
     "venue": "",
     "url": "https://arxiv.org/abs/2605.27366",
     "sources": [
-      "https://arxiv.org/abs/2605.27366"
+      "https://arxiv.org/abs/2605.27366",
+      "https://arxiv.org/pdf/2605.27366v2"
     ],
     "code_url": null,
     "code_note": "Code availability not verified in this review.",
@@ -3830,12 +3835,12 @@
       "memory"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Accumulated skill-use experience and feedback from evaluating created skills.",
-    "mechanism": "Manages a skill lifecycle spanning creation, storage, retrieval, evaluation, and refinement. Per-skill experience persists across tasks so later attempts can reuse and adapt earlier work.",
-    "evaluation": "The revised abstract reports SkillsBench and SkillLearnBench comparisons and transfer of generated skills to another agent.",
-    "limitations": "The comparison with human-authored skills is explicitly reported on a successfully covered subset. Interpretation: that subset result should not be presented as an overall advantage across all tasks.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Source trajectories, generated tests when present, runtime checks and per-skill notes guide skill creation/refinement; a separate sequential-memory diagnostic supplies verifier feedback.",
+    "mechanism": "A fixed-weight agent creates and maintains portable skill packages with optional scripts/tests, per-skill experience and shared memory. Catalog-guided loading and context compression support reuse; checks can trigger package edits. Most observed generated packages are textual procedures rather than tested code.",
+    "evaluation": "ArXiv v2 compares four GPT-5.5-backed runtimes on 75 SkillsBench tasks with five runs each and 100 SkillLearnBench instances. It separates same-task skill re-evaluation, transfer to Hermes, coverage/cost diagnostics and a task-sequential memory-on/off experiment with two-pass verifier feedback.",
+    "limitations": "The 85.24% result covers only 47 successfully generated-skill tasks; all-task self-created performance is 53.42%, below human skills at 59.67%. Source and reuse tasks coincide, and transfer changes runtime rather than backbone. Only 8% of MUSE packages contain tests. Restricted coverage, brittle skills and incomplete cost traces limit generalization.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "MUSE-Autoskill"
   },
   {
@@ -5830,10 +5835,12 @@
     "venue": "",
     "url": "https://arxiv.org/abs/2604.17308",
     "sources": [
-      "https://arxiv.org/abs/2604.17308"
+      "https://arxiv.org/abs/2604.17308",
+      "https://arxiv.org/pdf/2604.17308v1",
+      "https://github.com/ZhangZi-a/SkillFlow"
     ],
-    "code_url": null,
-    "code_note": "No implementation link independently inspected for this entry; this does not establish that none exists.",
+    "code_url": "https://github.com/ZhangZi-a/SkillFlow",
+    "code_note": "Official paper-linked repository and benchmark/runner README inspected on 2026-11-09; no skill code, containers or datasets executed/downloaded. Released artifacts are not independently reproduced.",
     "topics": [
       "evaluation",
       "skills",
@@ -5844,12 +5851,12 @@
       "skills"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Trajectories, task outcomes, and evaluation rubrics.",
-    "mechanism": "Starts agents without skills and carries a library of trajectory- and rubric-derived skill patches through sequential tasks within task families.",
-    "evaluation": "Measures task success, skill discovery, revision, and reuse across a structured set of task families, with benefits differing substantially across models.",
-    "limitations": "Skill invocation is not evidence of useful learning: the paper reports high use with small gains or regression. Family-specific evaluation does not establish broad transfer.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Completed-task trajectories and externally supplied verifier-derived rubrics drive a fixed prompt that generates skill-file patches.",
+    "mechanism": "Starts each workflow family with an empty skill library, solves its tasks in difficulty order, and carries additions, revisions and deletions to subsequent tasks. Library state resets between families; the execution models are not weight-trained. Skill use is detected through reads or calls of stored files.",
+    "evaluation": "ArXiv v1 constructs 166 tasks in twenty families with common workflow structure, model-assisted generation and human review. Eleven model/native-harness combinations compare vanilla execution with skill evolution, including family-level outcomes, library growth, cost and an Opus raw-history control.",
+    "limitations": "This tests short related-task curricula, not retention across interleaved task families. Native harnesses differ and repeated-run/order uncertainty is not reported. High skill usage can accompany regression. The raw-history control has inconsistent reported values, and appendix verifier-toolchain failures complicate attribution of some errors.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "SkillFlow"
   },
   {
