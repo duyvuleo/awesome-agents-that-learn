@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-09T06:39:13.783355+00:00",
+  "checked_at_utc": "2026-11-09T06:46:28.884024+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -157,6 +157,12 @@
       "url": "https://aclanthology.org/2026.findings-emnlp.1326/",
       "http_status": 200,
       "final_url": "https://aclanthology.org/2026.findings-emnlp.1326/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2026.findings-emnlp.1393.pdf",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.findings-emnlp.1393.pdf",
       "status": "reachable"
     },
     {
@@ -3180,6 +3186,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2610.00093v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2610.00093v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2610.33274v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2610.33274v1",
@@ -4104,6 +4116,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/xaddwell/awesome-self-evolving-agent-safety",
+      "http_status": 200,
+      "final_url": "https://github.com/xaddwell/awesome-self-evolving-agent-safety",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/xiaowu0162/LongMemEval",
       "http_status": 200,
       "final_url": "https://github.com/xiaowu0162/LongMemEval",
@@ -4606,14 +4624,14 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=6def5d7c-2f6f-4b94-9ea3-cbd8d523fc44",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=2af0fb2d-17b6-4021-ab59-55c9dea34784",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=3f6c5db8-0037-43b4-b165-2f6c3cc69934",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=06bdd6bf-2685-4473-b3c2-e05899447c8a",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -4627,14 +4645,14 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=6e12bff2-84b2-44b0-ab09-d7364f922097",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=09b611c0-f09c-426f-85f3-ab7bc010b263",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=61f3be61-2f60-4e6d-a2d5-fca1f3a3714b",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=5cbe125f-3371-4004-95fb-333ff139edac",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -4642,6 +4660,12 @@
       "url": "https://www.shengranhu.com/ADAS/",
       "http_status": 200,
       "final_url": "https://www.shengranhu.com/ADAS/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://xaddwell.github.io/Awesome-Self-Evolving-Agent-Safety/",
+      "http_status": 200,
+      "final_url": "https://xaddwell.github.io/Awesome-Self-Evolving-Agent-Safety/",
       "status": "reachable"
     },
     {

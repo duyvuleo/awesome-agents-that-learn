@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Safety and workflow survey appraisals
+
+- Reviewed both surveys through their substantive appendices, evidence tables and corpus protocols.
+- Qualified coding confidence, recovery claims, taxonomy/count discrepancies and the scope of design recommendations; linked the official safety literature artifact.
+- Counts remain 190 works: 187 full-text and 3 abstract/metadata reviews. Fifty-seven broader appraisals are complete; 133 remain.
+
 ## 2026-11-09 — Hierarchical, temporal and self-correction reviews
 
 - Completed broader full-text appraisals of Hierarchical Self-Improvement, Temporal Self-Rewarding and the Self-correction survey.

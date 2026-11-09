@@ -75,7 +75,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-09-15 | **Poisoned benchmarks**<br>[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](https://arxiv.org/abs/2609.17817) | Studies whether poisoned optimization benchmarks can induce persistent changes that cause self-modifying coding agents to emit vulnerable code on later clean tasks. | Agent code, Prompts / context, Tools | preprint · full-text | [Notes](#trusting-trust-agents) |
 | 2026-09-14 | **ModularRSI**<br>[ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement](https://arxiv.org/abs/2609.14857) | Evolves five harness modules in separate restricted lineages, then integrates their changes. The evolved agent performs trajectory analysis and code modification; a… | Agent code, Tools, Workflows, Memory | preprint · full-text | [Notes](#modularrsi) |
 | 2026-09-11 | **LifeMem**<br>[LifeMem: Enabling Lifelong Experience Reuse for LLM Agents](https://arxiv.org/abs/2609.12655) | Clusters trajectories by procedural workflow, updates and splits clusters as experience grows, and distills transferable skills. Inference retrieves both… | Memory, Skills | peer-reviewed · full-text | [Notes](#lifemem) · [Code](https://github.com/BITHLP/LifeMem) |
-| 2026-09-08 | **Agent evolution safety**<br>[Safety in Self-Evolving Agents: A Survey](https://arxiv.org/abs/2610.00093) | Uses a transition-centered framework to examine how reusable state acquires influence, changes scope, and propagates failures through later adaptations. | Analysis / no retained update | preprint · abstract | [Notes](#safety-self-evolving-survey) |
+| 2026-09-08 | **Agent evolution safety**<br>[Safety in Self-Evolving Agents: A Survey](https://arxiv.org/abs/2610.00093) | SAVER follows a substrate–adaptation transition through violation, exposure and response, distinguishing local utility from permission for broader reuse. It separates… | Analysis / no retained update | preprint · full-text | [Notes](#safety-self-evolving-survey) · [Code](https://github.com/xaddwell/awesome-self-evolving-agent-safety) |
 | 2026-09-04 | **PRISM**<br>[Beyond Prompts: Measuring and Optimizing LLM Tool-Agent Harnesses](https://arxiv.org/abs/2609.05736) | Clusters failures and routes repairs to prompts, tool-boundary middleware, or both. Evolution retains candidates on a Pareto frontier while the underlying model stays… | Prompts / context, Agent code | peer-reviewed · full-text | [Notes](#beyond-prompts-prism) · [Code](https://github.com/airbnb/agent-harness-optimizer) |
 | 2026-09-02 | **MASkills**<br>[MASkills: Continual Skills Optimization for Multi-Agent LLM Systems](https://arxiv.org/abs/2609.02094) | Uses a separate critic and optimizer to refine, induce, merge, or prune persistent skill artifacts for cooperating agents. Aggregated textual feedback is smoothed across… | Skills | peer-reviewed · full-text | [Notes](#maskills) · [Code](https://github.com/DaRL-GenAI/MASkills) |
 | 2026-09-01 | **Control–data separation**<br>[Control-Data Flow Separation: Stable Prompt Optimization in Multi-Agent LLMs](https://arxiv.org/abs/2609.00621) | Keeps routing, formatting, and termination schemas outside the optimizer’s editable prompt surface. Typed validation rejects malformed control before routing while… | Prompts / context | peer-reviewed · full-text | [Notes](#control-data-flow-separation) · [Code](https://github.com/yuntian-group/cdsep) |
@@ -107,7 +107,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-04-05 | **Combee**<br>[Combee: Scaling Prompt Learning for Self-Improving Language Model Agents](https://arxiv.org/abs/2604.04247) | Adds a scaling layer to existing generate-reflect-update methods: hierarchical parallel aggregation, duplicated/shuffled reflections, and latency-based batch selection… | Prompts / context, Memory | peer-reviewed · full-text | [Notes](#combee) |
 | 2026-03-31 | **APEX-EM**<br>[APEX-EM: Non-Parametric Online Learning for Autonomous Agents via Structured Procedural-Episodic Experience Replay](https://arxiv.org/abs/2603.29093) | Stores procedural-episodic traces in a typed graph and retrieves them by semantic, structural, and graph signals. A plan/retrieve/generate/iterate/ingest loop separates… | Memory | peer-reviewed · full-text | [Notes](#apex-em) |
 | 2026-03-30 | **Meta-Harness**<br>[Meta-Harness: End-to-End Optimization of Model Harnesses](https://arxiv.org/abs/2603.28052) | An external coding-agent proposer inspects earlier harness implementations and failures, then revises context, memory, retrieval, or tool-loop code. A population and… | Agent code, Prompts / context, Workflows | peer-reviewed · full-text | [Notes](#meta-harness) · [Code](https://github.com/stanford-iris-lab/meta-harness) |
-| 2026-03-23 | **Workflow optimization survey**<br>[From Static Templates to Dynamic Runtime Graphs: A Survey of Workflow Optimization for LLM Agents](https://arxiv.org/abs/2603.22386) | Organizes workflow optimization by when structure is determined, which components change, and which feedback governs changes. Separates reusable templates, per-run… | Analysis / no retained update | peer-reviewed · abstract | [Notes](#workflow-optimization-survey) |
+| 2026-03-23 | **Workflow optimization survey**<br>[From Static Templates to Dynamic Runtime Graphs: A Survey of Workflow Optimization for LLM Agents](https://arxiv.org/abs/2603.22386) | Represents workflows as agentic computation graphs while distinguishing reusable templates, per-run realized graphs and execution traces. Six families span offline… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#workflow-optimization-survey) |
 | 2026-03-19 | **Hyperagents**<br>[Hyperagents](https://arxiv.org/abs/2603.19461) | Combines the task solver and the agent that modifies it in one editable program. DGM-Hyperagents can therefore revise their own improvement procedure as well as… | Agent code, Workflows, Memory | preprint · full-text | [Notes](#hyperagents) · [Code](https://github.com/facebookresearch/Hyperagents) |
 | 2026-03-18 | **ExpRAG**<br>[Retrieval-Augmented LLM Agents: Learning to Learn from Experience](https://arxiv.org/abs/2603.18272) | Trains the policy to use full retrieved trajectories instead of adding memory only at inference. The main retrieval bank stays read-only; separate experiments reuse a… | Model weights | peer-reviewed · full-text | [Notes](#exprag) |
 | 2026-03-01 | **AutoSkill**<br>[AutoSkill: Experience-Driven Lifelong Learning via Skill Self-Evolution](https://arxiv.org/abs/2603.01145) | Extracts explicit instruction skills from interactions, retrieves them for later requests, and merges related updates into versioned skill artifacts. A persistent skill… | Skills, Memory, Prompts / context | preprint · full-text | [Notes](#autoskill) · [Code](https://github.com/ECNU-ICALK/AutoSkill) |
@@ -1580,19 +1580,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.00093)
 
-**Mechanism.** Uses a transition-centered framework to examine how reusable state acquires influence, changes scope, and propagates failures through later adaptations.
+**Mechanism.** SAVER follows a substrate–adaptation transition through violation, exposure and response, distinguishing local utility from permission for broader reuse. It separates storage from activation, propagation from migration, and immediate containment from repair of derived memories, skills, artifacts or model state.
 
-**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable: analysis or evaluation resource.
+**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable to the survey itself; it analyzes selection signals, authorization conditions and feedback that govern reusable agent-state updates.
 
-**Evaluation.** Reviews evidence for admission, retrieval, activation, containment, and repair; identifies comparatively weak evidence for repairing descendants and evaluating resumed learning.
+**Evaluation.** ArXiv v1 synthesizes a scoping corpus with explicit source, deduplication and coding rules. Its benchmark tables compare observed lifecycle stages and paper-specific denominators; proposed measures cover safe promotion, boundary change, negative evidence and reactivation after repair and resumed adaptation.
 
-**Boundary.** The framework proposes how to organize longitudinal safety assessment; it does not certify that a learning system remains safe.
+**Boundary.** The 683-record inventory is not 683 independently appraised safety demonstrations: 549 classifications remain low-confidence. Screening lacks independent dual coding or preregistration, and heterogeneous results are not pooled. Proposed metrics and the conceptual authority model do not certify safety, complete recovery or the prevalence of benign adaptation drift.
 
-**Code / data.** No implementation link independently inspected for this entry; this does not establish that none exists.
+**Code / data.** [Official artifact](https://github.com/xaddwell/awesome-self-evolving-agent-safety) — Author-linked survey repository and project page inspected on 2026-11-09. This artifact is a coded literature collection, not a reproduced agent defense; its corpus labels and surveyed experiments were not independently rerun.
 
-**Topics:** surveys, safety, evaluation, memory. **Reviewed:** abstract · 2026-10-28.
+**Topics:** surveys, safety, evaluation, memory. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.00093)
+[Source 1](https://arxiv.org/abs/2610.00093) · [Source 2](https://arxiv.org/pdf/2610.00093v1) · [Source 3](https://xaddwell.github.io/Awesome-Self-Evolving-Agent-Safety/) · [Source 4](https://github.com/xaddwell/awesome-self-evolving-agent-safety)
 
 <a id="beyond-prompts-prism"></a>
 
@@ -2286,19 +2286,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2603.22386)
 
-**Mechanism.** Organizes workflow optimization by when structure is determined, which components change, and which feedback governs changes. Separates reusable templates, per-run graphs, and execution traces.
+**Mechanism.** Represents workflows as agentic computation graphs while distinguishing reusable templates, per-run realized graphs and execution traces. Six families span offline template/node/joint optimization, runtime selection, pre-execution generation and in-execution editing; classification also records update target, evidence and cost handling.
 
-**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable: literature synthesis and evaluation framework.
+**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable to the survey itself; it separates metrics, verifier outcomes, preferences, supervision and trace-derived feedback used by workflow optimizers.
 
-**Evaluation.** Proposes reporting that combines downstream task performance with structural properties, cost, robustness, and variation across inputs.
+**Evaluation.** The final Findings of EMNLP 2026 article supplies method comparison cards, a literature-search and coding description, evaluation-resource tables and a minimum reporting protocol. It recommends reporting graph properties, offline/online costs, structural ablations, failures, robustness and variation alongside task success.
 
-**Boundary.** A taxonomy and reporting proposal do not independently validate surveyed methods. Runtime graph changes can be specific to one task and should not automatically be interpreted as persistent learning.
+**Boundary.** The survey does not re-execute methods or establish a cross-paper performance ranking. Corpus totals and some static/dynamic placements differ across sections. Minimum-plasticity advice is a synthesis, not a tested universal optimum; runtime graph variation need not persist across tasks or constitute learning.
 
 **Code / data.** Official implementation availability was not established in this review; no code was executed.
 
-**Topics:** surveys, workflows, architecture, evaluation. **Reviewed:** abstract · 2026-10-29.
+**Topics:** surveys, workflows, architecture, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2603.22386) · [Source 2](https://aclanthology.org/2026.findings-emnlp.1393/)
+[Source 1](https://arxiv.org/abs/2603.22386) · [Source 2](https://aclanthology.org/2026.findings-emnlp.1393/) · [Source 3](https://aclanthology.org/2026.findings-emnlp.1393.pdf)
 
 <a id="hyperagents"></a>
 

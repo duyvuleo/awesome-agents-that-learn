@@ -5148,10 +5148,13 @@
     "venue": "",
     "url": "https://arxiv.org/abs/2610.00093",
     "sources": [
-      "https://arxiv.org/abs/2610.00093"
+      "https://arxiv.org/abs/2610.00093",
+      "https://arxiv.org/pdf/2610.00093v1",
+      "https://xaddwell.github.io/Awesome-Self-Evolving-Agent-Safety/",
+      "https://github.com/xaddwell/awesome-self-evolving-agent-safety"
     ],
-    "code_url": null,
-    "code_note": "No implementation link independently inspected for this entry; this does not establish that none exists.",
+    "code_url": "https://github.com/xaddwell/awesome-self-evolving-agent-safety",
+    "code_note": "Author-linked survey repository and project page inspected on 2026-11-09. This artifact is a coded literature collection, not a reproduced agent defense; its corpus labels and surveyed experiments were not independently rerun.",
     "topics": [
       "surveys",
       "safety",
@@ -5163,12 +5166,12 @@
       "none"
     ],
     "persistence": "not-applicable",
-    "learning_signal": "Not applicable: analysis or evaluation resource.",
-    "mechanism": "Uses a transition-centered framework to examine how reusable state acquires influence, changes scope, and propagates failures through later adaptations.",
-    "evaluation": "Reviews evidence for admission, retrieval, activation, containment, and repair; identifies comparatively weak evidence for repairing descendants and evaluating resumed learning.",
-    "limitations": "The framework proposes how to organize longitudinal safety assessment; it does not certify that a learning system remains safe.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Not applicable to the survey itself; it analyzes selection signals, authorization conditions and feedback that govern reusable agent-state updates.",
+    "mechanism": "SAVER follows a substrate–adaptation transition through violation, exposure and response, distinguishing local utility from permission for broader reuse. It separates storage from activation, propagation from migration, and immediate containment from repair of derived memories, skills, artifacts or model state.",
+    "evaluation": "ArXiv v1 synthesizes a scoping corpus with explicit source, deduplication and coding rules. Its benchmark tables compare observed lifecycle stages and paper-specific denominators; proposed measures cover safe promotion, boundary change, negative evidence and reactivation after repair and resumed adaptation.",
+    "limitations": "The 683-record inventory is not 683 independently appraised safety demonstrations: 549 classifications remain low-confidence. Screening lacks independent dual coding or preregistration, and heterogeneous results are not pooled. Proposed metrics and the conceptual authority model do not certify safety, complete recovery or the prevalence of benign adaptation drift.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "Agent evolution safety"
   },
   {
@@ -6688,7 +6691,8 @@
     "url": "https://arxiv.org/abs/2603.22386",
     "sources": [
       "https://arxiv.org/abs/2603.22386",
-      "https://aclanthology.org/2026.findings-emnlp.1393/"
+      "https://aclanthology.org/2026.findings-emnlp.1393/",
+      "https://aclanthology.org/2026.findings-emnlp.1393.pdf"
     ],
     "code_url": null,
     "code_note": "Official implementation availability was not established in this review; no code was executed.",
@@ -6703,12 +6707,12 @@
       "none"
     ],
     "persistence": "not-applicable",
-    "learning_signal": "Not applicable: literature synthesis and evaluation framework.",
-    "mechanism": "Organizes workflow optimization by when structure is determined, which components change, and which feedback governs changes. Separates reusable templates, per-run graphs, and execution traces.",
-    "evaluation": "Proposes reporting that combines downstream task performance with structural properties, cost, robustness, and variation across inputs.",
-    "limitations": "A taxonomy and reporting proposal do not independently validate surveyed methods. Runtime graph changes can be specific to one task and should not automatically be interpreted as persistent learning.",
-    "review_depth": "abstract",
-    "checked": "2026-10-29",
+    "learning_signal": "Not applicable to the survey itself; it separates metrics, verifier outcomes, preferences, supervision and trace-derived feedback used by workflow optimizers.",
+    "mechanism": "Represents workflows as agentic computation graphs while distinguishing reusable templates, per-run realized graphs and execution traces. Six families span offline template/node/joint optimization, runtime selection, pre-execution generation and in-execution editing; classification also records update target, evidence and cost handling.",
+    "evaluation": "The final Findings of EMNLP 2026 article supplies method comparison cards, a literature-search and coding description, evaluation-resource tables and a minimum reporting protocol. It recommends reporting graph properties, offline/online costs, structural ablations, failures, robustness and variation alongside task success.",
+    "limitations": "The survey does not re-execute methods or establish a cross-paper performance ranking. Corpus totals and some static/dynamic placements differ across sections. Minimum-plasticity advice is a synthesis, not a tested universal optimum; runtime graph variation need not persist across tasks or constitute learning.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "Workflow optimization survey"
   }
 ]
