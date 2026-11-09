@@ -678,13 +678,13 @@ No associated work in the current paper catalog.
 
 **What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Successful and failed trajectories assessed by model-based correctness judgments.
 
-**Paper relationship.** Official software release for ReasoningBank; supplied task integrations are distinct from a general production agent.
+**Paper relationship.** Official ReasoningBank software release. The current README documents a vendored WebArena harness with shopping-annotation and evaluation fixes; equivalence to the paper’s evaluated revision is not established.
 
 [ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](papers.md#reasoningbank)
 
 **Evaluation evidence.** The release documents the software-engineering and web-browsing settings used by the paper.
 
-**Boundary.** The agent judges its own trajectories in parts of the workflow. Current default-branch code and provider configurations were not independently reproduced.
+**Boundary.** Model-based trajectory labels can be wrong. Current provider defaults, patched benchmark behavior and paper results were not independently reproduced.
 
 **Availability.** Public research source with task-specific agent and evaluation directories; not run.
 
@@ -692,7 +692,7 @@ No associated work in the current paper catalog.
 
 **License.** [Apache-2.0](https://github.com/google-research/reasoning-bank/blob/main/LICENSE). Linked models, datasets, services, and dependencies can have separate terms.
 
-**Source inspection:** 2026-10-28 · project · not-run. **Topics:** memory, continual-learning, applications.
+**Source inspection:** 2026-11-09 · project · not-run. **Topics:** memory, continual-learning, applications.
 
 [Source 1](https://github.com/google-research/reasoning-bank) · [Source 2](https://github.com/google-research/reasoning-bank/blob/main/LICENSE)
 

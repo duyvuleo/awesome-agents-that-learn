@@ -3980,10 +3980,11 @@
         "https://arxiv.org/abs/2601.01885",
         "https://arxiv.org/html/2601.01885v3",
         "https://aclanthology.org/2026.acl-long.981/",
-        "https://github.com/y1y5/AgeMem"
+        "https://github.com/y1y5/AgeMem",
+        "https://aclanthology.org/2026.acl-long.981.pdf"
       ],
       "code_url": "https://github.com/y1y5/AgeMem",
-      "code_note": "Official repository linked from arXiv and its public page inspected; not executed.",
+      "code_note": "Official README inspected on 2026-11-09: TrinityRFT training and model-based judging/distractor generation are documented. No installation, training or independent reproduction.",
       "topics": [
         "memory",
         "model-training",
@@ -3996,12 +3997,12 @@
         "prompts"
       ],
       "persistence": "both",
-      "learning_signal": "Task success and memory-quality rewards, with penalties for redundant storage, tool use, and context growth.",
-      "mechanism": "Trains an agent to select long-term memory edits and short-term context operations as tools. Three progressive stages and step-wise GRPO assign delayed task rewards to earlier memory decisions; the resulting policy manages external memory during use.",
-      "evaluation": "Evaluates Qwen2.5-7B and Qwen3-4B agents on ALFWorld, ScienceWorld, PDDL, BabyAI, and HotpotQA, with memory-quality, efficiency, and ablation comparisons.",
-      "limitations": "The memory-operation vocabulary is fixed. The authors distinguish controlled cross-domain transfer from persistent real-user or long-term dialogue deployments, which remain future evaluation settings.",
+      "learning_signal": "A composite terminal reward combines graded task success, memory quality judged against reference information, and context-management proxies; the same group-normalized advantage is applied across steps.",
+      "mechanism": "Uses RL to train a language-model policy over six fixed long- and short-term memory operations. A three-stage curriculum creates memories, distracts the agent after resetting context, and asks a downstream question. Learned policy weights transfer across tasks; the training memory store resets between rollouts.",
+      "evaluation": "HotpotQA training transfers to four other benchmarks using two Qwen backbones. Appendix controls add comparable short-term tools and RL to earlier memory methods. Reported averages mix success, progress and graded-answer metrics; context-length and memory-quality ablations complement task scores.",
+      "limitations": "Operation-count and keyword-preservation rewards are proxies, not direct measures of useful maintenance or long-term retention. Terminal credit is not causal attribution to individual edits. Full lifecycle cost, repeated-training uncertainty and indefinite shared-memory retention are not established.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-09",
       "short_name": "AgeMem"
     },
     {
@@ -4502,10 +4503,11 @@
         "https://arxiv.org/html/2509.25140v1",
         "https://arxiv.org/html/2509.25140v2",
         "https://github.com/google-research/reasoning-bank",
-        "https://proceedings.iclr.cc/paper_files/paper/2026/hash/980ea04d23d1f6908964eba2a74afe45-Abstract-Conference.html"
+        "https://proceedings.iclr.cc/paper_files/paper/2026/hash/980ea04d23d1f6908964eba2a74afe45-Abstract-Conference.html",
+        "https://arxiv.org/pdf/2509.25140v2"
       ],
       "code_url": "https://github.com/google-research/reasoning-bank",
-      "code_note": "Official repository linked and its public page inspected; not executed.",
+      "code_note": "Official README at commit ed80611788292ea739f1effd31f16c53823b8a0d inspected on 2026-11-09. It documents WebArena/SWE-Bench integrations and a patched WebArena harness; current defaults were not reproduced or equated with the paper version.",
       "topics": [
         "memory",
         "skills",
@@ -4516,12 +4518,12 @@
         "memory"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Self-judged task outcomes and contrasts among multiple execution trajectories.",
-      "mechanism": "Extracts reusable reasoning lessons from self-judged successful and failed trajectories and retrieves them for later tasks. Memory-aware test-time scaling adds diverse attempts to improve the experience available for consolidation.",
-      "evaluation": "The study evaluates sequential web-browsing and software-engineering tasks, with memory baselines, failure-trajectory ablations, and test-time-compute comparisons.",
-      "limitations": "The learning signal relies on model judgments rather than access to ground truth during the task stream. Interpretation: memory gains should be compared under matched compute budgets, task order, and protection against retrieving the current task’s answer.",
+      "learning_signal": "The agent’s backbone judges completed trajectories without reference answers in the main task stream. Multiple attempts provide contrastive evidence; a separate diagnostic injects label noise using ground truth.",
+      "mechanism": "Extracts short strategy notes from successes and failures, appends them to persistent memory, and retrieves notes from similar prior queries. Parallel or sequential memory-aware test-time scaling supplies additional experiences; model weights and the memory-update procedure remain fixed.",
+      "evaluation": "Reports WebArena, Mind2Web and SWE-Bench-Verified results, plus smaller-model, failure-memory, retrieval-size, judge-noise and token-cost analyses. Random-trajectory pass@1, model-selected best-of-N and oracle pass@k are distinct evaluations.",
+      "limitations": "Fewer interaction steps do not imply fewer total tokens: the reported cost breakdown includes a modest token increase over no memory. Simulated independent label flips do not capture every correlated judge error. Task-order sensitivity, long-term forgetting and repeated-run uncertainty are not established; strategy emergence is illustrated qualitatively.",
       "review_depth": "full-text",
-      "checked": "2026-10-28",
+      "checked": "2026-11-09",
       "short_name": "ReasoningBank"
     },
     {
@@ -4639,10 +4641,11 @@
       "sources": [
         "https://arxiv.org/abs/2508.16153",
         "https://arxiv.org/html/2508.16153v2",
-        "https://github.com/Memento-Teams/Memento"
+        "https://github.com/Memento-Teams/Memento",
+        "https://arxiv.org/pdf/2508.16153v2"
       ],
       "code_url": "https://github.com/Memento-Teams/Memento",
-      "code_note": "The author-linked Agent-on-the-Fly repository redirects to Memento-Teams/Memento; public page inspected, not executed.",
+      "code_note": "Author-linked repository README at commit 42fbbcac63dd58ed6856c0761357345a58e4f032 inspected on 2026-11-09. It documents both retrieval variants and separate retriever training; not executed.",
       "topics": [
         "memory",
         "continual-learning",
@@ -4654,12 +4657,12 @@
         "model-weights"
       ],
       "persistence": "both",
-      "learning_signal": "Task outcomes attached to stored plans; the parametric variant trains a separate case-selection network from binary success feedback.",
-      "mechanism": "A planner-executor agent stores completed cases and reuses them in subsequent planning. Retrieval can use fixed similarity or a learned Q-function; underlying LLM weights remain frozen, while the optional retrieval network changes.",
-      "evaluation": "Reports deep-research and QA evaluations, memory ablations, and transfer. GAIA validation accumulates cases over three passes; the test run uses the validation-built case bank.",
-      "limitations": "Validation Pass@3 and test accuracy use different protocols. The parametric variant performs gradient updates outside the LLM, so the whole system should not be described as parameter-free. Long-horizon Level 3 tasks remain difficult.",
+      "learning_signal": "Task outcomes label stored plans. The implemented parametric variant trains a separate retrieval network with binary cross-entropy on success feedback; the underlying LLMs remain frozen.",
+      "mechanism": "A planner–executor agent retains final-state, plan and outcome cases. Retrieval uses fixed embedding similarity or a trained Q-network with top-k selection; this implementation simplifies the general multi-step soft-Q formulation to single-step prediction.",
+      "evaluation": "GAIA validation uses three passes with accumulating memory; test evaluation uses the validation-built bank. Separate QA transfer builds memory on four datasets before testing three others. Memory, planning, retrieval-size and model-choice ablations are reported.",
+      "limitations": "Repeated-task gains do not establish open-ended learning, and the no-memory baseline also improves across iterations. The stated weighted QA average conflicts with displayed values; model-judged partial-match scores are not established as equivalent to official leaderboards. Cross-system models and compute differ; uncertainty and lifecycle costs remain incomplete.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-09",
       "short_name": "Memento"
     },
     {
@@ -4998,10 +5001,11 @@
         "https://arxiv.org/abs/2506.07398",
         "https://arxiv.org/html/2506.07398v2",
         "https://proceedings.neurips.cc/paper_files/paper/2025/hash/136a45cd9b841bf785625709a19c6508-Abstract-Conference.html",
-        "https://github.com/bingreeky/GMemory"
+        "https://github.com/bingreeky/GMemory",
+        "https://arxiv.org/pdf/2506.07398v2"
       ],
       "code_url": "https://github.com/bingreeky/GMemory",
-      "code_note": "Author-linked public repository page inspected; not executed.",
+      "code_note": "Official README inspected on 2026-11-09; setup instructions cover ALFWorld, PDDL and FEVER. Coverage of every paper experiment is not established; no research code executed.",
       "topics": [
         "memory",
         "continual-learning",
@@ -5012,12 +5016,12 @@
         "memory"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Collaborative interaction traces and environment feedback, including task success or failure.",
-      "mechanism": "Organizes multi-agent experience into linked interaction, query, and insight graphs. Bidirectional traversal retrieves abstract guidance and condensed role-specific histories; completed episodes update the hierarchy for later queries.",
-      "evaluation": "Reports five benchmarks spanning embodied action, knowledge QA, and games, using three language-model backbones and three multi-agent frameworks, alongside cost and component analyses.",
-      "limitations": "This changes the memory supplied to existing teams; it does not establish autonomous redesign of their coordination or models. The authors leave broader domain validation, including medical QA, for future work.",
+      "learning_signal": "Completed multi-agent trajectories, task-resolution feedback and resource statistics drive memory updates; some configured agents have access to reference-based evaluation.",
+      "mechanism": "Maintains linked insight, query and interaction graphs with fixed models and orchestration. Similar-query retrieval, graph traversal, trajectory compression and role-specific projection supply memories at task onset; completed tasks update the hierarchy.",
+      "evaluation": "Three model backbones and three multi-agent frameworks are evaluated on five action/QA benchmarks, with adapted memory baselines, cost comparisons and component ablations. The largest advertised gain is against no memory, rather than the strongest memory baseline.",
+      "limitations": "Success, progress and exact-match scores differ across tasks. Task order, frozen-memory transfer splits and repeated-run uncertainty are insufficiently specified. The trajectory-length plot is not a cross-task learning curve; graph clusters do not establish causal transfer. Some baseline-gain and ablation interpretations conflict with displayed results.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-09",
       "short_name": "G-Memory"
     },
     {
@@ -7631,7 +7635,7 @@
       "related_papers": [
         "reasoningbank"
       ],
-      "relationship_note": "Official software release for ReasoningBank; supplied task integrations are distinct from a general production agent.",
+      "relationship_note": "Official ReasoningBank software release. The current README documents a vendored WebArena harness with shopping-annotation and evaluation fixes; equivalence to the paper’s evaluated revision is not established.",
       "topics": [
         "memory",
         "continual-learning",
@@ -7650,7 +7654,7 @@
         "Trajectory judging and memory prompts"
       ],
       "evaluation": "The release documents the software-engineering and web-browsing settings used by the paper.",
-      "limitations": "The agent judges its own trajectories in parts of the workflow. Current default-branch code and provider configurations were not independently reproduced.",
+      "limitations": "Model-based trajectory labels can be wrong. Current provider defaults, patched benchmark behavior and paper results were not independently reproduced.",
       "availability_note": "Public research source with task-specific agent and evaluation directories; not run.",
       "license": "Apache-2.0",
       "license_url": "https://github.com/google-research/reasoning-bank/blob/main/LICENSE",
@@ -7659,7 +7663,7 @@
         "https://github.com/google-research/reasoning-bank",
         "https://github.com/google-research/reasoning-bank/blob/main/LICENSE"
       ],
-      "checked": "2026-10-28",
+      "checked": "2026-11-09",
       "review_depth": "project",
       "execution_status": "not-run",
       "short_name": "ReasoningBank"

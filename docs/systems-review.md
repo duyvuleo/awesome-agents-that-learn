@@ -43,3 +43,7 @@ This is a focused software companion to the literature rather than an exhaustive
 Added one [Exo software record](systems.md#system-exo), bringing the software catalog to 24. The paper-cited c5c1963 snapshot’s README and MIT license were inspected alongside current official documentation. Requirements describe that research snapshot; current docs identify its self-evolving harness as an earlier experiment and warn that installation documentation remains incomplete.
 
 The record distinguishes documented code editing and recovery from tested safety: the paper’s default guardian checks builds, and its protection argument assumes authority boundaries not enforced by the broadly writable development setup. No software was installed or executed. All 23 earlier inspection dates and execution records were preserved.
+
+## 2026-11-09 — ReasoningBank artifact clarification
+
+Re-read the official README and Apache-2.0 license at the current repository revision `ed80611788292ea739f1effd31f16c53823b8a0d`. The release documents WebArena and SWE-Bench integrations, provider access, BrowserGym/Docker requirements, and a vendored WebArena harness with shopping-annotation, wishlist-evaluation and interaction fixes. Updated the relationship note to distinguish this current release from the paper's evaluated revision. This remains source inspection only; no install, benchmark run or independent reproduction. The 2026-10-28 inspection record remains historical.

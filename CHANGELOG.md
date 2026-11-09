@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded four memory-paper reviews
+
+- Appraised the full main text and appendices of AgeMem, G-Memory, Memento and ReasoningBank; corrected reward, comparison, transfer and cost qualifications.
+- Clarified the ReasoningBank software release’s documented benchmark patches without claiming reproduction.
+- Broader audit: 64 of 190 works complete, 126 pending; no new catalog works.
+
 ## 2026-11-09 — Completed the abstract-only review backlog
 
 - Completed broader full-text reading of the final three abstract-only surveys and linked their official literature collections.
