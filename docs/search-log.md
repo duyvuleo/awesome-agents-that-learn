@@ -259,3 +259,5 @@ The [fortieth depth-audit batch](review-log.md#2026-11-09--detailed-review-of-ex
 The [forty-first depth-audit batch](review-log.md#2026-11-09--detailed-review-of-existing-entries-batch-41) completes OMCE and Skill++ v1 with all substantive appendices, proofs, construction details and visual results. It distinguishes routing, cumulative success and task execution, and qualifies theory and comparison boundaries. Broader appraisal is 120/190; discovery coverage is unchanged.
 
 The [forty-second depth-audit batch](review-log.md#2026-11-09--detailed-review-of-existing-entries-batch-42) completes Exo v1, including its preservation proof, negative result, all visual measurements and pinned/current artifact distinction. Broader appraisal is 121/190; no new discovery coverage or production validation is claimed.
+
+The [forty-third depth-audit batch](review-log.md#2026-11-09--detailed-review-of-existing-entries-batch-43) completes LIFE v2 and ReSight v1, including all appendices, visual evidence and shared-experiment provenance. LIFE’s official component release is now accessible. Broader appraisal is 123/190; no new discovery-window coverage or execution is claimed.

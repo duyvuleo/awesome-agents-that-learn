@@ -536,10 +536,15 @@
       "sources": [
         "https://arxiv.org/abs/2611.00180",
         "https://arxiv.org/html/2611.00180v1",
-        "https://arxiv.org/abs/2610.33487"
+        "https://arxiv.org/abs/2610.33487",
+        "https://arxiv.org/pdf/2611.00180v2",
+        "https://github.com/AgibotTech/LIFE",
+        "https://github.com/AgibotTech/LIFE/blob/a63e763c515136a5090f9fb251f7b72f702ad93a/README.md",
+        "https://github.com/AgibotTech/LIFE/blob/a63e763c515136a5090f9fb251f7b72f702ad93a/LICENSE",
+        "https://github.com/AgibotTech/LIFE/blob/a63e763c515136a5090f9fb251f7b72f702ad93a/sss_bench/data/LICENSE"
       ],
-      "code_url": null,
-      "code_note": "The paper-linked LIFE repository returned HTTP 404 in two public retrieval checks. Implementation availability remains unverified; nothing was executed.",
+      "code_url": "https://github.com/AgibotTech/LIFE",
+      "code_note": "Complete 39-page arXiv v2, Appendices A–D, thirteen figures/eighteen tables and official component documentation read on 2026-11-09. The formerly unavailable repository is now accessible: RoboBeats inference and SSS benchmark/evaluation components were inspected at a63e763c515136a5090f9fb251f7b72f702ad93a. This is not a verified complete robot-memory/EDM release or reproduction. Code is Apache-2.0; benchmark questions/rubrics have a separate CC BY-NC 4.0 license. Nothing installed or executed.",
       "topics": [
         "memory",
         "skills",
@@ -556,11 +561,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Temporal labels train perception adapters; selected observations, task difficulty, and execution feedback support memory and tool construction.",
-      "mechanism": "Combines a separately trained streaming perception gate, evidence-preserving robot memory, and ReSight’s Explore–Distill–Mount process. Retained observations can acquire new indexes, and solutions can become reusable tools and skills. Runtime memory/tool updates are distinct from the gate’s offline LoRA training.",
-      "evaluation": "Tests perception and selective writing on streaming benchmarks, reuses ReSight capability-expansion experiments, and evaluates six questions three times each over one recorded day of robot video.",
-      "limitations": "The integrated study reconstructs memory offline; it does not test actions changing future observations. Capability-expansion results are inherited from ReSight, not independent new experiments. Answer-time savings exclude memory construction, and scoring/input protocols differ between configurations. Reliable multi-day autonomous learning remains open.",
+      "mechanism": "Combines an offline-trained causal perception gate, a revisitable store of visual observations and ReSight’s Explore–Distill–Mount procedure for reusable tools and skills. RoboBeats changes LoRA parameters during training; runtime adaptation changes retained evidence, derived indexes and programs. The gate’s small model is part of a larger writer/reader pipeline.",
+      "evaluation": "Full v2 evaluates streaming perception, selective memory writing and a reconstructed 24-hour robot recording with six questions repeated three times. ReSight supplies the capability-expansion experiments, including separate held-out episodes. Matched-condition gains coexist with protocol-sensitive comparisons and accuracy–cost tradeoffs.",
+      "limitations": "The integrated experiment is offline replay of one day, without actions changing future observations. Partial-credit answer scores are not physical task success; input and turn protocols differ across configurations. ReSight results are reused evidence, and online token savings exclude construction and training. Some gating/review settings reduce accuracy; writer, reader and judge dependence limits attribution. Retention exemptions mean the nominal per-view budget is not a global storage bound.",
       "review_depth": "full-text",
-      "checked": "2026-11-05",
+      "checked": "2026-11-09",
       "short_name": "LIFE"
     },
     {
@@ -1282,10 +1287,11 @@
       "url": "https://arxiv.org/abs/2610.33487",
       "sources": [
         "https://arxiv.org/abs/2610.33487",
-        "https://arxiv.org/html/2610.33487v1"
+        "https://arxiv.org/html/2610.33487v1",
+        "https://arxiv.org/pdf/2610.33487v1"
       ],
       "code_url": null,
-      "code_note": "An official runnable implementation was not verified in this review; no research code was executed.",
+      "code_note": "Complete 29-page arXiv v1, Appendices A–E, eighteen figures/ten tables, algorithm, prompts and paired execution traces read on 2026-11-09. An official ReSight implementation was not verified. LIFE reuses these experiments, but its inspected component release does not establish a complete ReSight/EDM artifact. No research code, model or robot environment was executed.",
       "topics": [
         "memory",
         "skills",
@@ -1302,11 +1308,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Retained sensory evidence, executor failures, and coding-agent exploration/replay without task reference answers.",
-      "mechanism": "Preserves robot keyframes while a coding agent builds reusable memory-processing programs, query tools, and skills. Explore–Distill–Mount registers these capabilities for a fixed execution model and adds derived memory fields for later queries.",
-      "evaluation": "Studies GOAT-core retrieval, OC-NaVQA and FindingDory expansion, separate frozen-capability reuse on held-out episodes, and queries over real robot patrol memories.",
-      "limitations": "The main FindingDory expansion uses exploration episodes; separate excluded episodes test reuse. Exploration has a larger independent compute budget. Real-robot memory-query scores are separate from downstream physical execution, and repeated expansion under changing long-term demand remains untested.",
+      "mechanism": "Retains visual evidence while a separate coding agent explores difficult query sets and distills reusable processing programs, memory fields and skills. Executor traces, behavioral flags and exploration answers guide gap diagnosis without reference answers. Mounted capabilities persist for a fixed executor; the outer exploration/distillation procedure and model weights stay fixed.",
+      "evaluation": "Full v1 covers GOAT-core retrieval, OC-NaVQA localization and FindingDory capability construction. Frozen tools developed on episodes 91–100 improve success from 37.5% to 65.8% on 597 excluded-episode queries. Six robot-memory queries have five answer repeats each; three queries are new, and quantitative testing disables robot motion.",
+      "limitations": "Main FindingDory construction/reporting shares the query pool, though the separate held-out test strengthens transfer evidence. OC localization improves while binary accuracy falls and online tokens increase. Cross-host representations and budgets differ; costs omit offline expansion/preprocessing. The no-exploration ablation also removes direct workspace evidence access. Answer repeats do not replicate independent capability construction, and repeated long-term expansion remains untested.",
       "review_depth": "full-text",
-      "checked": "2026-10-31",
+      "checked": "2026-11-09",
       "short_name": "ReSight"
     },
     {

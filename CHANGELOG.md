@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded LIFE and ReSight review
+
+- Read both complete papers and appendices; separated held-out transfer from construction-query results and shared experiments.
+- Preserved negative accuracy/cost results and qualified offline replay, scoring and physical-robot claims.
+- Updated LIFE’s artifact link to its now-accessible component release. Broader audit: 123/190 complete, 67 pending.
+
 ## 2026-11-09 — Expanded Exo runtime-learning review
 
 - Read Exo’s complete paper and appendices, including protection assumptions and measurement limits.
