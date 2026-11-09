@@ -32,8 +32,8 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-28 | **MUSE scientific memory**<br>[MUSE: Multi-Level Memory with Selective Runtime Injection for Scientific Coding Agents](https://arxiv.org/abs/2610.38332) | Extracts approach and implementation lessons, including conditional explanations of failures, then consolidates global guidance offline. Frozen global and Top5 approach… | Memory, Prompts / context | preprint · full-text | [Notes](#muse-scientific-memory) · [Code](https://github.com/hr-jin/MUSE) |
 | 2026-10-27 | **Policy–harness geometry**<br>[Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces](https://arxiv.org/abs/2610.37255) | Decomposes regularized return into an interface-specific optimum and policy mismatch under a finite semantic-control model. It tests how presentation or execution… | Analysis / no retained update | preprint · full-text | [Notes](#policy-harness-geometry) · [Code](https://github.com/2020-qqtcg/HRP) |
 | 2026-10-27 | **MLE-World**<br>[MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model](https://arxiv.org/abs/2610.37175) | Fine-tunes a world model to predict execution feedback from code and task context. Its predictions guide candidate search, while confidence gates real runs and final… | Model weights | preprint · full-text | [Notes](#mle-world) · [Code](https://github.com/ko120/MLE_World) |
-| 2026-10-27 | **DiscernMem**<br>[Remembering Is Not Enough: Refining Memories and Learning When to Use Them in Multi-Agent Systems](https://arxiv.org/abs/2610.36652) | Repairs role-owned behavioral memories and separately learns conditions for using or avoiding them. A task is scored before its experience updates memory; model weights… | Memory | preprint · full-text | [Notes](#discernmem) · [Code](https://github.com/ECNU-ICALK/DiscernMem) |
-| 2026-10-27 | **CoHARL**<br>[CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning](https://arxiv.org/abs/2610.36469) | Collects reinforcement-learning rollouts across a scheduled harness population while periodically proposing executable revisions. Accepted versions enter at update… | Model weights, Agent code, Prompts / context | preprint · full-text | [Notes](#coharl) |
+| 2026-10-27 | **DiscernMem**<br>[Remembering Is Not Enough: Refining Memories and Learning When to Use Them in Multi-Agent Systems](https://arxiv.org/abs/2610.36652) | Maintains role-owned behavioral rules, versioned effects and use/avoid conditions. After scoring each task, full-team replays compare one rule with no memory. A fixed… | Memory | preprint · full-text | [Notes](#discernmem) · [Code](https://github.com/ECNU-ICALK/DiscernMem) |
+| 2026-10-27 | **CoHARL**<br>[CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning](https://arxiv.org/abs/2610.36469) | Trains one shared policy with group-relative RL across a scheduled population of executable harnesses. A separate fixed proposer edits prompts, parsers, handlers and… | Model weights, Agent code, Prompts / context | preprint · full-text | [Notes](#coharl) |
 | 2026-10-26 | **Skill∞**<br>[Skill$^{\infty}$: Recursive Self-Improvement for Agent Skill Optimization](https://arxiv.org/abs/2610.35434) | Encodes skill optimization in an editable meta-skill. An agent uses that procedure to revise task skills and the meta-skill itself, then reuses the refined optimizer… | Skills, Prompts / context, Agent code | preprint · full-text | [Notes](#skill-infinity) |
 | 2026-10-26 | **SciValidityBench**<br>[The Right Fact, the Wrong Decision: SciValidityBench for Scientific Agent Memory](https://arxiv.org/abs/2610.34767) | Generates scientific histories in which a remembered fact may be invalid to use. A supplied compiler exposes decision-governing relations, separating raw records… | Memory | preprint · full-text | [Notes](#scivaliditybench) · [Code](https://github.com/SciValidityBench/SciValidityBench) |
 | 2026-10-26 | **Retrospective harness study**<br>[How Do Coding-Agent Harnesses Self-Evolve? An Empirical Study of Retrospective Adaptation](https://arxiv.org/abs/2610.34938) | Studies individually retained harness adaptations proposed by a retrospective skill, including context instructions and known-failure files. Fresh sessions with and… | Agent code, Prompts / context | preprint · full-text | [Notes](#retrospective-harness-study) |
@@ -634,19 +634,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.36652)
 
-**Mechanism.** Repairs role-owned behavioral memories and separately learns conditions for using or avoiding them. A task is scored before its experience updates memory; model weights, roles, and communication structure stay fixed.
+**Mechanism.** Maintains role-owned behavioral rules, versioned effects and use/avoid conditions. After scoring each task, full-team replays compare one rule with no memory. A fixed model diagnoses defects or scope misuse; bounded repairs must preserve tested historical scores. Rule bodies, boundaries and lifecycle states persist, while weights, roles and team structure stay fixed.
 
 **What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Automatically scored paired replays, historical task checks, and model judgments of rule defects or applicability.
 
-**Evaluation.** Tests three multi-agent hosts on four QA, code-generation, and planning benchmarks with one backbone and fixed-order task streams. Baseline figures are inherited from the ConMem study.
+**Evaluation.** Full v1 evaluates one fixed-order stream per setting across three hosts and four benchmarks. It leads eight of twelve reported comparisons, particularly code and planning; QA is mixed. Functional ablations and within-implementation injection sweeps support benefits, but the main baseline table is inherited from ConMem. PDDL measures maximum goal progress, not full-task success.
 
-**Boundary.** Replay requires repeatable, automatically scored tasks and adds execution cost. Memories are tested individually, missing interactions among rules. Avoidance conditions only accumulate, so mistaken scope judgments can persist; changing teams and task distributions remain untested.
+**Boundary.** Own zero-injection scores are much higher than inherited no-memory baselines, so headline gains cannot be assigned wholly to memory. Single runs lack uncertainty estimates. Isolated-rule replay misses interactions and adds unreported per-method cost. Small historical validation sets establish only tested non-regression. Avoidance rules only accumulate and override positive effects, so mistaken boundaries can persist and prevent repair.
 
-**Code / data.** [Official artifact](https://github.com/ECNU-ICALK/DiscernMem) — Paper-linked repository and README inspected; not installed or executed.
+**Code / data.** [Official artifact](https://github.com/ECNU-ICALK/DiscernMem) — Complete 24-page arXiv v1, Appendices A–E, nine figures/four tables, sixteen equations, algorithm and seven decision prompts read on 2026-11-09. Official README, requirements and MIT license inspected at 0d59f5fce155cbf5c695ada7f040c1d283e43ada; benchmark assets retain separate licenses. Model/retrieval services and benchmark execution were not installed or run.
 
-**Topics:** memory, continual-learning, evaluation, architecture. **Reviewed:** full-text · 2026-10-31.
+**Topics:** memory, continual-learning, evaluation, architecture. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.36652) · [Source 2](https://arxiv.org/html/2610.36652v1) · [Source 3](https://github.com/ECNU-ICALK/DiscernMem)
+[Source 1](https://arxiv.org/abs/2610.36652) · [Source 2](https://arxiv.org/html/2610.36652v1) · [Source 3](https://github.com/ECNU-ICALK/DiscernMem) · [Source 4](https://arxiv.org/pdf/2610.36652v1)
 
 <a id="coharl"></a>
 
@@ -656,19 +656,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.36469)
 
-**Mechanism.** Collects reinforcement-learning rollouts across a scheduled harness population while periodically proposing executable revisions. Accepted versions enter at update boundaries; a historical accuracy-cost archive informs later proposals.
+**Mechanism.** Trains one shared policy with group-relative RL across a scheduled population of executable harnesses. A separate fixed proposer edits prompts, parsers, handlers and episode code from traces and historical accuracy–token-cost records. Accepted versions enter at update boundaries; policy weights and harness code persist while the training framework, evaluator and action-format family remain fixed.
 
 **What changes:** Model weights, Agent code, Prompts / context. **Persistence:** across-tasks. **Learning signal:** Task rewards and execution traces train a shared policy and guide a separate, stronger harness-code proposer.
 
-**Evaluation.** Reports temporally held-out SWE-rebench, transfer to SWE-bench Verified, separately trained Terminal-Bench agents, and controls for search, training, and population use.
+**Evaluation.** Full v1 reports 27.6% strict resolved avg@3 on 110 temporally held-out SWE-rebench tasks, 59.8% one-attempt transfer to 500 SWE-bench Verified tasks, and a separately trained terminal agent. Thirty-step local controls compare frozen, once-searched and alternating harnesses; historical diagnostics and finite test-access audits are separate evidence.
 
-**Boundary.** Training framework, evaluator, and action-format family remain fixed. Evidence uses one policy-model setting and single training runs, without confidence intervals or complete total-compute comparisons. Validation reuse and stale archive scores can bias selection; terminal results are not zero-shot SWE transfer.
+**Boundary.** Single training runs lack confidence intervals and equal-total-compute comparisons. Shaped training rewards and harness-dependent filtering scores are not strict task success. Historical archive scores can become stale; fixed-score proofs do not guarantee learning progress. Controls differ in search counts and do not reproduce competing co-evolution frameworks. Terminal averages omit partially missing episodes from task denominators. Finite audits do not establish general security.
 
-**Code / data.** Official runnable code was not established in this review; no installation, training, or research execution was performed.
+**Code / data.** Complete 22-page arXiv v1, Appendices A–G, five figures/eight tables, eleven equations, two proofs, algorithm, audit and historical-run protocols read on 2026-11-09. The paper states that a complete versioned artifact bundle is not included; a current official implementation was not established. No installation, training or research execution.
 
-**Topics:** architecture, model-training, workflows, evaluation, applications. **Reviewed:** full-text · 2026-11-02.
+**Topics:** architecture, model-training, workflows, evaluation, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.36469) · [Source 2](https://arxiv.org/html/2610.36469v1)
+[Source 1](https://arxiv.org/abs/2610.36469) · [Source 2](https://arxiv.org/html/2610.36469v1) · [Source 3](https://arxiv.org/pdf/2610.36469v1)
 
 <a id="skill-infinity"></a>
 

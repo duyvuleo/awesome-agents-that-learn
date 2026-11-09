@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded CoHARL and DiscernMem review
+
+- Completed both papers and appendices, including proof assumptions, replay controls and historical diagnostics.
+- Made DiscernMem’s inherited-baseline discrepancy explicit and qualified CoHARL’s reward, compute and audit claims.
+- Broader audit: 127 of 190 works complete, 63 pending.
+
 ## 2026-11-09 — Expanded curriculum and scientific-memory reviews
 
 - Completed the quadruped benchmark and MUSE papers, appendices, visual results and official artifact documentation.

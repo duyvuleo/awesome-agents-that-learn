@@ -764,10 +764,11 @@
       "sources": [
         "https://arxiv.org/abs/2610.36652",
         "https://arxiv.org/html/2610.36652v1",
-        "https://github.com/ECNU-ICALK/DiscernMem"
+        "https://github.com/ECNU-ICALK/DiscernMem",
+        "https://arxiv.org/pdf/2610.36652v1"
       ],
       "code_url": "https://github.com/ECNU-ICALK/DiscernMem",
-      "code_note": "Paper-linked repository and README inspected; not installed or executed.",
+      "code_note": "Complete 24-page arXiv v1, Appendices A–E, nine figures/four tables, sixteen equations, algorithm and seven decision prompts read on 2026-11-09. Official README, requirements and MIT license inspected at 0d59f5fce155cbf5c695ada7f040c1d283e43ada; benchmark assets retain separate licenses. Model/retrieval services and benchmark execution were not installed or run.",
       "topics": [
         "memory",
         "continual-learning",
@@ -780,11 +781,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Automatically scored paired replays, historical task checks, and model judgments of rule defects or applicability.",
-      "mechanism": "Repairs role-owned behavioral memories and separately learns conditions for using or avoiding them. A task is scored before its experience updates memory; model weights, roles, and communication structure stay fixed.",
-      "evaluation": "Tests three multi-agent hosts on four QA, code-generation, and planning benchmarks with one backbone and fixed-order task streams. Baseline figures are inherited from the ConMem study.",
-      "limitations": "Replay requires repeatable, automatically scored tasks and adds execution cost. Memories are tested individually, missing interactions among rules. Avoidance conditions only accumulate, so mistaken scope judgments can persist; changing teams and task distributions remain untested.",
+      "mechanism": "Maintains role-owned behavioral rules, versioned effects and use/avoid conditions. After scoring each task, full-team replays compare one rule with no memory. A fixed model diagnoses defects or scope misuse; bounded repairs must preserve tested historical scores. Rule bodies, boundaries and lifecycle states persist, while weights, roles and team structure stay fixed.",
+      "evaluation": "Full v1 evaluates one fixed-order stream per setting across three hosts and four benchmarks. It leads eight of twelve reported comparisons, particularly code and planning; QA is mixed. Functional ablations and within-implementation injection sweeps support benefits, but the main baseline table is inherited from ConMem. PDDL measures maximum goal progress, not full-task success.",
+      "limitations": "Own zero-injection scores are much higher than inherited no-memory baselines, so headline gains cannot be assigned wholly to memory. Single runs lack uncertainty estimates. Isolated-rule replay misses interactions and adds unreported per-method cost. Small historical validation sets establish only tested non-regression. Avoidance rules only accumulate and override positive effects, so mistaken boundaries can persist and prevent repair.",
       "review_depth": "full-text",
-      "checked": "2026-10-31",
+      "checked": "2026-11-09",
       "short_name": "DiscernMem"
     },
     {
@@ -798,10 +799,11 @@
       "url": "https://arxiv.org/abs/2610.36469",
       "sources": [
         "https://arxiv.org/abs/2610.36469",
-        "https://arxiv.org/html/2610.36469v1"
+        "https://arxiv.org/html/2610.36469v1",
+        "https://arxiv.org/pdf/2610.36469v1"
       ],
       "code_url": null,
-      "code_note": "Official runnable code was not established in this review; no installation, training, or research execution was performed.",
+      "code_note": "Complete 22-page arXiv v1, Appendices A–G, five figures/eight tables, eleven equations, two proofs, algorithm, audit and historical-run protocols read on 2026-11-09. The paper states that a complete versioned artifact bundle is not included; a current official implementation was not established. No installation, training or research execution.",
       "topics": [
         "architecture",
         "model-training",
@@ -817,11 +819,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Task rewards and execution traces train a shared policy and guide a separate, stronger harness-code proposer.",
-      "mechanism": "Collects reinforcement-learning rollouts across a scheduled harness population while periodically proposing executable revisions. Accepted versions enter at update boundaries; a historical accuracy-cost archive informs later proposals.",
-      "evaluation": "Reports temporally held-out SWE-rebench, transfer to SWE-bench Verified, separately trained Terminal-Bench agents, and controls for search, training, and population use.",
-      "limitations": "Training framework, evaluator, and action-format family remain fixed. Evidence uses one policy-model setting and single training runs, without confidence intervals or complete total-compute comparisons. Validation reuse and stale archive scores can bias selection; terminal results are not zero-shot SWE transfer.",
+      "mechanism": "Trains one shared policy with group-relative RL across a scheduled population of executable harnesses. A separate fixed proposer edits prompts, parsers, handlers and episode code from traces and historical accuracy–token-cost records. Accepted versions enter at update boundaries; policy weights and harness code persist while the training framework, evaluator and action-format family remain fixed.",
+      "evaluation": "Full v1 reports 27.6% strict resolved avg@3 on 110 temporally held-out SWE-rebench tasks, 59.8% one-attempt transfer to 500 SWE-bench Verified tasks, and a separately trained terminal agent. Thirty-step local controls compare frozen, once-searched and alternating harnesses; historical diagnostics and finite test-access audits are separate evidence.",
+      "limitations": "Single training runs lack confidence intervals and equal-total-compute comparisons. Shaped training rewards and harness-dependent filtering scores are not strict task success. Historical archive scores can become stale; fixed-score proofs do not guarantee learning progress. Controls differ in search counts and do not reproduce competing co-evolution frameworks. Terminal averages omit partially missing episodes from task denominators. Finite audits do not establish general security.",
       "review_depth": "full-text",
-      "checked": "2026-11-02",
+      "checked": "2026-11-09",
       "short_name": "CoHARL"
     },
     {
