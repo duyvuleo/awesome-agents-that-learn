@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-09 — Expanded Hyperagents evidence review
+
+- Appraised the revised Hyperagents paper and substantive appendices, retaining transfer evidence alongside nonsignificant comparisons and evaluation boundaries.
+- Broader audit: 88 of 190 works complete, 102 pending.
+
 ## 2026-11-09 — Expanded DGM evidence review
 
 - Appraised DGM’s revised paper and full substantive appendices, adding diagnostic, evaluation, cost and objective-hacking qualifications alongside transfer and replication evidence.

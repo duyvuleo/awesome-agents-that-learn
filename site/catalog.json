@@ -3438,10 +3438,11 @@
         "https://arxiv.org/abs/2603.19461",
         "https://arxiv.org/html/2603.19461v1",
         "https://arxiv.org/pdf/2603.19461v2",
-        "https://github.com/facebookresearch/Hyperagents"
+        "https://github.com/facebookresearch/Hyperagents",
+        "https://github.com/facebookresearch/Hyperagents/blob/59a68f672dfb92c74aeb7e61535d776fb36e172d/analysis/analysis_utils.py"
       ],
       "code_url": "https://github.com/facebookresearch/Hyperagents",
-      "code_note": "Official repository landing page inspected; no installation or execution performed.",
+      "code_note": "Official README and analysis code at 59a68f672dfb92c74aeb7e61535d776fb36e172d inspected on 2026-11-09. The current statistical helper uses one-sided tests; its identity with the paper-run version was not established. No research code, model calls, simulator or benchmarks were executed.",
       "topics": [
         "recursive-improvement",
         "architecture",
@@ -3454,12 +3455,12 @@
         "memory"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Task evaluation and archived improvement histories, including transfer tests for the meta-agent.",
-      "mechanism": "Combines the task solver and the agent that modifies it in one editable program. DGM-Hyperagents can therefore revise their own improvement procedure as well as task-solving code.",
-      "evaluation": "Studies coding, paper-review prediction, robotics reward design, and math-solution grading. The reviewed v2 separately transfers the task agent and meta agent; meta-only transfer recovers nearly all combined-transfer benefit in its 50-iteration math-grading test.",
-      "limitations": "The transfer test holds the meta agent fixed while it generates task-agent variants. Initial math graders fail output formatting, affecting the starting score. Main experiments retain fixed task distributions and outer selection/evaluation; bounded transfer does not establish unbounded or self-accelerating improvement.",
+      "learning_signal": "Task outcomes and archived evaluation traces guide self-edits. Validation scores select agents where available; the main evaluator, task data, foundation models and parent-selection rule stay fixed.",
+      "mechanism": "An editable Python program contains both the task agent and the meta agent that modifies it. Prompts, tools, parsing, memory and modification logic can persist across generations. A separate pilot also permits changes to parent selection.",
+      "evaluation": "ArXiv v2 studies coding, acceptance prediction, simulated robot reward design and math grading over five runs. Transferring only the meta agent recovers nearly all combined-transfer benefit in a 50-iteration math-grading test; continued-transfer and parent-selection comparisons include nonsignificant differences.",
+      "limitations": "Initial zero scores partly reflect malformed output. Acceptance prediction is not review quality; robotics uses one simulated robot with two objectives. Full math-benchmark results include training/validation items, and coding subset descriptions differ. Transfer supports reusable improvement code, not unbounded acceleration; iteration counts do not equal compute budgets.",
       "review_depth": "full-text",
-      "checked": "2026-11-05",
+      "checked": "2026-11-09",
       "short_name": "Hyperagents"
     },
     {
