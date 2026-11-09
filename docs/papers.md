@@ -121,7 +121,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-01-29 | **MCE**<br>[Meta Context Engineering via Agentic Skill Evolution](https://arxiv.org/abs/2601.21557) | A meta-agent revises context-engineering skills; a base agent executes them to construct context as files and code. History-informed evolutionary selection retains… | Prompts / context, Skills, Agent code | peer-reviewed · full-text | [Notes](#meta-context-engineering) · [Code](https://github.com/metaevo-ai/meta-context-engineering) |
 | 2026-01-11 | **Dr. Zero**<br>[Dr. Zero: Self-Evolving Search Agents without Training Data](https://arxiv.org/abs/2601.07055) | Co-evolves a proposer that generates diverse, challenging questions and a search-enabled solver. Hop-grouped policy optimization shares baselines among structurally… | Model weights | peer-reviewed · abstract | [Notes](#dr-zero) |
 | 2026-01-08 | **AgentDevel**<br>[AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering](https://arxiv.org/abs/2601.04620) | A fixed development engine generates diagnostic scripts and one prompt/code/tool-wrapper release candidate per iteration. A configurable regression gate retains accepted… | Agent code, Workflows | preprint · full-text | [Notes](#agentdevel) |
-| 2026-01-06 | **MemRL**<br>[MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory](https://arxiv.org/abs/2601.03192) | Uses outcome feedback to adjust the utility of episodic memories while keeping the reasoning model fixed. Two-stage retrieval combines semantic relevance with learned… | Memory | preprint · abstract | [Notes](#memrl) · [Code](https://github.com/MemTensor/MemRL) |
+| 2026-01-06 | **MemRL**<br>[MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory](https://arxiv.org/abs/2601.03192) | Keeps model weights fixed and stores intent, experience and utility triplets. Similarity filtering precedes utility-weighted ranking; a constant-step moving average… | Memory | preprint · full-text | [Notes](#memrl) · [Code](https://github.com/MemTensor/MemRL) |
 | 2026-01-05 | **AgeMem**<br>[Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents](https://arxiv.org/abs/2601.01885) | Trains an agent to select long-term memory edits and short-term context operations as tools. Three progressive stages and step-wise GRPO assign delayed task rewards to… | Model weights, Memory, Prompts / context | peer-reviewed · full-text | [Notes](#agemem) · [Code](https://github.com/y1y5/AgeMem) |
 | 2026 | **Temporal self-rewarding**<br>[Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](https://proceedings.mlr.press/v306/wang26ik.html) | Separates the model generations used to provide rejected and chosen samples so their learning signal does not shrink as both improve together. The paper applies this… | Model weights | peer-reviewed · abstract | [Notes](#temporal-self-rewarding) · [Code](https://github.com/TemporalSelfRewarding/TSR) |
 | 2026 | **SkillRubricsRL**<br>[SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning](https://aclanthology.org/2026.findings-emnlp.471/) | Pairs each skill with execution criteria, trains an acting policy with combined outcome and fulfillment rewards, and evolves the skill bank from failures. Marginal… | Model weights, Skills, Memory | peer-reviewed · full-text | [Notes](#skillrubricsrl) · [Code](https://github.com/gminiheimdallr-a11y/SkillRubricsRL) |
@@ -137,15 +137,15 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-10-21 | **Search Self-Play**<br>[Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](https://arxiv.org/abs/2510.18821) | Trains one model in proposer and solver roles. The proposer builds search questions around supplied answers; a retrieval-augmented check filters questions before… | Model weights | peer-reviewed · full-text | [Notes](#search-self-play) · [Code](https://github.com/Qwen-Applications/SSP) |
 | 2025-10-17 | **MARSHAL**<br>[MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs](https://arxiv.org/abs/2510.15414) | Updates one language model through cooperative and competitive self-play. Turn-level returns are centered within player-role groups to assign credit across multi-turn… | Model weights | peer-reviewed · full-text | [Notes](#marshal) · [Code](https://github.com/thu-nics/MARSHAL) |
 | 2025-10-06 | **ACE**<br>[Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](https://arxiv.org/abs/2510.04618) | Separates generation, reflection, and curation to build an evolving playbook. Small structured updates and deduplication preserve reusable strategies without repeatedly… | Prompts / context, Memory | peer-reviewed · full-text | [Notes](#ace) |
-| 2025-09-30 | **Mem-α**<br>[Mem-α: Learning Memory Construction via Reinforcement Learning](https://arxiv.org/abs/2509.25911) | Trains an agent to construct and update core, episodic, and semantic memory while processing sequential interaction chunks. Rewards come from answering questions over… | Model weights, Memory | preprint · abstract | [Notes](#mem-alpha) |
+| 2025-09-30 | **Mem-α**<br>[Mem-α: Learning Memory Construction via Reinforcement Learning](https://arxiv.org/abs/2509.25911) | Reinforcement learning trains a Qwen3-4B writer to update core, episodic and semantic stores while processing history chunks. A fixed BM25 retriever and Qwen3-32B reader… | Model weights, Memory | preprint · full-text | [Notes](#mem-alpha) · [Code](https://github.com/wangyu-ustc/Mem-alpha) |
 | 2025-09-29 | **Socratic-Zero**<br>[Socratic-Zero : Bootstrapping Reasoning via Data-Free Agent Co-evolution](https://arxiv.org/abs/2509.24726) | Updates a solver through online preference learning and trains a generator to imitate useful teacher-generated curricula. The teacher remains frozen while the solver and… | Model weights | preprint · full-text | [Notes](#socratic-zero) |
 | 2025-09-29 | **ReasoningBank**<br>[ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](https://arxiv.org/abs/2509.25140) | Extracts reusable reasoning lessons from self-judged successful and failed trajectories and retrieves them for later tasks. Memory-aware test-time scaling adds diverse… | Memory | peer-reviewed · full-text | [Notes](#reasoningbank) · [Code](https://github.com/google-research/reasoning-bank) |
 | 2025-09-29 | **A-MemGuard**<br>[A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory](https://arxiv.org/abs/2510.02373) | Validates retrieved memories through parallel reasoning-path comparisons and keeps detected failure patterns in a separate lesson store. Later actions consult those… | Memory | peer-reviewed · full-text | [Notes](#a-memguard) · [Code](https://github.com/TangciuYueng/AMemGuard) |
-| 2025-08-27 | **Memory-R1**<br>[Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](https://arxiv.org/abs/2508.19828) | Trains a memory-management agent to add, update, delete, or retain entries, alongside an answer agent that selects and uses relevant memories. Outcome-driven… | Model weights, Memory | preprint · abstract | [Notes](#memory-r1) |
+| 2025-08-27 | **Memory-R1**<br>[Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](https://arxiv.org/abs/2508.19828) | Uses PPO or GRPO to train a manager that adds, updates, deletes or retains memory entries, then trains an answer agent to select relevant content from retrieved… | Model weights, Memory | preprint · full-text | [Notes](#memory-r1) |
 | 2025-08-26 | **ELL / StuLife**<br>[Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark](https://arxiv.org/abs/2508.19005) | Defines experience-driven lifelong learning around exploration, memory, skill abstraction, and internalization, and introduces StuLife as a stateful simulated… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#ell-stulife) |
 | 2025-08-22 | **Memento**<br>[Memento: Fine-tuning LLM Agents without Fine-tuning LLMs](https://arxiv.org/abs/2508.16153) | A planner-executor agent stores completed cases and reuses them in subsequent planning. Retrieval can use fixed similarity or a learned Q-function; underlying LLM… | Memory, Model weights | preprint · full-text | [Notes](#memento) · [Code](https://github.com/Memento-Teams/Memento) |
 | 2025-08-10 | **Agent evolution survey**<br>[A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](https://arxiv.org/abs/2508.07407) | Describes an evolution loop through inputs, agent systems, environments, and optimizers, then maps techniques and domain-specific applications onto those components. | Analysis / no retained update | preprint · abstract | [Notes](#comprehensive-evolving-survey) |
-| 2025-08-08 | **Memp**<br>[Memp: Exploring Agent Procedural Memory](https://arxiv.org/abs/2508.06433) | Distills trajectories into both detailed instructions and more abstract procedures. Its procedural-memory pipeline builds, retrieves, revises, and retires entries as… | Memory, Skills | peer-reviewed · abstract | [Notes](#memp) · [Code](https://github.com/zjunlp/MemP) |
+| 2025-08-08 | **Memp**<br>[Memp: Exploring Agent Procedural Memory](https://arxiv.org/abs/2508.06433) | Combines detailed trajectories with abstract procedural scripts in an external memory bank. Similarity retrieval supplies guidance to fixed-weight agents; online… | Memory, Skills | peer-reviewed · full-text | [Notes](#memp) · [Code](https://github.com/zjunlp/MemP) |
 | 2025-08-07 | **R-Zero**<br>[R-Zero: Self-Evolving Reasoning LLM from Zero Data](https://arxiv.org/abs/2508.05004) | Initializes challenger and solver models from the same base model, then optimizes their roles separately. Their interaction generates an adaptive training curriculum… | Model weights | peer-reviewed · abstract | [Notes](#r-zero) |
 | 2025-07-28 | **What/when/how survey**<br>[A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence](https://arxiv.org/abs/2507.21046) | Organizes agent adaptation by the component that changes, the stage when it changes, the feedback and algorithm used, and the application setting. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#self-evolving-survey) |
 | 2025-07-25 | **GEPA**<br>[GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](https://arxiv.org/abs/2507.19457) | Mutates module instructions using trace reflection, retains complementary candidates through instance-wise Pareto selection, and optionally merges prompt sets from… | Prompts / context | peer-reviewed · full-text | [Notes](#gepa) · [Code](https://github.com/gepa-ai/gepa) |
@@ -2598,19 +2598,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2601.03192)
 
-**Mechanism.** Uses outcome feedback to adjust the utility of episodic memories while keeping the reasoning model fixed. Two-stage retrieval combines semantic relevance with learned utility to select useful past strategies.
+**Mechanism.** Keeps model weights fixed and stores intent, experience and utility triplets. Similarity filtering precedes utility-weighted ranking; a constant-step moving average updates the retrieved memories using the same outcome, and the memory bank expands.
 
-**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Environment feedback updates the utility assigned to episodic memories.
+**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Environment or benchmark outcome rewards update scalar utility estimates for retrieved experiences, while an LLM summarizes new episodes.
 
-**Evaluation.** The authors report results on HLE, BigCodeBench, ALFWorld, and Lifelong Agent Bench.
+**Evaluation.** ArXiv v2 separates ten-epoch repeated-task learning on HLE, BigCodeBench, ALFWorld and Lifelong Agent Bench from frozen-memory transfer on non-HLE splits. It includes retrieval ablations, cross-model memory reuse, two-domain merging, cost analysis and conditional estimator theory.
 
-**Boundary.** The abstract and official repository were inspected; training/evaluation separation and statistical uncertainty were not independently audited. Benchmark gains do not settle the stability-plasticity problem in general.
+**Boundary.** HLE gains reflect repeated-question memorization, not held-out HLE generalization. At-least-once success is distinct from retained performance. Split-size reporting and validation selection need care; stationary-reward estimates do not prove absence of forgetting in an expanding memory system. Multi-memory credit assignment and false feedback remain unresolved.
 
 **Code / data.** [Official artifact](https://github.com/MemTensor/MemRL) — Official repository linked and its public page inspected; not executed.
 
-**Topics:** memory, continual-learning. **Reviewed:** abstract · 2026-10-28.
+**Topics:** memory, continual-learning. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2601.03192) · [Source 2](https://github.com/MemTensor/MemRL)
+[Source 1](https://arxiv.org/abs/2601.03192) · [Source 2](https://github.com/MemTensor/MemRL) · [Source 3](https://arxiv.org/pdf/2601.03192v2)
 
 **Related software:** [MemRL](systems.md#system-memrl). See each system's relationship note before equating it with the evaluated paper version.
 
@@ -2954,19 +2954,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2509.25911)
 
-**Mechanism.** Trains an agent to construct and update core, episodic, and semantic memory while processing sequential interaction chunks. Rewards come from answering questions over the full interaction history.
+**Mechanism.** Reinforcement learning trains a Qwen3-4B writer to update core, episodic and semantic stores while processing history chunks. A fixed BM25 retriever and Qwen3-32B reader answer questions from the resulting memory; trained writer weights persist across histories.
 
-**What changes:** Model weights, Memory. **Persistence:** across-tasks. **Learning signal:** Question-answering accuracy over accumulated interaction history.
+**What changes:** Model weights, Memory. **Persistence:** across-tasks. **Learning signal:** Downstream QA, tool-call formatting, compression and a fixed Qwen3-32B judge of memory-content type jointly reward policy training.
 
-**Evaluation.** The authors compare memory-augmented baselines and report generalization from training histories to substantially longer evaluation histories.
+**Evaluation.** ArXiv v1 trains on eight data sources and evaluates 112 MemoryAgentBench contexts across retrieval, classification from examples and long-document summarization. It compares memory architectures, untrained writers and reward-component ablations, including a 474K-token history.
 
-**Boundary.** The abstract supports long-context memory construction under a QA objective. Interpretation: longer-context generalization should not be equated with cross-domain procedural learning or autonomous objective selection.
+**Boundary.** Conflict revision is excluded; several task scores trail long-context or RAG baselines. Memory budgets and some readers differ across methods, and summary scoring uses keyword hits. The reward weight and balanced-training counts have reporting discrepancies; long histories do not establish procedural lifelong learning.
 
-**Code / data.** Code availability not verified in this review.
+**Code / data.** [Official artifact](https://github.com/wangyu-ustc/Mem-alpha) — Official paper-linked repository metadata, file list and README inspected on 2026-11-09; not installed or trained. README licensing claims were not confirmed by a root license file; no reproduction or paper-version equivalence is asserted.
 
-**Topics:** memory, model-training. **Reviewed:** abstract · 2026-10-28.
+**Topics:** memory, model-training. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2509.25911)
+[Source 1](https://arxiv.org/abs/2509.25911) · [Source 2](https://arxiv.org/pdf/2509.25911v1) · [Source 3](https://github.com/wangyu-ustc/Mem-alpha)
 
 <a id="socratic-zero"></a>
 
@@ -3044,19 +3044,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2508.19828)
 
-**Mechanism.** Trains a memory-management agent to add, update, delete, or retain entries, alongside an answer agent that selects and uses relevant memories. Outcome-driven reinforcement learning updates the policies governing external memory.
+**Mechanism.** Uses PPO or GRPO to train a manager that adds, updates, deletes or retains memory entries, then trains an answer agent to select relevant content from retrieved memories. Manager training freezes the answer policy; answer training uses a fixed manager.
 
-**What changes:** Model weights, Memory. **Persistence:** across-tasks. **Learning signal:** Downstream answer outcomes used for PPO and GRPO training.
+**What changes:** Model weights, Memory. **Persistence:** across-tasks. **Learning signal:** Gold-answer exact match rewards separately trained memory-manager and answer policies; explicit memory-operation labels are not required.
 
-**Evaluation.** The current abstract reports evaluation on LoCoMo, MSC, and LongMemEval across several model scales and question types.
+**Evaluation.** ArXiv v5 trains on LoCoMo, reporting 152 training, 81 validation and 1,307 test questions, and transfers to MSC and LongMemEval without retraining. It compares backbones, GPT-5-trajectory supervised training, component removal, reward design and inference latency.
 
-**Boundary.** Evidence reviewed here is the current abstract, not an audit of the training split or reward implementation. Conversation-memory QA gains do not establish improvement on long-horizon tool-use tasks.
+**Boundary.** Dialogue QA is the evidence setting, and gains vary by optimizer, backbone and metric. Judge rewards favor longer answers, while exact-match rewards favor concise ones. Appendix context-window counts disagree; repeated-training uncertainty and explicit dialogue-level split identifiers are not supplied in the inspected paper.
 
 **Code / data.** Code availability not verified in this review.
 
-**Topics:** memory, model-training. **Reviewed:** abstract · 2026-10-28.
+**Topics:** memory, model-training. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2508.19828)
+[Source 1](https://arxiv.org/abs/2508.19828) · [Source 2](https://arxiv.org/pdf/2508.19828v5)
 
 <a id="ell-stulife"></a>
 
@@ -3132,19 +3132,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2508.06433)
 
-**Mechanism.** Distills trajectories into both detailed instructions and more abstract procedures. Its procedural-memory pipeline builds, retrieves, revises, and retires entries as further experience arrives.
+**Mechanism.** Combines detailed trajectories with abstract procedural scripts in an external memory bank. Similarity retrieval supplies guidance to fixed-weight agents; online variants append experience, keep successes or revise a retrieved procedure after failure.
 
-**What changes:** Memory, Skills. **Persistence:** across-tasks. **Learning signal:** Past execution trajectories and feedback used to correct or deprecate procedures.
+**What changes:** Memory, Skills. **Persistence:** across-tasks. **Learning signal:** Successful training trajectories initialize memory; benchmark success feedback selects, revises or filters later experience.
 
-**Evaluation.** The paper studies TravelPlanner and ALFWorld and reports transfer of procedural memory from a stronger model to a weaker one.
+**Evaluation.** The Findings of ACL paper evaluates TravelPlanner and ALFWorld with three models, comparing memory formats, retrieval keys and sequential update policies. It also transfers GPT-4o memories to Qwen2.5-14B and varies retrieval count.
 
-**Boundary.** The reported gains concern analogous tasks in two benchmark environments. Interpretation: cross-model reuse does not by itself demonstrate transfer to unrelated task families or indefinite retention.
+**Boundary.** ALFWorld gains do not imply uniformly better planning: GPT-4o and Claude hard-constraint scores on TravelPlanner fall below no-memory baselines. Online updates rely on benchmark rewards; exact task counts, ordering and uncertainty are insufficiently specified in the paper. Cross-model reuse is not unrelated-domain transfer.
 
 **Code / data.** [Official artifact](https://github.com/zjunlp/MemP) — Official repository linked and its public page inspected; not executed.
 
-**Topics:** memory, skills, continual-learning. **Reviewed:** abstract · 2026-10-28.
+**Topics:** memory, skills, continual-learning. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2508.06433) · [Source 2](https://aclanthology.org/2026.findings-acl.866/) · [Source 3](https://github.com/zjunlp/MemP)
+[Source 1](https://arxiv.org/abs/2508.06433) · [Source 2](https://aclanthology.org/2026.findings-acl.866/) · [Source 3](https://github.com/zjunlp/MemP) · [Source 4](https://aclanthology.org/2026.findings-acl.866.pdf)
 
 <a id="r-zero"></a>
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Memory learning and retention reviews
+
+- Upgraded Memp, Mem-α, Memory-R1 and MemRL after full-text, appendix and visual-evidence review.
+- Recovered the Mem-α artifact link and qualified reward supervision, metric regressions, repeated-question learning, protocol ambiguities and conditional stability claims.
+- Counts remain 190 works: 166 full-text and 24 abstract/metadata reviews. Thirty-six broader appraisals are complete; 154 remain.
+
 ## 2026-11-09 — Recursive improvement and self-play reviews
 
 - Upgraded STOP, Gödel Agent, Group-Evolving Agents and OpenSIR after full-text, appendix and visual-evidence review.

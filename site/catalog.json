@@ -3886,7 +3886,8 @@
       "url": "https://arxiv.org/abs/2601.03192",
       "sources": [
         "https://arxiv.org/abs/2601.03192",
-        "https://github.com/MemTensor/MemRL"
+        "https://github.com/MemTensor/MemRL",
+        "https://arxiv.org/pdf/2601.03192v2"
       ],
       "code_url": "https://github.com/MemTensor/MemRL",
       "code_note": "Official repository linked and its public page inspected; not executed.",
@@ -3899,12 +3900,12 @@
         "memory"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Environment feedback updates the utility assigned to episodic memories.",
-      "mechanism": "Uses outcome feedback to adjust the utility of episodic memories while keeping the reasoning model fixed. Two-stage retrieval combines semantic relevance with learned utility to select useful past strategies.",
-      "evaluation": "The authors report results on HLE, BigCodeBench, ALFWorld, and Lifelong Agent Bench.",
-      "limitations": "The abstract and official repository were inspected; training/evaluation separation and statistical uncertainty were not independently audited. Benchmark gains do not settle the stability-plasticity problem in general.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Environment or benchmark outcome rewards update scalar utility estimates for retrieved experiences, while an LLM summarizes new episodes.",
+      "mechanism": "Keeps model weights fixed and stores intent, experience and utility triplets. Similarity filtering precedes utility-weighted ranking; a constant-step moving average updates the retrieved memories using the same outcome, and the memory bank expands.",
+      "evaluation": "ArXiv v2 separates ten-epoch repeated-task learning on HLE, BigCodeBench, ALFWorld and Lifelong Agent Bench from frozen-memory transfer on non-HLE splits. It includes retrieval ablations, cross-model memory reuse, two-domain merging, cost analysis and conditional estimator theory.",
+      "limitations": "HLE gains reflect repeated-question memorization, not held-out HLE generalization. At-least-once success is distinct from retained performance. Split-size reporting and validation selection need care; stationary-reward estimates do not prove absence of forgetting in an expanding memory system. Multi-memory credit assignment and false feedback remain unresolved.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "MemRL"
     },
     {
@@ -4436,10 +4437,12 @@
       "venue": "",
       "url": "https://arxiv.org/abs/2509.25911",
       "sources": [
-        "https://arxiv.org/abs/2509.25911"
+        "https://arxiv.org/abs/2509.25911",
+        "https://arxiv.org/pdf/2509.25911v1",
+        "https://github.com/wangyu-ustc/Mem-alpha"
       ],
-      "code_url": null,
-      "code_note": "Code availability not verified in this review.",
+      "code_url": "https://github.com/wangyu-ustc/Mem-alpha",
+      "code_note": "Official paper-linked repository metadata, file list and README inspected on 2026-11-09; not installed or trained. README licensing claims were not confirmed by a root license file; no reproduction or paper-version equivalence is asserted.",
       "topics": [
         "memory",
         "model-training"
@@ -4450,12 +4453,12 @@
         "memory"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Question-answering accuracy over accumulated interaction history.",
-      "mechanism": "Trains an agent to construct and update core, episodic, and semantic memory while processing sequential interaction chunks. Rewards come from answering questions over the full interaction history.",
-      "evaluation": "The authors compare memory-augmented baselines and report generalization from training histories to substantially longer evaluation histories.",
-      "limitations": "The abstract supports long-context memory construction under a QA objective. Interpretation: longer-context generalization should not be equated with cross-domain procedural learning or autonomous objective selection.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Downstream QA, tool-call formatting, compression and a fixed Qwen3-32B judge of memory-content type jointly reward policy training.",
+      "mechanism": "Reinforcement learning trains a Qwen3-4B writer to update core, episodic and semantic stores while processing history chunks. A fixed BM25 retriever and Qwen3-32B reader answer questions from the resulting memory; trained writer weights persist across histories.",
+      "evaluation": "ArXiv v1 trains on eight data sources and evaluates 112 MemoryAgentBench contexts across retrieval, classification from examples and long-document summarization. It compares memory architectures, untrained writers and reward-component ablations, including a 474K-token history.",
+      "limitations": "Conflict revision is excluded; several task scores trail long-context or RAG baselines. Memory budgets and some readers differ across methods, and summary scoring uses keyword hits. The reward weight and balanced-training counts have reporting discrepancies; long histories do not establish procedural lifelong learning.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "Mem-α"
     },
     {
@@ -4571,7 +4574,8 @@
       "venue": "",
       "url": "https://arxiv.org/abs/2508.19828",
       "sources": [
-        "https://arxiv.org/abs/2508.19828"
+        "https://arxiv.org/abs/2508.19828",
+        "https://arxiv.org/pdf/2508.19828v5"
       ],
       "code_url": null,
       "code_note": "Code availability not verified in this review.",
@@ -4585,12 +4589,12 @@
         "memory"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Downstream answer outcomes used for PPO and GRPO training.",
-      "mechanism": "Trains a memory-management agent to add, update, delete, or retain entries, alongside an answer agent that selects and uses relevant memories. Outcome-driven reinforcement learning updates the policies governing external memory.",
-      "evaluation": "The current abstract reports evaluation on LoCoMo, MSC, and LongMemEval across several model scales and question types.",
-      "limitations": "Evidence reviewed here is the current abstract, not an audit of the training split or reward implementation. Conversation-memory QA gains do not establish improvement on long-horizon tool-use tasks.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Gold-answer exact match rewards separately trained memory-manager and answer policies; explicit memory-operation labels are not required.",
+      "mechanism": "Uses PPO or GRPO to train a manager that adds, updates, deletes or retains memory entries, then trains an answer agent to select relevant content from retrieved memories. Manager training freezes the answer policy; answer training uses a fixed manager.",
+      "evaluation": "ArXiv v5 trains on LoCoMo, reporting 152 training, 81 validation and 1,307 test questions, and transfers to MSC and LongMemEval without retraining. It compares backbones, GPT-5-trajectory supervised training, component removal, reward design and inference latency.",
+      "limitations": "Dialogue QA is the evidence setting, and gains vary by optimizer, backbone and metric. Judge rewards favor longer answers, while exact-match rewards favor concise ones. Appendix context-window counts disagree; repeated-training uncertainty and explicit dialogue-level split identifiers are not supplied in the inspected paper.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "Memory-R1"
     },
     {
@@ -4707,7 +4711,8 @@
       "sources": [
         "https://arxiv.org/abs/2508.06433",
         "https://aclanthology.org/2026.findings-acl.866/",
-        "https://github.com/zjunlp/MemP"
+        "https://github.com/zjunlp/MemP",
+        "https://aclanthology.org/2026.findings-acl.866.pdf"
       ],
       "code_url": "https://github.com/zjunlp/MemP",
       "code_note": "Official repository linked and its public page inspected; not executed.",
@@ -4722,12 +4727,12 @@
         "skills"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Past execution trajectories and feedback used to correct or deprecate procedures.",
-      "mechanism": "Distills trajectories into both detailed instructions and more abstract procedures. Its procedural-memory pipeline builds, retrieves, revises, and retires entries as further experience arrives.",
-      "evaluation": "The paper studies TravelPlanner and ALFWorld and reports transfer of procedural memory from a stronger model to a weaker one.",
-      "limitations": "The reported gains concern analogous tasks in two benchmark environments. Interpretation: cross-model reuse does not by itself demonstrate transfer to unrelated task families or indefinite retention.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Successful training trajectories initialize memory; benchmark success feedback selects, revises or filters later experience.",
+      "mechanism": "Combines detailed trajectories with abstract procedural scripts in an external memory bank. Similarity retrieval supplies guidance to fixed-weight agents; online variants append experience, keep successes or revise a retrieved procedure after failure.",
+      "evaluation": "The Findings of ACL paper evaluates TravelPlanner and ALFWorld with three models, comparing memory formats, retrieval keys and sequential update policies. It also transfers GPT-4o memories to Qwen2.5-14B and varies retrieval count.",
+      "limitations": "ALFWorld gains do not imply uniformly better planning: GPT-4o and Claude hard-constraint scores on TravelPlanner fall below no-memory baselines. Online updates rely on benchmark rewards; exact task counts, ordering and uncertainty are insufficiently specified in the paper. Cross-model reuse is not unrelated-domain transfer.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "Memp"
     },
     {
