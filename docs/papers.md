@@ -156,7 +156,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-06-02 | **Self-Challenging Agents**<br>[Self-Challenging Language Model Agents](https://arxiv.org/abs/2506.01716) | A fixed challenger explores tools and proposes Code-as-Task instructions and checks. In the main self-improvement setting, successful offline trajectories from the same… | Model weights | peer-reviewed · full-text | [Notes](#self-challenging-agents) |
 | 2025-05-29 | **DGM**<br>[Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](https://arxiv.org/abs/2505.22954) | A coding agent rewrites its own implementation, and an archive retains runnable variants as possible parents for later edits. This permits exploration beyond the latest… | Agent code, Tools, Workflows, Prompts / context | peer-reviewed · full-text | [Notes](#darwin-godel-machine) · [Code](https://github.com/jennyzzt/dgm) |
 | 2025-05-17 | **LifelongAgentBench**<br>[LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners](https://arxiv.org/abs/2505.11942) | Sequences tasks with overlapping SQL, shell-command and knowledge-graph skills and retains interaction histories for fixed-weight agents. Database tables and… | Memory, Skills | preprint · full-text | [Notes](#lifelongagentbench) · [Code](https://github.com/caixd-220529/LifelongAgentBench) |
-| 2025-05-06 | **Absolute Zero**<br>[Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://arxiv.org/abs/2505.03335) | A single model proposes and solves code-based tasks, with a code executor validating problems and answers. Reinforcement learning updates both roles while the generated… | Model weights | peer-reviewed · full-text | [Notes](#absolute-zero) · [Code](https://github.com/LeapLabTHU/Absolute-Zero-Reasoner) |
+| 2025-05-06 | **Absolute Zero**<br>[Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://arxiv.org/abs/2505.03335) | A shared pretrained model proposes and solves three kinds of code-reasoning tasks. Joint reinforcement learning updates both roles, and a buffer retains valid generated… | Model weights | peer-reviewed · full-text | [Notes](#absolute-zero) · [Code](https://github.com/LeapLabTHU/Absolute-Zero-Reasoner) |
 | 2025-04-28 | **Mem0**<br>[Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/abs/2504.19413) | Extracts facts from recent exchanges and background summaries, then updates an external memory store through add/update/delete/no-op decisions. The graph variant stores… | Memory | preprint · full-text | [Notes](#mem0) |
 | 2025-04-24 | **RAGEN**<br>[RAGEN: Understanding Self-Evolution in LLM Agents via Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2504.20073) | StarPO organizes trajectory collection and PPO/GRPO updates to model weights. StarPO-S tests variability-based prompt filtering and gradient changes, including KL… | Model weights | preprint · full-text | [Notes](#ragen) · [Code](https://github.com/mll-lab-nu/RAGEN) |
 | 2025-04-21 | **SICA**<br>[A Self-Improving Coding Agent](https://arxiv.org/abs/2504.15228) | Equips a coding agent with tools to edit its own implementation and reuses improved versions in later iterations. Learning changes the surrounding agent code rather than… | Agent code, Tools, Workflows | preprint · full-text | [Notes](#sica) · [Code](https://github.com/MaximeRobeyns/self_improving_coding_agent) |
@@ -189,7 +189,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2023-09-07 | **OPRO**<br>[Large Language Models as Optimizers](https://arxiv.org/abs/2309.03409) | A fixed LLM optimizer proposes instructions from the best scored candidates and examples; an external evaluator scores them and refreshes the history. Selected prompts… | Prompts / context | peer-reviewed · full-text | [Notes](#opro) · [Code](https://github.com/google-deepmind/opro) |
 | 2023-08-20 | **ExpeL**<br>[ExpeL: LLM Agents Are Experiential Learners](https://arxiv.org/abs/2308.10144) | Collects experiences with Reflexion, retains successful examples, and maintains insights through additions, edits and importance votes. During the main held-out… | Memory | peer-reviewed · full-text | [Notes](#expel) · [Code](https://github.com/LeapLabTHU/ExpeL) |
 | 2023-08-17 | **ReST**<br>[Reinforced Self-Training (ReST) for Language Modeling](https://arxiv.org/abs/2308.08998) | Alternates costly generation rounds with multiple offline updates on increasingly filtered data. The strongest reward-score variant uses ordinary supervised negative… | Model weights | preprint · full-text | [Notes](#rest) |
-| 2023-06-20 | **RoboCat**<br>[RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation](https://arxiv.org/abs/2306.11706) | Fine-tunes a visual goal-conditioned generalist into task-specific policies, collects additional trajectories with them, then retrains a generalist on old and new data.… | Model weights | peer-reviewed · full-text | [Notes](#robocat) |
+| 2023-06-20 | **RoboCat**<br>[RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation](https://arxiv.org/abs/2306.11706) | Fine-tunes a visual goal-conditioned generalist into specialists, collects experience with their frozen policies, then retrains on old and new data. The policy also… | Model weights | peer-reviewed · full-text | [Notes](#robocat) |
 | 2023-05-26 | **LLMs as Tool Makers**<br>[Large Language Models as Tool Makers](https://arxiv.org/abs/2305.17126) | A stronger model proposes Python tools, verifies them on examples and packages calling demonstrations for a cheaper user model. Tools persist in a functional cache.… | Tools | peer-reviewed · full-text | [Notes](#llms-as-tool-makers) · [Code](https://github.com/ctlllll/LLM-ToolMaker) |
 | 2023-05-25 | **Voyager**<br>[Voyager: An Open-Ended Embodied Agent with Large Language Models](https://arxiv.org/abs/2305.16291) | Stores successful Minecraft programs in a persistent skill library indexed by generated descriptions. Retrieved skills support composition and up to four code attempts… | Skills, Tools | peer-reviewed · full-text | [Notes](#voyager) · [Code](https://github.com/MineDojo/Voyager) |
 | 2023-05-23 | **CREATOR**<br>[CREATOR: Tool Creation for Disentangling Abstract and Concrete Reasoning of Large Language Models](https://arxiv.org/abs/2305.14318) | Separates reusable Python tool construction from problem-specific calls, executes their combination and revises it after runtime errors. Weights stay fixed. A separate… | Tools | peer-reviewed · full-text | [Notes](#creator) · [Code](https://github.com/qiancheng0/CREATOR) |
@@ -3382,19 +3382,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2505.03335)
 
-**Mechanism.** A single model proposes and solves code-based tasks, with a code executor validating problems and answers. Reinforcement learning updates both roles while the generated task buffer supplies a changing curriculum.
+**Mechanism.** A shared pretrained model proposes and solves three kinds of code-reasoning tasks. Joint reinforcement learning updates both roles, and a buffer retains valid generated tasks for subsequent proposals and training. Task formats, verification and the optimization procedure remain fixed.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Executable task validity, solution correctness, and task learnability rewards.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Python execution checks sampled task/answer agreement. The proposer reward depends on eight sampled solver attempts, favoring difficult but sometimes solvable tasks; it is a proxy for learnability, not measured future improvement.
 
-**Evaluation.** Experiments compare coding and mathematics reasoning across base-model families and scales, with ablations of task types and proposer design.
+**Evaluation.** ArXiv v3 compares coding and mathematics benchmarks across model families and sizes, with task/proposer ablations, high-pass@k coverage and MMLU-Pro results. Appendices report unsuccessful curriculum, reward and preprocessing alternatives.
 
-**Boundary.** Zero data refers to new task and answer supervision during this training stage; the system starts from pretrained models and uses an engineered executor and task format. Curator interpretation: bounded benchmark gains do not establish unlimited improvement.
+**Boundary.** Zero data concerns new curated post-training tasks, not pretraining or human-designed rules. Finite execution checks do not prove program equivalence or faithful reasoning; retained globals can leak answers. Some benchmarks regress, and model/data budgets differ across baselines. Bounded results do not establish unlimited or safe autonomous improvement.
 
-**Code / data.** [Official artifact](https://github.com/LeapLabTHU/Absolute-Zero-Reasoner) — Official repository page checked; code and training were not executed.
+**Code / data.** [Official artifact](https://github.com/LeapLabTHU/Absolute-Zero-Reasoner) — Official README inspected on 2026-11-09; it separates the original paper branch from newer development code and warns about the raw executor. No code execution, model download, training or reproduction was performed.
 
-**Topics:** model-training, self-play. **Reviewed:** full-text · 2026-10-28.
+**Topics:** model-training, self-play. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2505.03335) · [Source 2](https://arxiv.org/html/2505.03335v3) · [Source 3](https://proceedings.neurips.cc/paper_files/paper/2025/hash/9837dc00ff67d176373268ed48042d49-Abstract-Conference.html) · [Source 4](https://github.com/LeapLabTHU/Absolute-Zero-Reasoner)
+[Source 1](https://arxiv.org/abs/2505.03335) · [Source 2](https://arxiv.org/html/2505.03335v3) · [Source 3](https://proceedings.neurips.cc/paper_files/paper/2025/hash/9837dc00ff67d176373268ed48042d49-Abstract-Conference.html) · [Source 4](https://github.com/LeapLabTHU/Absolute-Zero-Reasoner) · [Source 5](https://arxiv.org/pdf/2505.03335v3)
 
 **Related software:** [Absolute Zero Reasoner](systems.md#system-absolute-zero). See each system's relationship note before equating it with the evaluated paper version.
 
@@ -4128,19 +4128,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2306.11706)
 
-**Mechanism.** Fine-tunes a visual goal-conditioned generalist into task-specific policies, collects additional trajectories with them, then retrains a generalist on old and new data. Reusable improvement resides in model weights rather than an expanding executable skill library.
+**Mechanism.** Fine-tunes a visual goal-conditioned generalist into specialists, collects experience with their frozen policies, then retrains on old and new data. The policy also predicts future image tokens. Humans control collection and offline training; no parameter learning occurs during physical interaction.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Human demonstrations, goal-relabeled robot trajectories, and learned success detectors used during data collection.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Behavior cloning uses human demonstrations, expert-agent and self-generated trajectories, plus visual hindsight goals. Human-labeled success classifiers support collection and goal selection; reported real-world evaluation is manually scored.
 
-**Evaluation.** Reports simulation and real-robot manipulation across embodiments, adaptation to new tasks, and an isolated comparison of demonstrations alone versus demonstrations plus self-generated data.
+**Evaluation.** The reviewed paper tests simulation and real-robot manipulation, held-out task and embodiment adaptation, and one self-improvement iteration. A smaller controlled study compares demonstrations alone with added self-generated data; full-model analyses cover transfer, perception, resets and task difficulty.
 
-**Boundary.** The reported loop demonstrates one successful iteration and uses 100–1000 teleoperated demonstrations per new task. Humans start and stop collection; robot policies stay frozen during physical interaction. Controlled laboratory backgrounds and imperfect success detectors limit generalization and safety claims.
+**Boundary.** The 100–1000 demonstrations per new task sit on top of extensive prior data and checkpoint evaluation. Some insertion/building tasks remain weak. The model card reports no independent training repeats; baseline data and capacity differ, and some reported aggregates/labels conflict. Controlled laboratory results do not establish open-world or lifelong autonomous adaptation.
 
 **Code / data.** Official runnable code was not established in this review; no installation, training, or research execution was performed.
 
-**Topics:** foundations, model-training, skills, continual-learning, applications. **Reviewed:** full-text · 2026-11-01.
+**Topics:** foundations, model-training, skills, continual-learning, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2306.11706) · [Source 2](https://arxiv.org/html/2306.11706v2) · [Source 3](https://jmlr.org/tmlr/papers/)
+[Source 1](https://arxiv.org/abs/2306.11706) · [Source 2](https://arxiv.org/html/2306.11706v2) · [Source 3](https://jmlr.org/tmlr/papers/) · [Source 4](https://arxiv.org/pdf/2306.11706v2)
 
 <a id="llms-as-tool-makers"></a>
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-09 — Expanded self-play and robot-learning reviews
+
+- Appraised Absolute Zero and RoboCat through their full substantive appendices, clarifying supervision, verification, evaluation and autonomy boundaries.
+- Retained negative findings and unresolved reporting discrepancies. Broader audit: 80 of 190 works complete, 110 pending.
+
 ## 2026-11-09 — Expanded STaR and SEAL evidence reviews
 
 - Appraised full methods, experiments, limitations and appendices for STaR and SEAL, including evaluation denominators, stronger controls and negative results.

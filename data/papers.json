@@ -84,10 +84,11 @@
       "https://arxiv.org/abs/2505.03335",
       "https://arxiv.org/html/2505.03335v3",
       "https://proceedings.neurips.cc/paper_files/paper/2025/hash/9837dc00ff67d176373268ed48042d49-Abstract-Conference.html",
-      "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner"
+      "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner",
+      "https://arxiv.org/pdf/2505.03335v3"
     ],
     "code_url": "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner",
-    "code_note": "Official repository page checked; code and training were not executed.",
+    "code_note": "Official README inspected on 2026-11-09; it separates the original paper branch from newer development code and warns about the raw executor. No code execution, model download, training or reproduction was performed.",
     "topics": [
       "model-training",
       "self-play"
@@ -97,12 +98,12 @@
       "model-weights"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Executable task validity, solution correctness, and task learnability rewards.",
-    "mechanism": "A single model proposes and solves code-based tasks, with a code executor validating problems and answers. Reinforcement learning updates both roles while the generated task buffer supplies a changing curriculum.",
-    "evaluation": "Experiments compare coding and mathematics reasoning across base-model families and scales, with ablations of task types and proposer design.",
-    "limitations": "Zero data refers to new task and answer supervision during this training stage; the system starts from pretrained models and uses an engineered executor and task format. Curator interpretation: bounded benchmark gains do not establish unlimited improvement.",
+    "learning_signal": "Python execution checks sampled task/answer agreement. The proposer reward depends on eight sampled solver attempts, favoring difficult but sometimes solvable tasks; it is a proxy for learnability, not measured future improvement.",
+    "mechanism": "A shared pretrained model proposes and solves three kinds of code-reasoning tasks. Joint reinforcement learning updates both roles, and a buffer retains valid generated tasks for subsequent proposals and training. Task formats, verification and the optimization procedure remain fixed.",
+    "evaluation": "ArXiv v3 compares coding and mathematics benchmarks across model families and sizes, with task/proposer ablations, high-pass@k coverage and MMLU-Pro results. Appendices report unsuccessful curriculum, reward and preprocessing alternatives.",
+    "limitations": "Zero data concerns new curated post-training tasks, not pretraining or human-designed rules. Finite execution checks do not prove program equivalence or faithful reasoning; retained globals can leak answers. Some benchmarks regress, and model/data budgets differ across baselines. Bounded results do not establish unlimited or safe autonomous improvement.",
     "review_depth": "full-text",
-    "checked": "2026-10-28",
+    "checked": "2026-11-09",
     "short_name": "Absolute Zero"
   },
   {
@@ -5002,7 +5003,8 @@
     "sources": [
       "https://arxiv.org/abs/2306.11706",
       "https://arxiv.org/html/2306.11706v2",
-      "https://jmlr.org/tmlr/papers/"
+      "https://jmlr.org/tmlr/papers/",
+      "https://arxiv.org/pdf/2306.11706v2"
     ],
     "code_url": null,
     "code_note": "Official runnable code was not established in this review; no installation, training, or research execution was performed.",
@@ -5018,12 +5020,12 @@
       "model-weights"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Human demonstrations, goal-relabeled robot trajectories, and learned success detectors used during data collection.",
-    "mechanism": "Fine-tunes a visual goal-conditioned generalist into task-specific policies, collects additional trajectories with them, then retrains a generalist on old and new data. Reusable improvement resides in model weights rather than an expanding executable skill library.",
-    "evaluation": "Reports simulation and real-robot manipulation across embodiments, adaptation to new tasks, and an isolated comparison of demonstrations alone versus demonstrations plus self-generated data.",
-    "limitations": "The reported loop demonstrates one successful iteration and uses 100–1000 teleoperated demonstrations per new task. Humans start and stop collection; robot policies stay frozen during physical interaction. Controlled laboratory backgrounds and imperfect success detectors limit generalization and safety claims.",
+    "learning_signal": "Behavior cloning uses human demonstrations, expert-agent and self-generated trajectories, plus visual hindsight goals. Human-labeled success classifiers support collection and goal selection; reported real-world evaluation is manually scored.",
+    "mechanism": "Fine-tunes a visual goal-conditioned generalist into specialists, collects experience with their frozen policies, then retrains on old and new data. The policy also predicts future image tokens. Humans control collection and offline training; no parameter learning occurs during physical interaction.",
+    "evaluation": "The reviewed paper tests simulation and real-robot manipulation, held-out task and embodiment adaptation, and one self-improvement iteration. A smaller controlled study compares demonstrations alone with added self-generated data; full-model analyses cover transfer, perception, resets and task difficulty.",
+    "limitations": "The 100–1000 demonstrations per new task sit on top of extensive prior data and checkpoint evaluation. Some insertion/building tasks remain weak. The model card reports no independent training repeats; baseline data and capacity differ, and some reported aggregates/labels conflict. Controlled laboratory results do not establish open-world or lifelong autonomous adaptation.",
     "review_depth": "full-text",
-    "checked": "2026-11-01",
+    "checked": "2026-11-09",
     "short_name": "RoboCat"
   },
   {
