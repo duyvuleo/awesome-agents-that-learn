@@ -59,8 +59,8 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-19 | **REM**<br>[REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents](https://arxiv.org/abs/2610.27377) | Consolidates a fixed pool of solved coding traces into short localize/understand/fix/verify documents. A retrieved document persists throughout the new task; a… | Memory, Prompts / context | peer-reviewed · full-text | [Notes](#rem-experience-memory) |
 | 2026-10-15 | **MemComposer**<br>[MemComposer: Learning to Assemble Memories for LLM Agents via Reinforcement Learning](https://arxiv.org/abs/2610.21091) | Trains a separate LoRA memory composer with GRPO-based ExPO to choose an ordered, variable-size subset of ten retrieved experiences. The composer reads digests and the… | Model weights, Prompts / context | preprint · full-text | [Notes](#memcomposer) · [Code](https://github.com/Makr-Xie/MemComposer) |
 | 2026-10-09 | **Harness²**<br>[Harness^2: Recursive Agent Harnessing for an Open World](https://arxiv.org/abs/2610.14224) | Proposes invariant and domain-specific edits to an eight-component harness, probes both, and composes an executed successor. Adopted harnesses and evidence-linked… | Agent code, Prompts / context, Memory, Skills, Tools | preprint · full-text | [Notes](#harness2) · [Code](https://github.com/google-research/harness2) |
-| 2026-10-07 | **EmbodiedRSI**<br>[EmbodiedRSI: Active Continual Robot Learning Through Hypothesis-Guided Co-Evolution](https://arxiv.org/abs/2610.10498) | Selects informative trials over code/skill hypotheses and retains successful revisions in hierarchical memory. A PPO-trained manager learns memory actions while the… | Agent code, Skills, Memory, Model weights | preprint · full-text | [Notes](#embodiedrsi) |
-| 2026-10-04 | **ASCENT**<br>[ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience](https://arxiv.org/abs/2610.05303) | After one scored attempt per task, a frozen copy of the initial model reads accepted experience with hindsight. Its token distributions train persistent LoRA adapters… | Model weights | preprint · full-text | [Notes](#ascent) · [Code](https://github.com/artificer-ai-lab/ASCENT) |
+| 2026-10-07 | **EmbodiedRSI**<br>[EmbodiedRSI: Active Continual Robot Learning Through Hypothesis-Guided Co-Evolution](https://arxiv.org/abs/2610.10498) | Evolves code and skills around a frozen robot policy, using matched experiments to update hypothesis support and rank further trials by expected information gain per… | Agent code, Skills, Memory, Model weights | preprint · full-text | [Notes](#embodiedrsi) |
+| 2026-10-04 | **ASCENT**<br>[ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience](https://arxiv.org/abs/2610.05303) | Scores one attempt per arriving task before any update. For accepted trajectories, the frozen initial model reads hindsight and supplies full-vocabulary targets at the… | Model weights | preprint · full-text | [Notes](#ascent) · [Code](https://github.com/artificer-ai-lab/ASCENT) |
 | 2026-10-02 | **VERSE**<br>[VERSE: Verified Self-Evolving Optimizer for Agent Harnesses](https://arxiv.org/abs/2610.02616) | Updates an executor harness and the optimizer's own prompts, skills, tools, hooks, and notes. Verification tools test proposed fixes and diagnoses before submission… | Agent code, Prompts / context, Skills, Tools, Memory | preprint · full-text | [Notes](#verse) · [Code](https://github.com/wzekai/VERSE) |
 | 2026-10-02 | **RIFAR**<br>[RIFAR: Reliability-Informed and Forgetting-Aware Replay for Continual Robot Learning with World-Action Models](https://arxiv.org/abs/2610.03079) | Retains short historical demonstration prefixes, generates replay trajectories and screens their action–visual consistency. After initial new-task adaptation, replay… | Model weights, Memory | preprint · full-text | [Notes](#rifar) |
 | 2026-09-29 | **SED**<br>[Self-Evolving Defense: Continual Security Policy Learning for LLM Agents](https://arxiv.org/abs/2609.36603) | Stores failure episodes and distills them into a hierarchical policy memory. Relevant policies condition later tasks while the acting model stays frozen. | Memory, Prompts / context | preprint · full-text | [Notes](#self-evolving-defense) · [Code](https://github.com/Infini-AI-Lab/SED) |
@@ -1228,19 +1228,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.10498)
 
-**Mechanism.** Selects informative trials over code/skill hypotheses and retains successful revisions in hierarchical memory. A PPO-trained manager learns memory actions while the robot foundation model and memory operator remain frozen during evolution.
+**Mechanism.** Evolves code and skills around a frozen robot policy, using matched experiments to update hypothesis support and rank further trials by expected information gain per cost. Raw episodes, hypothesis relations and distilled guidance persist in hierarchical memory. A PPO-trained manager selects memory operations; the robot policy and language-model operator stay fixed during harness evolution.
 
 **What changes:** Agent code, Skills, Memory, Model weights. **Persistence:** across-tasks. **Learning signal:** Matched execution outcomes, hypothesis uncertainty, experiment cost, and later improvement used to train a memory manager.
 
-**Evaluation.** Reports RoboCasa365 and LIBERO-Pro with disjoint evolution/evaluation seeds, component ablations, and transfer of the simulation-evolved harness to five physical SO-101 tasks.
+**Evaluation.** The available v1 reports RoboCasa365 and LIBERO-Pro with disjoint evolution/evaluation seeds, code/skill/exploration/memory ablations, and transfer to five SO-101 tasks with thirty trials per condition. It reports 77.0% and 86.8% simulation success and 71.3% real-robot success, including a regression on glasses grasping. Cited supplementary experimental details are not bundled with the public paper.
 
-**Boundary.** “Zero-shot” concerns the harness: the real-robot SmolVLA backbone was first fine-tuned on fifty human demonstrations per task. Thirty trials per condition/task and bounded benchmarks do not establish indefinite retention or improvement of the outer selection procedure.
+**Boundary.** The public PDF/source lacks cited appendices specifying the simulated backbone, exact budgets, outcome model and PPO settings, limiting comparison and reproducibility checks. “Zero-shot” concerns the transferred harness: SmolVLA first receives fifty demonstrations per real task and 20,000 fine-tuning steps. Joint gain over the best single component is not proof of superadditive interaction. A representative learning curve and point estimates do not establish indefinite improvement or retention.
 
-**Code / data.** Official runnable code was not established in this source review; nothing was installed or executed.
+**Code / data.** All twelve available v1 pages, seven figures, five tables, ten equations and the official project page were read on 2026-11-10. The public arXiv source contains supplementary-reference labels but not the cited appendix bodies; their review remains unresolved. The author’s linked repository hosts the website, not a verified research implementation. No robot experiments, models or code executed.
 
-**Topics:** architecture, skills, memory, model-training, continual-learning, applications. **Reviewed:** full-text · 2026-10-30.
+**Topics:** architecture, skills, memory, model-training, continual-learning, applications. **Reviewed:** full-text · 2026-11-10.
 
-[Source 1](https://arxiv.org/abs/2610.10498) · [Source 2](https://arxiv.org/html/2610.10498v1) · [Source 3](https://geeksongs.github.io/agentic_robotics/)
+[Source 1](https://arxiv.org/abs/2610.10498) · [Source 2](https://arxiv.org/html/2610.10498v1) · [Source 3](https://geeksongs.github.io/agentic_robotics/) · [Source 4](https://arxiv.org/pdf/2610.10498v1) · [Source 5](https://arxiv.org/src/2610.10498v1) · [Source 6](https://github.com/Geeksongs/agentic_robotics)
 
 <a id="ascent"></a>
 
@@ -1250,19 +1250,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.05303)
 
-**Mechanism.** After one scored attempt per task, a frozen copy of the initial model reads accepted experience with hindsight. Its token distributions train persistent LoRA adapters for subsequent tasks; invalid-action turns are removed from the privileged teacher input.
+**Mechanism.** Scores one attempt per arriving task before any update. For accepted trajectories, the frozen initial model reads hindsight and supplies full-vocabulary targets at the original student prefixes. Two gradient steps update persistent LoRA and optimizer state; failed episodes skip adaptation. Invalid turns are removed only from the teacher’s added context, while their student positions remain trained.
 
 **What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Completed execution trajectories accepted by an environment verifier, with action-validity feedback.
 
-**Evaluation.** The authors report success, interaction cost, ablations, and held-out scene transfer on ALFWorld and WebShop with two model sizes, plus AppWorld experiments.
+**Evaluation.** Full v1 reports three-run ALFWorld and WebShop streams at 4B/9B, frozen and continued transfer to unseen rooms, and 4B AppWorld tasks. It includes teacher/filter/divergence ablations and paired turn counts on shared successes. Aggregate task success improves, but AppWorld Challenge scenario completion is below the base; online update time is included in episode runtime.
 
-**Boundary.** The method needs an available verifier and update compute. WebShop adaptation accepts scores of at least 0.9 although reported exact success requires 1.0; outcome acceptance does not identify causally useful actions or prove a shortest solution.
+**Boundary.** Needs open weights, full teacher logits, update compute and an environment verifier. WebShop accepts score >=0.9 for learning while exact success requires 1.0. Teacher context can reconstruct the student’s own responses; verification supplies no causal turn credit. Population identities do not prove convergence or improvement. Gains and runtime tradeoffs concern two model scales and bounded streams; one teacher-diagnostic baseline differs between its table and figure.
 
-**Code / data.** [Official artifact](https://github.com/artificer-ai-lab/ASCENT) — Official repository page inspected; no installation, training, or result reproduction performed.
+**Code / data.** [Official artifact](https://github.com/artificer-ai-lab/ASCENT) — Complete 24-page v1, Appendices A–C, eight figures, eight tables, twenty-three equations and the population-target proof read on 2026-11-10. The author-linked repository’s default-branch snapshot 55fb32d4081f665371cdcaf9a89f927a43470897 contains only an Apache-2.0 LICENSE file. No implementation, configuration, checkpoints or run artifacts were available in that inspected snapshot. Project-page animations label trajectories/probabilities as illustrative. Nothing installed, trained or executed.
 
-**Topics:** model-training, continual-learning, applications. **Reviewed:** full-text · 2026-10-29.
+**Topics:** model-training, continual-learning, applications. **Reviewed:** full-text · 2026-11-10.
 
-[Source 1](https://arxiv.org/abs/2610.05303) · [Source 2](https://arxiv.org/html/2610.05303v1) · [Source 3](https://artificer-ai-lab.github.io/ASCENT/) · [Source 4](https://github.com/artificer-ai-lab/ASCENT)
+[Source 1](https://arxiv.org/abs/2610.05303) · [Source 2](https://arxiv.org/html/2610.05303v1) · [Source 3](https://artificer-ai-lab.github.io/ASCENT/) · [Source 4](https://github.com/artificer-ai-lab/ASCENT) · [Source 5](https://arxiv.org/pdf/2610.05303v1) · [Source 6](https://github.com/artificer-ai-lab/ASCENT/tree/55fb32d4081f665371cdcaf9a89f927a43470897) · [Source 7](https://github.com/artificer-ai-lab/ASCENT/blob/55fb32d4081f665371cdcaf9a89f927a43470897/LICENSE)
 
 <a id="verse"></a>
 

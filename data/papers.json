@@ -709,10 +709,13 @@
       "https://arxiv.org/abs/2610.05303",
       "https://arxiv.org/html/2610.05303v1",
       "https://artificer-ai-lab.github.io/ASCENT/",
-      "https://github.com/artificer-ai-lab/ASCENT"
+      "https://github.com/artificer-ai-lab/ASCENT",
+      "https://arxiv.org/pdf/2610.05303v1",
+      "https://github.com/artificer-ai-lab/ASCENT/tree/55fb32d4081f665371cdcaf9a89f927a43470897",
+      "https://github.com/artificer-ai-lab/ASCENT/blob/55fb32d4081f665371cdcaf9a89f927a43470897/LICENSE"
     ],
     "code_url": "https://github.com/artificer-ai-lab/ASCENT",
-    "code_note": "Official repository page inspected; no installation, training, or result reproduction performed.",
+    "code_note": "Complete 24-page v1, Appendices A–C, eight figures, eight tables, twenty-three equations and the population-target proof read on 2026-11-10. The author-linked repository’s default-branch snapshot 55fb32d4081f665371cdcaf9a89f927a43470897 contains only an Apache-2.0 LICENSE file. No implementation, configuration, checkpoints or run artifacts were available in that inspected snapshot. Project-page animations label trajectories/probabilities as illustrative. Nothing installed, trained or executed.",
     "topics": [
       "model-training",
       "continual-learning",
@@ -724,11 +727,11 @@
     ],
     "persistence": "across-tasks",
     "learning_signal": "Completed execution trajectories accepted by an environment verifier, with action-validity feedback.",
-    "mechanism": "After one scored attempt per task, a frozen copy of the initial model reads accepted experience with hindsight. Its token distributions train persistent LoRA adapters for subsequent tasks; invalid-action turns are removed from the privileged teacher input.",
-    "evaluation": "The authors report success, interaction cost, ablations, and held-out scene transfer on ALFWorld and WebShop with two model sizes, plus AppWorld experiments.",
-    "limitations": "The method needs an available verifier and update compute. WebShop adaptation accepts scores of at least 0.9 although reported exact success requires 1.0; outcome acceptance does not identify causally useful actions or prove a shortest solution.",
+    "mechanism": "Scores one attempt per arriving task before any update. For accepted trajectories, the frozen initial model reads hindsight and supplies full-vocabulary targets at the original student prefixes. Two gradient steps update persistent LoRA and optimizer state; failed episodes skip adaptation. Invalid turns are removed only from the teacher’s added context, while their student positions remain trained.",
+    "evaluation": "Full v1 reports three-run ALFWorld and WebShop streams at 4B/9B, frozen and continued transfer to unseen rooms, and 4B AppWorld tasks. It includes teacher/filter/divergence ablations and paired turn counts on shared successes. Aggregate task success improves, but AppWorld Challenge scenario completion is below the base; online update time is included in episode runtime.",
+    "limitations": "Needs open weights, full teacher logits, update compute and an environment verifier. WebShop accepts score >=0.9 for learning while exact success requires 1.0. Teacher context can reconstruct the student’s own responses; verification supplies no causal turn credit. Population identities do not prove convergence or improvement. Gains and runtime tradeoffs concern two model scales and bounded streams; one teacher-diagnostic baseline differs between its table and figure.",
     "review_depth": "full-text",
-    "checked": "2026-10-29",
+    "checked": "2026-11-10",
     "short_name": "ASCENT"
   },
   {
@@ -1586,10 +1589,13 @@
     "sources": [
       "https://arxiv.org/abs/2610.10498",
       "https://arxiv.org/html/2610.10498v1",
-      "https://geeksongs.github.io/agentic_robotics/"
+      "https://geeksongs.github.io/agentic_robotics/",
+      "https://arxiv.org/pdf/2610.10498v1",
+      "https://arxiv.org/src/2610.10498v1",
+      "https://github.com/Geeksongs/agentic_robotics"
     ],
     "code_url": null,
-    "code_note": "Official runnable code was not established in this source review; nothing was installed or executed.",
+    "code_note": "All twelve available v1 pages, seven figures, five tables, ten equations and the official project page were read on 2026-11-10. The public arXiv source contains supplementary-reference labels but not the cited appendix bodies; their review remains unresolved. The author’s linked repository hosts the website, not a verified research implementation. No robot experiments, models or code executed.",
     "topics": [
       "architecture",
       "skills",
@@ -1607,11 +1613,11 @@
     ],
     "persistence": "across-tasks",
     "learning_signal": "Matched execution outcomes, hypothesis uncertainty, experiment cost, and later improvement used to train a memory manager.",
-    "mechanism": "Selects informative trials over code/skill hypotheses and retains successful revisions in hierarchical memory. A PPO-trained manager learns memory actions while the robot foundation model and memory operator remain frozen during evolution.",
-    "evaluation": "Reports RoboCasa365 and LIBERO-Pro with disjoint evolution/evaluation seeds, component ablations, and transfer of the simulation-evolved harness to five physical SO-101 tasks.",
-    "limitations": "“Zero-shot” concerns the harness: the real-robot SmolVLA backbone was first fine-tuned on fifty human demonstrations per task. Thirty trials per condition/task and bounded benchmarks do not establish indefinite retention or improvement of the outer selection procedure.",
+    "mechanism": "Evolves code and skills around a frozen robot policy, using matched experiments to update hypothesis support and rank further trials by expected information gain per cost. Raw episodes, hypothesis relations and distilled guidance persist in hierarchical memory. A PPO-trained manager selects memory operations; the robot policy and language-model operator stay fixed during harness evolution.",
+    "evaluation": "The available v1 reports RoboCasa365 and LIBERO-Pro with disjoint evolution/evaluation seeds, code/skill/exploration/memory ablations, and transfer to five SO-101 tasks with thirty trials per condition. It reports 77.0% and 86.8% simulation success and 71.3% real-robot success, including a regression on glasses grasping. Cited supplementary experimental details are not bundled with the public paper.",
+    "limitations": "The public PDF/source lacks cited appendices specifying the simulated backbone, exact budgets, outcome model and PPO settings, limiting comparison and reproducibility checks. “Zero-shot” concerns the transferred harness: SmolVLA first receives fifty demonstrations per real task and 20,000 fine-tuning steps. Joint gain over the best single component is not proof of superadditive interaction. A representative learning curve and point estimates do not establish indefinite improvement or retention.",
     "review_depth": "full-text",
-    "checked": "2026-10-30",
+    "checked": "2026-11-10",
     "short_name": "EmbodiedRSI"
   },
   {

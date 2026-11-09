@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-10 — Expanded online-training and robot-harness reviews
+
+- Completed ASCENT’s full paper, proof, diagnostics and release inspection.
+- Read all available EmbodiedRSI text and recorded its missing supplementary methods.
+- Clarified prequential evaluation, update costs, mixed outcomes and the limits of zero-shot robot transfer.
+- Audit status: 149 complete-source appraisals, one supplement gap, 40 works awaiting detail.
+
 ## 2026-11-10 — Expanded memory-composition and harness-recursion reviews
 
 - Completed MemComposer v2 and Harness² v1, including full appendices, figures and prompts.
