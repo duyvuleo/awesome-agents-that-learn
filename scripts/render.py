@@ -6,6 +6,7 @@ import json
 from collections import Counter
 from urllib.parse import quote
 from catalog import ROOT, load, sort_key, validate_records, validate_systems
+from weekly import load_issues, validate_issues, generate_weekly
 
 
 def esc(value):
@@ -35,6 +36,11 @@ def generate():
     errors = validate_records(records, meta) + validate_systems(systems, meta, records)
     if errors:
         raise ValueError("\n".join(errors))
+    issues = load_issues()
+    weekly_errors = validate_issues(issues, records)
+    if weekly_errors:
+        raise ValueError("\n".join(weekly_errors))
+    weekly_outputs, weekly_teaser = generate_weekly(issues)
     records = sorted(records, key=sort_key, reverse=True)
     by_id = {r["id"]: r for r in records}
     counts = Counter(r["kind"] for r in records)
@@ -105,11 +111,12 @@ def generate():
         badge("Benchmark papers", counts["benchmark"], "b45309", "docs/benchmarks.md"),
     ])
     depth_text = f"For research works, {depths['full-text']} entries include inspection of selected full-text sections and {depths['abstract']} are based on primary abstracts/metadata. Systems are separate project-documentation/source inspections."
-    readme = banner + template.replace("{{STATS}}", stats).replace("{{BADGES}}", badges).replace("{{UPDATED}}", meta["updated"]).replace("{{DEPTH}}", depth_text).replace("{{FEATURED}}", featured_table)
+    readme = banner + template.replace("{{STATS}}", stats).replace("{{BADGES}}", badges).replace("{{UPDATED}}", meta["updated"]).replace("{{DEPTH}}", depth_text).replace("{{FEATURED}}", featured_table).replace("{{WEEKLY}}", weekly_teaser)
     payload = {"meta": meta, "papers": records, "systems": systems, "routes": routes}
     # Escape '<' so a source title cannot close the script element when embedded.
     catalog_js = "// Generated; edit data/.\nwindow.CATALOG = " + json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c") + ";\n"
     outputs = {"README.md": readme, "docs/papers.md": "\n".join(papers), "docs/topics.md": "".join(topics), "docs/by-year.md": "".join(by_year), "docs/benchmarks.md": "".join(bench), "docs/code.md": "".join(code), "docs/reading-routes.md": "\n".join(reading), "site/catalog.js": catalog_js, "site/catalog.json": json.dumps(payload, ensure_ascii=False, indent=2) + "\n"}
+    outputs.update(weekly_outputs)
     outputs["docs/systems.md"] = "\n".join(system_docs)
     return {name: text.rstrip() + "\n" for name, text in outputs.items()}
 

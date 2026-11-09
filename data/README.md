@@ -57,3 +57,29 @@ System IDs and repository identities must be unique within the software catalog,
 ## Short recall names
 
 Both catalogs include `short_name`, a concise navigation label used by the graph and paper-index table. Familiar method names are preferred; surveys and analyses may use curator-supplied descriptive labels. These labels are not necessarily official paper titles or author-defined acronyms. The full title/name and primary source remain authoritative. Recall names are unique within each catalog and at most 40 characters; a paper and its software may share a label because their resource types differ.
+
+## Weekly editorial snapshots
+
+Canonical issues live in `data/weekly/YYYY-MM-DD.json`, keyed by the Monday of their covered week. The renderer produces the issue, the archive, and the latest-issue README preview. Weekly selections do not add publications to the catalog or alter the explorer payload.
+
+See the [pilot record](weekly/2026-11-02.json) for a complete example.
+
+| Field | Meaning |
+| --- | --- |
+| `week_start`, `week_end` | A completed Monday–Sunday week in Australia/Sydney. |
+| `published_on` | Actual publication date, after the covered week. Local preparation alone is not verified publication. |
+| `title`, `takeaway`, `introduction` | Original editorial theme, README preview, and synthesis. |
+| `picks` | One to five ordered paper selections; three to five is a target, not a quota. |
+| `older_paper` | One optional, demonstrably older paper, or null; rendered as an explicitly labeled spotlight. |
+| `study_question` | A question that connects the issue to further reading or experimentation. |
+| `corrections` | Append-only entries with a complete `date`, explanatory `note`, and primary `sources`. |
+
+Each pick references an existing `paper_id` and contains `why_now`, `problem`, `mechanism`, `evidence`, `limitation`, and `connections`. Connections contain a catalog `paper_id`, a frozen `short_name`, and `why` it helps interpretation. Prose fields are plain text; the renderer escapes Markdown and HTML syntax.
+
+The `citation` snapshot stores the displayed `title`, `short_name`, first-public `date`, publication `status`, primary `url`, `review_depth`, `checked`, and `reviewed_sources`. Every reviewed source records its URL, version and inspected sections. Featured entries require selected full-text review. Snapshots preserve what the edition actually assessed even when the live catalog later changes.
+
+Main picks also record an `event`: `kind` is `new`, `revision`, or `publication`; `date` is the verified Sydney eligibility date; and `source` points to primary evidence. When the record supplies a timestamp, preserve it in `occurred_at` with an explicit offset. Validation checks its Sydney conversion. Otherwise use a verified complete calendar date only when its week membership is unambiguous. Month/year-only evidence cannot establish eligibility. A new-release event must match the first-public source date; an inspection date is not a release. Repeat features require a newer substantive event and a new explanation of what changed.
+
+An older spotlight has `event: null`. Its first-public date must establish that it predates the issue; year-only precision is retained when sufficient to establish this. Late discoveries must not be relabeled as new releases.
+
+Published issue bodies and citation snapshots remain fixed. Append a sourced, dated correction rather than silently rewriting an edition. Local validation compares against fetched `origin/main` when available; shallow checkouts may only provide the current commit, so this is not a substitute for reviewing the intended diff. The archive and latest preview can change as new issues arrive, while earlier issue files remain stable.

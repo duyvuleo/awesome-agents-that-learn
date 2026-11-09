@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Top Papers of the Week
+
+- Added a five-paper pilot for 2–8 November, a permanent Markdown archive, and a latest-issue README preview.
+- Added frozen citation snapshots, sourced eligibility events, dated corrections, recursive Markdown-link validation and weekly source-link checks.
+- Added read-only missed-week scheduling and reviewed-file publication checkpoints, with focused regression coverage. Catalog counts and explorer payloads are unchanged.
+
 ## 2026-11-09 — Skill reliability, adaptive harnesses, and continual learning
 
 - Added ten source-reviewed works: BASM, SkillRubricsRL, MemoRepair, StateGraph, Coalition-Aware Skill Reliability, Beneath the Surface, Targeted Guidance, ReScopeBench, RIFAR, and HarnessFlow.

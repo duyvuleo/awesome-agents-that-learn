@@ -17,6 +17,7 @@ import urllib.error
 import urllib.request
 from urllib.parse import parse_qs, urlsplit
 from catalog import ROOT, load
+from weekly import load_issues, source_urls
 
 
 class Metadata(html.parser.HTMLParser):
@@ -78,6 +79,7 @@ def main():
     urls = {r["url"] for r in records}
     if not args.primary_only:
         urls.update(url for r in records for url in r["sources"])
+        urls.update(source_urls(load_issues()))
     expected = {r["url"]: r["title"] for r in records if "title" in r}
     results = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, min(args.workers, 8))) as pool:
@@ -87,7 +89,7 @@ def main():
             results.append(result)
             if result["status"] != "reachable" or result.get("title_check") in {"review", "unavailable"}:
                 print(result["status"], result.get("title_check", ""), result["url"], flush=True)
-    report = {"checked_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "scope": "primary-only" if args.primary_only else "all-catalog-sources", "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.", "results": sorted(results, key=lambda x: x["url"])}
+    report = {"checked_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "scope": "primary-only" if args.primary_only else "all-catalog-and-weekly-sources", "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.", "results": sorted(results, key=lambda x: x["url"])}
     args.output.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     bad = sum(r["status"] == "not-found" or r.get("title_check") == "review" for r in results)
     print(f"Checked {len(results)} URLs; {bad} not-found responses or title-review flags. Report: {args.output}")

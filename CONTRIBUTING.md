@@ -34,3 +34,7 @@ python3 scripts/check_links.py --output docs/link-report.json
 Review its report: rate limits, browser challenges, and network failures are inconclusive. Resolve title mismatches manually; a near-match score is only a triage aid. Check the rendered explorer on desktop and mobile when changing its UI. Source review and tests are both needed; neither substitutes for the other.
 
 AI-assisted contributions are welcome when their sources and wording are reviewed. Do not submit the collection to an index whose rules prohibit AI-generated lists. Failed replication attempts can be valuable, but report their pinned versions, commands, budget, and limits instead of converting them into broad claims.
+
+## Weekly reading briefs
+
+Weekly selections reference catalog records and preserve the citation and source-version snapshot used for their original commentary. Read the [weekly data reference](data/README.md#weekly-editorial-snapshots), record a verified release/update event, and inspect the relevant primary body text. Explain both the useful contribution and its evidence boundary. Older discoveries belong in the labeled spotlight; do not use review dates as release dates. Corrections to published editions must be explicit, dated and sourced.

@@ -24,6 +24,18 @@ How do agents turn experience into something useful on the next task? This colle
 
 Source review: **2026-11-09**. For research works, 130 entries include inspection of selected full-text sections and 60 are based on primary abstracts/metadata. Systems are separate project-documentation/source inspections. No linked research code was executed and no published result was independently reproduced for this release.
 
+## Top Papers of the Week
+
+**Latest issue: [2026-11-02–2026-11-08](docs/weekly/2026-11-02.md)** — When accumulated experience becomes reliable capability
+
+Five readings on whether experience survives reuse: measure regressions, revise outdated knowledge, search harnesses, compare memory stores, and target training feedback.
+
+- [Beneath the Surface](docs/weekly/2026-11-02.md#pick-1)
+- [ReScopeBench](docs/weekly/2026-11-02.md#pick-2)
+- [HarnessFlow](docs/weekly/2026-11-02.md#pick-3)
+
+[Read the issue](docs/weekly/2026-11-02.md) · [Browse the weekly archive](docs/weekly/README.md)
+
 ## Start here
 
 1. Read the [short primer](docs/primer.md) to separate within-task correction from persistent learning.
@@ -96,7 +108,7 @@ python3 scripts/explore.py --kind system --format json
 
 Suggest a paper or system, correct an annotation, or contribute a reading note through an issue or pull request. Read [CONTRIBUTING.md](CONTRIBUTING.md) for source requirements and [maintenance](docs/maintenance.md) for validation commands. Canonical records live in [data/papers.json](data/papers.json) and [data/systems.json](data/systems.json); generated pages should not be edited directly.
 
-This collection is AI-assisted and maintainer-owned. Automated validation checks structure and consistency; it does not establish scientific truth. No recurring autonomous update job is configured.
+This collection is AI-assisted and maintainer-owned. Automated validation checks structure and consistency; it does not establish scientific truth. Source-reviewed catalog updates and weekly reading briefs are maintained regularly.
 
 Badge counts come from the canonical catalogs. Benchmark papers are a subset of research works, and systems can implement those same works; these counts are not additive independent research results. The Awesome badge identifies the collection format, not acceptance into a central index. The validation badge reports repository checks, not scientific reproduction.
 

@@ -16,6 +16,8 @@ How do agents turn experience into something useful on the next task? This colle
 
 Source review: **{{UPDATED}}**. {{DEPTH}} No linked research code was executed and no published result was independently reproduced for this release.
 
+{{WEEKLY}}
+
 ## Start here
 
 1. Read the [short primer](docs/primer.md) to separate within-task correction from persistent learning.
@@ -80,7 +82,7 @@ python3 scripts/explore.py --kind system --format json
 
 Suggest a paper or system, correct an annotation, or contribute a reading note through an issue or pull request. Read [CONTRIBUTING.md](CONTRIBUTING.md) for source requirements and [maintenance](docs/maintenance.md) for validation commands. Canonical records live in [data/papers.json](data/papers.json) and [data/systems.json](data/systems.json); generated pages should not be edited directly.
 
-This collection is AI-assisted and maintainer-owned. Automated validation checks structure and consistency; it does not establish scientific truth. No recurring autonomous update job is configured.
+This collection is AI-assisted and maintainer-owned. Automated validation checks structure and consistency; it does not establish scientific truth. Source-reviewed catalog updates and weekly reading briefs are maintained regularly.
 
 Badge counts come from the canonical catalogs. Benchmark papers are a subset of research works, and systems can implement those same works; these counts are not additive independent research results. The Awesome badge identifies the collection format, not acceptance into a central index. The validation badge reports repository checks, not scientific reproduction.
 

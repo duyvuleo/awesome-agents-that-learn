@@ -1,0 +1,198 @@
+{
+  "week_start": "2026-11-02",
+  "week_end": "2026-11-08",
+  "published_on": "2026-11-09",
+  "title": "When accumulated experience becomes reliable capability",
+  "takeaway": "Five readings on whether experience survives reuse: measure regressions, revise outdated knowledge, search harnesses, compare memory stores, and target training feedback.",
+  "introduction": "An agent can store more experience, revise its harness, or update its weights without becoming reliably better on the next task. This week's reading order starts with two evaluations that make those gaps visible, then turns to three methods for changing the system. Curator synthesis: useful learning requires both a mechanism for retaining change and evidence that the change still helps when reused. Read the reported gains alongside the lost tasks, delayed forgetting, and costs that qualify them. These five picks are drawn from the reviewed collection; they are not an exhaustive list of the week's releases.",
+  "picks": [
+    {
+      "paper_id": "beneath-surface-agent-evolution",
+      "why_now": "Read this first for a sharper definition of improvement: a higher average score can coexist with lost capabilities and higher deployment cost.",
+      "problem": "A single benchmark average hides which tasks an evolved agent gains, loses, or solves less consistently.",
+      "mechanism": "The study audits harness lineages, component interactions and admission decisions. Its EvoAudit workflow informs four fixed operator revisions in the AGE recipe.",
+      "evidence": "Four adapted evolution recipes are compared across two harnesses and two task domains, with eight-pass evaluations and frozen transfer tests. The sixteen evolved agents each gain some previously uncovered tasks while losing others.",
+      "limitation": "Repeated evaluations are not independent evolution runs. AGE uses one search seed, and its bundled redesign draws on the studied settings. Transfer remains domain- and metric-dependent.",
+      "citation": {
+        "title": "Beneath the Surface: What We Overlook When We Talk About Agent Evolution",
+        "short_name": "Beneath the Surface",
+        "date": "2026-11-05",
+        "status": "preprint",
+        "url": "https://arxiv.org/abs/2611.07624",
+        "review_depth": "full-text",
+        "checked": "2026-11-07",
+        "reviewed_sources": [
+          {
+            "url": "https://arxiv.org/html/2611.07624v1",
+            "version": "arXiv v1",
+            "sections": "Sections 3–8; Appendices A, B.4, D and E"
+          }
+        ]
+      },
+      "event": {
+        "kind": "new",
+        "date": "2026-11-05",
+        "occurred_at": "2026-11-05T08:06:37Z",
+        "source": "https://arxiv.org/abs/2611.07624"
+      },
+      "connections": [
+        {
+          "paper_id": "artifact-to-capability",
+          "short_name": "Artifact-to-Capability",
+          "why": "Compare harness-level regressions with controlled tests of whether accumulated artifacts become usable capability."
+        }
+      ]
+    },
+    {
+      "paper_id": "rescopebench",
+      "why_now": "This gives the week a longitudinal test: an agent must keep useful experience current after the environment changes without announcing it.",
+      "problem": "Memory recall alone cannot establish that an agent revises outdated knowledge or uses the correct knowledge to complete a task.",
+      "mechanism": "Paired streams retain or clear memories, skills and retrievable history. Controlled changes invalidate selected structural relationships and operating rules while leaving other experience valid.",
+      "evidence": "The benchmark evaluates twenty models on 352 tasks in eighteen simulated environments with twenty-six changes. Programmatic task scores are reported separately from model-judged coverage of saved experience.",
+      "limitation": "Each model–environment condition has one stream, and actions can make the two environment states diverge. Coverage does not measure every stored claim's correctness; recovery measures first completion rather than sustained success.",
+      "citation": {
+        "title": "Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments",
+        "short_name": "ReScopeBench",
+        "date": "2026-11-03",
+        "status": "preprint",
+        "url": "https://arxiv.org/abs/2611.05450",
+        "review_depth": "full-text",
+        "checked": "2026-11-08",
+        "reviewed_sources": [
+          {
+            "url": "https://arxiv.org/html/2611.05450v1",
+            "version": "arXiv v1",
+            "sections": "Sections 2–3; Appendix B and selected Appendix C"
+          }
+        ]
+      },
+      "event": {
+        "kind": "new",
+        "date": "2026-11-04",
+        "occurred_at": "2026-11-03T17:57:20Z",
+        "source": "https://arxiv.org/abs/2611.05450"
+      },
+      "connections": [
+        {
+          "paper_id": "agentstream",
+          "short_name": "AgentStream",
+          "why": "Compare stream construction, retention controls and what each benchmark counts as learning."
+        }
+      ]
+    },
+    {
+      "paper_id": "harnessflow",
+      "why_now": "A useful methods counterpart to the two evaluation picks: it makes executable harness design the object of a bounded search.",
+      "problem": "Prompts, state handling, tool interfaces and stopping rules interact, making isolated edits an incomplete search space.",
+      "mechanism": "A fixed coding agent revises complete harnesses using archived code, feedback and reusable components. Tree-based parent selection balances score and prior exploration; the best validation candidate is retained.",
+      "evidence": "Fifteen candidate attempts per benchmark are evaluated across six agent, coding and web benchmarks, with disjoint validation/test splits. Component and initialization controls test contributions beyond the starting harness.",
+      "limitation": "A stronger model proposes edits, the outer search procedure remains fixed, and reported execution costs exclude search. The stronger-executor experiment reruns optimization, so it is not transfer of an unchanged harness.",
+      "citation": {
+        "title": "HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents",
+        "short_name": "HarnessFlow",
+        "date": "2026-11-04",
+        "status": "preprint",
+        "url": "https://arxiv.org/abs/2611.06254",
+        "review_depth": "full-text",
+        "checked": "2026-11-09",
+        "reviewed_sources": [
+          {
+            "url": "https://arxiv.org/html/2611.06254v1",
+            "version": "arXiv v1",
+            "sections": "Sections 2–4 and 6; Appendices B–D"
+          }
+        ]
+      },
+      "event": {
+        "kind": "new",
+        "date": "2026-11-04",
+        "occurred_at": "2026-11-04T10:05:15Z",
+        "source": "https://arxiv.org/abs/2611.06254"
+      },
+      "connections": [
+        {
+          "paper_id": "meta-harness",
+          "short_name": "Meta-Harness",
+          "why": "Follow the earlier use of filesystem-accessible search history, then examine what tree-based selection adds."
+        }
+      ]
+    },
+    {
+      "paper_id": "route-to-remember",
+      "why_now": "This offers a concrete comparison of where persistent facts should live, with useful counterexamples to a simple memory-efficiency story.",
+      "problem": "Text retrieval costs context at read time, while storing facts in model weights raises questions about recall and forgetting.",
+      "mechanism": "On-policy self-distillation trains a per-user adapter from a teacher conditioned on recent memory. A verify-then-regenerate reader checks answers against a text store and falls back when support is missing.",
+      "evidence": "The paper studies native HaluMem questions, delayed re-asks and LoCoMo, including training and routing controls. Recent-fact benefits weaken as memories age; routing improves overall accuracy while reducing the conflict-category score.",
+      "limitation": "Lower read-token use is not a full cost comparison: writes are expensive and distillation compute is omitted. The paper also identifies judge and rubric errors.",
+      "citation": {
+        "title": "Route to Remember: Adaptive Memory Selection for LLM Agents",
+        "short_name": "Route to Remember",
+        "date": "2026-11-03",
+        "status": "preprint",
+        "url": "https://arxiv.org/abs/2611.05636",
+        "review_depth": "full-text",
+        "checked": "2026-11-06",
+        "reviewed_sources": [
+          {
+            "url": "https://arxiv.org/html/2611.05636v1",
+            "version": "arXiv v1",
+            "sections": "Sections 3–5; Appendix A.1–A.5"
+          }
+        ]
+      },
+      "event": {
+        "kind": "new",
+        "date": "2026-11-04",
+        "occurred_at": "2026-11-03T21:21:14Z",
+        "source": "https://arxiv.org/abs/2611.05636"
+      },
+      "connections": [
+        {
+          "paper_id": "memrl",
+          "short_name": "MemRL",
+          "why": "Contrast learning retrieval utilities in external memory with changing model weights to store facts."
+        }
+      ]
+    },
+    {
+      "paper_id": "targeted-guidance",
+      "why_now": "The final pick moves learning into model weights and asks how localized feedback can teach a new behavior without disrupting the primary task.",
+      "problem": "Sparse outcome rewards may not teach behaviors that the base agent rarely produces, such as a new tool-call format.",
+      "mechanism": "The method combines GRPO with distillation from the same model conditioned on a targeted hint. The added loss applies to failing turns and includes reasoning tokens.",
+      "evidence": "An SFT-adapted Qwen3-Coder-30B is studied on tool-format correction and final or interleaved response requirements in a coding harness. The reported experiments retain coding performance more consistently than several ungated alternatives.",
+      "limitation": "Hints and reward criteria are designed inputs. Excessive distillation still causes collapse, and table variability is across late training steps rather than independent training runs.",
+      "citation": {
+        "title": "Stabilizing On-Policy Targeted Guidance in Agentic Reinforcement Learning",
+        "short_name": "Targeted guidance",
+        "date": "2026-11-03",
+        "status": "preprint",
+        "url": "https://arxiv.org/abs/2611.05266",
+        "review_depth": "full-text",
+        "checked": "2026-11-08",
+        "reviewed_sources": [
+          {
+            "url": "https://arxiv.org/html/2611.05266v2",
+            "version": "arXiv v2",
+            "sections": "Sections 3–6"
+          }
+        ]
+      },
+      "event": {
+        "kind": "new",
+        "date": "2026-11-04",
+        "occurred_at": "2026-11-03T17:54:33Z",
+        "source": "https://arxiv.org/abs/2611.05266"
+      },
+      "connections": [
+        {
+          "paper_id": "skillrl",
+          "short_name": "SkillRL",
+          "why": "Compare localized feedback distillation with training that evolves a reusable external skill library."
+        }
+      ]
+    }
+  ],
+  "older_paper": null,
+  "study_question": "Choose one method in this issue. What experiment would distinguish a better starting solution from better subsequent learning, while measuring retained capabilities and total cost?",
+  "corrections": []
+}

@@ -4,6 +4,7 @@ from __future__ import annotations
 import re
 from urllib.parse import unquote, urlsplit
 from catalog import ROOT, load, validate_records, validate_systems
+from weekly import load_issues, validate_issues, validate_history, committed_issues
 
 
 def anchors(text):
@@ -16,7 +17,7 @@ def anchors(text):
 
 def validate_links(root=ROOT):
     errors = []
-    paths = [root / "README.md", *sorted((root / "docs").glob("*.md")), root / "CONTRIBUTING.md", root / "data" / "README.md"]
+    paths = [root / "README.md", *sorted((root / "docs").rglob("*.md")), root / "CONTRIBUTING.md", root / "data" / "README.md"]
     for source in paths:
         if not source.exists():
             errors.append(f"missing {source.relative_to(root)}")
@@ -51,6 +52,11 @@ def main():
         for step in route["steps"]:
             if step["paper"] not in ids or not step["why"].strip():
                 errors.append(f"{route['id']}: invalid step {step}")
+    issues = load_issues()
+    weekly_errors = validate_issues(issues, records)
+    errors.extend(weekly_errors)
+    if not weekly_errors:
+        errors.extend(validate_history(issues, committed_issues()))
     errors.extend(validate_links())
     if errors:
         raise SystemExit("\n".join(errors))

@@ -2,7 +2,7 @@
 
 [Overview](../README.md) · [Contributing](../CONTRIBUTING.md) · [Data reference](../data/README.md)
 
-The launch is a reviewed snapshot. Maintenance happens on request or through reviewed pull requests; no scheduled autonomous literature or publication job is configured.
+The collection receives source-reviewed catalog updates and weekly reading briefs, alongside maintainer requests and reviewed contributions. Publication follows the same evidence and validation requirements.
 
 ## A useful update pass
 
