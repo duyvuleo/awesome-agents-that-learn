@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-09T08:57:03.322135+00:00",
+  "checked_at_utc": "2026-11-09T09:04:27.988493+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -4176,6 +4176,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/metaevo-ai/mce-artifact",
+      "http_status": 200,
+      "final_url": "https://github.com/metaevo-ai/mce-artifact",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/metaevo-ai/meta-context-engineering",
       "http_status": 200,
       "final_url": "https://github.com/metaevo-ai/meta-context-engineering",
@@ -4845,6 +4851,18 @@
       "status": "reachable"
     },
     {
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/ye26g/ye26g.pdf",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/ye26g/ye26g.pdf",
+      "status": "reachable"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhang26fa/zhang26fa.pdf",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhang26fa/zhang26fa.pdf",
+      "status": "reachable"
+    },
+    {
       "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhao26aw/zhao26aw.pdf",
       "http_status": 200,
       "final_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhao26aw/zhao26aw.pdf",
@@ -4889,14 +4907,14 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=29351a5e-24a9-4d44-af61-33d63a845ce9",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=1fcfae07-adfe-4210-9616-3eb47b6b72dd",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=59fa24a9-6e9a-4eb1-a676-0bd14d674c9e",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=e3230ed2-14f2-4cc5-abb5-bb4177f68957",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -4910,14 +4928,14 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=ef422def-0be1-456a-adec-95d89d518cbd",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=710ed44a-8b6a-4342-8ccb-82ce9c5e1409",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=ea0ce9ee-a677-4ffa-a4be-dfe2135d15fe",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=47f2b202-3abd-41cc-a989-5b64d31631fe",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },

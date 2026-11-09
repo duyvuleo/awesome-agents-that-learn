@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-09 — Expanded MemEvolve and MCE evidence reviews
+
+- Reviewed both final ICML papers and substantive appendices, updating transfer, cost, component-ablation and task-scope qualifications.
+- Broader audit: 90 of 190 works complete, 100 pending.
+
 ## 2026-11-09 — Expanded Hyperagents evidence review
 
 - Appraised the revised Hyperagents paper and substantive appendices, retaining transfer evidence alongside nonsignificant comparisons and evaluation boundaries.

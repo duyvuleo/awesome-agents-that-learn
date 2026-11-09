@@ -3067,10 +3067,11 @@
       "https://arxiv.org/abs/2512.18746",
       "https://arxiv.org/html/2512.18746v1",
       "https://proceedings.mlr.press/v306/zhang26fa.html",
-      "https://github.com/bingreeky/MemEvolve"
+      "https://github.com/bingreeky/MemEvolve",
+      "https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhang26fa/zhang26fa.pdf"
     ],
     "code_url": "https://github.com/bingreeky/MemEvolve",
-    "code_note": "Paper-linked official repository and EvolveLab README inspected; not installed or executed.",
+    "code_note": "Official EvolveLab/MemEvolve README inspected on 2026-11-09. It documents Python/API setup and a checkpointed tournament CLI, but labels the release unfinished; current defaults and method inventory differ from the final paper. No installation, model calls or benchmark execution performed.",
     "topics": [
       "memory",
       "architecture",
@@ -3083,12 +3084,12 @@
       "agent-code"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Task success, token cost, latency, and trajectory diagnoses guide architecture selection and redesign.",
-    "mechanism": "Searches implementations of encoding, storage, retrieval, and management while each candidate accumulates experience. Pareto selection and a fixed diagnose-and-design operator retain and modify memory architectures inside a supplied interface.",
-    "evaluation": "Tests GAIA, WebWalkerQA, xBench-DeepSearch, and TaskCraft, including transfer of fixed TaskCraft-evolved architectures across datasets, backbones, and agent frameworks.",
-    "limitations": "The inspected search uses three outer iterations, fixed selection, and empty candidate memories at each iteration. Pass@1–3 budgets differ across reported rows. Transfer remains within related research/search tasks; evolving a memory interface does not establish improvement of the outer evolution procedure.",
+    "learning_signal": "Trajectory outcomes, API cost and latency guide fixed Pareto selection and diagnose-and-design prompts. Each candidate also builds experience while processing its task stream.",
+    "mechanism": "Evolves implementations of encoding, storage, retrieval and memory management inside a supplied interface. Candidate memory starts empty each outer iteration; selected architecture code persists. The foundation model, selection rule and redesign procedure remain fixed.",
+    "evaluation": "The final ICML paper adds component ablations, three-run evaluations, random/greedy search controls and a five-round extension. TaskCraft-evolved architectures transfer to WebWalkerQA, xBench, new backbones and agent frameworks; the principal GAIA evaluation also uses GAIA Level-1 tasks during evolution.",
+    "limitations": "GAIA aggregate performance is not wholly held out from architecture search. Reported pass@1–3 rows mix budgets and models; per-query API cost excludes full search amortization, and latency exceeds the memory-free baseline. Repeated evaluation does not establish independent search-run robustness or unbounded meta-improvement.",
     "review_depth": "full-text",
-    "checked": "2026-11-01",
+    "checked": "2026-11-09",
     "short_name": "MemEvolve"
   },
   {
@@ -3486,10 +3487,12 @@
       "https://arxiv.org/abs/2601.21557",
       "https://arxiv.org/html/2601.21557v2",
       "https://proceedings.mlr.press/v306/ye26g.html",
-      "https://github.com/metaevo-ai/meta-context-engineering"
+      "https://github.com/metaevo-ai/meta-context-engineering",
+      "https://raw.githubusercontent.com/mlresearch/v306/main/assets/ye26g/ye26g.pdf",
+      "https://github.com/metaevo-ai/mce-artifact"
     ],
     "code_url": "https://github.com/metaevo-ai/meta-context-engineering",
-    "code_note": "Current author repository inspected; it points to a separate mce-artifact repository for paper experiments. Not executed.",
+    "code_note": "Current framework and separately linked mce-artifact READMEs inspected on 2026-11-09. The artifact documents paper environments, learned contexts/skills and offline/online runners; E2B sandbox support is explicitly marked untested. No code, models or datasets were executed or installed.",
     "topics": [
       "prompts",
       "skills",
@@ -3503,12 +3506,12 @@
       "agent-code"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Training rollouts and validation utility for candidate context functions and their engineering skills.",
-    "mechanism": "A meta-agent revises context-engineering skills; a base agent executes them to construct context as files and code. History-informed evolutionary selection retains useful context functions and corresponding skills.",
-    "evaluation": "Tests finance, chemistry, medicine, law, and safety-classification datasets, with offline and online variants and component ablations.",
-    "limitations": "Full iterative skill evolution applies to offline experiments; single-pass online processing uses a different variant. The authors identify reasoning-heavy tasks and long, complex trajectories as limitations. Domain tests do not establish clinical or legal validity.",
+    "learning_signal": "Labeled training rollouts and validation utility guide context revisions and skill selection. Files preserve earlier skills, context functions and evaluation history; models remain frozen.",
+    "mechanism": "A meta agent revises context-engineering skills, and a base agent executes them to build context files and retrieval code. A fixed history-informed evolutionary loop retains the better validation-scoring context. The reported generator uses a one-shot query-to-context interface.",
+    "evaluation": "The final ICML paper evaluates small task subsets in finance, chemistry, symptom classification, legal charge prediction and safety classification. It includes three-dataset strong-to-weak context transfer, FiNER ablations and training-efficiency comparisons, plus a separate sequential online setting.",
+    "limitations": "Online experiments use fixed or absent skills, not iterative skill evolution; the skill-free variant wins on three of five online tasks. Relative-gain averages are sensitive to low baselines. No repeated-run uncertainty is reported, and selected task subsets do not establish clinical, legal or general safety validity.",
     "review_depth": "full-text",
-    "checked": "2026-10-29",
+    "checked": "2026-11-09",
     "short_name": "MCE"
   },
   {
