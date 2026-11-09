@@ -45,8 +45,8 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-25 | **MultiEvoSkill**<br>[MultiEvoSkill: Structure-Aware Multi-Agent Skill Evolution for Generalizable Skill Artifacts](https://arxiv.org/abs/2610.34260) | Compiles procedural skills into typed graphs, combines debated graph edits, and gates the merged candidate through behavioral, structural, and model-based semantic… | Skills | preprint · full-text | [Notes](#multievoskill) |
 | 2026-10-25 | **Memory Tax: net value**<br>[Memory Tax: Dissecting the Net Value of Agent Memory](https://arxiv.org/abs/2610.34073) | Defines memory benefit and tax as query-level gains and losses relative to raw-history RAG. Gold-evidence mapping, retrieval replay, writer–reader swaps and… | Analysis / no retained update | preprint · full-text | [Notes](#memory-tax-net-value) · [Code](https://github.com/hexuan21/MemoryTax) |
 | 2026-10-25 | **EvolveMAS**<br>[EvolveMAS: A Unified Self-Evolution Framework for Decentralized Multi-Agent Systems](https://arxiv.org/abs/2610.34450) | Pairs each agent with an external MemoryAgent that maintains isolated episodic, semantic, and working state. Turn-level updates inform ongoing actions; episode-end… | Memory | preprint · full-text | [Notes](#evolvemas) |
-| 2026-10-25 | **EMMA**<br>[EMMA: Structured Episodic Memory for Multi-Agent Workflow Synthesis](https://arxiv.org/abs/2610.35966) | Learns controller routing memory, specialist-agent prompts, and procedural skills through one scoped edit at a time. Programmatic guards constrain edits, while a… | Memory, Skills, Prompts / context, Multi-agent organization | preprint · full-text | [Notes](#emma) |
-| 2026-10-25 | **CaliMem**<br>[CaliMem: Search-Efficient Data Agent via Calibrated Memory](https://arxiv.org/abs/2610.34500) | Retains evidence and revisable claims throughout a data-curation search. Before evaluating a proposed data policy, the agent predicts its score; observed discrepancies… | Memory | preprint · full-text | [Notes](#calimem) |
+| 2026-10-25 | **EMMA**<br>[EMMA: Structured Episodic Memory for Multi-Agent Workflow Synthesis](https://arxiv.org/abs/2610.35966) | Learns controller routing notes, specialist prompts inheriting a generalist prompt, and procedural skills from a fixed training stream. A reflector diagnoses a failure… | Memory, Skills, Prompts / context, Multi-agent organization | preprint · full-text | [Notes](#emma) |
+| 2026-10-25 | **CaliMem**<br>[CaliMem: Search-Efficient Data Agent via Calibrated Memory](https://arxiv.org/abs/2610.34500) | Maintains experimental evidence and revisable claims during one data-curation search. Before retraining a fixed downstream model on each selected subset, the agent… | Memory | preprint · full-text | [Notes](#calimem) · [Code](https://anonymous.4open.science/r/CaliMem-450E) |
 | 2026-10-24 | **ReSight**<br>[ReSight: Task-Driven Self-Improving Memory for Embodied Agents](https://arxiv.org/abs/2610.33487) | Retains visual evidence while a separate coding agent explores difficult query sets and distills reusable processing programs, memory fields and skills. Executor traces… | Memory, Skills, Tools, Agent code | preprint · full-text | [Notes](#resight) |
 | 2026-10-23 | **OPST**<br>[On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models](https://arxiv.org/abs/2610.32770) | Seeds generation with broad topics, removes unstable or already-solved questions, and self-distills on student rollouts. Student and teacher weights carry across rounds… | Model weights | preprint · full-text | [Notes](#on-policy-self-training) |
 | 2026-10-23 | **FlexA-Mem**<br>[FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents](https://arxiv.org/abs/2610.33274) | Preserves raw history alongside LLM-written records and links, then renders a compact timeline plus retrieved detail under a token budget. A fixed fit-or-degrade rule… | Memory | preprint · full-text | [Notes](#flexa-mem) · [Code](https://github.com/WujiangXu/Flex-Amem) |
@@ -920,19 +920,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.35966)
 
-**Mechanism.** Learns controller routing memory, specialist-agent prompts, and procedural skills through one scoped edit at a time. Programmatic guards constrain edits, while a controller selects memories and synthesizes task-specific execution steps.
+**Mechanism.** Learns controller routing notes, specialist prompts inheriting a generalist prompt, and procedural skills from a fixed training stream. A reflector diagnoses a failure scope and proposes one compatible edit; structural guards limit format, size, copying and repeated edit levels. The controller selects memories and replans during execution. Final memory is frozen for held-out tasks.
 
 **What changes:** Memory, Skills, Prompts / context, Multi-agent organization. **Persistence:** across-tasks. **Learning signal:** Ground-truth training-task outcomes and model reflection assigning failures to controller, agent, or skill scope.
 
-**Evaluation.** Uses one fixed-order training pass, then freezes memory for held-out KramaBench, AppWorld, and BBEH-mini evaluations across five backbones, with memory-level and adaptation ablations.
+**Evaluation.** Full v1 compares five backbones and four learned baselines on KramaBench, BBEH-mini and both AppWorld test splits. EMMA leads in mean scores and 17 of 20 backbone–split settings, with fewer training task executions. It includes three algorithms, explicit guards, a separate Opus-4.5 memory-level ablation and a detailed held-out CSP example.
 
-**Boundary.** Accepted edits persist even when the repaired attempt remains unsuccessful. Guards constrain format and scope rather than guaranteeing utility. Test-time comparison arms differ in feedback access and adaptation split, so they do not isolate persistence alone; indefinite online learning is untested.
+**Boundary.** Guard acceptance does not establish usefulness: edits persist after unsuccessful retries, and end-of-task routing updates can follow failed chains. Copy/size checks do not prove semantic safety or correct failure diagnosis. One fixed training order and no reported independent search uncertainty limit robustness claims. Baselines differ in objectives and selection; execution counts omit variable model-call costs. Ablations do not isolate the guards or controller memory, and test-time comparisons also change feedback access and adaptation split.
 
-**Code / data.** Official runnable code was not independently verified in this review; nothing was installed or executed.
+**Code / data.** Complete 19-page arXiv v1, Appendices A–F, four figures/eleven tables, three algorithms, full reflector prompt and frozen case artifacts read on 2026-11-09. Appendix E permits a generalist-prompt edit through inheritance even when that generalist did not participate, qualifying the participant-only shorthand. No official EMMA implementation was independently located; the paper’s smolagents link identifies a cited baseline. No code or environment executed.
 
-**Topics:** memory, skills, architecture, workflows, evaluation. **Reviewed:** full-text · 2026-11-01.
+**Topics:** memory, skills, architecture, workflows, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.35966) · [Source 2](https://arxiv.org/html/2610.35966v1)
+[Source 1](https://arxiv.org/abs/2610.35966) · [Source 2](https://arxiv.org/html/2610.35966v1) · [Source 3](https://arxiv.org/pdf/2610.35966v1)
 
 <a id="calimem"></a>
 
@@ -942,19 +942,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.34500)
 
-**Mechanism.** Retains evidence and revisable claims throughout a data-curation search. Before evaluating a proposed data policy, the agent predicts its score; observed discrepancies prompt it to narrow or revise claims while the surrounding scaffold remains fixed.
+**Mechanism.** Maintains experimental evidence and revisable claims during one data-curation search. Before retraining a fixed downstream model on each selected subset, the agent commits a score prediction and supporting rationale. It then compares observed improvement and prediction error separately, revises its claims and retains the best-scoring policy. Agent weights and the surrounding scaffold remain fixed.
 
 **What changes:** Memory. **Persistence:** within-task. **Learning signal:** Measured downstream training/evaluation scores and residuals against predictions recorded before each curation experiment.
 
-**Evaluation.** Reports biological data-curation tasks and general/code instruction tuning, with memory/prediction ablations and a separate forecasting diagnostic. Searches run for ten or fifteen iterations.
+**Evaluation.** Full v1 studies 55 biological dataset–model tasks and three instruction-tuning setups with six agent backbones, using fifteen or ten iterations. It reports improved best-observed scores in 47 of 48 aggregate backbone–domain/setup comparisons, two memory/prediction ablations, prefix-memory forecasting and detailed policy trajectories.
 
-**Boundary.** Each iteration uses one noisy downstream training run and consumes evaluation feedback. Curator interpretation: within-run gains do not establish cross-task learning or uniformly independent final-test selection. Costs grow with downstream training; prediction agreement alone does not verify scientific claims.
+**Boundary.** The appendix gives CaliMem an additional gene-selection lever that the basic protocol forbids in two biological task groups, confounding memory-only attribution there. Reported maxima use repeatedly observed evaluation feedback; an untouched final-test comparison is not established. Search repetitions and uncertainty are insufficiently characterized. Forecasting tests later policies from the same trajectory without simple matched-history baselines. The 19.4% headline is a relative gain, and every code-tuning result remains below full-data training.
 
-**Code / data.** Official runnable code was not independently verified in this source review; this does not establish that none exists.
+**Code / data.** [Official artifact](https://anonymous.4open.science/r/CaliMem-450E) — Complete 49-page arXiv v1, Appendices A–F, ten figures/thirteen tables, forecasting prompt and case/memory records read on 2026-11-09. The paper-linked anonymous repository returned HTTP 403 and was inaccessible through an independent page reader. A later request reached the client-rendered application shell, without exposing repository files. Contents, license and implementation equivalence remain unverified; neither access failure nor shell availability resolves them. Nothing installed, trained or executed.
 
-**Topics:** memory, evaluation, applications. **Reviewed:** full-text · 2026-10-31.
+**Topics:** memory, evaluation, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.34500) · [Source 2](https://arxiv.org/html/2610.34500v1)
+[Source 1](https://arxiv.org/abs/2610.34500) · [Source 2](https://arxiv.org/html/2610.34500v1) · [Source 3](https://arxiv.org/pdf/2610.34500v1) · [Source 4](https://anonymous.4open.science/r/CaliMem-450E)
 
 <a id="resight"></a>
 

@@ -1236,10 +1236,11 @@
       "url": "https://arxiv.org/abs/2610.35966",
       "sources": [
         "https://arxiv.org/abs/2610.35966",
-        "https://arxiv.org/html/2610.35966v1"
+        "https://arxiv.org/html/2610.35966v1",
+        "https://arxiv.org/pdf/2610.35966v1"
       ],
       "code_url": null,
-      "code_note": "Official runnable code was not independently verified in this review; nothing was installed or executed.",
+      "code_note": "Complete 19-page arXiv v1, Appendices A–F, four figures/eleven tables, three algorithms, full reflector prompt and frozen case artifacts read on 2026-11-09. Appendix E permits a generalist-prompt edit through inheritance even when that generalist did not participate, qualifying the participant-only shorthand. No official EMMA implementation was independently located; the paper’s smolagents link identifies a cited baseline. No code or environment executed.",
       "topics": [
         "memory",
         "skills",
@@ -1256,11 +1257,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Ground-truth training-task outcomes and model reflection assigning failures to controller, agent, or skill scope.",
-      "mechanism": "Learns controller routing memory, specialist-agent prompts, and procedural skills through one scoped edit at a time. Programmatic guards constrain edits, while a controller selects memories and synthesizes task-specific execution steps.",
-      "evaluation": "Uses one fixed-order training pass, then freezes memory for held-out KramaBench, AppWorld, and BBEH-mini evaluations across five backbones, with memory-level and adaptation ablations.",
-      "limitations": "Accepted edits persist even when the repaired attempt remains unsuccessful. Guards constrain format and scope rather than guaranteeing utility. Test-time comparison arms differ in feedback access and adaptation split, so they do not isolate persistence alone; indefinite online learning is untested.",
+      "mechanism": "Learns controller routing notes, specialist prompts inheriting a generalist prompt, and procedural skills from a fixed training stream. A reflector diagnoses a failure scope and proposes one compatible edit; structural guards limit format, size, copying and repeated edit levels. The controller selects memories and replans during execution. Final memory is frozen for held-out tasks.",
+      "evaluation": "Full v1 compares five backbones and four learned baselines on KramaBench, BBEH-mini and both AppWorld test splits. EMMA leads in mean scores and 17 of 20 backbone–split settings, with fewer training task executions. It includes three algorithms, explicit guards, a separate Opus-4.5 memory-level ablation and a detailed held-out CSP example.",
+      "limitations": "Guard acceptance does not establish usefulness: edits persist after unsuccessful retries, and end-of-task routing updates can follow failed chains. Copy/size checks do not prove semantic safety or correct failure diagnosis. One fixed training order and no reported independent search uncertainty limit robustness claims. Baselines differ in objectives and selection; execution counts omit variable model-call costs. Ablations do not isolate the guards or controller memory, and test-time comparisons also change feedback access and adaptation split.",
       "review_depth": "full-text",
-      "checked": "2026-11-01",
+      "checked": "2026-11-09",
       "short_name": "EMMA"
     },
     {
@@ -1274,10 +1275,12 @@
       "url": "https://arxiv.org/abs/2610.34500",
       "sources": [
         "https://arxiv.org/abs/2610.34500",
-        "https://arxiv.org/html/2610.34500v1"
+        "https://arxiv.org/html/2610.34500v1",
+        "https://arxiv.org/pdf/2610.34500v1",
+        "https://anonymous.4open.science/r/CaliMem-450E"
       ],
-      "code_url": null,
-      "code_note": "Official runnable code was not independently verified in this source review; this does not establish that none exists.",
+      "code_url": "https://anonymous.4open.science/r/CaliMem-450E",
+      "code_note": "Complete 49-page arXiv v1, Appendices A–F, ten figures/thirteen tables, forecasting prompt and case/memory records read on 2026-11-09. The paper-linked anonymous repository returned HTTP 403 and was inaccessible through an independent page reader. A later request reached the client-rendered application shell, without exposing repository files. Contents, license and implementation equivalence remain unverified; neither access failure nor shell availability resolves them. Nothing installed, trained or executed.",
       "topics": [
         "memory",
         "evaluation",
@@ -1289,11 +1292,11 @@
       ],
       "persistence": "within-task",
       "learning_signal": "Measured downstream training/evaluation scores and residuals against predictions recorded before each curation experiment.",
-      "mechanism": "Retains evidence and revisable claims throughout a data-curation search. Before evaluating a proposed data policy, the agent predicts its score; observed discrepancies prompt it to narrow or revise claims while the surrounding scaffold remains fixed.",
-      "evaluation": "Reports biological data-curation tasks and general/code instruction tuning, with memory/prediction ablations and a separate forecasting diagnostic. Searches run for ten or fifteen iterations.",
-      "limitations": "Each iteration uses one noisy downstream training run and consumes evaluation feedback. Curator interpretation: within-run gains do not establish cross-task learning or uniformly independent final-test selection. Costs grow with downstream training; prediction agreement alone does not verify scientific claims.",
+      "mechanism": "Maintains experimental evidence and revisable claims during one data-curation search. Before retraining a fixed downstream model on each selected subset, the agent commits a score prediction and supporting rationale. It then compares observed improvement and prediction error separately, revises its claims and retains the best-scoring policy. Agent weights and the surrounding scaffold remain fixed.",
+      "evaluation": "Full v1 studies 55 biological dataset–model tasks and three instruction-tuning setups with six agent backbones, using fifteen or ten iterations. It reports improved best-observed scores in 47 of 48 aggregate backbone–domain/setup comparisons, two memory/prediction ablations, prefix-memory forecasting and detailed policy trajectories.",
+      "limitations": "The appendix gives CaliMem an additional gene-selection lever that the basic protocol forbids in two biological task groups, confounding memory-only attribution there. Reported maxima use repeatedly observed evaluation feedback; an untouched final-test comparison is not established. Search repetitions and uncertainty are insufficiently characterized. Forecasting tests later policies from the same trajectory without simple matched-history baselines. The 19.4% headline is a relative gain, and every code-tuning result remains below full-data training.",
       "review_depth": "full-text",
-      "checked": "2026-10-31",
+      "checked": "2026-11-09",
       "short_name": "CaliMem"
     },
     {

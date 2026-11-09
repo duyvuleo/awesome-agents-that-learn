@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-09 — Expanded calibrated and structured memory reviews
+
+- Completed CaliMem and EMMA, including full appendices, protocols and case artifacts.
+- Clarified unequal search spaces, evaluation-feedback reuse and guard-versus-utility boundaries.
+- Linked CaliMem’s author-supplied artifact with its unresolved access limitations.
+- Broader audit: 138 of 190 works complete, 52 pending.
+
 ## 2026-11-09 — Expanded scientific-validity and web-skill reviews
 
 - Completed SciValidityBench and MiniWeb, including all appendices and artifact checks.
