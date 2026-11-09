@@ -395,14 +395,14 @@ A work may appear in several topics; counts here are not additive.
 - 2025-01-20 — [Agent-R: Training Language Model Agents to Reflect via Iterative Self-Training](papers.md#agent-r) · core · preprint
 - 2024-09-19 — [Training Language Models to Self-Correct via Reinforcement Learning](papers.md#score) · core · peer-reviewed
 - 2024-07-25 — [Recursive Introspection: Teaching Language Model Agents How to Self-Improve](papers.md#rise) · core · peer-reviewed
-- 2024-07-24 — [AI models collapse when trained on recursively generated data](papers.md#model-collapse) · adjacent · peer-reviewed
 - 2024-06-06 — [ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search](papers.md#rest-mcts) · adjacent · peer-reviewed
 - 2024-06-03 — [Re-ReST: Reflection-Reinforced Self-Training for Language Agents](papers.md#re-rest) · core · peer-reviewed
-- 2024-04-01 — [Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](papers.md#accumulating-data-model-collapse) · adjacent · preprint
+- 2024-04-01 — [Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](papers.md#accumulating-data-model-collapse) · adjacent · peer-reviewed
 - 2024-01-18 — [Self-Rewarding Language Models](papers.md#self-rewarding-lms) · adjacent · peer-reviewed
 - 2024-01-02 — [Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](papers.md#spin) · adjacent · peer-reviewed
 - 2023-08-17 — [Reinforced Self-Training (ReST) for Language Modeling](papers.md#rest) · adjacent · preprint
 - 2023-06-20 — [RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation](papers.md#robocat) · core · peer-reviewed
+- 2023-05-27 — [AI models collapse when trained on recursively generated data](papers.md#model-collapse) · adjacent · peer-reviewed
 - 2023-02-09 — [Toolformer: Language Models Can Teach Themselves to Use Tools](papers.md#toolformer) · core · peer-reviewed
 - 2022-12-20 — [Self-Instruct: Aligning Language Models with Self-Generated Instructions](papers.md#self-instruct) · adjacent · peer-reviewed
 - 2022-12-15 — [Constitutional AI: Harmlessness from AI Feedback](papers.md#constitutional-ai) · adjacent · preprint
@@ -622,14 +622,14 @@ A work may appear in several topics; counts here are not additive.
 - 2025-04-28 — [Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](papers.md#mem0) · adjacent · preprint
 - 2025-04-24 — [RAGEN: Understanding Self-Evolution in LLM Agents via Multi-Turn Reinforcement Learning](papers.md#ragen) · core · preprint
 - 2024-10-14 — [LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory](papers.md#longmemeval) · adjacent · peer-reviewed
-- 2024-07-24 — [AI models collapse when trained on recursively generated data](papers.md#model-collapse) · adjacent · peer-reviewed
 - 2024-06-06 — [ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search](papers.md#rest-mcts) · adjacent · peer-reviewed
-- 2024-04-01 — [Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](papers.md#accumulating-data-model-collapse) · adjacent · preprint
+- 2024-04-01 — [Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](papers.md#accumulating-data-model-collapse) · adjacent · peer-reviewed
 - 2024-02-27 — [Evaluating Very Long-Term Conversational Memory of LLM Agents](papers.md#locomo) · adjacent · peer-reviewed
 - 2024-01-23 — [TroVE: Inducing Verifiable and Efficient Toolboxes for Solving Programmatic Tasks](papers.md#trove) · core · peer-reviewed
 - 2024-01-18 — [Self-Rewarding Language Models](papers.md#self-rewarding-lms) · adjacent · peer-reviewed
 - 2024 — [When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs](papers.md#self-correction-survey) · adjacent · peer-reviewed
 - 2023-10-03 — [Large Language Models Cannot Self-Correct Reasoning Yet](papers.md#intrinsic-self-correction) · adjacent · peer-reviewed
+- 2023-05-27 — [AI models collapse when trained on recursively generated data](papers.md#model-collapse) · adjacent · peer-reviewed
 - 2023-03-30 — [Self-Refine: Iterative Refinement with Self-Feedback](papers.md#self-refine) · adjacent · peer-reviewed
 
 <a id="safety"></a>
@@ -650,8 +650,8 @@ A work may appear in several topics; counts here are not additive.
 - 2026 — [PerMemSafe: Benchmarking Implicit Personalized Safety of Long Horizon Self-Evolving Agents](papers.md#permemsafe) · adjacent · peer-reviewed
 - 2026 — [COLLABMEM: A Diagnostic Benchmark for Collaborative Memory Operations in Multi-Agent LLM Systems](papers.md#collabmem) · adjacent · peer-reviewed
 - 2025-09-29 — [A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory](papers.md#a-memguard) · core · peer-reviewed
-- 2024-07-24 — [AI models collapse when trained on recursively generated data](papers.md#model-collapse) · adjacent · peer-reviewed
-- 2024-04-01 — [Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](papers.md#accumulating-data-model-collapse) · adjacent · preprint
+- 2024-04-01 — [Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](papers.md#accumulating-data-model-collapse) · adjacent · peer-reviewed
+- 2023-05-27 — [AI models collapse when trained on recursively generated data](papers.md#model-collapse) · adjacent · peer-reviewed
 - 2022-12-15 — [Constitutional AI: Harmlessness from AI Feedback](papers.md#constitutional-ai) · adjacent · preprint
 
 <a id="applications"></a>

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded model-collapse evidence reviews
+
+- Read full model-collapse studies and supplementary proofs, clarifying retention, resource and theorem boundaries.
+- Corrected the accumulation paper’s COLM 2024 status and the Nature work’s May 2023 first-preprint date; added the author-linked code archive and official correction.
+- Broader audit: 98 of 190 works complete, 92 pending.
+
 ## 2026-11-09 — Expanded MemoryArena and Memory Tax evidence reviews
 
 - Reviewed both full papers and substantive appendices, aligning MemoryArena’s final title and qualifying memory-value comparisons, judging and artifact availability.

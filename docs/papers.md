@@ -170,12 +170,11 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2024-09-11 | **AWM**<br>[Agent Workflow Memory](https://arxiv.org/abs/2409.07429) | Abstracts reusable subtask workflows and inserts them into agent context. Offline workflows are induced before evaluation; online workflows accumulate after completed… | Memory, Workflows | peer-reviewed · full-text | [Notes](#agent-workflow-memory) · [Code](https://github.com/zorazrw/agent-workflow-memory) |
 | 2024-08-15 | **ADAS**<br>[Automated Design of Agentic Systems](https://arxiv.org/abs/2408.08435) | A fixed meta-agent writes executable forward functions, checks novelty, repairs execution errors, and archives designs with scores. Search changes prompts and control… | Agent code, Workflows, Prompts / context | peer-reviewed · full-text | [Notes](#adas) · [Code](https://github.com/ShengranHu/ADAS) |
 | 2024-07-25 | **RISE**<br>[Recursive Introspection: Teaching Language Model Agents How to Self-Improve](https://arxiv.org/abs/2407.18219) | Converts a problem into a sequence of attempted answers and trains a correction policy with reward-weighted learning on accumulated rollouts. At deployment, fixed-weight… | Model weights | peer-reviewed · full-text | [Notes](#rise) · [Code](https://github.com/cmu-mind/RISE) |
-| 2024-07-24 | **Model collapse**<br>[AI models collapse when trained on recursively generated data](https://www.nature.com/articles/s41586-024-07566-y) | Analyzes how repeated training on generated data can lose low-probability parts of an original distribution and amplify errors. The paper combines tractable distribution… | Model weights | peer-reviewed · full-text | [Notes](#model-collapse) |
 | 2024-06-26 | **Symbolic agent learning**<br>[Symbolic Learning Enables Self-Evolving Agents](https://arxiv.org/abs/2406.18532) | Records an execution trajectory, propagates natural-language critiques backward, and edits prompts, tool definitions and pipeline configuration with fixed LLMs. Invalid… | Prompts / context, Tools, Workflows | preprint · full-text | [Notes](#symbolic-agent-learning) · [Code](https://github.com/aiwaves-cn/agents) |
 | 2024-06-11 | **TextGrad**<br>[TextGrad: Automatic "Differentiation" via Text](https://arxiv.org/abs/2406.07496) | Backpropagates textual feedback through a computation graph and rewrites selected variables using a fixed LLM optimizer. Reusable prompt optimization and within-instance… | Prompts / context, Agent code | peer-reviewed · full-text | [Notes](#textgrad) · [Code](https://github.com/zou-group/textgrad) |
 | 2024-06-06 | **ReST-MCTS***<br>[ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search](https://arxiv.org/abs/2406.03816) | Uses a learned value model to guide tree search with step expansion, rollout and self-criticism. Successful traces fine-tune the policy; inferred values from searched… | Model weights | peer-reviewed · full-text | [Notes](#rest-mcts) · [Code](https://github.com/THUDM/ReST-MCTS) |
 | 2024-06-03 | **Re-ReST**<br>[Re-ReST: Reflection-Reinforced Self-Training for Language Agents](https://arxiv.org/abs/2406.01495) | Trains a separate reflector on failed/successful sample pairs, uses one reflection step to repair rejected generations, and fine-tunes the agent on accepted original and… | Model weights | peer-reviewed · full-text | [Notes](#re-rest) · [Code](https://github.com/PlusLabNLP/Re-ReST) |
-| 2024-04-01 | **Accumulation vs. collapse**<br>[Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](https://arxiv.org/abs/2404.01413) | Compares replacement of earlier datasets with accumulation of original and synthetic data. It supplies a linear-model analysis and generative-model experiments showing… | Model weights | preprint · full-text | [Notes](#accumulating-data-model-collapse) |
+| 2024-04-01 | **Accumulation vs. collapse**<br>[Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](https://arxiv.org/abs/2404.01413) | Contrasts latest-generation replacement with accumulation of all preceding datasets. In a repeated-design linear regression setting, older data reduce each generation’s… | Model weights | peer-reviewed · full-text | [Notes](#accumulating-data-model-collapse) |
 | 2024-02-27 | **LoCoMo**<br>[Evaluating Very Long-Term Conversational Memory of LLM Agents](https://aclanthology.org/2024.acl-long.747/) | Creates persona- and event-grounded simulated conversations, then uses human editing to repair consistency and image alignment. The benchmark tests QA, event… | Memory | peer-reviewed · full-text | [Notes](#locomo) · [Code](https://github.com/snap-research/LoCoMo) |
 | 2024-01-23 | **TroVE**<br>[TroVE: Inducing Verifiable and Efficient Toolboxes for Solving Programmatic Tasks](https://arxiv.org/abs/2401.12869) | Samples programs in import, create and primitive-only modes, chooses a frequent executable answer with simplicity tie-breaking, and retains its reusable functions.… | Tools, Skills | peer-reviewed · full-text | [Notes](#trove) · [Code](https://github.com/zorazrw/trove) |
 | 2024-01-18 | **Self-Rewarding LMs**<br>[Self-Rewarding Language Models](https://arxiv.org/abs/2401.10020) | Alternates answer generation, self-judging and DPO updates, changing the shared answering/reward model. The main experiment uses a fixed Llama-2-Chat prompt generator… | Model weights | peer-reviewed · full-text | [Notes](#self-rewarding-lms) |
@@ -190,6 +189,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2023-08-20 | **ExpeL**<br>[ExpeL: LLM Agents Are Experiential Learners](https://arxiv.org/abs/2308.10144) | Collects experiences with Reflexion, retains successful examples, and maintains insights through additions, edits and importance votes. During the main held-out… | Memory | peer-reviewed · full-text | [Notes](#expel) · [Code](https://github.com/LeapLabTHU/ExpeL) |
 | 2023-08-17 | **ReST**<br>[Reinforced Self-Training (ReST) for Language Modeling](https://arxiv.org/abs/2308.08998) | Alternates costly generation rounds with multiple offline updates on increasingly filtered data. The strongest reward-score variant uses ordinary supervised negative… | Model weights | preprint · full-text | [Notes](#rest) |
 | 2023-06-20 | **RoboCat**<br>[RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation](https://arxiv.org/abs/2306.11706) | Fine-tunes a visual goal-conditioned generalist into specialists, collects experience with their frozen policies, then retrains on old and new data. The policy also… | Model weights | peer-reviewed · full-text | [Notes](#robocat) |
+| 2023-05-27 | **Model collapse**<br>[AI models collapse when trained on recursively generated data](https://www.nature.com/articles/s41586-024-07566-y) | Analyzes how finite resampling, restricted model families and fitting error can alter distributions across generations. Under stated fixed-sample Gaussian assumptions… | Model weights | peer-reviewed · full-text | [Notes](#model-collapse) · [Code](https://zenodo.org/records/10866595) |
 | 2023-05-26 | **LLMs as Tool Makers**<br>[Large Language Models as Tool Makers](https://arxiv.org/abs/2305.17126) | A stronger model proposes Python tools, verifies them on examples and packages calling demonstrations for a cheaper user model. Tools persist in a functional cache.… | Tools | peer-reviewed · full-text | [Notes](#llms-as-tool-makers) · [Code](https://github.com/ctlllll/LLM-ToolMaker) |
 | 2023-05-25 | **Voyager**<br>[Voyager: An Open-Ended Embodied Agent with Large Language Models](https://arxiv.org/abs/2305.16291) | Stores successful Minecraft programs in a persistent skill library indexed by generated descriptions. Retrieved skills support composition and up to four code attempts… | Skills, Tools | peer-reviewed · full-text | [Notes](#voyager) · [Code](https://github.com/MineDojo/Voyager) |
 | 2023-05-23 | **CREATOR**<br>[CREATOR: Tool Creation for Disentangling Abstract and Concrete Reasoning of Large Language Models](https://arxiv.org/abs/2305.14318) | Separates reusable Python tool construction from problem-specific calls, executes their combination and revises it after runtime errors. Weights stay fixed. A separate… | Tools | peer-reviewed · full-text | [Notes](#creator) · [Code](https://github.com/qiancheng0/CREATOR) |
@@ -3696,28 +3696,6 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Source 1](https://arxiv.org/abs/2407.18219) · [Source 2](https://arxiv.org/html/2407.18219v2) · [Source 3](https://proceedings.neurips.cc/paper_files/paper/2024/hash/639d992f819c2b40387d4d5170b8ffd7-Abstract-Conference.html) · [Source 4](https://arxiv.org/pdf/2407.18219v2) · [Source 5](https://www.proceedings.com/content/079/079017-1754open.pdf) · [Source 6](https://cohenqu.github.io/rise.github.io/) · [Source 7](https://github.com/cmu-mind/RISE)
 
-<a id="model-collapse"></a>
-
-## AI models collapse when trained on recursively generated data
-
-**2024-07-24 · peer-reviewed · Nature 2024 · adjacent · paper**
-
-[Primary source](https://www.nature.com/articles/s41586-024-07566-y)
-
-**Mechanism.** Analyzes how repeated training on generated data can lose low-probability parts of an original distribution and amplify errors. The paper combines tractable distribution models with generative-model experiments.
-
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Recursive resampling and training on prior-generation model outputs.
-
-**Evaluation.** Experiments include Gaussian mixtures, variational autoencoders, and repeated language-model fine-tuning, with differing amounts of original data retained.
-
-**Boundary.** The theoretical replacement setting and finite experiments have specific data-mixing assumptions. Curator interpretation: this is a warning about recursive data use, not a proof that every verified or data-accumulating self-learning loop must fail.
-
-**Code / data.** Official runnable code was not verified in this source review.
-
-**Topics:** model-training, safety, evaluation. **Reviewed:** full-text · 2026-10-28.
-
-[Source 1](https://www.nature.com/articles/s41586-024-07566-y) · [Source 2](https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported) · [Source 3](https://www.nature.com/articles/s41586-025-08905-3)
-
 <a id="symbolic-agent-learning"></a>
 
 ## Symbolic Learning Enables Self-Evolving Agents
@@ -3810,23 +3788,23 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 ## Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data
 
-**2024-04-01 · preprint · adjacent · paper**
+**2024-04-01 · peer-reviewed · COLM 2024 · adjacent · paper**
 
 [Primary source](https://arxiv.org/abs/2404.01413)
 
-**Mechanism.** Compares replacement of earlier datasets with accumulation of original and synthetic data. It supplies a linear-model analysis and generative-model experiments showing that the data-retention policy changes collapse behavior.
+**Mechanism.** Contrasts latest-generation replacement with accumulation of all preceding datasets. In a repeated-design linear regression setting, older data reduce each generation’s added-noise contribution sufficiently to bound expected excess error.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Repeated generated-data training with old data retained rather than replaced.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Models train on targets or samples generated by earlier models, retaining the original reference corpus and all successive synthetic batches in the accumulation condition. The data-retention rule is fixed.
 
-**Evaluation.** The study includes small transformer language models on TinyStories, molecular diffusion, image variational autoencoders, and controlled analytical models.
+**Evaluation.** The detailed arXiv v2 review covers small transformer pretraining on TinyStories, GeoDiff molecular conformations, CelebA VAEs, exact linear-model analysis and dataset-size/temperature/training ablations. Indexed official records establish later COLM 2024 publication; its final body was inaccessible in this pass.
 
-**Boundary.** The bounded-error theorem is for its stated linear setting, and retaining growing datasets changes resource requirements. Curator interpretation: these results challenge universal collapse claims without certifying arbitrary self-training or agent-memory loops.
+**Boundary.** The bound assumes reused covariates, independent additive noise and underparameterized regression. Growing datasets alter compute and storage; size-matched replacement does not match all generation costs. VAE diversity still degrades, and TinyStories is itself generated text. Bounded error is not unchanged quality or a guarantee for arbitrary self-learning agents.
 
-**Code / data.** Official runnable code was not verified in this source review.
+**Code / data.** ArXiv v2 and its substantive appendices were read in full on 2026-11-09. An official runnable implementation was not established; the author page’s PDF link returned 404 and the final OpenReview body was access-restricted. No training, models or research code were executed.
 
-**Topics:** model-training, safety, evaluation. **Reviewed:** full-text · 2026-10-28.
+**Topics:** model-training, safety, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2404.01413) · [Source 2](https://arxiv.org/html/2404.01413v2)
+[Source 1](https://arxiv.org/abs/2404.01413) · [Source 2](https://arxiv.org/html/2404.01413v2) · [Source 3](https://arxiv.org/pdf/2404.01413v2) · [Source 4](https://openreview.net/forum?id=5B2K4LRgmz) · [Source 5](https://openreview.net/attachment?id=5B2K4LRgmz&name=pdf)
 
 <a id="locomo"></a>
 
@@ -4141,6 +4119,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** foundations, model-training, skills, continual-learning, applications. **Reviewed:** full-text · 2026-11-09.
 
 [Source 1](https://arxiv.org/abs/2306.11706) · [Source 2](https://arxiv.org/html/2306.11706v2) · [Source 3](https://jmlr.org/tmlr/papers/) · [Source 4](https://arxiv.org/pdf/2306.11706v2)
+
+<a id="model-collapse"></a>
+
+## AI models collapse when trained on recursively generated data
+
+**2023-05-27 · peer-reviewed · Nature 2024 · adjacent · paper**
+
+[Primary source](https://www.nature.com/articles/s41586-024-07566-y)
+
+**Mechanism.** Analyzes how finite resampling, restricted model families and fitting error can alter distributions across generations. Under stated fixed-sample Gaussian assumptions, expected distributional error diverges and fitted covariance collapses; these are distinct theoretical statements.
+
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Repeated fitting uses generated samples from earlier models; experiments vary original-data retention, while the central discrete and Gaussian theory uses latest-generation replacement.
+
+**Evaluation.** The corrected Nature article, full supplement and 2025 correction were inspected. Experiments include five seeded OPT-125M fine-tuning chains, Gaussian mixtures and MNIST VAEs, with retention and repetition controls. Supplementary Gaussian experiments also compare fixed sampling from an accumulating pool with fitting the whole pool.
+
+**Boundary.** The 2025 correction specifies beta=gamma=0 for the main theoretical replacement setting. Language experiments use beam-generated continuations of original prefixes; retention comparisons also change training epochs. Finite results include plateaus and partial recovery. These findings do not prove failure of every filtered, verified or data-accumulating learning loop.
+
+**Code / data.** [Official artifact](https://zenodo.org/records/10866595) — Author-linked Zenodo code archive v0.1, its file inventory and README at b48c90a inspected on 2026-11-09. The README says hardware/Slurm-specific parts were removed. The archive predates the final Nature article and correction; no code, notebook, dataset or model was executed.
+
+**Topics:** model-training, safety, evaluation. **Reviewed:** full-text · 2026-11-09.
+
+[Source 1](https://www.nature.com/articles/s41586-024-07566-y) · [Source 2](https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported) · [Source 3](https://www.nature.com/articles/s41586-025-08905-3) · [Source 4](https://arxiv.org/abs/2305.17493) · [Source 5](https://www.nature.com/articles/s41586-024-07566-y.pdf) · [Source 6](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-024-07566-y/MediaObjects/41586_2024_7566_MOESM1_ESM.pdf) · [Source 7](https://www.nature.com/articles/s41586-025-08905-3.pdf) · [Source 8](https://zenodo.org/records/10866595) · [Source 9](https://oatml.cs.ox.ac.uk/code.html)
 
 <a id="llms-as-tool-makers"></a>
 
