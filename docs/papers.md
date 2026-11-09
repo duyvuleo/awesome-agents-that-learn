@@ -48,10 +48,10 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-25 | **EMMA**<br>[EMMA: Structured Episodic Memory for Multi-Agent Workflow Synthesis](https://arxiv.org/abs/2610.35966) | Learns controller routing notes, specialist prompts inheriting a generalist prompt, and procedural skills from a fixed training stream. A reflector diagnoses a failure… | Memory, Skills, Prompts / context, Multi-agent organization | preprint · full-text | [Notes](#emma) |
 | 2026-10-25 | **CaliMem**<br>[CaliMem: Search-Efficient Data Agent via Calibrated Memory](https://arxiv.org/abs/2610.34500) | Maintains experimental evidence and revisable claims during one data-curation search. Before retraining a fixed downstream model on each selected subset, the agent… | Memory | preprint · full-text | [Notes](#calimem) · [Code](https://anonymous.4open.science/r/CaliMem-450E) |
 | 2026-10-24 | **ReSight**<br>[ReSight: Task-Driven Self-Improving Memory for Embodied Agents](https://arxiv.org/abs/2610.33487) | Retains visual evidence while a separate coding agent explores difficult query sets and distills reusable processing programs, memory fields and skills. Executor traces… | Memory, Skills, Tools, Agent code | preprint · full-text | [Notes](#resight) |
-| 2026-10-23 | **OPST**<br>[On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models](https://arxiv.org/abs/2610.32770) | Seeds generation with broad topics, removes unstable or already-solved questions, and self-distills on student rollouts. Student and teacher weights carry across rounds… | Model weights | preprint · full-text | [Notes](#on-policy-self-training) |
+| 2026-10-23 | **OPST**<br>[On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models](https://arxiv.org/abs/2610.32770) | Generates questions and candidate rationales/answers from hand-chosen topics, checks answer consistency and removes questions all sampled student rollouts solve. A… | Model weights | preprint · full-text | [Notes](#on-policy-self-training) |
 | 2026-10-23 | **FlexA-Mem**<br>[FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents](https://arxiv.org/abs/2610.33274) | Preserves raw history alongside LLM-written records and links, then renders a compact timeline plus retrieved detail under a token budget. A fixed fit-or-degrade rule… | Memory | preprint · full-text | [Notes](#flexa-mem) · [Code](https://github.com/WujiangXu/Flex-Amem) |
 | 2026-10-22 | **Value of memory**<br>[The Value of Memory in Language Agents](https://arxiv.org/abs/2610.31303) | Defines retained decision value separately from a fixed reader’s realized benefit, with explicit costs for recovery and revision. Conditional simulation bounds and… | Analysis / no retained update | preprint · full-text | [Notes](#value-of-memory) |
-| 2026-10-22 | **METTA**<br>[METTA: Memory-Enhanced Test-Time Adaptation for Meta-Reinforcement Learning](https://arxiv.org/abs/2610.31656) | Combines within-episode fast-weight updates with summaries retained across episodes of one task trial. Meta-training learns the policy and memory machinery across tasks… | Memory, Model weights | preprint · full-text | [Notes](#metta) |
+| 2026-10-22 | **METTA**<br>[METTA: Memory-Enhanced Test-Time Adaptation for Meta-Reinforcement Learning](https://arxiv.org/abs/2610.31656) | Meta-trains a policy, neural-memory initialization and update machinery with PPO. Within each episode, causal self-supervised gradient updates change temporary fast… | Memory, Model weights | preprint · full-text | [Notes](#metta) |
 | 2026-10-21 | **Code-edit readout**<br>[Recursive Self-Improvement on a Budget: Scoring Code Edits Before They Run](https://arxiv.org/abs/2610.29121) | Fits a linear predictor of candidate-edit utility from parent scores and projected diff embeddings, then freezes it. The predictor chooses which scaffold edit to… | Agent code, Prompts / context | preprint · full-text | [Notes](#rsi-budget-code-scoring) |
 | 2026-10-21 | **MemoryTax**<br>[MemoryTax: The Bitter Lesson of Agent Memory](https://arxiv.org/abs/2610.29823) | Compares raw-history context and BM25, extracted-fact and graph stores, and coding agents that search conversation files. Writer–reader swaps hold each store and its… | Analysis / no retained update | preprint · full-text | [Notes](#memorytax) · [Code](https://github.com/zedong-peng/memorytax) |
 | 2026-10-20 | **RSI evidence audit**<br>[Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](https://arxiv.org/abs/2610.27610) | Codes whether self-improvement studies evaluate final artifacts, repeat the entire learning loop, or compare earlier and later improvers from identical starting… | Analysis / no retained update | preprint · full-text | [Notes](#rsi-evaluation-audit) |
@@ -986,19 +986,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.32770)
 
-**Mechanism.** Seeds generation with broad topics, removes unstable or already-solved questions, and self-distills on student rollouts. Student and teacher weights carry across rounds; the teacher is an exponential average rather than an external stronger model.
+**Mechanism.** Generates questions and candidate rationales/answers from hand-chosen topics, checks answer consistency and removes questions all sampled student rollouts solve. A teacher conditioned on the generated privileged information supplies token-level targets along student trajectories. Student weights and an EMA teacher persist across rounds; the EMA checkpoint is deployed and evaluated.
 
 **What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Self-generated questions, candidate answers and reasoning traces, consistency filters, and token distributions from a privileged EMA teacher.
 
-**Evaluation.** Compares training objectives on shared synthetic data, language reasoning and out-of-domain retention, visual question answering, and hallucination benchmarks, with filtering and teacher-context ablations.
+**Evaluation.** Full v1 compares synthetic-data objectives on Gemma E2B/E4B, reports three-seed E2B results and additional Qwen3-4B-Base transfer, and tests mixed-domain retention and image-conditioned self-training. Filtering, privileged information, answer corruption, EMA rate, data volume and round count are ablated. Longer training and some domain mixtures regress.
 
-**Boundary.** Data-free refers to curated textual questions and answers: topics are hand-chosen and visual training requires unlabeled images. Consistent mistakes can pass verification. Retention is mixed: the all-domain mixture improves the average but loses 4.9 points on MATH-500; small-model tests do not establish unbounded improvement.
+**Boundary.** Data-free describes new textual question/answer supervision, not inherited model knowledge, chosen topics or unlabeled visual inputs. Consistency is not correctness. Baseline objectives also differ in rollout distribution and EMA evaluation, while full compute/training settings are incomplete. The printed mixture weights in Eq. 5 are inconsistent with its stated divergence bound and limits; no released implementation resolves whether this is a typesetting error. The seven-round MMLU peak and mixed retention do not establish indefinite improvement.
 
-**Code / data.** Official runnable code was not established in this review; no installation, training, or research execution was performed.
+**Code / data.** Complete 20-page arXiv v1, Appendices A.1–A.8, two figures/eight tables, eight equations, algorithm and full text/visual prompt templates read on 2026-11-09. The official project page explicitly marks code as coming soon. A direct arithmetic counterexample checks the printed divergence claim only; it is not a training experiment. No implementation, model or data installed or executed.
 
-**Topics:** model-training, self-play, evaluation. **Reviewed:** full-text · 2026-11-01.
+**Topics:** model-training, self-play, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.32770) · [Source 2](https://arxiv.org/html/2610.32770v1)
+[Source 1](https://arxiv.org/abs/2610.32770) · [Source 2](https://arxiv.org/html/2610.32770v1) · [Source 3](https://arxiv.org/pdf/2610.32770v1) · [Source 4](https://leonsick.github.io/opst/)
 
 <a id="flexa-mem"></a>
 
@@ -1052,19 +1052,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.31656)
 
-**Mechanism.** Combines within-episode fast-weight updates with summaries retained across episodes of one task trial. Meta-training learns the policy and memory machinery across tasks; meta-testing freezes those slow parameters while adapting temporary memory.
+**Mechanism.** Meta-trains a policy, neural-memory initialization and update machinery with PPO. Within each episode, causal self-supervised gradient updates change temporary fast weights; final representations become summaries available to later episodes of the same trial. Slow parameters freeze at meta-test, fast weights reset each episode, and summary history resets for each new trial.
 
 **What changes:** Memory, Model weights. **Persistence:** both. **Learning signal:** Environment rewards train slow parameters with PPO; self-supervised prediction updates fast neural-memory parameters during interaction.
 
-**Evaluation.** Tests simulated HalfCheetah velocity control, Meta-World manipulation, and sparse-reward PointMaze, including held-out task families, memory ablations, efficiency, and five training seeds.
+**Evaluation.** Full v1 reports five-seed simulated HalfCheetahVel, Meta-World and PointMaze results, including held-out task families, memory/update/aggregation/state-input ablations, trajectory measures and latency. Online updates help hidden-goal and sparse-reward settings but add little on goal-visible ML10. Baselines share interaction budgets and hardware while retaining method-specific configurations.
 
-**Boundary.** Fast memory resets each episode and summary history resets each trial; this is not persistent learning across deployment tasks. ML10/ML45 expose goal coordinates, and nonstationary task streams remain future work. Attention aggregation is quadratic in episode count even though timestep processing is linear.
+**Boundary.** This evaluates finite task trials, not persistent deployment learning or changing task-family streams. ML10/ML45 reveal goals, and PointMaze holds out start/goal pairs rather than maze layouts. Default aggregation costs O(E²T) over E episodes of horizon T; only the EMA variant is O(ET). TTT is slower at short contexts. Cost/representation plots are implementation-specific or descriptive, and unreleased code prevents verification of exact baseline integration and reproduction.
 
-**Code / data.** Official runnable code was not established in this review; no installation, training, or research execution was performed.
+**Code / data.** Complete 27-page arXiv v1, Appendices A–G, fifteen figures/four tables, ten numbered equations, two algorithms, complexity derivations and all nine trajectory examples read on 2026-11-09. The paper states that a complete repository will be public upon acceptance; no official implementation was independently located. Supplementary-code availability and exact runtime configurations were not independently verified. No simulation, model or research code executed.
 
-**Topics:** foundations, memory, model-training, continual-learning, applications. **Reviewed:** full-text · 2026-11-01.
+**Topics:** foundations, memory, model-training, continual-learning, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.31656) · [Source 2](https://arxiv.org/html/2610.31656v1)
+[Source 1](https://arxiv.org/abs/2610.31656) · [Source 2](https://arxiv.org/html/2610.31656v1) · [Source 3](https://arxiv.org/pdf/2610.31656v1)
 
 <a id="rsi-budget-code-scoring"></a>
 

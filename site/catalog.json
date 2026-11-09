@@ -1353,10 +1353,12 @@
       "url": "https://arxiv.org/abs/2610.32770",
       "sources": [
         "https://arxiv.org/abs/2610.32770",
-        "https://arxiv.org/html/2610.32770v1"
+        "https://arxiv.org/html/2610.32770v1",
+        "https://arxiv.org/pdf/2610.32770v1",
+        "https://leonsick.github.io/opst/"
       ],
       "code_url": null,
-      "code_note": "Official runnable code was not established in this review; no installation, training, or research execution was performed.",
+      "code_note": "Complete 20-page arXiv v1, Appendices A.1–A.8, two figures/eight tables, eight equations, algorithm and full text/visual prompt templates read on 2026-11-09. The official project page explicitly marks code as coming soon. A direct arithmetic counterexample checks the printed divergence claim only; it is not a training experiment. No implementation, model or data installed or executed.",
       "topics": [
         "model-training",
         "self-play",
@@ -1368,11 +1370,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Self-generated questions, candidate answers and reasoning traces, consistency filters, and token distributions from a privileged EMA teacher.",
-      "mechanism": "Seeds generation with broad topics, removes unstable or already-solved questions, and self-distills on student rollouts. Student and teacher weights carry across rounds; the teacher is an exponential average rather than an external stronger model.",
-      "evaluation": "Compares training objectives on shared synthetic data, language reasoning and out-of-domain retention, visual question answering, and hallucination benchmarks, with filtering and teacher-context ablations.",
-      "limitations": "Data-free refers to curated textual questions and answers: topics are hand-chosen and visual training requires unlabeled images. Consistent mistakes can pass verification. Retention is mixed: the all-domain mixture improves the average but loses 4.9 points on MATH-500; small-model tests do not establish unbounded improvement.",
+      "mechanism": "Generates questions and candidate rationales/answers from hand-chosen topics, checks answer consistency and removes questions all sampled student rollouts solve. A teacher conditioned on the generated privileged information supplies token-level targets along student trajectories. Student weights and an EMA teacher persist across rounds; the EMA checkpoint is deployed and evaluated.",
+      "evaluation": "Full v1 compares synthetic-data objectives on Gemma E2B/E4B, reports three-seed E2B results and additional Qwen3-4B-Base transfer, and tests mixed-domain retention and image-conditioned self-training. Filtering, privileged information, answer corruption, EMA rate, data volume and round count are ablated. Longer training and some domain mixtures regress.",
+      "limitations": "Data-free describes new textual question/answer supervision, not inherited model knowledge, chosen topics or unlabeled visual inputs. Consistency is not correctness. Baseline objectives also differ in rollout distribution and EMA evaluation, while full compute/training settings are incomplete. The printed mixture weights in Eq. 5 are inconsistent with its stated divergence bound and limits; no released implementation resolves whether this is a typesetting error. The seven-round MMLU peak and mixed retention do not establish indefinite improvement.",
       "review_depth": "full-text",
-      "checked": "2026-11-01",
+      "checked": "2026-11-09",
       "short_name": "OPST"
     },
     {
@@ -1453,10 +1455,11 @@
       "url": "https://arxiv.org/abs/2610.31656",
       "sources": [
         "https://arxiv.org/abs/2610.31656",
-        "https://arxiv.org/html/2610.31656v1"
+        "https://arxiv.org/html/2610.31656v1",
+        "https://arxiv.org/pdf/2610.31656v1"
       ],
       "code_url": null,
-      "code_note": "Official runnable code was not established in this review; no installation, training, or research execution was performed.",
+      "code_note": "Complete 27-page arXiv v1, Appendices A–G, fifteen figures/four tables, ten numbered equations, two algorithms, complexity derivations and all nine trajectory examples read on 2026-11-09. The paper states that a complete repository will be public upon acceptance; no official implementation was independently located. Supplementary-code availability and exact runtime configurations were not independently verified. No simulation, model or research code executed.",
       "topics": [
         "foundations",
         "memory",
@@ -1471,11 +1474,11 @@
       ],
       "persistence": "both",
       "learning_signal": "Environment rewards train slow parameters with PPO; self-supervised prediction updates fast neural-memory parameters during interaction.",
-      "mechanism": "Combines within-episode fast-weight updates with summaries retained across episodes of one task trial. Meta-training learns the policy and memory machinery across tasks; meta-testing freezes those slow parameters while adapting temporary memory.",
-      "evaluation": "Tests simulated HalfCheetah velocity control, Meta-World manipulation, and sparse-reward PointMaze, including held-out task families, memory ablations, efficiency, and five training seeds.",
-      "limitations": "Fast memory resets each episode and summary history resets each trial; this is not persistent learning across deployment tasks. ML10/ML45 expose goal coordinates, and nonstationary task streams remain future work. Attention aggregation is quadratic in episode count even though timestep processing is linear.",
+      "mechanism": "Meta-trains a policy, neural-memory initialization and update machinery with PPO. Within each episode, causal self-supervised gradient updates change temporary fast weights; final representations become summaries available to later episodes of the same trial. Slow parameters freeze at meta-test, fast weights reset each episode, and summary history resets for each new trial.",
+      "evaluation": "Full v1 reports five-seed simulated HalfCheetahVel, Meta-World and PointMaze results, including held-out task families, memory/update/aggregation/state-input ablations, trajectory measures and latency. Online updates help hidden-goal and sparse-reward settings but add little on goal-visible ML10. Baselines share interaction budgets and hardware while retaining method-specific configurations.",
+      "limitations": "This evaluates finite task trials, not persistent deployment learning or changing task-family streams. ML10/ML45 reveal goals, and PointMaze holds out start/goal pairs rather than maze layouts. Default aggregation costs O(E²T) over E episodes of horizon T; only the EMA variant is O(ET). TTT is slower at short contexts. Cost/representation plots are implementation-specific or descriptive, and unreleased code prevents verification of exact baseline integration and reproduction.",
       "review_depth": "full-text",
-      "checked": "2026-11-01",
+      "checked": "2026-11-09",
       "short_name": "METTA"
     },
     {

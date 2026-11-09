@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-09 — Expanded self-training and meta-RL reviews
+
+- Completed OPST and METTA, including full appendices, algorithms and mathematical checks.
+- Documented OPST’s formulation discrepancy without inferring an unverified implementation error.
+- Clarified retention regressions, memory resets and history-scaling limits.
+- Broader audit: 142 of 190 works complete, 48 pending.
+
 ## 2026-11-09 — Expanded decentralized-memory and graph-skill reviews
 
 - Completed EvolveMAS and MultiEvoSkill, including full appendices and negative controls.
