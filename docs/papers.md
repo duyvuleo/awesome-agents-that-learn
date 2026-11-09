@@ -90,7 +90,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-08-04 | **PAST-Bench**<br>[PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents](https://arxiv.org/abs/2608.04003) | Uses ordered fresh-session tasks with matched retention-on and retention-off conditions, and records evidence for saving, retrieving, and updating persistent state. | Memory, Skills | preprint · full-text | [Notes](#past-bench) · [Code](https://github.com/Gen-Verse/PAST-Bench) |
 | 2026-08-04 | **GDPevo**<br>[GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](https://arxiv.org/abs/2608.03764) | Distributes hidden business rules across training tasks and recombines them in held-out tasks, using an automated pipeline to construct environments and deterministic… | Skills, Memory | preprint · full-text | [Notes](#gdpevo) · [Code](https://github.com/Prism-Shadow/GDPevo) |
 | 2026-07-31 | **AgentStream**<br>[AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](https://arxiv.org/abs/2608.00155) | Evaluates retained agent state under isolated domain streams, sequential domain shifts, and interleaved tasks, comparing each evolving agent with a no-evolution baseline. | Memory, Skills, Prompts / context, Workflows | preprint · full-text | [Notes](#agentstream) · [Code](https://github.com/Jasper-Yan/AgentStream) |
-| 2026-07-14 | **Agent self-improvement survey**<br>[Self-Improvements in Modern Agentic Systems: A Survey](https://arxiv.org/abs/2607.13104) | Models an agent as a foundation model plus prompts, memory, tools, and control logic, organizing self-induced updates by their target and learning signal. | Analysis / no retained update | preprint · abstract | [Notes](#modern-self-improvement-survey) |
+| 2026-07-14 | **Agent self-improvement survey**<br>[Self-Improvements in Modern Agentic Systems: A Survey](https://arxiv.org/abs/2607.13104) | Models the agent as foundation-model parameters plus a persistent scaffold of prompts, memory, tools and control logic, distinct from ephemeral execution state. It… | Analysis / no retained update | preprint · full-text | [Notes](#modern-self-improvement-survey) · [Code](https://github.com/selfimproving-agent/awesome-Self-Improving-Agents) |
 | 2026-06-06 | **PACE**<br>[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](https://arxiv.org/abs/2606.08106) | Places a sequential statistical gate between proposed prompt edits and retention. A betting-based evidence process accepts an edit only after its paired outcomes cross a… | Prompts / context | preprint · full-text | [Notes](#pace) |
 | 2026-06-04 | **Membrane**<br>[Membrane: A Self-Evolving Contrastive Safety Memory for LLM Agent Defense](https://arxiv.org/abs/2606.05743) | An external guard retrieves cells pairing unsafe conditions with benign exceptions. A planner and writer revise the cell store under structural validation, while model… | Memory | peer-reviewed · full-text | [Notes](#membrane) · [Code](https://github.com/brightjade/membrane) |
 | 2026-05-31 | **Self-evolution gap**<br>[On the Generalization Gap in Self-Evolving Language Model Reasoning](https://arxiv.org/abs/2606.01075) | Compares single-round verification, feedback-guided revision, repeated preference training, and curricula inside a controlled generator-verifier loop. Retained changes… | Model weights | peer-reviewed · full-text | [Notes](#self-evolution-generalization-gap) |
@@ -143,11 +143,11 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-08-27 | **Memory-R1**<br>[Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](https://arxiv.org/abs/2508.19828) | Uses PPO or GRPO to train a manager that adds, updates, deletes or retains memory entries, then trains an answer agent to select relevant content from retrieved… | Model weights, Memory | preprint · full-text | [Notes](#memory-r1) |
 | 2025-08-26 | **ELL / StuLife**<br>[Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark](https://arxiv.org/abs/2508.19005) | Defines experience-driven lifelong learning around exploration, memory, skill abstraction, and internalization, and introduces StuLife as a stateful simulated… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#ell-stulife) |
 | 2025-08-22 | **Memento**<br>[Memento: Fine-tuning LLM Agents without Fine-tuning LLMs](https://arxiv.org/abs/2508.16153) | A planner-executor agent stores completed cases and reuses them in subsequent planning. Retrieval can use fixed similarity or a learned Q-function; underlying LLM… | Memory, Model weights | preprint · full-text | [Notes](#memento) · [Code](https://github.com/Memento-Teams/Memento) |
-| 2025-08-10 | **Agent evolution survey**<br>[A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](https://arxiv.org/abs/2508.07407) | Describes an evolution loop through inputs, agent systems, environments, and optimizers, then maps techniques and domain-specific applications onto those components. | Analysis / no retained update | preprint · abstract | [Notes](#comprehensive-evolving-survey) |
+| 2025-08-10 | **Agent evolution survey**<br>[A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](https://arxiv.org/abs/2508.07407) | Connects system inputs, an agent system, environment feedback and an optimizer over a defined search space. It separates task-level from instance-level optimization and… | Analysis / no retained update | preprint · full-text | [Notes](#comprehensive-evolving-survey) · [Code](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents) |
 | 2025-08-08 | **Temporal self-rewarding**<br>[Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](https://proceedings.mlr.press/v306/wang26ik.html) | Selects rejected answers from the lower-scoring initial/current candidates, trains a temporary model, then chooses better-scoring current/temporary answers. A second DPO… | Model weights | peer-reviewed · full-text | [Notes](#temporal-self-rewarding) · [Code](https://github.com/TemporalSelfRewarding/TSR) |
 | 2025-08-08 | **Memp**<br>[Memp: Exploring Agent Procedural Memory](https://arxiv.org/abs/2508.06433) | Combines detailed trajectories with abstract procedural scripts in an external memory bank. Similarity retrieval supplies guidance to fixed-weight agents; online… | Memory, Skills | peer-reviewed · full-text | [Notes](#memp) · [Code](https://github.com/zjunlp/MemP) |
 | 2025-08-07 | **R-Zero**<br>[R-Zero: Self-Evolving Reasoning LLM from Zero Data](https://arxiv.org/abs/2508.05004) | Alternates GRPO updates of separate challenger and solver copies. The challenger proposes mostly mathematical questions; the solver samples answers, filters questions by… | Model weights | peer-reviewed · full-text | [Notes](#r-zero) · [Code](https://github.com/Chengsong-Huang/R-Zero) |
-| 2025-07-28 | **What/when/how survey**<br>[A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence](https://arxiv.org/abs/2507.21046) | Organizes agent adaptation by the component that changes, the stage when it changes, the feedback and algorithm used, and the application setting. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#self-evolving-survey) |
+| 2025-07-28 | **What/when/how survey**<br>[A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence](https://arxiv.org/abs/2507.21046) | Organizes agent changes by what evolves, when updates occur, how feedback drives them and where they are applied. A trajectory-conditioned system update formalism… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#self-evolving-survey) · [Code](https://github.com/CharlesQ9/Self-Evolving-Agents) |
 | 2025-07-25 | **GEPA**<br>[GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](https://arxiv.org/abs/2507.19457) | Mutates module instructions using trace reflection, retains complementary candidates through instance-wise Pareto selection, and optionally merges prompt sets from… | Prompts / context | peer-reviewed · full-text | [Notes](#gepa) · [Code](https://github.com/gepa-ai/gepa) |
 | 2025-07-04 | **EvoAgentX**<br>[EvoAgentX: An Automated Framework for Evolving Agentic Workflows](https://arxiv.org/abs/2507.03616) | Provides workflow generation, execution and evaluation around TextGrad, AFlow and MIPRO. Optimized prompts, demonstrations and executable workflow structures persist… | Prompts / context, Tools, Workflows, Multi-agent organization | preprint · full-text | [Notes](#evoagentx) · [Code](https://github.com/EvoAgentX/EvoAgentX) |
 | 2025-06-30 | **SPIRAL**<br>[SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2506.24119) | One shared language-model policy plays both sides of zero-sum games and receives online policy-gradient updates. Separate baselines for each role stabilize training as… | Model weights | peer-reviewed · full-text | [Notes](#spiral) · [Code](https://github.com/spiral-rl/spiral) |
@@ -1912,19 +1912,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2607.13104)
 
-**Mechanism.** Models an agent as a foundation model plus prompts, memory, tools, and control logic, organizing self-induced updates by their target and learning signal.
+**Mechanism.** Models the agent as foundation-model parameters plus a persistent scaffold of prompts, memory, tools and control logic, distinct from ephemeral execution state. It distinguishes behavior-generated training signals consumed by an optimizer from direct scaffold edits, and treats skills as reusable updates across these substrates.
 
-**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable: analysis or evaluation resource.
+**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable to the survey itself; it separates self-generated demonstrations, evaluative feedback and exploratory experience from the model or scaffold component updated.
 
-**Evaluation.** Synthesizes model and scaffold adaptation, applications, and evaluation problems.
+**Evaluation.** ArXiv v1 reviews historical foundations, model/scaffold methods and six application domains. It supplies qualitative memory comparison tables and a paper–benchmark usage matrix, then proposes budgeted learning trajectories, held-out transfer, old-task regressions, judge calibration and separate evaluation-cost reporting.
 
-**Boundary.** A survey’s deployment discussion is not independent deployment validation. Different update mechanisms still require different controls and measures.
+**Boundary.** The formal update equations and verifier gates are an organizing framework, not proofs of safe or monotonic improvement. Qualitative ratings and benchmark incidence are not measured effect sizes. Some included systems do not evolve their own improver or retain changes across tasks; scaffold edits can still forget useful state. No reproducible corpus-screening protocol is provided.
 
-**Code / data.** No implementation link independently inspected for this entry; this does not establish that none exists.
+**Code / data.** [Official artifact](https://github.com/selfimproving-agent/awesome-Self-Improving-Agents) — Author-linked survey repository and project introduction inspected on 2026-11-09. The artifact is a literature hub; no listed implementation, historical system or benchmark was independently executed for this review.
 
-**Topics:** surveys, model-training, architecture, recursive-improvement. **Reviewed:** abstract · 2026-10-28.
+**Topics:** surveys, model-training, architecture, recursive-improvement. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2607.13104)
+[Source 1](https://arxiv.org/abs/2607.13104) · [Source 2](https://arxiv.org/pdf/2607.13104v1) · [Source 3](https://github.com/selfimproving-agent/awesome-Self-Improving-Agents) · [Source 4](https://selfimproving-agent.github.io/)
 
 <a id="pace"></a>
 
@@ -3088,19 +3088,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2508.07407)
 
-**Mechanism.** Describes an evolution loop through inputs, agent systems, environments, and optimizers, then maps techniques and domain-specific applications onto those components.
+**Mechanism.** Connects system inputs, an agent system, environment feedback and an optimizer over a defined search space. It separates task-level from instance-level optimization and surveys model behavior, prompts, memory, tools, multi-agent topology and domain-specific workflows.
 
-**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable: analysis or evaluation resource.
+**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable to the survey itself; its organizing loop compares task metrics, execution feedback, demonstrations and model-generated evaluations used by agent optimizers.
 
-**Evaluation.** Reviews methods alongside evaluation, safety, and ethical considerations.
+**Evaluation.** ArXiv v2 synthesizes methods through August 2025 and discusses tool, web, software, scientific and multimodal benchmarks alongside model/agent judges. It proposes safety-first, performance-preserving evolution principles and identifies longitudinal evaluation, transfer, reward quality and cost as open problems.
 
-**Boundary.** Review coverage and categories reflect the authors’ literature selection; the framework does not itself demonstrate lifelong capability growth.
+**Boundary.** The broad optimization umbrella includes transient inference search and externally trained systems, not only persistent autonomous learning. Its three laws are design aspirations, not demonstrated guarantees. No reproducible screening funnel or pooled comparison is provided, and at least one cited method is misdescribed; primary-paper checks remain necessary.
 
-**Code / data.** No implementation link independently inspected for this entry; this does not establish that none exists.
+**Code / data.** [Official artifact](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents) — Author-linked survey collection introduction and taxonomy inspected on 2026-11-09. This is a literature resource; its listings were not individually reproduced or treated as primary evidence for other papers.
 
-**Topics:** surveys, architecture, continual-learning. **Reviewed:** abstract · 2026-10-28.
+**Topics:** surveys, architecture, continual-learning. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2508.07407)
+[Source 1](https://arxiv.org/abs/2508.07407) · [Source 2](https://arxiv.org/pdf/2508.07407v2) · [Source 3](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents) · [Source 4](https://arxiv.org/abs/2312.17244)
 
 <a id="temporal-self-rewarding"></a>
 
@@ -3176,19 +3176,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2507.21046)
 
-**Mechanism.** Organizes agent adaptation by the component that changes, the stage when it changes, the feedback and algorithm used, and the application setting.
+**Mechanism.** Organizes agent changes by what evolves, when updates occur, how feedback drives them and where they are applied. A trajectory-conditioned system update formalism separates model, context, tools and architecture, while the survey includes both early feedback-driven mechanisms and stronger autonomous reconfiguration.
 
-**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable: analysis or evaluation resource.
+**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable to the survey itself; it distinguishes feedback type/source, demonstrations, population fitness, timing and update targets across surveyed systems.
 
-**Evaluation.** Synthesizes published methods, benchmarks, and open questions rather than evaluating one new learner.
+**Evaluation.** ArXiv v4, matching the January 2026 TMLR title, synthesizes methods and proposes five evaluation goals: adaptivity, retention, generalization, efficiency and safety. It details short/long-horizon protocols, forgetting and backward-transfer probes, cost accounting, human intervention and benchmark coverage gaps.
 
-**Boundary.** A taxonomy is an organizing aid, not evidence that every included system improves continually. The title’s superintelligence framing is a research aspiration.
+**Boundary.** Survey inclusion does not prove persistent learning or recursive improvement. Protocols and gap claims are a historical synthesis, not a pooled experiment or certification. Some mechanism labels and numerical examples conflict with primary evidence or arithmetic; cost-per-gain also needs explicit treatment of zero or negative gains.
 
-**Code / data.** No implementation link independently inspected for this entry; this does not establish that none exists.
+**Code / data.** [Official artifact](https://github.com/CharlesQ9/Self-Evolving-Agents) — Author-linked literature repository introduction and organization inspected on 2026-11-09; no research execution. TMLR publication reconfirmed from its official index; the precise OpenReview record currently presents an access challenge.
 
-**Topics:** surveys, foundations, architecture, continual-learning. **Reviewed:** abstract · 2026-10-28.
+**Topics:** surveys, foundations, architecture, continual-learning. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2507.21046) · [Source 2](https://www.jmlr.org/tmlr/papers/)
+[Source 1](https://arxiv.org/abs/2507.21046) · [Source 2](https://www.jmlr.org/tmlr/papers/) · [Source 3](https://arxiv.org/pdf/2507.21046v4) · [Source 4](https://github.com/CharlesQ9/Self-Evolving-Agents) · [Source 5](https://openreview.net/forum?id=CTr3bovS5F) · [Source 6](https://arxiv.org/abs/2505.03335)
 
 <a id="gepa"></a>
 

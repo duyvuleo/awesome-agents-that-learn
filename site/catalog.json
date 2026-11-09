@@ -2786,10 +2786,13 @@
       "venue": "",
       "url": "https://arxiv.org/abs/2607.13104",
       "sources": [
-        "https://arxiv.org/abs/2607.13104"
+        "https://arxiv.org/abs/2607.13104",
+        "https://arxiv.org/pdf/2607.13104v1",
+        "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents",
+        "https://selfimproving-agent.github.io/"
       ],
-      "code_url": null,
-      "code_note": "No implementation link independently inspected for this entry; this does not establish that none exists.",
+      "code_url": "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents",
+      "code_note": "Author-linked survey repository and project introduction inspected on 2026-11-09. The artifact is a literature hub; no listed implementation, historical system or benchmark was independently executed for this review.",
       "topics": [
         "surveys",
         "model-training",
@@ -2801,12 +2804,12 @@
         "none"
       ],
       "persistence": "not-applicable",
-      "learning_signal": "Not applicable: analysis or evaluation resource.",
-      "mechanism": "Models an agent as a foundation model plus prompts, memory, tools, and control logic, organizing self-induced updates by their target and learning signal.",
-      "evaluation": "Synthesizes model and scaffold adaptation, applications, and evaluation problems.",
-      "limitations": "A survey’s deployment discussion is not independent deployment validation. Different update mechanisms still require different controls and measures.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Not applicable to the survey itself; it separates self-generated demonstrations, evaluative feedback and exploratory experience from the model or scaffold component updated.",
+      "mechanism": "Models the agent as foundation-model parameters plus a persistent scaffold of prompts, memory, tools and control logic, distinct from ephemeral execution state. It distinguishes behavior-generated training signals consumed by an optimizer from direct scaffold edits, and treats skills as reusable updates across these substrates.",
+      "evaluation": "ArXiv v1 reviews historical foundations, model/scaffold methods and six application domains. It supplies qualitative memory comparison tables and a paper–benchmark usage matrix, then proposes budgeted learning trajectories, held-out transfer, old-task regressions, judge calibration and separate evaluation-cost reporting.",
+      "limitations": "The formal update equations and verifier gates are an organizing framework, not proofs of safe or monotonic improvement. Qualitative ratings and benchmark incidence are not measured effect sizes. Some included systems do not evolve their own improver or retain changes across tasks; scaffold edits can still forget useful state. No reproducible corpus-screening protocol is provided.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "Agent self-improvement survey"
     },
     {
@@ -4669,10 +4672,13 @@
       "venue": "",
       "url": "https://arxiv.org/abs/2508.07407",
       "sources": [
-        "https://arxiv.org/abs/2508.07407"
+        "https://arxiv.org/abs/2508.07407",
+        "https://arxiv.org/pdf/2508.07407v2",
+        "https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents",
+        "https://arxiv.org/abs/2312.17244"
       ],
-      "code_url": null,
-      "code_note": "No implementation link independently inspected for this entry; this does not establish that none exists.",
+      "code_url": "https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents",
+      "code_note": "Author-linked survey collection introduction and taxonomy inspected on 2026-11-09. This is a literature resource; its listings were not individually reproduced or treated as primary evidence for other papers.",
       "topics": [
         "surveys",
         "architecture",
@@ -4683,12 +4689,12 @@
         "none"
       ],
       "persistence": "not-applicable",
-      "learning_signal": "Not applicable: analysis or evaluation resource.",
-      "mechanism": "Describes an evolution loop through inputs, agent systems, environments, and optimizers, then maps techniques and domain-specific applications onto those components.",
-      "evaluation": "Reviews methods alongside evaluation, safety, and ethical considerations.",
-      "limitations": "Review coverage and categories reflect the authors’ literature selection; the framework does not itself demonstrate lifelong capability growth.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Not applicable to the survey itself; its organizing loop compares task metrics, execution feedback, demonstrations and model-generated evaluations used by agent optimizers.",
+      "mechanism": "Connects system inputs, an agent system, environment feedback and an optimizer over a defined search space. It separates task-level from instance-level optimization and surveys model behavior, prompts, memory, tools, multi-agent topology and domain-specific workflows.",
+      "evaluation": "ArXiv v2 synthesizes methods through August 2025 and discusses tool, web, software, scientific and multimodal benchmarks alongside model/agent judges. It proposes safety-first, performance-preserving evolution principles and identifies longitudinal evaluation, transfer, reward quality and cost as open problems.",
+      "limitations": "The broad optimization umbrella includes transient inference search and externally trained systems, not only persistent autonomous learning. Its three laws are design aspirations, not demonstrated guarantees. No reproducible screening funnel or pooled comparison is provided, and at least one cited method is misdescribed; primary-paper checks remain necessary.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "Agent evolution survey"
     },
     {
@@ -4808,10 +4814,14 @@
       "url": "https://arxiv.org/abs/2507.21046",
       "sources": [
         "https://arxiv.org/abs/2507.21046",
-        "https://www.jmlr.org/tmlr/papers/"
+        "https://www.jmlr.org/tmlr/papers/",
+        "https://arxiv.org/pdf/2507.21046v4",
+        "https://github.com/CharlesQ9/Self-Evolving-Agents",
+        "https://openreview.net/forum?id=CTr3bovS5F",
+        "https://arxiv.org/abs/2505.03335"
       ],
-      "code_url": null,
-      "code_note": "No implementation link independently inspected for this entry; this does not establish that none exists.",
+      "code_url": "https://github.com/CharlesQ9/Self-Evolving-Agents",
+      "code_note": "Author-linked literature repository introduction and organization inspected on 2026-11-09; no research execution. TMLR publication reconfirmed from its official index; the precise OpenReview record currently presents an access challenge.",
       "topics": [
         "surveys",
         "foundations",
@@ -4823,12 +4833,12 @@
         "none"
       ],
       "persistence": "not-applicable",
-      "learning_signal": "Not applicable: analysis or evaluation resource.",
-      "mechanism": "Organizes agent adaptation by the component that changes, the stage when it changes, the feedback and algorithm used, and the application setting.",
-      "evaluation": "Synthesizes published methods, benchmarks, and open questions rather than evaluating one new learner.",
-      "limitations": "A taxonomy is an organizing aid, not evidence that every included system improves continually. The title’s superintelligence framing is a research aspiration.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Not applicable to the survey itself; it distinguishes feedback type/source, demonstrations, population fitness, timing and update targets across surveyed systems.",
+      "mechanism": "Organizes agent changes by what evolves, when updates occur, how feedback drives them and where they are applied. A trajectory-conditioned system update formalism separates model, context, tools and architecture, while the survey includes both early feedback-driven mechanisms and stronger autonomous reconfiguration.",
+      "evaluation": "ArXiv v4, matching the January 2026 TMLR title, synthesizes methods and proposes five evaluation goals: adaptivity, retention, generalization, efficiency and safety. It details short/long-horizon protocols, forgetting and backward-transfer probes, cost accounting, human intervention and benchmark coverage gaps.",
+      "limitations": "Survey inclusion does not prove persistent learning or recursive improvement. Protocols and gap claims are a historical synthesis, not a pooled experiment or certification. Some mechanism labels and numerical examples conflict with primary evidence or arithmetic; cost-per-gain also needs explicit treatment of zero or negative gains.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "What/when/how survey"
     },
     {

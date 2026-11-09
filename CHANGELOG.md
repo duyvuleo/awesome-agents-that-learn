@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Completed the abstract-only review backlog
+
+- Completed broader full-text reading of the final three abstract-only surveys and linked their official literature collections.
+- Recorded citation, mechanism and numerical discrepancies while retaining primary-paper evidence and historical scope.
+- All 190 works now have some full-text inspection; the broader audit is 60 complete with 130 earlier selected-section reviews still pending.
+
 ## 2026-11-09 — Safety and workflow survey appraisals
 
 - Reviewed both surveys through their substantive appendices, evidence tables and corpus protocols.

@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-09T06:46:28.884024+00:00",
+  "checked_at_utc": "2026-11-09T06:58:17.011795+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -432,6 +432,12 @@
       "observed_title": "MemGPT: Towards LLMs as Operating Systems",
       "title_similarity": 1.0,
       "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2312.17244",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2312.17244",
+      "status": "reachable"
     },
     {
       "url": "https://arxiv.org/abs/2401.01335",
@@ -3072,9 +3078,21 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2507.21046v4",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2507.21046v4",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2508.05004v4",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2508.05004v4",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2508.07407v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2508.07407v2",
       "status": "reachable"
     },
     {
@@ -3147,6 +3165,12 @@
       "url": "https://arxiv.org/pdf/2605.27366v2",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2605.27366v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2607.13104v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2607.13104v1",
       "status": "reachable"
     },
     {
@@ -3312,6 +3336,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/CharlesQ9/Self-Evolving-Agents",
+      "http_status": 200,
+      "final_url": "https://github.com/CharlesQ9/Self-Evolving-Agents",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/Chengsong-Huang/R-Zero",
       "http_status": 200,
       "final_url": "https://github.com/Chengsong-Huang/R-Zero",
@@ -3375,6 +3405,12 @@
       "url": "https://github.com/EdinburghNLP/OpenSIR",
       "http_status": 200,
       "final_url": "https://github.com/EdinburghNLP/OpenSIR",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents",
+      "http_status": 200,
+      "final_url": "https://github.com/ANative-Lab/Awesome-Self-Evolving-Agents",
       "status": "reachable"
     },
     {
@@ -4032,6 +4068,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents",
+      "http_status": 200,
+      "final_url": "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/simple-agent-lab/RSIHub",
       "http_status": 200,
       "final_url": "https://github.com/simple-agent-lab/RSIHub",
@@ -4264,6 +4306,13 @@
       "http_status": 200,
       "final_url": "https://ojs.aaai.org/index.php/AAAI/article/view/29946",
       "status": "reachable"
+    },
+    {
+      "url": "https://openreview.net/forum?id=CTr3bovS5F",
+      "http_status": 200,
+      "final_url": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DCTr3bovS5F",
+      "status": "restricted-or-transient",
+      "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://openreview.net/pdf?id=46Zgqo4QIU",
@@ -4592,6 +4641,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://selfimproving-agent.github.io/",
+      "http_status": 200,
+      "final_url": "https://selfimproving-agent.github.io/",
+      "status": "reachable"
+    },
+    {
       "url": "https://snap-research.github.io/locomo/",
       "http_status": 200,
       "final_url": "https://snap-research.github.io/locomo/",
@@ -4624,14 +4679,14 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=2af0fb2d-17b6-4021-ab59-55c9dea34784",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=190ee792-460b-4e68-9f68-d6827e942875",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=06bdd6bf-2685-4473-b3c2-e05899447c8a",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=34af1503-dd7c-4adc-933a-7cf5c37bcdf7",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -4645,14 +4700,14 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=09b611c0-f09c-426f-85f3-ab7bc010b263",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=70dbba5c-9b14-49ee-a4ec-d2fecbc91105",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=5cbe125f-3371-4004-95fb-333ff139edac",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=1e6b38a9-0a4c-470a-a621-c9aa9933fce4",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
