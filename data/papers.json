@@ -1841,7 +1841,7 @@
       "https://exoharness.ai/docs/"
     ],
     "code_url": "https://github.com/exoharness/exo/tree/c5c1963a3445417e64938c139da88edd9154075d",
-    "code_note": "Paper-pinned snapshot c5c1963 and its README inspected. Current docs distinguish this earlier self-evolution experiment from the evolving hosting runtime; not executed.",
+    "code_note": "Complete 14-page arXiv v1, Appendices A–B, seven figures/two tables, preservation proof and measurement rules read on 2026-11-09. Paper-pinned README c5c1963 and current official docs inspected; current docs identify the earlier self-evolution experiment separately from the hosting runtime. The pinned artifact link is retained; no installation, game or benchmark execution.",
     "topics": [
       "architecture",
       "recursive-improvement",
@@ -1857,11 +1857,11 @@
     ],
     "persistence": "both",
     "learning_signal": "Execution history, model cost, failures, and task feedback inform runtime code and policy revisions.",
-    "mechanism": "Allows an agent to edit its harness and improvement procedures while working. A separate mechanism retains history and controls activation; tools, context policies, and other edits can persist into later tasks without changing model weights.",
-    "evaluation": "Studies open-world game objectives, AppWorld scenario variants, SREGym incidents, and a coding-task sequence. Graded-task controls share the starting policy with editing disabled.",
-    "limitations": "Game results use one standalone/transfer pair per objective; low-reuse quests cost more. AppWorld/SREGym transfer stays within scenarios or fault families; coding has no separate holdout. The default guardian checks builds, not correctness, and the broadly writable development configuration does not enforce the paper’s protection assumptions.",
+    "mechanism": "Makes the running harness executor editable, including tools, context construction and the procedures for further revision. A separate mechanism is intended to preserve history/artifact versions and govern activation. Learned code persists within ongoing work and into later tasks while model weights remain unchanged.",
+    "evaluation": "Full v1 compares game objectives with Codex/Pi, then compares editing enabled/disabled from the same starting policy on AppWorld, SREGym and nineteen CLB coding issues. It reports within-run specialization, retained-state transfer, three AppWorld seeds, five coding runs and a negative low-reuse quest condition.",
+    "limitations": "The preservation argument assumes enforced mediation outside the editable policy; the broadly writable development setup does not satisfy that boundary. Build-only acceptance guarantees neither correctness nor recovery. Game objectives have one standalone/transfer pair each; graded transfer stays within scenarios or fault families, and coding has no holdout. Reported cost is model usage, and SREGym correctness is described without detailed rates. Recursive improvement of the improvement strategy is enabled, not separately quantified.",
     "review_depth": "full-text",
-    "checked": "2026-11-05",
+    "checked": "2026-11-09",
     "short_name": "Exo"
   },
   {

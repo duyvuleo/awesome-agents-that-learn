@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded Exo runtime-learning review
+
+- Read Exo’s complete paper and appendices, including protection assumptions and measurement limits.
+- Qualified transfer, correctness, model-cost and recursive-improvement claims; retained the paper-pinned artifact.
+- Broader audit: 121 of 190 works complete, 69 pending.
+
 ## 2026-11-09 — Expanded experience and skill routing reviews
 
 - Read OMCE and Skill++ in full, including proofs, algorithms, benchmark construction and visual results.
