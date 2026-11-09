@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-10 — Expanded continual robot replay review
+
+- Completed RIFAR v3 and all supplementary methods, tables and algorithm.
+- Clarified trainable reliability screening, replay duplication, metric weighting and cost limits.
+- Audit status: 150 complete-source appraisals, one supplement gap, 39 works awaiting detail.
+
 ## 2026-11-10 — Expanded online-training and robot-harness reviews
 
 - Completed ASCENT’s full paper, proof, diagnostics and release inspection.

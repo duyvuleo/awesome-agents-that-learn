@@ -1868,11 +1868,11 @@
       "status": "preprint",
       "venue": "arXiv preprint",
       "code_url": null,
-      "code_note": "Official implementation availability was not established in this review; no research code was executed.",
+      "code_note": "Complete 16-page arXiv v3, Appendices A–C, eight figures, eleven tables, fifteen equations and Algorithm 1 read on 2026-11-10; figures and tables visually inspected. The inverse-dynamics model is trainable in this version. No official research implementation was independently verified. Arithmetic checks use the printed rounded matrix only; no research code, training, generation or robot experiments executed.",
       "scope": "core",
       "persistence": "across-tasks",
       "review_depth": "full-text",
-      "checked": "2026-11-09",
+      "checked": "2026-11-10",
       "id": "rifar",
       "short_name": "RIFAR",
       "title": "RIFAR: Reliability-Informed and Forgetting-Aware Replay for Continual Robot Learning with World-Action Models",
@@ -1880,7 +1880,8 @@
       "url": "https://arxiv.org/abs/2610.03079",
       "sources": [
         "https://arxiv.org/abs/2610.03079",
-        "https://arxiv.org/html/2610.03079v3"
+        "https://arxiv.org/html/2610.03079v3",
+        "https://arxiv.org/pdf/2610.03079v3"
       ],
       "topics": [
         "memory",
@@ -1894,9 +1895,9 @@
         "memory"
       ],
       "learning_signal": "New-task demonstrations, inverse-dynamics consistency of generated replay and action-prediction drift after adaptation.",
-      "mechanism": "Retains short historical demonstration prefixes, generates replay trajectories and screens their action–visual consistency. After initial new-task adaptation, replay prioritizes reliable trajectories showing greater action drift. Both the policy and reliability model receive staged updates.",
-      "evaluation": "Studies three LIBERO suites and a three-task Franka sequence, comparing retention, acquisition and historical-data storage with real-data and generative replay.",
-      "limitations": "Relies on demonstrations and fixed task sequences. The v3 reliability model learns from generated replay and can inherit its errors; rollout termination can be premature. Full real-data replay remains stronger on several metrics. Retained-history savings do not measure total training or generation cost."
+      "mechanism": "Retains short real demonstration prefixes and generates historical replay with a world-action model. A trainable inverse-dynamics model screens action–visual consistency. After initial adaptation, a second phase prioritizes reliable replay whose action predictions changed most. Both policy and reliability model update; generated replay is discarded between stages while historical prefixes persist.",
+      "evaluation": "Complete v3 reports three LIBERO suites with three seeds and a three-task Franka sequence. Goal AUC is 90.97 under the paper’s group/checkpoint weighting, using 320 historical steps per task. Reliability and drift ablations improve the tested replay configuration, but full real-data replay remains stronger on several metrics. Real experiments use demonstrations, manual resets and manual outcome judgments.",
+      "limitations": "Drift measures prediction change rather than proven forgetting, and generated termination is not executed success. Reliability screening still admits failed trajectories; small pools can duplicate samples. AUC is not final retention, and its initial six-task group receives the same weight as each new task. Fixed orders, absent confidence intervals and extra generation/model-training costs limit broader claims. Stored-step savings exclude total memory and compute."
     },
     {
       "id": "self-evolving-defense",

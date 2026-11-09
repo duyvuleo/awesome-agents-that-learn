@@ -62,7 +62,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-07 | **EmbodiedRSI**<br>[EmbodiedRSI: Active Continual Robot Learning Through Hypothesis-Guided Co-Evolution](https://arxiv.org/abs/2610.10498) | Evolves code and skills around a frozen robot policy, using matched experiments to update hypothesis support and rank further trials by expected information gain per… | Agent code, Skills, Memory, Model weights | preprint · full-text | [Notes](#embodiedrsi) |
 | 2026-10-04 | **ASCENT**<br>[ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience](https://arxiv.org/abs/2610.05303) | Scores one attempt per arriving task before any update. For accepted trajectories, the frozen initial model reads hindsight and supplies full-vocabulary targets at the… | Model weights | preprint · full-text | [Notes](#ascent) · [Code](https://github.com/artificer-ai-lab/ASCENT) |
 | 2026-10-02 | **VERSE**<br>[VERSE: Verified Self-Evolving Optimizer for Agent Harnesses](https://arxiv.org/abs/2610.02616) | Updates an executor harness and the optimizer's own prompts, skills, tools, hooks, and notes. Verification tools test proposed fixes and diagnoses before submission… | Agent code, Prompts / context, Skills, Tools, Memory | preprint · full-text | [Notes](#verse) · [Code](https://github.com/wzekai/VERSE) |
-| 2026-10-02 | **RIFAR**<br>[RIFAR: Reliability-Informed and Forgetting-Aware Replay for Continual Robot Learning with World-Action Models](https://arxiv.org/abs/2610.03079) | Retains short historical demonstration prefixes, generates replay trajectories and screens their action–visual consistency. After initial new-task adaptation, replay… | Model weights, Memory | preprint · full-text | [Notes](#rifar) |
+| 2026-10-02 | **RIFAR**<br>[RIFAR: Reliability-Informed and Forgetting-Aware Replay for Continual Robot Learning with World-Action Models](https://arxiv.org/abs/2610.03079) | Retains short real demonstration prefixes and generates historical replay with a world-action model. A trainable inverse-dynamics model screens action–visual… | Model weights, Memory | preprint · full-text | [Notes](#rifar) |
 | 2026-09-29 | **SED**<br>[Self-Evolving Defense: Continual Security Policy Learning for LLM Agents](https://arxiv.org/abs/2609.36603) | Stores failure episodes and distills them into a hierarchical policy memory. Relevant policies condition later tasks while the acting model stays frozen. | Memory, Prompts / context | preprint · full-text | [Notes](#self-evolving-defense) · [Code](https://github.com/Infini-AI-Lab/SED) |
 | 2026-09-28 | **StepLearn**<br>[Learn Now, Use Next, Trust Later: Prequential Test-Time Learning for LLM Agents](https://arxiv.org/abs/2609.35911) | Extracts testable policy hypotheses that can guide the next decision, while keeping persistent reuse behind an evidence gate. Candidate predictions are frozen before… | Memory | preprint · full-text | [Notes](#steplearn) |
 | 2026-09-28 | **SAGE acceptance gate**<br>[SAGE: A Statistical Acceptance Gate for Self-Evolving Agents](https://arxiv.org/abs/2609.36043) | Retains skill edits only when paired wins outweigh penalized regressions, an exact binomial test rejects the null, and a regression cap is satisfied. The acting model… | Skills | preprint · full-text | [Notes](#sage-acceptance-gate) |
@@ -1294,19 +1294,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.03079)
 
-**Mechanism.** Retains short historical demonstration prefixes, generates replay trajectories and screens their action–visual consistency. After initial new-task adaptation, replay prioritizes reliable trajectories showing greater action drift. Both the policy and reliability model receive staged updates.
+**Mechanism.** Retains short real demonstration prefixes and generates historical replay with a world-action model. A trainable inverse-dynamics model screens action–visual consistency. After initial adaptation, a second phase prioritizes reliable replay whose action predictions changed most. Both policy and reliability model update; generated replay is discarded between stages while historical prefixes persist.
 
 **What changes:** Model weights, Memory. **Persistence:** across-tasks. **Learning signal:** New-task demonstrations, inverse-dynamics consistency of generated replay and action-prediction drift after adaptation.
 
-**Evaluation.** Studies three LIBERO suites and a three-task Franka sequence, comparing retention, acquisition and historical-data storage with real-data and generative replay.
+**Evaluation.** Complete v3 reports three LIBERO suites with three seeds and a three-task Franka sequence. Goal AUC is 90.97 under the paper’s group/checkpoint weighting, using 320 historical steps per task. Reliability and drift ablations improve the tested replay configuration, but full real-data replay remains stronger on several metrics. Real experiments use demonstrations, manual resets and manual outcome judgments.
 
-**Boundary.** Relies on demonstrations and fixed task sequences. The v3 reliability model learns from generated replay and can inherit its errors; rollout termination can be premature. Full real-data replay remains stronger on several metrics. Retained-history savings do not measure total training or generation cost.
+**Boundary.** Drift measures prediction change rather than proven forgetting, and generated termination is not executed success. Reliability screening still admits failed trajectories; small pools can duplicate samples. AUC is not final retention, and its initial six-task group receives the same weight as each new task. Fixed orders, absent confidence intervals and extra generation/model-training costs limit broader claims. Stored-step savings exclude total memory and compute.
 
-**Code / data.** Official implementation availability was not established in this review; no research code was executed.
+**Code / data.** Complete 16-page arXiv v3, Appendices A–C, eight figures, eleven tables, fifteen equations and Algorithm 1 read on 2026-11-10; figures and tables visually inspected. The inverse-dynamics model is trainable in this version. No official research implementation was independently verified. Arithmetic checks use the printed rounded matrix only; no research code, training, generation or robot experiments executed.
 
-**Topics:** memory, model-training, continual-learning, applications, evaluation. **Reviewed:** full-text · 2026-11-09.
+**Topics:** memory, model-training, continual-learning, applications, evaluation. **Reviewed:** full-text · 2026-11-10.
 
-[Source 1](https://arxiv.org/abs/2610.03079) · [Source 2](https://arxiv.org/html/2610.03079v3)
+[Source 1](https://arxiv.org/abs/2610.03079) · [Source 2](https://arxiv.org/html/2610.03079v3) · [Source 3](https://arxiv.org/pdf/2610.03079v3)
 
 <a id="self-evolving-defense"></a>
 
