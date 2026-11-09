@@ -30,9 +30,11 @@ Source review: **2026-11-09**. For research works, 130 entries include inspectio
 
 Five readings on whether experience survives reuse: measure regressions, revise outdated knowledge, search harnesses, compare memory stores, and target training feedback.
 
-- [Beneath the Surface](docs/weekly/2026-11-02.md#pick-1)
-- [ReScopeBench](docs/weekly/2026-11-02.md#pick-2)
-- [HarnessFlow](docs/weekly/2026-11-02.md#pick-3)
+| Paper | Why read it now |
+| --- | --- |
+| [Beneath the Surface](docs/weekly/2026-11-02.md#pick-1) | Read this first for a sharper definition of improvement: a higher average score can coexist with lost capabilities and higher deployment cost. |
+| [ReScopeBench](docs/weekly/2026-11-02.md#pick-2) | This gives the week a longitudinal test: an agent must keep useful experience current after the environment changes without announcing it. |
+| [HarnessFlow](docs/weekly/2026-11-02.md#pick-3) | A useful methods counterpart to the two evaluation picks: it makes executable harness design the object of a bounded search. |
 
 [Read the issue](docs/weekly/2026-11-02.md) · [Browse the weekly archive](docs/weekly/README.md)
 

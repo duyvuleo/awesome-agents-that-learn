@@ -46,6 +46,9 @@ class WeeklyTests(unittest.TestCase):
         outputs = generate()
         self.assertEqual(outputs["docs/weekly/2026-11-02.md"], render_issue(load_issues()[0]).rstrip() + "\n")
         self.assertIn("Latest issue", outputs["README.md"])
+        self.assertIn("| Paper | Why read it now |", outputs["README.md"])
+        self.assertIn("| Paper | Why read it now | Evidence boundary |", outputs["docs/weekly/2026-11-02.md"])
+        self.assertIn("| Covered week (Australia/Sydney) | Published | Issue | Picks |", outputs["docs/weekly/README.md"])
         latest = max(load_issues(), key=lambda x: x["week_start"])
         for i in range(1, min(3, len(latest["picks"])) + 1):
             self.assertIn(f"docs/weekly/{latest['week_start']}.md#pick-{i}", outputs["README.md"])
@@ -157,6 +160,11 @@ class WeeklyTests(unittest.TestCase):
         self.assertNotIn("<script>", text)
         self.assertNotIn("\n# forged", text)
         self.assertNotIn("[bait](javascript:bad)", text)
+        pick["why_now"] = "Compare A | B.\n<script>forged</script>"
+        _, teaser = generate_weekly([self.issue])
+        for rendered in (render_issue(self.issue), teaser):
+            self.assertIn("Compare A \\| B. &lt;script&gt;forged&lt;/script&gt;", rendered)
+            self.assertNotIn("<script>", rendered)
         pick["event"]["source"] = "javascript:bad"
         self.assertTrue(self.errors())
         pick["event"]["source"] = "https://user:secret@example.org/"

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Weekly reading tables
+
+- Presented the weekly reading list and latest-issue README preview as Markdown tables, with direct paper, review and catalog links.
+- Kept evidence boundaries visible beside each pick and retained the complete editorial reviews and citation snapshots.
+- Added the actual publication date to the weekly archive table.
+
 ## 2026-11-09 — Top Papers of the Week
 
 - Added a five-paper pilot for 2–8 November, a permanent Markdown archive, and a latest-issue README preview.

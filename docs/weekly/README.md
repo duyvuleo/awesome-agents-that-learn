@@ -6,6 +6,6 @@
 
 A weekly reading guide to agents that learn. New papers and substantive updates form the main picks; older discoveries are explicitly labeled. Short issues are welcome. No issue is created solely to fill a quiet week.
 
-| Covered week (Australia/Sydney) | Issue | Picks |
-| --- | --- | --- |
-| 2026-11-02–2026-11-08 | [When accumulated experience becomes reliable capability](2026-11-02.md) | 5 |
+| Covered week (Australia/Sydney) | Published | Issue | Picks |
+| --- | --- | --- | --- |
+| 2026-11-02–2026-11-08 | 2026-11-09 | [When accumulated experience becomes reliable capability](2026-11-02.md) | 5 |
