@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Self-training and generated-feedback reviews
+
+- Upgraded R-Zero, Dr. Zero, ReST-MCTS* and Self-Challenging Agents through full-text and appendix appraisal.
+- Recovered two artifact links and qualified feedback provenance, iteration regressions, verifier soundness, computation and reporting inconsistencies.
+- Counts remain 190 works: 182 full-text and 8 abstract/metadata reviews. Fifty-two broader appraisals are complete; 138 remain.
+
 ## 2026-11-09 — Memory access and skill evaluation reviews
 
 - Upgraded FlexA-Mem, HyperSkill, MUSE-Autoskill and SkillFlow through full-text and appendix appraisal.

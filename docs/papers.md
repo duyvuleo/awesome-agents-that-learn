@@ -120,7 +120,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-02-02 | **MemSkill**<br>[MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](https://arxiv.org/abs/2602.02474) | A PPO-trained controller selects memory-operation skills for a fixed executor. A fixed designer periodically refines the skill bank, with rollback based on stabilized… | Model weights, Skills, Memory | preprint · full-text | [Notes](#memskill) · [Code](https://github.com/ViktorAxelsen/MemSkill) |
 | 2026-01-30 | **Experience faithfulness**<br>[Large Language Model Agents Are Not Always Faithful Self-Evolvers](https://proceedings.mlr.press/v306/zhao26aw.html) | Perturbs raw trajectories and condensed memories through removal, shuffling, corruption and replacement while keeping backbone weights fixed. Outcome sensitivity and… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#experience-faithfulness) · [Code](https://github.com/Dreamcatcher0622/Faithfulness) |
 | 2026-01-29 | **MCE**<br>[Meta Context Engineering via Agentic Skill Evolution](https://arxiv.org/abs/2601.21557) | A meta-agent revises context-engineering skills; a base agent executes them to construct context as files and code. History-informed evolutionary selection retains… | Prompts / context, Skills, Agent code | peer-reviewed · full-text | [Notes](#meta-context-engineering) · [Code](https://github.com/metaevo-ai/meta-context-engineering) |
-| 2026-01-11 | **Dr. Zero**<br>[Dr. Zero: Self-Evolving Search Agents without Training Data](https://arxiv.org/abs/2601.07055) | Co-evolves a proposer that generates diverse, challenging questions and a search-enabled solver. Hop-grouped policy optimization shares baselines among structurally… | Model weights | peer-reviewed · abstract | [Notes](#dr-zero) |
+| 2026-01-11 | **Dr. Zero**<br>[Dr. Zero: Self-Evolving Search Agents without Training Data](https://arxiv.org/abs/2601.07055) | Alternately trains a search-enabled question proposer and solver. Hop-grouped relative policy optimization normalizes proposer rewards across structurally similar… | Model weights | peer-reviewed · full-text | [Notes](#dr-zero) · [Code](https://github.com/facebookresearch/drzero) |
 | 2026-01-08 | **AgentDevel**<br>[AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering](https://arxiv.org/abs/2601.04620) | A fixed development engine generates diagnostic scripts and one prompt/code/tool-wrapper release candidate per iteration. A configurable regression gate retains accepted… | Agent code, Workflows | preprint · full-text | [Notes](#agentdevel) |
 | 2026-01-06 | **MemRL**<br>[MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory](https://arxiv.org/abs/2601.03192) | Keeps model weights fixed and stores intent, experience and utility triplets. Similarity filtering precedes utility-weighted ranking; a constant-step moving average… | Memory | preprint · full-text | [Notes](#memrl) · [Code](https://github.com/MemTensor/MemRL) |
 | 2026-01-05 | **AgeMem**<br>[Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents](https://arxiv.org/abs/2601.01885) | Trains an agent to select long-term memory edits and short-term context operations as tools. Three progressive stages and step-wise GRPO assign delayed task rewards to… | Model weights, Memory, Prompts / context | peer-reviewed · full-text | [Notes](#agemem) · [Code](https://github.com/y1y5/AgeMem) |
@@ -146,14 +146,14 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-08-22 | **Memento**<br>[Memento: Fine-tuning LLM Agents without Fine-tuning LLMs](https://arxiv.org/abs/2508.16153) | A planner-executor agent stores completed cases and reuses them in subsequent planning. Retrieval can use fixed similarity or a learned Q-function; underlying LLM… | Memory, Model weights | preprint · full-text | [Notes](#memento) · [Code](https://github.com/Memento-Teams/Memento) |
 | 2025-08-10 | **Agent evolution survey**<br>[A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](https://arxiv.org/abs/2508.07407) | Describes an evolution loop through inputs, agent systems, environments, and optimizers, then maps techniques and domain-specific applications onto those components. | Analysis / no retained update | preprint · abstract | [Notes](#comprehensive-evolving-survey) |
 | 2025-08-08 | **Memp**<br>[Memp: Exploring Agent Procedural Memory](https://arxiv.org/abs/2508.06433) | Combines detailed trajectories with abstract procedural scripts in an external memory bank. Similarity retrieval supplies guidance to fixed-weight agents; online… | Memory, Skills | peer-reviewed · full-text | [Notes](#memp) · [Code](https://github.com/zjunlp/MemP) |
-| 2025-08-07 | **R-Zero**<br>[R-Zero: Self-Evolving Reasoning LLM from Zero Data](https://arxiv.org/abs/2508.05004) | Initializes challenger and solver models from the same base model, then optimizes their roles separately. Their interaction generates an adaptive training curriculum… | Model weights | peer-reviewed · abstract | [Notes](#r-zero) |
+| 2025-08-07 | **R-Zero**<br>[R-Zero: Self-Evolving Reasoning LLM from Zero Data](https://arxiv.org/abs/2508.05004) | Alternates GRPO updates of separate challenger and solver copies. The challenger proposes mostly mathematical questions; the solver samples answers, filters questions by… | Model weights | peer-reviewed · full-text | [Notes](#r-zero) · [Code](https://github.com/Chengsong-Huang/R-Zero) |
 | 2025-07-28 | **What/when/how survey**<br>[A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence](https://arxiv.org/abs/2507.21046) | Organizes agent adaptation by the component that changes, the stage when it changes, the feedback and algorithm used, and the application setting. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#self-evolving-survey) |
 | 2025-07-25 | **GEPA**<br>[GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](https://arxiv.org/abs/2507.19457) | Mutates module instructions using trace reflection, retains complementary candidates through instance-wise Pareto selection, and optionally merges prompt sets from… | Prompts / context | peer-reviewed · full-text | [Notes](#gepa) · [Code](https://github.com/gepa-ai/gepa) |
 | 2025-07-04 | **EvoAgentX**<br>[EvoAgentX: An Automated Framework for Evolving Agentic Workflows](https://arxiv.org/abs/2507.03616) | Provides workflow generation, execution and evaluation around TextGrad, AFlow and MIPRO. Optimized prompts, demonstrations and executable workflow structures persist… | Prompts / context, Tools, Workflows, Multi-agent organization | preprint · full-text | [Notes](#evoagentx) · [Code](https://github.com/EvoAgentX/EvoAgentX) |
 | 2025-06-30 | **SPIRAL**<br>[SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2506.24119) | One shared language-model policy plays both sides of zero-sum games and receives online policy-gradient updates. Separate baselines for each role stabilize training as… | Model weights | peer-reviewed · full-text | [Notes](#spiral) · [Code](https://github.com/spiral-rl/spiral) |
 | 2025-06-12 | **SEAL**<br>[Self-Adapting Language Models](https://arxiv.org/abs/2506.10943) | Learns to generate synthetic training material or adaptation directives, then applies gradient updates using those edits. An outer reward-based loop improves the… | Model weights | peer-reviewed · full-text | [Notes](#seal) · [Code](https://github.com/Continual-Intelligence/SEAL) |
 | 2025-06-09 | **G-Memory**<br>[G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems](https://arxiv.org/abs/2506.07398) | Organizes multi-agent experience into linked interaction, query, and insight graphs. Bidirectional traversal retrieves abstract guidance and condensed role-specific… | Memory | peer-reviewed · full-text | [Notes](#g-memory) · [Code](https://github.com/bingreeky/GMemory) |
-| 2025-06-02 | **Self-Challenging Agents**<br>[Self-Challenging Language Model Agents](https://arxiv.org/abs/2506.01716) | The agent first explores supplied tools as a challenger and constructs Code-as-Task problems containing instructions, a verifier, and passing and failing examples. It… | Model weights | peer-reviewed · abstract | [Notes](#self-challenging-agents) |
+| 2025-06-02 | **Self-Challenging Agents**<br>[Self-Challenging Language Model Agents](https://arxiv.org/abs/2506.01716) | A fixed challenger explores tools and proposes Code-as-Task instructions and checks. In the main self-improvement setting, successful offline trajectories from the same… | Model weights | peer-reviewed · full-text | [Notes](#self-challenging-agents) |
 | 2025-05-29 | **DGM**<br>[Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](https://arxiv.org/abs/2505.22954) | A coding agent rewrites its own implementation, and an archive retains runnable variants as possible parents for later edits. This permits exploration beyond the latest… | Agent code, Tools, Workflows, Prompts / context | peer-reviewed · full-text | [Notes](#darwin-godel-machine) · [Code](https://github.com/jennyzzt/dgm) |
 | 2025-05-17 | **LifelongAgentBench**<br>[LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners](https://arxiv.org/abs/2505.11942) | Sequences tasks with overlapping SQL, shell-command and knowledge-graph skills and retains interaction histories for fixed-weight agents. Database tables and… | Memory, Skills | preprint · full-text | [Notes](#lifelongagentbench) · [Code](https://github.com/caixd-220529/LifelongAgentBench) |
 | 2025-05-06 | **Absolute Zero**<br>[Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://arxiv.org/abs/2505.03335) | A single model proposes and solves code-based tasks, with a code executor validating problems and answers. Reinforcement learning updates both roles while the generated… | Model weights | peer-reviewed · full-text | [Notes](#absolute-zero) · [Code](https://github.com/LeapLabTHU/Absolute-Zero-Reasoner) |
@@ -173,7 +173,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2024-07-24 | **Model collapse**<br>[AI models collapse when trained on recursively generated data](https://www.nature.com/articles/s41586-024-07566-y) | Analyzes how repeated training on generated data can lose low-probability parts of an original distribution and amplify errors. The paper combines tractable distribution… | Model weights | peer-reviewed · full-text | [Notes](#model-collapse) |
 | 2024-06-26 | **Symbolic agent learning**<br>[Symbolic Learning Enables Self-Evolving Agents](https://arxiv.org/abs/2406.18532) | Records an execution trajectory, propagates natural-language critiques backward, and edits prompts, tool definitions and pipeline configuration with fixed LLMs. Invalid… | Prompts / context, Tools, Workflows | preprint · full-text | [Notes](#symbolic-agent-learning) · [Code](https://github.com/aiwaves-cn/agents) |
 | 2024-06-11 | **TextGrad**<br>[TextGrad: Automatic "Differentiation" via Text](https://arxiv.org/abs/2406.07496) | Backpropagates textual feedback through a computation graph and rewrites selected variables using a fixed LLM optimizer. Reusable prompt optimization and within-instance… | Prompts / context, Agent code | peer-reviewed · full-text | [Notes](#textgrad) · [Code](https://github.com/zou-group/textgrad) |
-| 2024-06-06 | **ReST-MCTS***<br>[ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search](https://arxiv.org/abs/2406.03816) | Combines process-reward-guided tree search with iterative training of the policy and reward models. Search supplies reasoning traces and step-value targets without… | Model weights | peer-reviewed · abstract | [Notes](#rest-mcts) · [Code](https://github.com/THUDM/ReST-MCTS) |
+| 2024-06-06 | **ReST-MCTS***<br>[ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search](https://arxiv.org/abs/2406.03816) | Uses a learned value model to guide tree search with step expansion, rollout and self-criticism. Successful traces fine-tune the policy; inferred values from searched… | Model weights | peer-reviewed · full-text | [Notes](#rest-mcts) · [Code](https://github.com/THUDM/ReST-MCTS) |
 | 2024-06-03 | **Re-ReST**<br>[Re-ReST: Reflection-Reinforced Self-Training for Language Agents](https://arxiv.org/abs/2406.01495) | Trains a separate reflector to repair unsuccessful model-generated examples. Accepted original and repaired trajectories then fine-tune the agent, so improvement is… | Model weights | peer-reviewed · full-text | [Notes](#re-rest) · [Code](https://github.com/PlusLabNLP/Re-ReST) |
 | 2024-04-01 | **Accumulation vs. collapse**<br>[Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](https://arxiv.org/abs/2404.01413) | Compares replacement of earlier datasets with accumulation of original and synthetic data. It supplies a linear-model analysis and generative-model experiments showing… | Model weights | preprint · full-text | [Notes](#accumulating-data-model-collapse) |
 | 2024-02-27 | **LoCoMo**<br>[Evaluating Very Long-Term Conversational Memory of LLM Agents](https://aclanthology.org/2024.acl-long.747/) | Creates persona- and event-grounded simulated conversations, then uses human editing to repair consistency and image alignment. The benchmark tests QA, event… | Memory | peer-reviewed · full-text | [Notes](#locomo) · [Code](https://github.com/snap-research/LoCoMo) |
@@ -2576,19 +2576,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2601.07055)
 
-**Mechanism.** Co-evolves a proposer that generates diverse, challenging questions and a search-enabled solver. Hop-grouped policy optimization shares baselines among structurally similar questions to reduce training overhead.
+**Mechanism.** Alternately trains a search-enabled question proposer and solver. Hop-grouped relative policy optimization normalizes proposer rewards across structurally similar questions, while GRPO trains the solver on generated QA. Model weights persist; the search corpus, retriever, prompts and reward design are externally supplied.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Proposer–solver feedback grounded in an external search environment.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Solver exact matches against proposer-written answers supply difficulty and outcome rewards; seed passages and retrieved Wikipedia text ground generation without independently validating every answer.
 
-**Evaluation.** The authors compare the trained search agents with supervised alternatives on several question-answering benchmarks.
+**Evaluation.** ArXiv v2 compares 3B and 7B agents on seven short-answer QA benchmarks, with three-round dynamics, hop-mixture and reward ablations, repeated-evaluation summaries and a measured proposer-compute comparison. It reports competitive, but slightly lower average scores than supervised Search-R1.
 
-**Boundary.** Without training data means without human-annotated task data, not without external information: the search engine supplies a knowledge environment. This abstract-level review does not independently test search freshness, citation fidelity, or long-term robustness.
+**Boundary.** The 7B model declines in round three. Intended hop counts and matching generated labels do not certify factual correctness; a supplied question has a false premise. Reported uncertainty lacks some statistical details. Efficiency measurements concern proposer training, and QA results do not establish reliable long-form research, citation fidelity or indefinite improvement.
 
-**Code / data.** Official runnable code was not verified in this source review.
+**Code / data.** [Official artifact](https://github.com/facebookresearch/drzero) — Official paper-linked README inspected on 2026-11-09; no index, model, data or training execution. Documentation requires a Wikipedia retrieval environment. Source availability is not independent reproduction.
 
-**Topics:** model-training, self-play, tools, applications. **Reviewed:** abstract · 2026-10-28.
+**Topics:** model-training, self-play, tools, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2601.07055) · [Source 2](https://proceedings.colm.cc/paper_files/paper/2026/hash/8204f54f6cd8f0db1765a274e94ceaac-Abstract-Conference.html)
+[Source 1](https://arxiv.org/abs/2601.07055) · [Source 2](https://proceedings.colm.cc/paper_files/paper/2026/hash/8204f54f6cd8f0db1765a274e94ceaac-Abstract-Conference.html) · [Source 3](https://arxiv.org/pdf/2601.07055v2) · [Source 4](https://github.com/facebookresearch/drzero) · [Source 5](https://www.melbournefc.com.au/news/767982/100-melbourne-grand-final-facts)
 
 <a id="agentdevel"></a>
 
@@ -3154,19 +3154,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2508.05004)
 
-**Mechanism.** Initializes challenger and solver models from the same base model, then optimizes their roles separately. Their interaction generates an adaptive training curriculum without a pre-existing task-and-label dataset.
+**Mechanism.** Alternates GRPO updates of separate challenger and solver copies. The challenger proposes mostly mathematical questions; the solver samples answers, filters questions by agreement and trains toward its own majority answer. Updated model weights persist between rounds, with fixed human-designed prompts and reward rules.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Challenger rewards for tasks near the solver’s capability boundary and solver rewards on generated tasks.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Solver majority votes provide pseudo-labels; disagreement, formatting and repetition signals reward the challenger. No independent correctness oracle supervises the main training loop.
 
-**Evaluation.** The authors report mathematical and general-domain reasoning improvements across multiple backbone models.
+**Evaluation.** ArXiv v4 evaluates four backbones on seven mathematical and three general-reasoning benchmarks after three rounds, with additional iteration, shared-parameter, curriculum, supervised-data and pseudo-label diagnostics. Some contest results use mean accuracy over 32 samples; others use greedy decoding.
 
-**Boundary.** The framework still depends on pretrained models and the designed reward procedure. This abstract-level review does not independently validate generated task correctness, long-run stability, or open-world transfer.
+**Boundary.** Agreement is not correctness. Longer training eventually degrades and external-model diagnostics find worsening pseudo-label accuracy. Gains vary across tasks and several table/prose values conflict. The theoretical reward motivation does not guarantee a correct curriculum or indefinite improvement; pretrained knowledge and designed prompts remain inputs.
 
-**Code / data.** Official runnable code was not verified in this source review.
+**Code / data.** [Official artifact](https://github.com/Chengsong-Huang/R-Zero) — Official paper-linked README and training/release descriptions inspected on 2026-11-09; no models, datasets or research code run. Later R-Few work and older README scores are not substituted for the reviewed R-Zero v4 results.
 
-**Topics:** model-training, self-play. **Reviewed:** abstract · 2026-10-28.
+**Topics:** model-training, self-play. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2508.05004) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2026/hash/d49b9aacebda61051166335af6fd3061-Abstract-Conference.html)
+[Source 1](https://arxiv.org/abs/2508.05004) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2026/hash/d49b9aacebda61051166335af6fd3061-Abstract-Conference.html) · [Source 3](https://arxiv.org/pdf/2508.05004v4) · [Source 4](https://github.com/Chengsong-Huang/R-Zero)
 
 <a id="self-evolving-survey"></a>
 
@@ -3314,19 +3314,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2506.01716)
 
-**Mechanism.** The agent first explores supplied tools as a challenger and constructs Code-as-Task problems containing instructions, a verifier, and passing and failing examples. It then learns as an executor through reinforcement learning on the filtered generated tasks.
+**Mechanism.** A fixed challenger explores tools and proposes Code-as-Task instructions and checks. In the main self-improvement setting, successful offline trajectories from the same 8B model are used for rejection fine-tuning of the executor; a separate setting distills 70B demonstrations. The challenger itself is not iteratively trained in these experiments.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Self-generated task verification functions and tests, followed by task-evaluation rewards.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Generated executable checks provide binary rewards; passing examples and failure cases filter candidate tasks. Tool environments, prompt examples and verification scaffolding are supplied externally.
 
-**Evaluation.** The authors evaluate multi-turn tool use on M3ToolEval and TauBench.
+**Evaluation.** ArXiv v1 compares four environments from M3ToolEval and modified Tau-Bench, with four evaluation trials. It reports 12.0% to 23.5% average pass@1 for self-training and 32.2% with teacher distillation, plus verifier ablations, task/trajectory scaling, online-RL diagnostics and joint-training comparisons.
 
-**Boundary.** Tool interfaces and the learning framework are supplied externally. Curator interpretation: tests of a generated verifier cannot establish that every generated task captures its intended semantics or that gains transfer to arbitrary tools.
+**Boundary.** Generated tests do not guarantee semantic correctness: filtering retains about 5% of Retail candidates and false negatives remain. Airline excludes no-action-success tasks, browsing is synthetic and improvements are mainly environment-specific. Prompt examples and baseline judging choices matter; online RL can collapse and annotation sample counts are inconsistent.
 
 **Code / data.** Official runnable code was not verified in this source review.
 
-**Topics:** model-training, self-play, tools. **Reviewed:** abstract · 2026-10-28.
+**Topics:** model-training, self-play, tools. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2506.01716) · [Source 2](https://proceedings.neurips.cc/paper_files/paper/2025/hash/a5a305fac88fb4ae40969cfec5eef48d-Abstract-Conference.html)
+[Source 1](https://arxiv.org/abs/2506.01716) · [Source 2](https://proceedings.neurips.cc/paper_files/paper/2025/hash/a5a305fac88fb4ae40969cfec5eef48d-Abstract-Conference.html) · [Source 3](https://arxiv.org/pdf/2506.01716v1)
 
 <a id="darwin-godel-machine"></a>
 
@@ -3770,19 +3770,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2406.03816)
 
-**Mechanism.** Combines process-reward-guided tree search with iterative training of the policy and reward models. Search supplies reasoning traces and step-value targets without requiring human labels for every intermediate step.
+**Mechanism.** Uses a learned value model to guide tree search with step expansion, rollout and self-criticism. Successful traces fine-tune the policy; inferred values from searched trees train the reward model for the next round. These are persistent parameter updates, distinct from test-time search alone.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Known final answers and search-derived estimates of intermediate-step value.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Known final answers verify sampled solutions; search reachability and distance produce intermediate value targets. Science initialization also assumes supplied step-by-step solutions are correct and weak-model continuations are wrong.
 
-**Evaluation.** The authors compare search methods at matched search budgets and report multi-iteration self-training results for three language models.
+**Evaluation.** ArXiv v3 reports two training rounds across three backbones on MATH, GPQA Diamond and CEval-Hard, plus GSM8K/MATH500 verifier comparisons and SciBench/SciEval search studies. Token-budget curves and a separate runtime table compare search efficiency.
 
-**Boundary.** Oracle final answers remain available, and inferred step rewards depend on the search procedure. Curator interpretation: removing manual process labels does not remove external supervision.
+**Boundary.** Oracle answers and initialization data remain supervision. Reaching a correct final answer does not prove every preceding step valid. Average gains mask task regressions, and matched completion tokens do not imply matched total compute or latency. Some reported values/settings conflict; broad agent tasks and indefinite learning are untested.
 
-**Code / data.** [Official artifact](https://github.com/THUDM/ReST-MCTS) — Official repository page checked; code and training were not executed.
+**Code / data.** [Official artifact](https://github.com/THUDM/ReST-MCTS) — Official repository README, setup, data-release and training descriptions inspected on 2026-11-09; no research code, datasets or models executed/downloaded. README value-training learning rates differ from the reviewed paper and were not silently reconciled.
 
-**Topics:** model-training, self-play, evaluation. **Reviewed:** abstract · 2026-10-28.
+**Topics:** model-training, self-play, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2406.03816) · [Source 2](https://proceedings.neurips.cc/paper_files/paper/2024/file/76ec4dc30e9faaf0e4b6093eaa377218-Paper-Conference.pdf) · [Source 3](https://github.com/THUDM/ReST-MCTS)
+[Source 1](https://arxiv.org/abs/2406.03816) · [Source 2](https://proceedings.neurips.cc/paper_files/paper/2024/file/76ec4dc30e9faaf0e4b6093eaa377218-Paper-Conference.pdf) · [Source 3](https://github.com/THUDM/ReST-MCTS) · [Source 4](https://arxiv.org/pdf/2406.03816v3)
 
 <a id="re-rest"></a>
 

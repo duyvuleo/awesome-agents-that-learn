@@ -1434,10 +1434,13 @@
     "url": "https://arxiv.org/abs/2601.07055",
     "sources": [
       "https://arxiv.org/abs/2601.07055",
-      "https://proceedings.colm.cc/paper_files/paper/2026/hash/8204f54f6cd8f0db1765a274e94ceaac-Abstract-Conference.html"
+      "https://proceedings.colm.cc/paper_files/paper/2026/hash/8204f54f6cd8f0db1765a274e94ceaac-Abstract-Conference.html",
+      "https://arxiv.org/pdf/2601.07055v2",
+      "https://github.com/facebookresearch/drzero",
+      "https://www.melbournefc.com.au/news/767982/100-melbourne-grand-final-facts"
     ],
-    "code_url": null,
-    "code_note": "Official runnable code was not verified in this source review.",
+    "code_url": "https://github.com/facebookresearch/drzero",
+    "code_note": "Official paper-linked README inspected on 2026-11-09; no index, model, data or training execution. Documentation requires a Wikipedia retrieval environment. Source availability is not independent reproduction.",
     "topics": [
       "model-training",
       "self-play",
@@ -1449,12 +1452,12 @@
       "model-weights"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Proposer–solver feedback grounded in an external search environment.",
-    "mechanism": "Co-evolves a proposer that generates diverse, challenging questions and a search-enabled solver. Hop-grouped policy optimization shares baselines among structurally similar questions to reduce training overhead.",
-    "evaluation": "The authors compare the trained search agents with supervised alternatives on several question-answering benchmarks.",
-    "limitations": "Without training data means without human-annotated task data, not without external information: the search engine supplies a knowledge environment. This abstract-level review does not independently test search freshness, citation fidelity, or long-term robustness.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Solver exact matches against proposer-written answers supply difficulty and outcome rewards; seed passages and retrieved Wikipedia text ground generation without independently validating every answer.",
+    "mechanism": "Alternately trains a search-enabled question proposer and solver. Hop-grouped relative policy optimization normalizes proposer rewards across structurally similar questions, while GRPO trains the solver on generated QA. Model weights persist; the search corpus, retriever, prompts and reward design are externally supplied.",
+    "evaluation": "ArXiv v2 compares 3B and 7B agents on seven short-answer QA benchmarks, with three-round dynamics, hop-mixture and reward ablations, repeated-evaluation summaries and a measured proposer-compute comparison. It reports competitive, but slightly lower average scores than supervised Search-R1.",
+    "limitations": "The 7B model declines in round three. Intended hop counts and matching generated labels do not certify factual correctness; a supplied question has a false premise. Reported uncertainty lacks some statistical details. Efficiency measurements concern proposer training, and QA results do not establish reliable long-form research, citation fidelity or indefinite improvement.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "Dr. Zero"
   },
   {
@@ -4414,10 +4417,12 @@
     "url": "https://arxiv.org/abs/2508.05004",
     "sources": [
       "https://arxiv.org/abs/2508.05004",
-      "https://proceedings.iclr.cc/paper_files/paper/2026/hash/d49b9aacebda61051166335af6fd3061-Abstract-Conference.html"
+      "https://proceedings.iclr.cc/paper_files/paper/2026/hash/d49b9aacebda61051166335af6fd3061-Abstract-Conference.html",
+      "https://arxiv.org/pdf/2508.05004v4",
+      "https://github.com/Chengsong-Huang/R-Zero"
     ],
-    "code_url": null,
-    "code_note": "Official runnable code was not verified in this source review.",
+    "code_url": "https://github.com/Chengsong-Huang/R-Zero",
+    "code_note": "Official paper-linked README and training/release descriptions inspected on 2026-11-09; no models, datasets or research code run. Later R-Few work and older README scores are not substituted for the reviewed R-Zero v4 results.",
     "topics": [
       "model-training",
       "self-play"
@@ -4427,12 +4432,12 @@
       "model-weights"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Challenger rewards for tasks near the solver’s capability boundary and solver rewards on generated tasks.",
-    "mechanism": "Initializes challenger and solver models from the same base model, then optimizes their roles separately. Their interaction generates an adaptive training curriculum without a pre-existing task-and-label dataset.",
-    "evaluation": "The authors report mathematical and general-domain reasoning improvements across multiple backbone models.",
-    "limitations": "The framework still depends on pretrained models and the designed reward procedure. This abstract-level review does not independently validate generated task correctness, long-run stability, or open-world transfer.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Solver majority votes provide pseudo-labels; disagreement, formatting and repetition signals reward the challenger. No independent correctness oracle supervises the main training loop.",
+    "mechanism": "Alternates GRPO updates of separate challenger and solver copies. The challenger proposes mostly mathematical questions; the solver samples answers, filters questions by agreement and trains toward its own majority answer. Updated model weights persist between rounds, with fixed human-designed prompts and reward rules.",
+    "evaluation": "ArXiv v4 evaluates four backbones on seven mathematical and three general-reasoning benchmarks after three rounds, with additional iteration, shared-parameter, curriculum, supervised-data and pseudo-label diagnostics. Some contest results use mean accuracy over 32 samples; others use greedy decoding.",
+    "limitations": "Agreement is not correctness. Longer training eventually degrades and external-model diagnostics find worsening pseudo-label accuracy. Gains vary across tasks and several table/prose values conflict. The theoretical reward motivation does not guarantee a correct curriculum or indefinite improvement; pretrained knowledge and designed prompts remain inputs.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "R-Zero"
   },
   {
@@ -4797,10 +4802,11 @@
     "sources": [
       "https://arxiv.org/abs/2406.03816",
       "https://proceedings.neurips.cc/paper_files/paper/2024/file/76ec4dc30e9faaf0e4b6093eaa377218-Paper-Conference.pdf",
-      "https://github.com/THUDM/ReST-MCTS"
+      "https://github.com/THUDM/ReST-MCTS",
+      "https://arxiv.org/pdf/2406.03816v3"
     ],
     "code_url": "https://github.com/THUDM/ReST-MCTS",
-    "code_note": "Official repository page checked; code and training were not executed.",
+    "code_note": "Official repository README, setup, data-release and training descriptions inspected on 2026-11-09; no research code, datasets or models executed/downloaded. README value-training learning rates differ from the reviewed paper and were not silently reconciled.",
     "topics": [
       "model-training",
       "self-play",
@@ -4811,12 +4817,12 @@
       "model-weights"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Known final answers and search-derived estimates of intermediate-step value.",
-    "mechanism": "Combines process-reward-guided tree search with iterative training of the policy and reward models. Search supplies reasoning traces and step-value targets without requiring human labels for every intermediate step.",
-    "evaluation": "The authors compare search methods at matched search budgets and report multi-iteration self-training results for three language models.",
-    "limitations": "Oracle final answers remain available, and inferred step rewards depend on the search procedure. Curator interpretation: removing manual process labels does not remove external supervision.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Known final answers verify sampled solutions; search reachability and distance produce intermediate value targets. Science initialization also assumes supplied step-by-step solutions are correct and weak-model continuations are wrong.",
+    "mechanism": "Uses a learned value model to guide tree search with step expansion, rollout and self-criticism. Successful traces fine-tune the policy; inferred values from searched trees train the reward model for the next round. These are persistent parameter updates, distinct from test-time search alone.",
+    "evaluation": "ArXiv v3 reports two training rounds across three backbones on MATH, GPQA Diamond and CEval-Hard, plus GSM8K/MATH500 verifier comparisons and SciBench/SciEval search studies. Token-budget curves and a separate runtime table compare search efficiency.",
+    "limitations": "Oracle answers and initialization data remain supervision. Reaching a correct final answer does not prove every preceding step valid. Average gains mask task regressions, and matched completion tokens do not imply matched total compute or latency. Some reported values/settings conflict; broad agent tasks and indefinite learning are untested.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "ReST-MCTS*"
   },
   {
@@ -5348,7 +5354,8 @@
     "url": "https://arxiv.org/abs/2506.01716",
     "sources": [
       "https://arxiv.org/abs/2506.01716",
-      "https://proceedings.neurips.cc/paper_files/paper/2025/hash/a5a305fac88fb4ae40969cfec5eef48d-Abstract-Conference.html"
+      "https://proceedings.neurips.cc/paper_files/paper/2025/hash/a5a305fac88fb4ae40969cfec5eef48d-Abstract-Conference.html",
+      "https://arxiv.org/pdf/2506.01716v1"
     ],
     "code_url": null,
     "code_note": "Official runnable code was not verified in this source review.",
@@ -5362,12 +5369,12 @@
       "model-weights"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Self-generated task verification functions and tests, followed by task-evaluation rewards.",
-    "mechanism": "The agent first explores supplied tools as a challenger and constructs Code-as-Task problems containing instructions, a verifier, and passing and failing examples. It then learns as an executor through reinforcement learning on the filtered generated tasks.",
-    "evaluation": "The authors evaluate multi-turn tool use on M3ToolEval and TauBench.",
-    "limitations": "Tool interfaces and the learning framework are supplied externally. Curator interpretation: tests of a generated verifier cannot establish that every generated task captures its intended semantics or that gains transfer to arbitrary tools.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Generated executable checks provide binary rewards; passing examples and failure cases filter candidate tasks. Tool environments, prompt examples and verification scaffolding are supplied externally.",
+    "mechanism": "A fixed challenger explores tools and proposes Code-as-Task instructions and checks. In the main self-improvement setting, successful offline trajectories from the same 8B model are used for rejection fine-tuning of the executor; a separate setting distills 70B demonstrations. The challenger itself is not iteratively trained in these experiments.",
+    "evaluation": "ArXiv v1 compares four environments from M3ToolEval and modified Tau-Bench, with four evaluation trials. It reports 12.0% to 23.5% average pass@1 for self-training and 32.2% with teacher distillation, plus verifier ablations, task/trajectory scaling, online-RL diagnostics and joint-training comparisons.",
+    "limitations": "Generated tests do not guarantee semantic correctness: filtering retains about 5% of Retail candidates and false negatives remain. Airline excludes no-action-success tasks, browsing is synthetic and improvements are mainly environment-specific. Prompt examples and baseline judging choices matter; online RL can collapse and annotation sample counts are inconsistent.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "Self-Challenging Agents"
   },
   {
