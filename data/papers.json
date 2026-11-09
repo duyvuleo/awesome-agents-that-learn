@@ -3242,10 +3242,14 @@
     "url": "https://arxiv.org/abs/2610.34073",
     "sources": [
       "https://arxiv.org/abs/2610.34073",
-      "https://arxiv.org/html/2610.34073v1"
+      "https://arxiv.org/html/2610.34073v1",
+      "https://arxiv.org/pdf/2610.34073v1",
+      "https://hexuan21.github.io/MemoryTax/",
+      "https://github.com/hexuan21/MemoryTax",
+      "https://huggingface.co/datasets/hexuan21/MemoryTax-Res"
     ],
-    "code_url": null,
-    "code_note": "Official runnable implementation was not verified in this review; no research code was executed.",
+    "code_url": "https://github.com/hexuan21/MemoryTax",
+    "code_note": "Official project, README and MIT license inspected at 179e6a79da415a4e1eabe9eb3110754955360d05 on 2026-11-09. Results are indexed on Hugging Face, while the README still marks per-baseline reproduction code pending. No implementation or result dataset was installed, downloaded or executed.",
     "topics": [
       "memory",
       "evaluation"
@@ -3256,31 +3260,33 @@
     ],
     "persistence": "not-applicable",
     "learning_signal": "Not applicable: comparative analysis of memory construction, retrieval, and downstream use.",
-    "mechanism": "Compares processed memory with retrieval over raw histories, separating queries helped by memory from queries it loses. Gold-evidence probes, retrieval replay, and writer-reader swaps examine preservation, accessibility, and backbone sensitivity.",
-    "evaluation": "Tests three long-history memory benchmarks with three backbones, configuration controls, and additional experiential/world-model memory settings; experiential tests freeze training-derived memory.",
-    "limitations": "Most benchmarks are static, offline, and English; several use subsets. Retrieval scope is normalized by each store rather than equal absolute tokens, and model judges assess answers. Results are configuration- and task-dependent, not proof that memory is generally unnecessary. This differs from the single-conversation MemoryTax paper.",
+    "mechanism": "Defines memory benefit and tax as query-level gains and losses relative to raw-history RAG. Gold-evidence mapping, retrieval replay, writer–reader swaps and source-augmentation probes examine construction and access failures alongside cases where memory helps.",
+    "evaluation": "ArXiv v1 compares eleven systems on three conversational benchmarks with three QA backbones, using stratified subsets and configuration controls. It adds fifteen-benchmark retrieval probes, six experiential task settings with frozen training-derived memory, and two video-consistency evaluations.",
+    "limitations": "Tax depends on the chosen RAG reference; it is not monetary cost. Retrieval scope normalizes by each store rather than equal absolute tokens. Gold mapping is imperfect, QA swaps can also change retrieval, and subsets/configurations differ. Experiential gains over RAG need not beat no memory; world-model comparisons do not isolate the memory representation.",
     "review_depth": "full-text",
-    "checked": "2026-11-02",
+    "checked": "2026-11-09",
     "short_name": "Memory Tax: net value"
   },
   {
     "id": "memoryarena",
-    "title": "MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks",
+    "title": "Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks",
     "date": "2026-02-18",
     "year": 2026,
     "kind": "benchmark",
     "status": "peer-reviewed",
     "venue": "ICML 2026",
-    "url": "https://arxiv.org/abs/2602.16313",
+    "url": "https://proceedings.mlr.press/v306/he26am.html",
     "sources": [
       "https://arxiv.org/abs/2602.16313",
       "https://arxiv.org/html/2602.16313v2",
       "https://proceedings.mlr.press/v306/he26am.html",
       "https://github.com/ZexueHe/MemoryArena/blob/main/README.md",
-      "https://github.com/ZexueHe/MemoryArena"
+      "https://github.com/ZexueHe/MemoryArena",
+      "https://raw.githubusercontent.com/mlresearch/v306/main/assets/he26am/he26am.pdf",
+      "https://github.com/ZexueHe/MemoryArena/blob/main/setup_formal_reasoning.md"
     ],
     "code_url": "https://github.com/ZexueHe/MemoryArena",
-    "code_note": "Paper-linked preview repository README inspected; no environment or memory service was installed or run.",
+    "code_note": "Official preview README and formal-reasoning/search setup documentation inspected on 2026-11-09. They document separate memory/environment services, model-based grading and local search indexes; current release settings are not a verified paper reproduction. No code, services, models or datasets installed or executed.",
     "topics": [
       "memory",
       "continual-learning",
@@ -3293,12 +3299,12 @@
       "skills"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Earlier task actions and observations supply experience needed for later dependent subtasks.",
-    "mechanism": "Constructs multi-session tasks in which earlier choices and discoveries constrain later execution. Persistent memory connects sessions; comparisons separate long-context history, external memory systems, and retrieval-based stores.",
-    "evaluation": "Evaluates bundled shopping, group travel, progressive search, and sequential mathematical/physical reasoning using completion, progress, dependency-depth, and latency measures.",
-    "limitations": "These constructed task chains do not establish indefinite lifelong learning. Benefits vary by backend and domain; low task success can reflect reasoning or planning failures as well as memory. Section 4.3 describes gains in web search and formal reasoning, but Table 3 shows backend- and metric-dependent effects.",
+    "learning_signal": "Earlier subtask actions and observations update episode-local persistent memory for later dependent sessions. The released formal-reasoning setup keeps model-judge outcomes out of memory by default.",
+    "mechanism": "Constructs shopping, travel, search and research-reasoning task chains, comparing verbatim history, retrieval stores and external memory systems. Memory resets between overall tasks and persists across their subtasks; the reported implementation primarily retrieves once per session.",
+    "evaluation": "The final ICML paper reports 701 tasks and 4,850 subtasks, completion/progress and latency metrics, an additional task backbone, conditional dependency-depth analysis and oracle-like injection of prior outcomes plus distilled workflows.",
+    "limitations": "Failures combine memory, reasoning, planning and tool use. Search/formal success scores the final subtask, unlike all-constraint shopping/travel success. Benefits and latency vary by backend and domain; prose, table aggregates and some case labels disagree. Oracle-like memory is approximate, and formal results use model judging rather than certified proofs.",
     "review_depth": "full-text",
-    "checked": "2026-10-31",
+    "checked": "2026-11-09",
     "short_name": "MemoryArena"
   },
   {

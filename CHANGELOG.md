@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-09 — Expanded MemoryArena and Memory Tax evidence reviews
+
+- Reviewed both full papers and substantive appendices, aligning MemoryArena’s final title and qualifying memory-value comparisons, judging and artifact availability.
+- Broader audit: 96 of 190 works complete, 94 pending.
+
 ## 2026-11-09 — Expanded memory-value evidence reviews
 
 - Appraised MemoryTax and The Value of Memory in full, adding retry-accounting and measurement qualifications plus the verified MemoryTax code link.

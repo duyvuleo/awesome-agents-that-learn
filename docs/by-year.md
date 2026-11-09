@@ -102,7 +102,7 @@
 - 2026-03-18 — [Retrieval-Augmented LLM Agents: Learning to Learn from Experience](papers.md#exprag)
 - 2026-03-01 — [AutoSkill: Experience-Driven Lifelong Learning via Skill Self-Evolution](papers.md#autoskill)
 - 2026-02-26 — [EvoX: Meta-Evolution for Automated Discovery](papers.md#evox)
-- 2026-02-18 — [MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](papers.md#memoryarena)
+- 2026-02-18 — [Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](papers.md#memoryarena)
 - 2026-02-09 — [SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl)
 - 2026-02-04 — [Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing](papers.md#group-evolving-agents)
 - 2026-02-03 — [TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking](papers.md#tame-memory)

@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-09T09:16:50.397824+00:00",
+  "checked_at_utc": "2026-11-09T09:26:54.030536+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -1073,11 +1073,7 @@
       "url": "https://arxiv.org/abs/2602.16313",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2602.16313",
-      "status": "reachable",
-      "expected_title": "MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks",
-      "observed_title": "MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks",
-      "title_similarity": 1.0,
-      "title_check": "match"
+      "status": "reachable"
     },
     {
       "url": "https://arxiv.org/abs/2602.23413",
@@ -3390,6 +3386,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2610.34073v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2610.34073v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2611.00463v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2611.00463v1",
@@ -3894,6 +3896,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/ZexueHe/MemoryArena/blob/main/setup_formal_reasoning.md",
+      "http_status": 200,
+      "final_url": "https://github.com/ZexueHe/MemoryArena/blob/main/setup_formal_reasoning.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/ZhangZi-a/SkillFlow",
       "http_status": 200,
       "final_url": "https://github.com/ZhangZi-a/SkillFlow",
@@ -4113,6 +4121,12 @@
       "url": "https://github.com/google-research/reasoning-bank/blob/main/LICENSE",
       "http_status": 200,
       "final_url": "https://github.com/google-research/reasoning-bank/blob/main/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/hexuan21/MemoryTax",
+      "http_status": 200,
+      "final_url": "https://github.com/hexuan21/MemoryTax",
       "status": "reachable"
     },
     {
@@ -4473,6 +4487,18 @@
       "url": "https://hermes-agent.nousresearch.com/docs",
       "http_status": 200,
       "final_url": "https://hermes-agent.nousresearch.com/docs",
+      "status": "reachable"
+    },
+    {
+      "url": "https://hexuan21.github.io/MemoryTax/",
+      "http_status": 200,
+      "final_url": "https://hexuan21.github.io/MemoryTax/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/datasets/hexuan21/MemoryTax-Res",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/hexuan21/MemoryTax-Res",
       "status": "reachable"
     },
     {
@@ -4875,6 +4901,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/he26am/he26am.pdf",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/he26am/he26am.pdf",
+      "status": "reachable"
+    },
+    {
       "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wang26ik/wang26ik.pdf",
       "http_status": 200,
       "final_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wang26ik/wang26ik.pdf",
@@ -4943,14 +4975,14 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=d1b293f3-e9a7-4f6f-aea9-181f74ba597d",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=920fc135-33cc-4417-b7da-41f6a4c9817a",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=e975e58c-a653-4d0f-8999-1a8d061dd317",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=412f05ab-82ed-4cc4-9a5f-09b7c2a535a3",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -4964,14 +4996,14 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=a875f201-16a6-4ed0-84ef-334ab92619e1",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=90ca4f2b-a3e8-441b-8434-3d55b88d6a43",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=a214cb8a-cfce-41e9-88ab-f9e11889a748",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=3177d3f2-f0b8-46a4-a3cf-230a8b58aefb",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },

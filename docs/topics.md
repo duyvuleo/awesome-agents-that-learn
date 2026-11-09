@@ -104,7 +104,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026-03-30 — [Meta-Harness: End-to-End Optimization of Model Harnesses](papers.md#meta-harness) · core · peer-reviewed
 - 2026-03-18 — [Retrieval-Augmented LLM Agents: Learning to Learn from Experience](papers.md#exprag) · core · peer-reviewed
 - 2026-03-01 — [AutoSkill: Experience-Driven Lifelong Learning via Skill Self-Evolution](papers.md#autoskill) · core · preprint
-- 2026-02-18 — [MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](papers.md#memoryarena) · core · peer-reviewed
+- 2026-02-18 — [Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](papers.md#memoryarena) · core · peer-reviewed
 - 2026-02-09 — [SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl) · core · preprint
 - 2026-02-03 — [TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking](papers.md#tame-memory) · core · peer-reviewed
 - 2026-02-03 — [Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon RL](papers.md#reasoning-cache) · adjacent · peer-reviewed
@@ -474,7 +474,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026-04-18 — [On Safety Risks in Experience-Driven Self-Evolving Agents](papers.md#experience-driven-safety) · core · peer-reviewed
 - 2026-03-31 — [APEX-EM: Non-Parametric Online Learning for Autonomous Agents via Structured Procedural-Episodic Experience Replay](papers.md#apex-em) · core · peer-reviewed
 - 2026-03-01 — [AutoSkill: Experience-Driven Lifelong Learning via Skill Self-Evolution](papers.md#autoskill) · core · preprint
-- 2026-02-18 — [MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](papers.md#memoryarena) · core · peer-reviewed
+- 2026-02-18 — [Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](papers.md#memoryarena) · core · peer-reviewed
 - 2026-02-03 — [TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking](papers.md#tame-memory) · core · peer-reviewed
 - 2026-01-06 — [MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory](papers.md#memrl) · core · preprint
 - 2026-01-05 — [Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents](papers.md#agemem) · core · peer-reviewed
@@ -601,7 +601,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026-03-23 — [From Static Templates to Dynamic Runtime Graphs: A Survey of Workflow Optimization for LLM Agents](papers.md#workflow-optimization-survey) · core · peer-reviewed
 - 2026-03-19 — [Hyperagents](papers.md#hyperagents) · core · preprint
 - 2026-03-18 — [Retrieval-Augmented LLM Agents: Learning to Learn from Experience](papers.md#exprag) · core · peer-reviewed
-- 2026-02-18 — [MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](papers.md#memoryarena) · core · peer-reviewed
+- 2026-02-18 — [Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](papers.md#memoryarena) · core · peer-reviewed
 - 2026-02-03 — [TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking](papers.md#tame-memory) · core · peer-reviewed
 - 2026-02-03 — [Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon RL](papers.md#reasoning-cache) · adjacent · peer-reviewed
 - 2026-02-02 — [MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](papers.md#memskill) · core · preprint
@@ -695,7 +695,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026-03-31 — [APEX-EM: Non-Parametric Online Learning for Autonomous Agents via Structured Procedural-Episodic Experience Replay](papers.md#apex-em) · core · peer-reviewed
 - 2026-03-30 — [Meta-Harness: End-to-End Optimization of Model Harnesses](papers.md#meta-harness) · core · peer-reviewed
 - 2026-02-26 — [EvoX: Meta-Evolution for Automated Discovery](papers.md#evox) · core · peer-reviewed
-- 2026-02-18 — [MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](papers.md#memoryarena) · core · peer-reviewed
+- 2026-02-18 — [Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](papers.md#memoryarena) · core · peer-reviewed
 - 2026-02-04 — [Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing](papers.md#group-evolving-agents) · core · peer-reviewed
 - 2026-01-11 — [Dr. Zero: Self-Evolving Search Agents without Training Data](papers.md#dr-zero) · core · peer-reviewed
 - 2025-11-17 — [Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?](papers.md#live-swe-agent) · adjacent · preprint

@@ -43,7 +43,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-26 | **CEPO**<br>[CEPO: A General Framework for Improving Prompt Optimization in Multi-Agent Systems](https://arxiv.org/abs/2610.34722) | Separates a shared coordination prompt from agent-specific execution prompts. Role-aligned instructions guide existing optimizers to tune coordination first, then… | Prompts / context | preprint · full-text | [Notes](#cepo) |
 | 2026-10-26 | **AgentMemRec**<br>[Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents](https://arxiv.org/abs/2610.34673) | Combines dense/lexical candidates, a learned LightGBM ranker, and token-budget filling to choose stored turns for an answering LLM. Selection avoids generative-model… | Model weights | preprint · full-text | [Notes](#agentmemrec) |
 | 2026-10-25 | **MultiEvoSkill**<br>[MultiEvoSkill: Structure-Aware Multi-Agent Skill Evolution for Generalizable Skill Artifacts](https://arxiv.org/abs/2610.34260) | Compiles procedural skills into typed graphs, combines debated graph edits, and gates the merged candidate through behavioral, structural, and model-based semantic… | Skills | preprint · full-text | [Notes](#multievoskill) |
-| 2026-10-25 | **Memory Tax: net value**<br>[Memory Tax: Dissecting the Net Value of Agent Memory](https://arxiv.org/abs/2610.34073) | Compares processed memory with retrieval over raw histories, separating queries helped by memory from queries it loses. Gold-evidence probes, retrieval replay, and… | Analysis / no retained update | preprint · full-text | [Notes](#memory-tax-net-value) |
+| 2026-10-25 | **Memory Tax: net value**<br>[Memory Tax: Dissecting the Net Value of Agent Memory](https://arxiv.org/abs/2610.34073) | Defines memory benefit and tax as query-level gains and losses relative to raw-history RAG. Gold-evidence mapping, retrieval replay, writer–reader swaps and… | Analysis / no retained update | preprint · full-text | [Notes](#memory-tax-net-value) · [Code](https://github.com/hexuan21/MemoryTax) |
 | 2026-10-25 | **EvolveMAS**<br>[EvolveMAS: A Unified Self-Evolution Framework for Decentralized Multi-Agent Systems](https://arxiv.org/abs/2610.34450) | Pairs each agent with an external MemoryAgent that maintains isolated episodic, semantic, and working state. Turn-level updates inform ongoing actions; episode-end… | Memory | preprint · full-text | [Notes](#evolvemas) |
 | 2026-10-25 | **EMMA**<br>[EMMA: Structured Episodic Memory for Multi-Agent Workflow Synthesis](https://arxiv.org/abs/2610.35966) | Learns controller routing memory, specialist-agent prompts, and procedural skills through one scoped edit at a time. Programmatic guards constrain edits, while a… | Memory, Skills, Prompts / context, Multi-agent organization | preprint · full-text | [Notes](#emma) |
 | 2026-10-25 | **CaliMem**<br>[CaliMem: Search-Efficient Data Agent via Calibrated Memory](https://arxiv.org/abs/2610.34500) | Retains evidence and revisable claims throughout a data-curation search. Before evaluating a proposed data policy, the agent predicts its score; observed discrepancies… | Memory | preprint · full-text | [Notes](#calimem) |
@@ -112,7 +112,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-03-18 | **ExpRAG**<br>[Retrieval-Augmented LLM Agents: Learning to Learn from Experience](https://arxiv.org/abs/2603.18272) | Trains the policy to use full retrieved trajectories instead of adding memory only at inference. The main retrieval bank stays read-only; separate experiments reuse a… | Model weights | peer-reviewed · full-text | [Notes](#exprag) |
 | 2026-03-01 | **AutoSkill**<br>[AutoSkill: Experience-Driven Lifelong Learning via Skill Self-Evolution](https://arxiv.org/abs/2603.01145) | Uses fixed prompted modules to rewrite queries, retrieve instruction skills with hybrid dense/lexical search, and update a persistent versioned skill bank. A… | Skills, Memory, Prompts / context | preprint · full-text | [Notes](#autoskill) · [Code](https://github.com/ECNU-ICALK/AutoSkill) |
 | 2026-02-26 | **EvoX**<br>[EvoX: Meta-Evolution for Automated Discovery](https://arxiv.org/abs/2602.23413) | Co-evolves candidate programs and the search strategy that selects parents, variation operators, and examples. Stagnation triggers strategy revisions informed by earlier… | Agent code, Prompts / context | peer-reviewed · full-text | [Notes](#evox) · [Code](https://github.com/skydiscover-ai/skydiscover) |
-| 2026-02-18 | **MemoryArena**<br>[MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](https://arxiv.org/abs/2602.16313) | Constructs multi-session tasks in which earlier choices and discoveries constrain later execution. Persistent memory connects sessions; comparisons separate long-context… | Memory, Skills | peer-reviewed · full-text | [Notes](#memoryarena) · [Code](https://github.com/ZexueHe/MemoryArena) |
+| 2026-02-18 | **MemoryArena**<br>[Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](https://proceedings.mlr.press/v306/he26am.html) | Constructs shopping, travel, search and research-reasoning task chains, comparing verbatim history, retrieval stores and external memory systems. Memory resets between… | Memory, Skills | peer-reviewed · full-text | [Notes](#memoryarena) · [Code](https://github.com/ZexueHe/MemoryArena) |
 | 2026-02-09 | **SkillRL**<br>[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](https://arxiv.org/abs/2602.08234) | Distills successful and failed trajectories into a hierarchical skill library, retrieves those skills during policy training, and adds lessons from validation failures.… | Skills, Model weights | preprint · full-text | [Notes](#skillrl) · [Code](https://github.com/aiming-lab/SkillRL) |
 | 2026-02-04 | **Group-Evolving Agents**<br>[Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing](https://arxiv.org/abs/2602.04837) | Selects pairs of agents using performance and behavioral novelty, shares their experience, and generates framework-level patches for both. A fixed… | Agent code, Workflows | peer-reviewed · full-text | [Notes](#group-evolving-agents) |
 | 2026-02-03 | **TAME**<br>[TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking](https://arxiv.org/abs/2602.03224) | An executor retrieves useful experiences with risk guidance from a shared memory bank. An evaluator revises reuse priorities after outcomes, while new experiences enter… | Memory | peer-reviewed · full-text | [Notes](#tame-memory) · [Code](https://github.com/SII-YUCHENG2002/tame_code) |
@@ -876,19 +876,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.34073)
 
-**Mechanism.** Compares processed memory with retrieval over raw histories, separating queries helped by memory from queries it loses. Gold-evidence probes, retrieval replay, and writer-reader swaps examine preservation, accessibility, and backbone sensitivity.
+**Mechanism.** Defines memory benefit and tax as query-level gains and losses relative to raw-history RAG. Gold-evidence mapping, retrieval replay, writer–reader swaps and source-augmentation probes examine construction and access failures alongside cases where memory helps.
 
 **What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable: comparative analysis of memory construction, retrieval, and downstream use.
 
-**Evaluation.** Tests three long-history memory benchmarks with three backbones, configuration controls, and additional experiential/world-model memory settings; experiential tests freeze training-derived memory.
+**Evaluation.** ArXiv v1 compares eleven systems on three conversational benchmarks with three QA backbones, using stratified subsets and configuration controls. It adds fifteen-benchmark retrieval probes, six experiential task settings with frozen training-derived memory, and two video-consistency evaluations.
 
-**Boundary.** Most benchmarks are static, offline, and English; several use subsets. Retrieval scope is normalized by each store rather than equal absolute tokens, and model judges assess answers. Results are configuration- and task-dependent, not proof that memory is generally unnecessary. This differs from the single-conversation MemoryTax paper.
+**Boundary.** Tax depends on the chosen RAG reference; it is not monetary cost. Retrieval scope normalizes by each store rather than equal absolute tokens. Gold mapping is imperfect, QA swaps can also change retrieval, and subsets/configurations differ. Experiential gains over RAG need not beat no memory; world-model comparisons do not isolate the memory representation.
 
-**Code / data.** Official runnable implementation was not verified in this review; no research code was executed.
+**Code / data.** [Official artifact](https://github.com/hexuan21/MemoryTax) — Official project, README and MIT license inspected at 179e6a79da415a4e1eabe9eb3110754955360d05 on 2026-11-09. Results are indexed on Hugging Face, while the README still marks per-baseline reproduction code pending. No implementation or result dataset was installed, downloaded or executed.
 
-**Topics:** memory, evaluation. **Reviewed:** full-text · 2026-11-02.
+**Topics:** memory, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.34073) · [Source 2](https://arxiv.org/html/2610.34073v1)
+[Source 1](https://arxiv.org/abs/2610.34073) · [Source 2](https://arxiv.org/html/2610.34073v1) · [Source 3](https://arxiv.org/pdf/2610.34073v1) · [Source 4](https://hexuan21.github.io/MemoryTax/) · [Source 5](https://github.com/hexuan21/MemoryTax) · [Source 6](https://huggingface.co/datasets/hexuan21/MemoryTax-Res)
 
 <a id="evolvemas"></a>
 
@@ -2392,25 +2392,25 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 <a id="memoryarena"></a>
 
-## MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks
+## Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks
 
 **2026-02-18 · peer-reviewed · ICML 2026 · core · benchmark**
 
-[Primary source](https://arxiv.org/abs/2602.16313)
+[Primary source](https://proceedings.mlr.press/v306/he26am.html)
 
-**Mechanism.** Constructs multi-session tasks in which earlier choices and discoveries constrain later execution. Persistent memory connects sessions; comparisons separate long-context history, external memory systems, and retrieval-based stores.
+**Mechanism.** Constructs shopping, travel, search and research-reasoning task chains, comparing verbatim history, retrieval stores and external memory systems. Memory resets between overall tasks and persists across their subtasks; the reported implementation primarily retrieves once per session.
 
-**What changes:** Memory, Skills. **Persistence:** across-tasks. **Learning signal:** Earlier task actions and observations supply experience needed for later dependent subtasks.
+**What changes:** Memory, Skills. **Persistence:** across-tasks. **Learning signal:** Earlier subtask actions and observations update episode-local persistent memory for later dependent sessions. The released formal-reasoning setup keeps model-judge outcomes out of memory by default.
 
-**Evaluation.** Evaluates bundled shopping, group travel, progressive search, and sequential mathematical/physical reasoning using completion, progress, dependency-depth, and latency measures.
+**Evaluation.** The final ICML paper reports 701 tasks and 4,850 subtasks, completion/progress and latency metrics, an additional task backbone, conditional dependency-depth analysis and oracle-like injection of prior outcomes plus distilled workflows.
 
-**Boundary.** These constructed task chains do not establish indefinite lifelong learning. Benefits vary by backend and domain; low task success can reflect reasoning or planning failures as well as memory. Section 4.3 describes gains in web search and formal reasoning, but Table 3 shows backend- and metric-dependent effects.
+**Boundary.** Failures combine memory, reasoning, planning and tool use. Search/formal success scores the final subtask, unlike all-constraint shopping/travel success. Benefits and latency vary by backend and domain; prose, table aggregates and some case labels disagree. Oracle-like memory is approximate, and formal results use model judging rather than certified proofs.
 
-**Code / data.** [Official artifact](https://github.com/ZexueHe/MemoryArena) — Paper-linked preview repository README inspected; no environment or memory service was installed or run.
+**Code / data.** [Official artifact](https://github.com/ZexueHe/MemoryArena) — Official preview README and formal-reasoning/search setup documentation inspected on 2026-11-09. They document separate memory/environment services, model-based grading and local search indexes; current release settings are not a verified paper reproduction. No code, services, models or datasets installed or executed.
 
-**Topics:** memory, continual-learning, evaluation, applications. **Reviewed:** full-text · 2026-10-31.
+**Topics:** memory, continual-learning, evaluation, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2602.16313) · [Source 2](https://arxiv.org/html/2602.16313v2) · [Source 3](https://proceedings.mlr.press/v306/he26am.html) · [Source 4](https://github.com/ZexueHe/MemoryArena/blob/main/README.md) · [Source 5](https://github.com/ZexueHe/MemoryArena)
+[Source 1](https://arxiv.org/abs/2602.16313) · [Source 2](https://arxiv.org/html/2602.16313v2) · [Source 3](https://proceedings.mlr.press/v306/he26am.html) · [Source 4](https://github.com/ZexueHe/MemoryArena/blob/main/README.md) · [Source 5](https://github.com/ZexueHe/MemoryArena) · [Source 6](https://raw.githubusercontent.com/mlresearch/v306/main/assets/he26am/he26am.pdf) · [Source 7](https://github.com/ZexueHe/MemoryArena/blob/main/setup_formal_reasoning.md)
 
 <a id="skillrl"></a>
 
