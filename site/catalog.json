@@ -1060,10 +1060,11 @@
       "url": "https://arxiv.org/abs/2610.34673",
       "sources": [
         "https://arxiv.org/abs/2610.34673",
-        "https://arxiv.org/html/2610.34673v1"
+        "https://arxiv.org/html/2610.34673v1",
+        "https://arxiv.org/pdf/2610.34673v1"
       ],
       "code_url": null,
-      "code_note": "An official implementation was not independently verified in this review; this does not establish that none exists.",
+      "code_note": "Full 12-page arXiv v1, all substantive Appendices A–E, three propositions/proofs, figures, controls and baseline deviations read on 2026-11-09. A code package is mentioned, but no official implementation URL was established from the paper, arXiv record or targeted public search. No research code or models were executed.",
       "topics": [
         "memory",
         "model-training",
@@ -1075,11 +1076,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Gold evidence-turn annotations from 152 development questions train a separate ranking model.",
-      "mechanism": "Combines dense/lexical candidates, a learned LightGBM ranker, and token-budget filling to choose stored turns for an answering LLM. Selection avoids generative-model calls; the learned component is the ranker, not the answering model.",
-      "evaluation": "Tests multi-session LongMemEval-S/M questions and LoCoMo, comparing memory-selection stages, answering accuracy, and serving costs with explicit development/test splits.",
-      "limitations": "The main LongMemEval stratum excludes unanswerable questions. Near-miss filler can reduce accuracy despite complete evidence; benchmark memory selection is not demonstrated continual learning from deployment. Optional write-time records and answer generation still use LLMs.",
+      "mechanism": "Retrieves a fused lexical/dense pool, ranks stored turns with a separately trained LightGBM model and fills a token budget. The serving ranker is frozen; the answering model does not learn from deployment feedback. Optional generated records add a retrieval channel and date cues.",
+      "evaluation": "Full v1 reviews LongMemEval-S/M with a 152-question development split and 209 multi-session test questions, plus LoCoMo, feature controls, near-miss distractors and serving measurements. Paired question bootstrap and a three-point non-inferiority margin qualify comparisons with an LLM reranker.",
+      "limitations": "Main comparisons exclude unanswerable questions and adapt baseline builders/retrieval settings; copied headline results use differing protocols. Four perturbed context budgets are not independent training repeats. The ranking reduction has restrictive assumptions, and complete evidence can still be harmed by distractors. The 3.2× cost ratio concerns selection, not the entire answering service.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-09",
       "short_name": "AgentMemRec"
     },
     {
@@ -4103,10 +4104,11 @@
       "url": "https://aclanthology.org/2026.emnlp-main.1194/",
       "sources": [
         "https://aclanthology.org/2026.emnlp-main.1194/",
-        "https://aclanthology.org/2026.emnlp-main.1194.pdf"
+        "https://aclanthology.org/2026.emnlp-main.1194.pdf",
+        "https://github.com/NLPerWS/COLLABMEM"
       ],
       "code_url": null,
-      "code_note": "Official runnable code was not verified in this source review; no research code was executed.",
+      "code_note": "Final 14-page EMNLP 2026 paper and all substantive Appendices A–I read on 2026-11-09. The paper links NLPerWS/COLLABMEM, but the public GitHub API reports an empty repository with no commits. Code/data release and reproduction were not verified; no research code was executed.",
       "topics": [
         "memory",
         "evaluation",
@@ -4119,11 +4121,11 @@
       ],
       "persistence": "not-applicable",
       "learning_signal": "Fixed event traces, access/authority labels, and gold probes evaluate memory operations; no policy-learning loop is tested.",
-      "mechanism": "Holds the interaction trace and answering layer fixed to isolate sharing, access, routing, provenance, conflict resolution, and retention. TMS-GRAPH++ supplies role-filtered views with current-value and writer information.",
-      "evaluation": "Uses 58 hand-authored seed scenarios plus scaled, adversarial, and compositional probes; compares mechanism reimplementations separately from official SDK memory primitives.",
-      "limitations": "Controlled traces and minimal sharing policies are not native multi-agent product deployments. Human checking covers a stratified sample; the paper acknowledges that its compression metric inadequately reflects compression capability. Year-only dating preserves the inspected publication precision.",
+      "mechanism": "Replays fixed event traces with explicit role access and source-authority metadata, then varies the memory view given to a fixed answerer. TMS-GRAPH++ filters visible edges, marks current values and exposes a writer registry for designated routing probes. No learning policy or live team interaction is tested.",
+      "evaluation": "Full final publication covers 58 core scenarios/1,118 probes, 174 scaled scenarios, core-derived adversarial/compositional sets, four answerer backbones and mechanism/SDK comparisons. Two annotators check 204 probes. Strict evaluation changes both the answerer instructions and grading requirements.",
+      "limitations": "SDK rows use minimal sharing policies rather than native product workflows. The proposed method leads the five-setting average, but not every backbone or strict condition. Errors with oracle memory and the acknowledged C6 metric weakness limit memory-only causal attribution. Controlled metadata and derived probes do not establish real deployment access safety.",
       "review_depth": "full-text",
-      "checked": "2026-10-31",
+      "checked": "2026-11-09",
       "short_name": "COLLABMEM"
     },
     {

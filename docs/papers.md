@@ -41,7 +41,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-26 | **MiniWeb / MiniWebAgent**<br>[Back to Basics: A Skill-Centric Approach to Generalist Web Agents](https://arxiv.org/abs/2610.35823) | Builds skill-level web tasks and generates verified practice trajectories. A LoRA-trained executor performs short interactions delegated by an untrained planner, so… | Model weights | preprint · full-text | [Notes](#miniweb) |
 | 2026-10-26 | **EoG**<br>[Evolve on Graph: Self-Evolving Knowledge Graph Reasoning without Question Annotations](https://arxiv.org/abs/2610.35598) | One shared model alternates between proposing graph-grounded questions and solving them through graph tools. Symbolic task generation and question checks feed… | Model weights | preprint · full-text | [Notes](#evolve-on-graph) · [Code](https://github.com/Szy5/EoG) |
 | 2026-10-26 | **CEPO**<br>[CEPO: A General Framework for Improving Prompt Optimization in Multi-Agent Systems](https://arxiv.org/abs/2610.34722) | Separates a shared coordination prompt from agent-specific execution prompts. Role-aligned instructions guide existing optimizers to tune coordination first, then… | Prompts / context | preprint · full-text | [Notes](#cepo) |
-| 2026-10-26 | **AgentMemRec**<br>[Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents](https://arxiv.org/abs/2610.34673) | Combines dense/lexical candidates, a learned LightGBM ranker, and token-budget filling to choose stored turns for an answering LLM. Selection avoids generative-model… | Model weights | preprint · full-text | [Notes](#agentmemrec) |
+| 2026-10-26 | **AgentMemRec**<br>[Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents](https://arxiv.org/abs/2610.34673) | Retrieves a fused lexical/dense pool, ranks stored turns with a separately trained LightGBM model and fills a token budget. The serving ranker is frozen; the answering… | Model weights | preprint · full-text | [Notes](#agentmemrec) |
 | 2026-10-25 | **MultiEvoSkill**<br>[MultiEvoSkill: Structure-Aware Multi-Agent Skill Evolution for Generalizable Skill Artifacts](https://arxiv.org/abs/2610.34260) | Compiles procedural skills into typed graphs, combines debated graph edits, and gates the merged candidate through behavioral, structural, and model-based semantic… | Skills | preprint · full-text | [Notes](#multievoskill) |
 | 2026-10-25 | **Memory Tax: net value**<br>[Memory Tax: Dissecting the Net Value of Agent Memory](https://arxiv.org/abs/2610.34073) | Defines memory benefit and tax as query-level gains and losses relative to raw-history RAG. Gold-evidence mapping, retrieval replay, writer–reader swaps and… | Analysis / no retained update | preprint · full-text | [Notes](#memory-tax-net-value) · [Code](https://github.com/hexuan21/MemoryTax) |
 | 2026-10-25 | **EvolveMAS**<br>[EvolveMAS: A Unified Self-Evolution Framework for Decentralized Multi-Agent Systems](https://arxiv.org/abs/2610.34450) | Pairs each agent with an external MemoryAgent that maintains isolated episodic, semantic, and working state. Turn-level updates inform ongoing actions; episode-end… | Memory | preprint · full-text | [Notes](#evolvemas) |
@@ -126,7 +126,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-01-05 | **AgeMem**<br>[Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents](https://arxiv.org/abs/2601.01885) | Uses RL to train a language-model policy over six fixed long- and short-term memory operations. A three-stage curriculum creates memories, distracts the agent after… | Model weights, Memory, Prompts / context | peer-reviewed · full-text | [Notes](#agemem) · [Code](https://github.com/y1y5/AgeMem) |
 | 2026 | **SkillRubricsRL**<br>[SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning](https://aclanthology.org/2026.findings-emnlp.471/) | Pairs each skill with execution criteria, trains an acting policy with combined outcome and fulfillment rewards, and evolves the skill bank from failures. Marginal… | Model weights, Skills, Memory | peer-reviewed · full-text | [Notes](#skillrubricsrl) · [Code](https://github.com/gminiheimdallr-a11y/SkillRubricsRL) |
 | 2026 | **PerMemSafe**<br>[PerMemSafe: Benchmarking Implicit Personalized Safety of Long Horizon Self-Evolving Agents](https://aclanthology.org/2026.findings-acl.320/) | Separates recognizing implicit personalized risks from tracking their changes over time. The accompanying SentinelMem retains explicit fact-state transitions and… | Memory | peer-reviewed · full-text | [Notes](#permemsafe) |
-| 2026 | **COLLABMEM**<br>[COLLABMEM: A Diagnostic Benchmark for Collaborative Memory Operations in Multi-Agent LLM Systems](https://aclanthology.org/2026.emnlp-main.1194/) | Holds the interaction trace and answering layer fixed to isolate sharing, access, routing, provenance, conflict resolution, and retention. TMS-GRAPH++ supplies… | Memory | peer-reviewed · full-text | [Notes](#collabmem) |
+| 2026 | **COLLABMEM**<br>[COLLABMEM: A Diagnostic Benchmark for Collaborative Memory Operations in Multi-Agent LLM Systems](https://aclanthology.org/2026.emnlp-main.1194/) | Replays fixed event traces with explicit role access and source-authority metadata, then varies the memory view given to a fixed answerer. TMS-GRAPH++ filters visible… | Memory | peer-reviewed · full-text | [Notes](#collabmem) |
 | 2025-12-21 | **MemEvolve**<br>[MemEvolve: Meta-Evolution of Agent Memory Systems](https://arxiv.org/abs/2512.18746) | Evolves implementations of encoding, storage, retrieval and memory management inside a supplied interface. Candidate memory starts empty each outer iteration; selected… | Memory, Agent code | peer-reviewed · full-text | [Notes](#memevolve) · [Code](https://github.com/bingreeky/MemEvolve) |
 | 2025-11-20 | **Agent0**<br>[Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](https://arxiv.org/abs/2511.16043) | Alternates curriculum-agent GRPO training with executor updates on filtered generated tasks. The executor interleaves reasoning and Python calls; ADPO scales advantages… | Model weights | peer-reviewed · full-text | [Notes](#agent0) · [Code](https://github.com/aiming-lab/Agent0) |
 | 2025-11-17 | **Live-SWE-agent**<br>[Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?](https://arxiv.org/abs/2511.13646) | Adds tool-creation instructions and step-level reminders to a bash-based mini-SWE-agent loop. The agent writes, revises and executes Python helper scripts during one… | Tools | preprint · full-text | [Notes](#live-swe-agent) · [Code](https://github.com/OpenAutoCoder/live-swe-agent) |
@@ -832,19 +832,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.34673)
 
-**Mechanism.** Combines dense/lexical candidates, a learned LightGBM ranker, and token-budget filling to choose stored turns for an answering LLM. Selection avoids generative-model calls; the learned component is the ranker, not the answering model.
+**Mechanism.** Retrieves a fused lexical/dense pool, ranks stored turns with a separately trained LightGBM model and fills a token budget. The serving ranker is frozen; the answering model does not learn from deployment feedback. Optional generated records add a retrieval channel and date cues.
 
 **What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Gold evidence-turn annotations from 152 development questions train a separate ranking model.
 
-**Evaluation.** Tests multi-session LongMemEval-S/M questions and LoCoMo, comparing memory-selection stages, answering accuracy, and serving costs with explicit development/test splits.
+**Evaluation.** Full v1 reviews LongMemEval-S/M with a 152-question development split and 209 multi-session test questions, plus LoCoMo, feature controls, near-miss distractors and serving measurements. Paired question bootstrap and a three-point non-inferiority margin qualify comparisons with an LLM reranker.
 
-**Boundary.** The main LongMemEval stratum excludes unanswerable questions. Near-miss filler can reduce accuracy despite complete evidence; benchmark memory selection is not demonstrated continual learning from deployment. Optional write-time records and answer generation still use LLMs.
+**Boundary.** Main comparisons exclude unanswerable questions and adapt baseline builders/retrieval settings; copied headline results use differing protocols. Four perturbed context budgets are not independent training repeats. The ranking reduction has restrictive assumptions, and complete evidence can still be harmed by distractors. The 3.2× cost ratio concerns selection, not the entire answering service.
 
-**Code / data.** An official implementation was not independently verified in this review; this does not establish that none exists.
+**Code / data.** Full 12-page arXiv v1, all substantive Appendices A–E, three propositions/proofs, figures, controls and baseline deviations read on 2026-11-09. A code package is mentioned, but no official implementation URL was established from the paper, arXiv record or targeted public search. No research code or models were executed.
 
-**Topics:** memory, model-training, evaluation. **Reviewed:** full-text · 2026-10-30.
+**Topics:** memory, model-training, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.34673) · [Source 2](https://arxiv.org/html/2610.34673v1)
+[Source 1](https://arxiv.org/abs/2610.34673) · [Source 2](https://arxiv.org/html/2610.34673v1) · [Source 3](https://arxiv.org/pdf/2610.34673v1)
 
 <a id="multievoskill"></a>
 
@@ -2710,19 +2710,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://aclanthology.org/2026.emnlp-main.1194/)
 
-**Mechanism.** Holds the interaction trace and answering layer fixed to isolate sharing, access, routing, provenance, conflict resolution, and retention. TMS-GRAPH++ supplies role-filtered views with current-value and writer information.
+**Mechanism.** Replays fixed event traces with explicit role access and source-authority metadata, then varies the memory view given to a fixed answerer. TMS-GRAPH++ filters visible edges, marks current values and exposes a writer registry for designated routing probes. No learning policy or live team interaction is tested.
 
 **What changes:** Memory. **Persistence:** not-applicable. **Learning signal:** Fixed event traces, access/authority labels, and gold probes evaluate memory operations; no policy-learning loop is tested.
 
-**Evaluation.** Uses 58 hand-authored seed scenarios plus scaled, adversarial, and compositional probes; compares mechanism reimplementations separately from official SDK memory primitives.
+**Evaluation.** Full final publication covers 58 core scenarios/1,118 probes, 174 scaled scenarios, core-derived adversarial/compositional sets, four answerer backbones and mechanism/SDK comparisons. Two annotators check 204 probes. Strict evaluation changes both the answerer instructions and grading requirements.
 
-**Boundary.** Controlled traces and minimal sharing policies are not native multi-agent product deployments. Human checking covers a stratified sample; the paper acknowledges that its compression metric inadequately reflects compression capability. Year-only dating preserves the inspected publication precision.
+**Boundary.** SDK rows use minimal sharing policies rather than native product workflows. The proposed method leads the five-setting average, but not every backbone or strict condition. Errors with oracle memory and the acknowledged C6 metric weakness limit memory-only causal attribution. Controlled metadata and derived probes do not establish real deployment access safety.
 
-**Code / data.** Official runnable code was not verified in this source review; no research code was executed.
+**Code / data.** Final 14-page EMNLP 2026 paper and all substantive Appendices A–I read on 2026-11-09. The paper links NLPerWS/COLLABMEM, but the public GitHub API reports an empty repository with no commits. Code/data release and reproduction were not verified; no research code was executed.
 
-**Topics:** memory, evaluation, safety, architecture. **Reviewed:** full-text · 2026-10-31.
+**Topics:** memory, evaluation, safety, architecture. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://aclanthology.org/2026.emnlp-main.1194/) · [Source 2](https://aclanthology.org/2026.emnlp-main.1194.pdf)
+[Source 1](https://aclanthology.org/2026.emnlp-main.1194/) · [Source 2](https://aclanthology.org/2026.emnlp-main.1194.pdf) · [Source 3](https://github.com/NLPerWS/COLLABMEM)
 
 <a id="memevolve"></a>
 

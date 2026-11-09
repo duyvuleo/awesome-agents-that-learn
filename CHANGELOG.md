@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded memory selection and collaboration reviews
+
+- Read AgentMemRec and COLLABMEM with their full substantive appendices, controls and formal claims.
+- Qualified comparison/cost boundaries, mixed backbone results, compression measurement and unavailable release artifacts.
+- Broader audit: 104 of 190 works complete, 86 pending.
+
 ## 2026-11-09 — Reviewed StuLife final publication and artifact
 
 - Read the final 41-page StuLife paper and substantive appendices; aligned its authoritative title and added the official artifact.
