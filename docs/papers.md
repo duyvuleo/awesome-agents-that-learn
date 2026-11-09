@@ -178,13 +178,13 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2024-04-01 | **Accumulation vs. collapse**<br>[Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](https://arxiv.org/abs/2404.01413) | Compares replacement of earlier datasets with accumulation of original and synthetic data. It supplies a linear-model analysis and generative-model experiments showing… | Model weights | preprint · full-text | [Notes](#accumulating-data-model-collapse) |
 | 2024-02-27 | **LoCoMo**<br>[Evaluating Very Long-Term Conversational Memory of LLM Agents](https://aclanthology.org/2024.acl-long.747/) | Creates persona- and event-grounded simulated conversations, then uses human editing to repair consistency and image alignment. The benchmark tests QA, event… | Memory | peer-reviewed · full-text | [Notes](#locomo) · [Code](https://github.com/snap-research/LoCoMo) |
 | 2024-01-23 | **TroVE**<br>[TroVE: Inducing Verifiable and Efficient Toolboxes for Solving Programmatic Tasks](https://arxiv.org/abs/2401.12869) | Samples solutions that import existing functions, create new ones, or use only supplied primitives. Execution agreement and simplicity select a solution whose functions… | Tools, Skills | peer-reviewed · full-text | [Notes](#trove) · [Code](https://github.com/zorazrw/trove) |
-| 2024-01-18 | **Self-Rewarding LMs**<br>[Self-Rewarding Language Models](https://arxiv.org/abs/2401.10020) | Uses one language model both to answer instructions and to score responses, updating it through successive rounds of preference optimization. This couples the response… | Model weights | peer-reviewed · abstract | [Notes](#self-rewarding-lms) |
-| 2024-01-02 | **SPIN**<br>[Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](https://arxiv.org/abs/2401.01335) | Starts with a supervised model and iteratively learns to distinguish its own generated responses from reference demonstrations. Successive model versions provide the… | Model weights | peer-reviewed · abstract | [Notes](#spin) · [Code](https://github.com/uclaml/SPIN) |
+| 2024-01-18 | **Self-Rewarding LMs**<br>[Self-Rewarding Language Models](https://arxiv.org/abs/2401.10020) | Alternates answer generation, self-judging and DPO updates, changing the shared answering/reward model. The main experiment uses a fixed Llama-2-Chat prompt generator… | Model weights | peer-reviewed · full-text | [Notes](#self-rewarding-lms) |
+| 2024-01-02 | **SPIN**<br>[Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](https://arxiv.org/abs/2401.01335) | Optimizes a contrastive log-probability-ratio objective against the previous model, then samples a new opponent dataset from the updated weights. The experiments reuse… | Model weights | peer-reviewed · full-text | [Notes](#spin) · [Code](https://github.com/uclaml/SPIN) |
 | 2024 | **Self-correction survey**<br>[When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs](https://aclanthology.org/2024.tacl-1.78/) | Separates self-correction questions by feedback source and training assumptions, and examines whether experimental designs support the claimed correction ability. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#self-correction-survey) |
-| 2024 | **Self-correction limits**<br>[Large Language Models Cannot Self-Correct Reasoning Yet](https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html) | Tests intrinsic correction: asking a model to revise its own reasoning using no external correctness signal. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#intrinsic-self-correction) |
 | 2023-10-12 | **MemGPT**<br>[MemGPT: Towards LLMs as Operating Systems](https://arxiv.org/abs/2310.08560) | Separates active context from archival and recall storage. Function calls page information in and out, edit working memory, and request successive inference steps… | Memory | preprint · full-text | [Notes](#memgpt) |
 | 2023-10-05 | **DSPy**<br>[DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines](https://arxiv.org/abs/2310.03714) | Compiles declarative LM modules by bootstrapping and selecting demonstrations. Composed optimizers can ensemble programs or fine-tune smaller models. Optimized prompts… | Prompts / context, Workflows, Model weights | peer-reviewed · full-text | [Notes](#dspy) · [Code](https://github.com/stanfordnlp/dspy) |
 | 2023-10-03 | **STOP**<br>[Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation](https://arxiv.org/abs/2310.02304) | Begins with an LLM-assisted program improver and applies that improver to its own source. Candidate improvers are assessed through the quality of programs they generate… | Agent code | peer-reviewed · abstract | [Notes](#stop) |
+| 2023-10-03 | **Self-correction limits**<br>[Large Language Models Cannot Self-Correct Reasoning Yet](https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html) | Evaluates within-task revision without external correctness feedback, contrasting it with oracle-controlled stopping, multi-agent debate and stronger initial prompts. No… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#intrinsic-self-correction) |
 | 2023-09-28 | **Promptbreeder**<br>[Promptbreeder: Self-Referential Self-Improvement via Prompt Evolution](https://arxiv.org/abs/2309.16797) | A tournament population evolves task instructions and the mutation instructions that generate successors, including hypermutation and reconstruction from worked… | Prompts / context | peer-reviewed · full-text | [Notes](#promptbreeder) |
 | 2023-09-07 | **OPRO**<br>[Large Language Models as Optimizers](https://arxiv.org/abs/2309.03409) | A fixed LLM optimizer proposes instructions from the best scored candidates and examples; an external evaluator scores them and refreshes the history. Selected prompts… | Prompts / context | peer-reviewed · full-text | [Notes](#opro) · [Code](https://github.com/google-deepmind/opro) |
 | 2023-08-20 | **ExpeL**<br>[ExpeL: LLM Agents Are Experiential Learners](https://arxiv.org/abs/2308.10144) | Collects training-task trajectories, contrasts successes and failures to extract reusable textual insights, and retrieves relevant experiences for new tasks. Learning… | Memory | peer-reviewed · full-text | [Notes](#expel) · [Code](https://github.com/LeapLabTHU/ExpeL) |
@@ -198,7 +198,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2023-03-30 | **Self-Refine**<br>[Self-Refine: Iterative Refinement with Self-Feedback](https://arxiv.org/abs/2303.17651) | Alternates drafting, feedback and revision while retaining the current task history. No weights or cross-task memory are updated; stopping and output selection vary… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#self-refine) |
 | 2023-03-20 | **Reflexion**<br>[Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366) | Converts task feedback into verbal reflections and carries those reflections into later attempts through an episodic memory buffer. The underlying language-model weights… | Memory | peer-reviewed · full-text | [Notes](#reflexion) · [Code](https://github.com/noahshinn/reflexion) |
 | 2023-02-09 | **Toolformer**<br>[Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) | Samples API calls into ordinary text, executes and filters them using future-token loss reduction, and fine-tunes GPT-J on the augmented corpus. Learned tool invocation… | Model weights | peer-reviewed · full-text | [Notes](#toolformer) |
-| 2023 | **Self-Instruct**<br>[Self-Instruct: Aligning Language Models with Self-Generated Instructions](https://aclanthology.org/2023.acl-long.754/) | Bootstraps an instruction-tuning dataset from the model, filters unsuitable examples, and fine-tunes the original model on the retained data. It is a foundation for… | Model weights | peer-reviewed · abstract | [Notes](#self-instruct) · [Code](https://github.com/yizhongw/self-instruct) |
+| 2022-12-20 | **Self-Instruct**<br>[Self-Instruct: Aligning Language Models with Self-Generated Instructions](https://aclanthology.org/2023.acl-long.754/) | Expands a task pool with GPT-3 generations, identifies classification tasks, generates inputs/outputs in different orders and filters overlap or malformed examples. A… | Model weights | peer-reviewed · full-text | [Notes](#self-instruct) · [Code](https://github.com/yizhongw/self-instruct) |
 | 2022-12-15 | **Constitutional AI**<br>[Constitutional AI: Harmlessness from AI Feedback](https://arxiv.org/abs/2212.08073) | Fine-tunes on constitution-guided response revisions, then fits a preference model to mixed human-helpfulness and AI-harmlessness labels and trains a policy with RL.… | Model weights | preprint · full-text | [Notes](#constitutional-ai) |
 | 2022-10-06 | **ReAct**<br>[ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629) | Interleaves language reasoning, tool actions and observations to revise a plan within a task. The main prompted variant keeps weights fixed; the separately evaluated… | Model weights | peer-reviewed · full-text | [Notes](#react) |
 | 2022-03-28 | **STaR**<br>[STaR: Bootstrapping Reasoning With Reasoning](https://arxiv.org/abs/2203.14465) | Generates reasoning traces, keeps traces ending in the reference answer, and fine-tunes on them. Failed problems can be retried with the answer supplied as a hint; each… | Model weights | peer-reviewed · full-text | [Notes](#star) · [Code](https://github.com/ezelikman/STaR) |
@@ -3880,19 +3880,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2401.10020)
 
-**Mechanism.** Uses one language model both to answer instructions and to score responses, updating it through successive rounds of preference optimization. This couples the response generator and the source of training rewards.
+**Mechanism.** Alternates answer generation, self-judging and DPO updates, changing the shared answering/reward model. The main experiment uses a fixed Llama-2-Chat prompt generator and Claude-2 checkpoint selection, so the loop retains external design and supervision dependencies.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** The language model judges candidate responses to construct preferences for iterative DPO.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Human-ranked seed data initialize answering and evaluation; the resulting model scores its own candidate answers to create preference pairs.
 
-**Evaluation.** The paper reports instruction-following and reward-quality improvements across three iterations, including AlpacaEval 2.0 evaluation.
+**Evaluation.** The ICML paper studies a Llama-2-70B seed model and two main DPO rounds using GPT-4 judging, fifty blinded author-rated prompts, MT-Bench, NLP tasks and held-out human preference rankings. A fourth model receives a further AlpacaEval check with smaller gains.
 
-**Boundary.** The evidence concerns bounded iterations and selected evaluation protocols. Curator interpretation: agreement with an evolving self-judge is not an independent guarantee of correctness or indefinite improvement.
+**Boundary.** Responses become longer, potentially influencing preference scores. Gains concentrate outside mathematical reasoning, and several NLP scores regress. Reward-ranking agreement is not correctness or safety assurance; finite iterations, uneven training-data volumes and external checkpoint selection limit claims of autonomous continual improvement.
 
 **Code / data.** Official runnable code was not verified in this source review.
 
-**Topics:** model-training, self-play, evaluation. **Reviewed:** abstract · 2026-10-28.
+**Topics:** model-training, self-play, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2401.10020) · [Source 2](https://proceedings.mlr.press/v235/yuan24d.html)
+[Source 1](https://arxiv.org/abs/2401.10020) · [Source 2](https://proceedings.mlr.press/v235/yuan24d.html) · [Source 3](https://raw.githubusercontent.com/mlresearch/v235/main/assets/yuan24d/yuan24d.pdf)
 
 <a id="spin"></a>
 
@@ -3902,19 +3902,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2401.01335)
 
-**Mechanism.** Starts with a supervised model and iteratively learns to distinguish its own generated responses from reference demonstrations. Successive model versions provide the changing opponent in the training objective.
+**Mechanism.** Optimizes a contrastive log-probability-ratio objective against the previous model, then samples a new opponent dataset from the updated weights. The experiments reuse 50,000 UltraChat prompts with API-generated reference answers; later rounds mix current and preceding generated responses.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Contrasts previous-model responses with existing human demonstrations.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Existing reference demonstrations are treated as preferred to responses sampled from the preceding model, without fresh per-pair preference labels.
 
-**Evaluation.** The authors report results on Open LLM Leaderboard tasks, MT-Bench, and Big-Bench datasets.
+**Evaluation.** The ICML paper evaluates four rounds on Zephyr-7B using Open LLM Leaderboard tasks, with additional MT-Bench, BBH and OpenBookQA results, data/epoch ablations and optional later DPO. Average gains diminish, and some task scores remain below the SFT baseline.
 
-**Boundary.** No additional human annotation is required by the loop, but existing human demonstrations remain its target distribution. Curator interpretation: this is not learning from zero prior human data.
+**Boundary.** Experimental reference answers are synthetic, despite the human-demonstration framing; they remain the fixed target distribution. Idealized theorems assume realizability and global optimization, not guaranteed finite-SGD convergence. DPO comparisons differ in data and supervision; independent training-run uncertainty is not reported.
 
 **Code / data.** [Official artifact](https://github.com/uclaml/SPIN) — Official repository page checked; code and training were not executed.
 
-**Topics:** model-training, self-play. **Reviewed:** abstract · 2026-10-28.
+**Topics:** model-training, self-play. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2401.01335) · [Source 2](https://proceedings.mlr.press/v235/chen24j.html) · [Source 3](https://github.com/uclaml/SPIN)
+[Source 1](https://arxiv.org/abs/2401.01335) · [Source 2](https://proceedings.mlr.press/v235/chen24j.html) · [Source 3](https://github.com/uclaml/SPIN) · [Source 4](https://raw.githubusercontent.com/mlresearch/v235/main/assets/chen24j/chen24j.pdf)
 
 <a id="self-correction-survey"></a>
 
@@ -3937,28 +3937,6 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** surveys, foundations, evaluation. **Reviewed:** abstract · 2026-10-28.
 
 [Source 1](https://aclanthology.org/2024.tacl-1.78/)
-
-<a id="intrinsic-self-correction"></a>
-
-## Large Language Models Cannot Self-Correct Reasoning Yet
-
-**2024 · peer-reviewed · ICLR 2024 · adjacent · paper**
-
-[Primary source](https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html)
-
-**Mechanism.** Tests intrinsic correction: asking a model to revise its own reasoning using no external correctness signal.
-
-**What changes:** Analysis / no retained update. **Persistence:** within-task. **Learning signal:** Not applicable: analysis or evaluation resource.
-
-**Evaluation.** The studied reasoning settings show weak correction and, in some cases, degradation after revision.
-
-**Boundary.** The result concerns the tested models, prompts, and tasks; it does not rule out externally grounded feedback, learned correction, or durable agent learning.
-
-**Code / data.** No implementation link independently inspected for this entry; this does not establish that none exists.
-
-**Topics:** foundations, evaluation. **Reviewed:** abstract · 2026-10-28.
-
-[Source 1](https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html)
 
 <a id="memgpt"></a>
 
@@ -4029,6 +4007,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** foundations, recursive-improvement, architecture. **Reviewed:** abstract · 2026-10-28.
 
 [Source 1](https://arxiv.org/abs/2310.02304) · [Source 2](https://openreview.net/pdf?id=46Zgqo4QIU)
+
+<a id="intrinsic-self-correction"></a>
+
+## Large Language Models Cannot Self-Correct Reasoning Yet
+
+**2023-10-03 · peer-reviewed · ICLR 2024 · adjacent · paper**
+
+[Primary source](https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html)
+
+**Mechanism.** Evaluates within-task revision without external correctness feedback, contrasting it with oracle-controlled stopping, multi-agent debate and stronger initial prompts. No persistent memory or weight update is learned by the evaluated correction loop.
+
+**What changes:** Analysis / no retained update. **Persistence:** within-task. **Learning signal:** Not applicable: analysis or evaluation resource.
+
+**Evaluation.** ArXiv v2 tests 2023 GPT-3.5/GPT-4 variants and Llama-2 on GSM8K, CommonSenseQA and closed-book HotpotQA. It measures correct-to-incorrect revisions, compares debate with response-count-matched voting, and examines concept coverage on CommonGen-Hard.
+
+**Boundary.** Most non-GPT-3.5 tests use 200 examples, or 100 HotpotQA questions. Matching response counts does not match token cost. The CommonGen comparison also changes sentence versus paragraph instructions. These bounded negative results do not establish impossibility for later models, trained correctors or external feedback.
+
+**Code / data.** No implementation link independently inspected for this entry; this does not establish that none exists.
+
+**Topics:** foundations, evaluation. **Reviewed:** full-text · 2026-11-09.
+
+[Source 1](https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html) · [Source 2](https://arxiv.org/abs/2310.01798) · [Source 3](https://arxiv.org/pdf/2310.01798v2)
 
 <a id="promptbreeder"></a>
 
@@ -4324,23 +4324,23 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 ## Self-Instruct: Aligning Language Models with Self-Generated Instructions
 
-**2023 · peer-reviewed · ACL 2023 · adjacent · paper**
+**2022-12-20 · peer-reviewed · ACL 2023 · adjacent · paper**
 
 [Primary source](https://aclanthology.org/2023.acl-long.754/)
 
-**Mechanism.** Bootstraps an instruction-tuning dataset from the model, filters unsuitable examples, and fine-tunes the original model on the retained data. It is a foundation for synthetic-data learning rather than a deployed agent that learns during use.
+**Mechanism.** Expands a task pool with GPT-3 generations, identifies classification tasks, generates inputs/outputs in different orders and filters overlap or malformed examples. A subsequent offline fine-tuning stage updates the original model; the data-generation model is not continually retrained during pool construction.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Model-generated instruction/input/output examples filtered for invalidity and similarity.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** 175 author-written seed tasks guide a fixed model to generate instructions and examples; heuristic filtering selects data for later supervised fine-tuning.
 
-**Evaluation.** The paper evaluates instruction following on Super-NaturalInstructions and expert-written novel tasks, including human assessment.
+**Evaluation.** The ACL paper reports 52,445 instructions and 82,439 instances, 119 Super-NaturalInstructions test tasks and 252 author-written user tasks. The headline 33.1-point gain is ROUGE-L, while the user-task comparison uses blinded author ratings.
 
-**Boundary.** The generator inherits its pretrained capabilities and biases, and dataset filtering is part of the learning system. Curator interpretation: better instruction following alone is not evidence of continual agent learning.
+**Boundary.** Only 54% of 200 sampled generated examples had all fields rated valid by one author. Human-evaluation figures report one of two raters; the near-InstructGPT result concerns the older 001 model. Filtering is not correctness verification, and the closed fine-tuning API limits reproducibility.
 
 **Code / data.** [Official artifact](https://github.com/yizhongw/self-instruct) — Official repository page checked; code and training were not executed.
 
-**Topics:** foundations, model-training. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, model-training. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://aclanthology.org/2023.acl-long.754/) · [Source 2](https://github.com/yizhongw/self-instruct)
+[Source 1](https://aclanthology.org/2023.acl-long.754/) · [Source 2](https://github.com/yizhongw/self-instruct) · [Source 3](https://aclanthology.org/2023.acl-long.754.pdf) · [Source 4](https://arxiv.org/abs/2212.10560)
 
 <a id="constitutional-ai"></a>
 

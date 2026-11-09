@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Training supervision and self-correction reviews
+
+- Upgraded Self-Instruct, Self-Rewarding Language Models, SPIN and intrinsic self-correction limits through full-text methods, evidence, appendices and figure review.
+- Corrected SPIN reference-data provenance, distinguished retained supervision and evaluator roles, and qualified metric, theoretical and negative-result claims.
+- Recovered first-public dates for Self-Instruct and the intrinsic self-correction study without changing their publication venues. Counts: 190 works, 154 full-text and 36 abstract/metadata reviews; 24 broader appraisals complete.
+
 ## 2026-11-09 — Prompt optimization and search evidence
 
 - Upgraded OPRO, Promptbreeder, TextGrad and GEPA through substantive full-text review, with exact versions, evaluation selection rules and appendix/access limits.

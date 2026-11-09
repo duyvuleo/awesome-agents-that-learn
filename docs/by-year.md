@@ -175,12 +175,12 @@
 - 2024-01-18 — [Self-Rewarding Language Models](papers.md#self-rewarding-lms)
 - 2024-01-02 — [Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](papers.md#spin)
 - 2024 — [When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs](papers.md#self-correction-survey)
-- 2024 — [Large Language Models Cannot Self-Correct Reasoning Yet](papers.md#intrinsic-self-correction)
 
 ## 2023
 - 2023-10-12 — [MemGPT: Towards LLMs as Operating Systems](papers.md#memgpt)
 - 2023-10-05 — [DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines](papers.md#dspy)
 - 2023-10-03 — [Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation](papers.md#stop)
+- 2023-10-03 — [Large Language Models Cannot Self-Correct Reasoning Yet](papers.md#intrinsic-self-correction)
 - 2023-09-28 — [Promptbreeder: Self-Referential Self-Improvement via Prompt Evolution](papers.md#promptbreeder)
 - 2023-09-07 — [Large Language Models as Optimizers](papers.md#opro)
 - 2023-08-20 — [ExpeL: LLM Agents Are Experiential Learners](papers.md#expel)
@@ -194,9 +194,9 @@
 - 2023-03-30 — [Self-Refine: Iterative Refinement with Self-Feedback](papers.md#self-refine)
 - 2023-03-20 — [Reflexion: Language Agents with Verbal Reinforcement Learning](papers.md#reflexion)
 - 2023-02-09 — [Toolformer: Language Models Can Teach Themselves to Use Tools](papers.md#toolformer)
-- 2023 — [Self-Instruct: Aligning Language Models with Self-Generated Instructions](papers.md#self-instruct)
 
 ## 2022
+- 2022-12-20 — [Self-Instruct: Aligning Language Models with Self-Generated Instructions](papers.md#self-instruct)
 - 2022-12-15 — [Constitutional AI: Harmlessness from AI Feedback](papers.md#constitutional-ai)
 - 2022-10-06 — [ReAct: Synergizing Reasoning and Acting in Language Models](papers.md#react)
 - 2022-03-28 — [STaR: Bootstrapping Reasoning With Reasoning](papers.md#star)

@@ -2456,14 +2456,16 @@
   {
     "id": "intrinsic-self-correction",
     "title": "Large Language Models Cannot Self-Correct Reasoning Yet",
-    "date": "2024",
-    "year": 2024,
+    "date": "2023-10-03",
+    "year": 2023,
     "kind": "paper",
     "status": "peer-reviewed",
     "venue": "ICLR 2024",
     "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html",
     "sources": [
-      "https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html"
+      "https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html",
+      "https://arxiv.org/abs/2310.01798",
+      "https://arxiv.org/pdf/2310.01798v2"
     ],
     "code_url": null,
     "code_note": "No implementation link independently inspected for this entry; this does not establish that none exists.",
@@ -2477,11 +2479,11 @@
     ],
     "persistence": "within-task",
     "learning_signal": "Not applicable: analysis or evaluation resource.",
-    "mechanism": "Tests intrinsic correction: asking a model to revise its own reasoning using no external correctness signal.",
-    "evaluation": "The studied reasoning settings show weak correction and, in some cases, degradation after revision.",
-    "limitations": "The result concerns the tested models, prompts, and tasks; it does not rule out externally grounded feedback, learned correction, or durable agent learning.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "mechanism": "Evaluates within-task revision without external correctness feedback, contrasting it with oracle-controlled stopping, multi-agent debate and stronger initial prompts. No persistent memory or weight update is learned by the evaluated correction loop.",
+    "evaluation": "ArXiv v2 tests 2023 GPT-3.5/GPT-4 variants and Llama-2 on GSM8K, CommonSenseQA and closed-book HotpotQA. It measures correct-to-incorrect revisions, compares debate with response-count-matched voting, and examines concept coverage on CommonGen-Hard.",
+    "limitations": "Most non-GPT-3.5 tests use 200 examples, or 100 HotpotQA questions. Matching response counts does not match token cost. The CommonGen comparison also changes sentence versus paragraph instructions. These bounded negative results do not establish impossibility for later models, trained correctors or external feedback.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "Self-correction limits"
   },
   {
@@ -5548,15 +5550,17 @@
   {
     "id": "self-instruct",
     "title": "Self-Instruct: Aligning Language Models with Self-Generated Instructions",
-    "date": "2023",
-    "year": 2023,
+    "date": "2022-12-20",
+    "year": 2022,
     "kind": "paper",
     "status": "peer-reviewed",
     "venue": "ACL 2023",
     "url": "https://aclanthology.org/2023.acl-long.754/",
     "sources": [
       "https://aclanthology.org/2023.acl-long.754/",
-      "https://github.com/yizhongw/self-instruct"
+      "https://github.com/yizhongw/self-instruct",
+      "https://aclanthology.org/2023.acl-long.754.pdf",
+      "https://arxiv.org/abs/2212.10560"
     ],
     "code_url": "https://github.com/yizhongw/self-instruct",
     "code_note": "Official repository page checked; code and training were not executed.",
@@ -5569,12 +5573,12 @@
       "model-weights"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Model-generated instruction/input/output examples filtered for invalidity and similarity.",
-    "mechanism": "Bootstraps an instruction-tuning dataset from the model, filters unsuitable examples, and fine-tunes the original model on the retained data. It is a foundation for synthetic-data learning rather than a deployed agent that learns during use.",
-    "evaluation": "The paper evaluates instruction following on Super-NaturalInstructions and expert-written novel tasks, including human assessment.",
-    "limitations": "The generator inherits its pretrained capabilities and biases, and dataset filtering is part of the learning system. Curator interpretation: better instruction following alone is not evidence of continual agent learning.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "175 author-written seed tasks guide a fixed model to generate instructions and examples; heuristic filtering selects data for later supervised fine-tuning.",
+    "mechanism": "Expands a task pool with GPT-3 generations, identifies classification tasks, generates inputs/outputs in different orders and filters overlap or malformed examples. A subsequent offline fine-tuning stage updates the original model; the data-generation model is not continually retrained during pool construction.",
+    "evaluation": "The ACL paper reports 52,445 instructions and 82,439 instances, 119 Super-NaturalInstructions test tasks and 252 author-written user tasks. The headline 33.1-point gain is ROUGE-L, while the user-task comparison uses blinded author ratings.",
+    "limitations": "Only 54% of 200 sampled generated examples had all fields rated valid by one author. Human-evaluation figures report one of two raters; the near-InstructGPT result concerns the older 001 model. Filtering is not correctness verification, and the closed fine-tuning API limits reproducibility.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "Self-Instruct"
   },
   {
@@ -5623,7 +5627,8 @@
     "url": "https://arxiv.org/abs/2401.10020",
     "sources": [
       "https://arxiv.org/abs/2401.10020",
-      "https://proceedings.mlr.press/v235/yuan24d.html"
+      "https://proceedings.mlr.press/v235/yuan24d.html",
+      "https://raw.githubusercontent.com/mlresearch/v235/main/assets/yuan24d/yuan24d.pdf"
     ],
     "code_url": null,
     "code_note": "Official runnable code was not verified in this source review.",
@@ -5637,12 +5642,12 @@
       "model-weights"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "The language model judges candidate responses to construct preferences for iterative DPO.",
-    "mechanism": "Uses one language model both to answer instructions and to score responses, updating it through successive rounds of preference optimization. This couples the response generator and the source of training rewards.",
-    "evaluation": "The paper reports instruction-following and reward-quality improvements across three iterations, including AlpacaEval 2.0 evaluation.",
-    "limitations": "The evidence concerns bounded iterations and selected evaluation protocols. Curator interpretation: agreement with an evolving self-judge is not an independent guarantee of correctness or indefinite improvement.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Human-ranked seed data initialize answering and evaluation; the resulting model scores its own candidate answers to create preference pairs.",
+    "mechanism": "Alternates answer generation, self-judging and DPO updates, changing the shared answering/reward model. The main experiment uses a fixed Llama-2-Chat prompt generator and Claude-2 checkpoint selection, so the loop retains external design and supervision dependencies.",
+    "evaluation": "The ICML paper studies a Llama-2-70B seed model and two main DPO rounds using GPT-4 judging, fifty blinded author-rated prompts, MT-Bench, NLP tasks and held-out human preference rankings. A fourth model receives a further AlpacaEval check with smaller gains.",
+    "limitations": "Responses become longer, potentially influencing preference scores. Gains concentrate outside mathematical reasoning, and several NLP scores regress. Reward-ranking agreement is not correctness or safety assurance; finite iterations, uneven training-data volumes and external checkpoint selection limit claims of autonomous continual improvement.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "Self-Rewarding LMs"
   },
   {
@@ -6006,7 +6011,8 @@
     "sources": [
       "https://arxiv.org/abs/2401.01335",
       "https://proceedings.mlr.press/v235/chen24j.html",
-      "https://github.com/uclaml/SPIN"
+      "https://github.com/uclaml/SPIN",
+      "https://raw.githubusercontent.com/mlresearch/v235/main/assets/chen24j/chen24j.pdf"
     ],
     "code_url": "https://github.com/uclaml/SPIN",
     "code_note": "Official repository page checked; code and training were not executed.",
@@ -6019,12 +6025,12 @@
       "model-weights"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Contrasts previous-model responses with existing human demonstrations.",
-    "mechanism": "Starts with a supervised model and iteratively learns to distinguish its own generated responses from reference demonstrations. Successive model versions provide the changing opponent in the training objective.",
-    "evaluation": "The authors report results on Open LLM Leaderboard tasks, MT-Bench, and Big-Bench datasets.",
-    "limitations": "No additional human annotation is required by the loop, but existing human demonstrations remain its target distribution. Curator interpretation: this is not learning from zero prior human data.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Existing reference demonstrations are treated as preferred to responses sampled from the preceding model, without fresh per-pair preference labels.",
+    "mechanism": "Optimizes a contrastive log-probability-ratio objective against the previous model, then samples a new opponent dataset from the updated weights. The experiments reuse 50,000 UltraChat prompts with API-generated reference answers; later rounds mix current and preceding generated responses.",
+    "evaluation": "The ICML paper evaluates four rounds on Zephyr-7B using Open LLM Leaderboard tasks, with additional MT-Bench, BBH and OpenBookQA results, data/epoch ablations and optional later DPO. Average gains diminish, and some task scores remain below the SFT baseline.",
+    "limitations": "Experimental reference answers are synthetic, despite the human-demonstration framing; they remain the fixed target distribution. Idealized theorems assume realizability and global optimization, not guaranteed finite-SGD convergence. DPO comparisons differ in data and supervision; independent training-run uncertainty is not reported.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "SPIN"
   },
   {
