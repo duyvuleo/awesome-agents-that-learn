@@ -3633,7 +3633,8 @@
       "url": "https://arxiv.org/abs/2602.04837",
       "sources": [
         "https://arxiv.org/abs/2602.04837",
-        "https://proceedings.colm.cc/paper_files/paper/2026/hash/87b321515dc33137ffcc5d1654b7d182-Abstract-Conference.html"
+        "https://proceedings.colm.cc/paper_files/paper/2026/hash/87b321515dc33137ffcc5d1654b7d182-Abstract-Conference.html",
+        "https://arxiv.org/pdf/2602.04837v1"
       ],
       "code_url": null,
       "code_note": "Official code availability was not established in this source review.",
@@ -3648,12 +3649,12 @@
         "workflows"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Shared experience across a group of agent variants and coding-task evaluations.",
-      "mechanism": "Treats a group of agents as the unit of evolution, allowing discoveries from different branches to influence later designs. It aims to reuse exploratory diversity that would otherwise remain isolated in individual lineages.",
-      "evaluation": "Evaluations use SWE-bench Verified and Polyglot, with model-transfer and framework-bug recovery analyses.",
-      "limitations": "The evidence concerns coding agents under the study budgets. Curator interpretation: experience sharing during search is distinct from a deployed multi-agent team continually learning in an open environment.",
-      "review_depth": "abstract",
-      "checked": "2026-11-02",
+      "learning_signal": "Task-success patterns, shared framework patches, failed-task traces and evaluation outcomes guide parent selection and offspring edits.",
+      "mechanism": "Selects pairs of agents using performance and behavioral novelty, shares their experience, and generates framework-level patches for both. A fixed reflection/evolution/archive procedure retains usable variants; the coding models are not weight-trained.",
+      "evaluation": "ArXiv v1 compares staged SWE-bench/Polyglot evaluations against a DGM-style baseline with matched offspring counts and model schedules, then tests a selected agent across backbones. Five injected-bug trials supply the faulty agent with a bug-free peer.",
+      "limitations": "Matched agent counts do not establish equal token cost. Polyglot uses small subsets, while human-framework comparisons use different models/protocols. The 88.3% headline and 88.0% transfer figure are unreconciled. Bug-repair results compare group and individual iterations, not a common compute unit.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "Group-Evolving Agents"
     },
     {
@@ -4263,10 +4264,12 @@
       "venue": "",
       "url": "https://arxiv.org/abs/2511.00602",
       "sources": [
-        "https://arxiv.org/abs/2511.00602"
+        "https://arxiv.org/abs/2511.00602",
+        "https://arxiv.org/pdf/2511.00602v4",
+        "https://github.com/EdinburghNLP/OpenSIR"
       ],
-      "code_url": null,
-      "code_note": "Official runnable code was not verified in this source review.",
+      "code_url": "https://github.com/EdinburghNLP/OpenSIR",
+      "code_note": "Official paper-linked repository metadata and README inspected on 2026-11-09; not installed or trained. Current setup documentation does not establish reproduction of the v4 experiments.",
       "topics": [
         "model-training",
         "self-play"
@@ -4276,12 +4279,12 @@
         "model-weights"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Difficulty calibration and diversity rewards for self-generated problems.",
-      "mechanism": "Alternates teacher and student roles within one model, starting from a seed problem. The method rewards exploration of distinct concepts while keeping generated tasks within a learnable difficulty range.",
-      "evaluation": "The current paper reports mathematical benchmark improvements for instruction and reasoning models and transfer to selected general-reasoning evaluations.",
-      "limitations": "The paper’s open-ended framing should be read against its finite training runs and benchmark suite. This abstract-level review does not establish correctness of all generated problems or unbounded discovery.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Majority-answer agreement supplies student pseudo-labels; solve rate, solution length and pretrained-encoder distance reward generated problems.",
+      "mechanism": "Updates one policy in teacher and student roles with GRPO-style training, expanding a problem pool from a trivial seed. Novelty selects generation and solving examples; a separate seven-billion-parameter embedding model supplies the diversity signal.",
+      "evaluation": "ArXiv v4 studies four post-trained models, seven math and three general-reasoning benchmarks over three training seeds. It reports Pass@1 averaged over sixteen samples per question, component/seed ablations, human problem reviews and a longer single-run study.",
+      "limitations": "Consensus is not ground truth; human problem validity and GPT-5 answer agreement are distinct measures. Student training pairs are matched, but total rollout batches double. Embedding dispersion is not proof of new mathematical knowledge, and the extended run plateaus after roughly 300 steps.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "OpenSIR"
     },
     {
@@ -5400,12 +5403,13 @@
       "year": 2024,
       "kind": "paper",
       "status": "peer-reviewed",
-      "venue": "ACL 2025",
+      "venue": "ACL 2025 (proceedings title uses Recursively Self-Improvement)",
       "url": "https://arxiv.org/abs/2410.04444",
       "sources": [
         "https://arxiv.org/abs/2410.04444",
         "https://aclanthology.org/2025.acl-long.1354/",
-        "https://github.com/Arvid-pku/Godel_Agent"
+        "https://github.com/Arvid-pku/Godel_Agent",
+        "https://aclanthology.org/2025.acl-long.1354.pdf"
       ],
       "code_url": "https://github.com/Arvid-pku/Godel_Agent",
       "code_note": "Official repository landing page inspected; no installation or execution performed.",
@@ -5420,12 +5424,12 @@
         "workflows"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "High-level objectives and task-performance feedback.",
-      "mechanism": "Lets an LLM-based agent inspect and revise its own logic through a self-referential learning framework. The editable artifact is the agent program rather than the underlying language-model weights.",
-      "evaluation": "The paper reports experiments in mathematical reasoning and agent tasks, with performance, efficiency, and generalization comparisons.",
-      "limitations": "Empirical task gains are not formal proofs that a modification is beneficial. The ACL proceedings title uses Recursively Self-Improvement; it is the same research lineage as the linked arXiv record.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Validation-task scores and error information guide changes to the solver and its self-modification logic.",
+      "mechanism": "Uses runtime code inspection and monkey patching to revise both task-solving functions and parts of the improvement process. Human-specified goals, interfaces and initial tools provide the starting conditions; the experiments do not train the underlying model weights.",
+      "evaluation": "The ACL paper searches six times per task, up to thirty iterations, with a GPT-4o optimizer on DROP, MGSM, MMLU and GPQA. The constrained executor uses GPT-3.5; unrestricted results can invoke stronger models. Game-of-24 and robustness studies provide further diagnostics.",
+      "limitations": "Baselines are imported from prior work, and test-bootstrap intervals do not measure search-run variation. In 100 MGSM trials, 14% finish worse and 4% terminate unexpectedly. Unrestricted scores and historical cost estimates are not controlled equal-resource comparisons or proofs of unlimited improvement.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "Gödel Agent"
     },
     {
@@ -5454,7 +5458,7 @@
       ],
       "persistence": "both",
       "learning_signal": "Ground-truth answer checks and unit tests reward self-generated training traces; no correctness oracle is supplied for test-time revision.",
-      "mechanism": "Trains one model through two-turn online RL: first constrain initial answers while learning revisions, then optimize both turns with a progress bonus. The learned weights persist across problems; each deployed revision remains a within-problem operation.",
+      "mechanism": "Trains one model through two-turn online RL: first constrain initial answers while learning revisions, then optimize both turns with a progress bonus. The learned weights persist across problems; each test-time revision remains a within-problem operation.",
       "evaluation": "ArXiv v2 evaluates Gemini models on MATH500 and HumanEval after MATH/MBPP training, with offline MBPP-R repair, component ablations and repeated-attempt tests. MATH training incorporates 4,500 original test problems while reserving 500 for evaluation.",
       "limitations": "The 15.6-point MATH headline is improvement in the correction delta, not final-answer accuracy. Training uses oracle rewards and training-reward checkpoint selection; code first-attempt accuracy can decline. Only two attempts are trained, and answer-level reward does not verify every reasoning step.",
       "review_depth": "full-text",
@@ -6031,10 +6035,14 @@
       "url": "https://arxiv.org/abs/2310.02304",
       "sources": [
         "https://arxiv.org/abs/2310.02304",
-        "https://openreview.net/pdf?id=46Zgqo4QIU"
+        "https://openreview.net/pdf?id=46Zgqo4QIU",
+        "https://arxiv.org/pdf/2310.02304v3",
+        "https://github.com/microsoft/stop",
+        "https://github.com/microsoft/stop/blob/0d6780c54306b2486dd36e9c4ae9b49aceb27ea4/tasks/modified_quadratic_assignment/secret_utility.py",
+        "https://github.com/microsoft/stop/blob/0d6780c54306b2486dd36e9c4ae9b49aceb27ea4/tasks/modified_quadratic_assignment/seed_algorithm.py"
       ],
-      "code_url": null,
-      "code_note": "Official code availability was not established in this source review.",
+      "code_url": "https://github.com/microsoft/stop",
+      "code_note": "Official paper-linked repository, README and selected evaluator files inspected on 2026-11-09; no installation, execution or reproduction performed.",
       "topics": [
         "foundations",
         "recursive-improvement",
@@ -6045,12 +6053,12 @@
         "agent-code"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Utility functions scoring the programs produced by an improver.",
-      "mechanism": "Begins with an LLM-assisted program improver and applies that improver to its own source. Candidate improvers are assessed through the quality of programs they generate for downstream tasks.",
-      "evaluation": "The study reports improvements on a small set of algorithmic tasks and separately examines attempts to bypass a sandbox.",
-      "limitations": "The authors explicitly retain a fixed language model, so the result is bounded scaffold self-improvement. Performance on the small task set does not establish an indefinitely accelerating process.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "A fixed meta-utility scores how well an improver revises downstream programs under externally set budgets.",
+      "mechanism": "Applies an LLM-assisted program improver to its own source, retaining the resulting improver for subsequent rounds and tasks. The scaffold changes; the language-model weights and evaluation objective remain fixed.",
+      "evaluation": "ArXiv v3 reports five independent GPT-4 runs on ten-bit noisy parity, held-out instances, selected-improver transfer to five tasks and weaker-model comparisons. A separate 10,000-proposal safety study counts syntactic indicators without executing those proposals.",
+      "limitations": "Weaker models often deteriorate and transfer uses one selected improver. Reported gains are utility-specific; the released quadratic-assignment evaluator rewards a larger objective while its seed minimizes it. Sandbox-flag counts are not demonstrated escapes, and recursive progress is not guaranteed.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "STOP"
     },
     {

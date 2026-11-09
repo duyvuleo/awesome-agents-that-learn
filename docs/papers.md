@@ -114,7 +114,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-02-26 | **EvoX**<br>[EvoX: Meta-Evolution for Automated Discovery](https://arxiv.org/abs/2602.23413) | Co-evolves candidate programs and the search strategy that selects parents, variation operators, and examples. Stagnation triggers strategy revisions informed by earlier… | Agent code, Prompts / context | peer-reviewed · full-text | [Notes](#evox) · [Code](https://github.com/skydiscover-ai/skydiscover) |
 | 2026-02-18 | **MemoryArena**<br>[MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](https://arxiv.org/abs/2602.16313) | Constructs multi-session tasks in which earlier choices and discoveries constrain later execution. Persistent memory connects sessions; comparisons separate long-context… | Memory, Skills | peer-reviewed · full-text | [Notes](#memoryarena) · [Code](https://github.com/ZexueHe/MemoryArena) |
 | 2026-02-09 | **SkillRL**<br>[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](https://arxiv.org/abs/2602.08234) | Distills successful and failed trajectories into a hierarchical skill library, retrieves those skills during policy training, and adds lessons from validation failures.… | Skills, Model weights | preprint · full-text | [Notes](#skillrl) · [Code](https://github.com/aiming-lab/SkillRL) |
-| 2026-02-04 | **Group-Evolving Agents**<br>[Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing](https://arxiv.org/abs/2602.04837) | Treats a group of agents as the unit of evolution, allowing discoveries from different branches to influence later designs. It aims to reuse exploratory diversity that… | Agent code, Workflows | peer-reviewed · abstract | [Notes](#group-evolving-agents) |
+| 2026-02-04 | **Group-Evolving Agents**<br>[Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing](https://arxiv.org/abs/2602.04837) | Selects pairs of agents using performance and behavioral novelty, shares their experience, and generates framework-level patches for both. A fixed… | Agent code, Workflows | peer-reviewed · full-text | [Notes](#group-evolving-agents) |
 | 2026-02-03 | **TAME**<br>[TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking](https://arxiv.org/abs/2602.03224) | An executor retrieves useful experiences with risk guidance from a shared memory bank. An evaluator revises reuse priorities after outcomes, while new experiences enter… | Memory | peer-reviewed · full-text | [Notes](#tame-memory) · [Code](https://github.com/SII-YUCHENG2002/tame_code) |
 | 2026-02-03 | **Reasoning Cache**<br>[Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon RL](https://arxiv.org/abs/2602.03773) | Alternates bounded reasoning attempts with summary updates for the same problem. GRPO trains summary-conditioned generation, and a replay buffer supplies later-turn… | Model weights, Memory | peer-reviewed · full-text | [Notes](#reasoning-cache) · [Code](https://github.com/IanYHWu/rc) |
 | 2026-02-02 | **MemSkill**<br>[MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](https://arxiv.org/abs/2602.02474) | A PPO-trained controller selects memory-operation skills for a fixed executor. A fixed designer periodically refines the skill bank, with rollback based on stabilized… | Model weights, Skills, Memory | preprint · full-text | [Notes](#memskill) · [Code](https://github.com/ViktorAxelsen/MemSkill) |
@@ -132,7 +132,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-11-20 | **Agent0**<br>[Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](https://arxiv.org/abs/2511.16043) | Co-trains a curriculum agent and a tool-using executor in alternating stages. The proposer targets uncertain, diverse tasks, while filtered generated tasks and a code… | Model weights | peer-reviewed · full-text | [Notes](#agent0) · [Code](https://github.com/aiming-lab/Agent0) |
 | 2025-11-17 | **Live-SWE-agent**<br>[Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?](https://arxiv.org/abs/2511.13646) | Starts with a minimal bash-based agent and permits edits to its own scaffold during task execution. It studies on-the-fly changes to the agent implementation without a… | Agent code, Tools | preprint · abstract | [Notes](#live-swe-agent) |
 | 2025-11-03 | **Self-Harmony**<br>[Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](https://arxiv.org/abs/2511.01191) | One model plays solver and reframer roles, pooling answer frequencies with a harmonic-mean selector. Reinforcement learning updates shared model parameters from… | Model weights | peer-reviewed · full-text | [Notes](#self-harmony) · [Code](https://github.com/physicsru/self_harmony) |
-| 2025-11-01 | **OpenSIR**<br>[OpenSIR: Open-Ended Self-Improving Reasoner](https://arxiv.org/abs/2511.00602) | Alternates teacher and student roles within one model, starting from a seed problem. The method rewards exploration of distinct concepts while keeping generated tasks… | Model weights | preprint · abstract | [Notes](#opensir) |
+| 2025-11-01 | **OpenSIR**<br>[OpenSIR: Open-Ended Self-Improving Reasoner](https://arxiv.org/abs/2511.00602) | Updates one policy in teacher and student roles with GRPO-style training, expanding a problem pool from a trivial seed. Novelty selects generation and solving examples… | Model weights | preprint · full-text | [Notes](#opensir) · [Code](https://github.com/EdinburghNLP/OpenSIR) |
 | 2025-10-28 | **SPICE**<br>[SPICE: Self-Play In Corpus Environments Improves Reasoning](https://arxiv.org/abs/2510.24684) | A shared model alternates between a document-grounded challenger and a reasoner without document access. Role-specific reinforcement-learning updates improve question… | Model weights | preprint · full-text | [Notes](#spice) |
 | 2025-10-21 | **Search Self-Play**<br>[Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](https://arxiv.org/abs/2510.18821) | Trains one model in proposer and solver roles. The proposer builds search questions around supplied answers; a retrieval-augmented check filters questions before… | Model weights | peer-reviewed · full-text | [Notes](#search-self-play) · [Code](https://github.com/Qwen-Applications/SSP) |
 | 2025-10-17 | **MARSHAL**<br>[MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs](https://arxiv.org/abs/2510.15414) | Updates one language model through cooperative and competitive self-play. Turn-level returns are centered within player-role groups to assign credit across multi-turn… | Model weights | peer-reviewed · full-text | [Notes](#marshal) · [Code](https://github.com/thu-nics/MARSHAL) |
@@ -165,7 +165,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2024-10-14 | **LongMemEval**<br>[LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory](https://arxiv.org/abs/2410.10813) | Constructs 500 curated questions with annotated evidence embedded in scalable user-assistant histories, testing extraction, multi-session reasoning, updates, temporal… | Memory | peer-reviewed · full-text | [Notes](#longmemeval) · [Code](https://github.com/xiaowu0162/LongMemEval) |
 | 2024-10-14 | **AFlow**<br>[AFlow: Automating Agentic Workflow Generation](https://arxiv.org/abs/2410.10762) | Searches over code-represented workflows using a Monte Carlo tree-search variant. An LLM changes prompts and connections between operations, while the tree retains… | Workflows, Prompts / context, Agent code | peer-reviewed · full-text | [Notes](#aflow) · [Code](https://github.com/FoundationAgents/AFlow) |
 | 2024-10-08 | **AgentSquare**<br>[AgentSquare: Automatic LLM Agent Search in Modular Design Space](https://arxiv.org/abs/2410.06153) | Alternates code-level module evolution with recombination of planning, reasoning, tool-use and memory modules. Novel modules receive environment evaluation… | Workflows, Prompts / context, Tools, Memory | peer-reviewed · full-text | [Notes](#agentsquare) · [Code](https://github.com/tsinghua-fib-lab/AgentSquare) |
-| 2024-10-06 | **Gödel Agent**<br>[Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement](https://arxiv.org/abs/2410.04444) | Lets an LLM-based agent inspect and revise its own logic through a self-referential learning framework. The editable artifact is the agent program rather than the… | Agent code, Prompts / context, Workflows | peer-reviewed · abstract | [Notes](#godel-agent) · [Code](https://github.com/Arvid-pku/Godel_Agent) |
+| 2024-10-06 | **Gödel Agent**<br>[Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement](https://arxiv.org/abs/2410.04444) | Uses runtime code inspection and monkey patching to revise both task-solving functions and parts of the improvement process. Human-specified goals, interfaces and… | Agent code, Prompts / context, Workflows | peer-reviewed · full-text | [Notes](#godel-agent) · [Code](https://github.com/Arvid-pku/Godel_Agent) |
 | 2024-09-19 | **SCoRe**<br>[Training Language Models to Self-Correct via Reinforcement Learning](https://arxiv.org/abs/2409.12917) | Trains one model through two-turn online RL: first constrain initial answers while learning revisions, then optimize both turns with a progress bonus. The learned… | Model weights | peer-reviewed · full-text | [Notes](#score) |
 | 2024-09-11 | **AWM**<br>[Agent Workflow Memory](https://arxiv.org/abs/2409.07429) | Abstracts reusable subroutines from action trajectories and adds them to the agent context as workflow memory. It supports an offline store built from training examples… | Memory, Workflows | peer-reviewed · full-text | [Notes](#agent-workflow-memory) · [Code](https://github.com/zorazrw/agent-workflow-memory) |
 | 2024-08-15 | **ADAS**<br>[Automated Design of Agentic Systems](https://arxiv.org/abs/2408.08435) | A fixed meta-agent writes executable forward functions, checks novelty, repairs execution errors, and archives designs with scores. Search changes prompts and control… | Agent code, Workflows, Prompts / context | peer-reviewed · full-text | [Notes](#adas) · [Code](https://github.com/ShengranHu/ADAS) |
@@ -183,7 +183,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2024 | **Self-correction survey**<br>[When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs](https://aclanthology.org/2024.tacl-1.78/) | Separates self-correction questions by feedback source and training assumptions, and examines whether experimental designs support the claimed correction ability. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#self-correction-survey) |
 | 2023-10-12 | **MemGPT**<br>[MemGPT: Towards LLMs as Operating Systems](https://arxiv.org/abs/2310.08560) | Separates active context from archival and recall storage. Function calls page information in and out, edit working memory, and request successive inference steps… | Memory | preprint · full-text | [Notes](#memgpt) |
 | 2023-10-05 | **DSPy**<br>[DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines](https://arxiv.org/abs/2310.03714) | Compiles declarative LM modules by bootstrapping and selecting demonstrations. Composed optimizers can ensemble programs or fine-tune smaller models. Optimized prompts… | Prompts / context, Workflows, Model weights | peer-reviewed · full-text | [Notes](#dspy) · [Code](https://github.com/stanfordnlp/dspy) |
-| 2023-10-03 | **STOP**<br>[Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation](https://arxiv.org/abs/2310.02304) | Begins with an LLM-assisted program improver and applies that improver to its own source. Candidate improvers are assessed through the quality of programs they generate… | Agent code | peer-reviewed · abstract | [Notes](#stop) |
+| 2023-10-03 | **STOP**<br>[Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation](https://arxiv.org/abs/2310.02304) | Applies an LLM-assisted program improver to its own source, retaining the resulting improver for subsequent rounds and tasks. The scaffold changes; the language-model… | Agent code | peer-reviewed · full-text | [Notes](#stop) · [Code](https://github.com/microsoft/stop) |
 | 2023-10-03 | **Self-correction limits**<br>[Large Language Models Cannot Self-Correct Reasoning Yet](https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html) | Evaluates within-task revision without external correctness feedback, contrasting it with oracle-controlled stopping, multi-agent debate and stronger initial prompts. No… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#intrinsic-self-correction) |
 | 2023-09-28 | **Promptbreeder**<br>[Promptbreeder: Self-Referential Self-Improvement via Prompt Evolution](https://arxiv.org/abs/2309.16797) | A tournament population evolves task instructions and the mutation instructions that generate successors, including hypermutation and reconstruction from worked… | Prompts / context | peer-reviewed · full-text | [Notes](#promptbreeder) |
 | 2023-09-07 | **OPRO**<br>[Large Language Models as Optimizers](https://arxiv.org/abs/2309.03409) | A fixed LLM optimizer proposes instructions from the best scored candidates and examples; an external evaluator scores them and refreshes the history. Selected prompts… | Prompts / context | peer-reviewed · full-text | [Notes](#opro) · [Code](https://github.com/google-deepmind/opro) |
@@ -2444,19 +2444,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2602.04837)
 
-**Mechanism.** Treats a group of agents as the unit of evolution, allowing discoveries from different branches to influence later designs. It aims to reuse exploratory diversity that would otherwise remain isolated in individual lineages.
+**Mechanism.** Selects pairs of agents using performance and behavioral novelty, shares their experience, and generates framework-level patches for both. A fixed reflection/evolution/archive procedure retains usable variants; the coding models are not weight-trained.
 
-**What changes:** Agent code, Workflows. **Persistence:** across-tasks. **Learning signal:** Shared experience across a group of agent variants and coding-task evaluations.
+**What changes:** Agent code, Workflows. **Persistence:** across-tasks. **Learning signal:** Task-success patterns, shared framework patches, failed-task traces and evaluation outcomes guide parent selection and offspring edits.
 
-**Evaluation.** Evaluations use SWE-bench Verified and Polyglot, with model-transfer and framework-bug recovery analyses.
+**Evaluation.** ArXiv v1 compares staged SWE-bench/Polyglot evaluations against a DGM-style baseline with matched offspring counts and model schedules, then tests a selected agent across backbones. Five injected-bug trials supply the faulty agent with a bug-free peer.
 
-**Boundary.** The evidence concerns coding agents under the study budgets. Curator interpretation: experience sharing during search is distinct from a deployed multi-agent team continually learning in an open environment.
+**Boundary.** Matched agent counts do not establish equal token cost. Polyglot uses small subsets, while human-framework comparisons use different models/protocols. The 88.3% headline and 88.0% transfer figure are unreconciled. Bug-repair results compare group and individual iterations, not a common compute unit.
 
 **Code / data.** Official code availability was not established in this source review.
 
-**Topics:** architecture, recursive-improvement, applications. **Reviewed:** abstract · 2026-11-02.
+**Topics:** architecture, recursive-improvement, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2602.04837) · [Source 2](https://proceedings.colm.cc/paper_files/paper/2026/hash/87b321515dc33137ffcc5d1654b7d182-Abstract-Conference.html)
+[Source 1](https://arxiv.org/abs/2602.04837) · [Source 2](https://proceedings.colm.cc/paper_files/paper/2026/hash/87b321515dc33137ffcc5d1654b7d182-Abstract-Conference.html) · [Source 3](https://arxiv.org/pdf/2602.04837v1)
 
 <a id="tame-memory"></a>
 
@@ -2844,19 +2844,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2511.00602)
 
-**Mechanism.** Alternates teacher and student roles within one model, starting from a seed problem. The method rewards exploration of distinct concepts while keeping generated tasks within a learnable difficulty range.
+**Mechanism.** Updates one policy in teacher and student roles with GRPO-style training, expanding a problem pool from a trivial seed. Novelty selects generation and solving examples; a separate seven-billion-parameter embedding model supplies the diversity signal.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Difficulty calibration and diversity rewards for self-generated problems.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Majority-answer agreement supplies student pseudo-labels; solve rate, solution length and pretrained-encoder distance reward generated problems.
 
-**Evaluation.** The current paper reports mathematical benchmark improvements for instruction and reasoning models and transfer to selected general-reasoning evaluations.
+**Evaluation.** ArXiv v4 studies four post-trained models, seven math and three general-reasoning benchmarks over three training seeds. It reports Pass@1 averaged over sixteen samples per question, component/seed ablations, human problem reviews and a longer single-run study.
 
-**Boundary.** The paper’s open-ended framing should be read against its finite training runs and benchmark suite. This abstract-level review does not establish correctness of all generated problems or unbounded discovery.
+**Boundary.** Consensus is not ground truth; human problem validity and GPT-5 answer agreement are distinct measures. Student training pairs are matched, but total rollout batches double. Embedding dispersion is not proof of new mathematical knowledge, and the extended run plateaus after roughly 300 steps.
 
-**Code / data.** Official runnable code was not verified in this source review.
+**Code / data.** [Official artifact](https://github.com/EdinburghNLP/OpenSIR) — Official paper-linked repository metadata and README inspected on 2026-11-09; not installed or trained. Current setup documentation does not establish reproduction of the v4 experiments.
 
-**Topics:** model-training, self-play. **Reviewed:** abstract · 2026-10-28.
+**Topics:** model-training, self-play. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2511.00602)
+[Source 1](https://arxiv.org/abs/2511.00602) · [Source 2](https://arxiv.org/pdf/2511.00602v4) · [Source 3](https://github.com/EdinburghNLP/OpenSIR)
 
 <a id="spice"></a>
 
@@ -3586,23 +3586,23 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 ## Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement
 
-**2024-10-06 · peer-reviewed · ACL 2025 · core · paper**
+**2024-10-06 · peer-reviewed · ACL 2025 (proceedings title uses Recursively Self-Improvement) · core · paper**
 
 [Primary source](https://arxiv.org/abs/2410.04444)
 
-**Mechanism.** Lets an LLM-based agent inspect and revise its own logic through a self-referential learning framework. The editable artifact is the agent program rather than the underlying language-model weights.
+**Mechanism.** Uses runtime code inspection and monkey patching to revise both task-solving functions and parts of the improvement process. Human-specified goals, interfaces and initial tools provide the starting conditions; the experiments do not train the underlying model weights.
 
-**What changes:** Agent code, Prompts / context, Workflows. **Persistence:** across-tasks. **Learning signal:** High-level objectives and task-performance feedback.
+**What changes:** Agent code, Prompts / context, Workflows. **Persistence:** across-tasks. **Learning signal:** Validation-task scores and error information guide changes to the solver and its self-modification logic.
 
-**Evaluation.** The paper reports experiments in mathematical reasoning and agent tasks, with performance, efficiency, and generalization comparisons.
+**Evaluation.** The ACL paper searches six times per task, up to thirty iterations, with a GPT-4o optimizer on DROP, MGSM, MMLU and GPQA. The constrained executor uses GPT-3.5; unrestricted results can invoke stronger models. Game-of-24 and robustness studies provide further diagnostics.
 
-**Boundary.** Empirical task gains are not formal proofs that a modification is beneficial. The ACL proceedings title uses Recursively Self-Improvement; it is the same research lineage as the linked arXiv record.
+**Boundary.** Baselines are imported from prior work, and test-bootstrap intervals do not measure search-run variation. In 100 MGSM trials, 14% finish worse and 4% terminate unexpectedly. Unrestricted scores and historical cost estimates are not controlled equal-resource comparisons or proofs of unlimited improvement.
 
 **Code / data.** [Official artifact](https://github.com/Arvid-pku/Godel_Agent) — Official repository landing page inspected; no installation or execution performed.
 
-**Topics:** architecture, recursive-improvement. **Reviewed:** abstract · 2026-10-28.
+**Topics:** architecture, recursive-improvement. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2410.04444) · [Source 2](https://aclanthology.org/2025.acl-long.1354/) · [Source 3](https://github.com/Arvid-pku/Godel_Agent)
+[Source 1](https://arxiv.org/abs/2410.04444) · [Source 2](https://aclanthology.org/2025.acl-long.1354/) · [Source 3](https://github.com/Arvid-pku/Godel_Agent) · [Source 4](https://aclanthology.org/2025.acl-long.1354.pdf)
 
 <a id="score"></a>
 
@@ -3612,7 +3612,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2409.12917)
 
-**Mechanism.** Trains one model through two-turn online RL: first constrain initial answers while learning revisions, then optimize both turns with a progress bonus. The learned weights persist across problems; each deployed revision remains a within-problem operation.
+**Mechanism.** Trains one model through two-turn online RL: first constrain initial answers while learning revisions, then optimize both turns with a progress bonus. The learned weights persist across problems; each test-time revision remains a within-problem operation.
 
 **What changes:** Model weights. **Persistence:** both. **Learning signal:** Ground-truth answer checks and unit tests reward self-generated training traces; no correctness oracle is supplied for test-time revision.
 
@@ -3994,19 +3994,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2310.02304)
 
-**Mechanism.** Begins with an LLM-assisted program improver and applies that improver to its own source. Candidate improvers are assessed through the quality of programs they generate for downstream tasks.
+**Mechanism.** Applies an LLM-assisted program improver to its own source, retaining the resulting improver for subsequent rounds and tasks. The scaffold changes; the language-model weights and evaluation objective remain fixed.
 
-**What changes:** Agent code. **Persistence:** across-tasks. **Learning signal:** Utility functions scoring the programs produced by an improver.
+**What changes:** Agent code. **Persistence:** across-tasks. **Learning signal:** A fixed meta-utility scores how well an improver revises downstream programs under externally set budgets.
 
-**Evaluation.** The study reports improvements on a small set of algorithmic tasks and separately examines attempts to bypass a sandbox.
+**Evaluation.** ArXiv v3 reports five independent GPT-4 runs on ten-bit noisy parity, held-out instances, selected-improver transfer to five tasks and weaker-model comparisons. A separate 10,000-proposal safety study counts syntactic indicators without executing those proposals.
 
-**Boundary.** The authors explicitly retain a fixed language model, so the result is bounded scaffold self-improvement. Performance on the small task set does not establish an indefinitely accelerating process.
+**Boundary.** Weaker models often deteriorate and transfer uses one selected improver. Reported gains are utility-specific; the released quadratic-assignment evaluator rewards a larger objective while its seed minimizes it. Sandbox-flag counts are not demonstrated escapes, and recursive progress is not guaranteed.
 
-**Code / data.** Official code availability was not established in this source review.
+**Code / data.** [Official artifact](https://github.com/microsoft/stop) — Official paper-linked repository, README and selected evaluator files inspected on 2026-11-09; no installation, execution or reproduction performed.
 
-**Topics:** foundations, recursive-improvement, architecture. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, recursive-improvement, architecture. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2310.02304) · [Source 2](https://openreview.net/pdf?id=46Zgqo4QIU)
+[Source 1](https://arxiv.org/abs/2310.02304) · [Source 2](https://openreview.net/pdf?id=46Zgqo4QIU) · [Source 3](https://arxiv.org/pdf/2310.02304v3) · [Source 4](https://github.com/microsoft/stop) · [Source 5](https://github.com/microsoft/stop/blob/0d6780c54306b2486dd36e9c4ae9b49aceb27ea4/tasks/modified_quadratic_assignment/secret_utility.py) · [Source 6](https://github.com/microsoft/stop/blob/0d6780c54306b2486dd36e9c4ae9b49aceb27ea4/tasks/modified_quadratic_assignment/seed_algorithm.py)
 
 <a id="intrinsic-self-correction"></a>
 

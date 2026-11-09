@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Recursive improvement and self-play reviews
+
+- Upgraded STOP, Gödel Agent, Group-Evolving Agents and OpenSIR after full-text, appendix and visual-evidence review.
+- Recovered official STOP/OpenSIR artifact links and qualified evaluator semantics, model switching, failed runs, subset comparisons, consensus rewards and compute accounting.
+- Counts remain 190 works: 162 full-text and 28 abstract/metadata reviews. Thirty-two broader appraisals are complete; 158 remain.
+
 ## 2026-11-09 — Tool reuse and reward-grounding reviews
 
 - Upgraded CREATOR, LLMs as Tool Makers, ReST and SCoRe through full-text methods, results, appendices and visual evidence.
