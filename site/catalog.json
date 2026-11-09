@@ -281,10 +281,11 @@
       "url": "https://arxiv.org/abs/2611.05108",
       "sources": [
         "https://arxiv.org/abs/2611.05108",
-        "https://arxiv.org/html/2611.05108v1"
+        "https://arxiv.org/html/2611.05108v1",
+        "https://arxiv.org/pdf/2611.05108v1"
       ],
       "code_url": null,
-      "code_note": "The manuscript promises code with its camera-ready version; a runnable release was not established. Nothing was executed.",
+      "code_note": "Complete 27-page arXiv v1, substantive Appendices A–D, seventeen figures/thirteen tables, generator and metric definitions, and all trace cases read on 2026-11-09. The manuscript promises code with camera-ready publication; an official runnable release and complete run configuration were not established. No research agents or experiments were executed.",
       "topics": [
         "memory",
         "continual-learning",
@@ -297,11 +298,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Visible development data and execution feedback guide research; hidden test scores are computed afterward.",
-      "mechanism": "Compares persistent sessions and workspaces with reset instances of the same research agent on matched task streams and time budgets. Separate first-solution, search-efficiency, and final-selection metrics distinguish reuse from better research outcomes. Insight-card interventions isolate explicit memory from session continuity.",
-      "evaluation": "Evaluates five native CLI agents across nine ML task families, typically with 30-minute budgets and three-to-five-task streams. Persistence improves aggregate search efficiency, but final-performance gains vary; stricter initialization controls remove the general search advantage.",
-      "limitations": "Four agents use one matched run pair per stream; one agent has three repeats. Cross-agent differences also include harness differences. The explicit-memory ablation covers one stream, and short related-task sequences do not establish long-term or open-ended scientific improvement.",
+      "mechanism": "Compares retained native sessions, files and experimental state with reset instances of the same fixed agent. Hidden evaluation separates first-valid quality, time-integrated best-candidate quality and final selection. Fresh-session matched/shuffled insight cards test explicit knowledge transfer separately from continuous sessions.",
+      "evaluation": "Full v1 covers five CLI agents, nine task families and 32 transfer tasks per agent, mostly with 30-minute budgets. It reports candidate-count and initialization controls, budget/stream-length probes, a four-agent Energy-stream memory ablation and selected trace cases. Aggregate early-search gains coexist with mixed final outcomes.",
+      "limitations": "Four agents have one matched run pair; one has three repeats. Native harnesses confound cross-model comparisons. Search utility combines timing with normalized hidden quality and does not establish equal compute or monetary savings. Adjusted controls change the measured quantity, and later-candidate cohorts shrink. Short fixed streams, limited memory probes and disclosed host contention do not establish broad continual scientific improvement.",
       "review_depth": "full-text",
-      "checked": "2026-11-06",
+      "checked": "2026-11-09",
       "short_name": "Continual AutoResearch"
     },
     {
@@ -315,10 +316,11 @@
       "url": "https://arxiv.org/abs/2611.04299",
       "sources": [
         "https://arxiv.org/abs/2611.04299",
-        "https://arxiv.org/html/2611.04299v1"
+        "https://arxiv.org/html/2611.04299v1",
+        "https://arxiv.org/pdf/2611.04299v1"
       ],
       "code_url": null,
-      "code_note": "An official runnable artifact was not established in this review; no attacks or research code were executed.",
+      "code_note": "Complete 12-page arXiv v1, Appendix A.1–A.6, five figures/six tables, skill examples and judging/guard protocols read on 2026-11-09. An official runnable artifact and complete per-condition judgment coverage were not established. No attacks, model runs or research code were executed.",
       "topics": [
         "skills",
         "safety",
@@ -331,11 +333,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Successful benign traces and benign validation feedback build and refine skills; harmful-task outcomes are reserved for evaluation.",
-      "mechanism": "Compares fixed-model agents with and without reusable benign skills under matched requests and tools, then studies benign-feedback skill evolution, retrieval relevance, content ablations, and a pre-execution guard. Measures executed safety violations separately from completion of harmful objectives.",
-      "evaluation": "Studies five backbones on AgentHarm, LPS-Bench, and SafeAgentBench. Reports utility gains alongside increased unsafe-action rates, including violations in trajectories that never complete the harmful objective.",
-      "limitations": "Harmful requests are supplied at evaluation; this is not spontaneous misconduct during benign use. Unresolved trajectories without identified violations are excluded from unsafe-action rates. Some judgments use an LLM; content ablations also change length and wording. The guard terminates blocked runs, reduces benign utility, and leaves residual violations.",
+      "mechanism": "Retrieves benign procedural skills for fixed-model agents, then measures executed safety violations separately from harmful-objective completion. A fixed editor also evolves skill banks using benign validation alone. Retrieval, exact content removal, source-trajectory comparisons and a terminating pre-execution guard probe the resulting behavior.",
+      "evaluation": "Full v1 covers five backbones on AgentHarm, LPS-Bench and SafeAgentBench, with 316 benign/harmful task pairs and disjoint construction requests. It compares trajectory-derived, expert and mixed banks, 100-step evolution, and narrower Qwen3 content/guard analyses.",
+      "limitations": "Harmful requests are supplied; this does not measure spontaneous misconduct during benign use. Unresolved trajectories without identified violations are excluded from unsafe-action denominators, and independent-run uncertainty is not reported. Content interventions jointly alter wording, length and information. The guard terminates blocked/error runs without replanning, costs benign utility and leaves residual violations; its evidence does not cover all five backbones.",
       "review_depth": "full-text",
-      "checked": "2026-11-06",
+      "checked": "2026-11-09",
       "short_name": "Benign skill safety"
     },
     {
@@ -420,10 +422,12 @@
       "sources": [
         "https://arxiv.org/abs/2611.03219",
         "https://arxiv.org/html/2611.03219v1",
-        "https://github.com/THU-Agent/continual-harness-evolution"
+        "https://github.com/THU-Agent/continual-harness-evolution",
+        "https://arxiv.org/pdf/2611.03219v1",
+        "https://github.com/THU-Agent/continual-harness-evolution/blob/bb84e4a68fe0b51d7420ef4413c5061f4f074c04/agentic-harness-engineering/configs/mini_swe/evaluation_lock.yaml"
       ],
       "code_url": "https://github.com/THU-Agent/continual-harness-evolution",
-      "code_note": "Paper-linked repository and setup documentation inspected; contains adaptations of AHE and Meta-Harness, not an independently reproduced run.",
+      "code_note": "All substantive text, Appendices A–B, five figures/two tables and code examples of the 14-page arXiv v1 read on 2026-11-09. README and evaluation lock at bb84e4a inspected: the current artifact specifies 30-minute rollouts/250 steps and a one-hour sandbox lifetime, distinct from the main text’s one-hour execution wording. No installation or execution; historical runtime equivalence unverified.",
       "topics": [
         "architecture",
         "workflows",
@@ -439,11 +443,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Task execution traces and benchmark outcomes drive harness edits; prior-task reevaluation measures retention.",
-      "mechanism": "Studies sequential evolution of Mini-SWE-Agent prompts, control flow, and tools with a fixed backbone. Adapted AHE and Meta-Harness optimize one task type and then another; manual trace analysis and edit ablations investigate verification, workflow, and budget conflicts.",
-      "evaluation": "Examines six source-to-target directions among sampled SWE-bench Verified, paraphrased SWT-Bench, and FeatureBench tasks. Reports severe earlier-task losses and analyzes 520 execution trajectories.",
-      "limitations": "Uses one backbone and reused subsets of 50, 50, and 30 tasks; no disjoint held-out evaluation is described. Scores are not full-benchmark results. These are study-specific implementations and pairwise transitions, not evidence that every harness or longer task sequence must forget.",
+      "mechanism": "Sequentially edits Mini-SWE-Agent prompts, control flow and tools with a fixed backbone using adapted AHE and Meta-Harness. Re-evaluation of source tasks measures retention after changing task type; selected edit interventions investigate incompatible verification gates, workflows and time-budget policies.",
+      "evaluation": "Full v1 examines six two-stage directions among 50 SWE-bench Verified, 50 paraphrased SWT-Bench and 30 FeatureBench tasks, with two rollouts per task/round. It analyzes 520 trajectories and representative edit bundles, plus a prompt-template routing case.",
+      "limitations": "Optimization and reporting reuse the sampled subsets; no disjoint held-out evaluation or independent-search uncertainty is described. Scores are not full-benchmark results. Some losses follow mechanically incompatible artifact gates, not erased model knowledge. Selected edit bundles and pairwise transitions do not establish universal conflict prevalence or inevitable forgetting in longer sequences.",
       "review_depth": "full-text",
-      "checked": "2026-11-04",
+      "checked": "2026-11-09",
       "short_name": "Harness forgetting"
     },
     {

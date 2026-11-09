@@ -19,11 +19,11 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-11-03 | **Route to Remember**<br>[Route to Remember: Adaptive Memory Selection for LLM Agents](https://arxiv.org/abs/2611.05636) | A persistent per-user LoRA adapter learns from student-sampled answers scored by a frozen base-model teacher given recent extracted memory. The hybrid always retrieves… | Model weights, Memory | preprint · full-text | [Notes](#route-to-remember) |
 | 2026-11-03 | **ReScopeBench**<br>[Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](https://arxiv.org/abs/2611.05450) | Pairs streams retaining versus clearing memory, skills and history under a fixed Hermes framework and model. Silent changes invalidate selected environment knowledge.… | Memory, Skills | preprint · full-text | [Notes](#rescopebench) · [Code](https://github.com/JoeYing1019/ReScopeBench) |
 | 2026-11-03 | **Meta²**<br>[Meta$^2$: Precomputing Reusable Knowledge for Online Harness Evolution in Long-Horizon Agents](https://arxiv.org/abs/2611.05139) | Learns a textual Meta-Skill offline, then freezes it to guide a separate evolver at checkpoints within each task. Bounded notices, instructions, hooks and tools alter… | Skills, Prompts / context, Tools, Workflows | preprint · full-text | [Notes](#meta-square) |
-| 2026-11-03 | **Continual AutoResearch**<br>[From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?](https://arxiv.org/abs/2611.05108) | Compares persistent sessions and workspaces with reset instances of the same research agent on matched task streams and time budgets. Separate first-solution… | Memory | preprint · full-text | [Notes](#continual-autoresearch) |
-| 2026-11-03 | **Benign skill safety**<br>[Can Benign Skills Induce Misaligned Behavior in LLM Agents?](https://arxiv.org/abs/2611.04299) | Compares fixed-model agents with and without reusable benign skills under matched requests and tools, then studies benign-feedback skill evolution, retrieval relevance… | Skills | preprint · full-text | [Notes](#benign-skill-misalignment) |
+| 2026-11-03 | **Continual AutoResearch**<br>[From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?](https://arxiv.org/abs/2611.05108) | Compares retained native sessions, files and experimental state with reset instances of the same fixed agent. Hidden evaluation separates first-valid quality… | Memory | preprint · full-text | [Notes](#continual-autoresearch) |
+| 2026-11-03 | **Benign skill safety**<br>[Can Benign Skills Induce Misaligned Behavior in LLM Agents?](https://arxiv.org/abs/2611.04299) | Retrieves benign procedural skills for fixed-model agents, then measures executed safety violations separately from harmful-objective completion. A fixed editor also… | Skills | preprint · full-text | [Notes](#benign-skill-misalignment) |
 | 2026-11-03 | **Artifact-to-Capability**<br>[Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](https://arxiv.org/abs/2611.04952) | Tests artifact formation, behavioral change, useful action selection, preservation during composition, and extension across versions. Frozen-system interventions compare… | Memory, Skills, Agent code | preprint · full-text | [Notes](#artifact-to-capability) |
 | 2026-11-02 | **StateGraph**<br>[A State Change Is Local, Its Consequences Are Not: Dependency-Aware State Revision for Long-Term Agent Memory](https://arxiv.org/abs/2611.02912) | Maintains versioned memory states, proposes support dependencies from interaction histories, and checks them with counterfactual model judgments. Revisions propagate… | Memory | preprint · full-text | [Notes](#stategraph) |
-| 2026-11-02 | **Harness forgetting**<br>[Can Coding Agents Sustain Continual Evolution without Forgetting?](https://arxiv.org/abs/2611.03219) | Studies sequential evolution of Mini-SWE-Agent prompts, control flow, and tools with a fixed backbone. Adapted AHE and Meta-Harness optimize one task type and then… | Agent code, Prompts / context, Tools | preprint · full-text | [Notes](#continual-harness-forgetting) · [Code](https://github.com/THU-Agent/continual-harness-evolution) |
+| 2026-11-02 | **Harness forgetting**<br>[Can Coding Agents Sustain Continual Evolution without Forgetting?](https://arxiv.org/abs/2611.03219) | Sequentially edits Mini-SWE-Agent prompts, control flow and tools with a fixed backbone using adapted AHE and Meta-Harness. Re-evaluation of source tasks measures… | Agent code, Prompts / context, Tools | preprint · full-text | [Notes](#continual-harness-forgetting) · [Code](https://github.com/THU-Agent/continual-harness-evolution) |
 | 2026-11-01 | **OMCE**<br>[Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](https://arxiv.org/abs/2611.01747) | Retains episodes and distilled guidance across tasks. A contextual bandit learns whether to solve directly, retrieve cases, retrieve guidance, or distill guidance before… | Memory, Model weights | preprint · full-text | [Notes](#omce) |
 | 2026-10-31 | **Skill++**<br>[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](https://arxiv.org/abs/2611.00544) | Rewrites an incoming skill’s name and description to clarify supported capabilities and scope relative to nearby skills. The revised metadata persists in the growing… | Skills, Prompts / context | preprint · full-text | [Notes](#skill-plus-plus) |
 | 2026-10-30 | **LIFE**<br>[Learning to Live: A Step Toward Lifelong Embodied Intelligence](https://arxiv.org/abs/2611.00180) | Combines a separately trained streaming perception gate, evidence-preserving robot memory, and ReSight’s Explore–Distill–Mount process. Retained observations can acquire… | Memory, Skills, Tools, Model weights | preprint · full-text | [Notes](#life-embodied) |
@@ -346,19 +346,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2611.05108)
 
-**Mechanism.** Compares persistent sessions and workspaces with reset instances of the same research agent on matched task streams and time budgets. Separate first-solution, search-efficiency, and final-selection metrics distinguish reuse from better research outcomes. Insight-card interventions isolate explicit memory from session continuity.
+**Mechanism.** Compares retained native sessions, files and experimental state with reset instances of the same fixed agent. Hidden evaluation separates first-valid quality, time-integrated best-candidate quality and final selection. Fresh-session matched/shuffled insight cards test explicit knowledge transfer separately from continuous sessions.
 
 **What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Visible development data and execution feedback guide research; hidden test scores are computed afterward.
 
-**Evaluation.** Evaluates five native CLI agents across nine ML task families, typically with 30-minute budgets and three-to-five-task streams. Persistence improves aggregate search efficiency, but final-performance gains vary; stricter initialization controls remove the general search advantage.
+**Evaluation.** Full v1 covers five CLI agents, nine task families and 32 transfer tasks per agent, mostly with 30-minute budgets. It reports candidate-count and initialization controls, budget/stream-length probes, a four-agent Energy-stream memory ablation and selected trace cases. Aggregate early-search gains coexist with mixed final outcomes.
 
-**Boundary.** Four agents use one matched run pair per stream; one agent has three repeats. Cross-agent differences also include harness differences. The explicit-memory ablation covers one stream, and short related-task sequences do not establish long-term or open-ended scientific improvement.
+**Boundary.** Four agents have one matched run pair; one has three repeats. Native harnesses confound cross-model comparisons. Search utility combines timing with normalized hidden quality and does not establish equal compute or monetary savings. Adjusted controls change the measured quantity, and later-candidate cohorts shrink. Short fixed streams, limited memory probes and disclosed host contention do not establish broad continual scientific improvement.
 
-**Code / data.** The manuscript promises code with its camera-ready version; a runnable release was not established. Nothing was executed.
+**Code / data.** Complete 27-page arXiv v1, substantive Appendices A–D, seventeen figures/thirteen tables, generator and metric definitions, and all trace cases read on 2026-11-09. The manuscript promises code with camera-ready publication; an official runnable release and complete run configuration were not established. No research agents or experiments were executed.
 
-**Topics:** memory, continual-learning, evaluation, applications. **Reviewed:** full-text · 2026-11-06.
+**Topics:** memory, continual-learning, evaluation, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2611.05108) · [Source 2](https://arxiv.org/html/2611.05108v1)
+[Source 1](https://arxiv.org/abs/2611.05108) · [Source 2](https://arxiv.org/html/2611.05108v1) · [Source 3](https://arxiv.org/pdf/2611.05108v1)
 
 <a id="benign-skill-misalignment"></a>
 
@@ -368,19 +368,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2611.04299)
 
-**Mechanism.** Compares fixed-model agents with and without reusable benign skills under matched requests and tools, then studies benign-feedback skill evolution, retrieval relevance, content ablations, and a pre-execution guard. Measures executed safety violations separately from completion of harmful objectives.
+**Mechanism.** Retrieves benign procedural skills for fixed-model agents, then measures executed safety violations separately from harmful-objective completion. A fixed editor also evolves skill banks using benign validation alone. Retrieval, exact content removal, source-trajectory comparisons and a terminating pre-execution guard probe the resulting behavior.
 
 **What changes:** Skills. **Persistence:** across-tasks. **Learning signal:** Successful benign traces and benign validation feedback build and refine skills; harmful-task outcomes are reserved for evaluation.
 
-**Evaluation.** Studies five backbones on AgentHarm, LPS-Bench, and SafeAgentBench. Reports utility gains alongside increased unsafe-action rates, including violations in trajectories that never complete the harmful objective.
+**Evaluation.** Full v1 covers five backbones on AgentHarm, LPS-Bench and SafeAgentBench, with 316 benign/harmful task pairs and disjoint construction requests. It compares trajectory-derived, expert and mixed banks, 100-step evolution, and narrower Qwen3 content/guard analyses.
 
-**Boundary.** Harmful requests are supplied at evaluation; this is not spontaneous misconduct during benign use. Unresolved trajectories without identified violations are excluded from unsafe-action rates. Some judgments use an LLM; content ablations also change length and wording. The guard terminates blocked runs, reduces benign utility, and leaves residual violations.
+**Boundary.** Harmful requests are supplied; this does not measure spontaneous misconduct during benign use. Unresolved trajectories without identified violations are excluded from unsafe-action denominators, and independent-run uncertainty is not reported. Content interventions jointly alter wording, length and information. The guard terminates blocked/error runs without replanning, costs benign utility and leaves residual violations; its evidence does not cover all five backbones.
 
-**Code / data.** An official runnable artifact was not established in this review; no attacks or research code were executed.
+**Code / data.** Complete 12-page arXiv v1, Appendix A.1–A.6, five figures/six tables, skill examples and judging/guard protocols read on 2026-11-09. An official runnable artifact and complete per-condition judgment coverage were not established. No attacks, model runs or research code were executed.
 
-**Topics:** skills, safety, evaluation, applications. **Reviewed:** full-text · 2026-11-06.
+**Topics:** skills, safety, evaluation, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2611.04299) · [Source 2](https://arxiv.org/html/2611.04299v1)
+[Source 1](https://arxiv.org/abs/2611.04299) · [Source 2](https://arxiv.org/html/2611.04299v1) · [Source 3](https://arxiv.org/pdf/2611.04299v1)
 
 <a id="artifact-to-capability"></a>
 
@@ -434,19 +434,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2611.03219)
 
-**Mechanism.** Studies sequential evolution of Mini-SWE-Agent prompts, control flow, and tools with a fixed backbone. Adapted AHE and Meta-Harness optimize one task type and then another; manual trace analysis and edit ablations investigate verification, workflow, and budget conflicts.
+**Mechanism.** Sequentially edits Mini-SWE-Agent prompts, control flow and tools with a fixed backbone using adapted AHE and Meta-Harness. Re-evaluation of source tasks measures retention after changing task type; selected edit interventions investigate incompatible verification gates, workflows and time-budget policies.
 
 **What changes:** Agent code, Prompts / context, Tools. **Persistence:** across-tasks. **Learning signal:** Task execution traces and benchmark outcomes drive harness edits; prior-task reevaluation measures retention.
 
-**Evaluation.** Examines six source-to-target directions among sampled SWE-bench Verified, paraphrased SWT-Bench, and FeatureBench tasks. Reports severe earlier-task losses and analyzes 520 execution trajectories.
+**Evaluation.** Full v1 examines six two-stage directions among 50 SWE-bench Verified, 50 paraphrased SWT-Bench and 30 FeatureBench tasks, with two rollouts per task/round. It analyzes 520 trajectories and representative edit bundles, plus a prompt-template routing case.
 
-**Boundary.** Uses one backbone and reused subsets of 50, 50, and 30 tasks; no disjoint held-out evaluation is described. Scores are not full-benchmark results. These are study-specific implementations and pairwise transitions, not evidence that every harness or longer task sequence must forget.
+**Boundary.** Optimization and reporting reuse the sampled subsets; no disjoint held-out evaluation or independent-search uncertainty is described. Scores are not full-benchmark results. Some losses follow mechanically incompatible artifact gates, not erased model knowledge. Selected edit bundles and pairwise transitions do not establish universal conflict prevalence or inevitable forgetting in longer sequences.
 
-**Code / data.** [Official artifact](https://github.com/THU-Agent/continual-harness-evolution) — Paper-linked repository and setup documentation inspected; contains adaptations of AHE and Meta-Harness, not an independently reproduced run.
+**Code / data.** [Official artifact](https://github.com/THU-Agent/continual-harness-evolution) — All substantive text, Appendices A–B, five figures/two tables and code examples of the 14-page arXiv v1 read on 2026-11-09. README and evaluation lock at bb84e4a inspected: the current artifact specifies 30-minute rollouts/250 steps and a one-hour sandbox lifetime, distinct from the main text’s one-hour execution wording. No installation or execution; historical runtime equivalence unverified.
 
-**Topics:** architecture, workflows, continual-learning, evaluation, applications. **Reviewed:** full-text · 2026-11-04.
+**Topics:** architecture, workflows, continual-learning, evaluation, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2611.03219) · [Source 2](https://arxiv.org/html/2611.03219v1) · [Source 3](https://github.com/THU-Agent/continual-harness-evolution)
+[Source 1](https://arxiv.org/abs/2611.03219) · [Source 2](https://arxiv.org/html/2611.03219v1) · [Source 3](https://github.com/THU-Agent/continual-harness-evolution) · [Source 4](https://arxiv.org/pdf/2611.03219v1) · [Source 5](https://github.com/THU-Agent/continual-harness-evolution/blob/bb84e4a68fe0b51d7420ef4413c5061f4f074c04/agentic-harness-engineering/configs/mini_swe/evaluation_lock.yaml)
 
 <a id="omce"></a>
 

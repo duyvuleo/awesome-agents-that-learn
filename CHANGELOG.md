@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded persistent-experience failure reviews
+
+- Read the complete benign-skill safety, harness-forgetting and Continual AutoResearch studies.
+- Clarified safety measurement, submission-rule conflicts, runtime limits and initialization/search trade-offs.
+- Broader audit: 116 of 190 works complete, 74 pending.
+
 ## 2026-11-09 — Completed detailed reviews of pilot weekly picks
 
 - Read Beneath the Surface, Route to Remember and Targeted Guidance in full, including all substantive appendices and visual results.
