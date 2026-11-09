@@ -159,11 +159,11 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-05-06 | **Absolute Zero**<br>[Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://arxiv.org/abs/2505.03335) | A shared pretrained model proposes and solves three kinds of code-reasoning tasks. Joint reinforcement learning updates both roles, and a buffer retains valid generated… | Model weights | peer-reviewed · full-text | [Notes](#absolute-zero) · [Code](https://github.com/LeapLabTHU/Absolute-Zero-Reasoner) |
 | 2025-04-28 | **Mem0**<br>[Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/abs/2504.19413) | Extracts facts from recent exchanges and background summaries, then updates an external memory store through add/update/delete/no-op decisions. The graph variant stores… | Memory | preprint · full-text | [Notes](#mem0) |
 | 2025-04-24 | **RAGEN**<br>[RAGEN: Understanding Self-Evolution in LLM Agents via Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2504.20073) | StarPO organizes trajectory collection and PPO/GRPO updates to model weights. StarPO-S tests variability-based prompt filtering and gradient changes, including KL… | Model weights | preprint · full-text | [Notes](#ragen) · [Code](https://github.com/mll-lab-nu/RAGEN) |
-| 2025-04-21 | **SICA**<br>[A Self-Improving Coding Agent](https://arxiv.org/abs/2504.15228) | Equips a coding agent with tools to edit its own implementation and reuses improved versions in later iterations. Learning changes the surrounding agent code rather than… | Agent code, Tools, Workflows | preprint · full-text | [Notes](#sica) · [Code](https://github.com/MaximeRobeyns/self_improving_coding_agent) |
+| 2025-04-21 | **SICA**<br>[A Self-Improving Coding Agent](https://arxiv.org/abs/2504.15228) | Selects the best prior agent from an archive to modify its own Python implementation, then evaluates the resulting agent. Tools, prompts and orchestration can persist… | Agent code, Tools, Workflows | preprint · full-text | [Notes](#sica) · [Code](https://github.com/MaximeRobeyns/self_improving_coding_agent) |
 | 2025-02-17 | **A-MEM**<br>[A-MEM: Agentic Memory for LLM Agents](https://arxiv.org/abs/2502.12110) | Creates atomic notes, retrieves candidate neighbors by embedding similarity, links relevant notes, and revises neighboring contextual attributes. Persistent external… | Memory | peer-reviewed · full-text | [Notes](#a-mem) · [Code](https://github.com/WujiangXu/A-mem-sys) |
 | 2025-01-20 | **Agent-R**<br>[Agent-R: Training Language Model Agents to Reflect via Iterative Self-Training](https://arxiv.org/abs/2501.11425) | Builds synthetic recovery trajectories by truncating a bad branch and appending a good continuation. Iterative supervised training updates the actor on good and revised… | Model weights | preprint · full-text | [Notes](#agent-r) · [Code](https://github.com/ByteDance-Seed/Agent-R) |
 | 2024-10-14 | **LongMemEval**<br>[LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory](https://arxiv.org/abs/2410.10813) | Constructs 500 curated questions with annotated evidence embedded in scalable user-assistant histories, testing extraction, multi-session reasoning, updates, temporal… | Memory | peer-reviewed · full-text | [Notes](#longmemeval) · [Code](https://github.com/xiaowu0162/LongMemEval) |
-| 2024-10-14 | **AFlow**<br>[AFlow: Automating Agentic Workflow Generation](https://arxiv.org/abs/2410.10762) | Searches over code-represented workflows using a Monte Carlo tree-search variant. An LLM changes prompts and connections between operations, while the tree retains… | Workflows, Prompts / context, Agent code | peer-reviewed · full-text | [Notes](#aflow) · [Code](https://github.com/FoundationAgents/AFlow) |
+| 2024-10-14 | **AFlow**<br>[AFlow: Automating Agentic Workflow Generation](https://arxiv.org/abs/2410.10762) | Searches Python workflow structure and custom prompts with an MCTS-inspired selection/expansion loop. Actual experiments fix models, temperatures and output formats and… | Workflows, Prompts / context, Agent code | peer-reviewed · full-text | [Notes](#aflow) · [Code](https://github.com/FoundationAgents/AFlow) |
 | 2024-10-08 | **AgentSquare**<br>[AgentSquare: Automatic LLM Agent Search in Modular Design Space](https://arxiv.org/abs/2410.06153) | Alternates code-level module evolution with recombination of planning, reasoning, tool-use and memory modules. Novel modules receive environment evaluation… | Workflows, Prompts / context, Tools, Memory | peer-reviewed · full-text | [Notes](#agentsquare) · [Code](https://github.com/tsinghua-fib-lab/AgentSquare) |
 | 2024-10-06 | **Gödel Agent**<br>[Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement](https://arxiv.org/abs/2410.04444) | Uses runtime code inspection and monkey patching to revise both task-solving functions and parts of the improvement process. Human-specified goals, interfaces and… | Agent code, Prompts / context, Workflows | peer-reviewed · full-text | [Notes](#godel-agent) · [Code](https://github.com/Arvid-pku/Godel_Agent) |
 | 2024-09-19 | **SCoRe**<br>[Training Language Models to Self-Correct via Reinforcement Learning](https://arxiv.org/abs/2409.12917) | Trains one model through two-turn online RL: first constrain initial answers while learning revisions, then optimize both turns with a progress bonus. The learned… | Model weights | peer-reviewed · full-text | [Notes](#score) |
@@ -3452,19 +3452,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2504.15228)
 
-**Mechanism.** Equips a coding agent with tools to edit its own implementation and reuses improved versions in later iterations. Learning changes the surrounding agent code rather than model parameters.
+**Mechanism.** Selects the best prior agent from an archive to modify its own Python implementation, then evaluates the resulting agent. Tools, prompts and orchestration can persist into later modification attempts, while the outer archive-selection and evaluation loop stays fixed.
 
-**What changes:** Agent code, Tools, Workflows. **Persistence:** across-tasks. **Learning signal:** Benchmark feedback and LLM reflection on candidate code changes.
+**What changes:** Agent code, Tools, Workflows. **Persistence:** across-tasks. **Learning signal:** A fixed utility combines benchmark scores, dollar cost and elapsed time. Archived results and traces guide subsequent code modifications; no model-weight training is performed.
 
-**Evaluation.** The paper reports gains on a random SWE-bench Verified subset, LiveCodeBench, and synthetic agent tasks.
+**Evaluation.** ArXiv v2 reports a fifteen-iteration coding run on reused SWE-bench Verified and LiveCodeBench subsets plus synthetic editing/navigation tasks. A separate AIME/GPQA run finds little improvement. Per-iteration scores, costs and times reveal regressions as well as gains.
 
-**Boundary.** The software-repair result uses a fixed 50-task subset and a five-minute timeout. The authors note that faster file editing explains part of the gain, with limited improvements on reasoning tasks; repeated benchmark evaluation is distinct from held-out deployment transfer.
+**Boundary.** No independently held-out final task set or fixed-modifier ablation is reported. Short timeouts make editing efficiency a major contributor; best-so-far utility is not monotonic task improvement. Paper and current-code subset settings differ, and broader run variance remains unclear. Observability is not a demonstrated safety guarantee.
 
-**Code / data.** [Official artifact](https://github.com/MaximeRobeyns/self_improving_coding_agent) — Official repository linked in the paper and landing page inspected; not executed.
+**Code / data.** [Official artifact](https://github.com/MaximeRobeyns/self_improving_coding_agent) — Official README and selected benchmark code at ed8275dca4d3c5dbf77229964351fe9b424797dc inspected on 2026-11-09. The current SWE scorer uses binary harness resolution, but its default subset differs from the paper. No code, containers or benchmarks were executed.
 
-**Topics:** architecture, recursive-improvement, applications. **Reviewed:** full-text · 2026-10-28.
+**Topics:** architecture, recursive-improvement, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2504.15228) · [Source 2](https://arxiv.org/html/2504.15228v2) · [Source 3](https://github.com/MaximeRobeyns/self_improving_coding_agent)
+[Source 1](https://arxiv.org/abs/2504.15228) · [Source 2](https://arxiv.org/html/2504.15228v2) · [Source 3](https://github.com/MaximeRobeyns/self_improving_coding_agent) · [Source 4](https://arxiv.org/pdf/2504.15228v2) · [Source 5](https://github.com/MaximeRobeyns/self_improving_coding_agent/blob/ed8275dca4d3c5dbf77229964351fe9b424797dc/base_agent/src/benchmarks/swebench_verified.py)
 
 **Related software:** [Self-Improving Coding Agent (SICA)](systems.md#system-sica). See each system's relationship note before equating it with the evaluated paper version.
 
@@ -3544,19 +3544,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2410.10762)
 
-**Mechanism.** Searches over code-represented workflows using a Monte Carlo tree-search variant. An LLM changes prompts and connections between operations, while the tree retains feedback from prior candidates.
+**Mechanism.** Searches Python workflow structure and custom prompts with an MCTS-inspired selection/expansion loop. Actual experiments fix models, temperatures and output formats and provide reusable operators. Selected workflows and tree-organized experience persist; the optimizer itself is unchanged.
 
-**What changes:** Workflows, Prompts / context, Agent code. **Persistence:** across-tasks. **Learning signal:** Execution scores on a validation subset and stored search experience.
+**What changes:** Workflows, Prompts / context, Agent code. **Persistence:** across-tasks. **Learning signal:** Validation-set scores and execution logs, including expected answers, guide a fixed LLM optimizer. Code workflows can also use supplied public tests and generated tests during solution refinement.
 
-**Evaluation.** Six QA, coding, and math datasets are divided into development and test subsets; the paper also compares execution costs and transfer between executor models.
+**Evaluation.** Six reasoning/QA/code benchmarks use a seeded validation/test split, five validation evaluations per candidate and three test evaluations. Studies include cross-model workflow transfer, a GSM8K operator ablation, inference-cost comparisons and small judged writing/idea-generation cases.
 
-**Boundary.** The study focuses on reasoning tasks with accessible evaluators and commonly used operators. Search costs and repeated validation exposure should be considered separately from the inference cost of the selected workflow.
+**Boundary.** Repeated executions do not measure independent search-run variance. Gains mix task metrics, and inference-cost comparisons exclude search costs. Algorithm descriptions differ in selection details; the theoretical discussion does not prove finite global optimality. Open-ended cases remain small and do not independently establish novelty or exact constraint satisfaction.
 
-**Code / data.** [Official artifact](https://github.com/FoundationAgents/AFlow) — Official repository landing page inspected; no installation or execution performed.
+**Code / data.** [Official artifact](https://github.com/FoundationAgents/AFlow) — Official README inspected on 2026-11-09; it documents APIs, operators and evaluation resources, and notes possible operator issues after migration from MetaGPT. No research code, datasets or benchmark runs were executed.
 
-**Topics:** workflows, architecture, prompts. **Reviewed:** full-text · 2026-10-28.
+**Topics:** workflows, architecture, prompts. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2410.10762) · [Source 2](https://arxiv.org/html/2410.10762v1) · [Source 3](https://proceedings.iclr.cc/paper_files/paper/2025/hash/5492ecbce4439401798dcd2c90be94cd-Abstract-Conference.html) · [Source 4](https://github.com/FoundationAgents/AFlow)
+[Source 1](https://arxiv.org/abs/2410.10762) · [Source 2](https://arxiv.org/html/2410.10762v1) · [Source 3](https://proceedings.iclr.cc/paper_files/paper/2025/hash/5492ecbce4439401798dcd2c90be94cd-Abstract-Conference.html) · [Source 4](https://github.com/FoundationAgents/AFlow) · [Source 5](https://arxiv.org/pdf/2410.10762v4)
 
 **Related software:** [AFlow](systems.md#system-aflow). See each system's relationship note before equating it with the evaluated paper version.
 

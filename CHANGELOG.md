@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-09 — Expanded code and workflow evolution reviews
+
+- Appraised SICA and AFlow through complete substantive appendices, preserving negative findings and evaluation, cost, theory and artifact boundaries.
+- Broader audit: 86 of 190 works complete, 104 pending; no new research works.
+
 ## 2026-11-09 — Expanded curriculum and self-play reviews
 
 - Appraised SPICE, Socratic-Zero, SPIRAL and Agent0 through full methods, experiments and appendices.
