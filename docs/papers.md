@@ -24,8 +24,8 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-11-03 | **Artifact-to-Capability**<br>[Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](https://arxiv.org/abs/2611.04952) | Proposes a five-property diagnostic for converting persistent artifacts into useful behavior. Frozen-system interventions compare identical board states, complete games… | Memory, Skills, Agent code | preprint · full-text | [Notes](#artifact-to-capability) |
 | 2026-11-02 | **StateGraph**<br>[A State Change Is Local, Its Consequences Are Not: Dependency-Aware State Revision for Long-Term Agent Memory](https://arxiv.org/abs/2611.02912) | Stores scoped, versioned states and proposes directed support dependencies from history. The same frozen LLM tests whether a dependent claim survives removal of a… | Memory | preprint · full-text | [Notes](#stategraph) |
 | 2026-11-02 | **Harness forgetting**<br>[Can Coding Agents Sustain Continual Evolution without Forgetting?](https://arxiv.org/abs/2611.03219) | Sequentially edits Mini-SWE-Agent prompts, control flow and tools with a fixed backbone using adapted AHE and Meta-Harness. Re-evaluation of source tasks measures… | Agent code, Prompts / context, Tools | preprint · full-text | [Notes](#continual-harness-forgetting) · [Code](https://github.com/THU-Agent/continual-harness-evolution) |
-| 2026-11-01 | **OMCE**<br>[Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](https://arxiv.org/abs/2611.01747) | Retains episodes and distilled guidance across tasks. A contextual bandit learns whether to solve directly, retrieve cases, retrieve guidance, or distill guidance before… | Memory, Model weights | preprint · full-text | [Notes](#omce) |
-| 2026-10-31 | **Skill++**<br>[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](https://arxiv.org/abs/2611.00544) | Rewrites an incoming skill’s name and description to clarify supported capabilities and scope relative to nearby skills. The revised metadata persists in the growing… | Skills, Prompts / context | preprint · full-text | [Notes](#skill-plus-plus) |
+| 2026-11-01 | **OMCE**<br>[Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](https://arxiv.org/abs/2611.01747) | A four-action contextual bandit selects direct solving, episodic reuse, guidance reuse or pre-solve distillation from numeric retrieval features. External memories and… | Memory, Model weights | preprint · full-text | [Notes](#omce) |
+| 2026-10-31 | **Skill++**<br>[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](https://arxiv.org/abs/2611.00544) | Refines an incoming skill’s name and description using its body and similar earlier skills, adding differentiating capabilities, scope exclusions and name qualifiers.… | Skills, Prompts / context | preprint · full-text | [Notes](#skill-plus-plus) |
 | 2026-10-30 | **LIFE**<br>[Learning to Live: A Step Toward Lifelong Embodied Intelligence](https://arxiv.org/abs/2611.00180) | Combines a separately trained streaming perception gate, evidence-preserving robot memory, and ReSight’s Explore–Distill–Mount process. Retained observations can acquire… | Memory, Skills, Tools, Model weights | preprint · full-text | [Notes](#life-embodied) |
 | 2026-10-30 | **Exo**<br>[Exo: An Architecture for Self-Improving Systems at Runtime](https://arxiv.org/abs/2611.00463) | Allows an agent to edit its harness and improvement procedures while working. A separate mechanism retains history and controls activation; tools, context policies, and… | Agent code, Tools, Workflows | preprint · full-text | [Notes](#exo-runtime) · [Code](https://github.com/exoharness/exo/tree/c5c1963a3445417e64938c139da88edd9154075d) |
 | 2026-10-29 | **Curriculum or easy start?**<br>[Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds](https://arxiv.org/abs/2610.40364) | Places fourteen curriculum and environment-design methods around a common PPO learner, including easy-start randomization controls. A shared terrain space separates… | Model weights | preprint · full-text | [Notes](#quadruped-curriculum-benchmark) · [Code](https://github.com/Solvro/ml-wojtek-ued) |
@@ -456,19 +456,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2611.01747)
 
-**Mechanism.** Retains episodes and distilled guidance across tasks. A contextual bandit learns whether to solve directly, retrieve cases, retrieve guidance, or distill guidance before solving. Only the small routing models and external memories change; the backbone LLM stays frozen. An optional retry loop also reuses failures within a task.
+**Mechanism.** A four-action contextual bandit selects direct solving, episodic reuse, guidance reuse or pre-solve distillation from numeric retrieval features. External memories and small linear routing models persist; the backbone and learning procedure stay fixed. Optional retries inject failure insights, with the pseudocode crediting the final attempt reward to the original routing decision.
 
 **What changes:** Memory, Model weights. **Persistence:** both. **Learning signal:** Task outcomes update linear bandit estimates; trajectories and feedback drive language-model memory revisions.
 
-**Evaluation.** Compares four backbones on BigCodeBench, SWE-bench Verified, MultiChallenge, and six BBEH tasks, separating first-attempt success from success within four attempts. Shared-memory and frozen-controller ablations examine routing.
+**Evaluation.** Full v1 compares four backbones on 1,140 BigCodeBench, 500 SWE-bench Verified, 273 MultiChallenge and 1,200 selected BBEH instances. It separates first-attempt and four-attempt success, reports fixed/heuristic routing and controller-freezing controls, and analyzes tokens and a restricted stationary-bandit model.
 
-**Boundary.** One run per benchmark/backbone; 100 BigCodeBench tuning tasks remain in its evaluation stream. Outcomes require test or judge feedback, and token accounting excludes evaluator calls. Gains vary by setting; the action space and learning procedure remain fixed.
+**Boundary.** One run per configuration; 100 BigCodeBench tuning tasks remain in evaluation. First-attempt gains do not imply better four-attempt success, and some fixed or memory-free baselines win. Shared-snapshot chronology and a separate learned-policy snapshot score are unclear. Token totals exclude evaluator calls. The stationary, undiscounted theoretical controller differs from the discounted experimental variants and does not guarantee optimal long-term memory consolidation.
 
-**Code / data.** An official implementation was not established in the inspected sources; no code was executed.
+**Code / data.** All substantive main text, Appendices A–J, five figures/six tables, full regret derivation, algorithm, configuration and cases of the 22-page arXiv v1 read on 2026-11-09. Official method implementation availability was not established; linked benchmark repositories are separate artifacts. No code, model or benchmark was executed.
 
-**Topics:** memory, continual-learning, workflows, evaluation. **Reviewed:** full-text · 2026-11-04.
+**Topics:** memory, continual-learning, workflows, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2611.01747) · [Source 2](https://arxiv.org/html/2611.01747v1)
+[Source 1](https://arxiv.org/abs/2611.01747) · [Source 2](https://arxiv.org/html/2611.01747v1) · [Source 3](https://arxiv.org/pdf/2611.01747v1)
 
 <a id="skill-plus-plus"></a>
 
@@ -478,19 +478,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2611.00544)
 
-**Mechanism.** Rewrites an incoming skill’s name and description to clarify supported capabilities and scope relative to nearby skills. The revised metadata persists in the growing library; earlier metadata, skill bodies, and router weights stay fixed.
+**Mechanism.** Refines an incoming skill’s name and description using its body and similar earlier skills, adding differentiating capabilities, scope exclusions and name qualifiers. Original records supply later references. Rewritten metadata persists while skill bodies, earlier metadata and router weights remain fixed; fidelity is prompted rather than formally verified.
 
 **What changes:** Skills, Prompts / context. **Persistence:** across-tasks. **Learning signal:** Incoming skill bodies, similar earlier skills, and body-derived synthetic queries guide metadata rewriting without evaluation labels.
 
-**Evaluation.** Tests incremental versions of SRA-Bench, SkillRet, and SkillRouter across five routers, plus native Codex CLI skill selection. A separate 150-query, 87-skill check measures hidden-test task success.
+**Evaluation.** Full v1 evaluates a deliberately confusable SRA-Bench growth stream across five routers, two additional benchmark streams, random additions, component combinations and limited order/repeat controls. Native Codex tests score named-skill selection; a separate 150-query, 87-skill experiment reports hidden-test task success.
 
-**Boundary.** Main outcomes measure required-skill selection, not completed tasks. The principal stream deliberately adds confusable non-substitutes, using model judgments during construction. Random additions show smaller gains. End-task validation uses an early library and an added workflow prompt; it does not establish success at maximum library size.
+**Boundary.** Main routing metrics count annotated required skills, not execution success. Required-skill metadata stays original while confusable incoming skills are refined; construction and error typing use model judgments. Random additions yield smaller gains. Query-bootstrap intervals do not capture all rewrite/order variability. Task-success evidence uses an early library and extra workflow instruction, with much smaller gains than skill-selection coverage.
 
-**Code / data.** An official implementation was not established in the inspected sources; no code was executed.
+**Code / data.** Complete 20-page arXiv v1, substantive Appendices A–C, eight figures/eight tables, algorithm, formulation, construction/judging protocols and robustness checks read on 2026-11-09. The author publication page lists a preprint; an official implementation was not established. No skill, model or benchmark was executed.
 
-**Topics:** skills, prompts, continual-learning, evaluation. **Reviewed:** full-text · 2026-11-04.
+**Topics:** skills, prompts, continual-learning, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2611.00544) · [Source 2](https://arxiv.org/html/2611.00544v1)
+[Source 1](https://arxiv.org/abs/2611.00544) · [Source 2](https://arxiv.org/html/2611.00544v1) · [Source 3](https://arxiv.org/pdf/2611.00544v1)
 
 <a id="life-embodied"></a>
 

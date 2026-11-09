@@ -463,10 +463,11 @@
       "url": "https://arxiv.org/abs/2611.01747",
       "sources": [
         "https://arxiv.org/abs/2611.01747",
-        "https://arxiv.org/html/2611.01747v1"
+        "https://arxiv.org/html/2611.01747v1",
+        "https://arxiv.org/pdf/2611.01747v1"
       ],
       "code_url": null,
-      "code_note": "An official implementation was not established in the inspected sources; no code was executed.",
+      "code_note": "All substantive main text, Appendices A–J, five figures/six tables, full regret derivation, algorithm, configuration and cases of the 22-page arXiv v1 read on 2026-11-09. Official method implementation availability was not established; linked benchmark repositories are separate artifacts. No code, model or benchmark was executed.",
       "topics": [
         "memory",
         "continual-learning",
@@ -480,11 +481,11 @@
       ],
       "persistence": "both",
       "learning_signal": "Task outcomes update linear bandit estimates; trajectories and feedback drive language-model memory revisions.",
-      "mechanism": "Retains episodes and distilled guidance across tasks. A contextual bandit learns whether to solve directly, retrieve cases, retrieve guidance, or distill guidance before solving. Only the small routing models and external memories change; the backbone LLM stays frozen. An optional retry loop also reuses failures within a task.",
-      "evaluation": "Compares four backbones on BigCodeBench, SWE-bench Verified, MultiChallenge, and six BBEH tasks, separating first-attempt success from success within four attempts. Shared-memory and frozen-controller ablations examine routing.",
-      "limitations": "One run per benchmark/backbone; 100 BigCodeBench tuning tasks remain in its evaluation stream. Outcomes require test or judge feedback, and token accounting excludes evaluator calls. Gains vary by setting; the action space and learning procedure remain fixed.",
+      "mechanism": "A four-action contextual bandit selects direct solving, episodic reuse, guidance reuse or pre-solve distillation from numeric retrieval features. External memories and small linear routing models persist; the backbone and learning procedure stay fixed. Optional retries inject failure insights, with the pseudocode crediting the final attempt reward to the original routing decision.",
+      "evaluation": "Full v1 compares four backbones on 1,140 BigCodeBench, 500 SWE-bench Verified, 273 MultiChallenge and 1,200 selected BBEH instances. It separates first-attempt and four-attempt success, reports fixed/heuristic routing and controller-freezing controls, and analyzes tokens and a restricted stationary-bandit model.",
+      "limitations": "One run per configuration; 100 BigCodeBench tuning tasks remain in evaluation. First-attempt gains do not imply better four-attempt success, and some fixed or memory-free baselines win. Shared-snapshot chronology and a separate learned-policy snapshot score are unclear. Token totals exclude evaluator calls. The stationary, undiscounted theoretical controller differs from the discounted experimental variants and does not guarantee optimal long-term memory consolidation.",
       "review_depth": "full-text",
-      "checked": "2026-11-04",
+      "checked": "2026-11-09",
       "short_name": "OMCE"
     },
     {
@@ -498,10 +499,11 @@
       "url": "https://arxiv.org/abs/2611.00544",
       "sources": [
         "https://arxiv.org/abs/2611.00544",
-        "https://arxiv.org/html/2611.00544v1"
+        "https://arxiv.org/html/2611.00544v1",
+        "https://arxiv.org/pdf/2611.00544v1"
       ],
       "code_url": null,
-      "code_note": "An official implementation was not established in the inspected sources; no code was executed.",
+      "code_note": "Complete 20-page arXiv v1, substantive Appendices A–C, eight figures/eight tables, algorithm, formulation, construction/judging protocols and robustness checks read on 2026-11-09. The author publication page lists a preprint; an official implementation was not established. No skill, model or benchmark was executed.",
       "topics": [
         "skills",
         "prompts",
@@ -515,11 +517,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Incoming skill bodies, similar earlier skills, and body-derived synthetic queries guide metadata rewriting without evaluation labels.",
-      "mechanism": "Rewrites an incoming skill’s name and description to clarify supported capabilities and scope relative to nearby skills. The revised metadata persists in the growing library; earlier metadata, skill bodies, and router weights stay fixed.",
-      "evaluation": "Tests incremental versions of SRA-Bench, SkillRet, and SkillRouter across five routers, plus native Codex CLI skill selection. A separate 150-query, 87-skill check measures hidden-test task success.",
-      "limitations": "Main outcomes measure required-skill selection, not completed tasks. The principal stream deliberately adds confusable non-substitutes, using model judgments during construction. Random additions show smaller gains. End-task validation uses an early library and an added workflow prompt; it does not establish success at maximum library size.",
+      "mechanism": "Refines an incoming skill’s name and description using its body and similar earlier skills, adding differentiating capabilities, scope exclusions and name qualifiers. Original records supply later references. Rewritten metadata persists while skill bodies, earlier metadata and router weights remain fixed; fidelity is prompted rather than formally verified.",
+      "evaluation": "Full v1 evaluates a deliberately confusable SRA-Bench growth stream across five routers, two additional benchmark streams, random additions, component combinations and limited order/repeat controls. Native Codex tests score named-skill selection; a separate 150-query, 87-skill experiment reports hidden-test task success.",
+      "limitations": "Main routing metrics count annotated required skills, not execution success. Required-skill metadata stays original while confusable incoming skills are refined; construction and error typing use model judgments. Random additions yield smaller gains. Query-bootstrap intervals do not capture all rewrite/order variability. Task-success evidence uses an early library and extra workflow instruction, with much smaller gains than skill-selection coverage.",
       "review_depth": "full-text",
-      "checked": "2026-11-04",
+      "checked": "2026-11-09",
       "short_name": "Skill++"
     },
     {

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded experience and skill routing reviews
+
+- Read OMCE and Skill++ in full, including proofs, algorithms, benchmark construction and visual results.
+- Qualified retry credit, theory assumptions, comparison protocols and skill-selection versus task-success claims.
+- Broader audit: 120 of 190 works complete, 70 pending.
+
 ## 2026-11-09 — Expanded capability and state-revision diagnostics
 
 - Read Artifact-to-Capability and StateGraph with complete substantive appendices, formulas and visual results.
