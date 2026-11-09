@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Hierarchical, temporal and self-correction reviews
+
+- Completed broader full-text appraisals of Hierarchical Self-Improvement, Temporal Self-Rewarding and the Self-correction survey.
+- Corrected Temporal Self-Rewarding's first-release date and qualified protocol, compute, theory and historical-evidence limits.
+- Counts remain 190 works: 185 full-text and 5 abstract/metadata reviews. Fifty-five broader appraisals are complete; 135 remain.
+
 ## 2026-11-09 — Self-training and generated-feedback reviews
 
 - Upgraded R-Zero, Dr. Zero, ReST-MCTS* and Self-Challenging Agents through full-text and appendix appraisal.

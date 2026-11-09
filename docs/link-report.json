@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-09T06:33:07.411053+00:00",
+  "checked_at_utc": "2026-11-09T06:39:13.783355+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -43,6 +43,12 @@
       "url": "https://aclanthology.org/2024.emnlp-main.861/",
       "http_status": 200,
       "final_url": "https://aclanthology.org/2024.emnlp-main.861/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2024.tacl-1.78.pdf",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2024.tacl-1.78.pdf",
       "status": "reachable"
     },
     {
@@ -378,6 +384,12 @@
       "observed_title": "Promptbreeder: Self-Referential Self-Improvement Via Prompt Evolution",
       "title_similarity": 1.0,
       "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2310.01377",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2310.01377",
+      "status": "reachable"
     },
     {
       "url": "https://arxiv.org/abs/2310.01798",
@@ -740,6 +752,12 @@
       "observed_title": "R-Zero: Self-Evolving Reasoning LLM from Zero Data",
       "title_similarity": 1.0,
       "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2508.06026",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2508.06026",
+      "status": "reachable"
     },
     {
       "url": "https://arxiv.org/abs/2508.06433",
@@ -3132,6 +3150,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2608.08466v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2608.08466v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2608.16114v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2608.16114v1",
@@ -4538,6 +4562,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wang26ik/wang26ik.pdf",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wang26ik/wang26ik.pdf",
+      "status": "reachable"
+    },
+    {
       "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhao26aw/zhao26aw.pdf",
       "http_status": 200,
       "final_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhao26aw/zhao26aw.pdf",
@@ -4576,14 +4606,14 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=2626d8f0-5eaa-4dbf-9cf1-6646b909f3a1",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=6def5d7c-2f6f-4b94-9ea3-cbd8d523fc44",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=f5e512e2-914b-4f10-b4d1-c063870eb192",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=3f6c5db8-0037-43b4-b165-2f6c3cc69934",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -4597,14 +4627,14 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=2a058617-05e5-4ed0-a10b-cfb7538abc5b",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=6e12bff2-84b2-44b0-ab09-d7364f922097",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=24a36404-84d9-4f42-b71f-de63b8674ab4",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=61f3be61-2f60-4e6d-a2d5-fca1f3a3714b",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },

@@ -85,7 +85,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-08-22 | **CIDER**<br>[CIDER: Continual Interactive Distillation for Embodied Reinforcement Learning](https://arxiv.org/abs/2608.21899) | Interleaves online actor-critic learning with distillation from the preceding consolidated policy. Gradient routing separates acquisition and retention updates while… | Model weights | preprint · full-text | [Notes](#cider) |
 | 2026-08-20 | **Phantom Gains**<br>[Phantom Gains: Auditing Self-Improvement Against a Measured Null](https://arxiv.org/abs/2608.20290) | Measures apparent per-problem changes in frozen-model controls before interpreting changes after self-training. It uses sampled solve rates, a hysteresis-based… | Analysis / no retained update | preprint · full-text | [Notes](#phantom-gains) · [Code](https://github.com/chengxuphd/phantom-gains) |
 | 2026-08-17 | **HyperSkill**<br>[HyperSkill: Self-Evolving LLM Agents via Hypergraph-Structured Skill Memory](https://arxiv.org/abs/2608.16114) | Stores task decompositions and reusable natural-language skills in trajectory hyperedges. Task-level and subtask-level retrieval select lessons, while co-occurrence… | Skills, Memory | preprint · full-text | [Notes](#hyperskill) · [Code](https://github.com/rux001/HyperSkill) |
-| 2026-08-09 | **Hierarchical improvement**<br>[Hierarchical Self-Improvement: A Framework for Task-Specific Evolvable Agent Harnesses](https://arxiv.org/abs/2608.08466) | Uses a frozen model at three levels: task execution, harness editing, and editing the strategy used by the harness evolver. Each task family maintains a reusable… | Agent code, Workflows | preprint · abstract | [Notes](#hierarchical-self-improvement) · [Code](https://github.com/TailinZhou/hsi) |
+| 2026-08-09 | **Hierarchical improvement**<br>[Hierarchical Self-Improvement: A Framework for Task-Specific Evolvable Agent Harnesses](https://arxiv.org/abs/2608.08466) | Uses one frozen model in separate task, evolver and meta-evolver contexts. The evolver rewrites a task-family harness; the meta-evolver edits its search strategy.… | Agent code, Workflows | preprint · full-text | [Notes](#hierarchical-self-improvement) · [Code](https://github.com/TailinZhou/hsi) |
 | 2026-08-05 | **EvolveNet**<br>[EvolveNet: Collaborative Harness Evolution for Agent Self-Improvement](https://arxiv.org/abs/2608.04968) | Clients modify a shared executable harness using frozen models; a server integrates globally useful and domain-conditional edits, validates the merge, and redistributes… | Agent code, Workflows | preprint · full-text | [Notes](#evolvenet) · [Code](https://github.com/junnie00/EvolveNet) |
 | 2026-08-04 | **PAST-Bench**<br>[PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents](https://arxiv.org/abs/2608.04003) | Uses ordered fresh-session tasks with matched retention-on and retention-off conditions, and records evidence for saving, retrieving, and updating persistent state. | Memory, Skills | preprint · full-text | [Notes](#past-bench) · [Code](https://github.com/Gen-Verse/PAST-Bench) |
 | 2026-08-04 | **GDPevo**<br>[GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](https://arxiv.org/abs/2608.03764) | Distributes hidden business rules across training tasks and recombines them in held-out tasks, using an automated pipeline to construct environments and deterministic… | Skills, Memory | preprint · full-text | [Notes](#gdpevo) · [Code](https://github.com/Prism-Shadow/GDPevo) |
@@ -124,7 +124,6 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-01-08 | **AgentDevel**<br>[AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering](https://arxiv.org/abs/2601.04620) | A fixed development engine generates diagnostic scripts and one prompt/code/tool-wrapper release candidate per iteration. A configurable regression gate retains accepted… | Agent code, Workflows | preprint · full-text | [Notes](#agentdevel) |
 | 2026-01-06 | **MemRL**<br>[MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory](https://arxiv.org/abs/2601.03192) | Keeps model weights fixed and stores intent, experience and utility triplets. Similarity filtering precedes utility-weighted ranking; a constant-step moving average… | Memory | preprint · full-text | [Notes](#memrl) · [Code](https://github.com/MemTensor/MemRL) |
 | 2026-01-05 | **AgeMem**<br>[Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents](https://arxiv.org/abs/2601.01885) | Trains an agent to select long-term memory edits and short-term context operations as tools. Three progressive stages and step-wise GRPO assign delayed task rewards to… | Model weights, Memory, Prompts / context | peer-reviewed · full-text | [Notes](#agemem) · [Code](https://github.com/y1y5/AgeMem) |
-| 2026 | **Temporal self-rewarding**<br>[Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](https://proceedings.mlr.press/v306/wang26ik.html) | Separates the model generations used to provide rejected and chosen samples so their learning signal does not shrink as both improve together. The paper applies this… | Model weights | peer-reviewed · abstract | [Notes](#temporal-self-rewarding) · [Code](https://github.com/TemporalSelfRewarding/TSR) |
 | 2026 | **SkillRubricsRL**<br>[SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning](https://aclanthology.org/2026.findings-emnlp.471/) | Pairs each skill with execution criteria, trains an acting policy with combined outcome and fulfillment rewards, and evolves the skill bank from failures. Marginal… | Model weights, Skills, Memory | peer-reviewed · full-text | [Notes](#skillrubricsrl) · [Code](https://github.com/gminiheimdallr-a11y/SkillRubricsRL) |
 | 2026 | **PerMemSafe**<br>[PerMemSafe: Benchmarking Implicit Personalized Safety of Long Horizon Self-Evolving Agents](https://aclanthology.org/2026.findings-acl.320/) | Separates recognizing implicit personalized risks from tracking their changes over time. The accompanying SentinelMem retains explicit fact-state transitions and… | Memory | peer-reviewed · full-text | [Notes](#permemsafe) |
 | 2026 | **COLLABMEM**<br>[COLLABMEM: A Diagnostic Benchmark for Collaborative Memory Operations in Multi-Agent LLM Systems](https://aclanthology.org/2026.emnlp-main.1194/) | Holds the interaction trace and answering layer fixed to isolate sharing, access, routing, provenance, conflict resolution, and retention. TMS-GRAPH++ supplies… | Memory | peer-reviewed · full-text | [Notes](#collabmem) |
@@ -145,6 +144,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-08-26 | **ELL / StuLife**<br>[Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark](https://arxiv.org/abs/2508.19005) | Defines experience-driven lifelong learning around exploration, memory, skill abstraction, and internalization, and introduces StuLife as a stateful simulated… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#ell-stulife) |
 | 2025-08-22 | **Memento**<br>[Memento: Fine-tuning LLM Agents without Fine-tuning LLMs](https://arxiv.org/abs/2508.16153) | A planner-executor agent stores completed cases and reuses them in subsequent planning. Retrieval can use fixed similarity or a learned Q-function; underlying LLM… | Memory, Model weights | preprint · full-text | [Notes](#memento) · [Code](https://github.com/Memento-Teams/Memento) |
 | 2025-08-10 | **Agent evolution survey**<br>[A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](https://arxiv.org/abs/2508.07407) | Describes an evolution loop through inputs, agent systems, environments, and optimizers, then maps techniques and domain-specific applications onto those components. | Analysis / no retained update | preprint · abstract | [Notes](#comprehensive-evolving-survey) |
+| 2025-08-08 | **Temporal self-rewarding**<br>[Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](https://proceedings.mlr.press/v306/wang26ik.html) | Selects rejected answers from the lower-scoring initial/current candidates, trains a temporary model, then chooses better-scoring current/temporary answers. A second DPO… | Model weights | peer-reviewed · full-text | [Notes](#temporal-self-rewarding) · [Code](https://github.com/TemporalSelfRewarding/TSR) |
 | 2025-08-08 | **Memp**<br>[Memp: Exploring Agent Procedural Memory](https://arxiv.org/abs/2508.06433) | Combines detailed trajectories with abstract procedural scripts in an external memory bank. Similarity retrieval supplies guidance to fixed-weight agents; online… | Memory, Skills | peer-reviewed · full-text | [Notes](#memp) · [Code](https://github.com/zjunlp/MemP) |
 | 2025-08-07 | **R-Zero**<br>[R-Zero: Self-Evolving Reasoning LLM from Zero Data](https://arxiv.org/abs/2508.05004) | Alternates GRPO updates of separate challenger and solver copies. The challenger proposes mostly mathematical questions; the solver samples answers, filters questions by… | Model weights | peer-reviewed · full-text | [Notes](#r-zero) · [Code](https://github.com/Chengsong-Huang/R-Zero) |
 | 2025-07-28 | **What/when/how survey**<br>[A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence](https://arxiv.org/abs/2507.21046) | Organizes agent adaptation by the component that changes, the stage when it changes, the feedback and algorithm used, and the application setting. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#self-evolving-survey) |
@@ -180,7 +180,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2024-01-23 | **TroVE**<br>[TroVE: Inducing Verifiable and Efficient Toolboxes for Solving Programmatic Tasks](https://arxiv.org/abs/2401.12869) | Samples solutions that import existing functions, create new ones, or use only supplied primitives. Execution agreement and simplicity select a solution whose functions… | Tools, Skills | peer-reviewed · full-text | [Notes](#trove) · [Code](https://github.com/zorazrw/trove) |
 | 2024-01-18 | **Self-Rewarding LMs**<br>[Self-Rewarding Language Models](https://arxiv.org/abs/2401.10020) | Alternates answer generation, self-judging and DPO updates, changing the shared answering/reward model. The main experiment uses a fixed Llama-2-Chat prompt generator… | Model weights | peer-reviewed · full-text | [Notes](#self-rewarding-lms) |
 | 2024-01-02 | **SPIN**<br>[Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](https://arxiv.org/abs/2401.01335) | Optimizes a contrastive log-probability-ratio objective against the previous model, then samples a new opponent dataset from the updated weights. The experiments reuse… | Model weights | peer-reviewed · full-text | [Notes](#spin) · [Code](https://github.com/uclaml/SPIN) |
-| 2024 | **Self-correction survey**<br>[When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs](https://aclanthology.org/2024.tacl-1.78/) | Separates self-correction questions by feedback source and training assumptions, and examines whether experimental designs support the claimed correction ability. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#self-correction-survey) |
+| 2024 | **Self-correction survey**<br>[When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs](https://aclanthology.org/2024.tacl-1.78/) | Organizes inference-time correction around three questions: intrinsic improvement, improvement with external information, and superiority to alternative methods. Its… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#self-correction-survey) |
 | 2023-10-12 | **MemGPT**<br>[MemGPT: Towards LLMs as Operating Systems](https://arxiv.org/abs/2310.08560) | Separates active context from archival and recall storage. Function calls page information in and out, edit working memory, and request successive inference steps… | Memory | preprint · full-text | [Notes](#memgpt) |
 | 2023-10-05 | **DSPy**<br>[DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines](https://arxiv.org/abs/2310.03714) | Compiles declarative LM modules by bootstrapping and selecting demonstrations. Composed optimizers can ensemble programs or fine-tune smaller models. Optimized prompts… | Prompts / context, Workflows, Model weights | peer-reviewed · full-text | [Notes](#dspy) · [Code](https://github.com/stanfordnlp/dspy) |
 | 2023-10-03 | **STOP**<br>[Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation](https://arxiv.org/abs/2310.02304) | Applies an LLM-assisted program improver to its own source, retaining the resulting improver for subsequent rounds and tasks. The scaffold changes; the language-model… | Agent code | peer-reviewed · full-text | [Notes](#stop) · [Code](https://github.com/microsoft/stop) |
@@ -1800,19 +1800,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2608.08466)
 
-**Mechanism.** Uses a frozen model at three levels: task execution, harness editing, and editing the strategy used by the harness evolver. Each task family maintains a reusable evolving harness.
+**Mechanism.** Uses one frozen model in separate task, evolver and meta-evolver contexts. The evolver rewrites a task-family harness; the meta-evolver edits its search strategy. Version archives and lessons persist across five outer iterations. The implemented terminal selector is described as fixed in the appendix and README, despite broader main-text wording.
 
-**What changes:** Agent code, Workflows. **Persistence:** across-tasks. **Learning signal:** Environment rewards evaluated under a fixed outer anchor.
+**What changes:** Agent code, Workflows. **Persistence:** across-tasks. **Learning signal:** Benchmark progress, development/validation feedback, committed-version history and stored lessons guide harness and evolution-strategy edits; evaluator and outer execution anchor are fixed.
 
-**Evaluation.** BALROG experiments report gains on several game environments, held-out BabaIsAI sub-suites, and no improvement on NLE.
+**Evaluation.** ArXiv v1 compares initial, meta-off and meta-on harnesses on BALROG with DeepSeek-V4-Flash. Five suites reuse task families with new episode seeds; three BabaIsAI sub-suites use held-out tasks. It reports progress scores, limited evaluation repeats and qualitative evolution histories, including near-zero NLE results.
 
-**Boundary.** The authors identify limits from feedback quality and the frozen model capability. The outer anchor remains fixed, and held-out results concern the particular task-family splits.
+**Boundary.** One backbone and short runs do not establish an intrinsic capability ceiling. Task-time thinking flags do not equate total computation, and no matched-cost search baseline is reported. Meta-evolution is not uniformly better on held-out tasks. Protocol descriptions and uncertainty denominators differ between sections; cross-family transfer and indefinite retention remain untested.
 
-**Code / data.** [Official artifact](https://github.com/TailinZhou/hsi) — Official repository landing page inspected; no installation or execution performed.
+**Code / data.** [Official artifact](https://github.com/TailinZhou/hsi) — Official repository README, pipeline, configuration and result descriptions inspected on 2026-11-09; no benchmark, model or research code executed. Current documentation does not independently establish the paper experiments or enforcement of scope isolation.
 
-**Topics:** architecture, recursive-improvement, evaluation. **Reviewed:** abstract · 2026-10-28.
+**Topics:** architecture, recursive-improvement, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2608.08466) · [Source 2](https://github.com/TailinZhou/hsi)
+[Source 1](https://arxiv.org/abs/2608.08466) · [Source 2](https://github.com/TailinZhou/hsi) · [Source 3](https://arxiv.org/pdf/2608.08466v1)
 
 <a id="evolvenet"></a>
 
@@ -2658,28 +2658,6 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Source 1](https://arxiv.org/abs/2601.01885) · [Source 2](https://arxiv.org/html/2601.01885v3) · [Source 3](https://aclanthology.org/2026.acl-long.981/) · [Source 4](https://github.com/y1y5/AgeMem)
 
-<a id="temporal-self-rewarding"></a>
-
-## Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future
-
-**2026 · peer-reviewed · ICML 2026 · adjacent · paper**
-
-[Primary source](https://proceedings.mlr.press/v306/wang26ik.html)
-
-**Mechanism.** Separates the model generations used to provide rejected and chosen samples so their learning signal does not shrink as both improve together. The paper applies this temporal arrangement to iterative self-rewarding training.
-
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Preferences using anchored past-model rejections and newer-model chosen responses.
-
-**Evaluation.** The authors compare model families and sizes at matched compute and report instruction-following and selected out-of-distribution reasoning, QA, and coding results.
-
-**Boundary.** This review inspected the proceedings abstract and repository landing page. Curator interpretation: reported task transfer does not establish a calibrated self-judge or unlimited improvement over future generations.
-
-**Code / data.** [Official artifact](https://github.com/TemporalSelfRewarding/TSR) — Official repository page checked; code and training were not executed.
-
-**Topics:** model-training, self-play, evaluation. **Reviewed:** abstract · 2026-10-28.
-
-[Source 1](https://proceedings.mlr.press/v306/wang26ik.html) · [Source 2](https://github.com/TemporalSelfRewarding/TSR)
-
 <a id="skillrubricsrl"></a>
 
 ## SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning
@@ -3123,6 +3101,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** surveys, architecture, continual-learning. **Reviewed:** abstract · 2026-10-28.
 
 [Source 1](https://arxiv.org/abs/2508.07407)
+
+<a id="temporal-self-rewarding"></a>
+
+## Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future
+
+**2025-08-08 · peer-reviewed · ICML 2026 · adjacent · paper**
+
+[Primary source](https://proceedings.mlr.press/v306/wang26ik.html)
+
+**Mechanism.** Selects rejected answers from the lower-scoring initial/current candidates, trains a temporary model, then chooses better-scoring current/temporary answers. A second DPO stage starts again from the current model using these new pairs. Updated weights persist; the judge, candidate sources and selection rules define the learning signal.
+
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Current-model preference scores rank outputs from initial, current and temporary trained models. Initialization uses external instruction/evaluation data and GPT-4o explanations; the separate online math extension uses correctness-filtered reference solutions.
+
+**Evaluation.** The ICML 2026 paper compares five backbone/size configurations on three instruction benchmarks, four downstream tasks and a separate GRPO math extension. Two temporal iterations are compared with four standard self-rewarding iterations, alongside past/future and external-judge ablations.
+
+**Boundary.** Matching DPO stage counts does not establish equal generation, judging or total compute. GPT-4o judging and response length affect the reported win rates; gains vary by metric and iteration. Conditional gradient analysis does not prove indefinite stable learning. Some tables and the current artifact pair rules disagree with the paper.
+
+**Code / data.** [Official artifact](https://github.com/TemporalSelfRewarding/TSR) — Official README inspected on 2026-11-09. It documents later corrections and pair-selection options that differ from paper pseudocode; its archived reproduction claims were not independently checked here. No research code, datasets, training or evaluation executed.
+
+**Topics:** model-training, self-play, evaluation. **Reviewed:** full-text · 2026-11-09.
+
+[Source 1](https://proceedings.mlr.press/v306/wang26ik.html) · [Source 2](https://github.com/TemporalSelfRewarding/TSR) · [Source 3](https://raw.githubusercontent.com/mlresearch/v306/main/assets/wang26ik/wang26ik.pdf) · [Source 4](https://arxiv.org/abs/2508.06026) · [Source 5](https://arxiv.org/abs/2310.01377)
 
 <a id="memp"></a>
 
@@ -3924,19 +3924,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://aclanthology.org/2024.tacl-1.78/)
 
-**Mechanism.** Separates self-correction questions by feedback source and training assumptions, and examines whether experimental designs support the claimed correction ability.
+**Mechanism.** Organizes inference-time correction around three questions: intrinsic improvement, improvement with external information, and superiority to alternative methods. Its taxonomy checks whether initial answers receive comparable information and strong prompts, and whether correction uses unavailable oracle feedback.
 
-**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable: analysis or evaluation resource.
+**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable to the survey itself; it distinguishes prompted feedback, external tools/knowledge and trained correction models in the reviewed literature.
 
-**Evaluation.** The reviewed evidence favors reliable external feedback or trained correction in many settings, while questioning broad claims for prompted intrinsic correction.
+**Evaluation.** The TACL article critically compares published protocols and prompt examples, with separate checklists for positive and negative findings. It identifies reliable feedback and trained correction as promising conditions, recognizes decomposable-task exceptions, and recommends direct feedback-quality measurement and compute-matched baselines.
 
-**Boundary.** This is a review of the literature available in 2024, not a universal impossibility theorem or a measurement of current models.
+**Boundary.** This is a qualitative review of the 2024 literature, not a new pooled experiment or exhaustive search protocol. Its negative conclusions are conditional on reviewed models, prompts and task properties. The best-initial-answer criterion requires judgment; inference-time correction does not itself demonstrate persistent learning or impossibility for later models.
 
 **Code / data.** No implementation link independently inspected for this entry; this does not establish that none exists.
 
-**Topics:** surveys, foundations, evaluation. **Reviewed:** abstract · 2026-10-28.
+**Topics:** surveys, foundations, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://aclanthology.org/2024.tacl-1.78/)
+[Source 1](https://aclanthology.org/2024.tacl-1.78/) · [Source 2](https://aclanthology.org/2024.tacl-1.78.pdf)
 
 <a id="memgpt"></a>
 

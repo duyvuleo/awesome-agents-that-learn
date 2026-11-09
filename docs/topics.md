@@ -375,7 +375,6 @@ A work may appear in several topics; counts here are not additive.
 - 2026-02-02 — [MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](papers.md#memskill) · core · preprint
 - 2026-01-11 — [Dr. Zero: Self-Evolving Search Agents without Training Data](papers.md#dr-zero) · core · peer-reviewed
 - 2026-01-05 — [Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents](papers.md#agemem) · core · peer-reviewed
-- 2026 — [Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](papers.md#temporal-self-rewarding) · adjacent · peer-reviewed
 - 2026 — [SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning](papers.md#skillrubricsrl) · core · peer-reviewed
 - 2025-11-20 — [Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](papers.md#agent0) · core · peer-reviewed
 - 2025-11-03 — [Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](papers.md#self-harmony) · adjacent · peer-reviewed
@@ -386,6 +385,7 @@ A work may appear in several topics; counts here are not additive.
 - 2025-09-30 — [Mem-α: Learning Memory Construction via Reinforcement Learning](papers.md#mem-alpha) · core · preprint
 - 2025-09-29 — [Socratic-Zero : Bootstrapping Reasoning via Data-Free Agent Co-evolution](papers.md#socratic-zero) · core · preprint
 - 2025-08-27 — [Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](papers.md#memory-r1) · core · preprint
+- 2025-08-08 — [Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](papers.md#temporal-self-rewarding) · adjacent · peer-reviewed
 - 2025-08-07 — [R-Zero: Self-Evolving Reasoning LLM from Zero Data](papers.md#r-zero) · core · peer-reviewed
 - 2025-06-30 — [SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](papers.md#spiral) · core · peer-reviewed
 - 2025-06-12 — [Self-Adapting Language Models](papers.md#seal) · core · peer-reviewed
@@ -419,7 +419,6 @@ A work may appear in several topics; counts here are not additive.
 - 2026-09-25 — [Self-Play Search Distillation for Large Language Model Reasoning](papers.md#spsd) · core · preprint
 - 2026-05-31 — [On the Generalization Gap in Self-Evolving Language Model Reasoning](papers.md#self-evolution-generalization-gap) · adjacent · peer-reviewed
 - 2026-01-11 — [Dr. Zero: Self-Evolving Search Agents without Training Data](papers.md#dr-zero) · core · peer-reviewed
-- 2026 — [Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](papers.md#temporal-self-rewarding) · adjacent · peer-reviewed
 - 2025-11-20 — [Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](papers.md#agent0) · core · peer-reviewed
 - 2025-11-03 — [Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](papers.md#self-harmony) · adjacent · peer-reviewed
 - 2025-11-01 — [OpenSIR: Open-Ended Self-Improving Reasoner](papers.md#opensir) · core · preprint
@@ -427,6 +426,7 @@ A work may appear in several topics; counts here are not additive.
 - 2025-10-21 — [Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](papers.md#search-self-play) · core · peer-reviewed
 - 2025-10-17 — [MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs](papers.md#marshal) · core · peer-reviewed
 - 2025-09-29 — [Socratic-Zero : Bootstrapping Reasoning via Data-Free Agent Co-evolution](papers.md#socratic-zero) · core · preprint
+- 2025-08-08 — [Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](papers.md#temporal-self-rewarding) · adjacent · peer-reviewed
 - 2025-08-07 — [R-Zero: Self-Evolving Reasoning LLM from Zero Data](papers.md#r-zero) · core · peer-reviewed
 - 2025-06-30 — [SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](papers.md#spiral) · core · peer-reviewed
 - 2025-06-02 — [Self-Challenging Language Model Agents](papers.md#self-challenging-agents) · core · peer-reviewed
@@ -607,7 +607,6 @@ A work may appear in several topics; counts here are not additive.
 - 2026-02-02 — [MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](papers.md#memskill) · core · preprint
 - 2026-01-30 — [Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness) · core · peer-reviewed
 - 2026-01-08 — [AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering](papers.md#agentdevel) · core · preprint
-- 2026 — [Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](papers.md#temporal-self-rewarding) · adjacent · peer-reviewed
 - 2026 — [SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning](papers.md#skillrubricsrl) · core · peer-reviewed
 - 2026 — [PerMemSafe: Benchmarking Implicit Personalized Safety of Long Horizon Self-Evolving Agents](papers.md#permemsafe) · adjacent · peer-reviewed
 - 2026 — [COLLABMEM: A Diagnostic Benchmark for Collaborative Memory Operations in Multi-Agent LLM Systems](papers.md#collabmem) · adjacent · peer-reviewed
@@ -616,6 +615,7 @@ A work may appear in several topics; counts here are not additive.
 - 2025-10-17 — [MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs](papers.md#marshal) · core · peer-reviewed
 - 2025-09-29 — [A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory](papers.md#a-memguard) · core · peer-reviewed
 - 2025-08-26 — [Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark](papers.md#ell-stulife) · core · peer-reviewed
+- 2025-08-08 — [Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](papers.md#temporal-self-rewarding) · adjacent · peer-reviewed
 - 2025-07-25 — [GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](papers.md#gepa) · core · peer-reviewed
 - 2025-06-30 — [SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](papers.md#spiral) · core · peer-reviewed
 - 2025-05-17 — [LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners](papers.md#lifelongagentbench) · core · preprint

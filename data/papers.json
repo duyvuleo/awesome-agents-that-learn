@@ -2375,10 +2375,11 @@
     "url": "https://arxiv.org/abs/2608.08466",
     "sources": [
       "https://arxiv.org/abs/2608.08466",
-      "https://github.com/TailinZhou/hsi"
+      "https://github.com/TailinZhou/hsi",
+      "https://arxiv.org/pdf/2608.08466v1"
     ],
     "code_url": "https://github.com/TailinZhou/hsi",
-    "code_note": "Official repository landing page inspected; no installation or execution performed.",
+    "code_note": "Official repository README, pipeline, configuration and result descriptions inspected on 2026-11-09; no benchmark, model or research code executed. Current documentation does not independently establish the paper experiments or enforcement of scope isolation.",
     "topics": [
       "architecture",
       "recursive-improvement",
@@ -2390,12 +2391,12 @@
       "workflows"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Environment rewards evaluated under a fixed outer anchor.",
-    "mechanism": "Uses a frozen model at three levels: task execution, harness editing, and editing the strategy used by the harness evolver. Each task family maintains a reusable evolving harness.",
-    "evaluation": "BALROG experiments report gains on several game environments, held-out BabaIsAI sub-suites, and no improvement on NLE.",
-    "limitations": "The authors identify limits from feedback quality and the frozen model capability. The outer anchor remains fixed, and held-out results concern the particular task-family splits.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Benchmark progress, development/validation feedback, committed-version history and stored lessons guide harness and evolution-strategy edits; evaluator and outer execution anchor are fixed.",
+    "mechanism": "Uses one frozen model in separate task, evolver and meta-evolver contexts. The evolver rewrites a task-family harness; the meta-evolver edits its search strategy. Version archives and lessons persist across five outer iterations. The implemented terminal selector is described as fixed in the appendix and README, despite broader main-text wording.",
+    "evaluation": "ArXiv v1 compares initial, meta-off and meta-on harnesses on BALROG with DeepSeek-V4-Flash. Five suites reuse task families with new episode seeds; three BabaIsAI sub-suites use held-out tasks. It reports progress scores, limited evaluation repeats and qualitative evolution histories, including near-zero NLE results.",
+    "limitations": "One backbone and short runs do not establish an intrinsic capability ceiling. Task-time thinking flags do not equate total computation, and no matched-cost search baseline is reported. Meta-evolution is not uniformly better on held-out tasks. Protocol descriptions and uncertainty denominators differ between sections; cross-family transfer and indefinite retention remain untested.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "Hierarchical improvement"
   },
   {
@@ -5387,7 +5388,8 @@
     "venue": "TACL 2024",
     "url": "https://aclanthology.org/2024.tacl-1.78/",
     "sources": [
-      "https://aclanthology.org/2024.tacl-1.78/"
+      "https://aclanthology.org/2024.tacl-1.78/",
+      "https://aclanthology.org/2024.tacl-1.78.pdf"
     ],
     "code_url": null,
     "code_note": "No implementation link independently inspected for this entry; this does not establish that none exists.",
@@ -5401,12 +5403,12 @@
       "none"
     ],
     "persistence": "not-applicable",
-    "learning_signal": "Not applicable: analysis or evaluation resource.",
-    "mechanism": "Separates self-correction questions by feedback source and training assumptions, and examines whether experimental designs support the claimed correction ability.",
-    "evaluation": "The reviewed evidence favors reliable external feedback or trained correction in many settings, while questioning broad claims for prompted intrinsic correction.",
-    "limitations": "This is a review of the literature available in 2024, not a universal impossibility theorem or a measurement of current models.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Not applicable to the survey itself; it distinguishes prompted feedback, external tools/knowledge and trained correction models in the reviewed literature.",
+    "mechanism": "Organizes inference-time correction around three questions: intrinsic improvement, improvement with external information, and superiority to alternative methods. Its taxonomy checks whether initial answers receive comparable information and strong prompts, and whether correction uses unavailable oracle feedback.",
+    "evaluation": "The TACL article critically compares published protocols and prompt examples, with separate checklists for positive and negative findings. It identifies reliable feedback and trained correction as promising conditions, recognizes decomposable-task exceptions, and recommends direct feedback-quality measurement and compute-matched baselines.",
+    "limitations": "This is a qualitative review of the 2024 literature, not a new pooled experiment or exhaustive search protocol. Its negative conclusions are conditional on reviewed models, prompts and task properties. The best-initial-answer criterion requires judgment; inference-time correction does not itself demonstrate persistent learning or impossibility for later models.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "Self-correction survey"
   },
   {
@@ -6390,18 +6392,21 @@
   {
     "id": "temporal-self-rewarding",
     "title": "Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future",
-    "date": "2026",
-    "year": 2026,
+    "date": "2025-08-08",
+    "year": 2025,
     "kind": "paper",
     "status": "peer-reviewed",
     "venue": "ICML 2026",
     "url": "https://proceedings.mlr.press/v306/wang26ik.html",
     "sources": [
       "https://proceedings.mlr.press/v306/wang26ik.html",
-      "https://github.com/TemporalSelfRewarding/TSR"
+      "https://github.com/TemporalSelfRewarding/TSR",
+      "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wang26ik/wang26ik.pdf",
+      "https://arxiv.org/abs/2508.06026",
+      "https://arxiv.org/abs/2310.01377"
     ],
     "code_url": "https://github.com/TemporalSelfRewarding/TSR",
-    "code_note": "Official repository page checked; code and training were not executed.",
+    "code_note": "Official README inspected on 2026-11-09. It documents later corrections and pair-selection options that differ from paper pseudocode; its archived reproduction claims were not independently checked here. No research code, datasets, training or evaluation executed.",
     "topics": [
       "model-training",
       "self-play",
@@ -6412,12 +6417,12 @@
       "model-weights"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Preferences using anchored past-model rejections and newer-model chosen responses.",
-    "mechanism": "Separates the model generations used to provide rejected and chosen samples so their learning signal does not shrink as both improve together. The paper applies this temporal arrangement to iterative self-rewarding training.",
-    "evaluation": "The authors compare model families and sizes at matched compute and report instruction-following and selected out-of-distribution reasoning, QA, and coding results.",
-    "limitations": "This review inspected the proceedings abstract and repository landing page. Curator interpretation: reported task transfer does not establish a calibrated self-judge or unlimited improvement over future generations.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Current-model preference scores rank outputs from initial, current and temporary trained models. Initialization uses external instruction/evaluation data and GPT-4o explanations; the separate online math extension uses correctness-filtered reference solutions.",
+    "mechanism": "Selects rejected answers from the lower-scoring initial/current candidates, trains a temporary model, then chooses better-scoring current/temporary answers. A second DPO stage starts again from the current model using these new pairs. Updated weights persist; the judge, candidate sources and selection rules define the learning signal.",
+    "evaluation": "The ICML 2026 paper compares five backbone/size configurations on three instruction benchmarks, four downstream tasks and a separate GRPO math extension. Two temporal iterations are compared with four standard self-rewarding iterations, alongside past/future and external-judge ablations.",
+    "limitations": "Matching DPO stage counts does not establish equal generation, judging or total compute. GPT-4o judging and response length affect the reported win rates; gains vary by metric and iteration. Conditional gradient analysis does not prove indefinite stable learning. Some tables and the current artifact pair rules disagree with the paper.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "Temporal self-rewarding"
   },
   {
