@@ -964,10 +964,13 @@
     "url": "https://arxiv.org/abs/2610.34722",
     "sources": [
       "https://arxiv.org/abs/2610.34722",
-      "https://arxiv.org/html/2610.34722v1"
+      "https://arxiv.org/html/2610.34722v1",
+      "https://arxiv.org/pdf/2610.34722v1",
+      "https://mlv.kaist.ac.kr/CEPO/",
+      "https://github.com/mlvlab/CEPO"
     ],
     "code_url": null,
-    "code_note": "The inspected paper plans a code release upon acceptance; no official released implementation was verified.",
+    "code_note": "Complete 25-page arXiv v1, Appendices A–C, four figures, eight main/eighteen supplementary tables, algorithm and full prompts read on 2026-11-09. Official project page and repository main at f8ea467171505583875cc88673066d053299aa46 inspected: only README/assets, explicitly code coming soon. No implementation release or root license verified; nothing executed.",
     "topics": [
       "prompts",
       "architecture",
@@ -980,11 +983,11 @@
     ],
     "persistence": "across-tasks",
     "learning_signal": "Training-example feedback and validation scores used by supplied prompt optimizers.",
-    "mechanism": "Separates a shared coordination prompt from agent-specific execution prompts. Role-aligned instructions guide existing optimizers to tune coordination first, then selected execution prompts, retaining a reusable prompt set around the existing multi-agent system.",
-    "evaluation": "Applies the framework to four optimizers across eleven document, math, code, and video benchmarks, with guidance-swap, prompt-length, budget, and team-size controls.",
-    "limitations": "Search algorithms, role guidance, and labeled data remain supplied. Document benchmarks use custom document-level splits and model-judged answers; team-size scaling controls concern one document system. Curator interpretation: this is external prompt optimization, not autonomous redesign of the learning procedure.",
+    "mechanism": "Externally optimizes a shared coordination prompt prepended to each agent and selected local execution prompts. Fixed role-specific meta-instructions guide supplied prompt optimizers; both layers use the same system-level validation objective. The resulting prompt set persists, while model weights, team roles and the optimizer remain supplied.",
+    "evaluation": "Full v1 evaluates four optimizers across eleven document, math, code and video benchmarks. It adds document-system budget, length, guidance, schedule, executor-target and team-size controls, plus coordinator transfer. Gains over unoptimized systems are larger than the incremental gains over the corresponding prompt optimizer.",
+    "limitations": "Document results use custom document-level splits and an uncalibrated model judge; some external baseline rows use original test sets. Detailed cost/scaling controls cover one document system, and uncertainty is incompletely reported. More iterations or executor targets can hurt, with some target choices worse than vanilla optimization. API-call counts are not total compute, and coordinator transfer remains within document QA.",
     "review_depth": "full-text",
-    "checked": "2026-10-31",
+    "checked": "2026-11-09",
     "short_name": "CEPO"
   },
   {
@@ -1697,10 +1700,11 @@
     "sources": [
       "https://arxiv.org/abs/2610.35598",
       "https://arxiv.org/html/2610.35598v1",
-      "https://github.com/Szy5/EoG"
+      "https://github.com/Szy5/EoG",
+      "https://arxiv.org/pdf/2610.35598v1"
     ],
     "code_url": "https://github.com/Szy5/EoG",
-    "code_note": "Author-linked repository and README inspected; no installation, training, or result reproduction.",
+    "code_note": "Complete 12-page arXiv v1, Appendices A–D, eight figures/seven tables, seventeen equations, proof, algorithm and full case trajectories read on 2026-11-09. Official README at 8de3e51b5b5c4d376c72911fc3c5118f2e220c59 inspected; it documents external graph/model/verifier services and states the project license is pending. Public code availability is not a licensed or reproduced result; nothing installed, queried or trained.",
     "topics": [
       "self-play",
       "model-training",
@@ -1713,11 +1717,11 @@
     ],
     "persistence": "across-tasks",
     "learning_signal": "Answer sets from executable graph queries, format rewards, and solver-score variance for curriculum difficulty.",
-    "mechanism": "One shared model alternates between proposing graph-grounded questions and solving them through graph tools. Symbolic task generation and question checks feed alternating proposer and solver reinforcement-learning updates.",
-    "evaluation": "Reports six benchmarks over Freebase, Wikidata, and an industrial graph, multiple Qwen/Llama backbones, and component and curriculum analyses.",
-    "limitations": "Training still requires a supplied graph, six query patterns, and pretrained models; language-question verification uses the solver. The current README uses WebQSP/CWQ test questions as validation inputs, so separation from checkpoint selection is not established by this review.",
+    "mechanism": "Uses six supplied graph-query patterns to build an offline set of executable tasks and complete graph-relative answer sets. One shared model alternates question-proposal REINFORCE and tool-using solver GRPO updates. A model answer check filters generated questions, and solver-score variance rewards intermediate difficulty. Learned parameters persist; templates, tools and learning rules remain fixed.",
+    "evaluation": "Full v1 reports five public KGQA benchmarks and a 500-question industrial-graph evaluation, with Qwen/Llama backbones, role and synthesis ablations, reward comparisons and topology-success curves. Training adapts on each target graph; this is not zero-shot transfer to an unseen graph.",
+    "limitations": "Query execution verifies graph answers, not natural-language question equivalence; the latter uses a single model check. The variance proof concerns an advantage statistic under equal format scores, not guaranteed learning progress. Ablations change multiple factors, and stronger reward variants exist on some metrics. Similarity checks do not rule out semantic overlap. The README uses WebQSP/CWQ test questions as validation inputs; separation from checkpoint selection remains unestablished.",
     "review_depth": "full-text",
-    "checked": "2026-10-30",
+    "checked": "2026-11-09",
     "short_name": "EoG"
   },
   {
@@ -4921,10 +4925,13 @@
     "url": "https://arxiv.org/abs/2610.34938",
     "sources": [
       "https://arxiv.org/abs/2610.34938",
-      "https://arxiv.org/html/2610.34938v1"
+      "https://arxiv.org/html/2610.34938v1",
+      "https://arxiv.org/pdf/2610.34938v1",
+      "https://zenodo.org/records/23653700",
+      "https://zenodo.org/api/records/23653700"
     ],
-    "code_url": null,
-    "code_note": "The paper links a Zenodo artifact, but its archive page was inaccessible in this review; no code or session artifact was executed.",
+    "code_url": "https://zenodo.org/records/23653700",
+    "code_note": "Complete five-page arXiv v1 and both result tables read on 2026-11-09. The formerly inaccessible Zenodo page and public metadata now respond successfully, identifying the matching replication package and one ZIP. Metadata describes scripts, traces and labels, with MIT scripts and CC BY 4.0 data/documents subject to upstream terms. Archive contents were not downloaded, inspected or executed; publication status remains unverified beyond the preprint.",
     "topics": [
       "architecture",
       "memory",
@@ -4938,11 +4945,11 @@
     ],
     "persistence": "across-tasks",
     "learning_signal": "Completed coding-session traces generate proposals; researchers select changes and define later behavioral checks.",
-    "mechanism": "Studies individually retained harness adaptations proposed by a retrospective skill, including context instructions and known-failure files. Fresh sessions with and without each change test whether the targeted action recurs on later same-repository issues.",
-    "evaluation": "Analyzes 125 proposals from thirty SWE-bench Verified sessions, implements twenty-four proposals, and evaluates twelve adaptations in thirteen transfer events, with five sessions per harness.",
-    "limitations": "Human selection and evaluation remain central. Repeated-work reduction is a behavioral proxy, not proof of better task success or lower latency. Targeted task selection, partly unblinded labeling, one agent, and small samples limit generalization; some changes add unrelated work.",
+    "mechanism": "A fixed retrospective skill proposes persistent context instructions and known-failure artifacts after coding sessions. Researchers select changes; the agent implements approved proposals, with one author-written comparison. Fresh sessions test each retained adaptation on other issues in the same repository. Model weights and the retrospective procedure stay fixed.",
+    "evaluation": "Full five-page v1 analyzes 125 proposals from thirty SWE-bench Verified sessions, twenty-four implementation attempts and twelve adaptations in thirteen transfer events. Seven events meet the encounter criterion: two eliminate the targeted action, one reduces it and four do not. Three adaptations also receive unrelated-issue controls.",
+    "limitations": "The process is human-selected and targets later issues likely to reproduce a known problem. Recurrence is a behavioral measure, not proof that verification was unnecessary. Lower recurrence does not consistently improve task success or latency; bundled lint instructions can add work. Five sessions per arm, partly unblinded labels, post-hoc coverage groups and one agent/skill version limit causal generalization.",
     "review_depth": "full-text",
-    "checked": "2026-11-02",
+    "checked": "2026-11-09",
     "short_name": "Retrospective harness study"
   },
   {

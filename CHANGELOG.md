@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded prompt, retrospective and graph-learning reviews
+
+- Completed CEPO, the retrospective harness study and EoG with full methods, appendices and visual evidence.
+- Preserved negative transfer/cost findings and qualified graph-question verification and curriculum claims.
+- Verified the retrospective study’s now-accessible artifact metadata. Broader audit: 132/190 complete, 58 pending.
+
 ## 2026-11-09 — Expanded interface geometry and execution-model reviews
 
 - Completed both full papers, proofs, appendices, prediction controls and artifact documentation.

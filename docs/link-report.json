@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-09T11:48:15.968937+00:00",
+  "checked_at_utc": "2026-11-09T11:57:40.554581+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -3454,6 +3454,24 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2610.34722v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2610.34722v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2610.34938v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2610.34938v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2610.35598v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2610.35598v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2610.36469v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2610.36469v1",
@@ -4510,6 +4528,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/mlvlab/CEPO",
+      "http_status": 200,
+      "final_url": "https://github.com/mlvlab/CEPO",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/noahshinn/reflexion",
       "http_status": 200,
       "final_url": "https://github.com/noahshinn/reflexion",
@@ -4789,6 +4813,12 @@
       "url": "https://mle-world.github.io/",
       "http_status": 200,
       "final_url": "https://mle-world.github.io/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://mlv.kaist.ac.kr/CEPO/",
+      "http_status": 200,
+      "final_url": "https://mlv.kaist.ac.kr/CEPO/",
       "status": "reachable"
     },
     {
@@ -5253,21 +5283,21 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=8697cb50-84a2-40c7-9b90-3cc2c2d852e3",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=c93eea70-7243-4a9b-ae93-9a53a89acb42",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=882bfe30-bc6d-4a81-98dd-11d7e9c16039",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=46bc051b-d454-460b-b67f-ab260449e967",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=d68548d7-6d78-450c-9e13-d747a056534d",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=b2616b29-3fe4-4778-974c-38a97848400c",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -5281,21 +5311,21 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=17cf89b1-8a01-4647-a70b-e4f4fbe797be",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=5ae26643-3df6-4029-bd2f-5038ab5dcc7d",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=9bb36ec7-3b37-41fa-8dc9-f32f3fbfb049",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=c4134867-8715-406a-9fdf-d56b032451ff",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=b5463dd4-fbd8-4c60-88bf-7c1750c9c4af",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=765c9d5f-805c-4637-92fd-d1bf24cad37e",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -5330,9 +5360,21 @@
       "status": "reachable"
     },
     {
+      "url": "https://zenodo.org/api/records/23653700",
+      "http_status": 200,
+      "final_url": "https://zenodo.org/api/records/23653700",
+      "status": "reachable"
+    },
+    {
       "url": "https://zenodo.org/records/10866595",
       "http_status": 200,
       "final_url": "https://zenodo.org/records/10866595",
+      "status": "reachable"
+    },
+    {
+      "url": "https://zenodo.org/records/23653700",
+      "http_status": 200,
+      "final_url": "https://zenodo.org/records/23653700",
       "status": "reachable"
     }
   ]

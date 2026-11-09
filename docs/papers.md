@@ -36,11 +36,11 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-27 | **CoHARL**<br>[CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning](https://arxiv.org/abs/2610.36469) | Trains one shared policy with group-relative RL across a scheduled population of executable harnesses. A separate fixed proposer edits prompts, parsers, handlers and… | Model weights, Agent code, Prompts / context | preprint · full-text | [Notes](#coharl) |
 | 2026-10-26 | **Skill∞**<br>[Skill$^{\infty}$: Recursive Self-Improvement for Agent Skill Optimization](https://arxiv.org/abs/2610.35434) | Encodes skill optimization in an editable meta-skill. An agent uses that procedure to revise task skills and the meta-skill itself, then reuses the refined optimizer… | Skills, Prompts / context, Agent code | preprint · full-text | [Notes](#skill-infinity) |
 | 2026-10-26 | **SciValidityBench**<br>[The Right Fact, the Wrong Decision: SciValidityBench for Scientific Agent Memory](https://arxiv.org/abs/2610.34767) | Generates scientific histories in which a remembered fact may be invalid to use. A supplied compiler exposes decision-governing relations, separating raw records… | Memory | preprint · full-text | [Notes](#scivaliditybench) · [Code](https://github.com/SciValidityBench/SciValidityBench) |
-| 2026-10-26 | **Retrospective harness study**<br>[How Do Coding-Agent Harnesses Self-Evolve? An Empirical Study of Retrospective Adaptation](https://arxiv.org/abs/2610.34938) | Studies individually retained harness adaptations proposed by a retrospective skill, including context instructions and known-failure files. Fresh sessions with and… | Agent code, Prompts / context | preprint · full-text | [Notes](#retrospective-harness-study) |
+| 2026-10-26 | **Retrospective harness study**<br>[How Do Coding-Agent Harnesses Self-Evolve? An Empirical Study of Retrospective Adaptation](https://arxiv.org/abs/2610.34938) | A fixed retrospective skill proposes persistent context instructions and known-failure artifacts after coding sessions. Researchers select changes; the agent implements… | Agent code, Prompts / context | preprint · full-text | [Notes](#retrospective-harness-study) · [Code](https://zenodo.org/records/23653700) |
 | 2026-10-26 | **Obsolete facts**<br>[When Retrieval Is Not Enough: Obsolete Facts in Agent Memory](https://arxiv.org/abs/2610.36308) | Separates retrieving the newest statement from selecting it correctly. Varies BM25 evidence budgets, then replaces an unrelated statement with an obsolete competitor… | Analysis / no retained update | preprint · full-text | [Notes](#obsolete-facts-memory) · [Code](https://github.com/oleeviyababu/Memory_Conflict) |
 | 2026-10-26 | **MiniWeb / MiniWebAgent**<br>[Back to Basics: A Skill-Centric Approach to Generalist Web Agents](https://arxiv.org/abs/2610.35823) | Builds skill-level web tasks and generates verified practice trajectories. A LoRA-trained executor performs short interactions delegated by an untrained planner, so… | Model weights | preprint · full-text | [Notes](#miniweb) |
-| 2026-10-26 | **EoG**<br>[Evolve on Graph: Self-Evolving Knowledge Graph Reasoning without Question Annotations](https://arxiv.org/abs/2610.35598) | One shared model alternates between proposing graph-grounded questions and solving them through graph tools. Symbolic task generation and question checks feed… | Model weights | preprint · full-text | [Notes](#evolve-on-graph) · [Code](https://github.com/Szy5/EoG) |
-| 2026-10-26 | **CEPO**<br>[CEPO: A General Framework for Improving Prompt Optimization in Multi-Agent Systems](https://arxiv.org/abs/2610.34722) | Separates a shared coordination prompt from agent-specific execution prompts. Role-aligned instructions guide existing optimizers to tune coordination first, then… | Prompts / context | preprint · full-text | [Notes](#cepo) |
+| 2026-10-26 | **EoG**<br>[Evolve on Graph: Self-Evolving Knowledge Graph Reasoning without Question Annotations](https://arxiv.org/abs/2610.35598) | Uses six supplied graph-query patterns to build an offline set of executable tasks and complete graph-relative answer sets. One shared model alternates question-proposal… | Model weights | preprint · full-text | [Notes](#evolve-on-graph) · [Code](https://github.com/Szy5/EoG) |
+| 2026-10-26 | **CEPO**<br>[CEPO: A General Framework for Improving Prompt Optimization in Multi-Agent Systems](https://arxiv.org/abs/2610.34722) | Externally optimizes a shared coordination prompt prepended to each agent and selected local execution prompts. Fixed role-specific meta-instructions guide supplied… | Prompts / context | preprint · full-text | [Notes](#cepo) |
 | 2026-10-26 | **AgentMemRec**<br>[Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents](https://arxiv.org/abs/2610.34673) | Retrieves a fused lexical/dense pool, ranks stored turns with a separately trained LightGBM model and fills a token budget. The serving ranker is frozen; the answering… | Model weights | preprint · full-text | [Notes](#agentmemrec) |
 | 2026-10-25 | **MultiEvoSkill**<br>[MultiEvoSkill: Structure-Aware Multi-Agent Skill Evolution for Generalizable Skill Artifacts](https://arxiv.org/abs/2610.34260) | Compiles procedural skills into typed graphs, combines debated graph edits, and gates the merged candidate through behavioral, structural, and model-based semantic… | Skills | preprint · full-text | [Notes](#multievoskill) |
 | 2026-10-25 | **Memory Tax: net value**<br>[Memory Tax: Dissecting the Net Value of Agent Memory](https://arxiv.org/abs/2610.34073) | Defines memory benefit and tax as query-level gains and losses relative to raw-history RAG. Gold-evidence mapping, retrieval replay, writer–reader swaps and… | Analysis / no retained update | preprint · full-text | [Notes](#memory-tax-net-value) · [Code](https://github.com/hexuan21/MemoryTax) |
@@ -722,19 +722,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.34938)
 
-**Mechanism.** Studies individually retained harness adaptations proposed by a retrospective skill, including context instructions and known-failure files. Fresh sessions with and without each change test whether the targeted action recurs on later same-repository issues.
+**Mechanism.** A fixed retrospective skill proposes persistent context instructions and known-failure artifacts after coding sessions. Researchers select changes; the agent implements approved proposals, with one author-written comparison. Fresh sessions test each retained adaptation on other issues in the same repository. Model weights and the retrospective procedure stay fixed.
 
 **What changes:** Agent code, Prompts / context. **Persistence:** across-tasks. **Learning signal:** Completed coding-session traces generate proposals; researchers select changes and define later behavioral checks.
 
-**Evaluation.** Analyzes 125 proposals from thirty SWE-bench Verified sessions, implements twenty-four proposals, and evaluates twelve adaptations in thirteen transfer events, with five sessions per harness.
+**Evaluation.** Full five-page v1 analyzes 125 proposals from thirty SWE-bench Verified sessions, twenty-four implementation attempts and twelve adaptations in thirteen transfer events. Seven events meet the encounter criterion: two eliminate the targeted action, one reduces it and four do not. Three adaptations also receive unrelated-issue controls.
 
-**Boundary.** Human selection and evaluation remain central. Repeated-work reduction is a behavioral proxy, not proof of better task success or lower latency. Targeted task selection, partly unblinded labeling, one agent, and small samples limit generalization; some changes add unrelated work.
+**Boundary.** The process is human-selected and targets later issues likely to reproduce a known problem. Recurrence is a behavioral measure, not proof that verification was unnecessary. Lower recurrence does not consistently improve task success or latency; bundled lint instructions can add work. Five sessions per arm, partly unblinded labels, post-hoc coverage groups and one agent/skill version limit causal generalization.
 
-**Code / data.** The paper links a Zenodo artifact, but its archive page was inaccessible in this review; no code or session artifact was executed.
+**Code / data.** [Official artifact](https://zenodo.org/records/23653700) — Complete five-page arXiv v1 and both result tables read on 2026-11-09. The formerly inaccessible Zenodo page and public metadata now respond successfully, identifying the matching replication package and one ZIP. Metadata describes scripts, traces and labels, with MIT scripts and CC BY 4.0 data/documents subject to upstream terms. Archive contents were not downloaded, inspected or executed; publication status remains unverified beyond the preprint.
 
-**Topics:** architecture, memory, evaluation, applications. **Reviewed:** full-text · 2026-11-02.
+**Topics:** architecture, memory, evaluation, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.34938) · [Source 2](https://arxiv.org/html/2610.34938v1)
+[Source 1](https://arxiv.org/abs/2610.34938) · [Source 2](https://arxiv.org/html/2610.34938v1) · [Source 3](https://arxiv.org/pdf/2610.34938v1) · [Source 4](https://zenodo.org/records/23653700) · [Source 5](https://zenodo.org/api/records/23653700)
 
 <a id="obsolete-facts-memory"></a>
 
@@ -788,19 +788,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.35598)
 
-**Mechanism.** One shared model alternates between proposing graph-grounded questions and solving them through graph tools. Symbolic task generation and question checks feed alternating proposer and solver reinforcement-learning updates.
+**Mechanism.** Uses six supplied graph-query patterns to build an offline set of executable tasks and complete graph-relative answer sets. One shared model alternates question-proposal REINFORCE and tool-using solver GRPO updates. A model answer check filters generated questions, and solver-score variance rewards intermediate difficulty. Learned parameters persist; templates, tools and learning rules remain fixed.
 
 **What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Answer sets from executable graph queries, format rewards, and solver-score variance for curriculum difficulty.
 
-**Evaluation.** Reports six benchmarks over Freebase, Wikidata, and an industrial graph, multiple Qwen/Llama backbones, and component and curriculum analyses.
+**Evaluation.** Full v1 reports five public KGQA benchmarks and a 500-question industrial-graph evaluation, with Qwen/Llama backbones, role and synthesis ablations, reward comparisons and topology-success curves. Training adapts on each target graph; this is not zero-shot transfer to an unseen graph.
 
-**Boundary.** Training still requires a supplied graph, six query patterns, and pretrained models; language-question verification uses the solver. The current README uses WebQSP/CWQ test questions as validation inputs, so separation from checkpoint selection is not established by this review.
+**Boundary.** Query execution verifies graph answers, not natural-language question equivalence; the latter uses a single model check. The variance proof concerns an advantage statistic under equal format scores, not guaranteed learning progress. Ablations change multiple factors, and stronger reward variants exist on some metrics. Similarity checks do not rule out semantic overlap. The README uses WebQSP/CWQ test questions as validation inputs; separation from checkpoint selection remains unestablished.
 
-**Code / data.** [Official artifact](https://github.com/Szy5/EoG) — Author-linked repository and README inspected; no installation, training, or result reproduction.
+**Code / data.** [Official artifact](https://github.com/Szy5/EoG) — Complete 12-page arXiv v1, Appendices A–D, eight figures/seven tables, seventeen equations, proof, algorithm and full case trajectories read on 2026-11-09. Official README at 8de3e51b5b5c4d376c72911fc3c5118f2e220c59 inspected; it documents external graph/model/verifier services and states the project license is pending. Public code availability is not a licensed or reproduced result; nothing installed, queried or trained.
 
-**Topics:** self-play, model-training, tools, applications. **Reviewed:** full-text · 2026-10-30.
+**Topics:** self-play, model-training, tools, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.35598) · [Source 2](https://arxiv.org/html/2610.35598v1) · [Source 3](https://github.com/Szy5/EoG)
+[Source 1](https://arxiv.org/abs/2610.35598) · [Source 2](https://arxiv.org/html/2610.35598v1) · [Source 3](https://github.com/Szy5/EoG) · [Source 4](https://arxiv.org/pdf/2610.35598v1)
 
 <a id="cepo"></a>
 
@@ -810,19 +810,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.34722)
 
-**Mechanism.** Separates a shared coordination prompt from agent-specific execution prompts. Role-aligned instructions guide existing optimizers to tune coordination first, then selected execution prompts, retaining a reusable prompt set around the existing multi-agent system.
+**Mechanism.** Externally optimizes a shared coordination prompt prepended to each agent and selected local execution prompts. Fixed role-specific meta-instructions guide supplied prompt optimizers; both layers use the same system-level validation objective. The resulting prompt set persists, while model weights, team roles and the optimizer remain supplied.
 
 **What changes:** Prompts / context. **Persistence:** across-tasks. **Learning signal:** Training-example feedback and validation scores used by supplied prompt optimizers.
 
-**Evaluation.** Applies the framework to four optimizers across eleven document, math, code, and video benchmarks, with guidance-swap, prompt-length, budget, and team-size controls.
+**Evaluation.** Full v1 evaluates four optimizers across eleven document, math, code and video benchmarks. It adds document-system budget, length, guidance, schedule, executor-target and team-size controls, plus coordinator transfer. Gains over unoptimized systems are larger than the incremental gains over the corresponding prompt optimizer.
 
-**Boundary.** Search algorithms, role guidance, and labeled data remain supplied. Document benchmarks use custom document-level splits and model-judged answers; team-size scaling controls concern one document system. Curator interpretation: this is external prompt optimization, not autonomous redesign of the learning procedure.
+**Boundary.** Document results use custom document-level splits and an uncalibrated model judge; some external baseline rows use original test sets. Detailed cost/scaling controls cover one document system, and uncertainty is incompletely reported. More iterations or executor targets can hurt, with some target choices worse than vanilla optimization. API-call counts are not total compute, and coordinator transfer remains within document QA.
 
-**Code / data.** The inspected paper plans a code release upon acceptance; no official released implementation was verified.
+**Code / data.** Complete 25-page arXiv v1, Appendices A–C, four figures, eight main/eighteen supplementary tables, algorithm and full prompts read on 2026-11-09. Official project page and repository main at f8ea467171505583875cc88673066d053299aa46 inspected: only README/assets, explicitly code coming soon. No implementation release or root license verified; nothing executed.
 
-**Topics:** prompts, architecture, workflows, evaluation. **Reviewed:** full-text · 2026-10-31.
+**Topics:** prompts, architecture, workflows, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.34722) · [Source 2](https://arxiv.org/html/2610.34722v1)
+[Source 1](https://arxiv.org/abs/2610.34722) · [Source 2](https://arxiv.org/html/2610.34722v1) · [Source 3](https://arxiv.org/pdf/2610.34722v1) · [Source 4](https://mlv.kaist.ac.kr/CEPO/) · [Source 5](https://github.com/mlvlab/CEPO)
 
 <a id="agentmemrec"></a>
 
