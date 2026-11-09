@@ -1132,10 +1132,11 @@
       "url": "https://arxiv.org/abs/2610.34260",
       "sources": [
         "https://arxiv.org/abs/2610.34260",
-        "https://arxiv.org/html/2610.34260v1"
+        "https://arxiv.org/html/2610.34260v1",
+        "https://arxiv.org/pdf/2610.34260v1"
       ],
       "code_url": null,
-      "code_note": "Official runnable code was not independently verified in this review; no research code was executed.",
+      "code_note": "Complete 12-page arXiv v1, Appendices A–C, two figures/eight tables, fourteen equations, split sizes, thresholds and prompt-role summaries read on 2026-11-09. Exact role prompts, full role-model assignments and an official runnable artifact were not independently verified. The paper’s GitHub link identifies cited Memento-Skills, not MultiEvoSkill. Nothing installed or executed.",
       "topics": [
         "skills",
         "workflows",
@@ -1148,11 +1149,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Multi-model execution traces, reflected issues, and paired parent/candidate scores on fixed selection assignments.",
-      "mechanism": "Compiles procedural skills into typed graphs, combines debated graph edits, and gates the merged candidate through behavioral, structural, and model-based semantic checks. The retained artifact is frozen for downstream use without model-weight updates.",
-      "evaluation": "Reports five benchmark comparisons and component ablations. WikiHow, ToolAlpaca, and WebShop use workflow-node F1 adapters; SearchQA uses answer F1 and SpreadsheetBench uses hard instance accuracy.",
-      "limitations": "Workflow-node scores are not interactive task success. Reused selection data can overfit, semantic review can fail, and configured tolerances permit some regression. The paper’s finite four-epoch search and state-similarity stopping do not prove optimality or monotonic improvement on unseen tasks.",
+      "mechanism": "Externally evolves one typed skill graph from heterogeneous executions of the same training items. Reflected issues support parent-versioned edits, peer debate and hierarchical merging. A fixed selection panel compares the merged candidate with its parent, while schema and model-based topology checks gate retention. The frozen graph guides downstream agents without changing their weights.",
+      "evaluation": "Full v1 reports workflow-node F1 on WikiHow, ToolAlpaca and WebShop adapters, answer F1 on SearchQA, and hard instance accuracy on SpreadsheetBench. It includes proposer and gate removals on the three workflow domains. Reported leads over the strongest baselines range from 0.11 to 2.14 points; workflow test sets contain only 18–52 instances.",
+      "limitations": "Workflow-node F1 is not interactive task success. One seed and no repeated-search uncertainty limit small-margin claims. Proposer removal changes panel capacity and does not test transfer to unseen executors; a controlled quantitative graph-versus-prose comparison is absent. Reused selection sets can overfit, permitted worst-juror regressions reach ten points for spreadsheets, and model-based topology review is not semantic proof. Agreement or finite-search stopping does not establish optimality.",
       "review_depth": "full-text",
-      "checked": "2026-11-02",
+      "checked": "2026-11-09",
       "short_name": "MultiEvoSkill"
     },
     {
@@ -1202,10 +1203,13 @@
       "url": "https://arxiv.org/abs/2610.34450",
       "sources": [
         "https://arxiv.org/abs/2610.34450",
-        "https://arxiv.org/html/2610.34450v1"
+        "https://arxiv.org/html/2610.34450v1",
+        "https://arxiv.org/pdf/2610.34450v1",
+        "https://github.com/WuYalun/EvolveMAS",
+        "https://github.com/WuYalun/EvolveMAS/blob/a7fcf4e527d1937f34b354531e3a24022366c7ae/README.md"
       ],
-      "code_url": null,
-      "code_note": "The paper links an anonymous artifact, but its contents were not readable through the available page fetch; no code was executed.",
+      "code_url": "https://github.com/WuYalun/EvolveMAS",
+      "code_note": "Complete 27-page arXiv v1, Appendices A–G, nine figures/eight tables, equations and all qualitative artifacts read on 2026-11-09. Official README, MIT license and Python >=3.9 package metadata inspected at a7fcf4e527d1937f34b354531e3a24022366c7ae. The release is explicitly a minimal host-agnostic plugin; its benchmark replays are demonstrations, not the paper’s reported runs. Mock examples test plumbing only. Nothing installed or executed.",
       "topics": [
         "memory",
         "architecture",
@@ -1218,11 +1222,11 @@
       ],
       "persistence": "both",
       "learning_signal": "Local interaction traces, task-native episode outcomes, and model-distilled partner profiles and interaction strategies.",
-      "mechanism": "Pairs each agent with an external MemoryAgent that maintains isolated episodic, semantic, and working state. Turn-level updates inform ongoing actions; episode-end distillation retains reusable interaction knowledge without changing model weights or the memory schema.",
-      "evaluation": "Compares cooperative coding/reasoning, negotiation, and hidden-role games across five benchmarks, with within/cross-episode ablations and a separate conversational-memory study.",
-      "limitations": "Several evaluation sets are small; BBH uses one fixed seed. Transferred baseline implementations are adapted to frozen-model conditions, and conversational-memory grading differs from standard LoCoMo. These bounded interactions do not establish safe or indefinite decentralized learning.",
+      "mechanism": "Pairs each acting agent with an isolated MemoryAgent that updates episodic, semantic and working state from locally observed interactions. Episode outcomes then guide the acting model’s distillation of partner profiles and reusable strategies. These memories condition later actions and episodes while model weights, memory schema and update protocol remain fixed.",
+      "evaluation": "Full v1 reports five benchmarks and six cooperative, negotiation and hidden-role configurations, plus factorial ablations, alternative teams, eight-episode cost checks and custom LoCoMo evaluation. The normalized aggregate is highest, but SOTOPIA and village-side scores are second, stronger-team BBH does not improve, and some component gains are small or negative.",
+      "limitations": "Mostly single streams with small fixed samples limit uncertainty and causal interpretation. Native methods are transferred through adapted protocols, including a fixed-prompt substitute for DPIns training. Any-proposal unanimity differs from final agreement, and custom LoCoMo gains coexist with worse multi-hop recall. One showcased stored Boolean rule is wrong. Short cost traces and partner profiles do not establish indefinite, accurate or safe memory reuse; improved deception is measured only in simulated games.",
       "review_depth": "full-text",
-      "checked": "2026-10-31",
+      "checked": "2026-11-09",
       "short_name": "EvolveMAS"
     },
     {

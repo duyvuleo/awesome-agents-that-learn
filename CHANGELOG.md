@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-09 — Expanded decentralized-memory and graph-skill reviews
+
+- Completed EvolveMAS and MultiEvoSkill, including full appendices and negative controls.
+- Added EvolveMAS’s public plugin with its explicit distinction from paper experiment runs.
+- Clarified stored-rule errors, workflow metrics, gate tolerances and generalization limits.
+- Broader audit: 140 of 190 works complete, 50 pending.
+
 ## 2026-11-09 — Expanded calibrated and structured memory reviews
 
 - Completed CaliMem and EMMA, including full appendices, protocols and case artifacts.

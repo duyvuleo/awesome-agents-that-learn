@@ -42,9 +42,9 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-26 | **EoG**<br>[Evolve on Graph: Self-Evolving Knowledge Graph Reasoning without Question Annotations](https://arxiv.org/abs/2610.35598) | Uses six supplied graph-query patterns to build an offline set of executable tasks and complete graph-relative answer sets. One shared model alternates question-proposal… | Model weights | preprint · full-text | [Notes](#evolve-on-graph) · [Code](https://github.com/Szy5/EoG) |
 | 2026-10-26 | **CEPO**<br>[CEPO: A General Framework for Improving Prompt Optimization in Multi-Agent Systems](https://arxiv.org/abs/2610.34722) | Externally optimizes a shared coordination prompt prepended to each agent and selected local execution prompts. Fixed role-specific meta-instructions guide supplied… | Prompts / context | preprint · full-text | [Notes](#cepo) |
 | 2026-10-26 | **AgentMemRec**<br>[Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents](https://arxiv.org/abs/2610.34673) | Retrieves a fused lexical/dense pool, ranks stored turns with a separately trained LightGBM model and fills a token budget. The serving ranker is frozen; the answering… | Model weights | preprint · full-text | [Notes](#agentmemrec) |
-| 2026-10-25 | **MultiEvoSkill**<br>[MultiEvoSkill: Structure-Aware Multi-Agent Skill Evolution for Generalizable Skill Artifacts](https://arxiv.org/abs/2610.34260) | Compiles procedural skills into typed graphs, combines debated graph edits, and gates the merged candidate through behavioral, structural, and model-based semantic… | Skills | preprint · full-text | [Notes](#multievoskill) |
+| 2026-10-25 | **MultiEvoSkill**<br>[MultiEvoSkill: Structure-Aware Multi-Agent Skill Evolution for Generalizable Skill Artifacts](https://arxiv.org/abs/2610.34260) | Externally evolves one typed skill graph from heterogeneous executions of the same training items. Reflected issues support parent-versioned edits, peer debate and… | Skills | preprint · full-text | [Notes](#multievoskill) |
 | 2026-10-25 | **Memory Tax: net value**<br>[Memory Tax: Dissecting the Net Value of Agent Memory](https://arxiv.org/abs/2610.34073) | Defines memory benefit and tax as query-level gains and losses relative to raw-history RAG. Gold-evidence mapping, retrieval replay, writer–reader swaps and… | Analysis / no retained update | preprint · full-text | [Notes](#memory-tax-net-value) · [Code](https://github.com/hexuan21/MemoryTax) |
-| 2026-10-25 | **EvolveMAS**<br>[EvolveMAS: A Unified Self-Evolution Framework for Decentralized Multi-Agent Systems](https://arxiv.org/abs/2610.34450) | Pairs each agent with an external MemoryAgent that maintains isolated episodic, semantic, and working state. Turn-level updates inform ongoing actions; episode-end… | Memory | preprint · full-text | [Notes](#evolvemas) |
+| 2026-10-25 | **EvolveMAS**<br>[EvolveMAS: A Unified Self-Evolution Framework for Decentralized Multi-Agent Systems](https://arxiv.org/abs/2610.34450) | Pairs each acting agent with an isolated MemoryAgent that updates episodic, semantic and working state from locally observed interactions. Episode outcomes then guide… | Memory | preprint · full-text | [Notes](#evolvemas) · [Code](https://github.com/WuYalun/EvolveMAS) |
 | 2026-10-25 | **EMMA**<br>[EMMA: Structured Episodic Memory for Multi-Agent Workflow Synthesis](https://arxiv.org/abs/2610.35966) | Learns controller routing notes, specialist prompts inheriting a generalist prompt, and procedural skills from a fixed training stream. A reflector diagnoses a failure… | Memory, Skills, Prompts / context, Multi-agent organization | preprint · full-text | [Notes](#emma) |
 | 2026-10-25 | **CaliMem**<br>[CaliMem: Search-Efficient Data Agent via Calibrated Memory](https://arxiv.org/abs/2610.34500) | Maintains experimental evidence and revisable claims during one data-curation search. Before retraining a fixed downstream model on each selected subset, the agent… | Memory | preprint · full-text | [Notes](#calimem) · [Code](https://anonymous.4open.science/r/CaliMem-450E) |
 | 2026-10-24 | **ReSight**<br>[ReSight: Task-Driven Self-Improving Memory for Embodied Agents](https://arxiv.org/abs/2610.33487) | Retains visual evidence while a separate coding agent explores difficult query sets and distills reusable processing programs, memory fields and skills. Executor traces… | Memory, Skills, Tools, Agent code | preprint · full-text | [Notes](#resight) |
@@ -854,19 +854,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.34260)
 
-**Mechanism.** Compiles procedural skills into typed graphs, combines debated graph edits, and gates the merged candidate through behavioral, structural, and model-based semantic checks. The retained artifact is frozen for downstream use without model-weight updates.
+**Mechanism.** Externally evolves one typed skill graph from heterogeneous executions of the same training items. Reflected issues support parent-versioned edits, peer debate and hierarchical merging. A fixed selection panel compares the merged candidate with its parent, while schema and model-based topology checks gate retention. The frozen graph guides downstream agents without changing their weights.
 
 **What changes:** Skills. **Persistence:** across-tasks. **Learning signal:** Multi-model execution traces, reflected issues, and paired parent/candidate scores on fixed selection assignments.
 
-**Evaluation.** Reports five benchmark comparisons and component ablations. WikiHow, ToolAlpaca, and WebShop use workflow-node F1 adapters; SearchQA uses answer F1 and SpreadsheetBench uses hard instance accuracy.
+**Evaluation.** Full v1 reports workflow-node F1 on WikiHow, ToolAlpaca and WebShop adapters, answer F1 on SearchQA, and hard instance accuracy on SpreadsheetBench. It includes proposer and gate removals on the three workflow domains. Reported leads over the strongest baselines range from 0.11 to 2.14 points; workflow test sets contain only 18–52 instances.
 
-**Boundary.** Workflow-node scores are not interactive task success. Reused selection data can overfit, semantic review can fail, and configured tolerances permit some regression. The paper’s finite four-epoch search and state-similarity stopping do not prove optimality or monotonic improvement on unseen tasks.
+**Boundary.** Workflow-node F1 is not interactive task success. One seed and no repeated-search uncertainty limit small-margin claims. Proposer removal changes panel capacity and does not test transfer to unseen executors; a controlled quantitative graph-versus-prose comparison is absent. Reused selection sets can overfit, permitted worst-juror regressions reach ten points for spreadsheets, and model-based topology review is not semantic proof. Agreement or finite-search stopping does not establish optimality.
 
-**Code / data.** Official runnable code was not independently verified in this review; no research code was executed.
+**Code / data.** Complete 12-page arXiv v1, Appendices A–C, two figures/eight tables, fourteen equations, split sizes, thresholds and prompt-role summaries read on 2026-11-09. Exact role prompts, full role-model assignments and an official runnable artifact were not independently verified. The paper’s GitHub link identifies cited Memento-Skills, not MultiEvoSkill. Nothing installed or executed.
 
-**Topics:** skills, workflows, architecture, evaluation. **Reviewed:** full-text · 2026-11-02.
+**Topics:** skills, workflows, architecture, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.34260) · [Source 2](https://arxiv.org/html/2610.34260v1)
+[Source 1](https://arxiv.org/abs/2610.34260) · [Source 2](https://arxiv.org/html/2610.34260v1) · [Source 3](https://arxiv.org/pdf/2610.34260v1)
 
 <a id="memory-tax-net-value"></a>
 
@@ -898,19 +898,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.34450)
 
-**Mechanism.** Pairs each agent with an external MemoryAgent that maintains isolated episodic, semantic, and working state. Turn-level updates inform ongoing actions; episode-end distillation retains reusable interaction knowledge without changing model weights or the memory schema.
+**Mechanism.** Pairs each acting agent with an isolated MemoryAgent that updates episodic, semantic and working state from locally observed interactions. Episode outcomes then guide the acting model’s distillation of partner profiles and reusable strategies. These memories condition later actions and episodes while model weights, memory schema and update protocol remain fixed.
 
 **What changes:** Memory. **Persistence:** both. **Learning signal:** Local interaction traces, task-native episode outcomes, and model-distilled partner profiles and interaction strategies.
 
-**Evaluation.** Compares cooperative coding/reasoning, negotiation, and hidden-role games across five benchmarks, with within/cross-episode ablations and a separate conversational-memory study.
+**Evaluation.** Full v1 reports five benchmarks and six cooperative, negotiation and hidden-role configurations, plus factorial ablations, alternative teams, eight-episode cost checks and custom LoCoMo evaluation. The normalized aggregate is highest, but SOTOPIA and village-side scores are second, stronger-team BBH does not improve, and some component gains are small or negative.
 
-**Boundary.** Several evaluation sets are small; BBH uses one fixed seed. Transferred baseline implementations are adapted to frozen-model conditions, and conversational-memory grading differs from standard LoCoMo. These bounded interactions do not establish safe or indefinite decentralized learning.
+**Boundary.** Mostly single streams with small fixed samples limit uncertainty and causal interpretation. Native methods are transferred through adapted protocols, including a fixed-prompt substitute for DPIns training. Any-proposal unanimity differs from final agreement, and custom LoCoMo gains coexist with worse multi-hop recall. One showcased stored Boolean rule is wrong. Short cost traces and partner profiles do not establish indefinite, accurate or safe memory reuse; improved deception is measured only in simulated games.
 
-**Code / data.** The paper links an anonymous artifact, but its contents were not readable through the available page fetch; no code was executed.
+**Code / data.** [Official artifact](https://github.com/WuYalun/EvolveMAS) — Complete 27-page arXiv v1, Appendices A–G, nine figures/eight tables, equations and all qualitative artifacts read on 2026-11-09. Official README, MIT license and Python >=3.9 package metadata inspected at a7fcf4e527d1937f34b354531e3a24022366c7ae. The release is explicitly a minimal host-agnostic plugin; its benchmark replays are demonstrations, not the paper’s reported runs. Mock examples test plumbing only. Nothing installed or executed.
 
-**Topics:** memory, architecture, continual-learning, evaluation. **Reviewed:** full-text · 2026-10-31.
+**Topics:** memory, architecture, continual-learning, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.34450) · [Source 2](https://arxiv.org/html/2610.34450v1)
+[Source 1](https://arxiv.org/abs/2610.34450) · [Source 2](https://arxiv.org/html/2610.34450v1) · [Source 3](https://arxiv.org/pdf/2610.34450v1) · [Source 4](https://github.com/WuYalun/EvolveMAS) · [Source 5](https://github.com/WuYalun/EvolveMAS/blob/a7fcf4e527d1937f34b354531e3a24022366c7ae/README.md)
 
 <a id="emma"></a>
 
