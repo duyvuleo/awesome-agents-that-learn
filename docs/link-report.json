@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-09T05:04:31.924904+00:00",
+  "checked_at_utc": "2026-11-09T05:17:07.267679+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -19,6 +19,12 @@
       "url": "https://aclanthology.org/2023.findings-emnlp.462/",
       "http_status": 200,
       "final_url": "https://aclanthology.org/2023.findings-emnlp.462/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2023.findings-emnlp.462v2.pdf",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2023.findings-emnlp.462v2.pdf",
       "status": "reachable"
     },
     {
@@ -2898,6 +2904,18 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2305.17126v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2305.17126v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2308.08998v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2308.08998v2",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2309.03409v3",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2309.03409v3",
@@ -2931,6 +2949,12 @@
       "url": "https://arxiv.org/pdf/2408.08435v2",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2408.08435v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2409.12917v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2409.12917v2",
       "status": "reachable"
     },
     {
@@ -3631,9 +3655,8 @@
     },
     {
       "url": "https://github.com/joonspk-research/generative_agents",
-      "http_status": 200,
-      "final_url": "https://github.com/joonspk-research/generative_agents",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/ko120/MLE_World",
@@ -3649,21 +3672,18 @@
     },
     {
       "url": "https://github.com/langchain-ai/langmem/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/langchain-ai/langmem/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/letta-ai/letta",
-      "http_status": 200,
-      "final_url": "https://github.com/letta-ai/letta",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/letta-ai/letta-code",
-      "http_status": 200,
-      "final_url": "https://github.com/letta-ai/letta-code",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/letta-ai/letta-code/blob/main/LICENSE",
@@ -3673,39 +3693,33 @@
     },
     {
       "url": "https://github.com/mem0ai/mem0",
-      "http_status": 200,
-      "final_url": "https://github.com/mem0ai/mem0",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/mem0ai/mem0/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/mem0ai/mem0/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/metaevo-ai/meta-context-engineering",
-      "http_status": 200,
-      "final_url": "https://github.com/metaevo-ai/meta-context-engineering",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/microsoft/SkillOpt",
-      "http_status": 200,
-      "final_url": "https://github.com/microsoft/SkillOpt",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/microsoft/agent-lightning",
-      "http_status": 200,
-      "final_url": "https://github.com/microsoft/agent-lightning",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/microsoft/agent-lightning/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/microsoft/agent-lightning/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/microsoft/agent-lightning/blob/main/README.md",
@@ -3715,39 +3729,33 @@
     },
     {
       "url": "https://github.com/mll-lab-nu/RAGEN",
-      "http_status": 200,
-      "final_url": "https://github.com/mll-lab-nu/RAGEN",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/noahshinn/reflexion",
-      "http_status": 200,
-      "final_url": "https://github.com/noahshinn/reflexion",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/oleeviyababu/Memory_Conflict",
-      "http_status": 200,
-      "final_url": "https://github.com/oleeviyababu/Memory_Conflict",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/physicsru/self_harmony",
-      "http_status": 200,
-      "final_url": "https://github.com/physicsru/self_harmony",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/qiancheng0/CREATOR",
-      "http_status": 200,
-      "final_url": "https://github.com/qiancheng0/CREATOR",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/simple-agent-lab/RSIHub",
-      "http_status": 200,
-      "final_url": "https://github.com/simple-agent-lab/RSIHub",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/skydiscover-ai/skydiscover",
@@ -3775,15 +3783,13 @@
     },
     {
       "url": "https://github.com/stanfordnlp/dspy",
-      "http_status": 200,
-      "final_url": "https://github.com/stanfordnlp/dspy",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/stanfordnlp/dspy/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/stanfordnlp/dspy/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/stanfordnlp/dspy/blob/main/README.md",
@@ -3793,33 +3799,28 @@
     },
     {
       "url": "https://github.com/taowangcheng/Skill-Infinity",
-      "http_status": 200,
-      "final_url": "https://github.com/taowangcheng/Skill-Infinity",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/thu-nics/MARSHAL",
-      "http_status": 200,
-      "final_url": "https://github.com/thu-nics/MARSHAL",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/tsinghua-fib-lab/AgentSquare",
-      "http_status": 200,
-      "final_url": "https://github.com/tsinghua-fib-lab/AgentSquare",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/uclaml/SPIN",
-      "http_status": 200,
-      "final_url": "https://github.com/uclaml/SPIN",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/wzekai/VERSE",
-      "http_status": 200,
-      "final_url": "https://github.com/wzekai/VERSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/xiaowu0162/LongMemEval",
@@ -3829,9 +3830,8 @@
     },
     {
       "url": "https://github.com/y1y5/AgeMem",
-      "http_status": 200,
-      "final_url": "https://github.com/y1y5/AgeMem",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/yizhongw/self-instruct",
@@ -3847,21 +3847,18 @@
     },
     {
       "url": "https://github.com/zjunlp/MemP",
-      "http_status": 200,
-      "final_url": "https://github.com/zjunlp/MemP",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/zorazrw/agent-workflow-memory",
-      "http_status": 200,
-      "final_url": "https://github.com/zorazrw/agent-workflow-memory",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/zorazrw/agent-workflow-memory/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/zorazrw/agent-workflow-memory/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/zorazrw/agent-workflow-memory/tree/main/mind2web",
@@ -3871,15 +3868,13 @@
     },
     {
       "url": "https://github.com/zorazrw/trove",
-      "http_status": 200,
-      "final_url": "https://github.com/zorazrw/trove",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/zou-group/textgrad",
-      "http_status": 200,
-      "final_url": "https://github.com/zou-group/textgrad",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://hermes-agent.nousresearch.com/",
@@ -4300,14 +4295,14 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=8541633f-4bff-45f2-8358-c7bd4e46d3ae",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=3c129f7f-268c-4fc1-8a30-ed658cbf8992",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=f1126135-7e97-42b7-a9ce-3e3b92dba174",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=15a48f09-e6a3-40e2-88b0-d0ea7d7a8129",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -4321,14 +4316,14 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=d6044a46-1781-4d61-a4b0-7dbb138736bd",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=5f6b2247-6eb6-4cbc-9f1e-7bf0b6f96b89",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=fde8df60-2f60-44ca-b7f3-9c19c7cc59ff",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=94661527-2238-4e62-82e8-e3864fe2cbcf",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },

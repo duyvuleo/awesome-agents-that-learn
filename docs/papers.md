@@ -166,7 +166,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2024-10-14 | **AFlow**<br>[AFlow: Automating Agentic Workflow Generation](https://arxiv.org/abs/2410.10762) | Searches over code-represented workflows using a Monte Carlo tree-search variant. An LLM changes prompts and connections between operations, while the tree retains… | Workflows, Prompts / context, Agent code | peer-reviewed · full-text | [Notes](#aflow) · [Code](https://github.com/FoundationAgents/AFlow) |
 | 2024-10-08 | **AgentSquare**<br>[AgentSquare: Automatic LLM Agent Search in Modular Design Space](https://arxiv.org/abs/2410.06153) | Alternates code-level module evolution with recombination of planning, reasoning, tool-use and memory modules. Novel modules receive environment evaluation… | Workflows, Prompts / context, Tools, Memory | peer-reviewed · full-text | [Notes](#agentsquare) · [Code](https://github.com/tsinghua-fib-lab/AgentSquare) |
 | 2024-10-06 | **Gödel Agent**<br>[Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement](https://arxiv.org/abs/2410.04444) | Lets an LLM-based agent inspect and revise its own logic through a self-referential learning framework. The editable artifact is the agent program rather than the… | Agent code, Prompts / context, Workflows | peer-reviewed · abstract | [Notes](#godel-agent) · [Code](https://github.com/Arvid-pku/Godel_Agent) |
-| 2024-09-19 | **SCoRe**<br>[Training Language Models to Self-Correct via Reinforcement Learning](https://arxiv.org/abs/2409.12917) | Trains a correction policy on its own response distribution, with an initialization stage and a reward bonus encouraging successful revision. The method targets… | Model weights | peer-reviewed · abstract | [Notes](#score) |
+| 2024-09-19 | **SCoRe**<br>[Training Language Models to Self-Correct via Reinforcement Learning](https://arxiv.org/abs/2409.12917) | Trains one model through two-turn online RL: first constrain initial answers while learning revisions, then optimize both turns with a progress bonus. The learned… | Model weights | peer-reviewed · full-text | [Notes](#score) |
 | 2024-09-11 | **AWM**<br>[Agent Workflow Memory](https://arxiv.org/abs/2409.07429) | Abstracts reusable subroutines from action trajectories and adds them to the agent context as workflow memory. It supports an offline store built from training examples… | Memory, Workflows | peer-reviewed · full-text | [Notes](#agent-workflow-memory) · [Code](https://github.com/zorazrw/agent-workflow-memory) |
 | 2024-08-15 | **ADAS**<br>[Automated Design of Agentic Systems](https://arxiv.org/abs/2408.08435) | A fixed meta-agent writes executable forward functions, checks novelty, repairs execution errors, and archives designs with scores. Search changes prompts and control… | Agent code, Workflows, Prompts / context | peer-reviewed · full-text | [Notes](#adas) · [Code](https://github.com/ShengranHu/ADAS) |
 | 2024-07-25 | **RISE**<br>[Recursive Introspection: Teaching Language Model Agents How to Self-Improve](https://arxiv.org/abs/2407.18219) | Turns single-turn problems into multi-turn trajectories and trains the model to revise earlier unsuccessful responses. Its training loop uses reward-weighted supervised… | Model weights | peer-reviewed · full-text | [Notes](#rise) |
@@ -188,11 +188,11 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2023-09-28 | **Promptbreeder**<br>[Promptbreeder: Self-Referential Self-Improvement via Prompt Evolution](https://arxiv.org/abs/2309.16797) | A tournament population evolves task instructions and the mutation instructions that generate successors, including hypermutation and reconstruction from worked… | Prompts / context | peer-reviewed · full-text | [Notes](#promptbreeder) |
 | 2023-09-07 | **OPRO**<br>[Large Language Models as Optimizers](https://arxiv.org/abs/2309.03409) | A fixed LLM optimizer proposes instructions from the best scored candidates and examples; an external evaluator scores them and refreshes the history. Selected prompts… | Prompts / context | peer-reviewed · full-text | [Notes](#opro) · [Code](https://github.com/google-deepmind/opro) |
 | 2023-08-20 | **ExpeL**<br>[ExpeL: LLM Agents Are Experiential Learners](https://arxiv.org/abs/2308.10144) | Collects training-task trajectories, contrasts successes and failures to extract reusable textual insights, and retrieves relevant experiences for new tasks. Learning… | Memory | peer-reviewed · full-text | [Notes](#expel) · [Code](https://github.com/LeapLabTHU/ExpeL) |
-| 2023-08-17 | **ReST**<br>[Reinforced Self-Training (ReST) for Language Modeling](https://arxiv.org/abs/2308.08998) | Alternates generating a batch of candidate outputs and improving the policy with offline reinforcement learning. Reusing generated data reduces the need to sample a new… | Model weights | preprint · abstract | [Notes](#rest) |
+| 2023-08-17 | **ReST**<br>[Reinforced Self-Training (ReST) for Language Modeling](https://arxiv.org/abs/2308.08998) | Alternates costly generation rounds with multiple offline updates on increasingly filtered data. The strongest reward-score variant uses ordinary supervised negative… | Model weights | preprint · full-text | [Notes](#rest) |
 | 2023-06-20 | **RoboCat**<br>[RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation](https://arxiv.org/abs/2306.11706) | Fine-tunes a visual goal-conditioned generalist into task-specific policies, collects additional trajectories with them, then retrains a generalist on old and new data.… | Model weights | peer-reviewed · full-text | [Notes](#robocat) |
-| 2023-05-26 | **LLMs as Tool Makers**<br>[Large Language Models as Tool Makers](https://arxiv.org/abs/2305.17126) | Separates tool creation from tool use, allowing a stronger model to create reusable programs that a cheaper model can invoke on related requests. A functional cache… | Tools | peer-reviewed · abstract | [Notes](#llms-as-tool-makers) · [Code](https://github.com/ctlllll/LLM-ToolMaker) |
+| 2023-05-26 | **LLMs as Tool Makers**<br>[Large Language Models as Tool Makers](https://arxiv.org/abs/2305.17126) | A stronger model proposes Python tools, verifies them on examples and packages calling demonstrations for a cheaper user model. Tools persist in a functional cache.… | Tools | peer-reviewed · full-text | [Notes](#llms-as-tool-makers) · [Code](https://github.com/ctlllll/LLM-ToolMaker) |
 | 2023-05-25 | **Voyager**<br>[Voyager: An Open-Ended Embodied Agent with Large Language Models](https://arxiv.org/abs/2305.16291) | Builds an expanding library of executable Minecraft skills, retrieved and composed for later tasks. An automatic curriculum proposes objectives, while execution feedback… | Skills, Tools | peer-reviewed · full-text | [Notes](#voyager) · [Code](https://github.com/MineDojo/Voyager) |
-| 2023-05-23 | **CREATOR**<br>[CREATOR: Tool Creation for Disentangling Abstract and Concrete Reasoning of Large Language Models](https://arxiv.org/abs/2305.14318) | Decomposes problem solving into tool design, implementation, execution, and revision so an agent can create tools beyond a fixed API inventory. It also examines reuse of… | Tools | peer-reviewed · abstract | [Notes](#creator) · [Code](https://github.com/qiancheng0/CREATOR) |
+| 2023-05-23 | **CREATOR**<br>[CREATOR: Tool Creation for Disentangling Abstract and Concrete Reasoning of Large Language Models](https://arxiv.org/abs/2305.14318) | Separates reusable Python tool construction from problem-specific calls, executes their combination and revises it after runtime errors. Weights stay fixed. A separate… | Tools | peer-reviewed · full-text | [Notes](#creator) · [Code](https://github.com/qiancheng0/CREATOR) |
 | 2023-05-17 | **MemoryBank**<br>[MemoryBank: Enhancing Large Language Models with Long-Term Memory](https://arxiv.org/abs/2305.10250) | Stores dialogue records, daily/global summaries and user profiles, retrieves them with dense embeddings, and proposes exponential time decay with stronger retention… | Memory | peer-reviewed · full-text | [Notes](#memorybank) |
 | 2023-04-07 | **Generative Agents**<br>[Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) | Stores observations, plans and recursive reflections in a persistent memory stream. Recency, importance and embedding relevance determine retrieval; a frozen language… | Memory | peer-reviewed · full-text | [Notes](#generative-agents) · [Code](https://github.com/joonspk-research/generative_agents) |
 | 2023-03-30 | **Self-Refine**<br>[Self-Refine: Iterative Refinement with Self-Feedback](https://arxiv.org/abs/2303.17651) | Alternates drafting, feedback and revision while retaining the current task history. No weights or cross-task memory are updated; stopping and output selection vary… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#self-refine) |
@@ -3612,19 +3612,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2409.12917)
 
-**Mechanism.** Trains a correction policy on its own response distribution, with an initialization stage and a reward bonus encouraging successful revision. The method targets distribution mismatch and collapsed correction behavior observed in offline supervised training.
+**Mechanism.** Trains one model through two-turn online RL: first constrain initial answers while learning revisions, then optimize both turns with a progress bonus. The learned weights persist across problems; each deployed revision remains a within-problem operation.
 
-**What changes:** Model weights. **Persistence:** both. **Learning signal:** Online rewards and regularization over self-generated multi-turn correction traces.
+**What changes:** Model weights. **Persistence:** both. **Learning signal:** Ground-truth answer checks and unit tests reward self-generated training traces; no correctness oracle is supplied for test-time revision.
 
-**Evaluation.** The authors evaluate self-correction on MATH and HumanEval using Gemini models.
+**Evaluation.** ArXiv v2 evaluates Gemini models on MATH500 and HumanEval after MATH/MBPP training, with offline MBPP-R repair, component ablations and repeated-attempt tests. MATH training incorporates 4,500 original test problems while reserving 500 for evaluation.
 
-**Boundary.** The training produces a reusable correction capability; a test-time revision is still a within-problem operation. Curator interpretation: these benchmarks do not show autonomous lifelong improvement across changing environments.
+**Boundary.** The 15.6-point MATH headline is improvement in the correction delta, not final-answer accuracy. Training uses oracle rewards and training-reward checkpoint selection; code first-attempt accuracy can decline. Only two attempts are trained, and answer-level reward does not verify every reasoning step.
 
 **Code / data.** Official runnable code was not verified in this source review.
 
-**Topics:** model-training, foundations. **Reviewed:** abstract · 2026-10-28.
+**Topics:** model-training, foundations. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2409.12917) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2025/hash/871ac99fdc5282d0301934d23945ebaa-Abstract-Conference.html)
+[Source 1](https://arxiv.org/abs/2409.12917) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2025/hash/871ac99fdc5282d0301934d23945ebaa-Abstract-Conference.html) · [Source 3](https://arxiv.org/pdf/2409.12917v2)
 
 <a id="agent-workflow-memory"></a>
 
@@ -4106,19 +4106,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2308.08998)
 
-**Mechanism.** Alternates generating a batch of candidate outputs and improving the policy with offline reinforcement learning. Reusing generated data reduces the need to sample a new online batch for every update.
+**Mechanism.** Alternates costly generation rounds with multiple offline updates on increasingly filtered data. The strongest reward-score variant uses ordinary supervised negative log-likelihood on selected outputs. Model weights change; retraining the reward model with fresh human feedback is proposed future work.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** A reward-based training objective applied to batches sampled from the current policy.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** A fixed, human-preference-trained Metric X model scores generated translations; original reference translations remain in the training mixture.
 
-**Evaluation.** The reported experiments focus on machine translation, assessed using automatic metrics and human evaluation.
+**Evaluation.** ArXiv v2 studies three translation language pairs across IWSLT, WMT and an author-internal benchmark, comparing losses, thresholds, growth rounds, PPO and best-of-N decoding. Human ratings improve over the supervised baseline but rank variants differently from the learned reward.
 
-**Boundary.** This is externally organized model training on a specific application. Curator interpretation: the study does not establish a lifelong agent or a reward signal that itself improves without outside specification.
+**Boundary.** Additional growth can increase reward while reducing human-rated gains, and sentence repetition can exploit the reward model. Large synthetic corpora and repeated fine-tuning remain costly. The study does not establish a generally superior RL algorithm or a reward signal that improves itself.
 
 **Code / data.** Official runnable code was not verified in this source review.
 
-**Topics:** foundations, model-training. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, model-training. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2308.08998)
+[Source 1](https://arxiv.org/abs/2308.08998) · [Source 2](https://arxiv.org/pdf/2308.08998v2)
 
 <a id="robocat"></a>
 
@@ -4150,19 +4150,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2305.17126)
 
-**Mechanism.** Separates tool creation from tool use, allowing a stronger model to create reusable programs that a cheaper model can invoke on related requests. A functional cache retains these capabilities across requests.
+**Mechanism.** A stronger model proposes Python tools, verifies them on examples and packages calling demonstrations for a cheaper user model. Tools persist in a functional cache. Verification retries repair test calls rather than the function; new task classes may need labels from a strong model or human.
 
-**What changes:** Tools. **Persistence:** across-tasks. **Learning signal:** Task examples and feedback from producing and using generated tools.
+**What changes:** Tools. **Persistence:** across-tasks. **Learning signal:** Labeled task demonstrations and validation answers guide program generation and function-call tests; a dispatcher identifies known or unseen task types.
 
-**Evaluation.** The paper compares task accuracy and serving cost on reasoning problems, including BIG-Bench tasks.
+**Evaluation.** ArXiv v2 uses six task families with three training, three validation and 240 test examples each. It reports tool-making success over five trials, downstream accuracy and separate dispatcher tests on mixed 100-instance samples.
 
-**Boundary.** Results depend on the selected task families and how tool-making costs are amortized. Interpretation: reusable tool creation does not establish unrestricted autonomous software evolution.
+**Boundary.** Dispatcher classification is not an end-to-end continual-learning trial. Three validation examples cannot certify general tool correctness, and logical-deduction accuracy remains below GPT-4 CoT. Cost arguments amortize creation using historical API rates; the scheduling task is a two-person time-slot template, not real email interaction.
 
 **Code / data.** [Official artifact](https://github.com/ctlllll/LLM-ToolMaker) — Official repository linked and its public page inspected; not executed.
 
-**Topics:** foundations, tools, skills. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, tools, skills. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2305.17126) · [Source 2](https://openreview.net/pdf?id=qV83K9d5WB) · [Source 3](https://github.com/ctlllll/LLM-ToolMaker)
+[Source 1](https://arxiv.org/abs/2305.17126) · [Source 2](https://openreview.net/pdf?id=qV83K9d5WB) · [Source 3](https://github.com/ctlllll/LLM-ToolMaker) · [Source 4](https://arxiv.org/pdf/2305.17126v2)
 
 <a id="voyager"></a>
 
@@ -4196,19 +4196,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2305.14318)
 
-**Mechanism.** Decomposes problem solving into tool design, implementation, execution, and revision so an agent can create tools beyond a fixed API inventory. It also examines reuse of created tools for knowledge transfer.
+**Mechanism.** Separates reusable Python tool construction from problem-specific calls, executes their combination and revises it after runtime errors. Weights stay fixed. A separate transfer experiment supplies a correct tool from a related problem to other members of a constructed problem group.
 
-**What changes:** Tools. **Persistence:** both. **Learning signal:** Problem specifications and execution feedback for tool creation and revision.
+**What changes:** Tools. **Persistence:** both. **Learning signal:** Problem descriptions, hand-corrected demonstrations and runtime error tracebacks guide tool creation and repair.
 
-**Evaluation.** The authors evaluate MATH, TabMWP, and the introduced Creation Challenge dataset, with tool-use and reasoning baselines.
+**Evaluation.** The ACL v2 paper tests numerical-answer subsets of MATH and TabMWP, a 2,000-item synthetic Creation Challenge, and 300 grouped transfer questions. It separates execution success from answer accuracy and compares hints, rectification and entangled-stage baselines.
 
-**Boundary.** Much of the framework concerns solving and repairing an individual problem. Interpretation: tool-transfer experiments should be separated from claims of a continually improving cross-task agent.
+**Boundary.** The numerical subsets cover approximately 80% of the original benchmarks. Transfer uses a tool selected as correct; it does not test unguided library retrieval. Hint availability and CoT change outcomes, and the separated design is not uniformly better. Runtime success alone does not establish semantic correctness.
 
 **Code / data.** [Official artifact](https://github.com/qiancheng0/CREATOR) — Official repository linked and its public page inspected; not executed.
 
-**Topics:** foundations, tools. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, tools. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2305.14318) · [Source 2](https://aclanthology.org/2023.findings-emnlp.462/) · [Source 3](https://github.com/qiancheng0/CREATOR)
+[Source 1](https://arxiv.org/abs/2305.14318) · [Source 2](https://aclanthology.org/2023.findings-emnlp.462/) · [Source 3](https://github.com/qiancheng0/CREATOR) · [Source 4](https://aclanthology.org/2023.findings-emnlp.462v2.pdf)
 
 <a id="memorybank"></a>
 

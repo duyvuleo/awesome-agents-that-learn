@@ -1328,7 +1328,8 @@
     "sources": [
       "https://arxiv.org/abs/2305.14318",
       "https://aclanthology.org/2023.findings-emnlp.462/",
-      "https://github.com/qiancheng0/CREATOR"
+      "https://github.com/qiancheng0/CREATOR",
+      "https://aclanthology.org/2023.findings-emnlp.462v2.pdf"
     ],
     "code_url": "https://github.com/qiancheng0/CREATOR",
     "code_note": "Official repository linked and its public page inspected; not executed.",
@@ -1341,12 +1342,12 @@
       "tools"
     ],
     "persistence": "both",
-    "learning_signal": "Problem specifications and execution feedback for tool creation and revision.",
-    "mechanism": "Decomposes problem solving into tool design, implementation, execution, and revision so an agent can create tools beyond a fixed API inventory. It also examines reuse of created tools for knowledge transfer.",
-    "evaluation": "The authors evaluate MATH, TabMWP, and the introduced Creation Challenge dataset, with tool-use and reasoning baselines.",
-    "limitations": "Much of the framework concerns solving and repairing an individual problem. Interpretation: tool-transfer experiments should be separated from claims of a continually improving cross-task agent.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Problem descriptions, hand-corrected demonstrations and runtime error tracebacks guide tool creation and repair.",
+    "mechanism": "Separates reusable Python tool construction from problem-specific calls, executes their combination and revises it after runtime errors. Weights stay fixed. A separate transfer experiment supplies a correct tool from a related problem to other members of a constructed problem group.",
+    "evaluation": "The ACL v2 paper tests numerical-answer subsets of MATH and TabMWP, a 2,000-item synthetic Creation Challenge, and 300 grouped transfer questions. It separates execution success from answer accuracy and compares hints, rectification and entangled-stage baselines.",
+    "limitations": "The numerical subsets cover approximately 80% of the original benchmarks. Transfer uses a tool selected as correct; it does not test unguided library retrieval. Hint availability and CoT change outcomes, and the separated design is not uniformly better. Runtime success alone does not establish semantic correctness.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "CREATOR"
   },
   {
@@ -2640,7 +2641,8 @@
     "sources": [
       "https://arxiv.org/abs/2305.17126",
       "https://openreview.net/pdf?id=qV83K9d5WB",
-      "https://github.com/ctlllll/LLM-ToolMaker"
+      "https://github.com/ctlllll/LLM-ToolMaker",
+      "https://arxiv.org/pdf/2305.17126v2"
     ],
     "code_url": "https://github.com/ctlllll/LLM-ToolMaker",
     "code_note": "Official repository linked and its public page inspected; not executed.",
@@ -2654,12 +2656,12 @@
       "tools"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Task examples and feedback from producing and using generated tools.",
-    "mechanism": "Separates tool creation from tool use, allowing a stronger model to create reusable programs that a cheaper model can invoke on related requests. A functional cache retains these capabilities across requests.",
-    "evaluation": "The paper compares task accuracy and serving cost on reasoning problems, including BIG-Bench tasks.",
-    "limitations": "Results depend on the selected task families and how tool-making costs are amortized. Interpretation: reusable tool creation does not establish unrestricted autonomous software evolution.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Labeled task demonstrations and validation answers guide program generation and function-call tests; a dispatcher identifies known or unseen task types.",
+    "mechanism": "A stronger model proposes Python tools, verifies them on examples and packages calling demonstrations for a cheaper user model. Tools persist in a functional cache. Verification retries repair test calls rather than the function; new task classes may need labels from a strong model or human.",
+    "evaluation": "ArXiv v2 uses six task families with three training, three validation and 240 test examples each. It reports tool-making success over five trials, downstream accuracy and separate dispatcher tests on mixed 100-instance samples.",
+    "limitations": "Dispatcher classification is not an end-to-end continual-learning trial. Three validation examples cannot certify general tool correctness, and logical-deduction accuracy remains below GPT-4 CoT. Cost arguments amortize creation using historical API rates; the scheduling task is a two-person time-slot template, not real email interaction.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "LLMs as Tool Makers"
   },
   {
@@ -4733,7 +4735,8 @@
     "venue": "",
     "url": "https://arxiv.org/abs/2308.08998",
     "sources": [
-      "https://arxiv.org/abs/2308.08998"
+      "https://arxiv.org/abs/2308.08998",
+      "https://arxiv.org/pdf/2308.08998v2"
     ],
     "code_url": null,
     "code_note": "Official runnable code was not verified in this source review.",
@@ -4746,12 +4749,12 @@
       "model-weights"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "A reward-based training objective applied to batches sampled from the current policy.",
-    "mechanism": "Alternates generating a batch of candidate outputs and improving the policy with offline reinforcement learning. Reusing generated data reduces the need to sample a new online batch for every update.",
-    "evaluation": "The reported experiments focus on machine translation, assessed using automatic metrics and human evaluation.",
-    "limitations": "This is externally organized model training on a specific application. Curator interpretation: the study does not establish a lifelong agent or a reward signal that itself improves without outside specification.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "A fixed, human-preference-trained Metric X model scores generated translations; original reference translations remain in the training mixture.",
+    "mechanism": "Alternates costly generation rounds with multiple offline updates on increasingly filtered data. The strongest reward-score variant uses ordinary supervised negative log-likelihood on selected outputs. Model weights change; retraining the reward model with fresh human feedback is proposed future work.",
+    "evaluation": "ArXiv v2 studies three translation language pairs across IWSLT, WMT and an author-internal benchmark, comparing losses, thresholds, growth rounds, PPO and best-of-N decoding. Human ratings improve over the supervised baseline but rank variants differently from the learned reward.",
+    "limitations": "Additional growth can increase reward while reducing human-rated gains, and sentence repetition can exploit the reward model. Large synthetic corpora and repeated fine-tuning remain costly. The study does not establish a generally superior RL algorithm or a reward signal that improves itself.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "ReST"
   },
   {
@@ -5212,7 +5215,8 @@
     "url": "https://arxiv.org/abs/2409.12917",
     "sources": [
       "https://arxiv.org/abs/2409.12917",
-      "https://proceedings.iclr.cc/paper_files/paper/2025/hash/871ac99fdc5282d0301934d23945ebaa-Abstract-Conference.html"
+      "https://proceedings.iclr.cc/paper_files/paper/2025/hash/871ac99fdc5282d0301934d23945ebaa-Abstract-Conference.html",
+      "https://arxiv.org/pdf/2409.12917v2"
     ],
     "code_url": null,
     "code_note": "Official runnable code was not verified in this source review.",
@@ -5225,12 +5229,12 @@
       "model-weights"
     ],
     "persistence": "both",
-    "learning_signal": "Online rewards and regularization over self-generated multi-turn correction traces.",
-    "mechanism": "Trains a correction policy on its own response distribution, with an initialization stage and a reward bonus encouraging successful revision. The method targets distribution mismatch and collapsed correction behavior observed in offline supervised training.",
-    "evaluation": "The authors evaluate self-correction on MATH and HumanEval using Gemini models.",
-    "limitations": "The training produces a reusable correction capability; a test-time revision is still a within-problem operation. Curator interpretation: these benchmarks do not show autonomous lifelong improvement across changing environments.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Ground-truth answer checks and unit tests reward self-generated training traces; no correctness oracle is supplied for test-time revision.",
+    "mechanism": "Trains one model through two-turn online RL: first constrain initial answers while learning revisions, then optimize both turns with a progress bonus. The learned weights persist across problems; each deployed revision remains a within-problem operation.",
+    "evaluation": "ArXiv v2 evaluates Gemini models on MATH500 and HumanEval after MATH/MBPP training, with offline MBPP-R repair, component ablations and repeated-attempt tests. MATH training incorporates 4,500 original test problems while reserving 500 for evaluation.",
+    "limitations": "The 15.6-point MATH headline is improvement in the correction delta, not final-answer accuracy. Training uses oracle rewards and training-reward checkpoint selection; code first-attempt accuracy can decline. Only two attempts are trained, and answer-level reward does not verify every reasoning step.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "SCoRe"
   },
   {

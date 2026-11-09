@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Tool reuse and reward-grounding reviews
+
+- Upgraded CREATOR, LLMs as Tool Makers, ReST and SCoRe through full-text methods, results, appendices and visual evidence.
+- Qualified benchmark subsets, correct-tool selection, dispatcher evaluation, retained oracle/human supervision, reward over-optimization and answer-level metrics.
+- Counts remain 190 works: 158 full-text and 32 abstract/metadata reviews. Twenty-eight broader appraisals are complete; 162 remain.
+
 ## 2026-11-09 — Training supervision and self-correction reviews
 
 - Upgraded Self-Instruct, Self-Rewarding Language Models, SPIN and intrinsic self-correction limits through full-text methods, evidence, appendices and figure review.
