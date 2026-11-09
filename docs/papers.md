@@ -130,11 +130,11 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-12-21 | **MemEvolve**<br>[MemEvolve: Meta-Evolution of Agent Memory Systems](https://arxiv.org/abs/2512.18746) | Evolves implementations of encoding, storage, retrieval and memory management inside a supplied interface. Candidate memory starts empty each outer iteration; selected… | Memory, Agent code | peer-reviewed · full-text | [Notes](#memevolve) · [Code](https://github.com/bingreeky/MemEvolve) |
 | 2025-11-20 | **Agent0**<br>[Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](https://arxiv.org/abs/2511.16043) | Alternates curriculum-agent GRPO training with executor updates on filtered generated tasks. The executor interleaves reasoning and Python calls; ADPO scales advantages… | Model weights | peer-reviewed · full-text | [Notes](#agent0) · [Code](https://github.com/aiming-lab/Agent0) |
 | 2025-11-17 | **Live-SWE-agent**<br>[Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?](https://arxiv.org/abs/2511.13646) | Adds tool-creation instructions and step-level reminders to a bash-based mini-SWE-agent loop. The agent writes, revises and executes Python helper scripts during one… | Tools | preprint · full-text | [Notes](#live-swe-agent) · [Code](https://github.com/OpenAutoCoder/live-swe-agent) |
-| 2025-11-03 | **Self-Harmony**<br>[Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](https://arxiv.org/abs/2511.01191) | One model plays solver and reframer roles, pooling answer frequencies with a harmonic-mean selector. Reinforcement learning updates shared model parameters from… | Model weights | peer-reviewed · full-text | [Notes](#self-harmony) · [Code](https://github.com/physicsru/self_harmony) |
+| 2025-11-03 | **Self-Harmony**<br>[Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](https://arxiv.org/abs/2511.01191) | A shared model generates original-solution and fused reframe-and-solve trajectories. Harmonic aggregation of their answer frequencies selects pseudo-labels for… | Model weights | peer-reviewed · full-text | [Notes](#self-harmony) · [Code](https://github.com/physicsru/self_harmony) |
 | 2025-11-01 | **OpenSIR**<br>[OpenSIR: Open-Ended Self-Improving Reasoner](https://arxiv.org/abs/2511.00602) | Updates one policy in teacher and student roles with GRPO-style training, expanding a problem pool from a trivial seed. Novelty selects generation and solving examples… | Model weights | preprint · full-text | [Notes](#opensir) · [Code](https://github.com/EdinburghNLP/OpenSIR) |
 | 2025-10-28 | **SPICE**<br>[SPICE: Self-Play In Corpus Environments Improves Reasoning](https://arxiv.org/abs/2510.24684) | One shared model learns challenger and reasoner roles through role-centered policy updates. The challenger sees a sampled document; the reasoner receives its generated… | Model weights | preprint · full-text | [Notes](#spice) |
-| 2025-10-21 | **Search Self-Play**<br>[Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](https://arxiv.org/abs/2510.18821) | Trains one model in proposer and solver roles. The proposer builds search questions around supplied answers; a retrieval-augmented check filters questions before… | Model weights | peer-reviewed · full-text | [Notes](#search-self-play) · [Code](https://github.com/Qwen-Applications/SSP) |
-| 2025-10-17 | **MARSHAL**<br>[MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs](https://arxiv.org/abs/2510.15414) | Updates one language model through cooperative and competitive self-play. Turn-level returns are centered within player-role groups to assign credit across multi-turn… | Model weights | peer-reviewed · full-text | [Notes](#marshal) · [Code](https://github.com/thu-nics/MARSHAL) |
+| 2025-10-21 | **Search Self-Play**<br>[Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](https://arxiv.org/abs/2510.18821) | Trains one model in proposer and solver roles using REINFORCE and GRPO. Search-grounded questions pass format rules and RAG verification with distractor documents. The… | Model weights | peer-reviewed · full-text | [Notes](#search-self-play) · [Code](https://github.com/Qwen-Applications/SSP) |
+| 2025-10-17 | **MARSHAL**<br>[MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs](https://arxiv.org/abs/2510.15414) | Updates a shared language model through cooperative and competitive self-play in fixed games. Turn-level returns are mean-centered within player-role groups. Learned… | Model weights | peer-reviewed · full-text | [Notes](#marshal) · [Code](https://github.com/thu-nics/MARSHAL) |
 | 2025-10-06 | **ACE**<br>[Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](https://arxiv.org/abs/2510.04618) | Keeps model weights fixed while a Generator, Reflector and Curator maintain an itemized playbook. Local additions, counters and optional semantic deduplication replace… | Prompts / context, Memory | peer-reviewed · full-text | [Notes](#ace) · [Code](https://github.com/ace-agent/ace) |
 | 2025-09-30 | **Mem-α**<br>[Mem-α: Learning Memory Construction via Reinforcement Learning](https://arxiv.org/abs/2509.25911) | Reinforcement learning trains a Qwen3-4B writer to update core, episodic and semantic stores while processing history chunks. A fixed BM25 retriever and Qwen3-32B reader… | Model weights, Memory | preprint · full-text | [Notes](#mem-alpha) · [Code](https://github.com/wangyu-ustc/Mem-alpha) |
 | 2025-09-29 | **Socratic-Zero**<br>[Socratic-Zero : Bootstrapping Reasoning via Data-Free Agent Co-evolution](https://arxiv.org/abs/2509.24726) | A fixed stronger teacher judges solver attempts and expands the curriculum; DPO updates the solver, while weighted supervised learning distills the teacher into a… | Model weights | preprint · full-text | [Notes](#socratic-zero) |
@@ -2800,19 +2800,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2511.01191)
 
-**Mechanism.** One model plays solver and reframer roles, pooling answer frequencies with a harmonic-mean selector. Reinforcement learning updates shared model parameters from original-solution and fused reframe-and-solve trajectories; each benchmark gets its own adapted model.
+**Mechanism.** A shared model generates original-solution and fused reframe-and-solve trajectories. Harmonic aggregation of their answer frequencies selects pseudo-labels for reinforcement learning. A separate model is adapted for each benchmark; agreement supplies a learning signal, not an independent correctness check.
 
 **What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Agreement among model answers to original and reframed questions supplies pseudo-labels, with format/diversity reward terms.
 
-**Evaluation.** Compares five Qwen/Llama models on six reasoning benchmarks under label-free adaptation, reporting mean pass@1 over multiple rollouts plus pseudo-label, semantic-shift, and component analyses.
+**Evaluation.** Full v2 review covers five models and six benchmarks, 16-rollout mean pass@1, component and reward ablations, inference-only voting, semantic-shift analyses and complete theoretical appendices. Main results are transductive: adaptation and scoring use the same unlabeled questions.
 
-**Boundary.** Training uses the same unlabeled questions later scored in evaluation, so results are transductive rather than unseen-task generalization. View agreement is not independent correctness verification, and paraphrases can change meaning. Rollout-count matching does not establish equal total compute; some unstable baselines report peak rather than final scores.
+**Boundary.** Reframing can change meaning; external-model answer agreement is an imperfect semantic check. Rollout-count matching does not match total compute, and some baselines use peak rather than final scores. No independent training-run uncertainty is reported. Curator analysis identifies a rank-equivalence gap in the Infomax derivation; empirical gains should not be presented as a correctness guarantee.
 
-**Code / data.** [Official artifact](https://github.com/physicsru/self_harmony) — Paper-linked repository, training instructions, and implementation overview inspected; no installation, model download, or training.
+**Code / data.** [Official artifact](https://github.com/physicsru/self_harmony) — Full v2 and substantive Appendices A–M read on 2026-11-09. Official README and selected reward-source functions at fb1eb13 inspected as text; a diversity helper uses one minus normalized JS divergence, clarifying an ambiguity in the paper. This does not establish the configuration used in reported runs. No training or research code was executed.
 
-**Topics:** model-training, self-play, evaluation. **Reviewed:** full-text · 2026-11-06.
+**Topics:** model-training, self-play, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2511.01191) · [Source 2](https://arxiv.org/html/2511.01191v2) · [Source 3](https://proceedings.iclr.cc/paper_files/paper/2026/hash/86178c06fd59ebc58dc31f8edb3c54af-Abstract-Conference.html) · [Source 4](https://proceedings.iclr.cc/paper_files/paper/2026/file/86178c06fd59ebc58dc31f8edb3c54af-Paper-Conference.pdf) · [Source 5](https://github.com/physicsru/self_harmony)
+[Source 1](https://arxiv.org/abs/2511.01191) · [Source 2](https://arxiv.org/html/2511.01191v2) · [Source 3](https://proceedings.iclr.cc/paper_files/paper/2026/hash/86178c06fd59ebc58dc31f8edb3c54af-Abstract-Conference.html) · [Source 4](https://proceedings.iclr.cc/paper_files/paper/2026/file/86178c06fd59ebc58dc31f8edb3c54af-Paper-Conference.pdf) · [Source 5](https://github.com/physicsru/self_harmony) · [Source 6](https://arxiv.org/pdf/2511.01191v2) · [Source 7](https://github.com/physicsru/self_harmony/blob/fb1eb13d6c2e4860347b59fbd4eb35489b6fec6c/verl/workers/reward_manager/self_harmony.py)
 
 <a id="opensir"></a>
 
@@ -2866,19 +2866,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2510.18821)
 
-**Mechanism.** Trains one model in proposer and solver roles. The proposer builds search questions around supplied answers; a retrieval-augmented check filters questions before REINFORCE and GRPO updates retain new behavior in model weights.
+**Mechanism.** Trains one model in proposer and solver roles using REINFORCE and GRPO. Search-grounded questions pass format rules and RAG verification with distractor documents. The main implementation reuses valid questions and clears its replay buffer every ten updates; learned behavior persists in weights.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Model-judged answer correctness rewards the solver; solver difficulty rewards the proposer after retrieval-based question filtering.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** A fixed Qwen2.5-32B verifier and judge assess generated questions and solver answers against supplied seed answers. Solver failure rewards the proposer; valid questions are reused in a periodically cleared buffer.
 
-**Evaluation.** Reports pass@1 on seven QA benchmarks using local Wikipedia retrieval, including initial training, further training of search-specialized checkpoints, and fixed-opponent and verification ablations.
+**Evaluation.** Full v3 and Appendices A–E cover seven sampled QA benchmarks, several model families/sizes, continued training of search checkpoints, filtering and replay controls, algorithm/runtime trade-offs, and a failed negative-reward configuration. Outcomes are model-judged pass@1.
 
-**Boundary.** Without supervision does not mean without external information: 50,000 seed answers come from public training sets, and Qwen2.5-32B supplies default verification and judgment. Evaluation samples 500 questions per dataset except Bamboogle’s 125. A fixed corpus and ten-call search budget constrain transfer; model verification is not proof of question validity.
+**Boundary.** 50,000 seed answers come from public training sets, and a stronger model supplies verification and judgment. Each benchmark uses 500 questions except Bamboogle’s 125, with fixed Wikipedia retrieval and ten search calls. RAG agreement cannot ensure unique valid questions. Reported gains lack independent training-seed uncertainty; rollout-time comparisons are not total-cost matches.
 
-**Code / data.** [Official artifact](https://github.com/Qwen-Applications/SSP) — Current paper-linked repository and training/service documentation inspected; nothing installed or executed.
+**Code / data.** [Official artifact](https://github.com/Qwen-Applications/SSP) — Full arXiv v3, including substantive appendices, prompts, ambiguous-question cases and figures, read on 2026-11-09. Official README documents veRL/SGLang, separate judge and retrieval services, and seed-data preparation. No installation, models, datasets or research code were executed.
 
-**Topics:** self-play, model-training, tools, applications. **Reviewed:** full-text · 2026-11-04.
+**Topics:** self-play, model-training, tools, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2510.18821) · [Source 2](https://arxiv.org/html/2510.18821v3) · [Source 3](https://proceedings.iclr.cc/paper_files/paper/2026/hash/6ac12f42db406e6be14d669884e73212-Abstract-Conference.html) · [Source 4](https://proceedings.iclr.cc/paper_files/paper/2026/file/6ac12f42db406e6be14d669884e73212-Paper-Conference.pdf) · [Source 5](https://github.com/Qwen-Applications/SSP)
+[Source 1](https://arxiv.org/abs/2510.18821) · [Source 2](https://arxiv.org/html/2510.18821v3) · [Source 3](https://proceedings.iclr.cc/paper_files/paper/2026/hash/6ac12f42db406e6be14d669884e73212-Abstract-Conference.html) · [Source 4](https://proceedings.iclr.cc/paper_files/paper/2026/file/6ac12f42db406e6be14d669884e73212-Paper-Conference.pdf) · [Source 5](https://github.com/Qwen-Applications/SSP) · [Source 6](https://arxiv.org/pdf/2510.18821v3)
 
 <a id="marshal"></a>
 
@@ -2888,19 +2888,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2510.15414)
 
-**Mechanism.** Updates one language model through cooperative and competitive self-play. Turn-level returns are centered within player-role groups to assign credit across multi-turn games. The learned weights are then placed in fixed debate or cooperation frameworks.
+**Mechanism.** Updates a shared language model through cooperative and competitive self-play in fixed games. Turn-level returns are mean-centered within player-role groups. Learned weights transfer into fixed debate or cooperation workflows; the workflows themselves do not evolve.
 
 **What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Game outcomes plus engineered action-format and response-length rewards guide online reinforcement learning.
 
-**Evaluation.** Trains on Tic-Tac-Toe, Kuhn Poker, and Mini Hanabi; evaluates harder held-out games and zero-shot mathematics/QA in MAD and AutoGen. Includes fixed-opponent and credit-assignment ablations, with Qwen3-4B main and 8B extension results.
+**Evaluation.** Full arXiv v3 review covers three training games, three held-out games, seven reasoning benchmarks in single-agent/MAD/AutoGen settings, 4B/8B models, raw returns and all appendix controls. Authors report higher average downstream scores, alongside task-specific regressions.
 
-**Boundary.** Training uses two-player games and designed rewards; it does not evolve the downstream workflow. Hanabi evaluation is self-play, not a test with arbitrary unseen partners. Benefits vary by benchmark and framework; larger populations and practical collaborative software/research environments remain future work.
+**Boundary.** Game scores are normalized returns, not win rates; Hanabi evaluation uses self-play rather than unseen partners. Independent training-run uncertainty and matched generalist/specialist compute are not established. As printed, several MAD appendix ablations outperform full specialists, so component necessity is not uniform. Qualitative traces do not establish causal theory-of-mind gains.
 
-**Code / data.** [Official artifact](https://github.com/thu-nics/MARSHAL) — Official repository, project linkage, and training documentation inspected; no code or checkpoints were executed.
+**Code / data.** [Official artifact](https://github.com/thu-nics/MARSHAL) — Full v3 main text, substantive Appendices A–J, figures, reward/configuration details and raw results read on 2026-11-09; official repository README rechecked. ROLL/OpenSpiel and downstream MASLab setup are documented. No code, models or game evaluations were executed.
 
-**Topics:** model-training, self-play, evaluation. **Reviewed:** full-text · 2026-11-05.
+**Topics:** model-training, self-play, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2510.15414) · [Source 2](https://arxiv.org/html/2510.15414v3) · [Source 3](https://proceedings.iclr.cc/paper_files/paper/2026/hash/0b1b52b624ce69e0241eac91f8df0bce-Abstract-Conference.html) · [Source 4](https://github.com/thu-nics/MARSHAL)
+[Source 1](https://arxiv.org/abs/2510.15414) · [Source 2](https://arxiv.org/html/2510.15414v3) · [Source 3](https://proceedings.iclr.cc/paper_files/paper/2026/hash/0b1b52b624ce69e0241eac91f8df0bce-Abstract-Conference.html) · [Source 4](https://github.com/thu-nics/MARSHAL) · [Source 5](https://arxiv.org/pdf/2510.15414v3)
 
 <a id="ace"></a>
 

@@ -4248,10 +4248,12 @@
         "https://arxiv.org/html/2511.01191v2",
         "https://proceedings.iclr.cc/paper_files/paper/2026/hash/86178c06fd59ebc58dc31f8edb3c54af-Abstract-Conference.html",
         "https://proceedings.iclr.cc/paper_files/paper/2026/file/86178c06fd59ebc58dc31f8edb3c54af-Paper-Conference.pdf",
-        "https://github.com/physicsru/self_harmony"
+        "https://github.com/physicsru/self_harmony",
+        "https://arxiv.org/pdf/2511.01191v2",
+        "https://github.com/physicsru/self_harmony/blob/fb1eb13d6c2e4860347b59fbd4eb35489b6fec6c/verl/workers/reward_manager/self_harmony.py"
       ],
       "code_url": "https://github.com/physicsru/self_harmony",
-      "code_note": "Paper-linked repository, training instructions, and implementation overview inspected; no installation, model download, or training.",
+      "code_note": "Full v2 and substantive Appendices A–M read on 2026-11-09. Official README and selected reward-source functions at fb1eb13 inspected as text; a diversity helper uses one minus normalized JS divergence, clarifying an ambiguity in the paper. This does not establish the configuration used in reported runs. No training or research code was executed.",
       "topics": [
         "model-training",
         "self-play",
@@ -4263,11 +4265,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Agreement among model answers to original and reframed questions supplies pseudo-labels, with format/diversity reward terms.",
-      "mechanism": "One model plays solver and reframer roles, pooling answer frequencies with a harmonic-mean selector. Reinforcement learning updates shared model parameters from original-solution and fused reframe-and-solve trajectories; each benchmark gets its own adapted model.",
-      "evaluation": "Compares five Qwen/Llama models on six reasoning benchmarks under label-free adaptation, reporting mean pass@1 over multiple rollouts plus pseudo-label, semantic-shift, and component analyses.",
-      "limitations": "Training uses the same unlabeled questions later scored in evaluation, so results are transductive rather than unseen-task generalization. View agreement is not independent correctness verification, and paraphrases can change meaning. Rollout-count matching does not establish equal total compute; some unstable baselines report peak rather than final scores.",
+      "mechanism": "A shared model generates original-solution and fused reframe-and-solve trajectories. Harmonic aggregation of their answer frequencies selects pseudo-labels for reinforcement learning. A separate model is adapted for each benchmark; agreement supplies a learning signal, not an independent correctness check.",
+      "evaluation": "Full v2 review covers five models and six benchmarks, 16-rollout mean pass@1, component and reward ablations, inference-only voting, semantic-shift analyses and complete theoretical appendices. Main results are transductive: adaptation and scoring use the same unlabeled questions.",
+      "limitations": "Reframing can change meaning; external-model answer agreement is an imperfect semantic check. Rollout-count matching does not match total compute, and some baselines use peak rather than final scores. No independent training-run uncertainty is reported. Curator analysis identifies a rank-equivalence gap in the Infomax derivation; empirical gains should not be presented as a correctness guarantee.",
       "review_depth": "full-text",
-      "checked": "2026-11-06",
+      "checked": "2026-11-09",
       "short_name": "Self-Harmony"
     },
     {
@@ -4350,10 +4352,11 @@
         "https://arxiv.org/html/2510.18821v3",
         "https://proceedings.iclr.cc/paper_files/paper/2026/hash/6ac12f42db406e6be14d669884e73212-Abstract-Conference.html",
         "https://proceedings.iclr.cc/paper_files/paper/2026/file/6ac12f42db406e6be14d669884e73212-Paper-Conference.pdf",
-        "https://github.com/Qwen-Applications/SSP"
+        "https://github.com/Qwen-Applications/SSP",
+        "https://arxiv.org/pdf/2510.18821v3"
       ],
       "code_url": "https://github.com/Qwen-Applications/SSP",
-      "code_note": "Current paper-linked repository and training/service documentation inspected; nothing installed or executed.",
+      "code_note": "Full arXiv v3, including substantive appendices, prompts, ambiguous-question cases and figures, read on 2026-11-09. Official README documents veRL/SGLang, separate judge and retrieval services, and seed-data preparation. No installation, models, datasets or research code were executed.",
       "topics": [
         "self-play",
         "model-training",
@@ -4365,12 +4368,12 @@
         "model-weights"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Model-judged answer correctness rewards the solver; solver difficulty rewards the proposer after retrieval-based question filtering.",
-      "mechanism": "Trains one model in proposer and solver roles. The proposer builds search questions around supplied answers; a retrieval-augmented check filters questions before REINFORCE and GRPO updates retain new behavior in model weights.",
-      "evaluation": "Reports pass@1 on seven QA benchmarks using local Wikipedia retrieval, including initial training, further training of search-specialized checkpoints, and fixed-opponent and verification ablations.",
-      "limitations": "Without supervision does not mean without external information: 50,000 seed answers come from public training sets, and Qwen2.5-32B supplies default verification and judgment. Evaluation samples 500 questions per dataset except Bamboogle’s 125. A fixed corpus and ten-call search budget constrain transfer; model verification is not proof of question validity.",
+      "learning_signal": "A fixed Qwen2.5-32B verifier and judge assess generated questions and solver answers against supplied seed answers. Solver failure rewards the proposer; valid questions are reused in a periodically cleared buffer.",
+      "mechanism": "Trains one model in proposer and solver roles using REINFORCE and GRPO. Search-grounded questions pass format rules and RAG verification with distractor documents. The main implementation reuses valid questions and clears its replay buffer every ten updates; learned behavior persists in weights.",
+      "evaluation": "Full v3 and Appendices A–E cover seven sampled QA benchmarks, several model families/sizes, continued training of search checkpoints, filtering and replay controls, algorithm/runtime trade-offs, and a failed negative-reward configuration. Outcomes are model-judged pass@1.",
+      "limitations": "50,000 seed answers come from public training sets, and a stronger model supplies verification and judgment. Each benchmark uses 500 questions except Bamboogle’s 125, with fixed Wikipedia retrieval and ten search calls. RAG agreement cannot ensure unique valid questions. Reported gains lack independent training-seed uncertainty; rollout-time comparisons are not total-cost matches.",
       "review_depth": "full-text",
-      "checked": "2026-11-04",
+      "checked": "2026-11-09",
       "short_name": "Search Self-Play"
     },
     {
@@ -4386,10 +4389,11 @@
         "https://arxiv.org/abs/2510.15414",
         "https://arxiv.org/html/2510.15414v3",
         "https://proceedings.iclr.cc/paper_files/paper/2026/hash/0b1b52b624ce69e0241eac91f8df0bce-Abstract-Conference.html",
-        "https://github.com/thu-nics/MARSHAL"
+        "https://github.com/thu-nics/MARSHAL",
+        "https://arxiv.org/pdf/2510.15414v3"
       ],
       "code_url": "https://github.com/thu-nics/MARSHAL",
-      "code_note": "Official repository, project linkage, and training documentation inspected; no code or checkpoints were executed.",
+      "code_note": "Full v3 main text, substantive Appendices A–J, figures, reward/configuration details and raw results read on 2026-11-09; official repository README rechecked. ROLL/OpenSpiel and downstream MASLab setup are documented. No code, models or game evaluations were executed.",
       "topics": [
         "model-training",
         "self-play",
@@ -4401,11 +4405,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Game outcomes plus engineered action-format and response-length rewards guide online reinforcement learning.",
-      "mechanism": "Updates one language model through cooperative and competitive self-play. Turn-level returns are centered within player-role groups to assign credit across multi-turn games. The learned weights are then placed in fixed debate or cooperation frameworks.",
-      "evaluation": "Trains on Tic-Tac-Toe, Kuhn Poker, and Mini Hanabi; evaluates harder held-out games and zero-shot mathematics/QA in MAD and AutoGen. Includes fixed-opponent and credit-assignment ablations, with Qwen3-4B main and 8B extension results.",
-      "limitations": "Training uses two-player games and designed rewards; it does not evolve the downstream workflow. Hanabi evaluation is self-play, not a test with arbitrary unseen partners. Benefits vary by benchmark and framework; larger populations and practical collaborative software/research environments remain future work.",
+      "mechanism": "Updates a shared language model through cooperative and competitive self-play in fixed games. Turn-level returns are mean-centered within player-role groups. Learned weights transfer into fixed debate or cooperation workflows; the workflows themselves do not evolve.",
+      "evaluation": "Full arXiv v3 review covers three training games, three held-out games, seven reasoning benchmarks in single-agent/MAD/AutoGen settings, 4B/8B models, raw returns and all appendix controls. Authors report higher average downstream scores, alongside task-specific regressions.",
+      "limitations": "Game scores are normalized returns, not win rates; Hanabi evaluation uses self-play rather than unseen partners. Independent training-run uncertainty and matched generalist/specialist compute are not established. As printed, several MAD appendix ablations outperform full specialists, so component necessity is not uniform. Qualitative traces do not establish causal theory-of-mind gains.",
       "review_depth": "full-text",
-      "checked": "2026-11-05",
+      "checked": "2026-11-09",
       "short_name": "MARSHAL"
     },
     {

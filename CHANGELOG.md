@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded self-play and adaptation reviews
+
+- Read MARSHAL, Search Self-Play and Self-Harmony with their substantive appendices, controls and derivations.
+- Qualified normalized game scores, replay and verification requirements, transductive results and a selector-equivalence claim.
+- Broader audit: 101 of 190 works complete, 89 pending; no research executions.
+
 ## 2026-11-09 — Expanded model-collapse evidence reviews
 
 - Read full model-collapse studies and supplementary proofs, clarifying retention, resource and theorem boundaries.
