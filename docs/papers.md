@@ -128,16 +128,16 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026 | **PerMemSafe**<br>[PerMemSafe: Benchmarking Implicit Personalized Safety of Long Horizon Self-Evolving Agents](https://aclanthology.org/2026.findings-acl.320/) | Separates recognizing implicit personalized risks from tracking their changes over time. The accompanying SentinelMem retains explicit fact-state transitions and… | Memory | peer-reviewed · full-text | [Notes](#permemsafe) |
 | 2026 | **COLLABMEM**<br>[COLLABMEM: A Diagnostic Benchmark for Collaborative Memory Operations in Multi-Agent LLM Systems](https://aclanthology.org/2026.emnlp-main.1194/) | Holds the interaction trace and answering layer fixed to isolate sharing, access, routing, provenance, conflict resolution, and retention. TMS-GRAPH++ supplies… | Memory | peer-reviewed · full-text | [Notes](#collabmem) |
 | 2025-12-21 | **MemEvolve**<br>[MemEvolve: Meta-Evolution of Agent Memory Systems](https://arxiv.org/abs/2512.18746) | Searches implementations of encoding, storage, retrieval, and management while each candidate accumulates experience. Pareto selection and a fixed diagnose-and-design… | Memory, Agent code | peer-reviewed · full-text | [Notes](#memevolve) · [Code](https://github.com/bingreeky/MemEvolve) |
-| 2025-11-20 | **Agent0**<br>[Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](https://arxiv.org/abs/2511.16043) | Co-trains a curriculum agent and a tool-using executor in alternating stages. The proposer targets uncertain, diverse tasks, while filtered generated tasks and a code… | Model weights | peer-reviewed · full-text | [Notes](#agent0) · [Code](https://github.com/aiming-lab/Agent0) |
+| 2025-11-20 | **Agent0**<br>[Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](https://arxiv.org/abs/2511.16043) | Alternates curriculum-agent GRPO training with executor updates on filtered generated tasks. The executor interleaves reasoning and Python calls; ADPO scales advantages… | Model weights | peer-reviewed · full-text | [Notes](#agent0) · [Code](https://github.com/aiming-lab/Agent0) |
 | 2025-11-17 | **Live-SWE-agent**<br>[Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?](https://arxiv.org/abs/2511.13646) | Adds tool-creation instructions and step-level reminders to a bash-based mini-SWE-agent loop. The agent writes, revises and executes Python helper scripts during one… | Tools | preprint · full-text | [Notes](#live-swe-agent) · [Code](https://github.com/OpenAutoCoder/live-swe-agent) |
 | 2025-11-03 | **Self-Harmony**<br>[Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](https://arxiv.org/abs/2511.01191) | One model plays solver and reframer roles, pooling answer frequencies with a harmonic-mean selector. Reinforcement learning updates shared model parameters from… | Model weights | peer-reviewed · full-text | [Notes](#self-harmony) · [Code](https://github.com/physicsru/self_harmony) |
 | 2025-11-01 | **OpenSIR**<br>[OpenSIR: Open-Ended Self-Improving Reasoner](https://arxiv.org/abs/2511.00602) | Updates one policy in teacher and student roles with GRPO-style training, expanding a problem pool from a trivial seed. Novelty selects generation and solving examples… | Model weights | preprint · full-text | [Notes](#opensir) · [Code](https://github.com/EdinburghNLP/OpenSIR) |
-| 2025-10-28 | **SPICE**<br>[SPICE: Self-Play In Corpus Environments Improves Reasoning](https://arxiv.org/abs/2510.24684) | A shared model alternates between a document-grounded challenger and a reasoner without document access. Role-specific reinforcement-learning updates improve question… | Model weights | preprint · full-text | [Notes](#spice) |
+| 2025-10-28 | **SPICE**<br>[SPICE: Self-Play In Corpus Environments Improves Reasoning](https://arxiv.org/abs/2510.24684) | One shared model learns challenger and reasoner roles through role-centered policy updates. The challenger sees a sampled document; the reasoner receives its generated… | Model weights | preprint · full-text | [Notes](#spice) |
 | 2025-10-21 | **Search Self-Play**<br>[Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](https://arxiv.org/abs/2510.18821) | Trains one model in proposer and solver roles. The proposer builds search questions around supplied answers; a retrieval-augmented check filters questions before… | Model weights | peer-reviewed · full-text | [Notes](#search-self-play) · [Code](https://github.com/Qwen-Applications/SSP) |
 | 2025-10-17 | **MARSHAL**<br>[MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs](https://arxiv.org/abs/2510.15414) | Updates one language model through cooperative and competitive self-play. Turn-level returns are centered within player-role groups to assign credit across multi-turn… | Model weights | peer-reviewed · full-text | [Notes](#marshal) · [Code](https://github.com/thu-nics/MARSHAL) |
 | 2025-10-06 | **ACE**<br>[Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](https://arxiv.org/abs/2510.04618) | Keeps model weights fixed while a Generator, Reflector and Curator maintain an itemized playbook. Local additions, counters and optional semantic deduplication replace… | Prompts / context, Memory | peer-reviewed · full-text | [Notes](#ace) · [Code](https://github.com/ace-agent/ace) |
 | 2025-09-30 | **Mem-α**<br>[Mem-α: Learning Memory Construction via Reinforcement Learning](https://arxiv.org/abs/2509.25911) | Reinforcement learning trains a Qwen3-4B writer to update core, episodic and semantic stores while processing history chunks. A fixed BM25 retriever and Qwen3-32B reader… | Model weights, Memory | preprint · full-text | [Notes](#mem-alpha) · [Code](https://github.com/wangyu-ustc/Mem-alpha) |
-| 2025-09-29 | **Socratic-Zero**<br>[Socratic-Zero : Bootstrapping Reasoning via Data-Free Agent Co-evolution](https://arxiv.org/abs/2509.24726) | Updates a solver through online preference learning and trains a generator to imitate useful teacher-generated curricula. The teacher remains frozen while the solver and… | Model weights | preprint · full-text | [Notes](#socratic-zero) |
+| 2025-09-29 | **Socratic-Zero**<br>[Socratic-Zero : Bootstrapping Reasoning via Data-Free Agent Co-evolution](https://arxiv.org/abs/2509.24726) | A fixed stronger teacher judges solver attempts and expands the curriculum; DPO updates the solver, while weighted supervised learning distills the teacher into a… | Model weights | preprint · full-text | [Notes](#socratic-zero) |
 | 2025-09-29 | **ReasoningBank**<br>[ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](https://arxiv.org/abs/2509.25140) | Extracts short strategy notes from successes and failures, appends them to persistent memory, and retrieves notes from similar prior queries. Parallel or sequential… | Memory | peer-reviewed · full-text | [Notes](#reasoningbank) · [Code](https://github.com/google-research/reasoning-bank) |
 | 2025-09-29 | **A-MemGuard**<br>[A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory](https://arxiv.org/abs/2510.02373) | Wraps a fixed agent with structured-path generation, consensus/safety validation and a separate lesson store. Query- and action-related retrieval brings previous failure… | Memory | peer-reviewed · full-text | [Notes](#a-memguard) · [Code](https://github.com/TangciuYueng/AMemGuard) |
 | 2025-08-27 | **Memory-R1**<br>[Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](https://arxiv.org/abs/2508.19828) | Uses PPO or GRPO to train a manager that adds, updates, deletes or retains memory entries, then trains an answer agent to select relevant content from retrieved… | Model weights, Memory | preprint · full-text | [Notes](#memory-r1) |
@@ -150,7 +150,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-07-28 | **What/when/how survey**<br>[A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence](https://arxiv.org/abs/2507.21046) | Organizes agent changes by what evolves, when updates occur, how feedback drives them and where they are applied. A trajectory-conditioned system update formalism… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#self-evolving-survey) · [Code](https://github.com/CharlesQ9/Self-Evolving-Agents) |
 | 2025-07-25 | **GEPA**<br>[GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](https://arxiv.org/abs/2507.19457) | Mutates module instructions using trace reflection, retains complementary candidates through instance-wise Pareto selection, and optionally merges prompt sets from… | Prompts / context | peer-reviewed · full-text | [Notes](#gepa) · [Code](https://github.com/gepa-ai/gepa) |
 | 2025-07-04 | **EvoAgentX**<br>[EvoAgentX: An Automated Framework for Evolving Agentic Workflows](https://arxiv.org/abs/2507.03616) | Provides workflow generation, execution and evaluation around TextGrad, AFlow and MIPRO. Optimized prompts, demonstrations and executable workflow structures persist… | Prompts / context, Tools, Workflows, Multi-agent organization | preprint · full-text | [Notes](#evoagentx) · [Code](https://github.com/EvoAgentX/EvoAgentX) |
-| 2025-06-30 | **SPIRAL**<br>[SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2506.24119) | One shared language-model policy plays both sides of zero-sum games and receives online policy-gradient updates. Separate baselines for each role stabilize training as… | Model weights | peer-reviewed · full-text | [Notes](#spiral) · [Code](https://github.com/spiral-rl/spiral) |
+| 2025-06-30 | **SPIRAL**<br>[SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2506.24119) | A shared policy plays both roles in fixed language games and learns from terminal outcomes. Separate moving-average baselines for each game and role reduce update… | Model weights | peer-reviewed · full-text | [Notes](#spiral) · [Code](https://github.com/spiral-rl/spiral) |
 | 2025-06-12 | **SEAL**<br>[Self-Adapting Language Models](https://arxiv.org/abs/2506.10943) | An outer filtered-training loop learns to generate useful self-edits, while an inner gradient update adapts model weights. Knowledge edits generate training text; ARC… | Model weights | peer-reviewed · full-text | [Notes](#seal) · [Code](https://github.com/Continual-Intelligence/SEAL) |
 | 2025-06-09 | **G-Memory**<br>[G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems](https://arxiv.org/abs/2506.07398) | Maintains linked insight, query and interaction graphs with fixed models and orchestration. Similar-query retrieval, graph traversal, trajectory compression and… | Memory | peer-reviewed · full-text | [Notes](#g-memory) · [Code](https://github.com/bingreeky/GMemory) |
 | 2025-06-02 | **Self-Challenging Agents**<br>[Self-Challenging Language Model Agents](https://arxiv.org/abs/2506.01716) | A fixed challenger explores tools and proposes Code-as-Task instructions and checks. In the main self-improvement setting, successful offline trajectories from the same… | Model weights | peer-reviewed · full-text | [Notes](#self-challenging-agents) |
@@ -2754,19 +2754,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2511.16043)
 
-**Mechanism.** Co-trains a curriculum agent and a tool-using executor in alternating stages. The proposer targets uncertain, diverse tasks, while filtered generated tasks and a code interpreter support executor updates.
+**Mechanism.** Alternates curriculum-agent GRPO training with executor updates on filtered generated tasks. The executor interleaves reasoning and Python calls; ADPO scales advantages and adjusts clipping using answer consistency. Both models change within a fixed procedure.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Solver self-consistency, tool-use incentives, diversity penalties, and pseudo-label-based executor rewards.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Curriculum rewards combine answer self-consistency, capped tool-response counts and repetition penalties. Executor rewards match majority-vote pseudo-labels; code execution supplies intermediate feedback but does not independently certify those labels.
 
-**Evaluation.** The paper tests two Qwen base-model sizes on mathematics and general-reasoning suites, comparing tool-enabled baselines and other self-evolving methods.
+**Evaluation.** Two Qwen base sizes are evaluated across seven math and three general-reasoning benchmarks over three iterations. Controls include tool access, curriculum training, ADPO and interaction turns. AMC/AIME use mean accuracy over 32 samples; other benchmarks use greedy pass@1.
 
-**Boundary.** No new human-annotated training tasks are required, but pretrained weights, reward design, and tool infrastructure remain inputs. Curator interpretation: majority-derived pseudo-labels need independent correctness checks, and peak training scores are not evidence of indefinite improvement.
+**Boundary.** Pretraining, prompts, rewards and tool infrastructure remain supplied. Consensus and tool frequency are not correctness guarantees; some illustrated tasks are ill-posed. Headline gains are relative percentages, and aggregate definitions differ across tables. Peak scores, limited repeats and unequal budgets constrain broader generalization.
 
-**Code / data.** [Official artifact](https://github.com/aiming-lab/Agent0) — Official repository page checked; code and training were not executed.
+**Code / data.** [Official artifact](https://github.com/aiming-lab/Agent0) — Official series and Agent0 study READMEs inspected on 2026-11-09. The language and vision-language studies are separate; setup documents sandbox services and manual checkpoint selection between iterations. No installation, training, tool execution or reproduction was performed.
 
-**Topics:** model-training, self-play, tools. **Reviewed:** full-text · 2026-10-28.
+**Topics:** model-training, self-play, tools. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2511.16043) · [Source 2](https://arxiv.org/html/2511.16043v2) · [Source 3](https://github.com/aiming-lab/Agent0) · [Source 4](https://proceedings.colm.cc/paper_files/paper/2026/hash/01977a08d8e76cf4df40b5b57407c9eb-Abstract-Conference.html)
+[Source 1](https://arxiv.org/abs/2511.16043) · [Source 2](https://arxiv.org/html/2511.16043v2) · [Source 3](https://github.com/aiming-lab/Agent0) · [Source 4](https://proceedings.colm.cc/paper_files/paper/2026/hash/01977a08d8e76cf4df40b5b57407c9eb-Abstract-Conference.html) · [Source 5](https://arxiv.org/pdf/2511.16043v2)
 
 **Related software:** [Agent0](systems.md#system-agent0). See each system's relationship note before equating it with the evaluated paper version.
 
@@ -2844,19 +2844,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2510.24684)
 
-**Mechanism.** A shared model alternates between a document-grounded challenger and a reasoner without document access. Role-specific reinforcement-learning updates improve question generation and solving together.
+**Mechanism.** One shared model learns challenger and reasoner roles through role-centered policy updates. The challenger sees a sampled document; the reasoner receives its generated question. Weights change within a fixed training and task-generation framework.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Document-extracted answers, answer-equivalence checks, and a reward favoring tasks near the solver's capability frontier.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** The challenger produces document-conditioned questions and answer labels. Math-Verify or exact matching scores agreement with those labels; a Gaussian reward favors intermediate solver success rates. Formatting validity is checked separately from factual correctness.
 
-**Evaluation.** Four Qwen and OctoThinker base models are tested on mathematics and general-reasoning suites, with corpus, task-format, and challenger-reward ablations.
+**Evaluation.** Four Qwen/OctoThinker models are evaluated on seven math and four general-reasoning benchmarks after training on 20,000 documents. Controls vary corpus, format, challenger training and reward; AIME uses average accuracy over 32 samples.
 
-**Boundary.** Experiments use a selected 20,000-document corpus and a fixed training horizon. Curator interpretation: dependence on document quality, generated answers, and verification remains; these experiments do not establish indefinite improvement.
+**Boundary.** Document access and answer matching do not independently certify generated questions or labels. Baselines differ in rollout budgets. Some appendix averages disagree with their listed scores, qualifying claims that mixed corpora/formats are always best. A fixed corpus and training horizon do not establish sustained open-ended learning.
 
 **Code / data.** Official runnable code was not independently established in this review; this does not imply that no release exists.
 
-**Topics:** self-play, model-training. **Reviewed:** full-text · 2026-10-29.
+**Topics:** self-play, model-training. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2510.24684) · [Source 2](https://arxiv.org/html/2510.24684v1)
+[Source 1](https://arxiv.org/abs/2510.24684) · [Source 2](https://arxiv.org/html/2510.24684v1) · [Source 3](https://arxiv.org/pdf/2510.24684v1)
 
 <a id="search-self-play"></a>
 
@@ -2954,19 +2954,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2509.24726)
 
-**Mechanism.** Updates a solver through online preference learning and trains a generator to imitate useful teacher-generated curricula. The teacher remains frozen while the solver and generator change.
+**Mechanism.** A fixed stronger teacher judges solver attempts and expands the curriculum; DPO updates the solver, while weighted supervised learning distills the teacher into a generator. The displayed training algorithm still uses teacher-generated problems for the solver; generator utility is tested separately.
 
 **What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** A fixed stronger teacher's correctness judgments, reference solutions, and failure-targeted generated problems.
 
-**Evaluation.** The authors compare solver accuracy on seven mathematical and three general-reasoning benchmarks and assess synthetic data through downstream student training.
+**Evaluation.** Three solver-training stages cover seven math and three general-reasoning benchmarks using Mean@32. A separate experiment trains a common student on different generators’ data and evaluates Mean@16; this is not a direct comparison of those generators as solvers.
 
-**Boundary.** Despite the title, experiments use 100 MATH seed questions, initial supervised tuning on 1,500 problems, and a Qwen3-235B teacher. Mean@32 evaluation and teacher-derived judgments should be preserved when interpreting comparisons; this is not learning without prior data or an external teacher.
+**Boundary.** Uses 100 selected MATH seeds, 1,500 initial SFT problems and a Qwen3-235B teacher. The headline 20.2-point gain is over SFT, not the stronger synthesis baselines. Teacher-derived validity, small unquantified margins and inconsistent generator-score aggregates limit interpretation; teacher-free convergence is not demonstrated.
 
 **Code / data.** Official runnable code was not independently established in this review; this does not imply that no release exists.
 
-**Topics:** self-play, model-training. **Reviewed:** full-text · 2026-10-29.
+**Topics:** self-play, model-training. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2509.24726) · [Source 2](https://arxiv.org/html/2509.24726v1)
+[Source 1](https://arxiv.org/abs/2509.24726) · [Source 2](https://arxiv.org/html/2509.24726v1) · [Source 3](https://arxiv.org/pdf/2509.24726v1)
 
 <a id="reasoningbank"></a>
 
@@ -3246,19 +3246,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2506.24119)
 
-**Mechanism.** One shared language-model policy plays both sides of zero-sum games and receives online policy-gradient updates. Separate baselines for each role stabilize training as the opposing policy improves.
+**Mechanism.** A shared policy plays both roles in fixed language games and learns from terminal outcomes. Separate moving-average baselines for each game and role reduce update variance. Model weights evolve while game rules, rewards and the training procedure remain fixed.
 
 **What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Terminal game outcomes and role-conditioned advantage estimates.
 
-**Evaluation.** The study trains on TicTacToe, Kuhn Poker, and Simple Negotiation and evaluates transfer to mathematical and general reasoning benchmarks across several Qwen and Llama configurations.
+**Evaluation.** ArXiv v3 tests game and academic-benchmark transfer, larger SFT-data controls, RLVR sequencing and three training seeds for the Qwen3-4B comparison. AIME/AMC use average accuracy over 32 samples; trace analysis uses a model judge to classify recurring reasoning patterns.
 
-**Boundary.** The curriculum depends on engineered games and pretrained models. The authors report substantial compute, training plateaus, and limited academic-benchmark transfer evidence; game rewards can favor strategies other than the intended reasoning skill.
+**Boundary.** Pattern frequencies and shorter traces do not establish causal skill transfer or reasoning loss. Some base-model evaluations use few-shot prompts, and data/compute budgets differ. Several appendix summaries conflict with detailed values. Engineered games, reported plateaus and bounded tests limit claims of indefinite improvement.
 
-**Code / data.** [Official artifact](https://github.com/spiral-rl/spiral) — Official repository page inspected; no installation, training, or result reproduction performed.
+**Code / data.** [Official artifact](https://github.com/spiral-rl/spiral) — Official README inspected on 2026-11-09; it documents Kuhn Poker training, evaluation and a later Tinker integration. No research code, model training or game evaluation was executed; current features are not assumed equivalent to the reviewed paper setup.
 
-**Topics:** self-play, model-training, evaluation. **Reviewed:** full-text · 2026-10-29.
+**Topics:** self-play, model-training, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2506.24119) · [Source 2](https://arxiv.org/html/2506.24119v3) · [Source 3](https://proceedings.iclr.cc/paper_files/paper/2026/hash/3ba7c8c36b71b2fc31fae3361aefefbf-Abstract-Conference.html) · [Source 4](https://github.com/spiral-rl/spiral)
+[Source 1](https://arxiv.org/abs/2506.24119) · [Source 2](https://arxiv.org/html/2506.24119v3) · [Source 3](https://proceedings.iclr.cc/paper_files/paper/2026/hash/3ba7c8c36b71b2fc31fae3361aefefbf-Abstract-Conference.html) · [Source 4](https://github.com/spiral-rl/spiral) · [Source 5](https://arxiv.org/pdf/2506.24119v3)
 
 <a id="seal"></a>
 

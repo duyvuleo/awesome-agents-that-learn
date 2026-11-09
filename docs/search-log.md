@@ -219,3 +219,5 @@ The [twentieth depth-audit batch](review-log.md#2026-11-09--detailed-review-of-e
 The [twenty-first depth-audit batch](review-log.md#2026-11-09--detailed-review-of-existing-entries-batch-21) revisits STaR and SEAL through their complete substantive appendices, including negative findings and stronger controls. Broader appraisal is 78/190; no research works were added and no discovery-coverage date advanced.
 
 The [twenty-second depth-audit batch](review-log.md#2026-11-09--detailed-review-of-existing-entries-batch-22) covers Absolute Zero and RoboCat through methods, full substantive appendices and negative results. Source versions and publication-date discrepancies are explicit. Broader appraisal is 80/190; no works were added or discovery-coverage windows advanced.
+
+The [twenty-third depth-audit batch](review-log.md#2026-11-09--detailed-review-of-existing-entries-batch-23) reviews SPICE, Socratic-Zero, SPIRAL and Agent0 through complete substantive appendices, retaining positive controls and unresolved evidence limits. Broader appraisal is 84/190; no new works or discovery-coverage completion is claimed.

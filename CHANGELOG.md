@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded curriculum and self-play reviews
+
+- Appraised SPICE, Socratic-Zero, SPIRAL and Agent0 through full methods, experiments and appendices.
+- Clarified supervision, evaluation budgets, generator roles, numerical reporting and task-validity limits while retaining positive controls.
+- Broader audit: 84 of 190 works complete, 106 pending.
+
 ## 2026-11-09 — Expanded self-play and robot-learning reviews
 
 - Appraised Absolute Zero and RoboCat through their full substantive appendices, clarifying supervision, verification, evaluation and autonomy boundaries.

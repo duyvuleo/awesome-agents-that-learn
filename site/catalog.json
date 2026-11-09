@@ -4160,10 +4160,11 @@
         "https://arxiv.org/abs/2511.16043",
         "https://arxiv.org/html/2511.16043v2",
         "https://github.com/aiming-lab/Agent0",
-        "https://proceedings.colm.cc/paper_files/paper/2026/hash/01977a08d8e76cf4df40b5b57407c9eb-Abstract-Conference.html"
+        "https://proceedings.colm.cc/paper_files/paper/2026/hash/01977a08d8e76cf4df40b5b57407c9eb-Abstract-Conference.html",
+        "https://arxiv.org/pdf/2511.16043v2"
       ],
       "code_url": "https://github.com/aiming-lab/Agent0",
-      "code_note": "Official repository page checked; code and training were not executed.",
+      "code_note": "Official series and Agent0 study READMEs inspected on 2026-11-09. The language and vision-language studies are separate; setup documents sandbox services and manual checkpoint selection between iterations. No installation, training, tool execution or reproduction was performed.",
       "topics": [
         "model-training",
         "self-play",
@@ -4174,12 +4175,12 @@
         "model-weights"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Solver self-consistency, tool-use incentives, diversity penalties, and pseudo-label-based executor rewards.",
-      "mechanism": "Co-trains a curriculum agent and a tool-using executor in alternating stages. The proposer targets uncertain, diverse tasks, while filtered generated tasks and a code interpreter support executor updates.",
-      "evaluation": "The paper tests two Qwen base-model sizes on mathematics and general-reasoning suites, comparing tool-enabled baselines and other self-evolving methods.",
-      "limitations": "No new human-annotated training tasks are required, but pretrained weights, reward design, and tool infrastructure remain inputs. Curator interpretation: majority-derived pseudo-labels need independent correctness checks, and peak training scores are not evidence of indefinite improvement.",
+      "learning_signal": "Curriculum rewards combine answer self-consistency, capped tool-response counts and repetition penalties. Executor rewards match majority-vote pseudo-labels; code execution supplies intermediate feedback but does not independently certify those labels.",
+      "mechanism": "Alternates curriculum-agent GRPO training with executor updates on filtered generated tasks. The executor interleaves reasoning and Python calls; ADPO scales advantages and adjusts clipping using answer consistency. Both models change within a fixed procedure.",
+      "evaluation": "Two Qwen base sizes are evaluated across seven math and three general-reasoning benchmarks over three iterations. Controls include tool access, curriculum training, ADPO and interaction turns. AMC/AIME use mean accuracy over 32 samples; other benchmarks use greedy pass@1.",
+      "limitations": "Pretraining, prompts, rewards and tool infrastructure remain supplied. Consensus and tool frequency are not correctness guarantees; some illustrated tasks are ill-posed. Headline gains are relative percentages, and aggregate definitions differ across tables. Peak scores, limited repeats and unequal budgets constrain broader generalization.",
       "review_depth": "full-text",
-      "checked": "2026-10-28",
+      "checked": "2026-11-09",
       "short_name": "Agent0"
     },
     {
@@ -4296,7 +4297,8 @@
       "url": "https://arxiv.org/abs/2510.24684",
       "sources": [
         "https://arxiv.org/abs/2510.24684",
-        "https://arxiv.org/html/2510.24684v1"
+        "https://arxiv.org/html/2510.24684v1",
+        "https://arxiv.org/pdf/2510.24684v1"
       ],
       "code_url": null,
       "code_note": "Official runnable code was not independently established in this review; this does not imply that no release exists.",
@@ -4309,12 +4311,12 @@
         "model-weights"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Document-extracted answers, answer-equivalence checks, and a reward favoring tasks near the solver's capability frontier.",
-      "mechanism": "A shared model alternates between a document-grounded challenger and a reasoner without document access. Role-specific reinforcement-learning updates improve question generation and solving together.",
-      "evaluation": "Four Qwen and OctoThinker base models are tested on mathematics and general-reasoning suites, with corpus, task-format, and challenger-reward ablations.",
-      "limitations": "Experiments use a selected 20,000-document corpus and a fixed training horizon. Curator interpretation: dependence on document quality, generated answers, and verification remains; these experiments do not establish indefinite improvement.",
+      "learning_signal": "The challenger produces document-conditioned questions and answer labels. Math-Verify or exact matching scores agreement with those labels; a Gaussian reward favors intermediate solver success rates. Formatting validity is checked separately from factual correctness.",
+      "mechanism": "One shared model learns challenger and reasoner roles through role-centered policy updates. The challenger sees a sampled document; the reasoner receives its generated question. Weights change within a fixed training and task-generation framework.",
+      "evaluation": "Four Qwen/OctoThinker models are evaluated on seven math and four general-reasoning benchmarks after training on 20,000 documents. Controls vary corpus, format, challenger training and reward; AIME uses average accuracy over 32 samples.",
+      "limitations": "Document access and answer matching do not independently certify generated questions or labels. Baselines differ in rollout budgets. Some appendix averages disagree with their listed scores, qualifying claims that mixed corpora/formats are always best. A fixed corpus and training horizon do not establish sustained open-ended learning.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-09",
       "short_name": "SPICE"
     },
     {
@@ -4472,7 +4474,8 @@
       "url": "https://arxiv.org/abs/2509.24726",
       "sources": [
         "https://arxiv.org/abs/2509.24726",
-        "https://arxiv.org/html/2509.24726v1"
+        "https://arxiv.org/html/2509.24726v1",
+        "https://arxiv.org/pdf/2509.24726v1"
       ],
       "code_url": null,
       "code_note": "Official runnable code was not independently established in this review; this does not imply that no release exists.",
@@ -4486,11 +4489,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "A fixed stronger teacher's correctness judgments, reference solutions, and failure-targeted generated problems.",
-      "mechanism": "Updates a solver through online preference learning and trains a generator to imitate useful teacher-generated curricula. The teacher remains frozen while the solver and generator change.",
-      "evaluation": "The authors compare solver accuracy on seven mathematical and three general-reasoning benchmarks and assess synthetic data through downstream student training.",
-      "limitations": "Despite the title, experiments use 100 MATH seed questions, initial supervised tuning on 1,500 problems, and a Qwen3-235B teacher. Mean@32 evaluation and teacher-derived judgments should be preserved when interpreting comparisons; this is not learning without prior data or an external teacher.",
+      "mechanism": "A fixed stronger teacher judges solver attempts and expands the curriculum; DPO updates the solver, while weighted supervised learning distills the teacher into a generator. The displayed training algorithm still uses teacher-generated problems for the solver; generator utility is tested separately.",
+      "evaluation": "Three solver-training stages cover seven math and three general-reasoning benchmarks using Mean@32. A separate experiment trains a common student on different generators’ data and evaluates Mean@16; this is not a direct comparison of those generators as solvers.",
+      "limitations": "Uses 100 selected MATH seeds, 1,500 initial SFT problems and a Qwen3-235B teacher. The headline 20.2-point gain is over SFT, not the stronger synthesis baselines. Teacher-derived validity, small unquantified margins and inconsistent generator-score aggregates limit interpretation; teacher-free convergence is not demonstrated.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-09",
       "short_name": "Socratic-Zero"
     },
     {
@@ -4936,10 +4939,11 @@
         "https://arxiv.org/abs/2506.24119",
         "https://arxiv.org/html/2506.24119v3",
         "https://proceedings.iclr.cc/paper_files/paper/2026/hash/3ba7c8c36b71b2fc31fae3361aefefbf-Abstract-Conference.html",
-        "https://github.com/spiral-rl/spiral"
+        "https://github.com/spiral-rl/spiral",
+        "https://arxiv.org/pdf/2506.24119v3"
       ],
       "code_url": "https://github.com/spiral-rl/spiral",
-      "code_note": "Official repository page inspected; no installation, training, or result reproduction performed.",
+      "code_note": "Official README inspected on 2026-11-09; it documents Kuhn Poker training, evaluation and a later Tinker integration. No research code, model training or game evaluation was executed; current features are not assumed equivalent to the reviewed paper setup.",
       "topics": [
         "self-play",
         "model-training",
@@ -4951,11 +4955,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Terminal game outcomes and role-conditioned advantage estimates.",
-      "mechanism": "One shared language-model policy plays both sides of zero-sum games and receives online policy-gradient updates. Separate baselines for each role stabilize training as the opposing policy improves.",
-      "evaluation": "The study trains on TicTacToe, Kuhn Poker, and Simple Negotiation and evaluates transfer to mathematical and general reasoning benchmarks across several Qwen and Llama configurations.",
-      "limitations": "The curriculum depends on engineered games and pretrained models. The authors report substantial compute, training plateaus, and limited academic-benchmark transfer evidence; game rewards can favor strategies other than the intended reasoning skill.",
+      "mechanism": "A shared policy plays both roles in fixed language games and learns from terminal outcomes. Separate moving-average baselines for each game and role reduce update variance. Model weights evolve while game rules, rewards and the training procedure remain fixed.",
+      "evaluation": "ArXiv v3 tests game and academic-benchmark transfer, larger SFT-data controls, RLVR sequencing and three training seeds for the Qwen3-4B comparison. AIME/AMC use average accuracy over 32 samples; trace analysis uses a model judge to classify recurring reasoning patterns.",
+      "limitations": "Pattern frequencies and shorter traces do not establish causal skill transfer or reasoning loss. Some base-model evaluations use few-shot prompts, and data/compute budgets differ. Several appendix summaries conflict with detailed values. Engineered games, reported plateaus and bounded tests limit claims of indefinite improvement.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-09",
       "short_name": "SPIRAL"
     },
     {
