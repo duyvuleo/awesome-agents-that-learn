@@ -48,10 +48,11 @@
       "https://arxiv.org/abs/2510.02373",
       "https://arxiv.org/html/2510.02373v1",
       "https://proceedings.mlr.press/v306/wei26ac.html",
-      "https://github.com/TangciuYueng/AMemGuard"
+      "https://github.com/TangciuYueng/AMemGuard",
+      "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wei26ac/wei26ac.pdf"
     ],
     "code_url": "https://github.com/TangciuYueng/AMemGuard",
-    "code_note": "Author-linked repository and README inspected; not installed or executed.",
+    "code_note": "Official README inspected on 2026-11-09; it documents AgentPoison-derived evaluation, retrieval backends and model-provider options. No attacks, research code, patient data, models or benchmark environments were executed or downloaded.",
     "topics": [
       "memory",
       "safety",
@@ -62,12 +63,12 @@
       "memory"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Divergence among reasoning paths generated from retrieved memories and detected anomalous paths retained as lessons.",
-    "mechanism": "Validates retrieved memories through parallel reasoning-path comparisons and keeps detected failure patterns in a separate lesson store. Later actions consult those lessons without changing the core agent architecture.",
-    "evaluation": "Reports direct and indirect memory-poisoning tests with ReAct-StrategyQA, EHRAgent, and WebShop, two backbones, retrieval variants, benign-task utility, and collaborative-agent extensions.",
-    "limitations": "The threat model assumes mostly benign memory and limited attacker control. The abstract’s over-95% reduction should not be read as uniform end-to-end protection: Table 1 retains substantial task-level attack success despite strong retrieval-stage suppression. Consensus and lesson extraction remain model-dependent.",
+    "learning_signal": "An LLM judges query-grounded reasoning paths for consistency and unsafe intent; flagged paths become negative lessons consulted in later action checks.",
+    "mechanism": "Wraps a fixed agent with structured-path generation, consensus/safety validation and a separate lesson store. Query- and action-related retrieval brings previous failure patterns into pre-execution review. The main implementation uses model judgments rather than a pure majority vote.",
+    "evaluation": "The final ICML paper tests direct poisoning on StrategyQA/EHRAgent, indirect injection on MMLU, collaborative misinformation and adaptive attacks, including malicious-majority retrieval. It adds metric clarification, component ablations, retrieval-size sweeps and a batched-cost illustration.",
+    "limitations": "Strong poison-filtering reductions are not uniform end-to-end guarantees. ASR-t is one minus exact-match accuracy and includes ordinary model errors; benign accuracy also falls in some settings. Adaptive tests are bounded, and structural visualizations do not certify safety. More retrieved lessons can hurt utility; long-term protection and deployment cost remain uncertain.",
     "review_depth": "full-text",
-    "checked": "2026-10-31",
+    "checked": "2026-11-09",
     "short_name": "A-MemGuard"
   },
   {
@@ -149,10 +150,13 @@
     "sources": [
       "https://arxiv.org/abs/2510.04618",
       "https://arxiv.org/html/2510.04618v1",
-      "https://proceedings.iclr.cc/paper_files/paper/2026/hash/8a94ff6f922d995d7d3f4ebf4143e442-Abstract-Conference.html"
+      "https://proceedings.iclr.cc/paper_files/paper/2026/hash/8a94ff6f922d995d7d3f4ebf4143e442-Abstract-Conference.html",
+      "https://arxiv.org/html/2510.04618v3",
+      "https://arxiv.org/pdf/2510.04618v3",
+      "https://github.com/ace-agent/ace"
     ],
-    "code_url": null,
-    "code_note": "Official code availability was not established in this source review.",
+    "code_url": "https://github.com/ace-agent/ace",
+    "code_note": "Official repository linked in arXiv v3; README and public file tree inspected on 2026-11-09. It documents adaptation/evaluation modes and configurable feedback and deduplication. Current defaults differ from some paper settings; not installed or executed.",
     "topics": [
       "prompts",
       "memory",
@@ -164,12 +168,12 @@
       "memory"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Reflection on generated trajectories, execution outcomes, and useful or harmful context entries.",
-    "mechanism": "Separates generation, reflection, and curation to build an evolving playbook. Small structured updates and deduplication preserve reusable strategies without repeatedly rewriting the entire context.",
-    "evaluation": "Experiments cover AppWorld and financial-analysis tasks; offline adaptation and sequential predict-then-update evaluation are reported separately.",
-    "limitations": "Adaptation depends on the reflector extracting useful lessons and can accumulate noise. Online test-stream learning is a different protocol from evaluating a frozen agent on independent tasks.",
+    "learning_signal": "Generated trajectories, execution feedback and helpful/harmful entry judgments; some experiments also supply reference answers. Feedback availability is varied explicitly.",
+    "mechanism": "Keeps model weights fixed while a Generator, Reflector and Curator maintain an itemized playbook. Local additions, counters and optional semantic deduplication replace complete rewrites. Offline adaptation and sequential predict-then-update adaptation are separate; the main online AppWorld result includes offline warmup.",
+    "evaluation": "ArXiv v3 extends AppWorld and finance experiments with additional models, DDXPlus, judge-scored BIRD-SQL, feedback-corruption tests, update ablations and detailed token accounting. It reports both labeled and unlabeled conditions.",
+    "limitations": "Unlabeled online adaptation hurts FiNER in one main setting. BIRD-SQL scores use an LLM judge, not database execution. Lower adaptation cost coexists with more evaluation input tokens; caching benefits depend on deployment. Rollout counts differ across cost tables. Long-term retention, calibrated feedback and universal gains are not established.",
     "review_depth": "full-text",
-    "checked": "2026-10-28",
+    "checked": "2026-11-09",
     "short_name": "ACE"
   },
   {
@@ -331,10 +335,11 @@
       "https://arxiv.org/abs/2409.07429",
       "https://arxiv.org/html/2409.07429v1",
       "https://proceedings.mlr.press/v267/wang25bx.html",
-      "https://github.com/zorazrw/agent-workflow-memory"
+      "https://github.com/zorazrw/agent-workflow-memory",
+      "https://raw.githubusercontent.com/mlresearch/v267/main/assets/wang25bx/wang25bx.pdf"
     ],
     "code_url": "https://github.com/zorazrw/agent-workflow-memory",
-    "code_note": "Official repository linked and its public page inspected; not executed.",
+    "code_note": "Official README inspected on 2026-11-09; separate WebArena and Mind2Web offline/online entry points are documented. Source availability is not an independent reproduction of the final paper.",
     "topics": [
       "memory",
       "skills",
@@ -346,12 +351,12 @@
       "workflows"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Annotated offline trajectories or model-judged successful online task trajectories.",
-    "mechanism": "Abstracts reusable subroutines from action trajectories and adds them to the agent context as workflow memory. It supports an offline store built from training examples and an online store updated after completed tasks.",
-    "evaluation": "The authors evaluate Mind2Web and WebArena, including cross-task, cross-website, and cross-domain splits and workflow-representation ablations.",
-    "limitations": "Online memory admission uses a learned success evaluator, so stored workflows can inherit its errors. Interpretation: sequential test-time learning should be compared under the same task order and feedback access.",
+    "learning_signal": "Annotated offline demonstrations or completed online trajectories accepted by a model-based success evaluator; model weights stay fixed.",
+    "mechanism": "Abstracts reusable subtask workflows and inserts them into agent context. Offline workflows are induced before evaluation; online workflows accumulate after completed tasks. Experiments group tasks and workflow stores by website. Executable workflow shortcuts are a separate variant.",
+    "evaluation": "The final ICML paper evaluates WebArena, a cross-template subset and Mind2Web, with representation, mixed-memory, task-order and cost analyses. Its Mind2Web headline improvement is in step success, distinct from whole-task completion.",
+    "limitations": "Combining offline and online memories can hurt; executable shortcuts improve step scores while reducing whole-task success in the displayed table. Task-order evidence covers small website groups. Model identifiers and some baseline rows conflict across the final paper, limiting exact comparison claims. Learned success judgments can admit faulty workflows.",
     "review_depth": "full-text",
-    "checked": "2026-10-28",
+    "checked": "2026-11-09",
     "short_name": "AWM"
   },
   {
@@ -1847,10 +1852,11 @@
       "https://arxiv.org/abs/2308.10144",
       "https://arxiv.org/html/2308.10144v3",
       "https://ojs.aaai.org/index.php/AAAI/article/view/29936",
-      "https://github.com/LeapLabTHU/ExpeL"
+      "https://github.com/LeapLabTHU/ExpeL",
+      "https://arxiv.org/pdf/2308.10144v3"
     ],
     "code_url": "https://github.com/LeapLabTHU/ExpeL",
-    "code_note": "Official repository linked and its public page inspected; not executed.",
+    "code_note": "Official README and Apache-2.0 license inspected on 2026-11-09. Separate experience collection, insight extraction and evaluation stages are documented; no environment, dataset, model or research implementation was executed.",
     "topics": [
       "foundations",
       "memory",
@@ -1861,12 +1867,12 @@
       "memory"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Task outcomes and model-generated comparisons of successful and unsuccessful trajectories.",
-    "mechanism": "Collects training-task trajectories, contrasts successes and failures to extract reusable textual insights, and retrieves relevant experiences for new tasks. Learning changes the external experience and insight stores without updating the base model.",
-    "evaluation": "The paper evaluates HotpotQA, ALFWorld, and WebShop, examines insight and retrieval ablations, and studies transfer from question answering to fact verification.",
-    "limitations": "The investigated environments have textual observations and are deterministic. The authors note that larger lifelong insight stores would need additional retrieval beyond fitting all insights into context.",
+    "learning_signal": "Environment success/failure feedback guides training-task retries; GPT-4 contrasts trajectories and edits textual insights for a GPT-3.5 acting agent.",
+    "mechanism": "Collects experiences with Reflexion, retains successful examples, and maintains insights through additions, edits and importance votes. During the main held-out evaluation, the full insight list and similar successful trajectories condition a frozen actor. Additional test-time retries are evaluated separately.",
+    "evaluation": "Small HotpotQA, ALFWorld and WebShop subsets use reported fold means and standard errors. Ablations separate insights, retrieval and teacher quality; transfer rewrites HotpotQA insights for FEVER using target demonstrations and a shared search interface.",
+    "limitations": "A stronger insight model contributes knowledge; this is not entirely same-model self-learning. Added reflection text can degrade performance. WebShop prices and page size were modified. Token counts increase despite modest action reductions; behavioral examples do not isolate causal emergence. Lifelong retention and large memory stores remain untested.",
     "review_depth": "full-text",
-    "checked": "2026-10-28",
+    "checked": "2026-11-09",
     "short_name": "ExpeL"
   },
   {

@@ -408,11 +408,11 @@ No associated work in the current paper catalog.
 
 [Official repository](https://github.com/LeapLabTHU/ExpeL)
 
-**Learning mechanism.** Collects agent experiences, extracts reusable natural-language lessons, and retrieves lessons and past examples during later inference. The learned state is external to the model weights.
+**Learning mechanism.** Collects agent experiences, extracts reusable natural-language lessons, and retrieves similar successful trajectories during later inference. The studied method supplies the full insight list in context; additional insight retrieval is proposed for larger stores. The learned state is external to model weights.
 
 **Capabilities.** Experience gathering; Insight extraction; Separate evaluation pipeline
 
-**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Training-task trajectories, success/failure comparisons, and extracted textual insights.
+**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Training-task environment feedback and trajectory comparisons, with a stronger insight-extraction model in the paper’s main setup.
 
 **Paper relationship.** Official ExpeL implementation; repository availability does not establish reproduction of the paper scores.
 
@@ -428,7 +428,7 @@ No associated work in the current paper catalog.
 
 **License.** [Apache-2.0](https://github.com/LeapLabTHU/ExpeL/blob/main/LICENSE). Linked models, datasets, services, and dependencies can have separate terms.
 
-**Source inspection:** 2026-10-28 · project · not-run. **Topics:** memory, skills, continual-learning.
+**Source inspection:** 2026-11-09 · project · not-run. **Topics:** memory, skills, continual-learning.
 
 [Source 1](https://github.com/LeapLabTHU/ExpeL) · [Source 2](https://github.com/LeapLabTHU/ExpeL/blob/main/LICENSE)
 

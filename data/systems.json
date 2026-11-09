@@ -515,8 +515,8 @@
     ],
     "persistence": "across-tasks",
     "scope": "core",
-    "learning_signal": "Training-task trajectories, success/failure comparisons, and extracted textual insights.",
-    "mechanism": "Collects agent experiences, extracts reusable natural-language lessons, and retrieves lessons and past examples during later inference. The learned state is external to the model weights.",
+    "learning_signal": "Training-task environment feedback and trajectory comparisons, with a stronger insight-extraction model in the paper’s main setup.",
+    "mechanism": "Collects agent experiences, extracts reusable natural-language lessons, and retrieves similar successful trajectories during later inference. The studied method supplies the full insight list in context; additional insight retrieval is proposed for larger stores. The learned state is external to model weights.",
     "capabilities": [
       "Experience gathering",
       "Insight extraction",
@@ -532,7 +532,7 @@
       "https://github.com/LeapLabTHU/ExpeL",
       "https://github.com/LeapLabTHU/ExpeL/blob/main/LICENSE"
     ],
-    "checked": "2026-10-28",
+    "checked": "2026-11-09",
     "review_depth": "project",
     "execution_status": "not-run",
     "short_name": "ExpeL"

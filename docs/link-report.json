@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-09T07:15:00.484673+00:00",
+  "checked_at_utc": "2026-11-09T07:29:32.618163+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -2316,6 +2316,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/html/2510.04618v3",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2510.04618v3",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/html/2510.15414v3",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2510.15414v3",
@@ -2970,6 +2976,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2308.10144v3",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2308.10144v3",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2309.03409v3",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2309.03409v3",
@@ -3129,6 +3141,12 @@
       "url": "https://arxiv.org/pdf/2509.25911v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2509.25911v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2510.04618v3",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2510.04618v3",
       "status": "reachable"
     },
     {
@@ -3325,9 +3343,8 @@
     },
     {
       "url": "https://github.com/2020-qqtcg/HRP",
-      "http_status": 200,
-      "final_url": "https://github.com/2020-qqtcg/HRP",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/ANative-Lab/EvoAgentX",
@@ -3343,39 +3360,33 @@
     },
     {
       "url": "https://github.com/ANative-Lab/EvoAgentX/blob/main/README.md",
-      "http_status": 200,
-      "final_url": "https://github.com/ANative-Lab/EvoAgentX/blob/main/README.md",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/Arvid-pku/Godel_Agent",
-      "http_status": 200,
-      "final_url": "https://github.com/Arvid-pku/Godel_Agent",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/BITHLP/LifeMem",
-      "http_status": 200,
-      "final_url": "https://github.com/BITHLP/LifeMem",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/CharlesQ9/Self-Evolving-Agents",
-      "http_status": 200,
-      "final_url": "https://github.com/CharlesQ9/Self-Evolving-Agents",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/Chengsong-Huang/R-Zero",
-      "http_status": 200,
-      "final_url": "https://github.com/Chengsong-Huang/R-Zero",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/Continual-Intelligence/SEAL",
-      "http_status": 200,
-      "final_url": "https://github.com/Continual-Intelligence/SEAL",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/Continual-Intelligence/SEAL/blob/main/LICENSE",
@@ -3385,9 +3396,8 @@
     },
     {
       "url": "https://github.com/Continual-Intelligence/SEAL/blob/main/README.md",
-      "http_status": 200,
-      "final_url": "https://github.com/Continual-Intelligence/SEAL/blob/main/README.md",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/Continual-Intelligence/SEAL/blob/main/general-knowledge/README.md",
@@ -3415,51 +3425,43 @@
     },
     {
       "url": "https://github.com/ECNU-ICALK/AutoSkill",
-      "http_status": 200,
-      "final_url": "https://github.com/ECNU-ICALK/AutoSkill",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/ECNU-ICALK/DiscernMem",
-      "http_status": 200,
-      "final_url": "https://github.com/ECNU-ICALK/DiscernMem",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/EdinburghNLP/OpenSIR",
-      "http_status": 200,
-      "final_url": "https://github.com/EdinburghNLP/OpenSIR",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents",
-      "http_status": 200,
-      "final_url": "https://github.com/ANative-Lab/Awesome-Self-Evolving-Agents",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/EvoAgentX/EvoAgentX",
-      "http_status": 200,
-      "final_url": "https://github.com/ANative-Lab/EvoAgentX",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/FoundationAgents/AFlow",
-      "http_status": 200,
-      "final_url": "https://github.com/FoundationAgents/AFlow",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/FoundationAgents/AFlow/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/FoundationAgents/AFlow/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/FoundationAgents/AFlow/blob/main/README.md",
-      "http_status": 200,
-      "final_url": "https://github.com/FoundationAgents/AFlow/blob/main/README.md",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/Gen-Verse/PAST-Bench",
@@ -3469,45 +3471,38 @@
     },
     {
       "url": "https://github.com/IanYHWu/rc",
-      "http_status": 200,
-      "final_url": "https://github.com/IanYHWu/rc",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/Infini-AI-Lab/SED",
-      "http_status": 200,
-      "final_url": "https://github.com/Infini-AI-Lab/SED",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/Jasper-Yan/AgentStream",
-      "http_status": 200,
-      "final_url": "https://github.com/Jasper-Yan/AgentStream",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/JoeYing1019/ReScopeBench",
-      "http_status": 200,
-      "final_url": "https://github.com/JoeYing1019/ReScopeBench",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner",
-      "http_status": 200,
-      "final_url": "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner/blob/master/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner/blob/master/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner/blob/master/README.md",
-      "http_status": 200,
-      "final_url": "https://github.com/LeapLabTHU/Absolute-Zero-Reasoner/blob/master/README.md",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/LeapLabTHU/ExpeL",
@@ -3517,9 +3512,8 @@
     },
     {
       "url": "https://github.com/LeapLabTHU/ExpeL/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/LeapLabTHU/ExpeL/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/Makr-Xie/MemComposer",
@@ -3535,9 +3529,8 @@
     },
     {
       "url": "https://github.com/MaximeRobeyns/self_improving_coding_agent/blob/master/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/MaximeRobeyns/self_improving_coding_agent/blob/master/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/MaximeRobeyns/self_improving_coding_agent/blob/master/README.md",
@@ -3547,27 +3540,23 @@
     },
     {
       "url": "https://github.com/MemTensor/MemRL",
-      "http_status": 200,
-      "final_url": "https://github.com/MemTensor/MemRL",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/MemTensor/MemRL/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/MemTensor/MemRL/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/Memento-Teams/Memento",
-      "http_status": 200,
-      "final_url": "https://github.com/Memento-Teams/Memento",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/MineDojo/Voyager",
-      "http_status": 200,
-      "final_url": "https://github.com/MineDojo/Voyager",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/MineDojo/Voyager/blob/main/LICENSE",
@@ -3577,21 +3566,18 @@
     },
     {
       "url": "https://github.com/NousResearch/hermes-agent",
-      "http_status": 200,
-      "final_url": "https://github.com/NousResearch/hermes-agent",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/NousResearch/hermes-agent/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/NousResearch/hermes-agent/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/OpenAutoCoder/live-swe-agent",
-      "http_status": 200,
-      "final_url": "https://github.com/OpenAutoCoder/live-swe-agent",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/PlusLabNLP/Re-ReST",
@@ -3601,9 +3587,8 @@
     },
     {
       "url": "https://github.com/Prism-Shadow/GDPevo",
-      "http_status": 200,
-      "final_url": "https://github.com/Prism-Shadow/GDPevo",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/Qwen-Applications/SSP",
@@ -3619,9 +3604,8 @@
     },
     {
       "url": "https://github.com/SciValidityBench/SciValidityBench",
-      "http_status": 200,
-      "final_url": "https://github.com/SciValidityBench/SciValidityBench",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/ShengranHu/ADAS",
@@ -3631,27 +3615,23 @@
     },
     {
       "url": "https://github.com/ShengranHu/ADAS/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/ShengranHu/ADAS/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/ShengranHu/ADAS/blob/main/README.md",
-      "http_status": 200,
-      "final_url": "https://github.com/ShengranHu/ADAS/blob/main/README.md",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/Solvro/ml-wojtek-ued",
-      "http_status": 200,
-      "final_url": "https://github.com/Solvro/ml-wojtek-ued",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/Szy5/EoG",
-      "http_status": 200,
-      "final_url": "https://github.com/Szy5/EoG",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/THU-Agent/continual-harness-evolution",
@@ -3661,21 +3641,18 @@
     },
     {
       "url": "https://github.com/THUDM/ReST-MCTS",
-      "http_status": 200,
-      "final_url": "https://github.com/THUDM/ReST-MCTS",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/TailinZhou/hsi",
-      "http_status": 200,
-      "final_url": "https://github.com/TailinZhou/hsi",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/TangciuYueng/AMemGuard",
-      "http_status": 200,
-      "final_url": "https://github.com/TangciuYueng/AMemGuard",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/TemporalSelfRewarding/TSR",
@@ -3726,6 +3703,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/ace-agent/ace",
+      "http_status": 200,
+      "final_url": "https://github.com/ace-agent/ace",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/aiming-lab/Agent0",
       "http_status": 200,
       "final_url": "https://github.com/aiming-lab/Agent0",
@@ -3739,15 +3722,13 @@
     },
     {
       "url": "https://github.com/aiming-lab/Agent0/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/aiming-lab/Agent0/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/aiming-lab/Agent0/blob/main/README.md",
-      "http_status": 200,
-      "final_url": "https://github.com/aiming-lab/Agent0/blob/main/README.md",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/aiming-lab/SkillRL",
@@ -3757,9 +3738,8 @@
     },
     {
       "url": "https://github.com/aiming-lab/SkillRL/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/aiming-lab/SkillRL/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/airbnb/agent-harness-optimizer",
@@ -3769,21 +3749,18 @@
     },
     {
       "url": "https://github.com/airbnb/agent-harness-optimizer/blob/main/REPRODUCIBILITY.md",
-      "http_status": 200,
-      "final_url": "https://github.com/airbnb/agent-harness-optimizer/blob/main/REPRODUCIBILITY.md",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/aiwaves-cn/agents",
-      "http_status": 200,
-      "final_url": "https://github.com/aiwaves-cn/agents",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/artificer-ai-lab/ASCENT",
-      "http_status": 200,
-      "final_url": "https://github.com/artificer-ai-lab/ASCENT",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/bingreeky/GMemory",
@@ -3835,15 +3812,13 @@
     },
     {
       "url": "https://github.com/ezelikman/STaR",
-      "http_status": 200,
-      "final_url": "https://github.com/ezelikman/STaR",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/facebookresearch/HyperAgents",
-      "http_status": 200,
-      "final_url": "https://github.com/facebookresearch/HyperAgents",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/facebookresearch/HyperAgents/blob/main/LICENSE.md",
@@ -3877,57 +3852,48 @@
     },
     {
       "url": "https://github.com/gepa-ai/gepa/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/gepa-ai/gepa/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/gepa-ai/gepa/blob/main/README.md",
-      "http_status": 200,
-      "final_url": "https://github.com/gepa-ai/gepa/blob/main/README.md",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/gepa-ai/optimize-anything-artifact",
-      "http_status": 200,
-      "final_url": "https://github.com/gepa-ai/optimize-anything-artifact",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/gminiheimdallr-a11y/SkillRubricsRL",
-      "http_status": 200,
-      "final_url": "https://github.com/gminiheimdallr-a11y/SkillRubricsRL",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/google-deepmind/opro",
-      "http_status": 200,
-      "final_url": "https://github.com/google-deepmind/opro",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/google-research/harness2",
-      "http_status": 200,
-      "final_url": "https://github.com/google-research/harness2",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/google-research/reasoning-bank",
-      "http_status": 200,
-      "final_url": "https://github.com/google-research/reasoning-bank",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/google-research/reasoning-bank/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/google-research/reasoning-bank/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/hr-jin/MUSE",
-      "http_status": 200,
-      "final_url": "https://github.com/hr-jin/MUSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/jennyzzt/dgm",
@@ -3943,15 +3909,13 @@
     },
     {
       "url": "https://github.com/jennyzzt/dgm/blob/main/README.md",
-      "http_status": 200,
-      "final_url": "https://github.com/jennyzzt/dgm/blob/main/README.md",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/joonspk-research/generative_agents",
-      "http_status": 200,
-      "final_url": "https://github.com/joonspk-research/generative_agents",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/junnie00/EvolveNet",
@@ -3961,33 +3925,28 @@
     },
     {
       "url": "https://github.com/ko120/MLE_World",
-      "http_status": 200,
-      "final_url": "https://github.com/ko120/MLE_World",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/langchain-ai/langmem",
-      "http_status": 200,
-      "final_url": "https://github.com/langchain-ai/langmem",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/langchain-ai/langmem/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/langchain-ai/langmem/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/letta-ai/letta",
-      "http_status": 200,
-      "final_url": "https://github.com/letta-ai/letta",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/letta-ai/letta-code",
-      "http_status": 200,
-      "final_url": "https://github.com/letta-ai/letta-code",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/letta-ai/letta-code/blob/main/LICENSE",
@@ -3997,45 +3956,38 @@
     },
     {
       "url": "https://github.com/mem0ai/mem0",
-      "http_status": 200,
-      "final_url": "https://github.com/mem0ai/mem0",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/mem0ai/mem0/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/mem0ai/mem0/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/metaevo-ai/meta-context-engineering",
-      "http_status": 200,
-      "final_url": "https://github.com/metaevo-ai/meta-context-engineering",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/microsoft/SkillOpt",
-      "http_status": 200,
-      "final_url": "https://github.com/microsoft/SkillOpt",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/microsoft/agent-lightning",
-      "http_status": 200,
-      "final_url": "https://github.com/microsoft/agent-lightning",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/microsoft/agent-lightning/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/microsoft/agent-lightning/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/microsoft/agent-lightning/blob/main/README.md",
-      "http_status": 200,
-      "final_url": "https://github.com/microsoft/agent-lightning/blob/main/README.md",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/microsoft/stop",
@@ -4045,15 +3997,13 @@
     },
     {
       "url": "https://github.com/microsoft/stop/blob/0d6780c54306b2486dd36e9c4ae9b49aceb27ea4/tasks/modified_quadratic_assignment/secret_utility.py",
-      "http_status": 200,
-      "final_url": "https://github.com/microsoft/stop/blob/0d6780c54306b2486dd36e9c4ae9b49aceb27ea4/tasks/modified_quadratic_assignment/secret_utility.py",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/microsoft/stop/blob/0d6780c54306b2486dd36e9c4ae9b49aceb27ea4/tasks/modified_quadratic_assignment/seed_algorithm.py",
-      "http_status": 200,
-      "final_url": "https://github.com/microsoft/stop/blob/0d6780c54306b2486dd36e9c4ae9b49aceb27ea4/tasks/modified_quadratic_assignment/seed_algorithm.py",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/mll-lab-nu/RAGEN",
@@ -4069,9 +4019,8 @@
     },
     {
       "url": "https://github.com/oleeviyababu/Memory_Conflict",
-      "http_status": 200,
-      "final_url": "https://github.com/oleeviyababu/Memory_Conflict",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/physicsru/self_harmony",
@@ -4093,27 +4042,23 @@
     },
     {
       "url": "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents",
-      "http_status": 200,
-      "final_url": "https://github.com/selfimproving-agent/awesome-Self-Improving-Agents",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/simple-agent-lab/RSIHub",
-      "http_status": 200,
-      "final_url": "https://github.com/simple-agent-lab/RSIHub",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/skydiscover-ai/skydiscover",
-      "http_status": 200,
-      "final_url": "https://github.com/skydiscover-ai/skydiscover",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/snap-research/LoCoMo",
-      "http_status": 200,
-      "final_url": "https://github.com/snap-research/LoCoMo",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/spiral-rl/spiral",
@@ -4123,9 +4068,8 @@
     },
     {
       "url": "https://github.com/stanford-iris-lab/meta-harness",
-      "http_status": 200,
-      "final_url": "https://github.com/stanford-iris-lab/meta-harness",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/stanfordnlp/dspy",
@@ -4135,9 +4079,8 @@
     },
     {
       "url": "https://github.com/stanfordnlp/dspy/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/stanfordnlp/dspy/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/stanfordnlp/dspy/blob/main/README.md",
@@ -4171,9 +4114,8 @@
     },
     {
       "url": "https://github.com/wangyu-ustc/Mem-alpha",
-      "http_status": 200,
-      "final_url": "https://github.com/wangyu-ustc/Mem-alpha",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/wzekai/VERSE",
@@ -4183,9 +4125,8 @@
     },
     {
       "url": "https://github.com/xaddwell/awesome-self-evolving-agent-safety",
-      "http_status": 200,
-      "final_url": "https://github.com/xaddwell/awesome-self-evolving-agent-safety",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/xiaowu0162/LongMemEval",
@@ -4207,9 +4148,8 @@
     },
     {
       "url": "https://github.com/yizhongw/self-instruct",
-      "http_status": 200,
-      "final_url": "https://github.com/yizhongw/self-instruct",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/yuntian-group/cdsep",
@@ -4219,9 +4159,8 @@
     },
     {
       "url": "https://github.com/zjunlp/MemP",
-      "http_status": 200,
-      "final_url": "https://github.com/zjunlp/MemP",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/zorazrw/agent-workflow-memory",
@@ -4231,15 +4170,13 @@
     },
     {
       "url": "https://github.com/zorazrw/agent-workflow-memory/blob/main/LICENSE",
-      "http_status": 200,
-      "final_url": "https://github.com/zorazrw/agent-workflow-memory/blob/main/LICENSE",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/zorazrw/agent-workflow-memory/tree/main/mind2web",
-      "http_status": 200,
-      "final_url": "https://github.com/zorazrw/agent-workflow-memory/tree/main/mind2web",
-      "status": "reachable"
+      "http_status": 504,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/zorazrw/trove",
@@ -4653,9 +4590,21 @@
       "status": "reachable"
     },
     {
+      "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/wang25bx/wang25bx.pdf",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/wang25bx/wang25bx.pdf",
+      "status": "reachable"
+    },
+    {
       "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wang26ik/wang26ik.pdf",
       "http_status": 200,
       "final_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wang26ik/wang26ik.pdf",
+      "status": "reachable"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wei26ac/wei26ac.pdf",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wei26ac/wei26ac.pdf",
       "status": "reachable"
     },
     {
@@ -4703,14 +4652,14 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=8595436a-aa3a-43ff-80a1-858d9413a183",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=01b96633-0e8d-45a7-8c73-2764356cc563",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=d0fa5b69-0f38-4915-924d-55275a6e6669",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=94f9e4e9-73f0-4cb6-b51a-ad1ce2705466",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -4724,14 +4673,14 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=377f184d-418d-490c-9fcc-36c4b0f9c280",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=f57eba80-aa63-4111-8837-b71154f3454a",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=e160093b-4143-48cf-b22d-5fcfd91f3326",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=e57e252c-726b-4289-859d-cbe50729b2d1",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },

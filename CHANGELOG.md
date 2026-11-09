@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded context, workflow and memory-defense reviews
+
+- Completed detailed reviews of ACE, AWM, ExpeL and A-MemGuard, retaining final-version changes, negative findings and evidence limits.
+- Added ACE’s official code link and corrected ExpeL’s software memory-path description.
+- Broader audit: 68 of 190 works complete, 122 pending; no new research works.
+
 ## 2026-11-09 — Expanded four memory-paper reviews
 
 - Appraised the full main text and appendices of AgeMem, G-Memory, Memento and ReasoningBank; corrected reward, comparison, transfer and cost qualifications.

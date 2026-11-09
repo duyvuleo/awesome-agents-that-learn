@@ -47,3 +47,7 @@ The record distinguishes documented code editing and recovery from tested safety
 ## 2026-11-09 — ReasoningBank artifact clarification
 
 Re-read the official README and Apache-2.0 license at the current repository revision `ed80611788292ea739f1effd31f16c53823b8a0d`. The release documents WebArena and SWE-Bench integrations, provider access, BrowserGym/Docker requirements, and a vendored WebArena harness with shopping-annotation, wishlist-evaluation and interaction fixes. Updated the relationship note to distinguish this current release from the paper's evaluated revision. This remains source inspection only; no install, benchmark run or independent reproduction. The 2026-10-28 inspection record remains historical.
+
+## 2026-11-09 — ExpeL memory-path correction
+
+Re-read ExpeL's official README and Apache-2.0 license alongside the full paper. Corrected the software description: the studied inference path retrieves similar successful trajectories and supplies the entire extracted insight list; extra insight retrieval is a proposed extension for larger stores. Recorded the paper's stronger insight model and environment feedback. This is source inspection only; no installation, data download, model execution or result reproduction. The earlier inspection remains historical.
