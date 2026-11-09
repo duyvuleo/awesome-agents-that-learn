@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Prompt optimization and search evidence
+
+- Upgraded OPRO, Promptbreeder, TextGrad and GEPA through substantive full-text review, with exact versions, evaluation selection rules and appendix/access limits.
+- Distinguished prompt reuse, instance refinement, fixed outer optimizers and mutation-prompt evolution; retained regressions, cost boundaries and scientific-validation limits.
+- Counts remain 190 works: 150 full-text and 40 abstract/metadata reviews. Twenty broader appraisals are complete; 170 remain.
+
 ## 2026-11-09 — Detailed memory and benchmark reviews
 
 - Upgraded Mem0, MemoryBank, LongMemEval and LoCoMo from abstract-level records using methods, evaluation protocols, appendices and visual evidence.

@@ -352,3 +352,20 @@ The [v5 PDF](https://arxiv.org/pdf/2502.12110v5) and [v11 PDF](https://arxiv.org
 | 44.65 | Open domain | Single hop | Open domain |
 
 The first audit batch accurately described v11's displayed table, but this comparison adds a material version ambiguity. The canonical annotation now withholds an unconditional category-level interpretation. The mapping must be resolved against a pinned evaluation artifact before using these imported numbers for cross-paper rankings; this review does not infer which labeling is correct.
+
+## 2026-11-09 — Detailed review of existing entries, batch 5
+
+OPRO, Promptbreeder, TextGrad and GEPA now have full-text annotations. Counts are **150 full-text and 40 abstract/metadata reviews**. Twenty works have received broader appraisals in this audit; 170 remain. These reviews cover substantive methods, evidence and limitations, with appendix/example and access boundaries below. They do not establish independent reproduction.
+
+| Work | Version and material inspected | Qualification added |
+| --- | --- | --- |
+| [OPRO](papers.md#opro) | [arXiv v3](https://arxiv.org/html/2309.03409v3): §§1–7, Appendices A–E, tables and generated instructions; key PDF method, ablation, overfitting and BBH plots | Test-selected headline instruction; repeated training-subset use; separate three-run ablations and uneven transfer. |
+| [Promptbreeder](papers.md#promptbreeder) | [ICML paper](https://proceedings.mlr.press/v235/fernando24a.html): §§1–6, Appendices A–O including the provided generated examples; all main/ablation figures | Search-population fitness versus held-out accuracy; fixed evaluator/topology and material search cost. |
+| [TextGrad](papers.md#textgrad) | [arXiv v1](https://arxiv.org/html/2406.07496v1): §§1–5, Appendices A–G, main/supplementary tables and figures; Nature metadata | Reusable prompt search versus instance refinement; three refinements plus voting; computational scientific evidence. The later journal body remains inaccessible and is not treated as equivalent. |
+| [GEPA](papers.md#gepa) | [arXiv v2](https://arxiv.org/html/2507.19457v2): §§1–7, Appendices A–N including the provided prompts/demonstrations; tables, curves, search trees and kernel prompt image | Validation and reflection costs, Qwen merge regressions, inference-time search and format-sensitive adversarial scoring. |
+
+OPRO's Table 4 explicitly chooses the highest test-scoring instruction per model pair. Its Figure 11 reports three-run overfitting analysis on two BBH tasks; this must not be generalized to every headline result. Promptbreeder's Figure 4 compares mean population fitness, and its strongest initialization ablation is distinct from mutation-prompt evolution. Its reported typical run consumes roughly 301 million input and six million generated tokens.
+
+TextGrad v1's LeetCode prose reports 23% zero-shot accuracy while Table 1 displays 26%; no reconciliation is asserted. The paper re-extracts the 39-problem set, so its historical Reflexion comparisons are not necessarily dataset-identical. Molecular novelty/safety measures are computational proxies, and treatment-plan dose metrics come from five retrospective cases, with three clinician examples guiding optimization.
+
+GEPA's six-task tables and four-task appendix plots use different aggregates. Its rollout budgets do not count every reflection call as a rollout; Appendix N reports these calls separately. The Qwen AIME result favors GRPO, and merge is not uniformly beneficial. The adversarial AIME example largely induces a literal answer placeholder; it is not direct evidence that mathematical knowledge was erased. All implementations and embedded code remained unexecuted.

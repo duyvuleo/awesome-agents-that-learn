@@ -148,7 +148,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-08-08 | **Memp**<br>[Memp: Exploring Agent Procedural Memory](https://arxiv.org/abs/2508.06433) | Distills trajectories into both detailed instructions and more abstract procedures. Its procedural-memory pipeline builds, retrieves, revises, and retires entries as… | Memory, Skills | peer-reviewed · abstract | [Notes](#memp) · [Code](https://github.com/zjunlp/MemP) |
 | 2025-08-07 | **R-Zero**<br>[R-Zero: Self-Evolving Reasoning LLM from Zero Data](https://arxiv.org/abs/2508.05004) | Initializes challenger and solver models from the same base model, then optimizes their roles separately. Their interaction generates an adaptive training curriculum… | Model weights | peer-reviewed · abstract | [Notes](#r-zero) |
 | 2025-07-28 | **What/when/how survey**<br>[A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence](https://arxiv.org/abs/2507.21046) | Organizes agent adaptation by the component that changes, the stage when it changes, the feedback and algorithm used, and the application setting. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#self-evolving-survey) |
-| 2025-07-25 | **GEPA**<br>[GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](https://arxiv.org/abs/2507.19457) | Reflects on traces to propose prompt edits and selects complementary candidates using a Pareto-based population. The learned instructions alter a compound system while… | Prompts / context | peer-reviewed · abstract | [Notes](#gepa) · [Code](https://github.com/gepa-ai/gepa) |
+| 2025-07-25 | **GEPA**<br>[GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](https://arxiv.org/abs/2507.19457) | Mutates module instructions using trace reflection, retains complementary candidates through instance-wise Pareto selection, and optionally merges prompt sets from… | Prompts / context | peer-reviewed · full-text | [Notes](#gepa) · [Code](https://github.com/gepa-ai/gepa) |
 | 2025-07-04 | **EvoAgentX**<br>[EvoAgentX: An Automated Framework for Evolving Agentic Workflows](https://arxiv.org/abs/2507.03616) | Integrates workflow generation and execution with optimization methods including TextGrad, AFlow, and MIPRO. The framework supports changes to prompts, tool… | Prompts / context, Tools, Workflows, Multi-agent organization | preprint · abstract | [Notes](#evoagentx) · [Code](https://github.com/EvoAgentX/EvoAgentX) |
 | 2025-06-30 | **SPIRAL**<br>[SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2506.24119) | One shared language-model policy plays both sides of zero-sum games and receives online policy-gradient updates. Separate baselines for each role stabilize training as… | Model weights | peer-reviewed · full-text | [Notes](#spiral) · [Code](https://github.com/spiral-rl/spiral) |
 | 2025-06-12 | **SEAL**<br>[Self-Adapting Language Models](https://arxiv.org/abs/2506.10943) | Learns to generate synthetic training material or adaptation directives, then applies gradient updates using those edits. An outer reward-based loop improves the… | Model weights | peer-reviewed · full-text | [Notes](#seal) · [Code](https://github.com/Continual-Intelligence/SEAL) |
@@ -172,7 +172,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2024-07-25 | **RISE**<br>[Recursive Introspection: Teaching Language Model Agents How to Self-Improve](https://arxiv.org/abs/2407.18219) | Turns single-turn problems into multi-turn trajectories and trains the model to revise earlier unsuccessful responses. Its training loop uses reward-weighted supervised… | Model weights | peer-reviewed · full-text | [Notes](#rise) |
 | 2024-07-24 | **Model collapse**<br>[AI models collapse when trained on recursively generated data](https://www.nature.com/articles/s41586-024-07566-y) | Analyzes how repeated training on generated data can lose low-probability parts of an original distribution and amplify errors. The paper combines tractable distribution… | Model weights | peer-reviewed · full-text | [Notes](#model-collapse) |
 | 2024-06-26 | **Symbolic agent learning**<br>[Symbolic Learning Enables Self-Evolving Agents](https://arxiv.org/abs/2406.18532) | Represents an agent as a symbolic network whose editable components include prompts, tools, and their composition. Symbolic optimization uses textual feedback to revise… | Prompts / context, Tools, Workflows | preprint · abstract | [Notes](#symbolic-agent-learning) · [Code](https://github.com/aiwaves-cn/agents) |
-| 2024-06-11 | **TextGrad**<br>[TextGrad: Automatic "Differentiation" via Text](https://arxiv.org/abs/2406.07496) | Treats components of a compound AI system as editable variables and routes textual feedback backward to propose updates. Applications include reusable prompt… | Prompts / context, Agent code | peer-reviewed · abstract | [Notes](#textgrad) · [Code](https://github.com/zou-group/textgrad) |
+| 2024-06-11 | **TextGrad**<br>[TextGrad: Automatic "Differentiation" via Text](https://arxiv.org/abs/2406.07496) | Backpropagates textual feedback through a computation graph and rewrites selected variables using a fixed LLM optimizer. Reusable prompt optimization and within-instance… | Prompts / context, Agent code | peer-reviewed · full-text | [Notes](#textgrad) · [Code](https://github.com/zou-group/textgrad) |
 | 2024-06-06 | **ReST-MCTS***<br>[ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search](https://arxiv.org/abs/2406.03816) | Combines process-reward-guided tree search with iterative training of the policy and reward models. Search supplies reasoning traces and step-value targets without… | Model weights | peer-reviewed · abstract | [Notes](#rest-mcts) · [Code](https://github.com/THUDM/ReST-MCTS) |
 | 2024-06-03 | **Re-ReST**<br>[Re-ReST: Reflection-Reinforced Self-Training for Language Agents](https://arxiv.org/abs/2406.01495) | Trains a separate reflector to repair unsuccessful model-generated examples. Accepted original and repaired trajectories then fine-tune the agent, so improvement is… | Model weights | peer-reviewed · full-text | [Notes](#re-rest) · [Code](https://github.com/PlusLabNLP/Re-ReST) |
 | 2024-04-01 | **Accumulation vs. collapse**<br>[Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](https://arxiv.org/abs/2404.01413) | Compares replacement of earlier datasets with accumulation of original and synthetic data. It supplies a linear-model analysis and generative-model experiments showing… | Model weights | preprint · full-text | [Notes](#accumulating-data-model-collapse) |
@@ -185,8 +185,8 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2023-10-12 | **MemGPT**<br>[MemGPT: Towards LLMs as Operating Systems](https://arxiv.org/abs/2310.08560) | Separates active context from archival and recall storage. Function calls page information in and out, edit working memory, and request successive inference steps… | Memory | preprint · full-text | [Notes](#memgpt) |
 | 2023-10-05 | **DSPy**<br>[DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines](https://arxiv.org/abs/2310.03714) | Compiles declarative LM modules by bootstrapping and selecting demonstrations. Composed optimizers can ensemble programs or fine-tune smaller models. Optimized prompts… | Prompts / context, Workflows, Model weights | peer-reviewed · full-text | [Notes](#dspy) · [Code](https://github.com/stanfordnlp/dspy) |
 | 2023-10-03 | **STOP**<br>[Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation](https://arxiv.org/abs/2310.02304) | Begins with an LLM-assisted program improver and applies that improver to its own source. Candidate improvers are assessed through the quality of programs they generate… | Agent code | peer-reviewed · abstract | [Notes](#stop) |
-| 2023-09-28 | **Promptbreeder**<br>[Promptbreeder: Self-Referential Self-Improvement via Prompt Evolution](https://arxiv.org/abs/2309.16797) | Evolves a population of task instructions together with the instructions that produce their mutations. It provides a concrete example of changing part of the improvement… | Prompts / context | peer-reviewed · abstract | [Notes](#promptbreeder) |
-| 2023-09-07 | **OPRO**<br>[Large Language Models as Optimizers](https://arxiv.org/abs/2309.03409) | Uses an LLM to propose candidates from a history of instructions and their measured scores. Selected instructions can be reused on new examples without changing model… | Prompts / context | peer-reviewed · abstract | [Notes](#opro) · [Code](https://github.com/google-deepmind/opro) |
+| 2023-09-28 | **Promptbreeder**<br>[Promptbreeder: Self-Referential Self-Improvement via Prompt Evolution](https://arxiv.org/abs/2309.16797) | A tournament population evolves task instructions and the mutation instructions that generate successors, including hypermutation and reconstruction from worked… | Prompts / context | peer-reviewed · full-text | [Notes](#promptbreeder) |
+| 2023-09-07 | **OPRO**<br>[Large Language Models as Optimizers](https://arxiv.org/abs/2309.03409) | A fixed LLM optimizer proposes instructions from the best scored candidates and examples; an external evaluator scores them and refreshes the history. Selected prompts… | Prompts / context | peer-reviewed · full-text | [Notes](#opro) · [Code](https://github.com/google-deepmind/opro) |
 | 2023-08-20 | **ExpeL**<br>[ExpeL: LLM Agents Are Experiential Learners](https://arxiv.org/abs/2308.10144) | Collects training-task trajectories, contrasts successes and failures to extract reusable textual insights, and retrieves relevant experiences for new tasks. Learning… | Memory | peer-reviewed · full-text | [Notes](#expel) · [Code](https://github.com/LeapLabTHU/ExpeL) |
 | 2023-08-17 | **ReST**<br>[Reinforced Self-Training (ReST) for Language Modeling](https://arxiv.org/abs/2308.08998) | Alternates generating a batch of candidate outputs and improving the policy with offline reinforcement learning. Reusing generated data reduces the need to sample a new… | Model weights | preprint · abstract | [Notes](#rest) |
 | 2023-06-20 | **RoboCat**<br>[RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation](https://arxiv.org/abs/2306.11706) | Fine-tunes a visual goal-conditioned generalist into task-specific policies, collects additional trajectories with them, then retrains a generalist on old and new data.… | Model weights | peer-reviewed · full-text | [Notes](#robocat) |
@@ -3198,19 +3198,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2507.19457)
 
-**Mechanism.** Reflects on traces to propose prompt edits and selects complementary candidates using a Pareto-based population. The learned instructions alter a compound system while keeping its model weights fixed.
+**Mechanism.** Mutates module instructions using trace reflection, retains complementary candidates through instance-wise Pareto selection, and optionally merges prompt sets from separate lineages. The executor weights and control flow stay fixed. A separate inference-time variant searches solutions on the target tasks themselves.
 
-**What changes:** Prompts / context. **Persistence:** across-tasks. **Learning signal:** Execution trajectories, textual critiques, and candidate validation scores.
+**What changes:** Prompts / context. **Persistence:** across-tasks. **Learning signal:** Training execution/evaluation traces and per-module feedback generate mutations; validation scores select candidates.
 
-**Evaluation.** The final proceedings abstract reports comparisons with GRPO and MIPROv2 across six tasks, plus inference-time code optimization.
+**Evaluation.** ArXiv v2 compares six tasks on Qwen3-8B and GPT-4.1 Mini, including GRPO, prompt optimizers, selection ablations and cross-model transfer. It also reports kernel search and an adversarial instruction-following probe.
 
-**Boundary.** The headline comparison concerns the reported models, tasks, and budgets; it is not a general ranking of prompt optimization and reinforcement learning. Curator interpretation: total evaluation and reflector costs matter alongside rollout counts.
+**Boundary.** Rollout budgets include validation but omit separate reflection calls; they are not total compute. GRPO is stronger on Qwen AIME; merging hurts several Qwen tasks. Main results lack independent search-run uncertainty. Kernel search is not held-out transfer, and the adversarial accuracy collapse largely reflects answer-format failure.
 
 **Code / data.** [Official artifact](https://github.com/gepa-ai/gepa) — Official repository landing page inspected; no installation or execution performed.
 
-**Topics:** prompts, workflows, evaluation. **Reviewed:** abstract · 2026-10-28.
+**Topics:** prompts, workflows, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2507.19457) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2026/hash/0e9e708b6f48e14fd0ac29e167413f76-Abstract-Conference.html) · [Source 3](https://github.com/gepa-ai/gepa)
+[Source 1](https://arxiv.org/abs/2507.19457) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2026/hash/0e9e708b6f48e14fd0ac29e167413f76-Abstract-Conference.html) · [Source 3](https://github.com/gepa-ai/gepa) · [Source 4](https://arxiv.org/html/2507.19457v2) · [Source 5](https://arxiv.org/pdf/2507.19457v2)
 
 **Related software:** [DSPy](systems.md#system-dspy) · [GEPA](systems.md#system-gepa). See each system's relationship note before equating it with the evaluated paper version.
 
@@ -3748,19 +3748,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2406.07496)
 
-**Mechanism.** Treats components of a compound AI system as editable variables and routes textual feedback backward to propose updates. Applications include reusable prompt optimization and refinement of individual outputs.
+**Mechanism.** Backpropagates textual feedback through a computation graph and rewrites selected variables using a fixed LLM optimizer. Reusable prompt optimization and within-instance answer/code/molecule/plan refinement are separate settings; textual gradients are an analogy, not derivatives of model weights.
 
-**What changes:** Prompts / context, Agent code. **Persistence:** both. **Learning signal:** Natural-language critiques propagated through a computation graph.
+**What changes:** Prompts / context, Agent code. **Persistence:** both. **Learning signal:** LLM critiques of intermediate variables, labels, local test outcomes and simulator-derived objectives, depending on the application.
 
-**Evaluation.** The paper reports studies in question answering, code generation, molecule design, and treatment-plan optimization.
+**Evaluation.** Reviewed arXiv v1: 39 LeetCode problems over five seeds, GPQA/MMLU refinement, three prompt-optimization tasks, molecular simulations and five retrospective treatment plans. Prompt search uses validation gates; GPQA combines three refinements with majority voting.
 
-**Boundary.** Output refinement and reusable system learning are different experimental settings. Curator interpretation: success under an LLM critic does not by itself establish correctness or clinical validity.
+**Boundary.** The later Nature article is not assumed equivalent to v1. LeetCode prose and Table 1 disagree on baseline accuracy. Compute and voting complicate attribution; simulation scores and retrospective dose metrics establish neither drug safety nor clinical effectiveness. No implementation was executed.
 
 **Code / data.** [Official artifact](https://github.com/zou-group/textgrad) — Official repository landing page inspected; no installation or execution performed.
 
-**Topics:** foundations, prompts, workflows. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, prompts, workflows. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2406.07496) · [Source 2](https://www.nature.com/articles/s41586-025-08661-4) · [Source 3](https://github.com/zou-group/textgrad)
+[Source 1](https://arxiv.org/abs/2406.07496) · [Source 2](https://www.nature.com/articles/s41586-025-08661-4) · [Source 3](https://github.com/zou-group/textgrad) · [Source 4](https://arxiv.org/html/2406.07496v1) · [Source 5](https://arxiv.org/pdf/2406.07496v1)
 
 <a id="rest-mcts"></a>
 
@@ -4038,19 +4038,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2309.16797)
 
-**Mechanism.** Evolves a population of task instructions together with the instructions that produce their mutations. It provides a concrete example of changing part of the improvement procedure as well as the task-solving prompt.
+**Mechanism.** A tournament population evolves task instructions and the mutation instructions that generate successors, including hypermutation and reconstruction from worked solutions. Weights, evaluation rules and prompt topology remain fixed; reusable prompts and demonstrations carry the changes.
 
-**What changes:** Prompts / context. **Persistence:** across-tasks. **Learning signal:** Fitness on task examples guides selection of task prompts and mutation prompts.
+**What changes:** Prompts / context. **Persistence:** across-tasks. **Learning signal:** Accuracy on sampled training examples selects task prompts, mutation prompts and optional successful demonstrations.
 
-**Evaluation.** Evaluations cover arithmetic, commonsense reasoning, and hate-speech classification.
+**Evaluation.** The ICML paper evaluates arithmetic, commonsense reasoning, ETHOS and 24 instruction-induction tasks, with initialization/operator ablations and GPT-3.5 follow-ups. Main ablations measure average population fitness during search; GPT-3.5 follow-ups test the best training-scoring prompt.
 
-**Boundary.** The foundation model and surrounding evolutionary procedure remain fixed. Prompt-level self-reference should not be read as evidence of unbounded improvement of the complete agent.
+**Boundary.** Ablation fitness is not independent evidence of held-out improvement from each operator. Initialization contributes strongly, some baselines use historical models, and search has substantial token cost. Changing mutation prompts does not demonstrate unbounded improvement of the evaluator or outer algorithm.
 
 **Code / data.** Official code availability was not established in this source review.
 
-**Topics:** foundations, prompts, recursive-improvement. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, prompts, recursive-improvement. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2309.16797) · [Source 2](https://proceedings.mlr.press/v235/fernando24a.html)
+[Source 1](https://arxiv.org/abs/2309.16797) · [Source 2](https://proceedings.mlr.press/v235/fernando24a.html) · [Source 3](https://raw.githubusercontent.com/mlresearch/v235/main/assets/fernando24a/fernando24a.pdf)
 
 <a id="opro"></a>
 
@@ -4060,19 +4060,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2309.03409)
 
-**Mechanism.** Uses an LLM to propose candidates from a history of instructions and their measured scores. Selected instructions can be reused on new examples without changing model weights.
+**Mechanism.** A fixed LLM optimizer proposes instructions from the best scored candidates and examples; an external evaluator scores them and refreshes the history. Selected prompts persist across queries, while model weights and the outer optimization procedure remain fixed.
 
-**What changes:** Prompts / context. **Persistence:** across-tasks. **Learning signal:** Scores of earlier candidate prompts on a development task.
+**What changes:** Prompts / context. **Persistence:** across-tasks. **Learning signal:** Measured training-set accuracy of candidate instructions, a score-ranked prompt history and task examples.
 
-**Evaluation.** Prompt optimization is evaluated on GSM8K and BIG-Bench Hard, alongside illustrative numerical and combinatorial optimization tasks.
+**Evaluation.** ArXiv v3 studies GSM8K, 23 BBH tasks, related-math transfer, meta-prompt ablations and illustrative numerical/TSP problems. Default searches reuse a small training subset; the separate overfitting study uses train/validation/test splits and three optimization repetitions.
 
-**Boundary.** This is an external prompt-search procedure, not evidence of autonomous lifelong agent learning. Curator interpretation: the chosen objective and development data constrain what the search can improve.
+**Boundary.** GSM8K Table 4 reports the highest test-scoring instruction for each model pair, not purely validation-selected performance. Training/test gaps and task-specific regressions remain. Numerical examples do not establish competitiveness with specialist optimizers; external prompt search is not lifelong agent learning.
 
 **Code / data.** [Official artifact](https://github.com/google-deepmind/opro) — Official repository landing page inspected; no installation or execution performed.
 
-**Topics:** foundations, prompts. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, prompts. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2309.03409) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2024/hash/3339f19c5fcee3ad74502947a32be9e6-Abstract-Conference.html) · [Source 3](https://github.com/google-deepmind/opro)
+[Source 1](https://arxiv.org/abs/2309.03409) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2024/hash/3339f19c5fcee3ad74502947a32be9e6-Abstract-Conference.html) · [Source 3](https://github.com/google-deepmind/opro) · [Source 4](https://arxiv.org/html/2309.03409v3) · [Source 5](https://arxiv.org/pdf/2309.03409v3)
 
 <a id="expel"></a>
 

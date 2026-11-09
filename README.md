@@ -22,7 +22,7 @@ How do agents turn experience into something useful on the next task? This colle
 
 **190 research works** (168 papers, 6 surveys, 16 benchmark papers) · **24 systems and frameworks** · **8 reading routes**
 
-Source review: **2026-11-09**. For research works, 146 entries include inspection of selected full-text sections and 44 are based on primary abstracts/metadata. Systems are separate project-documentation/source inspections. No linked research code was executed and no published result was independently reproduced for this release.
+Source review: **2026-11-09**. For research works, 150 entries include inspection of selected full-text sections and 40 are based on primary abstracts/metadata. Systems are separate project-documentation/source inspections. No linked research code was executed and no published result was independently reproduced for this release.
 
 ## Top Papers of the Week
 

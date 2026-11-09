@@ -4805,7 +4805,9 @@
       "sources": [
         "https://arxiv.org/abs/2507.19457",
         "https://proceedings.iclr.cc/paper_files/paper/2026/hash/0e9e708b6f48e14fd0ac29e167413f76-Abstract-Conference.html",
-        "https://github.com/gepa-ai/gepa"
+        "https://github.com/gepa-ai/gepa",
+        "https://arxiv.org/html/2507.19457v2",
+        "https://arxiv.org/pdf/2507.19457v2"
       ],
       "code_url": "https://github.com/gepa-ai/gepa",
       "code_note": "Official repository landing page inspected; no installation or execution performed.",
@@ -4819,12 +4821,12 @@
         "prompts"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Execution trajectories, textual critiques, and candidate validation scores.",
-      "mechanism": "Reflects on traces to propose prompt edits and selects complementary candidates using a Pareto-based population. The learned instructions alter a compound system while keeping its model weights fixed.",
-      "evaluation": "The final proceedings abstract reports comparisons with GRPO and MIPROv2 across six tasks, plus inference-time code optimization.",
-      "limitations": "The headline comparison concerns the reported models, tasks, and budgets; it is not a general ranking of prompt optimization and reinforcement learning. Curator interpretation: total evaluation and reflector costs matter alongside rollout counts.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Training execution/evaluation traces and per-module feedback generate mutations; validation scores select candidates.",
+      "mechanism": "Mutates module instructions using trace reflection, retains complementary candidates through instance-wise Pareto selection, and optionally merges prompt sets from separate lineages. The executor weights and control flow stay fixed. A separate inference-time variant searches solutions on the target tasks themselves.",
+      "evaluation": "ArXiv v2 compares six tasks on Qwen3-8B and GPT-4.1 Mini, including GRPO, prompt optimizers, selection ablations and cross-model transfer. It also reports kernel search and an adversarial instruction-following probe.",
+      "limitations": "Rollout budgets include validation but omit separate reflection calls; they are not total compute. GRPO is stronger on Qwen AIME; merging hurts several Qwen tasks. Main results lack independent search-run uncertainty. Kernel search is not held-out transfer, and the adversarial accuracy collapse largely reflects answer-format failure.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "GEPA"
     },
     {
@@ -5647,7 +5649,9 @@
       "sources": [
         "https://arxiv.org/abs/2406.07496",
         "https://www.nature.com/articles/s41586-025-08661-4",
-        "https://github.com/zou-group/textgrad"
+        "https://github.com/zou-group/textgrad",
+        "https://arxiv.org/html/2406.07496v1",
+        "https://arxiv.org/pdf/2406.07496v1"
       ],
       "code_url": "https://github.com/zou-group/textgrad",
       "code_note": "Official repository landing page inspected; no installation or execution performed.",
@@ -5662,12 +5666,12 @@
         "agent-code"
       ],
       "persistence": "both",
-      "learning_signal": "Natural-language critiques propagated through a computation graph.",
-      "mechanism": "Treats components of a compound AI system as editable variables and routes textual feedback backward to propose updates. Applications include reusable prompt optimization and refinement of individual outputs.",
-      "evaluation": "The paper reports studies in question answering, code generation, molecule design, and treatment-plan optimization.",
-      "limitations": "Output refinement and reusable system learning are different experimental settings. Curator interpretation: success under an LLM critic does not by itself establish correctness or clinical validity.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "LLM critiques of intermediate variables, labels, local test outcomes and simulator-derived objectives, depending on the application.",
+      "mechanism": "Backpropagates textual feedback through a computation graph and rewrites selected variables using a fixed LLM optimizer. Reusable prompt optimization and within-instance answer/code/molecule/plan refinement are separate settings; textual gradients are an analogy, not derivatives of model weights.",
+      "evaluation": "Reviewed arXiv v1: 39 LeetCode problems over five seeds, GPQA/MMLU refinement, three prompt-optimization tasks, molecular simulations and five retrospective treatment plans. Prompt search uses validation gates; GPQA combines three refinements with majority voting.",
+      "limitations": "The later Nature article is not assumed equivalent to v1. LeetCode prose and Table 1 disagree on baseline accuracy. Compute and voting complicate attribution; simulation scores and retrospective dose metrics establish neither drug safety nor clinical effectiveness. No implementation was executed.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "TextGrad"
     },
     {
@@ -6088,7 +6092,8 @@
       "url": "https://arxiv.org/abs/2309.16797",
       "sources": [
         "https://arxiv.org/abs/2309.16797",
-        "https://proceedings.mlr.press/v235/fernando24a.html"
+        "https://proceedings.mlr.press/v235/fernando24a.html",
+        "https://raw.githubusercontent.com/mlresearch/v235/main/assets/fernando24a/fernando24a.pdf"
       ],
       "code_url": null,
       "code_note": "Official code availability was not established in this source review.",
@@ -6102,12 +6107,12 @@
         "prompts"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Fitness on task examples guides selection of task prompts and mutation prompts.",
-      "mechanism": "Evolves a population of task instructions together with the instructions that produce their mutations. It provides a concrete example of changing part of the improvement procedure as well as the task-solving prompt.",
-      "evaluation": "Evaluations cover arithmetic, commonsense reasoning, and hate-speech classification.",
-      "limitations": "The foundation model and surrounding evolutionary procedure remain fixed. Prompt-level self-reference should not be read as evidence of unbounded improvement of the complete agent.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Accuracy on sampled training examples selects task prompts, mutation prompts and optional successful demonstrations.",
+      "mechanism": "A tournament population evolves task instructions and the mutation instructions that generate successors, including hypermutation and reconstruction from worked solutions. Weights, evaluation rules and prompt topology remain fixed; reusable prompts and demonstrations carry the changes.",
+      "evaluation": "The ICML paper evaluates arithmetic, commonsense reasoning, ETHOS and 24 instruction-induction tasks, with initialization/operator ablations and GPT-3.5 follow-ups. Main ablations measure average population fitness during search; GPT-3.5 follow-ups test the best training-scoring prompt.",
+      "limitations": "Ablation fitness is not independent evidence of held-out improvement from each operator. Initialization contributes strongly, some baselines use historical models, and search has substantial token cost. Changing mutation prompts does not demonstrate unbounded improvement of the evaluator or outer algorithm.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "Promptbreeder"
     },
     {
@@ -6122,7 +6127,9 @@
       "sources": [
         "https://arxiv.org/abs/2309.03409",
         "https://proceedings.iclr.cc/paper_files/paper/2024/hash/3339f19c5fcee3ad74502947a32be9e6-Abstract-Conference.html",
-        "https://github.com/google-deepmind/opro"
+        "https://github.com/google-deepmind/opro",
+        "https://arxiv.org/html/2309.03409v3",
+        "https://arxiv.org/pdf/2309.03409v3"
       ],
       "code_url": "https://github.com/google-deepmind/opro",
       "code_note": "Official repository landing page inspected; no installation or execution performed.",
@@ -6135,12 +6142,12 @@
         "prompts"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Scores of earlier candidate prompts on a development task.",
-      "mechanism": "Uses an LLM to propose candidates from a history of instructions and their measured scores. Selected instructions can be reused on new examples without changing model weights.",
-      "evaluation": "Prompt optimization is evaluated on GSM8K and BIG-Bench Hard, alongside illustrative numerical and combinatorial optimization tasks.",
-      "limitations": "This is an external prompt-search procedure, not evidence of autonomous lifelong agent learning. Curator interpretation: the chosen objective and development data constrain what the search can improve.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Measured training-set accuracy of candidate instructions, a score-ranked prompt history and task examples.",
+      "mechanism": "A fixed LLM optimizer proposes instructions from the best scored candidates and examples; an external evaluator scores them and refreshes the history. Selected prompts persist across queries, while model weights and the outer optimization procedure remain fixed.",
+      "evaluation": "ArXiv v3 studies GSM8K, 23 BBH tasks, related-math transfer, meta-prompt ablations and illustrative numerical/TSP problems. Default searches reuse a small training subset; the separate overfitting study uses train/validation/test splits and three optimization repetitions.",
+      "limitations": "GSM8K Table 4 reports the highest test-scoring instruction for each model pair, not purely validation-selected performance. Training/test gaps and task-specific regressions remain. Numerical examples do not establish competitiveness with specialist optimizers; external prompt search is not lifelong agent learning.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "OPRO"
     },
     {
