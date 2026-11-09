@@ -35,10 +35,10 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-27 | **DiscernMem**<br>[Remembering Is Not Enough: Refining Memories and Learning When to Use Them in Multi-Agent Systems](https://arxiv.org/abs/2610.36652) | Maintains role-owned behavioral rules, versioned effects and use/avoid conditions. After scoring each task, full-team replays compare one rule with no memory. A fixed… | Memory | preprint · full-text | [Notes](#discernmem) · [Code](https://github.com/ECNU-ICALK/DiscernMem) |
 | 2026-10-27 | **CoHARL**<br>[CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning](https://arxiv.org/abs/2610.36469) | Trains one shared policy with group-relative RL across a scheduled population of executable harnesses. A separate fixed proposer edits prompts, parsers, handlers and… | Model weights, Agent code, Prompts / context | preprint · full-text | [Notes](#coharl) |
 | 2026-10-26 | **Skill∞**<br>[Skill$^{\infty}$: Recursive Self-Improvement for Agent Skill Optimization](https://arxiv.org/abs/2610.35434) | Encodes skill optimization in a mutable meta-skill that guides diagnosis, candidate creation, review and selection. The same process revises that meta-skill using gains… | Skills, Prompts / context, Agent code | preprint · full-text | [Notes](#skill-infinity) |
-| 2026-10-26 | **SciValidityBench**<br>[The Right Fact, the Wrong Decision: SciValidityBench for Scientific Agent Memory](https://arxiv.org/abs/2610.34767) | Generates scientific histories in which a remembered fact may be invalid to use. A supplied compiler exposes decision-governing relations, separating raw records… | Memory | preprint · full-text | [Notes](#scivaliditybench) · [Code](https://github.com/SciValidityBench/SciValidityBench) |
+| 2026-10-26 | **SciValidityBench**<br>[The Right Fact, the Wrong Decision: SciValidityBench for Scientific Agent Memory](https://arxiv.org/abs/2610.34767) | Tests whether agents use scientific facts under the correct validity conditions. A supplied deterministic compiler derives governing state from synthetic public events… | Memory | preprint · full-text | [Notes](#scivaliditybench) · [Code](https://github.com/SciValidityBench/SciValidityBench) |
 | 2026-10-26 | **Retrospective harness study**<br>[How Do Coding-Agent Harnesses Self-Evolve? An Empirical Study of Retrospective Adaptation](https://arxiv.org/abs/2610.34938) | A fixed retrospective skill proposes persistent context instructions and known-failure artifacts after coding sessions. Researchers select changes; the agent implements… | Agent code, Prompts / context | preprint · full-text | [Notes](#retrospective-harness-study) · [Code](https://zenodo.org/records/23653700) |
 | 2026-10-26 | **Obsolete facts**<br>[When Retrieval Is Not Enough: Obsolete Facts in Agent Memory](https://arxiv.org/abs/2610.36308) | Diagnoses retrieval and reader selection separately on synthetic chronological memories. It varies BM25 evidence budgets, then replaces one unrelated statement with an… | Analysis / no retained update | preprint · full-text | [Notes](#obsolete-facts-memory) · [Code](https://github.com/oleeviyababu/Memory_Conflict) |
-| 2026-10-26 | **MiniWeb / MiniWebAgent**<br>[Back to Basics: A Skill-Centric Approach to Generalist Web Agents](https://arxiv.org/abs/2610.35823) | Builds skill-level web tasks and generates verified practice trajectories. A LoRA-trained executor performs short interactions delegated by an untrained planner, so… | Model weights | preprint · full-text | [Notes](#miniweb) |
+| 2026-10-26 | **MiniWeb / MiniWebAgent**<br>[Back to Basics: A Skill-Centric Approach to Generalist Web Agents](https://arxiv.org/abs/2610.35823) | Generates short browser-skill trajectories from human-derived guides, privileged site maps and backend success checks, then trains a Qwen3.5-4B LoRA executor. An… | Model weights | preprint · full-text | [Notes](#miniweb) · [Code](https://github.com/sparklabutah/MiniWeb) |
 | 2026-10-26 | **EoG**<br>[Evolve on Graph: Self-Evolving Knowledge Graph Reasoning without Question Annotations](https://arxiv.org/abs/2610.35598) | Uses six supplied graph-query patterns to build an offline set of executable tasks and complete graph-relative answer sets. One shared model alternates question-proposal… | Model weights | preprint · full-text | [Notes](#evolve-on-graph) · [Code](https://github.com/Szy5/EoG) |
 | 2026-10-26 | **CEPO**<br>[CEPO: A General Framework for Improving Prompt Optimization in Multi-Agent Systems](https://arxiv.org/abs/2610.34722) | Externally optimizes a shared coordination prompt prepended to each agent and selected local execution prompts. Fixed role-specific meta-instructions guide supplied… | Prompts / context | preprint · full-text | [Notes](#cepo) |
 | 2026-10-26 | **AgentMemRec**<br>[Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents](https://arxiv.org/abs/2610.34673) | Retrieves a fused lexical/dense pool, ranks stored turns with a separately trained LightGBM model and fills a token budget. The serving ranker is frozen; the answering… | Model weights | preprint · full-text | [Notes](#agentmemrec) |
@@ -700,19 +700,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.34767)
 
-**Mechanism.** Generates scientific histories in which a remembered fact may be invalid to use. A supplied compiler exposes decision-governing relations, separating raw records, retrieval, generic graphs, and compiled-state views.
+**Mechanism.** Tests whether agents use scientific facts under the correct validity conditions. A supplied deterministic compiler derives governing state from synthetic public events; fixed models choose among finite actions scored by programmatic oracles. Controlled source/state corruptions and repairs separate available facts from their decision-relevant relationships. No memory writer or compiler is learned.
 
 **What changes:** Memory. **Persistence:** not-applicable. **Learning signal:** Programmatic validity oracles and paired state-changing or corruption-repair controls; no trained update loop is evaluated.
 
-**Evaluation.** Evaluates 64 task specifications across five validity modules, six domains, and four model families, with counterfactual, repair, and serialization controls.
+**Evaluation.** Full v1 covers 64 task specifications, five validity modules, six domains and four open model families, with paired counterfactuals, equal-information views, source matching, corruption/repair and serialization controls. Compiled state improves over generic event graphs on average, but gains vary substantially by reader, module and representation.
 
-**Boundary.** Histories and clinical scenarios are synthetic, and compilation rules are supplied. Effects vary by reader and module; richer state sometimes hurts. Curator interpretation: this evaluates state use, not autonomous discovery of validity rules or continual learning in deployed scientists.
+**Boundary.** The 640 primary worlds average three public events each; this is not a long-history retrieval or deployed-scientist evaluation. Task rules and exact inverse repairs are supplied. Excluding 22 cases with literal action answers preserves gains but does not exclude all shortcuts. Flat versus typed state has no universal winner; some readers regress sharply under source-matched controls. Counterfactual consistency can coexist with wrong actions, and additional author-run replications are not independent curator reproduction.
 
-**Code / data.** [Official artifact](https://github.com/SciValidityBench/SciValidityBench) — Paper-linked repository and benchmark README inspected; release tests and model experiments were not run.
+**Code / data.** [Official artifact](https://github.com/SciValidityBench/SciValidityBench) — Complete 25-page arXiv v1, Appendices A–I, four figures/twenty-eight tables and formal task contracts read on 2026-11-09. Official README and license map at 3325d98e095000aa1d0d8defa9960523f41d6260 inspected: Apache-2.0 code and separately licensed benchmark materials; model-generated raw-response corpus is explicitly not distributed. Release tests and model experiments were not executed.
 
-**Topics:** memory, evaluation, safety, applications. **Reviewed:** full-text · 2026-10-30.
+**Topics:** memory, evaluation, safety, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.34767) · [Source 2](https://arxiv.org/html/2610.34767v1) · [Source 3](https://github.com/SciValidityBench/SciValidityBench)
+[Source 1](https://arxiv.org/abs/2610.34767) · [Source 2](https://arxiv.org/html/2610.34767v1) · [Source 3](https://github.com/SciValidityBench/SciValidityBench) · [Source 4](https://arxiv.org/pdf/2610.34767v1)
 
 <a id="retrospective-harness-study"></a>
 
@@ -766,19 +766,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.35823)
 
-**Mechanism.** Builds skill-level web tasks and generates verified practice trajectories. A LoRA-trained executor performs short interactions delegated by an untrained planner, so reusable capability is stored in weights rather than an evolving external skill library.
+**Mechanism.** Generates short browser-skill trajectories from human-derived guides, privileged site maps and backend success checks, then trains a Qwen3.5-4B LoRA executor. An untrained planner composes the practiced interactions into longer tasks. Capability persists in executor weights; this is offline skill training rather than an online evolving skill library.
 
 **What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Human-demonstration guides and generated browser trajectories admitted through privileged environment-state checks.
 
-**Evaluation.** Tests ten open-weight agents, held-out MiniWeb websites, and external web benchmarks, comparing skill-only training, planner composition, matched-size task-centric data, and grader validity.
+**Evaluation.** Full v1 reports 65 sites, 369 human tasks and 37 primitives. Skill training raises isolated success from 55.3% to 80.3%, but complete-task success stays near 39% and external scores decline. Planner plus trained executor reaches 58.1% on 62 held-out tasks, versus 45.2% with an untrained executor, and improves three external benchmarks. Task-centric training and grader audits provide additional controls.
 
-**Boundary.** Skill-only fine-tuning does not improve full-task success and lowers external-benchmark performance; planner composition is essential. Generation uses human guides and privileged site knowledge. Live-web scores use filtered subsets and are not comparable to full benchmark sets; larger-model scaling is untested.
+**Boundary.** Generation uses privileged DOM/backend access; step-matched training differs in teacher and verification quality. Only one of four skill-versus-task-centric comparisons survives the reported multiplicity adjustment. Planner calls and some time/action limits are unmatched. Live-web subsets are filtered, one-run evaluations; grader accuracy comes from a stratified pre-correction cohort. Most slider demonstrations click rather than drag. Public reproduction metadata disagrees with v1 on held-out counts/scores, and original run folders/audit labels are not released.
 
-**Code / data.** Official runnable code was not independently verified in this review; no research code was executed.
+**Code / data.** [Official artifact](https://github.com/sparklabutah/MiniWeb) — Complete 46-page arXiv v1, Appendices A–K, all tables/prompts and ten figures read on 2026-11-09. Official README, REPRODUCE.md and paper configuration at 47714809a4ca7c35424677b42c180b0d26787c4f inspected as text. Code and artifact links are public, but no root LICENSE was verified and paper-version equivalence remains unresolved: configuration lists 63 held-out tasks and 54.5% versus v1’s 62 and 58.1%. No dependencies, datasets or checkpoints installed; nothing executed.
 
-**Topics:** skills, tools, model-training, evaluation, applications. **Reviewed:** full-text · 2026-11-02.
+**Topics:** skills, tools, model-training, evaluation, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.35823) · [Source 2](https://arxiv.org/html/2610.35823v1)
+[Source 1](https://arxiv.org/abs/2610.35823) · [Source 2](https://arxiv.org/html/2610.35823v1) · [Source 3](https://arxiv.org/pdf/2610.35823v1) · [Source 4](https://github.com/sparklabutah/MiniWeb) · [Source 5](https://github.com/sparklabutah/MiniWeb/blob/47714809a4ca7c35424677b42c180b0d26787c4f/scripts/paper.yaml) · [Source 6](https://github.com/sparklabutah/MiniWeb/blob/47714809a4ca7c35424677b42c180b0d26787c4f/REPRODUCE.md)
 
 <a id="evolve-on-graph"></a>
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-09 — Expanded scientific-validity and web-skill reviews
+
+- Completed SciValidityBench and MiniWeb, including all appendices and artifact checks.
+- Added MiniWeb’s public repository and documented its inconsistent paper-result metadata.
+- Preserved negative controls, unmatched budgets and grader-population limits.
+- Broader audit: 136 of 190 works complete, 54 pending.
+
 ## 2026-11-09 — Expanded obsolete-memory and recursive-skill reviews
 
 - Completed both papers, appendices, scoring sensitivities and meta-skill procedure details.

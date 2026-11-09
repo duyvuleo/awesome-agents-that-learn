@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-09T12:05:25.680428+00:00",
+  "checked_at_utc": "2026-11-09T12:22:10.366450+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -3460,6 +3460,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2610.34767v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2610.34767v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2610.34938v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2610.34938v1",
@@ -3475,6 +3481,12 @@
       "url": "https://arxiv.org/pdf/2610.35598v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2610.35598v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2610.35823v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2610.35823v1",
       "status": "reachable"
     },
     {
@@ -4606,6 +4618,24 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/sparklabutah/MiniWeb",
+      "http_status": 200,
+      "final_url": "https://github.com/sparklabutah/MiniWeb",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/sparklabutah/MiniWeb/blob/47714809a4ca7c35424677b42c180b0d26787c4f/REPRODUCE.md",
+      "http_status": 200,
+      "final_url": "https://github.com/sparklabutah/MiniWeb/blob/47714809a4ca7c35424677b42c180b0d26787c4f/REPRODUCE.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/sparklabutah/MiniWeb/blob/47714809a4ca7c35424677b42c180b0d26787c4f/scripts/paper.yaml",
+      "http_status": 200,
+      "final_url": "https://github.com/sparklabutah/MiniWeb/blob/47714809a4ca7c35424677b42c180b0d26787c4f/scripts/paper.yaml",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/spiral-rl/spiral",
       "http_status": 200,
       "final_url": "https://github.com/spiral-rl/spiral",
@@ -5295,21 +5325,21 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=bd65798c-e08e-4d31-af20-3c28ef2a50ff",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=61c46061-a4b9-41f5-a060-20f29a10cc28",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=02f4063c-72a0-4845-a575-dbd156ad2d8a",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=f479b277-d180-4af9-88fa-8ff193ad5985",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=fd258ca8-d62c-4be2-8683-3cc1514a0beb",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=6ee1fa10-b881-4361-80a4-33d7c4b70229",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -5323,21 +5353,21 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=e21c03db-485e-4cd1-9ac8-efd4b4651c85",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=43a54659-7f9a-40ac-a73d-4eb380927de7",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=adaf4a07-7c81-4d5f-b657-add8f8495af6",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=e3813328-e2ff-4f71-a739-7a70a163a485",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=cbf79b27-056b-42e5-a9ba-93a99821109b",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=850c6bf9-633b-41d7-92e2-5ed25009b4fa",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },

@@ -878,10 +878,11 @@
       "sources": [
         "https://arxiv.org/abs/2610.34767",
         "https://arxiv.org/html/2610.34767v1",
-        "https://github.com/SciValidityBench/SciValidityBench"
+        "https://github.com/SciValidityBench/SciValidityBench",
+        "https://arxiv.org/pdf/2610.34767v1"
       ],
       "code_url": "https://github.com/SciValidityBench/SciValidityBench",
-      "code_note": "Paper-linked repository and benchmark README inspected; release tests and model experiments were not run.",
+      "code_note": "Complete 25-page arXiv v1, Appendices A–I, four figures/twenty-eight tables and formal task contracts read on 2026-11-09. Official README and license map at 3325d98e095000aa1d0d8defa9960523f41d6260 inspected: Apache-2.0 code and separately licensed benchmark materials; model-generated raw-response corpus is explicitly not distributed. Release tests and model experiments were not executed.",
       "topics": [
         "memory",
         "evaluation",
@@ -894,11 +895,11 @@
       ],
       "persistence": "not-applicable",
       "learning_signal": "Programmatic validity oracles and paired state-changing or corruption-repair controls; no trained update loop is evaluated.",
-      "mechanism": "Generates scientific histories in which a remembered fact may be invalid to use. A supplied compiler exposes decision-governing relations, separating raw records, retrieval, generic graphs, and compiled-state views.",
-      "evaluation": "Evaluates 64 task specifications across five validity modules, six domains, and four model families, with counterfactual, repair, and serialization controls.",
-      "limitations": "Histories and clinical scenarios are synthetic, and compilation rules are supplied. Effects vary by reader and module; richer state sometimes hurts. Curator interpretation: this evaluates state use, not autonomous discovery of validity rules or continual learning in deployed scientists.",
+      "mechanism": "Tests whether agents use scientific facts under the correct validity conditions. A supplied deterministic compiler derives governing state from synthetic public events; fixed models choose among finite actions scored by programmatic oracles. Controlled source/state corruptions and repairs separate available facts from their decision-relevant relationships. No memory writer or compiler is learned.",
+      "evaluation": "Full v1 covers 64 task specifications, five validity modules, six domains and four open model families, with paired counterfactuals, equal-information views, source matching, corruption/repair and serialization controls. Compiled state improves over generic event graphs on average, but gains vary substantially by reader, module and representation.",
+      "limitations": "The 640 primary worlds average three public events each; this is not a long-history retrieval or deployed-scientist evaluation. Task rules and exact inverse repairs are supplied. Excluding 22 cases with literal action answers preserves gains but does not exclude all shortcuts. Flat versus typed state has no universal winner; some readers regress sharply under source-matched controls. Counterfactual consistency can coexist with wrong actions, and additional author-run replications are not independent curator reproduction.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-09",
       "short_name": "SciValidityBench"
     },
     {
@@ -985,10 +986,14 @@
       "url": "https://arxiv.org/abs/2610.35823",
       "sources": [
         "https://arxiv.org/abs/2610.35823",
-        "https://arxiv.org/html/2610.35823v1"
+        "https://arxiv.org/html/2610.35823v1",
+        "https://arxiv.org/pdf/2610.35823v1",
+        "https://github.com/sparklabutah/MiniWeb",
+        "https://github.com/sparklabutah/MiniWeb/blob/47714809a4ca7c35424677b42c180b0d26787c4f/scripts/paper.yaml",
+        "https://github.com/sparklabutah/MiniWeb/blob/47714809a4ca7c35424677b42c180b0d26787c4f/REPRODUCE.md"
       ],
-      "code_url": null,
-      "code_note": "Official runnable code was not independently verified in this review; no research code was executed.",
+      "code_url": "https://github.com/sparklabutah/MiniWeb",
+      "code_note": "Complete 46-page arXiv v1, Appendices A–K, all tables/prompts and ten figures read on 2026-11-09. Official README, REPRODUCE.md and paper configuration at 47714809a4ca7c35424677b42c180b0d26787c4f inspected as text. Code and artifact links are public, but no root LICENSE was verified and paper-version equivalence remains unresolved: configuration lists 63 held-out tasks and 54.5% versus v1’s 62 and 58.1%. No dependencies, datasets or checkpoints installed; nothing executed.",
       "topics": [
         "skills",
         "tools",
@@ -1002,11 +1007,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Human-demonstration guides and generated browser trajectories admitted through privileged environment-state checks.",
-      "mechanism": "Builds skill-level web tasks and generates verified practice trajectories. A LoRA-trained executor performs short interactions delegated by an untrained planner, so reusable capability is stored in weights rather than an evolving external skill library.",
-      "evaluation": "Tests ten open-weight agents, held-out MiniWeb websites, and external web benchmarks, comparing skill-only training, planner composition, matched-size task-centric data, and grader validity.",
-      "limitations": "Skill-only fine-tuning does not improve full-task success and lowers external-benchmark performance; planner composition is essential. Generation uses human guides and privileged site knowledge. Live-web scores use filtered subsets and are not comparable to full benchmark sets; larger-model scaling is untested.",
+      "mechanism": "Generates short browser-skill trajectories from human-derived guides, privileged site maps and backend success checks, then trains a Qwen3.5-4B LoRA executor. An untrained planner composes the practiced interactions into longer tasks. Capability persists in executor weights; this is offline skill training rather than an online evolving skill library.",
+      "evaluation": "Full v1 reports 65 sites, 369 human tasks and 37 primitives. Skill training raises isolated success from 55.3% to 80.3%, but complete-task success stays near 39% and external scores decline. Planner plus trained executor reaches 58.1% on 62 held-out tasks, versus 45.2% with an untrained executor, and improves three external benchmarks. Task-centric training and grader audits provide additional controls.",
+      "limitations": "Generation uses privileged DOM/backend access; step-matched training differs in teacher and verification quality. Only one of four skill-versus-task-centric comparisons survives the reported multiplicity adjustment. Planner calls and some time/action limits are unmatched. Live-web subsets are filtered, one-run evaluations; grader accuracy comes from a stratified pre-correction cohort. Most slider demonstrations click rather than drag. Public reproduction metadata disagrees with v1 on held-out counts/scores, and original run folders/audit labels are not released.",
       "review_depth": "full-text",
-      "checked": "2026-11-02",
+      "checked": "2026-11-09",
       "short_name": "MiniWeb / MiniWebAgent"
     },
     {
