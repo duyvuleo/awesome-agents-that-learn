@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Completed detailed reviews of pilot weekly picks
+
+- Read Beneath the Surface, Route to Remember and Targeted Guidance in full, including all substantive appendices and visual results.
+- Added operator-selection, content/abstention, cost and training-stability qualifications; preserved the weekly editorial snapshots.
+- Broader audit: 113 of 190 works complete, 77 pending.
+
 ## 2026-11-09 — Expanded harness-search and experience-lifecycle reviews
 
 - Read HarnessFlow and ReScopeBench with all substantive appendices, figures, formulas and cost/metric definitions.

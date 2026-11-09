@@ -49,11 +49,11 @@
       "status": "preprint",
       "venue": "arXiv preprint",
       "code_url": "https://github.com/simple-agent-lab/RSIHub",
-      "code_note": "Paper-linked RSIHub framework README inspected. Current framework availability does not establish a pinned reproduction of this paper's artifacts or results; nothing was executed.",
+      "code_note": "Full 46-page arXiv v1, substantive Appendices A–F, all thirteen figures/fifteen tables, component excerpts, human-review materials and lineage trees read on 2026-11-09. RSIHub README at d655429 inspected; current framework features and earlier displayed scores are not a pinned reproduction of this paper or its AGE bundle. Nothing was executed.",
       "scope": "core",
       "persistence": "across-tasks",
       "review_depth": "full-text",
-      "checked": "2026-11-07",
+      "checked": "2026-11-09",
       "id": "beneath-surface-agent-evolution",
       "short_name": "Beneath the Surface",
       "title": "Beneath the Surface: What We Overlook When We Talk About Agent Evolution",
@@ -62,7 +62,8 @@
       "sources": [
         "https://arxiv.org/abs/2611.07624",
         "https://arxiv.org/html/2611.07624v1",
-        "https://github.com/simple-agent-lab/RSIHub"
+        "https://github.com/simple-agent-lab/RSIHub",
+        "https://arxiv.org/pdf/2611.07624v1"
       ],
       "topics": [
         "architecture",
@@ -79,9 +80,9 @@
         "workflows"
       ],
       "learning_signal": "Training/validation task feedback and archived traces drive harness edits; post-hoc diagnostics inform fixed evolution-operator revisions.",
-      "mechanism": "Separates repeated success, task coverage, regressions, component interactions and candidate retention in harness evolution. EvoAudit diagnoses archived runs; AGE installs four fixed operator revisions into an A-Evolve recipe while preserving model and evaluator contracts.",
-      "evaluation": "Compares four adapted evolution recipes across two harnesses and two task domains, with eight-pass evaluations, component interventions and frozen transfer tests.",
-      "limitations": "Repeated evaluations are not independent evolution runs: AGE uses search seed zero and twenty generations. Operator redesign bundles four changes and uses evidence from the studied settings. Transfer varies by metric and domain; framework-adapted recipes are not unchanged original implementations."
+      "mechanism": "Audits frozen evolved harnesses for repeated success, gained/lost task coverage, component interactions and candidate retention. EvoAudit uses those diagnostics to revise four operators; AGE installs the fixed revisions into A-Evolve, retaining fixed models, evaluator contracts and editing boundaries.",
+      "evaluation": "Full v1 studies four adapted recipes with two harnesses on banking and terminal tasks, eight execution passes, external transfer, common-process parent expansion, selected component interventions and frozen-pool gate replay. AGE adds four 20-generation runs and eight-expert review of proposed operator revisions.",
+      "limitations": "Each configuration has one evolution lineage, not eight independent searches; headline source-benchmark scores include training and validation tasks. Parent and gate diagnostics use selected frozen pools, and component cases favor separable changes. AGE bundles revisions informed by the studied settings without individual operator ablations or external AGE transfer. Diagnostic/design costs are separate from online evolution; gains still coexist with regressions."
     },
     {
       "year": 2026,
@@ -127,7 +128,7 @@
       "scope": "core",
       "persistence": "across-tasks",
       "review_depth": "full-text",
-      "checked": "2026-11-08",
+      "checked": "2026-11-09",
       "id": "targeted-guidance",
       "short_name": "Targeted guidance",
       "title": "Stabilizing On-Policy Targeted Guidance in Agentic Reinforcement Learning",
@@ -136,10 +137,11 @@
       "url": "https://arxiv.org/abs/2611.05266",
       "sources": [
         "https://arxiv.org/abs/2611.05266",
-        "https://arxiv.org/html/2611.05266v2"
+        "https://arxiv.org/html/2611.05266v2",
+        "https://arxiv.org/pdf/2611.05266v2"
       ],
       "code_url": null,
-      "code_note": "Official implementation availability was not established; no code or training was executed.",
+      "code_note": "All substantive text, seven figures, the results table, equations and references of the 15-page arXiv v2 read on 2026-11-09; no appendix is included. Official training implementation and a complete reproduction configuration were not established. Referenced distillation kernels are separate software, and no code or training was executed.",
       "topics": [
         "model-training",
         "tools",
@@ -149,9 +151,9 @@
         "model-weights"
       ],
       "learning_signal": "Coding rewards, auxiliary criterion rewards and designed textual hints on failing agent turns.",
-      "mechanism": "Combines GRPO with on-policy distillation from the same model conditioned on localized feedback. Distillation applies only to failing turns and includes reasoning tokens; learned behavior persists in model weights.",
-      "evaluation": "Studies tool-format correction, final-response style and interleaved per-turn requirements in a multi-turn coding harness using an SFT-adapted Qwen3-Coder-30B.",
-      "limitations": "Hints and reward criteria are supplied. High distillation weights can still collapse performance. Table uncertainty is variability over the last training steps, not independent training runs. Broad held-out agent transfer and autonomous learning of the feedback procedure are not established."
+      "mechanism": "Combines GRPO coding/criterion rewards with full-vocabulary reverse-KL distillation at failing turns. The teacher shares current policy weights but receives a designed local hint and is stop-gradient within each update. Reasoning and response tokens receive the auxiliary signal; its contribution vanishes when all criteria pass.",
+      "evaluation": "Complete v2 studies a new semantic-search argument, seven final-response style criteria and interleaved poem-status requirements using a harness-adapted Qwen3-Coder-30B. It compares representative RL/distillation variants, failing-turn versus always-on guidance, distillation weights and reasoning-token inclusion.",
+      "limitations": "The feedback strings, criteria and procedure are supplied. Evidence concerns style/tool formatting in one coding setup; broad held-out transfer is not established. Table deviations summarize the last 32 training steps, not independent runs, and equal mean coding scores are not a non-inferiority guarantee. High distillation weights can collapse performance. Conditional improvement heuristics and disappearing auxiliary loss do not establish general convergence."
     },
     {
       "id": "route-to-remember",
@@ -164,10 +166,11 @@
       "url": "https://arxiv.org/abs/2611.05636",
       "sources": [
         "https://arxiv.org/abs/2611.05636",
-        "https://arxiv.org/html/2611.05636v1"
+        "https://arxiv.org/html/2611.05636v1",
+        "https://arxiv.org/pdf/2611.05636v1"
       ],
       "code_url": null,
-      "code_note": "An official implementation was not established in the inspected sources; no code or training was run.",
+      "code_note": "Complete 18-page arXiv v1, Appendix A.1–A.15, three figures/fifteen tables and objective read on 2026-11-09. The workshop website had no paper-specific program and its public venue API was restricted, so acceptance remains author-reported. Official implementation availability was not established; no training or research code was run.",
       "topics": [
         "memory",
         "model-training",
@@ -181,11 +184,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Memory-derived synthetic questions and a frozen base-model teacher conditioned on recent memory guide per-user adapter updates.",
-      "mechanism": "Distills session information into a persistent LoRA adapter using student-generated answers scored by a context-conditioned teacher. A verify-then-regenerate reader checks the adapter’s answer against a merged text store and uses the adapter-free model to regenerate unsupported answers.",
-      "evaluation": "Compares weight and text memory on 1,438 native HaluMem questions, delayed re-asks, and LoCoMo, with training-recipe, routing, and model-scale analyses.",
-      "limitations": "Recent-fact gains weaken as memories age. Routing improves overall accuracy but lowers the HaluMem conflict-category score. Refusal depends on synthetic unknown-answer training, and the paper identifies judge/rubric errors. Lower read-token use is not a complete cost result: writing is expensive and token accounting omits distillation compute.",
+      "mechanism": "A persistent per-user LoRA adapter learns from student-sampled answers scored by a frozen base-model teacher given recent extracted memory. The hybrid always retrieves query- and answer-based evidence, verifies the adapter answer, then uses the adapter-free model to regenerate unsupported or conflicting answers from the merged text store.",
+      "evaluation": "Full v1 reports 1,438 native HaluMem questions from eight users, delayed re-asks, a 1,586-question LoCoMo comparison, model-scale tests, earlier recipe probes and routing/cost diagnostics. Native-question and pooled-age results are distinct; user-clustered intervals do not measure training-run variability.",
+      "limitations": "Recent-memory gains diminish with age. Routing lowers HaluMem conflict accuracy; on LoCoMo its overall gain comes with lower scores on all four answerable categories and much higher abstention accuracy. Some appendix probes use different recipes, and reported rubric errors are author diagnoses. Training compute is omitted from cost totals; token savings do not establish lower GPU cost or a validated break-even point.",
       "review_depth": "full-text",
-      "checked": "2026-11-06",
+      "checked": "2026-11-09",
       "short_name": "Route to Remember"
     },
     {

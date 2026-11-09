@@ -13,10 +13,10 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-05 | **Beneath the Surface**<br>[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](https://arxiv.org/abs/2611.07624) | Separates repeated success, task coverage, regressions, component interactions and candidate retention in harness evolution. EvoAudit diagnoses archived runs; AGE… | Agent code, Prompts / context, Skills, Workflows | preprint · full-text | [Notes](#beneath-surface-agent-evolution) · [Code](https://github.com/simple-agent-lab/RSIHub) |
+| 2026-11-05 | **Beneath the Surface**<br>[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](https://arxiv.org/abs/2611.07624) | Audits frozen evolved harnesses for repeated success, gained/lost task coverage, component interactions and candidate retention. EvoAudit uses those diagnostics to… | Agent code, Prompts / context, Skills, Workflows | preprint · full-text | [Notes](#beneath-surface-agent-evolution) · [Code](https://github.com/simple-agent-lab/RSIHub) |
 | 2026-11-04 | **HarnessFlow**<br>[HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](https://arxiv.org/abs/2611.06254) | A fixed coding agent proposes complete executable harness edits using an optional component library. Tree-based selection mixes validation score and direct-child… | Agent code, Prompts / context, Workflows | preprint · full-text | [Notes](#harnessflow) |
-| 2026-11-03 | **Targeted guidance**<br>[Stabilizing On-Policy Targeted Guidance in Agentic Reinforcement Learning](https://arxiv.org/abs/2611.05266) | Combines GRPO with on-policy distillation from the same model conditioned on localized feedback. Distillation applies only to failing turns and includes reasoning… | Model weights | preprint · full-text | [Notes](#targeted-guidance) |
-| 2026-11-03 | **Route to Remember**<br>[Route to Remember: Adaptive Memory Selection for LLM Agents](https://arxiv.org/abs/2611.05636) | Distills session information into a persistent LoRA adapter using student-generated answers scored by a context-conditioned teacher. A verify-then-regenerate reader… | Model weights, Memory | preprint · full-text | [Notes](#route-to-remember) |
+| 2026-11-03 | **Targeted guidance**<br>[Stabilizing On-Policy Targeted Guidance in Agentic Reinforcement Learning](https://arxiv.org/abs/2611.05266) | Combines GRPO coding/criterion rewards with full-vocabulary reverse-KL distillation at failing turns. The teacher shares current policy weights but receives a designed… | Model weights | preprint · full-text | [Notes](#targeted-guidance) |
+| 2026-11-03 | **Route to Remember**<br>[Route to Remember: Adaptive Memory Selection for LLM Agents](https://arxiv.org/abs/2611.05636) | A persistent per-user LoRA adapter learns from student-sampled answers scored by a frozen base-model teacher given recent extracted memory. The hybrid always retrieves… | Model weights, Memory | preprint · full-text | [Notes](#route-to-remember) |
 | 2026-11-03 | **ReScopeBench**<br>[Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](https://arxiv.org/abs/2611.05450) | Pairs streams retaining versus clearing memory, skills and history under a fixed Hermes framework and model. Silent changes invalidate selected environment knowledge.… | Memory, Skills | preprint · full-text | [Notes](#rescopebench) · [Code](https://github.com/JoeYing1019/ReScopeBench) |
 | 2026-11-03 | **Meta²**<br>[Meta$^2$: Precomputing Reusable Knowledge for Online Harness Evolution in Long-Horizon Agents](https://arxiv.org/abs/2611.05139) | Learns a textual Meta-Skill offline, then freezes it to guide a separate evolver at checkpoints within each task. Bounded notices, instructions, hooks and tools alter… | Skills, Prompts / context, Tools, Workflows | preprint · full-text | [Notes](#meta-square) |
 | 2026-11-03 | **Continual AutoResearch**<br>[From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?](https://arxiv.org/abs/2611.05108) | Compares persistent sessions and workspaces with reset instances of the same research agent on matched task streams and time budgets. Separate first-solution… | Memory | preprint · full-text | [Notes](#continual-autoresearch) |
@@ -214,19 +214,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2611.07624)
 
-**Mechanism.** Separates repeated success, task coverage, regressions, component interactions and candidate retention in harness evolution. EvoAudit diagnoses archived runs; AGE installs four fixed operator revisions into an A-Evolve recipe while preserving model and evaluator contracts.
+**Mechanism.** Audits frozen evolved harnesses for repeated success, gained/lost task coverage, component interactions and candidate retention. EvoAudit uses those diagnostics to revise four operators; AGE installs the fixed revisions into A-Evolve, retaining fixed models, evaluator contracts and editing boundaries.
 
 **What changes:** Agent code, Prompts / context, Skills, Workflows. **Persistence:** across-tasks. **Learning signal:** Training/validation task feedback and archived traces drive harness edits; post-hoc diagnostics inform fixed evolution-operator revisions.
 
-**Evaluation.** Compares four adapted evolution recipes across two harnesses and two task domains, with eight-pass evaluations, component interventions and frozen transfer tests.
+**Evaluation.** Full v1 studies four adapted recipes with two harnesses on banking and terminal tasks, eight execution passes, external transfer, common-process parent expansion, selected component interventions and frozen-pool gate replay. AGE adds four 20-generation runs and eight-expert review of proposed operator revisions.
 
-**Boundary.** Repeated evaluations are not independent evolution runs: AGE uses search seed zero and twenty generations. Operator redesign bundles four changes and uses evidence from the studied settings. Transfer varies by metric and domain; framework-adapted recipes are not unchanged original implementations.
+**Boundary.** Each configuration has one evolution lineage, not eight independent searches; headline source-benchmark scores include training and validation tasks. Parent and gate diagnostics use selected frozen pools, and component cases favor separable changes. AGE bundles revisions informed by the studied settings without individual operator ablations or external AGE transfer. Diagnostic/design costs are separate from online evolution; gains still coexist with regressions.
 
-**Code / data.** [Official artifact](https://github.com/simple-agent-lab/RSIHub) — Paper-linked RSIHub framework README inspected. Current framework availability does not establish a pinned reproduction of this paper's artifacts or results; nothing was executed.
+**Code / data.** [Official artifact](https://github.com/simple-agent-lab/RSIHub) — Full 46-page arXiv v1, substantive Appendices A–F, all thirteen figures/fifteen tables, component excerpts, human-review materials and lineage trees read on 2026-11-09. RSIHub README at d655429 inspected; current framework features and earlier displayed scores are not a pinned reproduction of this paper or its AGE bundle. Nothing was executed.
 
-**Topics:** architecture, workflows, prompts, skills, recursive-improvement, evaluation. **Reviewed:** full-text · 2026-11-07.
+**Topics:** architecture, workflows, prompts, skills, recursive-improvement, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2611.07624) · [Source 2](https://arxiv.org/html/2611.07624v1) · [Source 3](https://github.com/simple-agent-lab/RSIHub)
+[Source 1](https://arxiv.org/abs/2611.07624) · [Source 2](https://arxiv.org/html/2611.07624v1) · [Source 3](https://github.com/simple-agent-lab/RSIHub) · [Source 4](https://arxiv.org/pdf/2611.07624v1)
 
 <a id="harnessflow"></a>
 
@@ -258,19 +258,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2611.05266)
 
-**Mechanism.** Combines GRPO with on-policy distillation from the same model conditioned on localized feedback. Distillation applies only to failing turns and includes reasoning tokens; learned behavior persists in model weights.
+**Mechanism.** Combines GRPO coding/criterion rewards with full-vocabulary reverse-KL distillation at failing turns. The teacher shares current policy weights but receives a designed local hint and is stop-gradient within each update. Reasoning and response tokens receive the auxiliary signal; its contribution vanishes when all criteria pass.
 
 **What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Coding rewards, auxiliary criterion rewards and designed textual hints on failing agent turns.
 
-**Evaluation.** Studies tool-format correction, final-response style and interleaved per-turn requirements in a multi-turn coding harness using an SFT-adapted Qwen3-Coder-30B.
+**Evaluation.** Complete v2 studies a new semantic-search argument, seven final-response style criteria and interleaved poem-status requirements using a harness-adapted Qwen3-Coder-30B. It compares representative RL/distillation variants, failing-turn versus always-on guidance, distillation weights and reasoning-token inclusion.
 
-**Boundary.** Hints and reward criteria are supplied. High distillation weights can still collapse performance. Table uncertainty is variability over the last training steps, not independent training runs. Broad held-out agent transfer and autonomous learning of the feedback procedure are not established.
+**Boundary.** The feedback strings, criteria and procedure are supplied. Evidence concerns style/tool formatting in one coding setup; broad held-out transfer is not established. Table deviations summarize the last 32 training steps, not independent runs, and equal mean coding scores are not a non-inferiority guarantee. High distillation weights can collapse performance. Conditional improvement heuristics and disappearing auxiliary loss do not establish general convergence.
 
-**Code / data.** Official implementation availability was not established; no code or training was executed.
+**Code / data.** All substantive text, seven figures, the results table, equations and references of the 15-page arXiv v2 read on 2026-11-09; no appendix is included. Official training implementation and a complete reproduction configuration were not established. Referenced distillation kernels are separate software, and no code or training was executed.
 
-**Topics:** model-training, tools, evaluation. **Reviewed:** full-text · 2026-11-08.
+**Topics:** model-training, tools, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2611.05266) · [Source 2](https://arxiv.org/html/2611.05266v2)
+[Source 1](https://arxiv.org/abs/2611.05266) · [Source 2](https://arxiv.org/html/2611.05266v2) · [Source 3](https://arxiv.org/pdf/2611.05266v2)
 
 <a id="route-to-remember"></a>
 
@@ -280,19 +280,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2611.05636)
 
-**Mechanism.** Distills session information into a persistent LoRA adapter using student-generated answers scored by a context-conditioned teacher. A verify-then-regenerate reader checks the adapter’s answer against a merged text store and uses the adapter-free model to regenerate unsupported answers.
+**Mechanism.** A persistent per-user LoRA adapter learns from student-sampled answers scored by a frozen base-model teacher given recent extracted memory. The hybrid always retrieves query- and answer-based evidence, verifies the adapter answer, then uses the adapter-free model to regenerate unsupported or conflicting answers from the merged text store.
 
 **What changes:** Model weights, Memory. **Persistence:** across-tasks. **Learning signal:** Memory-derived synthetic questions and a frozen base-model teacher conditioned on recent memory guide per-user adapter updates.
 
-**Evaluation.** Compares weight and text memory on 1,438 native HaluMem questions, delayed re-asks, and LoCoMo, with training-recipe, routing, and model-scale analyses.
+**Evaluation.** Full v1 reports 1,438 native HaluMem questions from eight users, delayed re-asks, a 1,586-question LoCoMo comparison, model-scale tests, earlier recipe probes and routing/cost diagnostics. Native-question and pooled-age results are distinct; user-clustered intervals do not measure training-run variability.
 
-**Boundary.** Recent-fact gains weaken as memories age. Routing improves overall accuracy but lowers the HaluMem conflict-category score. Refusal depends on synthetic unknown-answer training, and the paper identifies judge/rubric errors. Lower read-token use is not a complete cost result: writing is expensive and token accounting omits distillation compute.
+**Boundary.** Recent-memory gains diminish with age. Routing lowers HaluMem conflict accuracy; on LoCoMo its overall gain comes with lower scores on all four answerable categories and much higher abstention accuracy. Some appendix probes use different recipes, and reported rubric errors are author diagnoses. Training compute is omitted from cost totals; token savings do not establish lower GPU cost or a validated break-even point.
 
-**Code / data.** An official implementation was not established in the inspected sources; no code or training was run.
+**Code / data.** Complete 18-page arXiv v1, Appendix A.1–A.15, three figures/fifteen tables and objective read on 2026-11-09. The workshop website had no paper-specific program and its public venue API was restricted, so acceptance remains author-reported. Official implementation availability was not established; no training or research code was run.
 
-**Topics:** memory, model-training, continual-learning, evaluation. **Reviewed:** full-text · 2026-11-06.
+**Topics:** memory, model-training, continual-learning, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2611.05636) · [Source 2](https://arxiv.org/html/2611.05636v1)
+[Source 1](https://arxiv.org/abs/2611.05636) · [Source 2](https://arxiv.org/html/2611.05636v1) · [Source 3](https://arxiv.org/pdf/2611.05636v1)
 
 <a id="rescopebench"></a>
 
