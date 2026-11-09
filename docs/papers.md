@@ -55,8 +55,8 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-21 | **Code-edit readout**<br>[Recursive Self-Improvement on a Budget: Scoring Code Edits Before They Run](https://arxiv.org/abs/2610.29121) | Fits a per-run linear predictor from a parent’s steering-set score and eight random projections of a proposed scaffold diff embedding. After calibration, the predictor… | Agent code, Prompts / context | preprint · full-text | [Notes](#rsi-budget-code-scoring) |
 | 2026-10-21 | **MemoryTax**<br>[MemoryTax: The Bitter Lesson of Agent Memory](https://arxiv.org/abs/2610.29823) | Compares raw-history context and BM25, extracted-fact and graph stores, and coding agents that search conversation files. Writer–reader swaps hold each store and its… | Analysis / no retained update | preprint · full-text | [Notes](#memorytax) · [Code](https://github.com/zedong-peng/memorytax) |
 | 2026-10-20 | **RSI evidence audit**<br>[Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](https://arxiv.org/abs/2610.27610) | Measures reported evaluation designs against distinct claims about final products, accumulation, repeatability and improvement of the improver. Its codebook separates… | Analysis / no retained update | preprint · full-text | [Notes](#rsi-evaluation-audit) |
-| 2026-10-19 | **Continual learning limits**<br>[Are Self-Evolving Agents Continual Learners?](https://arxiv.org/abs/2610.25858) | Evaluates frozen-model agents that update retrieved experience, a shared prompt, or harness files on drifting streams. It separates gains on current tasks from… | Memory, Prompts / context, Agent code | preprint · full-text | [Notes](#self-evolving-continual-learners) |
-| 2026-10-19 | **REM**<br>[REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents](https://arxiv.org/abs/2610.27377) | Consolidates past coding traces into phased documents, injects a retrieved document at task start, and exposes a detailed implementation record only when the agent… | Memory, Prompts / context | preprint · full-text | [Notes](#rem-experience-memory) |
+| 2026-10-19 | **Continual learning limits**<br>[Are Self-Evolving Agents Continual Learners?](https://arxiv.org/abs/2610.25858) | Evaluates fixed-weight agents that retain retrieved reflections, a globally rewritten strategy prompt, or an editable workspace across task blocks. Shared harnesses… | Memory, Prompts / context, Agent code | preprint · full-text | [Notes](#self-evolving-continual-learners) |
+| 2026-10-19 | **REM**<br>[REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents](https://arxiv.org/abs/2610.27377) | Consolidates a fixed pool of solved coding traces into short localize/understand/fix/verify documents. A retrieved document persists throughout the new task; a… | Memory, Prompts / context | peer-reviewed · full-text | [Notes](#rem-experience-memory) |
 | 2026-10-15 | **MemComposer**<br>[MemComposer: Learning to Assemble Memories for LLM Agents via Reinforcement Learning](https://arxiv.org/abs/2610.21091) | Trains a memory-composition policy to choose the number, identity, and ordering of retrieved experiences. GRPO-based Experience Policy Optimization updates the composer… | Model weights, Prompts / context | preprint · full-text | [Notes](#memcomposer) · [Code](https://github.com/Makr-Xie/MemComposer) |
 | 2026-10-09 | **Harness²**<br>[Harness^2: Recursive Agent Harnessing for an Open World](https://arxiv.org/abs/2610.14224) | Proposes and probes harness edits on the current task, then composes a successor. Adopted harnesses and evidence-linked lessons enter a persistent library that guides… | Agent code, Prompts / context, Memory, Skills, Tools | preprint · full-text | [Notes](#harness2) · [Code](https://github.com/google-research/harness2) |
 | 2026-10-07 | **EmbodiedRSI**<br>[EmbodiedRSI: Active Continual Robot Learning Through Hypothesis-Guided Co-Evolution](https://arxiv.org/abs/2610.10498) | Selects informative trials over code/skill hypotheses and retains successful revisions in hierarchical memory. A PPO-trained manager learns memory actions while the… | Agent code, Skills, Memory, Model weights | preprint · full-text | [Notes](#embodiedrsi) |
@@ -1140,41 +1140,41 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.25858)
 
-**Mechanism.** Evaluates frozen-model agents that update retrieved experience, a shared prompt, or harness files on drifting streams. It separates gains on current tasks from interference with unseen families and forgetting of earlier ones.
+**Mechanism.** Evaluates fixed-weight agents that retain retrieved reflections, a globally rewritten strategy prompt, or an editable workspace across task blocks. Shared harnesses learn from binary training feedback without explicit group labels. Frozen checkpoints are reassessed on earlier and future groups to distinguish aggregate gains, interference and forgetting.
 
 **What changes:** Memory, Prompts / context, Agent code. **Persistence:** across-tasks. **Learning signal:** Environment task-success feedback used by the evaluated evolvers; held-out checkpoint tests measure retention and interference.
 
-**Evaluation.** ReasoningBank, GEPA, and Meta-Harness are compared with a common Gemini 3.6 Flash backbone on four streams built from BIRD, BFCL, and ScienceWorld, with disjoint held-out evaluations.
+**Evaluation.** Full v1 compares adapted ReasoningBank, GEPA and Meta-Harness on four BIRD/BFCL/ScienceWorld streams and an interleaved reference. Each group contributes fifty training tasks; checkpoints use eight rollouts per held-out instance. It reports per-group metrics, prompt-edit histories, clarification behavior and cross-group retrieval. Aggregate gains coexist with substantial group-specific regressions.
 
-**Boundary.** Findings concern these implementations, one backbone, and constructed drift schedules. The retrieval baseline always injects its nearest memory without a similarity threshold; global edits and conflicting workflows expose different failure modes, not a universal impossibility result.
+**Boundary.** One backbone and a small set of ordered streams do not establish a universal plasticity–stability law. Eight evaluation rollouts are not independent evolution runs; order/seed sensitivity and matched search cost are not reported. Plasticity is measured against the seed, and clipped forgetting shares a term with it. Prompt shares and similarity averages are diagnostic associations, not causal attribution or proof that every threshold fails. Broader workspace editing is not consistently better, and interleaving helps some aggregates.
 
-**Code / data.** Official runnable code was not independently established in this review; this does not imply that no release exists.
+**Code / data.** Complete 24-page arXiv v1, Appendices A–E, nine figures/five tables, eleven equations, retrieval details and all seed/environment prompts read on 2026-11-09. The first arXiv submission is 19 October despite a 20 October date on the PDF. No official experiment implementation was independently verified; the linked opencode repository is a proposer dependency. No agents, benchmark environments or research code executed.
 
-**Topics:** continual-learning, evaluation, memory, prompts, architecture. **Reviewed:** full-text · 2026-10-29.
+**Topics:** continual-learning, evaluation, memory, prompts, architecture. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.25858) · [Source 2](https://arxiv.org/html/2610.25858v1)
+[Source 1](https://arxiv.org/abs/2610.25858) · [Source 2](https://arxiv.org/html/2610.25858v1) · [Source 3](https://arxiv.org/pdf/2610.25858v1)
 
 <a id="rem-experience-memory"></a>
 
 ## REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents
 
-**2026-10-19 · preprint · Author reports NeurIPS 2026 CLEA workshop acceptance; venue record not independently verified. · adjacent · paper**
+**2026-10-19 · peer-reviewed · NeurIPS 2026 CLEA Workshop — accepted poster (workshop, not main conference) · adjacent · paper**
 
 [Primary source](https://arxiv.org/abs/2610.27377)
 
-**Mechanism.** Consolidates past coding traces into phased documents, injects a retrieved document at task start, and exposes a detailed implementation record only when the agent struggles. The detailed record is evicted after one exposure.
+**Mechanism.** Consolidates a fixed pool of solved coding traces into short localize/understand/fix/verify documents. A retrieved document persists throughout the new task; a handwritten first-failed-validation trigger exposes a detailed record for one turn only. The record is then removed, while the agent’s own response remains in history. The evaluated pool does not grow online.
 
 **What changes:** Memory, Prompts / context. **Persistence:** both. **Learning signal:** Completed trajectories supply structured experience; a hand-written in-loop struggle signal controls when detailed records enter context.
 
-**Evaluation.** Studies 99 SWE-ContextBench Lite tasks, with three replicates for the principal Sonnet 4.5 conditions, retrieval comparisons, ablations, and additional model contrasts.
+**Evaluation.** Full v1 tests 99 SWE-ContextBench Lite tasks, with three Sonnet-4.5 repeats for primary recall policies and single-run model/oracle contrasts. REM resolves 27.6% versus 24.9% without memory and reduces price-weighted tokens by 17%, but the paired resolution test is inconclusive. Automatic schema discovery improves retrieval to 68.7%; end-task runs use the handwritten schema.
 
-**Boundary.** Experiments reuse a fixed experience pool rather than an online-growing memory. Recall-policy contrasts do not reach p<0.05 at this sample size; several secondary conditions run once. Retrieval baselines use different configurations, and stronger agents can be harmed by memory. All tasks retrieve same-repository experience; similarity to gold patches was not measured.
+**Boundary.** None of the principal resolution-policy contrasts reaches p<0.05. Repeated tasks and shared repositories limit independence, and most secondary arms run once. Retrieval baselines use their own published configurations; the discovered-schema pool is incomplete after API failures. Identifier mentions do not prove causal use. Stronger recipients can be harmed, record eviction is incomplete forgetting, and text-to-SQL schema generation is not a second-domain task-success evaluation.
 
-**Code / data.** An official implementation was not independently verified in this review; this does not establish that none exists.
+**Code / data.** Complete 16-page arXiv v1, Appendices A–G, three figures/fourteen tables, algorithm, injection mechanics and schema/accounting details read on 2026-11-09. Official CLEA 2026 accepted-paper list verifies poster acceptance under its stated peer-review process; this is not NeurIPS main-conference publication. No official implementation or reproduction package was independently verified. Nothing installed or executed.
 
-**Topics:** memory, evaluation, applications. **Reviewed:** full-text · 2026-10-29.
+**Topics:** memory, evaluation, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.27377) · [Source 2](https://arxiv.org/html/2610.27377v1)
+[Source 1](https://arxiv.org/abs/2610.27377) · [Source 2](https://arxiv.org/html/2610.27377v1) · [Source 3](https://arxiv.org/pdf/2610.27377v1) · [Source 4](https://clea-neurips.github.io/)
 
 <a id="memcomposer"></a>
 

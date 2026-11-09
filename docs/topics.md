@@ -76,7 +76,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026-10-22 — [METTA: Memory-Enhanced Test-Time Adaptation for Meta-Reinforcement Learning](papers.md#metta) · adjacent · preprint
 - 2026-10-21 — [MemoryTax: The Bitter Lesson of Agent Memory](papers.md#memorytax) · adjacent · preprint
 - 2026-10-19 — [Are Self-Evolving Agents Continual Learners?](papers.md#self-evolving-continual-learners) · core · preprint
-- 2026-10-19 — [REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents](papers.md#rem-experience-memory) · adjacent · preprint
+- 2026-10-19 — [REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents](papers.md#rem-experience-memory) · adjacent · peer-reviewed
 - 2026-10-15 — [MemComposer: Learning to Assemble Memories for LLM Agents via Reinforcement Learning](papers.md#memcomposer) · core · preprint
 - 2026-10-09 — [Harness^2: Recursive Agent Harnessing for an Open World](papers.md#harness2) · core · preprint
 - 2026-10-07 — [EmbodiedRSI: Active Continual Robot Learning Through Hypothesis-Guided Co-Evolution](papers.md#embodiedrsi) · core · preprint
@@ -563,7 +563,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026-10-21 — [MemoryTax: The Bitter Lesson of Agent Memory](papers.md#memorytax) · adjacent · preprint
 - 2026-10-20 — [Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](papers.md#rsi-evaluation-audit) · core · preprint
 - 2026-10-19 — [Are Self-Evolving Agents Continual Learners?](papers.md#self-evolving-continual-learners) · core · preprint
-- 2026-10-19 — [REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents](papers.md#rem-experience-memory) · adjacent · preprint
+- 2026-10-19 — [REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents](papers.md#rem-experience-memory) · adjacent · peer-reviewed
 - 2026-10-02 — [VERSE: Verified Self-Evolving Optimizer for Agent Harnesses](papers.md#verse) · core · preprint
 - 2026-10-02 — [RIFAR: Reliability-Informed and Forgetting-Aware Replay for Continual Robot Learning with World-Action Models](papers.md#rifar) · core · preprint
 - 2026-09-28 — [Learn Now, Use Next, Trust Later: Prequential Test-Time Learning for LLM Agents](papers.md#steplearn) · core · preprint
@@ -675,7 +675,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026-10-24 — [ReSight: Task-Driven Self-Improving Memory for Embodied Agents](papers.md#resight) · core · preprint
 - 2026-10-22 — [METTA: Memory-Enhanced Test-Time Adaptation for Meta-Reinforcement Learning](papers.md#metta) · adjacent · preprint
 - 2026-10-21 — [Recursive Self-Improvement on a Budget: Scoring Code Edits Before They Run](papers.md#rsi-budget-code-scoring) · core · preprint
-- 2026-10-19 — [REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents](papers.md#rem-experience-memory) · adjacent · preprint
+- 2026-10-19 — [REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents](papers.md#rem-experience-memory) · adjacent · peer-reviewed
 - 2026-10-09 — [Harness^2: Recursive Agent Harnessing for an Open World](papers.md#harness2) · core · preprint
 - 2026-10-07 — [EmbodiedRSI: Active Continual Robot Learning Through Hypothesis-Guided Co-Evolution](papers.md#embodiedrsi) · core · preprint
 - 2026-10-04 — [ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience](papers.md#ascent) · core · preprint

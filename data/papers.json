@@ -4757,15 +4757,17 @@
     "date": "2026-10-19",
     "year": 2026,
     "kind": "paper",
-    "status": "preprint",
-    "venue": "Author reports NeurIPS 2026 CLEA workshop acceptance; venue record not independently verified.",
+    "status": "peer-reviewed",
+    "venue": "NeurIPS 2026 CLEA Workshop — accepted poster (workshop, not main conference)",
     "url": "https://arxiv.org/abs/2610.27377",
     "sources": [
       "https://arxiv.org/abs/2610.27377",
-      "https://arxiv.org/html/2610.27377v1"
+      "https://arxiv.org/html/2610.27377v1",
+      "https://arxiv.org/pdf/2610.27377v1",
+      "https://clea-neurips.github.io/"
     ],
     "code_url": null,
-    "code_note": "An official implementation was not independently verified in this review; this does not establish that none exists.",
+    "code_note": "Complete 16-page arXiv v1, Appendices A–G, three figures/fourteen tables, algorithm, injection mechanics and schema/accounting details read on 2026-11-09. Official CLEA 2026 accepted-paper list verifies poster acceptance under its stated peer-review process; this is not NeurIPS main-conference publication. No official implementation or reproduction package was independently verified. Nothing installed or executed.",
     "topics": [
       "memory",
       "evaluation",
@@ -4778,11 +4780,11 @@
     ],
     "persistence": "both",
     "learning_signal": "Completed trajectories supply structured experience; a hand-written in-loop struggle signal controls when detailed records enter context.",
-    "mechanism": "Consolidates past coding traces into phased documents, injects a retrieved document at task start, and exposes a detailed implementation record only when the agent struggles. The detailed record is evicted after one exposure.",
-    "evaluation": "Studies 99 SWE-ContextBench Lite tasks, with three replicates for the principal Sonnet 4.5 conditions, retrieval comparisons, ablations, and additional model contrasts.",
-    "limitations": "Experiments reuse a fixed experience pool rather than an online-growing memory. Recall-policy contrasts do not reach p<0.05 at this sample size; several secondary conditions run once. Retrieval baselines use different configurations, and stronger agents can be harmed by memory. All tasks retrieve same-repository experience; similarity to gold patches was not measured.",
+    "mechanism": "Consolidates a fixed pool of solved coding traces into short localize/understand/fix/verify documents. A retrieved document persists throughout the new task; a handwritten first-failed-validation trigger exposes a detailed record for one turn only. The record is then removed, while the agent’s own response remains in history. The evaluated pool does not grow online.",
+    "evaluation": "Full v1 tests 99 SWE-ContextBench Lite tasks, with three Sonnet-4.5 repeats for primary recall policies and single-run model/oracle contrasts. REM resolves 27.6% versus 24.9% without memory and reduces price-weighted tokens by 17%, but the paired resolution test is inconclusive. Automatic schema discovery improves retrieval to 68.7%; end-task runs use the handwritten schema.",
+    "limitations": "None of the principal resolution-policy contrasts reaches p<0.05. Repeated tasks and shared repositories limit independence, and most secondary arms run once. Retrieval baselines use their own published configurations; the discovered-schema pool is incomplete after API failures. Identifier mentions do not prove causal use. Stronger recipients can be harmed, record eviction is incomplete forgetting, and text-to-SQL schema generation is not a second-domain task-success evaluation.",
     "review_depth": "full-text",
-    "checked": "2026-10-29",
+    "checked": "2026-11-09",
     "short_name": "REM"
   },
   {
@@ -5576,10 +5578,11 @@
     "url": "https://arxiv.org/abs/2610.25858",
     "sources": [
       "https://arxiv.org/abs/2610.25858",
-      "https://arxiv.org/html/2610.25858v1"
+      "https://arxiv.org/html/2610.25858v1",
+      "https://arxiv.org/pdf/2610.25858v1"
     ],
     "code_url": null,
-    "code_note": "Official runnable code was not independently established in this review; this does not imply that no release exists.",
+    "code_note": "Complete 24-page arXiv v1, Appendices A–E, nine figures/five tables, eleven equations, retrieval details and all seed/environment prompts read on 2026-11-09. The first arXiv submission is 19 October despite a 20 October date on the PDF. No official experiment implementation was independently verified; the linked opencode repository is a proposer dependency. No agents, benchmark environments or research code executed.",
     "topics": [
       "continual-learning",
       "evaluation",
@@ -5595,11 +5598,11 @@
     ],
     "persistence": "across-tasks",
     "learning_signal": "Environment task-success feedback used by the evaluated evolvers; held-out checkpoint tests measure retention and interference.",
-    "mechanism": "Evaluates frozen-model agents that update retrieved experience, a shared prompt, or harness files on drifting streams. It separates gains on current tasks from interference with unseen families and forgetting of earlier ones.",
-    "evaluation": "ReasoningBank, GEPA, and Meta-Harness are compared with a common Gemini 3.6 Flash backbone on four streams built from BIRD, BFCL, and ScienceWorld, with disjoint held-out evaluations.",
-    "limitations": "Findings concern these implementations, one backbone, and constructed drift schedules. The retrieval baseline always injects its nearest memory without a similarity threshold; global edits and conflicting workflows expose different failure modes, not a universal impossibility result.",
+    "mechanism": "Evaluates fixed-weight agents that retain retrieved reflections, a globally rewritten strategy prompt, or an editable workspace across task blocks. Shared harnesses learn from binary training feedback without explicit group labels. Frozen checkpoints are reassessed on earlier and future groups to distinguish aggregate gains, interference and forgetting.",
+    "evaluation": "Full v1 compares adapted ReasoningBank, GEPA and Meta-Harness on four BIRD/BFCL/ScienceWorld streams and an interleaved reference. Each group contributes fifty training tasks; checkpoints use eight rollouts per held-out instance. It reports per-group metrics, prompt-edit histories, clarification behavior and cross-group retrieval. Aggregate gains coexist with substantial group-specific regressions.",
+    "limitations": "One backbone and a small set of ordered streams do not establish a universal plasticity–stability law. Eight evaluation rollouts are not independent evolution runs; order/seed sensitivity and matched search cost are not reported. Plasticity is measured against the seed, and clipped forgetting shares a term with it. Prompt shares and similarity averages are diagnostic associations, not causal attribution or proof that every threshold fails. Broader workspace editing is not consistently better, and interleaving helps some aggregates.",
     "review_depth": "full-text",
-    "checked": "2026-10-29",
+    "checked": "2026-11-09",
     "short_name": "Continual learning limits"
   },
   {

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-09 — Expanded experience-memory and continual-learning reviews
+
+- Completed REM and the continual-learning study, including full appendices and statistical limits.
+- Verified REM’s CLEA 2026 workshop poster acceptance from the official program.
+- Clarified fixed-pool reuse, schema-only transfer, recipient regressions and metric definitions.
+- Broader audit: 146 of 190 works complete, 44 pending.
+
 ## 2026-11-09 — Expanded RSI selection and evidence-audit reviews
 
 - Completed both RSI papers, their proofs, codebook and full study-code tables.
