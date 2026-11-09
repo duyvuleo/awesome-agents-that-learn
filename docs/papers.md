@@ -113,18 +113,18 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-03-01 | **AutoSkill**<br>[AutoSkill: Experience-Driven Lifelong Learning via Skill Self-Evolution](https://arxiv.org/abs/2603.01145) | Uses fixed prompted modules to rewrite queries, retrieve instruction skills with hybrid dense/lexical search, and update a persistent versioned skill bank. A… | Skills, Memory, Prompts / context | preprint · full-text | [Notes](#autoskill) · [Code](https://github.com/ECNU-ICALK/AutoSkill) |
 | 2026-02-26 | **EvoX**<br>[EvoX: Meta-Evolution for Automated Discovery](https://arxiv.org/abs/2602.23413) | Co-evolves candidate programs and the search strategy that selects parents, variation operators, and examples. Stagnation triggers strategy revisions informed by earlier… | Agent code, Prompts / context | peer-reviewed · full-text | [Notes](#evox) · [Code](https://github.com/skydiscover-ai/skydiscover) |
 | 2026-02-18 | **MemoryArena**<br>[Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](https://proceedings.mlr.press/v306/he26am.html) | Constructs shopping, travel, search and research-reasoning task chains, comparing verbatim history, retrieval stores and external memory systems. Memory resets between… | Memory, Skills | peer-reviewed · full-text | [Notes](#memoryarena) · [Code](https://github.com/ZexueHe/MemoryArena) |
-| 2026-02-09 | **SkillRL**<br>[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](https://arxiv.org/abs/2602.08234) | Distills successful and failed trajectories into a hierarchical skill library, retrieves those skills during policy training, and adds lessons from validation failures.… | Skills, Model weights | preprint · full-text | [Notes](#skillrl) · [Code](https://github.com/aiming-lab/SkillRL) |
+| 2026-02-09 | **SkillRL**<br>[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](https://arxiv.org/abs/2602.08234) | A teacher distills successes and failures into general and task-specific skills and generates a cold-start SFT dataset. GRPO then updates the acting policy while… | Skills, Model weights | peer-reviewed · full-text | [Notes](#skillrl) · [Code](https://github.com/aiming-lab/SkillRL) |
 | 2026-02-04 | **Group-Evolving Agents**<br>[Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing](https://arxiv.org/abs/2602.04837) | Selects pairs of agents using performance and behavioral novelty, shares their experience, and generates framework-level patches for both. A fixed… | Agent code, Workflows | peer-reviewed · full-text | [Notes](#group-evolving-agents) |
 | 2026-02-03 | **TAME**<br>[TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking](https://arxiv.org/abs/2602.03224) | An executor retrieves useful experiences with risk guidance from a shared memory bank. An evaluator revises reuse priorities after outcomes, while new experiences enter… | Memory | peer-reviewed · full-text | [Notes](#tame-memory) · [Code](https://github.com/SII-YUCHENG2002/tame_code) |
 | 2026-02-03 | **Reasoning Cache**<br>[Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon RL](https://arxiv.org/abs/2602.03773) | Alternates bounded reasoning attempts with summary updates for the same problem. GRPO trains summary-conditioned generation, and a replay buffer supplies later-turn… | Model weights, Memory | peer-reviewed · full-text | [Notes](#reasoning-cache) · [Code](https://github.com/IanYHWu/rc) |
-| 2026-02-02 | **MemSkill**<br>[MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](https://arxiv.org/abs/2602.02474) | A PPO-trained controller selects memory-operation skills for a fixed executor. A fixed designer periodically refines the skill bank, with rollback based on stabilized… | Model weights, Skills, Memory | preprint · full-text | [Notes](#memskill) · [Code](https://github.com/ViktorAxelsen/MemSkill) |
+| 2026-02-02 | **MemSkill**<br>[MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](https://arxiv.org/abs/2602.02474) | PPO trains a lightweight controller to select memory skills for a fixed LLM executor. A fixed designer revises INSERT/UPDATE guidance from labeled hard cases… | Model weights, Skills, Memory | peer-reviewed · full-text | [Notes](#memskill) · [Code](https://github.com/ViktorAxelsen/MemSkill) |
 | 2026-01-30 | **Experience faithfulness**<br>[Large Language Model Agents Are Not Always Faithful Self-Evolvers](https://proceedings.mlr.press/v306/zhao26aw.html) | Perturbs raw trajectories and condensed memories through removal, shuffling, corruption and replacement while keeping backbone weights fixed. Outcome sensitivity and… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#experience-faithfulness) · [Code](https://github.com/Dreamcatcher0622/Faithfulness) |
 | 2026-01-29 | **MCE**<br>[Meta Context Engineering via Agentic Skill Evolution](https://arxiv.org/abs/2601.21557) | A meta agent revises context-engineering skills, and a base agent executes them to build context files and retrieval code. A fixed history-informed evolutionary loop… | Prompts / context, Skills, Agent code | peer-reviewed · full-text | [Notes](#meta-context-engineering) · [Code](https://github.com/metaevo-ai/meta-context-engineering) |
 | 2026-01-11 | **Dr. Zero**<br>[Dr. Zero: Self-Evolving Search Agents without Training Data](https://arxiv.org/abs/2601.07055) | Alternately trains a search-enabled question proposer and solver. Hop-grouped relative policy optimization normalizes proposer rewards across structurally similar… | Model weights | peer-reviewed · full-text | [Notes](#dr-zero) · [Code](https://github.com/facebookresearch/drzero) |
 | 2026-01-08 | **AgentDevel**<br>[AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering](https://arxiv.org/abs/2601.04620) | A fixed development engine generates diagnostic scripts and one prompt/code/tool-wrapper release candidate per iteration. A configurable regression gate retains accepted… | Agent code, Workflows | preprint · full-text | [Notes](#agentdevel) |
 | 2026-01-06 | **MemRL**<br>[MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory](https://arxiv.org/abs/2601.03192) | Keeps model weights fixed and stores intent, experience and utility triplets. Similarity filtering precedes utility-weighted ranking; a constant-step moving average… | Memory | preprint · full-text | [Notes](#memrl) · [Code](https://github.com/MemTensor/MemRL) |
 | 2026-01-05 | **AgeMem**<br>[Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents](https://arxiv.org/abs/2601.01885) | Uses RL to train a language-model policy over six fixed long- and short-term memory operations. A three-stage curriculum creates memories, distracts the agent after… | Model weights, Memory, Prompts / context | peer-reviewed · full-text | [Notes](#agemem) · [Code](https://github.com/y1y5/AgeMem) |
-| 2026 | **SkillRubricsRL**<br>[SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning](https://aclanthology.org/2026.findings-emnlp.471/) | Pairs each skill with execution criteria, trains an acting policy with combined outcome and fulfillment rewards, and evolves the skill bank from failures. Marginal… | Model weights, Skills, Memory | peer-reviewed · full-text | [Notes](#skillrubricsrl) · [Code](https://github.com/gminiheimdallr-a11y/SkillRubricsRL) |
+| 2026 | **SkillRubricsRL**<br>[SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning](https://aclanthology.org/2026.findings-emnlp.471/) | Pairs skills with applicability-aware rubrics. Trajectory fulfillment contributes to policy reward, while skill-perturbation outcome differences update retrieval weights… | Model weights, Skills, Memory | peer-reviewed · full-text | [Notes](#skillrubricsrl) · [Code](https://github.com/gminiheimdallr-a11y/SkillRubricsRL) |
 | 2026 | **PerMemSafe**<br>[PerMemSafe: Benchmarking Implicit Personalized Safety of Long Horizon Self-Evolving Agents](https://aclanthology.org/2026.findings-acl.320/) | Separates recognizing implicit personalized risks from tracking their changes over time. The accompanying SentinelMem retains explicit fact-state transitions and… | Memory | peer-reviewed · full-text | [Notes](#permemsafe) |
 | 2026 | **COLLABMEM**<br>[COLLABMEM: A Diagnostic Benchmark for Collaborative Memory Operations in Multi-Agent LLM Systems](https://aclanthology.org/2026.emnlp-main.1194/) | Replays fixed event traces with explicit role access and source-authority metadata, then varies the memory view given to a fixed answerer. TMS-GRAPH++ filters visible… | Memory | peer-reviewed · full-text | [Notes](#collabmem) |
 | 2025-12-21 | **MemEvolve**<br>[MemEvolve: Meta-Evolution of Agent Memory Systems](https://arxiv.org/abs/2512.18746) | Evolves implementations of encoding, storage, retrieval and memory management inside a supplied interface. Candidate memory starts empty each outer iteration; selected… | Memory, Agent code | peer-reviewed · full-text | [Notes](#memevolve) · [Code](https://github.com/bingreeky/MemEvolve) |
@@ -2416,23 +2416,23 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 ## SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning
 
-**2026-02-09 · preprint · NeurIPS 2026 acceptance reported by authors; venue record not inspected · core · paper**
+**2026-02-09 · peer-reviewed · NeurIPS 2026 · core · paper**
 
 [Primary source](https://arxiv.org/abs/2602.08234)
 
-**Mechanism.** Distills successful and failed trajectories into a hierarchical skill library, retrieves those skills during policy training, and adds lessons from validation failures. The library and model policy change together during reinforcement learning.
+**Mechanism.** A teacher distills successes and failures into general and task-specific skills and generates a cold-start SFT dataset. GRPO then updates the acting policy while validation failures trigger skill additions. The policy and skill bank persist; the teacher, update procedure and optimizer remain fixed.
 
 **What changes:** Skills, Model weights. **Persistence:** across-tasks. **Learning signal:** Task rewards, teacher-generated skill distillation, and validation failures.
 
-**Evaluation.** The authors evaluate ALFWorld, WebShop, and seven search-augmented QA datasets, including component and teacher-model analyses.
+**Evaluation.** Full v2 covers ALFWorld, WebShop and seven search QA datasets, component ablations, teacher-versus-self-distillation controls, validation curves and skill examples. The main Qwen2.5-7B setup uses o3; a stronger Kimi model is also tested with self-distillation. Several comparison rows come from prior reports.
 
-**Boundary.** The method uses a teacher and reward-bearing environments, so it is not training-free or supervision-free. Interpretation: its recursive skill refresh is not evidence that the system can redesign its own learning algorithm.
+**Boundary.** Teacher-generated SFT and skill guidance jointly change the training pipeline, so gains over vanilla RL do not isolate abstraction alone. Validation failures are learning inputs. No error bars are reported, and benefits are not uniform across task categories or QA datasets. The measured full-prompt reduction is about 10%, distinct from the larger skill-compression claim.
 
-**Code / data.** [Official artifact](https://github.com/aiming-lab/SkillRL) — Official repository linked and its public page inspected; not executed.
+**Code / data.** [Official artifact](https://github.com/aiming-lab/SkillRL) — Full 31-page arXiv v2, substantive Appendices A–F, checklist and all figures/tables/cases read on 2026-11-09; official NeurIPS poster record verifies acceptance. README at 4d984d4 documents template and embedding retrieval modes whose defaults differ from the paper description. Code/checkpoint links were inspected, not installed, downloaded or executed.
 
-**Topics:** skills, memory, model-training. **Reviewed:** full-text · 2026-10-28.
+**Topics:** skills, memory, model-training. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2602.08234) · [Source 2](https://arxiv.org/html/2602.08234v1) · [Source 3](https://arxiv.org/html/2602.08234v2) · [Source 4](https://github.com/aiming-lab/SkillRL)
+[Source 1](https://arxiv.org/abs/2602.08234) · [Source 2](https://arxiv.org/html/2602.08234v1) · [Source 3](https://arxiv.org/html/2602.08234v2) · [Source 4](https://github.com/aiming-lab/SkillRL) · [Source 5](https://arxiv.org/pdf/2602.08234v2) · [Source 6](https://neurips.cc/virtual/2026/loc/atlanta/poster/156011)
 
 **Related software:** [SkillRL](systems.md#system-skillrl). See each system's relationship note before equating it with the evaluated paper version.
 
@@ -2506,23 +2506,23 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 ## MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents
 
-**2026-02-02 · preprint · NeurIPS 2026 acceptance reported by authors; official title listing found but article record not inspected · core · paper**
+**2026-02-02 · peer-reviewed · NeurIPS 2026 · core · paper**
 
 [Primary source](https://arxiv.org/abs/2602.02474)
 
-**Mechanism.** A PPO-trained controller selects memory-operation skills for a fixed executor. A fixed designer periodically refines the skill bank, with rollback based on stabilized training rewards. The skills describe how to remember, rather than the memories themselves.
+**Mechanism.** PPO trains a lightweight controller to select memory skills for a fixed LLM executor. A fixed designer revises INSERT/UPDATE guidance from labeled hard cases; DELETE/NOOP primitives remain fixed in the supplied prompt. Skill-bank rollback uses late-cycle training rewards. Trace-specific memories and reusable memory skills are separate stores.
 
 **What changes:** Model weights, Skills, Memory. **Persistence:** across-tasks. **Learning signal:** Downstream F1 or task success trains a separate skill-selection controller; hard training cases guide LLM-authored skill revisions.
 
-**Evaluation.** Evaluates conversational memory and ALFWorld, with LoCoMo-to-LongMemEval/HotpotQA and cross-model transfer; ALFWorld training uses offline expert trajectories.
+**Evaluation.** Full November 2026 v3 covers conversational QA, offline-experience ALFWorld, HotpotQA and added AppWorld/smaller-model comparisons, including demonstration-free and alternative-selector controls. LoCoMo uses a 6/2/2 conversation split; LongMemEval transfer uses validation tuning and a roughly 100-question test subset.
 
-**Boundary.** LongMemEval excludes abstention questions and uses validation to tune configurations; ALFWorld includes demonstrations. The system trains controller parameters, so it is not wholly training-free. Benchmark transfer does not establish online lifelong deployment or privacy/access-control guarantees.
+**Boundary.** Abstention/adversarial queries are excluded and repeated-run uncertainty is not reported. ALFWorld uses expert experience; main interactive results also include demonstrations. Higher success does not always reduce execution steps. Inference-cost savings exclude substantial API-heavy controller/skill preparation. Benchmark transfer does not establish continual deployment or privacy guarantees.
 
-**Code / data.** [Official artifact](https://github.com/ViktorAxelsen/MemSkill) — Author-linked repository README inspected; current source was not executed or audited as a pinned paper reproduction.
+**Code / data.** [Official artifact](https://github.com/ViktorAxelsen/MemSkill) — Full 43-page arXiv v3, substantive appendices, checklist, all skills/prompts and figures read on 2026-11-09; official NeurIPS poster record verifies acceptance. README/source inventory at f65b797 inspected. Current setup documents four benchmark families, checkpoint reuse and concurrency caveats; AppWorld reproduction was not established. No installation, training or research execution.
 
-**Topics:** memory, skills, model-training, evaluation. **Reviewed:** full-text · 2026-11-01.
+**Topics:** memory, skills, model-training, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2602.02474) · [Source 2](https://arxiv.org/html/2602.02474v2) · [Source 3](https://github.com/ViktorAxelsen/MemSkill) · [Source 4](https://neurips.cc/Downloads/2026)
+[Source 1](https://arxiv.org/abs/2602.02474) · [Source 2](https://arxiv.org/html/2602.02474v2) · [Source 3](https://github.com/ViktorAxelsen/MemSkill) · [Source 4](https://neurips.cc/Downloads/2026) · [Source 5](https://arxiv.org/pdf/2602.02474v3) · [Source 6](https://neurips.cc/virtual/2026/loc/sydney/poster/155719)
 
 <a id="experience-faithfulness"></a>
 
@@ -2666,17 +2666,17 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://aclanthology.org/2026.findings-emnlp.471/)
 
-**Mechanism.** Pairs each skill with execution criteria, trains an acting policy with combined outcome and fulfillment rewards, and evolves the skill bank from failures. Marginal utility guides retrieval; later mixed skill-on/off training encourages behavior that persists without prompt-time skills.
+**Mechanism.** Pairs skills with applicability-aware rubrics. Trajectory fulfillment contributes to policy reward, while skill-perturbation outcome differences update retrieval weights and the skill bank. After step 75, training mixes skill-on and skill-off prompts; rubric supervision remains active in both conditions.
 
 **What changes:** Model weights, Skills, Memory. **Persistence:** across-tasks. **Learning signal:** Environment rewards and model-judged skill-fulfillment rubrics train the policy; perturbed-skill rollout outcomes update retrieval utilities.
 
-**Evaluation.** Evaluates ALFWorld and WebShop, component ablations, skill-on/off deployment and a small human agreement check of the rubric judge.
+**Evaluation.** The full final publication reports ALFWorld/WebShop results, skill-on/off comparisons, component ablations, merge histories and a three-expert check of 60 trajectory–skill pairs using clustered confidence intervals. Utility probes reuse the rollout group, with one full-skill anchor and perturbed skill contexts.
 
-**Boundary.** Best reported metrics come from different skill-on/off conditions. Utility probes give marginal effects, not complete interaction attribution. The cost table excludes actor training, local rollouts and one external model's charges. The inspected repository remains a placeholder.
+**Boundary.** Skill-off performance follows explicit skill-off training and does not by itself establish novel-task procedural transfer. Utility is context-dependent and the paper alternates replacement/dropout descriptions. Human validation is a small sample; policy-training uncertainty is not reported. Dollar estimates cover only rubric-judge calls, excluding updater fees and local training/rollout compute.
 
-**Code / data.** [Official artifact](https://github.com/gminiheimdallr-a11y/SkillRubricsRL) — Author-linked repository inspected: its README promises a future code release. No implementation was installed or executed.
+**Code / data.** [Official artifact](https://github.com/gminiheimdallr-a11y/SkillRubricsRL) — Final 16-page Findings of EMNLP 2026 paper, complete substantive appendix, prompts, human validation and cost boundary read on 2026-11-09. The official repository at 92f2c3d contains only a README promising a later code release. Runnable implementation, configurations and reproduction remain unverified; no research code was executed.
 
-**Topics:** skills, memory, model-training, evaluation. **Reviewed:** full-text · 2026-11-07.
+**Topics:** skills, memory, model-training, evaluation. **Reviewed:** full-text · 2026-11-09.
 
 [Source 1](https://aclanthology.org/2026.findings-emnlp.471/) · [Source 2](https://aclanthology.org/2026.findings-emnlp.471.pdf) · [Source 3](https://github.com/gminiheimdallr-a11y/SkillRubricsRL)
 

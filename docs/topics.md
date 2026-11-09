@@ -105,10 +105,10 @@ A work may appear in several topics; counts here are not additive.
 - 2026-03-18 — [Retrieval-Augmented LLM Agents: Learning to Learn from Experience](papers.md#exprag) · core · peer-reviewed
 - 2026-03-01 — [AutoSkill: Experience-Driven Lifelong Learning via Skill Self-Evolution](papers.md#autoskill) · core · preprint
 - 2026-02-18 — [Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](papers.md#memoryarena) · core · peer-reviewed
-- 2026-02-09 — [SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl) · core · preprint
+- 2026-02-09 — [SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl) · core · peer-reviewed
 - 2026-02-03 — [TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking](papers.md#tame-memory) · core · peer-reviewed
 - 2026-02-03 — [Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon RL](papers.md#reasoning-cache) · adjacent · peer-reviewed
-- 2026-02-02 — [MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](papers.md#memskill) · core · preprint
+- 2026-02-02 — [MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](papers.md#memskill) · core · peer-reviewed
 - 2026-01-30 — [Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness) · core · peer-reviewed
 - 2026-01-06 — [MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory](papers.md#memrl) · core · preprint
 - 2026-01-05 — [Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents](papers.md#agemem) · core · peer-reviewed
@@ -176,8 +176,8 @@ A work may appear in several topics; counts here are not additive.
 - 2026-04-18 — [FlowEvo: Self-Evolving Agents through the Co-Evolution of Workflows and Executable Skills](papers.md#flowevo) · core · peer-reviewed
 - 2026-03-31 — [APEX-EM: Non-Parametric Online Learning for Autonomous Agents via Structured Procedural-Episodic Experience Replay](papers.md#apex-em) · core · peer-reviewed
 - 2026-03-01 — [AutoSkill: Experience-Driven Lifelong Learning via Skill Self-Evolution](papers.md#autoskill) · core · preprint
-- 2026-02-09 — [SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl) · core · preprint
-- 2026-02-02 — [MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](papers.md#memskill) · core · preprint
+- 2026-02-09 — [SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl) · core · peer-reviewed
+- 2026-02-02 — [MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](papers.md#memskill) · core · peer-reviewed
 - 2026-01-29 — [Meta Context Engineering via Agentic Skill Evolution](papers.md#meta-context-engineering) · core · peer-reviewed
 - 2026 — [SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning](papers.md#skillrubricsrl) · core · peer-reviewed
 - 2025-09-29 — [ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](papers.md#reasoningbank) · core · peer-reviewed
@@ -370,9 +370,9 @@ A work may appear in several topics; counts here are not additive.
 - 2026-05-26 — [PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft](papers.md#peam) · core · peer-reviewed
 - 2026-04-22 — [Ask Only When Needed: Proactive Retrieval from Memory and Skills for Experience-Driven Lifelong Agents](papers.md#proactagent) · core · peer-reviewed
 - 2026-03-18 — [Retrieval-Augmented LLM Agents: Learning to Learn from Experience](papers.md#exprag) · core · peer-reviewed
-- 2026-02-09 — [SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl) · core · preprint
+- 2026-02-09 — [SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl) · core · peer-reviewed
 - 2026-02-03 — [Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon RL](papers.md#reasoning-cache) · adjacent · peer-reviewed
-- 2026-02-02 — [MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](papers.md#memskill) · core · preprint
+- 2026-02-02 — [MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](papers.md#memskill) · core · peer-reviewed
 - 2026-01-11 — [Dr. Zero: Self-Evolving Search Agents without Training Data](papers.md#dr-zero) · core · peer-reviewed
 - 2026-01-05 — [Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents](papers.md#agemem) · core · peer-reviewed
 - 2026 — [SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning](papers.md#skillrubricsrl) · core · peer-reviewed
@@ -604,7 +604,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026-02-18 — [Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](papers.md#memoryarena) · core · peer-reviewed
 - 2026-02-03 — [TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking](papers.md#tame-memory) · core · peer-reviewed
 - 2026-02-03 — [Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon RL](papers.md#reasoning-cache) · adjacent · peer-reviewed
-- 2026-02-02 — [MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](papers.md#memskill) · core · preprint
+- 2026-02-02 — [MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](papers.md#memskill) · core · peer-reviewed
 - 2026-01-30 — [Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness) · core · peer-reviewed
 - 2026-01-08 — [AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering](papers.md#agentdevel) · core · preprint
 - 2026 — [SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning](papers.md#skillrubricsrl) · core · peer-reviewed

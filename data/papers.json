@@ -3463,17 +3463,19 @@
     "date": "2026-02-02",
     "year": 2026,
     "kind": "paper",
-    "status": "preprint",
-    "venue": "NeurIPS 2026 acceptance reported by authors; official title listing found but article record not inspected",
+    "status": "peer-reviewed",
+    "venue": "NeurIPS 2026",
     "url": "https://arxiv.org/abs/2602.02474",
     "sources": [
       "https://arxiv.org/abs/2602.02474",
       "https://arxiv.org/html/2602.02474v2",
       "https://github.com/ViktorAxelsen/MemSkill",
-      "https://neurips.cc/Downloads/2026"
+      "https://neurips.cc/Downloads/2026",
+      "https://arxiv.org/pdf/2602.02474v3",
+      "https://neurips.cc/virtual/2026/loc/sydney/poster/155719"
     ],
     "code_url": "https://github.com/ViktorAxelsen/MemSkill",
-    "code_note": "Author-linked repository README inspected; current source was not executed or audited as a pinned paper reproduction.",
+    "code_note": "Full 43-page arXiv v3, substantive appendices, checklist, all skills/prompts and figures read on 2026-11-09; official NeurIPS poster record verifies acceptance. README/source inventory at f65b797 inspected. Current setup documents four benchmark families, checkpoint reuse and concurrency caveats; AppWorld reproduction was not established. No installation, training or research execution.",
     "topics": [
       "memory",
       "skills",
@@ -3488,11 +3490,11 @@
     ],
     "persistence": "across-tasks",
     "learning_signal": "Downstream F1 or task success trains a separate skill-selection controller; hard training cases guide LLM-authored skill revisions.",
-    "mechanism": "A PPO-trained controller selects memory-operation skills for a fixed executor. A fixed designer periodically refines the skill bank, with rollback based on stabilized training rewards. The skills describe how to remember, rather than the memories themselves.",
-    "evaluation": "Evaluates conversational memory and ALFWorld, with LoCoMo-to-LongMemEval/HotpotQA and cross-model transfer; ALFWorld training uses offline expert trajectories.",
-    "limitations": "LongMemEval excludes abstention questions and uses validation to tune configurations; ALFWorld includes demonstrations. The system trains controller parameters, so it is not wholly training-free. Benchmark transfer does not establish online lifelong deployment or privacy/access-control guarantees.",
+    "mechanism": "PPO trains a lightweight controller to select memory skills for a fixed LLM executor. A fixed designer revises INSERT/UPDATE guidance from labeled hard cases; DELETE/NOOP primitives remain fixed in the supplied prompt. Skill-bank rollback uses late-cycle training rewards. Trace-specific memories and reusable memory skills are separate stores.",
+    "evaluation": "Full November 2026 v3 covers conversational QA, offline-experience ALFWorld, HotpotQA and added AppWorld/smaller-model comparisons, including demonstration-free and alternative-selector controls. LoCoMo uses a 6/2/2 conversation split; LongMemEval transfer uses validation tuning and a roughly 100-question test subset.",
+    "limitations": "Abstention/adversarial queries are excluded and repeated-run uncertainty is not reported. ALFWorld uses expert experience; main interactive results also include demonstrations. Higher success does not always reduce execution steps. Inference-cost savings exclude substantial API-heavy controller/skill preparation. Benchmark transfer does not establish continual deployment or privacy guarantees.",
     "review_depth": "full-text",
-    "checked": "2026-11-01",
+    "checked": "2026-11-09",
     "short_name": "MemSkill"
   },
   {
@@ -5990,17 +5992,19 @@
     "date": "2026-02-09",
     "year": 2026,
     "kind": "paper",
-    "status": "preprint",
-    "venue": "NeurIPS 2026 acceptance reported by authors; venue record not inspected",
+    "status": "peer-reviewed",
+    "venue": "NeurIPS 2026",
     "url": "https://arxiv.org/abs/2602.08234",
     "sources": [
       "https://arxiv.org/abs/2602.08234",
       "https://arxiv.org/html/2602.08234v1",
       "https://arxiv.org/html/2602.08234v2",
-      "https://github.com/aiming-lab/SkillRL"
+      "https://github.com/aiming-lab/SkillRL",
+      "https://arxiv.org/pdf/2602.08234v2",
+      "https://neurips.cc/virtual/2026/loc/atlanta/poster/156011"
     ],
     "code_url": "https://github.com/aiming-lab/SkillRL",
-    "code_note": "Official repository linked and its public page inspected; not executed.",
+    "code_note": "Full 31-page arXiv v2, substantive Appendices A–F, checklist and all figures/tables/cases read on 2026-11-09; official NeurIPS poster record verifies acceptance. README at 4d984d4 documents template and embedding retrieval modes whose defaults differ from the paper description. Code/checkpoint links were inspected, not installed, downloaded or executed.",
     "topics": [
       "skills",
       "memory",
@@ -6013,11 +6017,11 @@
     ],
     "persistence": "across-tasks",
     "learning_signal": "Task rewards, teacher-generated skill distillation, and validation failures.",
-    "mechanism": "Distills successful and failed trajectories into a hierarchical skill library, retrieves those skills during policy training, and adds lessons from validation failures. The library and model policy change together during reinforcement learning.",
-    "evaluation": "The authors evaluate ALFWorld, WebShop, and seven search-augmented QA datasets, including component and teacher-model analyses.",
-    "limitations": "The method uses a teacher and reward-bearing environments, so it is not training-free or supervision-free. Interpretation: its recursive skill refresh is not evidence that the system can redesign its own learning algorithm.",
+    "mechanism": "A teacher distills successes and failures into general and task-specific skills and generates a cold-start SFT dataset. GRPO then updates the acting policy while validation failures trigger skill additions. The policy and skill bank persist; the teacher, update procedure and optimizer remain fixed.",
+    "evaluation": "Full v2 covers ALFWorld, WebShop and seven search QA datasets, component ablations, teacher-versus-self-distillation controls, validation curves and skill examples. The main Qwen2.5-7B setup uses o3; a stronger Kimi model is also tested with self-distillation. Several comparison rows come from prior reports.",
+    "limitations": "Teacher-generated SFT and skill guidance jointly change the training pipeline, so gains over vanilla RL do not isolate abstraction alone. Validation failures are learning inputs. No error bars are reported, and benefits are not uniform across task categories or QA datasets. The measured full-prompt reduction is about 10%, distinct from the larger skill-compression claim.",
     "review_depth": "full-text",
-    "checked": "2026-10-28",
+    "checked": "2026-11-09",
     "short_name": "SkillRL"
   },
   {
@@ -6026,11 +6030,11 @@
     "status": "peer-reviewed",
     "venue": "Findings of EMNLP 2026",
     "code_url": "https://github.com/gminiheimdallr-a11y/SkillRubricsRL",
-    "code_note": "Author-linked repository inspected: its README promises a future code release. No implementation was installed or executed.",
+    "code_note": "Final 16-page Findings of EMNLP 2026 paper, complete substantive appendix, prompts, human validation and cost boundary read on 2026-11-09. The official repository at 92f2c3d contains only a README promising a later code release. Runnable implementation, configurations and reproduction remain unverified; no research code was executed.",
     "scope": "core",
     "persistence": "across-tasks",
     "review_depth": "full-text",
-    "checked": "2026-11-07",
+    "checked": "2026-11-09",
     "id": "skillrubricsrl",
     "short_name": "SkillRubricsRL",
     "title": "SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning",
@@ -6053,9 +6057,9 @@
       "memory"
     ],
     "learning_signal": "Environment rewards and model-judged skill-fulfillment rubrics train the policy; perturbed-skill rollout outcomes update retrieval utilities.",
-    "mechanism": "Pairs each skill with execution criteria, trains an acting policy with combined outcome and fulfillment rewards, and evolves the skill bank from failures. Marginal utility guides retrieval; later mixed skill-on/off training encourages behavior that persists without prompt-time skills.",
-    "evaluation": "Evaluates ALFWorld and WebShop, component ablations, skill-on/off deployment and a small human agreement check of the rubric judge.",
-    "limitations": "Best reported metrics come from different skill-on/off conditions. Utility probes give marginal effects, not complete interaction attribution. The cost table excludes actor training, local rollouts and one external model's charges. The inspected repository remains a placeholder."
+    "mechanism": "Pairs skills with applicability-aware rubrics. Trajectory fulfillment contributes to policy reward, while skill-perturbation outcome differences update retrieval weights and the skill bank. After step 75, training mixes skill-on and skill-off prompts; rubric supervision remains active in both conditions.",
+    "evaluation": "The full final publication reports ALFWorld/WebShop results, skill-on/off comparisons, component ablations, merge histories and a three-expert check of 60 trajectory–skill pairs using clustered confidence intervals. Utility probes reuse the rollout group, with one full-skill anchor and perturbed skill contexts.",
+    "limitations": "Skill-off performance follows explicit skill-off training and does not by itself establish novel-task procedural transfer. Utility is context-dependent and the paper alternates replacement/dropout descriptions. Human validation is a small sample; policy-training uncertainty is not reported. Dollar estimates cover only rubric-judge calls, excluding updater fees and local training/rollout compute."
   },
   {
     "id": "socratic-zero",

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded skill-learning evidence reviews
+
+- Read MemSkill v3, SkillRL v2 and SkillRubricsRL with complete substantive appendices and artifact checks.
+- Verified MemSkill/SkillRL NeurIPS acceptance from individual venue records; qualified teacher, cost, transfer and release boundaries.
+- Broader audit: 108 of 190 works complete, 82 pending.
+
 ## 2026-11-09 — Expanded AgentStream review
 
 - Read all substantive AgentStream v2 methods, prompts, per-seed results, plots and cost analyses.
