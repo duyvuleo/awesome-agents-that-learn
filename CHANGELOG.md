@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded foundational memory and skill reviews
+
+- Completed detailed appraisals of Reflexion, Voyager, TroVE and AutoSkill, including negative findings, feedback sources, evaluation protocols and artifact boundaries.
+- Regenerated the catalog and introductory reading table; no new works or schema changes.
+- Broader audit: 72 of 190 works complete, 118 pending.
+
 ## 2026-11-09 — Expanded context, workflow and memory-defense reviews
 
 - Completed detailed reviews of ACE, AWM, ExpeL and A-MemGuard, retaining final-version changes, negative findings and evidence limits.

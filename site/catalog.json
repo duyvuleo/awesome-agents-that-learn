@@ -3508,10 +3508,11 @@
       "sources": [
         "https://arxiv.org/abs/2603.01145",
         "https://arxiv.org/html/2603.01145v2",
-        "https://github.com/ECNU-ICALK/AutoSkill"
+        "https://github.com/ECNU-ICALK/AutoSkill",
+        "https://arxiv.org/pdf/2603.01145v2"
       ],
       "code_url": "https://github.com/ECNU-ICALK/AutoSkill",
-      "code_note": "Official repository linked by the paper and its public page inspected; not executed.",
+      "code_note": "Official current README inspected on 2026-11-09. It documents later document extraction, local skill management and SkillEvo components beyond the reviewed March 2026 paper. No code, datasets or skills were installed or executed.",
       "topics": [
         "memory",
         "skills",
@@ -3524,12 +3525,12 @@
         "prompts"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Dialogue histories, recurring user preferences, corrections, and model judgments about extraction and merging.",
-      "mechanism": "Extracts explicit instruction skills from interactions, retrieves them for later requests, and merges related updates into versioned skill artifacts. A persistent skill bank changes while the underlying language model stays fixed.",
-      "evaluation": "The inspected v2 reports SkillBank statistics from four language/model subsets of WildChat and qualitative examples of extracted and repeatedly revised skills.",
-      "limitations": "Artifact counts and case studies demonstrate construction and maintenance, not a controlled estimate of improved downstream task success or long-term retention. This AutoSkill is distinct from MUSE-Autoskill and similarly named video-QA work.",
+      "learning_signal": "Recurring user queries, constraints and corrections are extraction evidence; assistant responses provide context rather than evidence of a successfully learned skill. Model judgments choose additions, merges or discards.",
+      "mechanism": "Uses fixed prompted modules to rewrite queries, retrieve instruction skills with hybrid dense/lexical search, and update a persistent versioned skill bank. A nearest-neighbor comparison guides maintenance; the generated artifacts are instructions supplied to later responses, without base-model training.",
+      "evaluation": "ArXiv v2 reports 1,858 skill artifacts from four language/model subsets of long WildChat conversations, metadata distributions and multilingual examples. Versioned rewrite cases illustrate maintenance, but no controlled downstream task-performance or forgetting experiment is reported.",
+      "limitations": "Artifact and revision counts do not establish capability gains. Retrieval thresholds, extraction judgments, user/session boundaries and regression prevention lack controlled evaluation. Asynchronous maintenance is an architectural design, not measured zero overhead. Later repository replay/evaluation extensions must not be attributed retrospectively to this paper.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-09",
       "short_name": "AutoSkill"
     },
     {
@@ -5890,10 +5891,11 @@
         "https://arxiv.org/abs/2401.12869",
         "https://arxiv.org/html/2401.12869v1",
         "https://proceedings.mlr.press/v235/wang24az.html",
-        "https://github.com/zorazrw/trove"
+        "https://github.com/zorazrw/trove",
+        "https://raw.githubusercontent.com/mlresearch/v235/main/assets/wang24az/wang24az.pdf"
       ],
       "code_url": "https://github.com/zorazrw/trove",
-      "code_note": "Official repository linked by the paper and its public page inspected; not executed.",
+      "code_note": "Official README inspected on 2026-11-09; task-specific entry points and the GQA perception-service dependency are documented. No generated tools, research code, models or benchmark environments were executed.",
       "topics": [
         "skills",
         "tools",
@@ -5905,12 +5907,12 @@
         "skills"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Agreement among executed candidate outputs, program simplicity, and observed tool reuse.",
-      "mechanism": "Samples solutions that import existing functions, create new ones, or use only supplied primitives. Execution agreement and simplicity select a solution whose functions join a reusable toolbox; periodic trimming removes low-use functions without model training.",
-      "evaluation": "Tests 11 math, table-QA, and visual-reasoning datasets. A separate study asks six people to verify 100 table-QA solutions and measures verification time and accuracy.",
-      "limitations": "Supplied primitives and demonstrations constrain the tool space. Agreement is not proof of correctness, and the human study does not establish universal reliability. Some comparisons reuse previously reported baseline scores.",
+      "learning_signal": "Agreement among executed candidate answers, a program-complexity proxy and observed tool reuse; reference answers are used for evaluation rather than per-task tool admission.",
+      "mechanism": "Samples programs in import, create and primitive-only modes, chooses a frequent executable answer with simplicity tie-breaking, and retains its reusable functions. Periodic frequency-based trimming also regenerates earlier solutions affected by removed tools. The model and toolbox-management procedure stay fixed.",
+      "evaluation": "The final ICML paper covers eleven math, table-QA and visual-reasoning datasets, ordering/selection/rectification ablations, and a six-person verification study. Main results select the best of five runs; some external baselines reuse previously published scores.",
+      "limitations": "Execution agreement is not correctness verification, and best-run reporting does not estimate typical performance. Retrospective regeneration differs from scoring each streaming prediction once. Supplied primitives and demonstrations matter; complexity is an AST-based proxy. Human verification improves on the tested sample, but broader reliability, lifecycle cost and retention remain unestablished.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-09",
       "short_name": "TroVE"
     },
     {
@@ -6377,10 +6379,11 @@
         "https://arxiv.org/abs/2305.16291",
         "https://arxiv.org/html/2305.16291v2",
         "https://openreview.net/pdf?id=ehfRiF0R3a",
-        "https://github.com/MineDojo/Voyager"
+        "https://github.com/MineDojo/Voyager",
+        "https://arxiv.org/pdf/2305.16291v2"
       ],
       "code_url": "https://github.com/MineDojo/Voyager",
-      "code_note": "Official repository linked and its public page inspected; not executed.",
+      "code_note": "Official README inspected on 2026-11-09; it documents Minecraft/Fabric, Python/Node dependencies, checkpointing and separate learned-library inference. No game, research code or model API was run; arXiv v2 is the inspected body.",
       "topics": [
         "foundations",
         "skills",
@@ -6393,12 +6396,12 @@
         "tools"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Environment observations, interpreter errors, and model-based task verification.",
-      "mechanism": "Builds an expanding library of executable Minecraft skills, retrieved and composed for later tasks. An automatic curriculum proposes objectives, while execution feedback and a model-based critic guide program repair before a skill is retained.",
-      "evaluation": "The authors compare exploration, technology-tree progress, ablations, and reuse of learned skills on new tasks in another Minecraft world.",
-      "limitations": "Results concern a simulator with supplied control APIs. The paper reports inaccurate self-verification and impossible proposed tasks, so its retained library is not guaranteed correct.",
+      "learning_signal": "Environment state, execution errors and a GPT-4 task critic guide program revision. A fixed curriculum prompt proposes new objectives from accumulated progress and current state.",
+      "mechanism": "Stores successful Minecraft programs in a persistent skill library indexed by generated descriptions. Retrieved skills support composition and up to four code attempts per objective. Models and controller logic remain fixed; the setup supplies high-level control APIs and a hand-specified curriculum warmup.",
+      "evaluation": "Three exploration runs measure item acquisition, tech-tree progress and traversal. Separate tests reset inventory and world while retaining the library for four new goals, and also transfer it to an AutoGPT baseline. Ablations examine curriculum, skills and feedback.",
+      "limitations": "Text state, control primitives and inventory-preserving recovery distinguish this from pixel-based embodied learning. Prompt counts are not total compute. Diamond-tool exploration succeeds in one of three runs; finite transfer tests do not establish lifelong retention. State-based criticism can misjudge success, and 3D construction examples use human guidance.",
       "review_depth": "full-text",
-      "checked": "2026-10-28",
+      "checked": "2026-11-09",
       "short_name": "Voyager"
     },
     {
@@ -6553,10 +6556,11 @@
         "https://arxiv.org/abs/2303.11366",
         "https://arxiv.org/html/2303.11366v4",
         "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html",
-        "https://github.com/noahshinn/reflexion"
+        "https://github.com/noahshinn/reflexion",
+        "https://arxiv.org/pdf/2303.11366v4"
       ],
       "code_url": "https://github.com/noahshinn/reflexion",
-      "code_note": "Official repository linked and its public page inspected; not executed.",
+      "code_note": "Official README inspected on 2026-11-09; it documents separate reasoning, decision-making and programming experiments and historical logs. No research code, API calls or benchmark experiments were executed.",
       "topics": [
         "foundations",
         "memory"
@@ -6566,12 +6570,12 @@
         "memory"
       ],
       "persistence": "within-task",
-      "learning_signal": "Scalar or textual environment feedback, exact-match grading, heuristics, and model-generated evaluation, depending on the experiment.",
-      "mechanism": "Converts task feedback into verbal reflections and carries those reflections into later attempts through an episodic memory buffer. The underlying language-model weights stay fixed.",
-      "evaluation": "The study evaluates repeated attempts on ALFWorld, HotpotQA, and programming tasks, with ablations of reflection and feedback.",
-      "limitations": "The central experiments improve retries of the same task; they do not establish a durable cross-task learning library. Feedback sources differ by task, and the paper uses bounded memory.",
+      "learning_signal": "Task-dependent feedback: environment completion and heuristics for ALFWorld, reference-answer exact-match judgments for HotpotQA, and self-generated executable tests for programming.",
+      "mechanism": "A fixed actor retries the same task using verbal reflections produced from earlier attempts and evaluation feedback. The episodic buffer retains only recent reflections, usually three for interactive/reasoning tasks and one for coding; model weights stay fixed.",
+      "evaluation": "Reports cumulative ALFWorld and HotpotQA improvement, coding results after internal testing/revision, and feedback/memory ablations. The coding pass@1 result means one final submitted program after internal attempts, not one generation or a matched-compute comparison.",
+      "limitations": "The experiments do not establish cross-task learning. Gains depend on feedback quality: MBPP Python degrades, WebShop shows little improvement, and the tested smaller coding model does not improve. Incorrect tests can cause premature acceptance or harmful edits. Selected successful reflections are not causal proof of faithful error diagnosis.",
       "review_depth": "full-text",
-      "checked": "2026-10-28",
+      "checked": "2026-11-09",
       "short_name": "Reflexion"
     },
     {

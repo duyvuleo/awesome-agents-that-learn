@@ -110,7 +110,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-03-23 | **Workflow optimization survey**<br>[From Static Templates to Dynamic Runtime Graphs: A Survey of Workflow Optimization for LLM Agents](https://arxiv.org/abs/2603.22386) | Represents workflows as agentic computation graphs while distinguishing reusable templates, per-run realized graphs and execution traces. Six families span offline… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#workflow-optimization-survey) |
 | 2026-03-19 | **Hyperagents**<br>[Hyperagents](https://arxiv.org/abs/2603.19461) | Combines the task solver and the agent that modifies it in one editable program. DGM-Hyperagents can therefore revise their own improvement procedure as well as… | Agent code, Workflows, Memory | preprint · full-text | [Notes](#hyperagents) · [Code](https://github.com/facebookresearch/Hyperagents) |
 | 2026-03-18 | **ExpRAG**<br>[Retrieval-Augmented LLM Agents: Learning to Learn from Experience](https://arxiv.org/abs/2603.18272) | Trains the policy to use full retrieved trajectories instead of adding memory only at inference. The main retrieval bank stays read-only; separate experiments reuse a… | Model weights | peer-reviewed · full-text | [Notes](#exprag) |
-| 2026-03-01 | **AutoSkill**<br>[AutoSkill: Experience-Driven Lifelong Learning via Skill Self-Evolution](https://arxiv.org/abs/2603.01145) | Extracts explicit instruction skills from interactions, retrieves them for later requests, and merges related updates into versioned skill artifacts. A persistent skill… | Skills, Memory, Prompts / context | preprint · full-text | [Notes](#autoskill) · [Code](https://github.com/ECNU-ICALK/AutoSkill) |
+| 2026-03-01 | **AutoSkill**<br>[AutoSkill: Experience-Driven Lifelong Learning via Skill Self-Evolution](https://arxiv.org/abs/2603.01145) | Uses fixed prompted modules to rewrite queries, retrieve instruction skills with hybrid dense/lexical search, and update a persistent versioned skill bank. A… | Skills, Memory, Prompts / context | preprint · full-text | [Notes](#autoskill) · [Code](https://github.com/ECNU-ICALK/AutoSkill) |
 | 2026-02-26 | **EvoX**<br>[EvoX: Meta-Evolution for Automated Discovery](https://arxiv.org/abs/2602.23413) | Co-evolves candidate programs and the search strategy that selects parents, variation operators, and examples. Stagnation triggers strategy revisions informed by earlier… | Agent code, Prompts / context | peer-reviewed · full-text | [Notes](#evox) · [Code](https://github.com/skydiscover-ai/skydiscover) |
 | 2026-02-18 | **MemoryArena**<br>[MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks](https://arxiv.org/abs/2602.16313) | Constructs multi-session tasks in which earlier choices and discoveries constrain later execution. Persistent memory connects sessions; comparisons separate long-context… | Memory, Skills | peer-reviewed · full-text | [Notes](#memoryarena) · [Code](https://github.com/ZexueHe/MemoryArena) |
 | 2026-02-09 | **SkillRL**<br>[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](https://arxiv.org/abs/2602.08234) | Distills successful and failed trajectories into a hierarchical skill library, retrieves those skills during policy training, and adds lessons from validation failures.… | Skills, Model weights | preprint · full-text | [Notes](#skillrl) · [Code](https://github.com/aiming-lab/SkillRL) |
@@ -177,7 +177,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2024-06-03 | **Re-ReST**<br>[Re-ReST: Reflection-Reinforced Self-Training for Language Agents](https://arxiv.org/abs/2406.01495) | Trains a separate reflector to repair unsuccessful model-generated examples. Accepted original and repaired trajectories then fine-tune the agent, so improvement is… | Model weights | peer-reviewed · full-text | [Notes](#re-rest) · [Code](https://github.com/PlusLabNLP/Re-ReST) |
 | 2024-04-01 | **Accumulation vs. collapse**<br>[Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](https://arxiv.org/abs/2404.01413) | Compares replacement of earlier datasets with accumulation of original and synthetic data. It supplies a linear-model analysis and generative-model experiments showing… | Model weights | preprint · full-text | [Notes](#accumulating-data-model-collapse) |
 | 2024-02-27 | **LoCoMo**<br>[Evaluating Very Long-Term Conversational Memory of LLM Agents](https://aclanthology.org/2024.acl-long.747/) | Creates persona- and event-grounded simulated conversations, then uses human editing to repair consistency and image alignment. The benchmark tests QA, event… | Memory | peer-reviewed · full-text | [Notes](#locomo) · [Code](https://github.com/snap-research/LoCoMo) |
-| 2024-01-23 | **TroVE**<br>[TroVE: Inducing Verifiable and Efficient Toolboxes for Solving Programmatic Tasks](https://arxiv.org/abs/2401.12869) | Samples solutions that import existing functions, create new ones, or use only supplied primitives. Execution agreement and simplicity select a solution whose functions… | Tools, Skills | peer-reviewed · full-text | [Notes](#trove) · [Code](https://github.com/zorazrw/trove) |
+| 2024-01-23 | **TroVE**<br>[TroVE: Inducing Verifiable and Efficient Toolboxes for Solving Programmatic Tasks](https://arxiv.org/abs/2401.12869) | Samples programs in import, create and primitive-only modes, chooses a frequent executable answer with simplicity tie-breaking, and retains its reusable functions.… | Tools, Skills | peer-reviewed · full-text | [Notes](#trove) · [Code](https://github.com/zorazrw/trove) |
 | 2024-01-18 | **Self-Rewarding LMs**<br>[Self-Rewarding Language Models](https://arxiv.org/abs/2401.10020) | Alternates answer generation, self-judging and DPO updates, changing the shared answering/reward model. The main experiment uses a fixed Llama-2-Chat prompt generator… | Model weights | peer-reviewed · full-text | [Notes](#self-rewarding-lms) |
 | 2024-01-02 | **SPIN**<br>[Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](https://arxiv.org/abs/2401.01335) | Optimizes a contrastive log-probability-ratio objective against the previous model, then samples a new opponent dataset from the updated weights. The experiments reuse… | Model weights | peer-reviewed · full-text | [Notes](#spin) · [Code](https://github.com/uclaml/SPIN) |
 | 2024 | **Self-correction survey**<br>[When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs](https://aclanthology.org/2024.tacl-1.78/) | Organizes inference-time correction around three questions: intrinsic improvement, improvement with external information, and superiority to alternative methods. Its… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#self-correction-survey) |
@@ -191,12 +191,12 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2023-08-17 | **ReST**<br>[Reinforced Self-Training (ReST) for Language Modeling](https://arxiv.org/abs/2308.08998) | Alternates costly generation rounds with multiple offline updates on increasingly filtered data. The strongest reward-score variant uses ordinary supervised negative… | Model weights | preprint · full-text | [Notes](#rest) |
 | 2023-06-20 | **RoboCat**<br>[RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation](https://arxiv.org/abs/2306.11706) | Fine-tunes a visual goal-conditioned generalist into task-specific policies, collects additional trajectories with them, then retrains a generalist on old and new data.… | Model weights | peer-reviewed · full-text | [Notes](#robocat) |
 | 2023-05-26 | **LLMs as Tool Makers**<br>[Large Language Models as Tool Makers](https://arxiv.org/abs/2305.17126) | A stronger model proposes Python tools, verifies them on examples and packages calling demonstrations for a cheaper user model. Tools persist in a functional cache.… | Tools | peer-reviewed · full-text | [Notes](#llms-as-tool-makers) · [Code](https://github.com/ctlllll/LLM-ToolMaker) |
-| 2023-05-25 | **Voyager**<br>[Voyager: An Open-Ended Embodied Agent with Large Language Models](https://arxiv.org/abs/2305.16291) | Builds an expanding library of executable Minecraft skills, retrieved and composed for later tasks. An automatic curriculum proposes objectives, while execution feedback… | Skills, Tools | peer-reviewed · full-text | [Notes](#voyager) · [Code](https://github.com/MineDojo/Voyager) |
+| 2023-05-25 | **Voyager**<br>[Voyager: An Open-Ended Embodied Agent with Large Language Models](https://arxiv.org/abs/2305.16291) | Stores successful Minecraft programs in a persistent skill library indexed by generated descriptions. Retrieved skills support composition and up to four code attempts… | Skills, Tools | peer-reviewed · full-text | [Notes](#voyager) · [Code](https://github.com/MineDojo/Voyager) |
 | 2023-05-23 | **CREATOR**<br>[CREATOR: Tool Creation for Disentangling Abstract and Concrete Reasoning of Large Language Models](https://arxiv.org/abs/2305.14318) | Separates reusable Python tool construction from problem-specific calls, executes their combination and revises it after runtime errors. Weights stay fixed. A separate… | Tools | peer-reviewed · full-text | [Notes](#creator) · [Code](https://github.com/qiancheng0/CREATOR) |
 | 2023-05-17 | **MemoryBank**<br>[MemoryBank: Enhancing Large Language Models with Long-Term Memory](https://arxiv.org/abs/2305.10250) | Stores dialogue records, daily/global summaries and user profiles, retrieves them with dense embeddings, and proposes exponential time decay with stronger retention… | Memory | peer-reviewed · full-text | [Notes](#memorybank) |
 | 2023-04-07 | **Generative Agents**<br>[Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) | Stores observations, plans and recursive reflections in a persistent memory stream. Recency, importance and embedding relevance determine retrieval; a frozen language… | Memory | peer-reviewed · full-text | [Notes](#generative-agents) · [Code](https://github.com/joonspk-research/generative_agents) |
 | 2023-03-30 | **Self-Refine**<br>[Self-Refine: Iterative Refinement with Self-Feedback](https://arxiv.org/abs/2303.17651) | Alternates drafting, feedback and revision while retaining the current task history. No weights or cross-task memory are updated; stopping and output selection vary… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#self-refine) |
-| 2023-03-20 | **Reflexion**<br>[Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366) | Converts task feedback into verbal reflections and carries those reflections into later attempts through an episodic memory buffer. The underlying language-model weights… | Memory | peer-reviewed · full-text | [Notes](#reflexion) · [Code](https://github.com/noahshinn/reflexion) |
+| 2023-03-20 | **Reflexion**<br>[Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366) | A fixed actor retries the same task using verbal reflections produced from earlier attempts and evaluation feedback. The episodic buffer retains only recent reflections… | Memory | peer-reviewed · full-text | [Notes](#reflexion) · [Code](https://github.com/noahshinn/reflexion) |
 | 2023-02-09 | **Toolformer**<br>[Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) | Samples API calls into ordinary text, executes and filters them using future-token loss reduction, and fine-tunes GPT-J on the augmented corpus. Learned tool invocation… | Model weights | peer-reviewed · full-text | [Notes](#toolformer) |
 | 2022-12-20 | **Self-Instruct**<br>[Self-Instruct: Aligning Language Models with Self-Generated Instructions](https://aclanthology.org/2023.acl-long.754/) | Expands a task pool with GPT-3 generations, identifies classification tasks, generates inputs/outputs in different orders and filters overlap or malformed examples. A… | Model weights | peer-reviewed · full-text | [Notes](#self-instruct) · [Code](https://github.com/yizhongw/self-instruct) |
 | 2022-12-15 | **Constitutional AI**<br>[Constitutional AI: Harmlessness from AI Feedback](https://arxiv.org/abs/2212.08073) | Fine-tunes on constitution-guided response revisions, then fits a preference model to mixed human-helpfulness and AI-harmlessness labels and trains a policy with RL.… | Model weights | preprint · full-text | [Notes](#constitutional-ai) |
@@ -2354,19 +2354,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2603.01145)
 
-**Mechanism.** Extracts explicit instruction skills from interactions, retrieves them for later requests, and merges related updates into versioned skill artifacts. A persistent skill bank changes while the underlying language model stays fixed.
+**Mechanism.** Uses fixed prompted modules to rewrite queries, retrieve instruction skills with hybrid dense/lexical search, and update a persistent versioned skill bank. A nearest-neighbor comparison guides maintenance; the generated artifacts are instructions supplied to later responses, without base-model training.
 
-**What changes:** Skills, Memory, Prompts / context. **Persistence:** across-tasks. **Learning signal:** Dialogue histories, recurring user preferences, corrections, and model judgments about extraction and merging.
+**What changes:** Skills, Memory, Prompts / context. **Persistence:** across-tasks. **Learning signal:** Recurring user queries, constraints and corrections are extraction evidence; assistant responses provide context rather than evidence of a successfully learned skill. Model judgments choose additions, merges or discards.
 
-**Evaluation.** The inspected v2 reports SkillBank statistics from four language/model subsets of WildChat and qualitative examples of extracted and repeatedly revised skills.
+**Evaluation.** ArXiv v2 reports 1,858 skill artifacts from four language/model subsets of long WildChat conversations, metadata distributions and multilingual examples. Versioned rewrite cases illustrate maintenance, but no controlled downstream task-performance or forgetting experiment is reported.
 
-**Boundary.** Artifact counts and case studies demonstrate construction and maintenance, not a controlled estimate of improved downstream task success or long-term retention. This AutoSkill is distinct from MUSE-Autoskill and similarly named video-QA work.
+**Boundary.** Artifact and revision counts do not establish capability gains. Retrieval thresholds, extraction judgments, user/session boundaries and regression prevention lack controlled evaluation. Asynchronous maintenance is an architectural design, not measured zero overhead. Later repository replay/evaluation extensions must not be attributed retrospectively to this paper.
 
-**Code / data.** [Official artifact](https://github.com/ECNU-ICALK/AutoSkill) — Official repository linked by the paper and its public page inspected; not executed.
+**Code / data.** [Official artifact](https://github.com/ECNU-ICALK/AutoSkill) — Official current README inspected on 2026-11-09. It documents later document extraction, local skill management and SkillEvo components beyond the reviewed March 2026 paper. No code, datasets or skills were installed or executed.
 
-**Topics:** memory, skills, continual-learning. **Reviewed:** full-text · 2026-10-29.
+**Topics:** memory, skills, continual-learning. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2603.01145) · [Source 2](https://arxiv.org/html/2603.01145v2) · [Source 3](https://github.com/ECNU-ICALK/AutoSkill)
+[Source 1](https://arxiv.org/abs/2603.01145) · [Source 2](https://arxiv.org/html/2603.01145v2) · [Source 3](https://github.com/ECNU-ICALK/AutoSkill) · [Source 4](https://arxiv.org/pdf/2603.01145v2)
 
 <a id="evox"></a>
 
@@ -3858,19 +3858,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2401.12869)
 
-**Mechanism.** Samples solutions that import existing functions, create new ones, or use only supplied primitives. Execution agreement and simplicity select a solution whose functions join a reusable toolbox; periodic trimming removes low-use functions without model training.
+**Mechanism.** Samples programs in import, create and primitive-only modes, chooses a frequent executable answer with simplicity tie-breaking, and retains its reusable functions. Periodic frequency-based trimming also regenerates earlier solutions affected by removed tools. The model and toolbox-management procedure stay fixed.
 
-**What changes:** Tools, Skills. **Persistence:** across-tasks. **Learning signal:** Agreement among executed candidate outputs, program simplicity, and observed tool reuse.
+**What changes:** Tools, Skills. **Persistence:** across-tasks. **Learning signal:** Agreement among executed candidate answers, a program-complexity proxy and observed tool reuse; reference answers are used for evaluation rather than per-task tool admission.
 
-**Evaluation.** Tests 11 math, table-QA, and visual-reasoning datasets. A separate study asks six people to verify 100 table-QA solutions and measures verification time and accuracy.
+**Evaluation.** The final ICML paper covers eleven math, table-QA and visual-reasoning datasets, ordering/selection/rectification ablations, and a six-person verification study. Main results select the best of five runs; some external baselines reuse previously published scores.
 
-**Boundary.** Supplied primitives and demonstrations constrain the tool space. Agreement is not proof of correctness, and the human study does not establish universal reliability. Some comparisons reuse previously reported baseline scores.
+**Boundary.** Execution agreement is not correctness verification, and best-run reporting does not estimate typical performance. Retrospective regeneration differs from scoring each streaming prediction once. Supplied primitives and demonstrations matter; complexity is an AST-based proxy. Human verification improves on the tested sample, but broader reliability, lifecycle cost and retention remain unestablished.
 
-**Code / data.** [Official artifact](https://github.com/zorazrw/trove) — Official repository linked by the paper and its public page inspected; not executed.
+**Code / data.** [Official artifact](https://github.com/zorazrw/trove) — Official README inspected on 2026-11-09; task-specific entry points and the GQA perception-service dependency are documented. No generated tools, research code, models or benchmark environments were executed.
 
-**Topics:** skills, tools, evaluation. **Reviewed:** full-text · 2026-10-29.
+**Topics:** skills, tools, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2401.12869) · [Source 2](https://arxiv.org/html/2401.12869v1) · [Source 3](https://proceedings.mlr.press/v235/wang24az.html) · [Source 4](https://github.com/zorazrw/trove)
+[Source 1](https://arxiv.org/abs/2401.12869) · [Source 2](https://arxiv.org/html/2401.12869v1) · [Source 3](https://proceedings.mlr.press/v235/wang24az.html) · [Source 4](https://github.com/zorazrw/trove) · [Source 5](https://raw.githubusercontent.com/mlresearch/v235/main/assets/wang24az/wang24az.pdf)
 
 <a id="self-rewarding-lms"></a>
 
@@ -4172,19 +4172,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2305.16291)
 
-**Mechanism.** Builds an expanding library of executable Minecraft skills, retrieved and composed for later tasks. An automatic curriculum proposes objectives, while execution feedback and a model-based critic guide program repair before a skill is retained.
+**Mechanism.** Stores successful Minecraft programs in a persistent skill library indexed by generated descriptions. Retrieved skills support composition and up to four code attempts per objective. Models and controller logic remain fixed; the setup supplies high-level control APIs and a hand-specified curriculum warmup.
 
-**What changes:** Skills, Tools. **Persistence:** across-tasks. **Learning signal:** Environment observations, interpreter errors, and model-based task verification.
+**What changes:** Skills, Tools. **Persistence:** across-tasks. **Learning signal:** Environment state, execution errors and a GPT-4 task critic guide program revision. A fixed curriculum prompt proposes new objectives from accumulated progress and current state.
 
-**Evaluation.** The authors compare exploration, technology-tree progress, ablations, and reuse of learned skills on new tasks in another Minecraft world.
+**Evaluation.** Three exploration runs measure item acquisition, tech-tree progress and traversal. Separate tests reset inventory and world while retaining the library for four new goals, and also transfer it to an AutoGPT baseline. Ablations examine curriculum, skills and feedback.
 
-**Boundary.** Results concern a simulator with supplied control APIs. The paper reports inaccurate self-verification and impossible proposed tasks, so its retained library is not guaranteed correct.
+**Boundary.** Text state, control primitives and inventory-preserving recovery distinguish this from pixel-based embodied learning. Prompt counts are not total compute. Diamond-tool exploration succeeds in one of three runs; finite transfer tests do not establish lifelong retention. State-based criticism can misjudge success, and 3D construction examples use human guidance.
 
-**Code / data.** [Official artifact](https://github.com/MineDojo/Voyager) — Official repository linked and its public page inspected; not executed.
+**Code / data.** [Official artifact](https://github.com/MineDojo/Voyager) — Official README inspected on 2026-11-09; it documents Minecraft/Fabric, Python/Node dependencies, checkpointing and separate learned-library inference. No game, research code or model API was run; arXiv v2 is the inspected body.
 
-**Topics:** foundations, skills, tools, continual-learning. **Reviewed:** full-text · 2026-10-28.
+**Topics:** foundations, skills, tools, continual-learning. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2305.16291) · [Source 2](https://arxiv.org/html/2305.16291v2) · [Source 3](https://openreview.net/pdf?id=ehfRiF0R3a) · [Source 4](https://github.com/MineDojo/Voyager)
+[Source 1](https://arxiv.org/abs/2305.16291) · [Source 2](https://arxiv.org/html/2305.16291v2) · [Source 3](https://openreview.net/pdf?id=ehfRiF0R3a) · [Source 4](https://github.com/MineDojo/Voyager) · [Source 5](https://arxiv.org/pdf/2305.16291v2)
 
 **Related software:** [Voyager](systems.md#system-voyager). See each system's relationship note before equating it with the evaluated paper version.
 
@@ -4284,19 +4284,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2303.11366)
 
-**Mechanism.** Converts task feedback into verbal reflections and carries those reflections into later attempts through an episodic memory buffer. The underlying language-model weights stay fixed.
+**Mechanism.** A fixed actor retries the same task using verbal reflections produced from earlier attempts and evaluation feedback. The episodic buffer retains only recent reflections, usually three for interactive/reasoning tasks and one for coding; model weights stay fixed.
 
-**What changes:** Memory. **Persistence:** within-task. **Learning signal:** Scalar or textual environment feedback, exact-match grading, heuristics, and model-generated evaluation, depending on the experiment.
+**What changes:** Memory. **Persistence:** within-task. **Learning signal:** Task-dependent feedback: environment completion and heuristics for ALFWorld, reference-answer exact-match judgments for HotpotQA, and self-generated executable tests for programming.
 
-**Evaluation.** The study evaluates repeated attempts on ALFWorld, HotpotQA, and programming tasks, with ablations of reflection and feedback.
+**Evaluation.** Reports cumulative ALFWorld and HotpotQA improvement, coding results after internal testing/revision, and feedback/memory ablations. The coding pass@1 result means one final submitted program after internal attempts, not one generation or a matched-compute comparison.
 
-**Boundary.** The central experiments improve retries of the same task; they do not establish a durable cross-task learning library. Feedback sources differ by task, and the paper uses bounded memory.
+**Boundary.** The experiments do not establish cross-task learning. Gains depend on feedback quality: MBPP Python degrades, WebShop shows little improvement, and the tested smaller coding model does not improve. Incorrect tests can cause premature acceptance or harmful edits. Selected successful reflections are not causal proof of faithful error diagnosis.
 
-**Code / data.** [Official artifact](https://github.com/noahshinn/reflexion) — Official repository linked and its public page inspected; not executed.
+**Code / data.** [Official artifact](https://github.com/noahshinn/reflexion) — Official README inspected on 2026-11-09; it documents separate reasoning, decision-making and programming experiments and historical logs. No research code, API calls or benchmark experiments were executed.
 
-**Topics:** foundations, memory. **Reviewed:** full-text · 2026-10-28.
+**Topics:** foundations, memory. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2303.11366) · [Source 2](https://arxiv.org/html/2303.11366v4) · [Source 3](https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html) · [Source 4](https://github.com/noahshinn/reflexion)
+[Source 1](https://arxiv.org/abs/2303.11366) · [Source 2](https://arxiv.org/html/2303.11366v4) · [Source 3](https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html) · [Source 4](https://github.com/noahshinn/reflexion) · [Source 5](https://arxiv.org/pdf/2303.11366v4)
 
 <a id="toolformer"></a>
 
