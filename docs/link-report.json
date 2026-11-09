@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-09T09:10:27.959353+00:00",
+  "checked_at_utc": "2026-11-09T09:16:50.397824+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -3372,6 +3372,18 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2610.29823v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2610.29823v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2610.31303v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2610.31303v2",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2610.33274v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2610.33274v1",
@@ -4410,6 +4422,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/zedong-peng/memorytax",
+      "http_status": 200,
+      "final_url": "https://github.com/zedong-peng/memorytax",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/zjunlp/MemP",
       "http_status": 200,
       "final_url": "https://github.com/zjunlp/MemP",
@@ -4925,14 +4943,14 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=ac4234ab-6956-47b6-bf93-1a45eb3f1a48",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=d1b293f3-e9a7-4f6f-aea9-181f74ba597d",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=cce93375-5b62-4b4f-bdea-4a0f4e03f772",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=e975e58c-a653-4d0f-8999-1a8d061dd317",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -4946,14 +4964,14 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=6461faff-f34e-44aa-a488-ec4c877a6165",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=a875f201-16a6-4ed0-84ef-334ab92619e1",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=eb658e86-bd3d-4b72-bb89-c297a502f87c",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=a214cb8a-cfce-41e9-88ab-f9e11889a748",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -4979,6 +4997,12 @@
       "url": "https://xiaowu0162.github.io/longmemeval-v2/",
       "http_status": 200,
       "final_url": "https://xiaowu0162.github.io/longmemeval-v2/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://zedongpeng.com/memorytax/",
+      "http_status": 200,
+      "final_url": "https://zedongpeng.com/memorytax/",
       "status": "reachable"
     }
   ]

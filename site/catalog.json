@@ -1368,10 +1368,11 @@
       "url": "https://arxiv.org/abs/2610.31303",
       "sources": [
         "https://arxiv.org/abs/2610.31303",
-        "https://arxiv.org/html/2610.31303v2"
+        "https://arxiv.org/html/2610.31303v2",
+        "https://arxiv.org/pdf/2610.31303v2"
       ],
       "code_url": null,
-      "code_note": "Official implementation availability was not established in this review; no code was executed.",
+      "code_note": "The complete v2 paper and substantive appendices were inspected on 2026-11-09. An official runnable artifact for this study was not established; its longitudinal originals remain private. No research code, benchmark postchecks or model calls were executed.",
       "topics": [
         "foundations",
         "memory",
@@ -1383,11 +1384,11 @@
       ],
       "persistence": "not-applicable",
       "learning_signal": "Not applicable: a decision-theoretic and empirical analysis of memory value.",
-      "mechanism": "Separates information retained in memory from value realized by a particular reader, accounting for recovery, revision, future demand, and decision costs. Proposes matched comparison contracts and dependency-aware revision hypotheses.",
-      "evaluation": "Combines finite theoretical constructions with a twelve-question LoCoMo pilot, an authored two-project update task, longitudinal cases, and a MemOps measurement audit.",
-      "limitations": "The LoCoMo pilot uses one reader draw per condition; some controls were developed afterward. Longitudinal cases concern one owner and retain original artifacts privately. Curator interpretation: these diagnostics do not establish population-wide rankings or a validated general learning algorithm.",
+      "mechanism": "Defines retained decision value separately from a fixed reader’s realized benefit, with explicit costs for recovery and revision. Conditional simulation bounds and finite counterexamples distinguish information timing, access, reader interaction, feedback and unknown future demand.",
+      "evaluation": "ArXiv v2 includes proofs, finite controls, a twelve-question LoCoMo diagnostic, an authored two-project update study, three longitudinal cases and a MemOps measurement audit. Fixed-evidence and fixed-output controls distinguish changes in memory use from changes in scoring.",
+      "limitations": "Theoretical orderings depend on specified access, policy and budget assumptions. The LoCoMo pilot has one draw per condition and post hoc prompt controls; private longitudinal cases concern one owner. Evaluator repairs are not agent improvements, and the proposed allocation and revision policies remain hypotheses rather than validated general algorithms.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-09",
       "short_name": "Value of memory"
     },
     {
@@ -1472,10 +1473,13 @@
       "url": "https://arxiv.org/abs/2610.29823",
       "sources": [
         "https://arxiv.org/abs/2610.29823",
-        "https://arxiv.org/html/2610.29823v1"
+        "https://arxiv.org/html/2610.29823v1",
+        "https://arxiv.org/pdf/2610.29823v1",
+        "https://zedongpeng.com/memorytax/",
+        "https://github.com/zedong-peng/memorytax"
       ],
-      "code_url": null,
-      "code_note": "Official implementation availability was not established in this review; no code was executed.",
+      "code_url": "https://github.com/zedong-peng/memorytax",
+      "code_note": "Official paper-linked repository, runner documentation and MIT code license inspected at 2f79ab3c704c54a9b1fda7142e0b6c156d7afe5f on 2026-11-09. The agent runner documents up to four retry rounds and retention of accepted trials. Python/API, Harbor and Docker setup was not installed or executed.",
       "topics": [
         "memory",
         "evaluation"
@@ -1486,11 +1490,11 @@
       ],
       "persistence": "not-applicable",
       "learning_signal": "Not applicable: comparison of fixed memory construction and history-search approaches.",
-      "mechanism": "Compares extracted memory, raw-context retrieval, and coding agents searching conversation files. Writer-reader swaps probe information loss during memory construction, while cost accounting separates building a store from answering questions.",
-      "evaluation": "Runs seven approaches with three models on one LoCoMo conversation containing 152 questions, with one run per configuration and separate photo-evidence analysis.",
-      "limitations": "The history fits every context window. Agents received photo captions unavailable to memory baselines, grading uses a model judge, and at least one answer key is wrong. Costs depend on prices and caching; the small study cannot establish that designed memory is generally unnecessary.",
+      "mechanism": "Compares raw-history context and BM25, extracted-fact and graph stores, and coding agents that search conversation files. Writer–reader swaps hold each store and its retrievals fixed to probe construction bottlenecks. Agent sessions reset for each question.",
+      "evaluation": "ArXiv v1 studies one LoCoMo conversation: 419 turns, 152 questions, seven methods and three models. It reports cost breakdowns, writer–reader comparisons and photo-evidence subsets, with one retained trial per configuration and question.",
+      "limitations": "All history fits the context windows; only agents receive photo captions. Failed or unanswered agent trials are retried and only accepted trials counted, limiting reliability and total-cost interpretation. A lenient model judge and a known answer-key error further qualify the single-conversation results; they do not establish that memory is generally unnecessary.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-09",
       "short_name": "MemoryTax"
     },
     {

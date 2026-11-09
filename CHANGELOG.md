@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-09 — Expanded memory-value evidence reviews
+
+- Appraised MemoryTax and The Value of Memory in full, adding retry-accounting and measurement qualifications plus the verified MemoryTax code link.
+- Broader audit: 94 of 190 works complete, 96 pending.
+
 ## 2026-11-09 — Expanded Meta-Harness and Meta² evidence reviews
 
 - Read both papers and full substantive appendices, refining transfer, causal, replication, cost and artifact boundaries.

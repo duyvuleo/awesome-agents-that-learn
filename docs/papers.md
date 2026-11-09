@@ -50,10 +50,10 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-24 | **ReSight**<br>[ReSight: Task-Driven Self-Improving Memory for Embodied Agents](https://arxiv.org/abs/2610.33487) | Preserves robot keyframes while a coding agent builds reusable memory-processing programs, query tools, and skills. Explore–Distill–Mount registers these capabilities… | Memory, Skills, Tools, Agent code | preprint · full-text | [Notes](#resight) |
 | 2026-10-23 | **OPST**<br>[On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models](https://arxiv.org/abs/2610.32770) | Seeds generation with broad topics, removes unstable or already-solved questions, and self-distills on student rollouts. Student and teacher weights carry across rounds… | Model weights | preprint · full-text | [Notes](#on-policy-self-training) |
 | 2026-10-23 | **FlexA-Mem**<br>[FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents](https://arxiv.org/abs/2610.33274) | Preserves raw history alongside LLM-written records and links, then renders a compact timeline plus retrieved detail under a token budget. A fixed fit-or-degrade rule… | Memory | preprint · full-text | [Notes](#flexa-mem) · [Code](https://github.com/WujiangXu/Flex-Amem) |
-| 2026-10-22 | **Value of memory**<br>[The Value of Memory in Language Agents](https://arxiv.org/abs/2610.31303) | Separates information retained in memory from value realized by a particular reader, accounting for recovery, revision, future demand, and decision costs. Proposes… | Analysis / no retained update | preprint · full-text | [Notes](#value-of-memory) |
+| 2026-10-22 | **Value of memory**<br>[The Value of Memory in Language Agents](https://arxiv.org/abs/2610.31303) | Defines retained decision value separately from a fixed reader’s realized benefit, with explicit costs for recovery and revision. Conditional simulation bounds and… | Analysis / no retained update | preprint · full-text | [Notes](#value-of-memory) |
 | 2026-10-22 | **METTA**<br>[METTA: Memory-Enhanced Test-Time Adaptation for Meta-Reinforcement Learning](https://arxiv.org/abs/2610.31656) | Combines within-episode fast-weight updates with summaries retained across episodes of one task trial. Meta-training learns the policy and memory machinery across tasks… | Memory, Model weights | preprint · full-text | [Notes](#metta) |
 | 2026-10-21 | **Code-edit readout**<br>[Recursive Self-Improvement on a Budget: Scoring Code Edits Before They Run](https://arxiv.org/abs/2610.29121) | Fits a linear predictor of candidate-edit utility from parent scores and projected diff embeddings, then freezes it. The predictor chooses which scaffold edit to… | Agent code, Prompts / context | preprint · full-text | [Notes](#rsi-budget-code-scoring) |
-| 2026-10-21 | **MemoryTax**<br>[MemoryTax: The Bitter Lesson of Agent Memory](https://arxiv.org/abs/2610.29823) | Compares extracted memory, raw-context retrieval, and coding agents searching conversation files. Writer-reader swaps probe information loss during memory construction… | Analysis / no retained update | preprint · full-text | [Notes](#memorytax) |
+| 2026-10-21 | **MemoryTax**<br>[MemoryTax: The Bitter Lesson of Agent Memory](https://arxiv.org/abs/2610.29823) | Compares raw-history context and BM25, extracted-fact and graph stores, and coding agents that search conversation files. Writer–reader swaps hold each store and its… | Analysis / no retained update | preprint · full-text | [Notes](#memorytax) · [Code](https://github.com/zedong-peng/memorytax) |
 | 2026-10-20 | **RSI evidence audit**<br>[Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](https://arxiv.org/abs/2610.27610) | Codes whether self-improvement studies evaluate final artifacts, repeat the entire learning loop, or compare earlier and later improvers from identical starting… | Analysis / no retained update | preprint · full-text | [Notes](#rsi-evaluation-audit) |
 | 2026-10-19 | **Continual learning limits**<br>[Are Self-Evolving Agents Continual Learners?](https://arxiv.org/abs/2610.25858) | Evaluates frozen-model agents that update retrieved experience, a shared prompt, or harness files on drifting streams. It separates gains on current tasks from… | Memory, Prompts / context, Agent code | preprint · full-text | [Notes](#self-evolving-continual-learners) |
 | 2026-10-19 | **REM**<br>[REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents](https://arxiv.org/abs/2610.27377) | Consolidates past coding traces into phased documents, injects a retrieved document at task start, and exposes a detailed implementation record only when the agent… | Memory, Prompts / context | preprint · full-text | [Notes](#rem-experience-memory) |
@@ -1030,19 +1030,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.31303)
 
-**Mechanism.** Separates information retained in memory from value realized by a particular reader, accounting for recovery, revision, future demand, and decision costs. Proposes matched comparison contracts and dependency-aware revision hypotheses.
+**Mechanism.** Defines retained decision value separately from a fixed reader’s realized benefit, with explicit costs for recovery and revision. Conditional simulation bounds and finite counterexamples distinguish information timing, access, reader interaction, feedback and unknown future demand.
 
 **What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable: a decision-theoretic and empirical analysis of memory value.
 
-**Evaluation.** Combines finite theoretical constructions with a twelve-question LoCoMo pilot, an authored two-project update task, longitudinal cases, and a MemOps measurement audit.
+**Evaluation.** ArXiv v2 includes proofs, finite controls, a twelve-question LoCoMo diagnostic, an authored two-project update study, three longitudinal cases and a MemOps measurement audit. Fixed-evidence and fixed-output controls distinguish changes in memory use from changes in scoring.
 
-**Boundary.** The LoCoMo pilot uses one reader draw per condition; some controls were developed afterward. Longitudinal cases concern one owner and retain original artifacts privately. Curator interpretation: these diagnostics do not establish population-wide rankings or a validated general learning algorithm.
+**Boundary.** Theoretical orderings depend on specified access, policy and budget assumptions. The LoCoMo pilot has one draw per condition and post hoc prompt controls; private longitudinal cases concern one owner. Evaluator repairs are not agent improvements, and the proposed allocation and revision policies remain hypotheses rather than validated general algorithms.
 
-**Code / data.** Official implementation availability was not established in this review; no code was executed.
+**Code / data.** The complete v2 paper and substantive appendices were inspected on 2026-11-09. An official runnable artifact for this study was not established; its longitudinal originals remain private. No research code, benchmark postchecks or model calls were executed.
 
-**Topics:** foundations, memory, evaluation. **Reviewed:** full-text · 2026-10-30.
+**Topics:** foundations, memory, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.31303) · [Source 2](https://arxiv.org/html/2610.31303v2)
+[Source 1](https://arxiv.org/abs/2610.31303) · [Source 2](https://arxiv.org/html/2610.31303v2) · [Source 3](https://arxiv.org/pdf/2610.31303v2)
 
 <a id="metta"></a>
 
@@ -1096,19 +1096,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.29823)
 
-**Mechanism.** Compares extracted memory, raw-context retrieval, and coding agents searching conversation files. Writer-reader swaps probe information loss during memory construction, while cost accounting separates building a store from answering questions.
+**Mechanism.** Compares raw-history context and BM25, extracted-fact and graph stores, and coding agents that search conversation files. Writer–reader swaps hold each store and its retrievals fixed to probe construction bottlenecks. Agent sessions reset for each question.
 
 **What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable: comparison of fixed memory construction and history-search approaches.
 
-**Evaluation.** Runs seven approaches with three models on one LoCoMo conversation containing 152 questions, with one run per configuration and separate photo-evidence analysis.
+**Evaluation.** ArXiv v1 studies one LoCoMo conversation: 419 turns, 152 questions, seven methods and three models. It reports cost breakdowns, writer–reader comparisons and photo-evidence subsets, with one retained trial per configuration and question.
 
-**Boundary.** The history fits every context window. Agents received photo captions unavailable to memory baselines, grading uses a model judge, and at least one answer key is wrong. Costs depend on prices and caching; the small study cannot establish that designed memory is generally unnecessary.
+**Boundary.** All history fits the context windows; only agents receive photo captions. Failed or unanswered agent trials are retried and only accepted trials counted, limiting reliability and total-cost interpretation. A lenient model judge and a known answer-key error further qualify the single-conversation results; they do not establish that memory is generally unnecessary.
 
-**Code / data.** Official implementation availability was not established in this review; no code was executed.
+**Code / data.** [Official artifact](https://github.com/zedong-peng/memorytax) — Official paper-linked repository, runner documentation and MIT code license inspected at 2f79ab3c704c54a9b1fda7142e0b6c156d7afe5f on 2026-11-09. The agent runner documents up to four retry rounds and retention of accepted trials. Python/API, Harbor and Docker setup was not installed or executed.
 
-**Topics:** memory, evaluation. **Reviewed:** full-text · 2026-10-30.
+**Topics:** memory, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.29823) · [Source 2](https://arxiv.org/html/2610.29823v1)
+[Source 1](https://arxiv.org/abs/2610.29823) · [Source 2](https://arxiv.org/html/2610.29823v1) · [Source 3](https://arxiv.org/pdf/2610.29823v1) · [Source 4](https://zedongpeng.com/memorytax/) · [Source 5](https://github.com/zedong-peng/memorytax)
 
 <a id="rsi-evaluation-audit"></a>
 
