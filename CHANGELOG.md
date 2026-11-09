@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded agent-training evidence reviews
+
+- Completed detailed appraisals of Agent-R, Re-ReST, RAGEN and RISE, distinguishing training feedback, correction protocols, negative results and final-paper additions.
+- Recovered official Agent-R and RISE code links without claiming reproduction.
+- Broader audit: 76 of 190 works complete, 114 pending.
+
 ## 2026-11-09 — Expanded foundational memory and skill reviews
 
 - Completed detailed appraisals of Reflexion, Voyager, TroVE and AutoSkill, including negative findings, feedback sources, evaluation protocols and artifact boundaries.

@@ -158,10 +158,10 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-05-17 | **LifelongAgentBench**<br>[LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners](https://arxiv.org/abs/2505.11942) | Sequences tasks with overlapping SQL, shell-command and knowledge-graph skills and retains interaction histories for fixed-weight agents. Database tables and… | Memory, Skills | preprint · full-text | [Notes](#lifelongagentbench) · [Code](https://github.com/caixd-220529/LifelongAgentBench) |
 | 2025-05-06 | **Absolute Zero**<br>[Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://arxiv.org/abs/2505.03335) | A single model proposes and solves code-based tasks, with a code executor validating problems and answers. Reinforcement learning updates both roles while the generated… | Model weights | peer-reviewed · full-text | [Notes](#absolute-zero) · [Code](https://github.com/LeapLabTHU/Absolute-Zero-Reasoner) |
 | 2025-04-28 | **Mem0**<br>[Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/abs/2504.19413) | Extracts facts from recent exchanges and background summaries, then updates an external memory store through add/update/delete/no-op decisions. The graph variant stores… | Memory | preprint · full-text | [Notes](#mem0) |
-| 2025-04-24 | **RAGEN**<br>[RAGEN: Understanding Self-Evolution in LLM Agents via Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2504.20073) | StarPO optimizes reasoning-action trajectories with reinforcement learning. The study identifies repetitive reasoning collapse and tests StarPO-S interventions including… | Model weights | preprint · full-text | [Notes](#ragen) · [Code](https://github.com/mll-lab-nu/RAGEN) |
+| 2025-04-24 | **RAGEN**<br>[RAGEN: Understanding Self-Evolution in LLM Agents via Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2504.20073) | StarPO organizes trajectory collection and PPO/GRPO updates to model weights. StarPO-S tests variability-based prompt filtering and gradient changes, including KL… | Model weights | preprint · full-text | [Notes](#ragen) · [Code](https://github.com/mll-lab-nu/RAGEN) |
 | 2025-04-21 | **SICA**<br>[A Self-Improving Coding Agent](https://arxiv.org/abs/2504.15228) | Equips a coding agent with tools to edit its own implementation and reuses improved versions in later iterations. Learning changes the surrounding agent code rather than… | Agent code, Tools, Workflows | preprint · full-text | [Notes](#sica) · [Code](https://github.com/MaximeRobeyns/self_improving_coding_agent) |
 | 2025-02-17 | **A-MEM**<br>[A-MEM: Agentic Memory for LLM Agents](https://arxiv.org/abs/2502.12110) | Creates atomic notes, retrieves candidate neighbors by embedding similarity, links relevant notes, and revises neighboring contextual attributes. Persistent external… | Memory | peer-reviewed · full-text | [Notes](#a-mem) · [Code](https://github.com/WujiangXu/A-mem-sys) |
-| 2025-01-20 | **Agent-R**<br>[Agent-R: Training Language Model Agents to Reflect via Iterative Self-Training](https://arxiv.org/abs/2501.11425) | Uses Monte Carlo tree search to pair unsuccessful and successful paths. The current actor selects a revision point, and spliced correction trajectories support iterative… | Model weights | preprint · full-text | [Notes](#agent-r) |
+| 2025-01-20 | **Agent-R**<br>[Agent-R: Training Language Model Agents to Reflect via Iterative Self-Training](https://arxiv.org/abs/2501.11425) | Builds synthetic recovery trajectories by truncating a bad branch and appending a good continuation. Iterative supervised training updates the actor on good and revised… | Model weights | preprint · full-text | [Notes](#agent-r) · [Code](https://github.com/ByteDance-Seed/Agent-R) |
 | 2024-10-14 | **LongMemEval**<br>[LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory](https://arxiv.org/abs/2410.10813) | Constructs 500 curated questions with annotated evidence embedded in scalable user-assistant histories, testing extraction, multi-session reasoning, updates, temporal… | Memory | peer-reviewed · full-text | [Notes](#longmemeval) · [Code](https://github.com/xiaowu0162/LongMemEval) |
 | 2024-10-14 | **AFlow**<br>[AFlow: Automating Agentic Workflow Generation](https://arxiv.org/abs/2410.10762) | Searches over code-represented workflows using a Monte Carlo tree-search variant. An LLM changes prompts and connections between operations, while the tree retains… | Workflows, Prompts / context, Agent code | peer-reviewed · full-text | [Notes](#aflow) · [Code](https://github.com/FoundationAgents/AFlow) |
 | 2024-10-08 | **AgentSquare**<br>[AgentSquare: Automatic LLM Agent Search in Modular Design Space](https://arxiv.org/abs/2410.06153) | Alternates code-level module evolution with recombination of planning, reasoning, tool-use and memory modules. Novel modules receive environment evaluation… | Workflows, Prompts / context, Tools, Memory | peer-reviewed · full-text | [Notes](#agentsquare) · [Code](https://github.com/tsinghua-fib-lab/AgentSquare) |
@@ -169,12 +169,12 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2024-09-19 | **SCoRe**<br>[Training Language Models to Self-Correct via Reinforcement Learning](https://arxiv.org/abs/2409.12917) | Trains one model through two-turn online RL: first constrain initial answers while learning revisions, then optimize both turns with a progress bonus. The learned… | Model weights | peer-reviewed · full-text | [Notes](#score) |
 | 2024-09-11 | **AWM**<br>[Agent Workflow Memory](https://arxiv.org/abs/2409.07429) | Abstracts reusable subtask workflows and inserts them into agent context. Offline workflows are induced before evaluation; online workflows accumulate after completed… | Memory, Workflows | peer-reviewed · full-text | [Notes](#agent-workflow-memory) · [Code](https://github.com/zorazrw/agent-workflow-memory) |
 | 2024-08-15 | **ADAS**<br>[Automated Design of Agentic Systems](https://arxiv.org/abs/2408.08435) | A fixed meta-agent writes executable forward functions, checks novelty, repairs execution errors, and archives designs with scores. Search changes prompts and control… | Agent code, Workflows, Prompts / context | peer-reviewed · full-text | [Notes](#adas) · [Code](https://github.com/ShengranHu/ADAS) |
-| 2024-07-25 | **RISE**<br>[Recursive Introspection: Teaching Language Model Agents How to Self-Improve](https://arxiv.org/abs/2407.18219) | Turns single-turn problems into multi-turn trajectories and trains the model to revise earlier unsuccessful responses. Its training loop uses reward-weighted supervised… | Model weights | peer-reviewed · full-text | [Notes](#rise) |
+| 2024-07-25 | **RISE**<br>[Recursive Introspection: Teaching Language Model Agents How to Self-Improve](https://arxiv.org/abs/2407.18219) | Converts a problem into a sequence of attempted answers and trains a correction policy with reward-weighted learning on accumulated rollouts. At deployment, fixed-weight… | Model weights | peer-reviewed · full-text | [Notes](#rise) · [Code](https://github.com/cmu-mind/RISE) |
 | 2024-07-24 | **Model collapse**<br>[AI models collapse when trained on recursively generated data](https://www.nature.com/articles/s41586-024-07566-y) | Analyzes how repeated training on generated data can lose low-probability parts of an original distribution and amplify errors. The paper combines tractable distribution… | Model weights | peer-reviewed · full-text | [Notes](#model-collapse) |
 | 2024-06-26 | **Symbolic agent learning**<br>[Symbolic Learning Enables Self-Evolving Agents](https://arxiv.org/abs/2406.18532) | Records an execution trajectory, propagates natural-language critiques backward, and edits prompts, tool definitions and pipeline configuration with fixed LLMs. Invalid… | Prompts / context, Tools, Workflows | preprint · full-text | [Notes](#symbolic-agent-learning) · [Code](https://github.com/aiwaves-cn/agents) |
 | 2024-06-11 | **TextGrad**<br>[TextGrad: Automatic "Differentiation" via Text](https://arxiv.org/abs/2406.07496) | Backpropagates textual feedback through a computation graph and rewrites selected variables using a fixed LLM optimizer. Reusable prompt optimization and within-instance… | Prompts / context, Agent code | peer-reviewed · full-text | [Notes](#textgrad) · [Code](https://github.com/zou-group/textgrad) |
 | 2024-06-06 | **ReST-MCTS***<br>[ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search](https://arxiv.org/abs/2406.03816) | Uses a learned value model to guide tree search with step expansion, rollout and self-criticism. Successful traces fine-tune the policy; inferred values from searched… | Model weights | peer-reviewed · full-text | [Notes](#rest-mcts) · [Code](https://github.com/THUDM/ReST-MCTS) |
-| 2024-06-03 | **Re-ReST**<br>[Re-ReST: Reflection-Reinforced Self-Training for Language Agents](https://arxiv.org/abs/2406.01495) | Trains a separate reflector to repair unsuccessful model-generated examples. Accepted original and repaired trajectories then fine-tune the agent, so improvement is… | Model weights | peer-reviewed · full-text | [Notes](#re-rest) · [Code](https://github.com/PlusLabNLP/Re-ReST) |
+| 2024-06-03 | **Re-ReST**<br>[Re-ReST: Reflection-Reinforced Self-Training for Language Agents](https://arxiv.org/abs/2406.01495) | Trains a separate reflector on failed/successful sample pairs, uses one reflection step to repair rejected generations, and fine-tunes the agent on accepted original and… | Model weights | peer-reviewed · full-text | [Notes](#re-rest) · [Code](https://github.com/PlusLabNLP/Re-ReST) |
 | 2024-04-01 | **Accumulation vs. collapse**<br>[Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](https://arxiv.org/abs/2404.01413) | Compares replacement of earlier datasets with accumulation of original and synthetic data. It supplies a linear-model analysis and generative-model experiments showing… | Model weights | preprint · full-text | [Notes](#accumulating-data-model-collapse) |
 | 2024-02-27 | **LoCoMo**<br>[Evaluating Very Long-Term Conversational Memory of LLM Agents](https://aclanthology.org/2024.acl-long.747/) | Creates persona- and event-grounded simulated conversations, then uses human editing to repair consistency and image alignment. The benchmark tests QA, event… | Memory | peer-reviewed · full-text | [Notes](#locomo) · [Code](https://github.com/snap-research/LoCoMo) |
 | 2024-01-23 | **TroVE**<br>[TroVE: Inducing Verifiable and Efficient Toolboxes for Solving Programmatic Tasks](https://arxiv.org/abs/2401.12869) | Samples programs in import, create and primitive-only modes, chooses a frequent executable answer with simplicity tie-breaking, and retains its reusable functions.… | Tools, Skills | peer-reviewed · full-text | [Notes](#trove) · [Code](https://github.com/zorazrw/trove) |
@@ -3430,19 +3430,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2504.20073)
 
-**Mechanism.** StarPO optimizes reasoning-action trajectories with reinforcement learning. The study identifies repetitive reasoning collapse and tests StarPO-S interventions including rollout filtering, a critic, and gradient stabilization.
+**Mechanism.** StarPO organizes trajectory collection and PPO/GRPO updates to model weights. StarPO-S tests variability-based prompt filtering and gradient changes, including KL removal and asymmetric clipping. These are externally specified training interventions, not agent-written changes to the learning algorithm.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Environment rewards on multi-turn trajectories, with reward variability and gradient diagnostics guiding stabilization.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Task rewards on multi-turn trajectories drive policy updates. Within-prompt reward variability is used for filtering; entropy and gradient statistics diagnose training behavior.
 
-**Evaluation.** Version 2 studies Bandit, Sokoban, FrozenLake, and WebShop, varying optimization, rollout design, rewards, and generalization conditions.
+**Evaluation.** ArXiv v2 studies Bandit, Sokoban, FrozenLake and WebShop, with model-size, rollout-frequency, action-budget and distribution-shift analyses. It reports collapse and spurious reasoning, plus an appendix comparison where supervised learning from search-generated trajectories outperforms RL on Sokoban.
 
-**Boundary.** The paper reports small-scale tasks and no multimodal evaluation. Better rewards do not guarantee meaningful reasoning. The linked repository now includes RAGEN-2 and additional environments; its current branch is not a pinned reproduction of this paper.
+**Boundary.** Stochastic reward variance is not calibrated knowledge uncertainty, and shorter reasoning text does not alone prove loss of reasoning ability. Stabilization benefits vary by task and optimizer. Small environments, limited repeat-run reporting and inconsistent horizon descriptions constrain generalization. The current RAGEN-2 software and paper are distinct from this study.
 
-**Code / data.** [Official artifact](https://github.com/mll-lab-nu/RAGEN) — Official repository page inspected; no installation, training, or result reproduction performed.
+**Code / data.** [Official artifact](https://github.com/mll-lab-nu/RAGEN) — Official current README inspected on 2026-11-09; it distinguishes original RAGEN from later RAGEN-2 and related releases. No installation, training, model or environment execution; the current branch is not treated as a reproduction of arXiv v2.
 
-**Topics:** model-training, evaluation, applications. **Reviewed:** full-text · 2026-10-29.
+**Topics:** model-training, evaluation, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2504.20073) · [Source 2](https://arxiv.org/html/2504.20073v2) · [Source 3](https://github.com/mll-lab-nu/RAGEN)
+[Source 1](https://arxiv.org/abs/2504.20073) · [Source 2](https://arxiv.org/html/2504.20073v2) · [Source 3](https://github.com/mll-lab-nu/RAGEN) · [Source 4](https://arxiv.org/pdf/2504.20073v2)
 
 <a id="sica"></a>
 
@@ -3500,19 +3500,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2501.11425)
 
-**Mechanism.** Uses Monte Carlo tree search to pair unsuccessful and successful paths. The current actor selects a revision point, and spliced correction trajectories support iterative supervised training of an error-recovery policy.
+**Mechanism.** Builds synthetic recovery trajectories by truncating a bad branch and appending a good continuation. Iterative supervised training updates the actor on good and revised trajectories, with loss focused on the revision and continuation. The search, selection and training procedure itself stays fixed.
 
-**What changes:** Model weights. **Persistence:** both. **Learning signal:** Environment terminal rewards, tree-search alternatives, and actor-selected error locations.
+**What changes:** Model weights. **Persistence:** both. **Learning signal:** Environment terminal rewards select contrasting tree-search paths; the current actor identifies a revision point. Training also includes ShareGPT data and manually written revision connectors.
 
-**Evaluation.** The authors test three training iterations on WebShop, ScienceWorld, and TextCraft, comparing task reward, recovery from truncated failures, and action-loop behavior.
+**Evaluation.** Three Llama-3.1-8B training rounds evaluate WebShop/ScienceWorld reward and TextCraft success. Separate tests continue truncated failures from the original model, and analyses examine repeated actions, revision positions and multi-task training.
 
-**Boundary.** Training also uses ShareGPT data and manually written revision connectors. The evaluated setup uses a specific backbone and reward-bearing environments; learning to revise a trajectory is distinct from modifying the learning algorithm.
+**Boundary.** Earlier self-identified errors are not independently measured localization accuracy. Spliced trajectories assume compatible environment states; the inspected construction code assembles logs without replaying the combined path at that stage. Metrics, baseline training and data budgets differ; repeated-run uncertainty and generalization beyond the three environments remain unestablished.
 
-**Code / data.** Official runnable code was not independently established in this review; this does not imply that no release exists.
+**Code / data.** [Official artifact](https://github.com/ByteDance-Seed/Agent-R) — Paper-linked repository redirects to ByteDance-Seed/Agent-R. README and trajectory-construction code at 82fcc1ca7873b460949ed49022146dd988c32e31 inspected on 2026-11-09; no code, environments or training were executed, and paper-result reproduction is not established.
 
-**Topics:** model-training, foundations, applications. **Reviewed:** full-text · 2026-10-29.
+**Topics:** model-training, foundations, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2501.11425) · [Source 2](https://arxiv.org/html/2501.11425v3)
+[Source 1](https://arxiv.org/abs/2501.11425) · [Source 2](https://arxiv.org/html/2501.11425v3) · [Source 3](https://arxiv.org/pdf/2501.11425v3) · [Source 4](https://github.com/ByteDance-Seed/Agent-R) · [Source 5](https://github.com/ByteDance-Seed/Agent-R/blob/82fcc1ca7873b460949ed49022146dd988c32e31/path_collection.py)
 
 <a id="longmemeval"></a>
 
@@ -3682,19 +3682,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2407.18219)
 
-**Mechanism.** Turns single-turn problems into multi-turn trajectories and trains the model to revise earlier unsuccessful responses. Its training loop uses reward-weighted supervised learning over the current model’s attempts and improved continuations.
+**Mechanism.** Converts a problem into a sequence of attempted answers and trains a correction policy with reward-weighted learning on accumulated rollouts. At deployment, fixed-weight revisions concern the current problem: oracle stopping or checker-free majority voting are alternative protocols.
 
-**What changes:** Model weights. **Persistence:** both. **Learning signal:** Answer correctness and improved responses from self-distillation or a stronger teacher.
+**What changes:** Model weights. **Persistence:** both. **Learning signal:** Training uses reference-answer checks to select better responses from the learner or a stronger teacher. The main teacher-assisted setup includes a knowledge-boosting stage; the self-distillation experiment is separate.
 
-**Evaluation.** Math-reasoning experiments compare sequential improvement with single-turn strategies under comparable inference budgets and examine iterative training and distribution shift.
+**Evaluation.** The final NeurIPS paper includes math comparisons, up to ten-turn evaluation, cross-dataset and model-transfer analyses, and added MBPP/CoNaLa results. Controls compare sequential and parallel sampling, training-data composition and preservation of correct answers.
 
-**Boundary.** The learned correction policy persists in weights, while the revisions at deployment concern the current problem. Some data-collection variants use a stronger model; this is not recursive modification of the learning algorithm itself.
+**Boundary.** Equal sample counts do not guarantee equal token or latency budgets. The single-iteration self-distillation variant trails parallel sampling from the same trained model. Some first-turn scores regress; the checklist reports no repeated training runs. Code-task protocols are less detailed than math experiments, and bounded correction is not recursive improvement of the training algorithm.
 
-**Code / data.** Official runnable code was not verified in this source review.
+**Code / data.** [Official artifact](https://github.com/cmu-mind/RISE) — Official author project and final-paper checklist identify this repository. README inspected on 2026-11-09; it documents FastChat-based reward-weighted training and math evaluation. No code, model or benchmark execution; complete final-paper reproduction is not claimed.
 
-**Topics:** model-training, foundations. **Reviewed:** full-text · 2026-10-28.
+**Topics:** model-training, foundations. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2407.18219) · [Source 2](https://arxiv.org/html/2407.18219v2) · [Source 3](https://proceedings.neurips.cc/paper_files/paper/2024/hash/639d992f819c2b40387d4d5170b8ffd7-Abstract-Conference.html)
+[Source 1](https://arxiv.org/abs/2407.18219) · [Source 2](https://arxiv.org/html/2407.18219v2) · [Source 3](https://proceedings.neurips.cc/paper_files/paper/2024/hash/639d992f819c2b40387d4d5170b8ffd7-Abstract-Conference.html) · [Source 4](https://arxiv.org/pdf/2407.18219v2) · [Source 5](https://www.proceedings.com/content/079/079017-1754open.pdf) · [Source 6](https://cohenqu.github.io/rise.github.io/) · [Source 7](https://github.com/cmu-mind/RISE)
 
 <a id="model-collapse"></a>
 
@@ -3792,19 +3792,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2406.01495)
 
-**Mechanism.** Trains a separate reflector to repair unsuccessful model-generated examples. Accepted original and repaired trajectories then fine-tune the agent, so improvement is retained in its parameters; the main inference path needs only the trained agent.
+**Mechanism.** Trains a separate reflector on failed/successful sample pairs, uses one reflection step to repair rejected generations, and fine-tunes the agent on accepted original and repaired trajectories. Improvement persists in model weights; the main inference path uses the agent without reflection.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** External training-time feedback such as answer correctness, environment outcomes, and unit tests.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Reference-answer correctness, environment completion and provided unit tests filter training examples; image-generation feedback comes from a visual evaluation model. Optional GPT-4-initialized comparisons are separate.
 
-**Evaluation.** Experiments cover multi-hop question answering, ALFWorld, code generation, visual question answering, and image generation, with reflector and preference-training analyses.
+**Evaluation.** The final EMNLP paper studies HotpotQA, ALFWorld, MBPP, visual programming and text-to-layout/image generation. Ablations compare more initial samples, trained versus untrained reflection, DPO and a separate test-time self-consistency variant.
 
-**Boundary.** Feedback and task inputs are supplied during training. The reflector shares the model family but not weights with the agent. A separate self-consistency inference variant should not be confused with the main training-only use of reflection.
+**Boundary.** Self-training still needs supplied tasks and training-time feedback. MBPP prompts contain provided unit tests, and visual feedback is not human ground truth. Sampling-efficiency comparisons do not fully account for reflector training. Seed-level uncertainty and broad retention are not established; main training-only reflection and test-time variants should remain distinct.
 
-**Code / data.** [Official artifact](https://github.com/PlusLabNLP/Re-ReST) — Official repository page inspected; no installation, training, or result reproduction performed.
+**Code / data.** [Official artifact](https://github.com/PlusLabNLP/Re-ReST) — Official README inspected on 2026-11-09; it explicitly points to HotpotQA and GQA implementations. Coverage of every paper experiment was not established, and no research code was executed.
 
-**Topics:** model-training, foundations, applications. **Reviewed:** full-text · 2026-10-29.
+**Topics:** model-training, foundations, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2406.01495) · [Source 2](https://arxiv.org/html/2406.01495v3) · [Source 3](https://aclanthology.org/2024.emnlp-main.861/) · [Source 4](https://github.com/PlusLabNLP/Re-ReST)
+[Source 1](https://arxiv.org/abs/2406.01495) · [Source 2](https://arxiv.org/html/2406.01495v3) · [Source 3](https://aclanthology.org/2024.emnlp-main.861/) · [Source 4](https://github.com/PlusLabNLP/Re-ReST) · [Source 5](https://aclanthology.org/2024.emnlp-main.861.pdf)
 
 <a id="accumulating-data-model-collapse"></a>
 

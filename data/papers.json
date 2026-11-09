@@ -300,10 +300,13 @@
     "url": "https://arxiv.org/abs/2501.11425",
     "sources": [
       "https://arxiv.org/abs/2501.11425",
-      "https://arxiv.org/html/2501.11425v3"
+      "https://arxiv.org/html/2501.11425v3",
+      "https://arxiv.org/pdf/2501.11425v3",
+      "https://github.com/ByteDance-Seed/Agent-R",
+      "https://github.com/ByteDance-Seed/Agent-R/blob/82fcc1ca7873b460949ed49022146dd988c32e31/path_collection.py"
     ],
-    "code_url": null,
-    "code_note": "Official runnable code was not independently established in this review; this does not imply that no release exists.",
+    "code_url": "https://github.com/ByteDance-Seed/Agent-R",
+    "code_note": "Paper-linked repository redirects to ByteDance-Seed/Agent-R. README and trajectory-construction code at 82fcc1ca7873b460949ed49022146dd988c32e31 inspected on 2026-11-09; no code, environments or training were executed, and paper-result reproduction is not established.",
     "topics": [
       "model-training",
       "foundations",
@@ -314,12 +317,12 @@
       "model-weights"
     ],
     "persistence": "both",
-    "learning_signal": "Environment terminal rewards, tree-search alternatives, and actor-selected error locations.",
-    "mechanism": "Uses Monte Carlo tree search to pair unsuccessful and successful paths. The current actor selects a revision point, and spliced correction trajectories support iterative supervised training of an error-recovery policy.",
-    "evaluation": "The authors test three training iterations on WebShop, ScienceWorld, and TextCraft, comparing task reward, recovery from truncated failures, and action-loop behavior.",
-    "limitations": "Training also uses ShareGPT data and manually written revision connectors. The evaluated setup uses a specific backbone and reward-bearing environments; learning to revise a trajectory is distinct from modifying the learning algorithm.",
+    "learning_signal": "Environment terminal rewards select contrasting tree-search paths; the current actor identifies a revision point. Training also includes ShareGPT data and manually written revision connectors.",
+    "mechanism": "Builds synthetic recovery trajectories by truncating a bad branch and appending a good continuation. Iterative supervised training updates the actor on good and revised trajectories, with loss focused on the revision and continuation. The search, selection and training procedure itself stays fixed.",
+    "evaluation": "Three Llama-3.1-8B training rounds evaluate WebShop/ScienceWorld reward and TextCraft success. Separate tests continue truncated failures from the original model, and analyses examine repeated actions, revision positions and multi-task training.",
+    "limitations": "Earlier self-identified errors are not independently measured localization accuracy. Spliced trajectories assume compatible environment states; the inspected construction code assembles logs without replaying the combined path at that stage. Metrics, baseline training and data budgets differ; repeated-run uncertainty and generalization beyond the three environments remain unestablished.",
     "review_depth": "full-text",
-    "checked": "2026-10-29",
+    "checked": "2026-11-09",
     "short_name": "Agent-R"
   },
   {
@@ -4469,10 +4472,11 @@
     "sources": [
       "https://arxiv.org/abs/2504.20073",
       "https://arxiv.org/html/2504.20073v2",
-      "https://github.com/mll-lab-nu/RAGEN"
+      "https://github.com/mll-lab-nu/RAGEN",
+      "https://arxiv.org/pdf/2504.20073v2"
     ],
     "code_url": "https://github.com/mll-lab-nu/RAGEN",
-    "code_note": "Official repository page inspected; no installation, training, or result reproduction performed.",
+    "code_note": "Official current README inspected on 2026-11-09; it distinguishes original RAGEN from later RAGEN-2 and related releases. No installation, training, model or environment execution; the current branch is not treated as a reproduction of arXiv v2.",
     "topics": [
       "model-training",
       "evaluation",
@@ -4483,12 +4487,12 @@
       "model-weights"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Environment rewards on multi-turn trajectories, with reward variability and gradient diagnostics guiding stabilization.",
-    "mechanism": "StarPO optimizes reasoning-action trajectories with reinforcement learning. The study identifies repetitive reasoning collapse and tests StarPO-S interventions including rollout filtering, a critic, and gradient stabilization.",
-    "evaluation": "Version 2 studies Bandit, Sokoban, FrozenLake, and WebShop, varying optimization, rollout design, rewards, and generalization conditions.",
-    "limitations": "The paper reports small-scale tasks and no multimodal evaluation. Better rewards do not guarantee meaningful reasoning. The linked repository now includes RAGEN-2 and additional environments; its current branch is not a pinned reproduction of this paper.",
+    "learning_signal": "Task rewards on multi-turn trajectories drive policy updates. Within-prompt reward variability is used for filtering; entropy and gradient statistics diagnose training behavior.",
+    "mechanism": "StarPO organizes trajectory collection and PPO/GRPO updates to model weights. StarPO-S tests variability-based prompt filtering and gradient changes, including KL removal and asymmetric clipping. These are externally specified training interventions, not agent-written changes to the learning algorithm.",
+    "evaluation": "ArXiv v2 studies Bandit, Sokoban, FrozenLake and WebShop, with model-size, rollout-frequency, action-budget and distribution-shift analyses. It reports collapse and spurious reasoning, plus an appendix comparison where supervised learning from search-generated trajectories outperforms RL on Sokoban.",
+    "limitations": "Stochastic reward variance is not calibrated knowledge uncertainty, and shorter reasoning text does not alone prove loss of reasoning ability. Stabilization benefits vary by task and optimizer. Small environments, limited repeat-run reporting and inconsistent horizon descriptions constrain generalization. The current RAGEN-2 software and paper are distinct from this study.",
     "review_depth": "full-text",
-    "checked": "2026-10-29",
+    "checked": "2026-11-09",
     "short_name": "RAGEN"
   },
   {
@@ -4504,10 +4508,11 @@
       "https://arxiv.org/abs/2406.01495",
       "https://arxiv.org/html/2406.01495v3",
       "https://aclanthology.org/2024.emnlp-main.861/",
-      "https://github.com/PlusLabNLP/Re-ReST"
+      "https://github.com/PlusLabNLP/Re-ReST",
+      "https://aclanthology.org/2024.emnlp-main.861.pdf"
     ],
     "code_url": "https://github.com/PlusLabNLP/Re-ReST",
-    "code_note": "Official repository page inspected; no installation, training, or result reproduction performed.",
+    "code_note": "Official README inspected on 2026-11-09; it explicitly points to HotpotQA and GQA implementations. Coverage of every paper experiment was not established, and no research code was executed.",
     "topics": [
       "model-training",
       "foundations",
@@ -4518,12 +4523,12 @@
       "model-weights"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "External training-time feedback such as answer correctness, environment outcomes, and unit tests.",
-    "mechanism": "Trains a separate reflector to repair unsuccessful model-generated examples. Accepted original and repaired trajectories then fine-tune the agent, so improvement is retained in its parameters; the main inference path needs only the trained agent.",
-    "evaluation": "Experiments cover multi-hop question answering, ALFWorld, code generation, visual question answering, and image generation, with reflector and preference-training analyses.",
-    "limitations": "Feedback and task inputs are supplied during training. The reflector shares the model family but not weights with the agent. A separate self-consistency inference variant should not be confused with the main training-only use of reflection.",
+    "learning_signal": "Reference-answer correctness, environment completion and provided unit tests filter training examples; image-generation feedback comes from a visual evaluation model. Optional GPT-4-initialized comparisons are separate.",
+    "mechanism": "Trains a separate reflector on failed/successful sample pairs, uses one reflection step to repair rejected generations, and fine-tunes the agent on accepted original and repaired trajectories. Improvement persists in model weights; the main inference path uses the agent without reflection.",
+    "evaluation": "The final EMNLP paper studies HotpotQA, ALFWorld, MBPP, visual programming and text-to-layout/image generation. Ablations compare more initial samples, trained versus untrained reflection, DPO and a separate test-time self-consistency variant.",
+    "limitations": "Self-training still needs supplied tasks and training-time feedback. MBPP prompts contain provided unit tests, and visual feedback is not human ground truth. Sampling-efficiency comparisons do not fully account for reflector training. Seed-level uncertainty and broad retention are not established; main training-only reflection and test-time variants should remain distinct.",
     "review_depth": "full-text",
-    "checked": "2026-10-29",
+    "checked": "2026-11-09",
     "short_name": "Re-ReST"
   },
   {
@@ -4960,10 +4965,14 @@
     "sources": [
       "https://arxiv.org/abs/2407.18219",
       "https://arxiv.org/html/2407.18219v2",
-      "https://proceedings.neurips.cc/paper_files/paper/2024/hash/639d992f819c2b40387d4d5170b8ffd7-Abstract-Conference.html"
+      "https://proceedings.neurips.cc/paper_files/paper/2024/hash/639d992f819c2b40387d4d5170b8ffd7-Abstract-Conference.html",
+      "https://arxiv.org/pdf/2407.18219v2",
+      "https://www.proceedings.com/content/079/079017-1754open.pdf",
+      "https://cohenqu.github.io/rise.github.io/",
+      "https://github.com/cmu-mind/RISE"
     ],
-    "code_url": null,
-    "code_note": "Official runnable code was not verified in this source review.",
+    "code_url": "https://github.com/cmu-mind/RISE",
+    "code_note": "Official author project and final-paper checklist identify this repository. README inspected on 2026-11-09; it documents FastChat-based reward-weighted training and math evaluation. No code, model or benchmark execution; complete final-paper reproduction is not claimed.",
     "topics": [
       "model-training",
       "foundations"
@@ -4973,12 +4982,12 @@
       "model-weights"
     ],
     "persistence": "both",
-    "learning_signal": "Answer correctness and improved responses from self-distillation or a stronger teacher.",
-    "mechanism": "Turns single-turn problems into multi-turn trajectories and trains the model to revise earlier unsuccessful responses. Its training loop uses reward-weighted supervised learning over the current model’s attempts and improved continuations.",
-    "evaluation": "Math-reasoning experiments compare sequential improvement with single-turn strategies under comparable inference budgets and examine iterative training and distribution shift.",
-    "limitations": "The learned correction policy persists in weights, while the revisions at deployment concern the current problem. Some data-collection variants use a stronger model; this is not recursive modification of the learning algorithm itself.",
+    "learning_signal": "Training uses reference-answer checks to select better responses from the learner or a stronger teacher. The main teacher-assisted setup includes a knowledge-boosting stage; the self-distillation experiment is separate.",
+    "mechanism": "Converts a problem into a sequence of attempted answers and trains a correction policy with reward-weighted learning on accumulated rollouts. At deployment, fixed-weight revisions concern the current problem: oracle stopping or checker-free majority voting are alternative protocols.",
+    "evaluation": "The final NeurIPS paper includes math comparisons, up to ten-turn evaluation, cross-dataset and model-transfer analyses, and added MBPP/CoNaLa results. Controls compare sequential and parallel sampling, training-data composition and preservation of correct answers.",
+    "limitations": "Equal sample counts do not guarantee equal token or latency budgets. The single-iteration self-distillation variant trails parallel sampling from the same trained model. Some first-turn scores regress; the checklist reports no repeated training runs. Code-task protocols are less detailed than math experiments, and bounded correction is not recursive improvement of the training algorithm.",
     "review_depth": "full-text",
-    "checked": "2026-10-28",
+    "checked": "2026-11-09",
     "short_name": "RISE"
   },
   {
