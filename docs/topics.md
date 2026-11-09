@@ -109,11 +109,11 @@ A work may appear in several topics; counts here are not additive.
 - 2026-02-03 — [TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking](papers.md#tame-memory) · core · peer-reviewed
 - 2026-02-03 — [Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon RL](papers.md#reasoning-cache) · adjacent · peer-reviewed
 - 2026-02-02 — [MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](papers.md#memskill) · core · preprint
+- 2026-01-30 — [Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness) · core · peer-reviewed
 - 2026-01-06 — [MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory](papers.md#memrl) · core · preprint
 - 2026-01-05 — [Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents](papers.md#agemem) · core · peer-reviewed
 - 2026 — [SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning](papers.md#skillrubricsrl) · core · peer-reviewed
 - 2026 — [PerMemSafe: Benchmarking Implicit Personalized Safety of Long Horizon Self-Evolving Agents](papers.md#permemsafe) · adjacent · peer-reviewed
-- 2026 — [Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness) · core · peer-reviewed
 - 2026 — [COLLABMEM: A Diagnostic Benchmark for Collaborative Memory Operations in Multi-Agent LLM Systems](papers.md#collabmem) · adjacent · peer-reviewed
 - 2025-12-21 — [MemEvolve: Meta-Evolution of Agent Memory Systems](papers.md#memevolve) · core · peer-reviewed
 - 2025-10-06 — [Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](papers.md#ace) · core · peer-reviewed
@@ -605,11 +605,11 @@ A work may appear in several topics; counts here are not additive.
 - 2026-02-03 — [TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking](papers.md#tame-memory) · core · peer-reviewed
 - 2026-02-03 — [Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon RL](papers.md#reasoning-cache) · adjacent · peer-reviewed
 - 2026-02-02 — [MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](papers.md#memskill) · core · preprint
+- 2026-01-30 — [Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness) · core · peer-reviewed
 - 2026-01-08 — [AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering](papers.md#agentdevel) · core · preprint
 - 2026 — [Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](papers.md#temporal-self-rewarding) · adjacent · peer-reviewed
 - 2026 — [SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning](papers.md#skillrubricsrl) · core · peer-reviewed
 - 2026 — [PerMemSafe: Benchmarking Implicit Personalized Safety of Long Horizon Self-Evolving Agents](papers.md#permemsafe) · adjacent · peer-reviewed
-- 2026 — [Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness) · core · peer-reviewed
 - 2026 — [COLLABMEM: A Diagnostic Benchmark for Collaborative Memory Operations in Multi-Agent LLM Systems](papers.md#collabmem) · adjacent · peer-reviewed
 - 2025-12-21 — [MemEvolve: Meta-Evolution of Agent Memory Systems](papers.md#memevolve) · core · peer-reviewed
 - 2025-11-03 — [Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](papers.md#self-harmony) · adjacent · peer-reviewed
@@ -646,8 +646,8 @@ A work may appear in several topics; counts here are not additive.
 - 2026-05-08 — [MEMOREPAIR: Barrier-First Cascade Repair in Agentic Memory](papers.md#memorepair) · core · preprint
 - 2026-04-18 — [On Safety Risks in Experience-Driven Self-Evolving Agents](papers.md#experience-driven-safety) · core · peer-reviewed
 - 2026-02-03 — [TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking](papers.md#tame-memory) · core · peer-reviewed
+- 2026-01-30 — [Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness) · core · peer-reviewed
 - 2026 — [PerMemSafe: Benchmarking Implicit Personalized Safety of Long Horizon Self-Evolving Agents](papers.md#permemsafe) · adjacent · peer-reviewed
-- 2026 — [Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness) · core · peer-reviewed
 - 2026 — [COLLABMEM: A Diagnostic Benchmark for Collaborative Memory Operations in Multi-Agent LLM Systems](papers.md#collabmem) · adjacent · peer-reviewed
 - 2025-09-29 — [A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory](papers.md#a-memguard) · core · peer-reviewed
 - 2024-07-24 — [AI models collapse when trained on recursively generated data](papers.md#model-collapse) · adjacent · peer-reviewed

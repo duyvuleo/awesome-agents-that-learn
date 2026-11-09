@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Evaluation and negative-result reviews
+
+- Upgraded Experience faithfulness, LongMemEval-V2, Phantom Gains and LifelongAgentBench through full-text and appendix review.
+- Recovered three artifact links and a precise first-release date; qualified causal claims, measurement controls, benchmark scope and reporting errors.
+- Counts remain 190 works: 170 full-text and 20 abstract/metadata reviews. Forty broader appraisals are complete; 150 remain.
+
 ## 2026-11-09 — Memory learning and retention reviews
 
 - Upgraded Memp, Mem-α, Memory-R1 and MemRL after full-text, appendix and visual-evidence review.

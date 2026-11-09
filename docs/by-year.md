@@ -108,6 +108,7 @@
 - 2026-02-03 — [TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking](papers.md#tame-memory)
 - 2026-02-03 — [Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon RL](papers.md#reasoning-cache)
 - 2026-02-02 — [MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](papers.md#memskill)
+- 2026-01-30 — [Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness)
 - 2026-01-29 — [Meta Context Engineering via Agentic Skill Evolution](papers.md#meta-context-engineering)
 - 2026-01-11 — [Dr. Zero: Self-Evolving Search Agents without Training Data](papers.md#dr-zero)
 - 2026-01-08 — [AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering](papers.md#agentdevel)
@@ -116,7 +117,6 @@
 - 2026 — [Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](papers.md#temporal-self-rewarding)
 - 2026 — [SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning](papers.md#skillrubricsrl)
 - 2026 — [PerMemSafe: Benchmarking Implicit Personalized Safety of Long Horizon Self-Evolving Agents](papers.md#permemsafe)
-- 2026 — [Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness)
 - 2026 — [COLLABMEM: A Diagnostic Benchmark for Collaborative Memory Operations in Multi-Agent LLM Systems](papers.md#collabmem)
 
 ## 2025

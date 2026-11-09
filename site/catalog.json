@@ -2533,7 +2533,8 @@
       "url": "https://arxiv.org/abs/2608.20290",
       "sources": [
         "https://arxiv.org/abs/2608.20290",
-        "https://github.com/chengxuphd/phantom-gains"
+        "https://github.com/chengxuphd/phantom-gains",
+        "https://arxiv.org/pdf/2608.20290v1"
       ],
       "code_url": "https://github.com/chengxuphd/phantom-gains",
       "code_note": "Official repository linked and inspected; not installed or executed.",
@@ -2547,11 +2548,11 @@
       ],
       "persistence": "not-applicable",
       "learning_signal": "Not applicable: analysis or evaluation resource.",
-      "mechanism": "Runs frozen-model controls through the same pipeline as self-training to estimate how decoding and measurement noise can create apparent per-problem capability changes.",
-      "evaluation": "Audits repeated low-rank self-training and matched alternatives, proposing per-problem tests against pooled baseline replicates.",
-      "limitations": "The reported measurement failures are valuable controls for study design; results from one training setup do not establish that every self-training method fails.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "mechanism": "Measures apparent per-problem changes in frozen-model controls before interpreting changes after self-training. It uses sampled solve rates, a hysteresis-based transition ledger and per-problem exact tests against pooled baseline evaluations with multiple-testing control.",
+      "evaluation": "ArXiv v1 audits three-round Qwen3-8B LoRA training using ground-truth filtering, majority-vote SFT, a policy-gradient variant and external distillation. MATH/AIME experiments examine decoding noise, truncation, seed variation, expansion statistics and small out-of-domain probes.",
+      "limitations": "The strong contrast concerns twenty-two rarely reached AIME problems; the ten never reached in the pooled baseline remain inconclusive. Short adapted training protocols, one model family and an enriched MATH difficulty band limit generalization. Safety-probe power is not a confidence bound on possible harm; raw generations were not independently regraded.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "Phantom Gains"
     },
     {
@@ -3058,10 +3059,13 @@
       "venue": "",
       "url": "https://arxiv.org/abs/2605.12493",
       "sources": [
-        "https://arxiv.org/abs/2605.12493"
+        "https://arxiv.org/abs/2605.12493",
+        "https://arxiv.org/pdf/2605.12493v1",
+        "https://xiaowu0162.github.io/longmemeval-v2/",
+        "https://github.com/xiaowu0162/LongMemEval-V2"
       ],
-      "code_url": null,
-      "code_note": "No implementation link independently inspected for this entry; this does not establish that none exists.",
+      "code_url": "https://github.com/xiaowu0162/LongMemEval-V2",
+      "code_note": "Official project, repository README and selected query-construction source inspected on 2026-11-09; no models, datasets or experiments run. Current artifacts include later changes and are not assumed identical to the May 2026 paper.",
       "topics": [
         "evaluation",
         "memory",
@@ -3073,11 +3077,11 @@
       ],
       "persistence": "not-applicable",
       "learning_signal": "Not applicable: analysis or evaluation resource.",
-      "mechanism": "Evaluates whether memory systems recover environment-specific facts, state changes, workflows, pitfalls, and premise conditions from past web-agent trajectories.",
-      "evaluation": "Compares retrieval and coding-agent evidence gathering on questions derived from specialized environments, including accuracy and latency tradeoffs.",
-      "limitations": "This is a context-gathering and question-answering benchmark. Better answers do not alone demonstrate successful live task execution or sustained autonomous skill acquisition; the paper is marked work in progress.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "mechanism": "Streams stored web-agent trajectories into memory and asks the system to return bounded evidence for a fixed reader. AgentRunbook-R indexes state slices, transitions and procedural notes; AgentRunbook-C uses a coding agent to inspect trajectory files with manifests and helper tools.",
+      "evaluation": "ArXiv v1 evaluates 451 human-curated questions across four customized websites and five memory abilities, using 100-trajectory and roughly 500-trajectory histories. It reports fixed-reader QA, query latency, paired-bootstrap comparisons, pool/scaffold ablations and error analysis.",
+      "limitations": "This evaluates pre-collected evidence gathering, not live task execution or lifelong retention. RAG and coding-agent controllers differ, query latency excludes the full ingestion cost, and gains are not uniform across categories. Question filtering, reader prompting and semantic-judge rules shape the measured accuracy.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "LongMemEval-V2"
     },
     {
@@ -3769,6 +3773,41 @@
       "short_name": "MemSkill"
     },
     {
+      "id": "experience-faithfulness",
+      "title": "Large Language Model Agents Are Not Always Faithful Self-Evolvers",
+      "date": "2026-01-30",
+      "year": 2026,
+      "kind": "paper",
+      "status": "peer-reviewed",
+      "venue": "ICML 2026",
+      "url": "https://proceedings.mlr.press/v306/zhao26aw.html",
+      "sources": [
+        "https://proceedings.mlr.press/v306/zhao26aw.html",
+        "https://arxiv.org/abs/2601.22436",
+        "https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhao26aw/zhao26aw.pdf",
+        "https://github.com/Dreamcatcher0622/Faithfulness"
+      ],
+      "code_url": "https://github.com/Dreamcatcher0622/Faithfulness",
+      "code_note": "Official paper-linked repository and experiment/attribution README inspected on 2026-11-09; not installed or executed. Current documentation is not an independent reproduction of the ICML results.",
+      "topics": [
+        "evaluation",
+        "memory",
+        "safety"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "none"
+      ],
+      "persistence": "not-applicable",
+      "learning_signal": "Not applicable: analysis or evaluation resource.",
+      "mechanism": "Perturbs raw trajectories and condensed memories through removal, shuffling, corruption and replacement while keeping backbone weights fixed. Outcome sensitivity and final-turn gradient attribution probe whether experience influences an agent, rather than proposing a new learning algorithm.",
+      "evaluation": "The ICML paper studies ExpeL, Dynamic Cheatsheet, ReasoningBank and G-Memory across selected combinations of thirteen backbones and nine benchmark families, with two additional multihop-QA probes. Raw-trajectory perturbations often hurt interactive tasks more than condensed-memory changes.",
+      "limitations": "Aggregate success-rate stability does not prove unchanged decisions or semantic non-use. Perturbations can be visibly irrelevant, task dependence is substantial, and repeated-run uncertainty is not reported. The appendix uses embedding-gradient norms as an attribution approximation, not a causal mechanism demonstration.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
+      "short_name": "Experience faithfulness"
+    },
+    {
       "id": "meta-context-engineering",
       "title": "Meta Context Engineering via Agentic Skill Evolution",
       "date": "2026-01-29",
@@ -4047,38 +4086,6 @@
       "review_depth": "full-text",
       "checked": "2026-11-01",
       "short_name": "PerMemSafe"
-    },
-    {
-      "id": "experience-faithfulness",
-      "title": "Large Language Model Agents Are Not Always Faithful Self-Evolvers",
-      "date": "2026",
-      "year": 2026,
-      "kind": "paper",
-      "status": "peer-reviewed",
-      "venue": "ICML 2026",
-      "url": "https://proceedings.mlr.press/v306/zhao26aw.html",
-      "sources": [
-        "https://proceedings.mlr.press/v306/zhao26aw.html"
-      ],
-      "code_url": null,
-      "code_note": "No implementation link independently inspected for this entry; this does not establish that none exists.",
-      "topics": [
-        "evaluation",
-        "memory",
-        "safety"
-      ],
-      "scope": "core",
-      "update_targets": [
-        "none"
-      ],
-      "persistence": "not-applicable",
-      "learning_signal": "Not applicable: analysis or evaluation resource.",
-      "mechanism": "Intervenes on raw and condensed experience to test whether an agent’s decisions causally depend on the experience it receives.",
-      "evaluation": "Across several frameworks, backbones, and environments, the authors find that condensed experience can be ignored or misinterpreted even when raw experience influences behavior.",
-      "limitations": "The interventions support conclusions within the tested systems. High end-task scores alone do not reveal whether the intended learning pathway caused a gain.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
-      "short_name": "Experience faithfulness"
     },
     {
       "id": "collabmem",
@@ -5060,10 +5067,13 @@
       "venue": "",
       "url": "https://arxiv.org/abs/2505.11942",
       "sources": [
-        "https://arxiv.org/abs/2505.11942"
+        "https://arxiv.org/abs/2505.11942",
+        "https://arxiv.org/pdf/2505.11942v3",
+        "https://github.com/caixd-220529/LifelongAgentBench",
+        "https://dev.mysql.com/doc/refman/8.4/en/select.html"
       ],
-      "code_url": null,
-      "code_note": "No implementation link independently inspected for this entry; this does not establish that none exists.",
+      "code_url": "https://github.com/caixd-220529/LifelongAgentBench",
+      "code_note": "Official paper-linked repository and setup/experiment README inspected on 2026-11-09; no containers, datasets or model runs executed. Source availability does not verify all generated task labels.",
       "topics": [
         "evaluation",
         "continual-learning",
@@ -5075,12 +5085,12 @@
         "skills"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Experience from earlier interactive tasks.",
-      "mechanism": "Constructs interdependent tasks grounded in reusable skills across database, operating-system, and knowledge-graph environments.",
-      "evaluation": "Tests experience reuse and a group self-consistency mechanism; ordinary replay is limited by irrelevant context and context length.",
-      "limitations": "Performance on these task sequences should be separated from general lifelong learning. The abstract does not establish a complete audit of forgetting or long-term deployment.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Environment-verified task outcomes determine which recent successful trajectories enter replay; group variants vote over actions conditioned on separate experience subsets.",
+      "mechanism": "Sequences tasks with overlapping SQL, shell-command and knowledge-graph skills and retains interaction histories for fixed-weight agents. Database tables and operating-system containers reset between tasks. Group self-consistency splits replay into multiple inference contexts and votes on the next action.",
+      "evaluation": "ArXiv v3 contains 500 database, 500 operating-system and 396 knowledge-graph tasks. It varies replay size, model backbone, task difficulty and grouping, reporting task success and average input length alongside format, context and execution-failure examples.",
+      "limitations": "Replay can hurt stronger baselines or exhaust memory. Grouping shortens each context but adds inference calls, so it does not establish equal-compute efficiency. Shared skills do not imply persistent environment state, and the results do not directly measure forgetting over revisited old tasks. Some appendix error explanations are incorrect.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "LifelongAgentBench"
     },
     {

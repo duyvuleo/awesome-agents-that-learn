@@ -83,7 +83,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-08-23 | **Coalition skill reliability**<br>[Coalition-Aware Skill Reliability for Self-Evolving Agents](https://arxiv.org/abs/2608.22610) | Changes MemSkill's bank-admission score to include sampled joint skill effects while retaining its trained controller. Before deployment, a separate greedy procedure… | Skills, Model weights | preprint · full-text | [Notes](#coalition-skill-reliability) |
 | 2026-08-23 | **BASM**<br>[When Not to Imitate: Boundary-Aware Skill Memory for Reliable Tool-Use LLM Agents](https://arxiv.org/abs/2608.22339) | Builds a reusable skill library with explicit conditions, risk cues and avoidance rules. Retrieval exposes relevant boundaries under a context budget; runtime checks can… | Skills, Memory | peer-reviewed · full-text | [Notes](#basm) |
 | 2026-08-22 | **CIDER**<br>[CIDER: Continual Interactive Distillation for Embodied Reinforcement Learning](https://arxiv.org/abs/2608.21899) | Interleaves online actor-critic learning with distillation from the preceding consolidated policy. Gradient routing separates acquisition and retention updates while… | Model weights | preprint · full-text | [Notes](#cider) |
-| 2026-08-20 | **Phantom Gains**<br>[Phantom Gains: Auditing Self-Improvement Against a Measured Null](https://arxiv.org/abs/2608.20290) | Runs frozen-model controls through the same pipeline as self-training to estimate how decoding and measurement noise can create apparent per-problem capability changes. | Analysis / no retained update | preprint · abstract | [Notes](#phantom-gains) · [Code](https://github.com/chengxuphd/phantom-gains) |
+| 2026-08-20 | **Phantom Gains**<br>[Phantom Gains: Auditing Self-Improvement Against a Measured Null](https://arxiv.org/abs/2608.20290) | Measures apparent per-problem changes in frozen-model controls before interpreting changes after self-training. It uses sampled solve rates, a hysteresis-based… | Analysis / no retained update | preprint · full-text | [Notes](#phantom-gains) · [Code](https://github.com/chengxuphd/phantom-gains) |
 | 2026-08-17 | **HyperSkill**<br>[HyperSkill: Self-Evolving LLM Agents via Hypergraph-Structured Skill Memory](https://arxiv.org/abs/2608.16114) | Connects reusable skills and subtask steps through trajectory-level hyperedges. Retrieval combines subtask and trajectory evidence, while periodic maintenance merges… | Skills, Memory | preprint · abstract | [Notes](#hyperskill) |
 | 2026-08-09 | **Hierarchical improvement**<br>[Hierarchical Self-Improvement: A Framework for Task-Specific Evolvable Agent Harnesses](https://arxiv.org/abs/2608.08466) | Uses a frozen model at three levels: task execution, harness editing, and editing the strategy used by the harness evolver. Each task family maintains a reusable… | Agent code, Workflows | preprint · abstract | [Notes](#hierarchical-self-improvement) · [Code](https://github.com/TailinZhou/hsi) |
 | 2026-08-05 | **EvolveNet**<br>[EvolveNet: Collaborative Harness Evolution for Agent Self-Improvement](https://arxiv.org/abs/2608.04968) | Different clients evolve copies of a shared harness on local tasks. A server combines compatible program adaptations and redistributes the result so later evolution can… | Agent code, Workflows | preprint · abstract | [Notes](#evolvenet) |
@@ -98,7 +98,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-05-26 | **MUSE-Autoskill**<br>[MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation](https://arxiv.org/abs/2605.27366) | Manages a skill lifecycle spanning creation, storage, retrieval, evaluation, and refinement. Per-skill experience persists across tasks so later attempts can reuse and… | Skills, Memory | preprint · abstract | [Notes](#muse-autoskill) |
 | 2026-05-22 | **SkillOpt**<br>[SkillOpt: Executive Strategy for Self-Evolving Agent Skills](https://arxiv.org/abs/2605.23904) | An external optimizer revises one skill document through bounded edits, rejected-edit memory, and slow epoch-level updates. The target model and execution harness stay… | Skills, Prompts / context | preprint · full-text | [Notes](#skillopt) · [Code](https://github.com/microsoft/SkillOpt) |
 | 2026-05-19 | **optimize_anything**<br>[optimize_anything: A Universal API for Optimizing any Text Parameter](https://arxiv.org/abs/2605.19633) | Exposes single-task search, shared multi-task search, and reusable-artifact optimization through one interface. Its default GEPA backend retains a Pareto frontier and… | Prompts / context, Agent code, Skills, Workflows | preprint · full-text | [Notes](#optimize-anything) · [Code](https://github.com/gepa-ai/gepa) |
-| 2026-05-12 | **LongMemEval-V2**<br>[LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues](https://arxiv.org/abs/2605.12493) | Evaluates whether memory systems recover environment-specific facts, state changes, workflows, pitfalls, and premise conditions from past web-agent trajectories. | Memory | preprint · abstract | [Notes](#longmemeval-v2) |
+| 2026-05-12 | **LongMemEval-V2**<br>[LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues](https://arxiv.org/abs/2605.12493) | Streams stored web-agent trajectories into memory and asks the system to return bounded evidence for a fixed reader. AgentRunbook-R indexes state slices, transitions and… | Memory | preprint · full-text | [Notes](#longmemeval-v2) · [Code](https://github.com/xiaowu0162/LongMemEval-V2) |
 | 2026-05-08 | **MemoRepair**<br>[MEMOREPAIR: Barrier-First Cascade Repair in Agentic Memory](https://arxiv.org/abs/2605.07242) | Withdraws an invalidated artifact's recorded descendants before repair, rebuilds successors from retained support, and republishes only validated dependency-closed… | Memory, Skills, Model weights | preprint · full-text | [Notes](#memorepair) |
 | 2026-04-22 | **ProactAgent**<br>[Ask Only When Needed: Proactive Retrieval from Memory and Skills for Experience-Driven Lifelong Agents](https://arxiv.org/abs/2604.20572) | Interleaves GRPO policy updates with typed factual, episodic, and skill-memory extraction. Replaying a shared interaction prefix creates a no-retrieval branch whose… | Model weights, Memory, Skills | peer-reviewed · full-text | [Notes](#proactagent) |
 | 2026-04-19 | **SkillFlow**<br>[SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](https://arxiv.org/abs/2604.17308) | Starts agents without skills and carries a library of trajectory- and rubric-derived skill patches through sequential tasks within task families. | Skills | preprint · abstract | [Notes](#skillflow) |
@@ -118,6 +118,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-02-03 | **TAME**<br>[TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking](https://arxiv.org/abs/2602.03224) | An executor retrieves useful experiences with risk guidance from a shared memory bank. An evaluator revises reuse priorities after outcomes, while new experiences enter… | Memory | peer-reviewed · full-text | [Notes](#tame-memory) · [Code](https://github.com/SII-YUCHENG2002/tame_code) |
 | 2026-02-03 | **Reasoning Cache**<br>[Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon RL](https://arxiv.org/abs/2602.03773) | Alternates bounded reasoning attempts with summary updates for the same problem. GRPO trains summary-conditioned generation, and a replay buffer supplies later-turn… | Model weights, Memory | peer-reviewed · full-text | [Notes](#reasoning-cache) · [Code](https://github.com/IanYHWu/rc) |
 | 2026-02-02 | **MemSkill**<br>[MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](https://arxiv.org/abs/2602.02474) | A PPO-trained controller selects memory-operation skills for a fixed executor. A fixed designer periodically refines the skill bank, with rollback based on stabilized… | Model weights, Skills, Memory | preprint · full-text | [Notes](#memskill) · [Code](https://github.com/ViktorAxelsen/MemSkill) |
+| 2026-01-30 | **Experience faithfulness**<br>[Large Language Model Agents Are Not Always Faithful Self-Evolvers](https://proceedings.mlr.press/v306/zhao26aw.html) | Perturbs raw trajectories and condensed memories through removal, shuffling, corruption and replacement while keeping backbone weights fixed. Outcome sensitivity and… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#experience-faithfulness) · [Code](https://github.com/Dreamcatcher0622/Faithfulness) |
 | 2026-01-29 | **MCE**<br>[Meta Context Engineering via Agentic Skill Evolution](https://arxiv.org/abs/2601.21557) | A meta-agent revises context-engineering skills; a base agent executes them to construct context as files and code. History-informed evolutionary selection retains… | Prompts / context, Skills, Agent code | peer-reviewed · full-text | [Notes](#meta-context-engineering) · [Code](https://github.com/metaevo-ai/meta-context-engineering) |
 | 2026-01-11 | **Dr. Zero**<br>[Dr. Zero: Self-Evolving Search Agents without Training Data](https://arxiv.org/abs/2601.07055) | Co-evolves a proposer that generates diverse, challenging questions and a search-enabled solver. Hop-grouped policy optimization shares baselines among structurally… | Model weights | peer-reviewed · abstract | [Notes](#dr-zero) |
 | 2026-01-08 | **AgentDevel**<br>[AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering](https://arxiv.org/abs/2601.04620) | A fixed development engine generates diagnostic scripts and one prompt/code/tool-wrapper release candidate per iteration. A configurable regression gate retains accepted… | Agent code, Workflows | preprint · full-text | [Notes](#agentdevel) |
@@ -126,7 +127,6 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026 | **Temporal self-rewarding**<br>[Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](https://proceedings.mlr.press/v306/wang26ik.html) | Separates the model generations used to provide rejected and chosen samples so their learning signal does not shrink as both improve together. The paper applies this… | Model weights | peer-reviewed · abstract | [Notes](#temporal-self-rewarding) · [Code](https://github.com/TemporalSelfRewarding/TSR) |
 | 2026 | **SkillRubricsRL**<br>[SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning](https://aclanthology.org/2026.findings-emnlp.471/) | Pairs each skill with execution criteria, trains an acting policy with combined outcome and fulfillment rewards, and evolves the skill bank from failures. Marginal… | Model weights, Skills, Memory | peer-reviewed · full-text | [Notes](#skillrubricsrl) · [Code](https://github.com/gminiheimdallr-a11y/SkillRubricsRL) |
 | 2026 | **PerMemSafe**<br>[PerMemSafe: Benchmarking Implicit Personalized Safety of Long Horizon Self-Evolving Agents](https://aclanthology.org/2026.findings-acl.320/) | Separates recognizing implicit personalized risks from tracking their changes over time. The accompanying SentinelMem retains explicit fact-state transitions and… | Memory | peer-reviewed · full-text | [Notes](#permemsafe) |
-| 2026 | **Experience faithfulness**<br>[Large Language Model Agents Are Not Always Faithful Self-Evolvers](https://proceedings.mlr.press/v306/zhao26aw.html) | Intervenes on raw and condensed experience to test whether an agent’s decisions causally depend on the experience it receives. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#experience-faithfulness) |
 | 2026 | **COLLABMEM**<br>[COLLABMEM: A Diagnostic Benchmark for Collaborative Memory Operations in Multi-Agent LLM Systems](https://aclanthology.org/2026.emnlp-main.1194/) | Holds the interaction trace and answering layer fixed to isolate sharing, access, routing, provenance, conflict resolution, and retention. TMS-GRAPH++ supplies… | Memory | peer-reviewed · full-text | [Notes](#collabmem) |
 | 2025-12-21 | **MemEvolve**<br>[MemEvolve: Meta-Evolution of Agent Memory Systems](https://arxiv.org/abs/2512.18746) | Searches implementations of encoding, storage, retrieval, and management while each candidate accumulates experience. Pareto selection and a fixed diagnose-and-design… | Memory, Agent code | peer-reviewed · full-text | [Notes](#memevolve) · [Code](https://github.com/bingreeky/MemEvolve) |
 | 2025-11-20 | **Agent0**<br>[Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](https://arxiv.org/abs/2511.16043) | Co-trains a curriculum agent and a tool-using executor in alternating stages. The proposer targets uncertain, diverse tasks, while filtered generated tasks and a code… | Model weights | peer-reviewed · full-text | [Notes](#agent0) · [Code](https://github.com/aiming-lab/Agent0) |
@@ -155,7 +155,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-06-09 | **G-Memory**<br>[G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems](https://arxiv.org/abs/2506.07398) | Organizes multi-agent experience into linked interaction, query, and insight graphs. Bidirectional traversal retrieves abstract guidance and condensed role-specific… | Memory | peer-reviewed · full-text | [Notes](#g-memory) · [Code](https://github.com/bingreeky/GMemory) |
 | 2025-06-02 | **Self-Challenging Agents**<br>[Self-Challenging Language Model Agents](https://arxiv.org/abs/2506.01716) | The agent first explores supplied tools as a challenger and constructs Code-as-Task problems containing instructions, a verifier, and passing and failing examples. It… | Model weights | peer-reviewed · abstract | [Notes](#self-challenging-agents) |
 | 2025-05-29 | **DGM**<br>[Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](https://arxiv.org/abs/2505.22954) | A coding agent rewrites its own implementation, and an archive retains runnable variants as possible parents for later edits. This permits exploration beyond the latest… | Agent code, Tools, Workflows, Prompts / context | peer-reviewed · full-text | [Notes](#darwin-godel-machine) · [Code](https://github.com/jennyzzt/dgm) |
-| 2025-05-17 | **LifelongAgentBench**<br>[LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners](https://arxiv.org/abs/2505.11942) | Constructs interdependent tasks grounded in reusable skills across database, operating-system, and knowledge-graph environments. | Memory, Skills | preprint · abstract | [Notes](#lifelongagentbench) |
+| 2025-05-17 | **LifelongAgentBench**<br>[LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners](https://arxiv.org/abs/2505.11942) | Sequences tasks with overlapping SQL, shell-command and knowledge-graph skills and retains interaction histories for fixed-weight agents. Database tables and… | Memory, Skills | preprint · full-text | [Notes](#lifelongagentbench) · [Code](https://github.com/caixd-220529/LifelongAgentBench) |
 | 2025-05-06 | **Absolute Zero**<br>[Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://arxiv.org/abs/2505.03335) | A single model proposes and solves code-based tasks, with a code executor validating problems and answers. Reinforcement learning updates both roles while the generated… | Model weights | peer-reviewed · full-text | [Notes](#absolute-zero) · [Code](https://github.com/LeapLabTHU/Absolute-Zero-Reasoner) |
 | 2025-04-28 | **Mem0**<br>[Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/abs/2504.19413) | Extracts facts from recent exchanges and background summaries, then updates an external memory store through add/update/delete/no-op decisions. The graph variant stores… | Memory | preprint · full-text | [Notes](#mem0) |
 | 2025-04-24 | **RAGEN**<br>[RAGEN: Understanding Self-Evolution in LLM Agents via Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2504.20073) | StarPO optimizes reasoning-action trajectories with reinforcement learning. The study identifies repetitive reasoning collapse and tests StarPO-S interventions including… | Model weights | preprint · full-text | [Notes](#ragen) · [Code](https://github.com/mll-lab-nu/RAGEN) |
@@ -1756,19 +1756,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2608.20290)
 
-**Mechanism.** Runs frozen-model controls through the same pipeline as self-training to estimate how decoding and measurement noise can create apparent per-problem capability changes.
+**Mechanism.** Measures apparent per-problem changes in frozen-model controls before interpreting changes after self-training. It uses sampled solve rates, a hysteresis-based transition ledger and per-problem exact tests against pooled baseline evaluations with multiple-testing control.
 
 **What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable: analysis or evaluation resource.
 
-**Evaluation.** Audits repeated low-rank self-training and matched alternatives, proposing per-problem tests against pooled baseline replicates.
+**Evaluation.** ArXiv v1 audits three-round Qwen3-8B LoRA training using ground-truth filtering, majority-vote SFT, a policy-gradient variant and external distillation. MATH/AIME experiments examine decoding noise, truncation, seed variation, expansion statistics and small out-of-domain probes.
 
-**Boundary.** The reported measurement failures are valuable controls for study design; results from one training setup do not establish that every self-training method fails.
+**Boundary.** The strong contrast concerns twenty-two rarely reached AIME problems; the ten never reached in the pooled baseline remain inconclusive. Short adapted training protocols, one model family and an enriched MATH difficulty band limit generalization. Safety-probe power is not a confidence bound on possible harm; raw generations were not independently regraded.
 
 **Code / data.** [Official artifact](https://github.com/chengxuphd/phantom-gains) — Official repository linked and inspected; not installed or executed.
 
-**Topics:** evaluation, model-training. **Reviewed:** abstract · 2026-10-28.
+**Topics:** evaluation, model-training. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2608.20290) · [Source 2](https://github.com/chengxuphd/phantom-gains)
+[Source 1](https://arxiv.org/abs/2608.20290) · [Source 2](https://github.com/chengxuphd/phantom-gains) · [Source 3](https://arxiv.org/pdf/2608.20290v1)
 
 <a id="hyperskill"></a>
 
@@ -2088,19 +2088,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2605.12493)
 
-**Mechanism.** Evaluates whether memory systems recover environment-specific facts, state changes, workflows, pitfalls, and premise conditions from past web-agent trajectories.
+**Mechanism.** Streams stored web-agent trajectories into memory and asks the system to return bounded evidence for a fixed reader. AgentRunbook-R indexes state slices, transitions and procedural notes; AgentRunbook-C uses a coding agent to inspect trajectory files with manifests and helper tools.
 
 **What changes:** Memory. **Persistence:** not-applicable. **Learning signal:** Not applicable: analysis or evaluation resource.
 
-**Evaluation.** Compares retrieval and coding-agent evidence gathering on questions derived from specialized environments, including accuracy and latency tradeoffs.
+**Evaluation.** ArXiv v1 evaluates 451 human-curated questions across four customized websites and five memory abilities, using 100-trajectory and roughly 500-trajectory histories. It reports fixed-reader QA, query latency, paired-bootstrap comparisons, pool/scaffold ablations and error analysis.
 
-**Boundary.** This is a context-gathering and question-answering benchmark. Better answers do not alone demonstrate successful live task execution or sustained autonomous skill acquisition; the paper is marked work in progress.
+**Boundary.** This evaluates pre-collected evidence gathering, not live task execution or lifelong retention. RAG and coding-agent controllers differ, query latency excludes the full ingestion cost, and gains are not uniform across categories. Question filtering, reader prompting and semantic-judge rules shape the measured accuracy.
 
-**Code / data.** No implementation link independently inspected for this entry; this does not establish that none exists.
+**Code / data.** [Official artifact](https://github.com/xiaowu0162/LongMemEval-V2) — Official project, repository README and selected query-construction source inspected on 2026-11-09; no models, datasets or experiments run. Current artifacts include later changes and are not assumed identical to the May 2026 paper.
 
-**Topics:** evaluation, memory, skills. **Reviewed:** abstract · 2026-10-28.
+**Topics:** evaluation, memory, skills. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2605.12493)
+[Source 1](https://arxiv.org/abs/2605.12493) · [Source 2](https://arxiv.org/pdf/2605.12493v1) · [Source 3](https://xiaowu0162.github.io/longmemeval-v2/) · [Source 4](https://github.com/xiaowu0162/LongMemEval-V2)
 
 <a id="memorepair"></a>
 
@@ -2524,6 +2524,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Source 1](https://arxiv.org/abs/2602.02474) · [Source 2](https://arxiv.org/html/2602.02474v2) · [Source 3](https://github.com/ViktorAxelsen/MemSkill) · [Source 4](https://neurips.cc/Downloads/2026)
 
+<a id="experience-faithfulness"></a>
+
+## Large Language Model Agents Are Not Always Faithful Self-Evolvers
+
+**2026-01-30 · peer-reviewed · ICML 2026 · core · paper**
+
+[Primary source](https://proceedings.mlr.press/v306/zhao26aw.html)
+
+**Mechanism.** Perturbs raw trajectories and condensed memories through removal, shuffling, corruption and replacement while keeping backbone weights fixed. Outcome sensitivity and final-turn gradient attribution probe whether experience influences an agent, rather than proposing a new learning algorithm.
+
+**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable: analysis or evaluation resource.
+
+**Evaluation.** The ICML paper studies ExpeL, Dynamic Cheatsheet, ReasoningBank and G-Memory across selected combinations of thirteen backbones and nine benchmark families, with two additional multihop-QA probes. Raw-trajectory perturbations often hurt interactive tasks more than condensed-memory changes.
+
+**Boundary.** Aggregate success-rate stability does not prove unchanged decisions or semantic non-use. Perturbations can be visibly irrelevant, task dependence is substantial, and repeated-run uncertainty is not reported. The appendix uses embedding-gradient norms as an attribution approximation, not a causal mechanism demonstration.
+
+**Code / data.** [Official artifact](https://github.com/Dreamcatcher0622/Faithfulness) — Official paper-linked repository and experiment/attribution README inspected on 2026-11-09; not installed or executed. Current documentation is not an independent reproduction of the ICML results.
+
+**Topics:** evaluation, memory, safety. **Reviewed:** full-text · 2026-11-09.
+
+[Source 1](https://proceedings.mlr.press/v306/zhao26aw.html) · [Source 2](https://arxiv.org/abs/2601.22436) · [Source 3](https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhao26aw/zhao26aw.pdf) · [Source 4](https://github.com/Dreamcatcher0622/Faithfulness)
+
 <a id="meta-context-engineering"></a>
 
 ## Meta Context Engineering via Agentic Skill Evolution
@@ -2701,28 +2723,6 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** memory, safety, evaluation. **Reviewed:** full-text · 2026-11-01.
 
 [Source 1](https://aclanthology.org/2026.findings-acl.320/) · [Source 2](https://aclanthology.org/2026.findings-acl.320.pdf)
-
-<a id="experience-faithfulness"></a>
-
-## Large Language Model Agents Are Not Always Faithful Self-Evolvers
-
-**2026 · peer-reviewed · ICML 2026 · core · paper**
-
-[Primary source](https://proceedings.mlr.press/v306/zhao26aw.html)
-
-**Mechanism.** Intervenes on raw and condensed experience to test whether an agent’s decisions causally depend on the experience it receives.
-
-**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable: analysis or evaluation resource.
-
-**Evaluation.** Across several frameworks, backbones, and environments, the authors find that condensed experience can be ignored or misinterpreted even when raw experience influences behavior.
-
-**Boundary.** The interventions support conclusions within the tested systems. High end-task scores alone do not reveal whether the intended learning pathway caused a gain.
-
-**Code / data.** No implementation link independently inspected for this entry; this does not establish that none exists.
-
-**Topics:** evaluation, memory, safety. **Reviewed:** abstract · 2026-10-28.
-
-[Source 1](https://proceedings.mlr.press/v306/zhao26aw.html)
 
 <a id="collabmem"></a>
 
@@ -3360,19 +3360,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2505.11942)
 
-**Mechanism.** Constructs interdependent tasks grounded in reusable skills across database, operating-system, and knowledge-graph environments.
+**Mechanism.** Sequences tasks with overlapping SQL, shell-command and knowledge-graph skills and retains interaction histories for fixed-weight agents. Database tables and operating-system containers reset between tasks. Group self-consistency splits replay into multiple inference contexts and votes on the next action.
 
-**What changes:** Memory, Skills. **Persistence:** across-tasks. **Learning signal:** Experience from earlier interactive tasks.
+**What changes:** Memory, Skills. **Persistence:** across-tasks. **Learning signal:** Environment-verified task outcomes determine which recent successful trajectories enter replay; group variants vote over actions conditioned on separate experience subsets.
 
-**Evaluation.** Tests experience reuse and a group self-consistency mechanism; ordinary replay is limited by irrelevant context and context length.
+**Evaluation.** ArXiv v3 contains 500 database, 500 operating-system and 396 knowledge-graph tasks. It varies replay size, model backbone, task difficulty and grouping, reporting task success and average input length alongside format, context and execution-failure examples.
 
-**Boundary.** Performance on these task sequences should be separated from general lifelong learning. The abstract does not establish a complete audit of forgetting or long-term deployment.
+**Boundary.** Replay can hurt stronger baselines or exhaust memory. Grouping shortens each context but adds inference calls, so it does not establish equal-compute efficiency. Shared skills do not imply persistent environment state, and the results do not directly measure forgetting over revisited old tasks. Some appendix error explanations are incorrect.
 
-**Code / data.** No implementation link independently inspected for this entry; this does not establish that none exists.
+**Code / data.** [Official artifact](https://github.com/caixd-220529/LifelongAgentBench) — Official paper-linked repository and setup/experiment README inspected on 2026-11-09; no containers, datasets or model runs executed. Source availability does not verify all generated task labels.
 
-**Topics:** evaluation, continual-learning, skills. **Reviewed:** abstract · 2026-10-28.
+**Topics:** evaluation, continual-learning, skills. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2505.11942)
+[Source 1](https://arxiv.org/abs/2505.11942) · [Source 2](https://arxiv.org/pdf/2505.11942v3) · [Source 3](https://github.com/caixd-220529/LifelongAgentBench) · [Source 4](https://dev.mysql.com/doc/refman/8.4/en/select.html)
 
 <a id="absolute-zero"></a>
 
