@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded harness-search and experience-lifecycle reviews
+
+- Read HarnessFlow and ReScopeBench with all substantive appendices, figures, formulas and cost/metric definitions.
+- Qualified search-repeat, transfer, recovery, judging and computation boundaries.
+- Broader audit: 110 of 190 works complete, 80 pending; historical weekly snapshots preserved.
+
 ## 2026-11-09 — Expanded skill-learning evidence reviews
 
 - Read MemSkill v3, SkillRL v2 and SkillRubricsRL with complete substantive appendices and artifact checks.

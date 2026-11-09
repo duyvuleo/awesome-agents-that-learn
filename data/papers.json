@@ -2364,7 +2364,7 @@
     "status": "preprint",
     "venue": "arXiv preprint",
     "code_url": null,
-    "code_note": "Official implementation availability was not established in this review; no research code was executed.",
+    "code_note": "All substantive text, Appendices A–D, algorithms, eight figures and eight tables of the 18-page arXiv v1 read on 2026-11-09. The paper promises a later implementation release; an official repository was not established. No research code, models or benchmarks were executed.",
     "scope": "core",
     "persistence": "across-tasks",
     "review_depth": "full-text",
@@ -2376,7 +2376,8 @@
     "url": "https://arxiv.org/abs/2611.06254",
     "sources": [
       "https://arxiv.org/abs/2611.06254",
-      "https://arxiv.org/html/2611.06254v1"
+      "https://arxiv.org/html/2611.06254v1",
+      "https://arxiv.org/pdf/2611.06254v1"
     ],
     "topics": [
       "architecture",
@@ -2390,9 +2391,9 @@
       "workflows"
     ],
     "learning_signal": "Automatic validation scores, prior code edits and execution traces; a supplied component library supports proposals.",
-    "mechanism": "Uses a fixed coding agent and tree-based selection policy to search complete executable harnesses. The archive retains successful and unsuccessful refinements; the highest-validation harness is reused with a fixed executor model.",
-    "evaluation": "Uses fifteen candidate attempts per benchmark across six agent, coding and web benchmarks, disjoint validation/test splits, component controls and an additional executor setting.",
-    "limitations": "A stronger model proposes edits, and the outer search rules remain fixed. Execution-cost comparisons exclude harness search. The second-executor study reruns optimization rather than transferring a frozen harness; matched candidate counts are not equal end-to-end compute."
+    "mechanism": "A fixed coding agent proposes complete executable harness edits using an optional component library. Tree-based selection mixes validation score and direct-child exploration; compatible candidates enter the archive even when they score worse. The chosen harness persists with a frozen executor, while the outer search procedure stays fixed.",
+    "evaluation": "Full v1 evaluates fifteen candidate attempts plus the root on six agent, coding and web benchmarks, with disjoint validation/test tasks and five executions per task. It reports component/exploration controls, cumulative edit lineages, execution costs and three benchmarks optimized again with a stronger executor.",
+    "limitations": "Five execution repeats do not establish variability across independent searches. A stronger model proposes edits, and equal candidate counts do not equal total compute. Execution costs exclude search and are not uniformly lowest; WebShop reports a continuous score. Stronger-executor experiments rerun optimization rather than transfer a frozen harness, and lineage improvements do not isolate individual edits."
   },
   {
     "id": "hierarchical-self-improvement",
@@ -4754,7 +4755,7 @@
     "scope": "core",
     "persistence": "across-tasks",
     "review_depth": "full-text",
-    "checked": "2026-11-08",
+    "checked": "2026-11-09",
     "id": "rescopebench",
     "short_name": "ReScopeBench",
     "title": "Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments",
@@ -4764,10 +4765,11 @@
     "sources": [
       "https://arxiv.org/abs/2611.05450",
       "https://arxiv.org/html/2611.05450v1",
-      "https://github.com/JoeYing1019/ReScopeBench"
+      "https://github.com/JoeYing1019/ReScopeBench",
+      "https://arxiv.org/pdf/2611.05450v1"
     ],
     "code_url": "https://github.com/JoeYing1019/ReScopeBench",
-    "code_note": "Paper-linked repository and README inspected; no installation, benchmark execution or result reproduction.",
+    "code_note": "All substantive main text, Appendices A–D, metric formulas, fourteen figures, six tables and full case records of the 29-page arXiv v1 read on 2026-11-09. Official README at 4780ba6 documents the framework and separate case assets, Python/Docker requirements and an ARM64 setup. No assets were downloaded or research software installed/executed.",
     "topics": [
       "memory",
       "skills",
@@ -4780,9 +4782,9 @@
       "skills"
     ],
     "learning_signal": "Tool observations and permitted later outcome feedback; private reference inventories are used only for scoring.",
-    "mechanism": "Pairs task streams with retained versus cleared memory, skills and retrievable history. Silent environmental changes invalidate selected experience; separate metrics track task outcomes and saved structural/rule knowledge.",
-    "evaluation": "Tests twenty models on 352 tasks across eighteen simulated environments with twenty-six controlled changes, using programmatic task graders and model-judged memory coverage.",
-    "limitations": "Each model–environment comparison uses one stream per condition, and action-induced environment states may diverge. Coverage is not the precision of all stored content; recovery time measures first completion rather than sustained correctness. Background skill review adds computation outside foreground tool counts, and simulated applications are not live deployments."
+    "mechanism": "Pairs streams retaining versus clearing memory, skills and history under a fixed Hermes framework and model. Silent changes invalidate selected environment knowledge. Post-task reference-based judging tracks saved knowledge separately from programmatic task outcomes; background skill review can revise experience before grading.",
+    "evaluation": "Full v1 evaluates twenty models, 352 tasks, eighteen simulated applications and twenty-six changes. It adds two-judge agreement checks, task-matched request analyses, selective-update cohorts, exposure and persistence follow-ups, and foreground action accounting.",
+    "limitations": "One stream per model/environment/condition does not measure repeat variability, and action-induced states diverge. Knowledge coverage is not precision; first-completion recovery is not sustained correctness, and post-change performance is not a before/after delta. Correlations and selected trace cohorts do not establish causality. Foreground counts exclude background computation, and judge agreement does not establish independent accuracy."
   },
   {
     "id": "resight",

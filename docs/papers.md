@@ -14,10 +14,10 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-05 | **Beneath the Surface**<br>[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](https://arxiv.org/abs/2611.07624) | Separates repeated success, task coverage, regressions, component interactions and candidate retention in harness evolution. EvoAudit diagnoses archived runs; AGE… | Agent code, Prompts / context, Skills, Workflows | preprint · full-text | [Notes](#beneath-surface-agent-evolution) · [Code](https://github.com/simple-agent-lab/RSIHub) |
-| 2026-11-04 | **HarnessFlow**<br>[HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](https://arxiv.org/abs/2611.06254) | Uses a fixed coding agent and tree-based selection policy to search complete executable harnesses. The archive retains successful and unsuccessful refinements; the… | Agent code, Prompts / context, Workflows | preprint · full-text | [Notes](#harnessflow) |
+| 2026-11-04 | **HarnessFlow**<br>[HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](https://arxiv.org/abs/2611.06254) | A fixed coding agent proposes complete executable harness edits using an optional component library. Tree-based selection mixes validation score and direct-child… | Agent code, Prompts / context, Workflows | preprint · full-text | [Notes](#harnessflow) |
 | 2026-11-03 | **Targeted guidance**<br>[Stabilizing On-Policy Targeted Guidance in Agentic Reinforcement Learning](https://arxiv.org/abs/2611.05266) | Combines GRPO with on-policy distillation from the same model conditioned on localized feedback. Distillation applies only to failing turns and includes reasoning… | Model weights | preprint · full-text | [Notes](#targeted-guidance) |
 | 2026-11-03 | **Route to Remember**<br>[Route to Remember: Adaptive Memory Selection for LLM Agents](https://arxiv.org/abs/2611.05636) | Distills session information into a persistent LoRA adapter using student-generated answers scored by a context-conditioned teacher. A verify-then-regenerate reader… | Model weights, Memory | preprint · full-text | [Notes](#route-to-remember) |
-| 2026-11-03 | **ReScopeBench**<br>[Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](https://arxiv.org/abs/2611.05450) | Pairs task streams with retained versus cleared memory, skills and retrievable history. Silent environmental changes invalidate selected experience; separate metrics… | Memory, Skills | preprint · full-text | [Notes](#rescopebench) · [Code](https://github.com/JoeYing1019/ReScopeBench) |
+| 2026-11-03 | **ReScopeBench**<br>[Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](https://arxiv.org/abs/2611.05450) | Pairs streams retaining versus clearing memory, skills and history under a fixed Hermes framework and model. Silent changes invalidate selected environment knowledge.… | Memory, Skills | preprint · full-text | [Notes](#rescopebench) · [Code](https://github.com/JoeYing1019/ReScopeBench) |
 | 2026-11-03 | **Meta²**<br>[Meta$^2$: Precomputing Reusable Knowledge for Online Harness Evolution in Long-Horizon Agents](https://arxiv.org/abs/2611.05139) | Learns a textual Meta-Skill offline, then freezes it to guide a separate evolver at checkpoints within each task. Bounded notices, instructions, hooks and tools alter… | Skills, Prompts / context, Tools, Workflows | preprint · full-text | [Notes](#meta-square) |
 | 2026-11-03 | **Continual AutoResearch**<br>[From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?](https://arxiv.org/abs/2611.05108) | Compares persistent sessions and workspaces with reset instances of the same research agent on matched task streams and time budgets. Separate first-solution… | Memory | preprint · full-text | [Notes](#continual-autoresearch) |
 | 2026-11-03 | **Benign skill safety**<br>[Can Benign Skills Induce Misaligned Behavior in LLM Agents?](https://arxiv.org/abs/2611.04299) | Compares fixed-model agents with and without reusable benign skills under matched requests and tools, then studies benign-feedback skill evolution, retrieval relevance… | Skills | preprint · full-text | [Notes](#benign-skill-misalignment) |
@@ -236,19 +236,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2611.06254)
 
-**Mechanism.** Uses a fixed coding agent and tree-based selection policy to search complete executable harnesses. The archive retains successful and unsuccessful refinements; the highest-validation harness is reused with a fixed executor model.
+**Mechanism.** A fixed coding agent proposes complete executable harness edits using an optional component library. Tree-based selection mixes validation score and direct-child exploration; compatible candidates enter the archive even when they score worse. The chosen harness persists with a frozen executor, while the outer search procedure stays fixed.
 
 **What changes:** Agent code, Prompts / context, Workflows. **Persistence:** across-tasks. **Learning signal:** Automatic validation scores, prior code edits and execution traces; a supplied component library supports proposals.
 
-**Evaluation.** Uses fifteen candidate attempts per benchmark across six agent, coding and web benchmarks, disjoint validation/test splits, component controls and an additional executor setting.
+**Evaluation.** Full v1 evaluates fifteen candidate attempts plus the root on six agent, coding and web benchmarks, with disjoint validation/test tasks and five executions per task. It reports component/exploration controls, cumulative edit lineages, execution costs and three benchmarks optimized again with a stronger executor.
 
-**Boundary.** A stronger model proposes edits, and the outer search rules remain fixed. Execution-cost comparisons exclude harness search. The second-executor study reruns optimization rather than transferring a frozen harness; matched candidate counts are not equal end-to-end compute.
+**Boundary.** Five execution repeats do not establish variability across independent searches. A stronger model proposes edits, and equal candidate counts do not equal total compute. Execution costs exclude search and are not uniformly lowest; WebShop reports a continuous score. Stronger-executor experiments rerun optimization rather than transfer a frozen harness, and lineage improvements do not isolate individual edits.
 
-**Code / data.** Official implementation availability was not established in this review; no research code was executed.
+**Code / data.** All substantive text, Appendices A–D, algorithms, eight figures and eight tables of the 18-page arXiv v1 read on 2026-11-09. The paper promises a later implementation release; an official repository was not established. No research code, models or benchmarks were executed.
 
 **Topics:** architecture, workflows, prompts, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2611.06254) · [Source 2](https://arxiv.org/html/2611.06254v1)
+[Source 1](https://arxiv.org/abs/2611.06254) · [Source 2](https://arxiv.org/html/2611.06254v1) · [Source 3](https://arxiv.org/pdf/2611.06254v1)
 
 <a id="targeted-guidance"></a>
 
@@ -302,19 +302,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2611.05450)
 
-**Mechanism.** Pairs task streams with retained versus cleared memory, skills and retrievable history. Silent environmental changes invalidate selected experience; separate metrics track task outcomes and saved structural/rule knowledge.
+**Mechanism.** Pairs streams retaining versus clearing memory, skills and history under a fixed Hermes framework and model. Silent changes invalidate selected environment knowledge. Post-task reference-based judging tracks saved knowledge separately from programmatic task outcomes; background skill review can revise experience before grading.
 
 **What changes:** Memory, Skills. **Persistence:** across-tasks. **Learning signal:** Tool observations and permitted later outcome feedback; private reference inventories are used only for scoring.
 
-**Evaluation.** Tests twenty models on 352 tasks across eighteen simulated environments with twenty-six controlled changes, using programmatic task graders and model-judged memory coverage.
+**Evaluation.** Full v1 evaluates twenty models, 352 tasks, eighteen simulated applications and twenty-six changes. It adds two-judge agreement checks, task-matched request analyses, selective-update cohorts, exposure and persistence follow-ups, and foreground action accounting.
 
-**Boundary.** Each model–environment comparison uses one stream per condition, and action-induced environment states may diverge. Coverage is not the precision of all stored content; recovery time measures first completion rather than sustained correctness. Background skill review adds computation outside foreground tool counts, and simulated applications are not live deployments.
+**Boundary.** One stream per model/environment/condition does not measure repeat variability, and action-induced states diverge. Knowledge coverage is not precision; first-completion recovery is not sustained correctness, and post-change performance is not a before/after delta. Correlations and selected trace cohorts do not establish causality. Foreground counts exclude background computation, and judge agreement does not establish independent accuracy.
 
-**Code / data.** [Official artifact](https://github.com/JoeYing1019/ReScopeBench) — Paper-linked repository and README inspected; no installation, benchmark execution or result reproduction.
+**Code / data.** [Official artifact](https://github.com/JoeYing1019/ReScopeBench) — All substantive main text, Appendices A–D, metric formulas, fourteen figures, six tables and full case records of the 29-page arXiv v1 read on 2026-11-09. Official README at 4780ba6 documents the framework and separate case assets, Python/Docker requirements and an ARM64 setup. No assets were downloaded or research software installed/executed.
 
-**Topics:** memory, skills, continual-learning, evaluation, applications. **Reviewed:** full-text · 2026-11-08.
+**Topics:** memory, skills, continual-learning, evaluation, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2611.05450) · [Source 2](https://arxiv.org/html/2611.05450v1) · [Source 3](https://github.com/JoeYing1019/ReScopeBench)
+[Source 1](https://arxiv.org/abs/2611.05450) · [Source 2](https://arxiv.org/html/2611.05450v1) · [Source 3](https://github.com/JoeYing1019/ReScopeBench) · [Source 4](https://arxiv.org/pdf/2611.05450v1)
 
 <a id="meta-square"></a>
 
