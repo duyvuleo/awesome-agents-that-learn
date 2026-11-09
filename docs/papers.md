@@ -30,8 +30,8 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-30 | **Exo**<br>[Exo: An Architecture for Self-Improving Systems at Runtime](https://arxiv.org/abs/2611.00463) | Makes the running harness executor editable, including tools, context construction and the procedures for further revision. A separate mechanism is intended to preserve… | Agent code, Tools, Workflows | preprint · full-text | [Notes](#exo-runtime) · [Code](https://github.com/exoharness/exo/tree/c5c1963a3445417e64938c139da88edd9154075d) |
 | 2026-10-29 | **Curriculum or easy start?**<br>[Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds](https://arxiv.org/abs/2610.40364) | Compares fourteen terrain-selection curricula around a shared PPO training design. Methods change randomization difficulty, replay buffers, mutated levels or a learned… | Model weights | preprint · full-text | [Notes](#quadruped-curriculum-benchmark) · [Code](https://github.com/Solvro/ml-wojtek-ued) |
 | 2026-10-28 | **MUSE scientific memory**<br>[MUSE: Multi-Level Memory with Selective Runtime Injection for Scientific Coding Agents](https://arxiv.org/abs/2610.38332) | Extracts approach and implementation lessons, including conditional explanations of failures, then consolidates global guidance offline. Frozen global and Top5 approach… | Memory, Prompts / context | preprint · full-text | [Notes](#muse-scientific-memory) · [Code](https://github.com/hr-jin/MUSE) |
-| 2026-10-27 | **Policy–harness geometry**<br>[Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces](https://arxiv.org/abs/2610.37255) | Decomposes regularized return into an interface-specific optimum and policy mismatch under a finite semantic-control model. It tests how presentation or execution… | Analysis / no retained update | preprint · full-text | [Notes](#policy-harness-geometry) · [Code](https://github.com/2020-qqtcg/HRP) |
-| 2026-10-27 | **MLE-World**<br>[MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model](https://arxiv.org/abs/2610.37175) | Fine-tunes a world model to predict execution feedback from code and task context. Its predictions guide candidate search, while confidence gates real runs and final… | Model weights | preprint · full-text | [Notes](#mle-world) · [Code](https://github.com/ko120/MLE_World) |
+| 2026-10-27 | **Policy–harness geometry**<br>[Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces](https://arxiv.org/abs/2610.37255) | Under a finite KL-regularized semantic-control model, expresses return as an interface-specific optimum minus policy mismatch and separates target shift, training… | Analysis / no retained update | preprint · full-text | [Notes](#policy-harness-geometry) · [Code](https://github.com/2020-qqtcg/HRP) |
+| 2026-10-27 | **MLE-World**<br>[MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model](https://arxiv.org/abs/2610.37175) | Offline-fine-tunes a 4B predictor on code, execution context and observed outputs. A fixed AIDE search uses predicted logs, exception classes and metrics to select… | Model weights | preprint · full-text | [Notes](#mle-world) · [Code](https://github.com/ko120/MLE_World) |
 | 2026-10-27 | **DiscernMem**<br>[Remembering Is Not Enough: Refining Memories and Learning When to Use Them in Multi-Agent Systems](https://arxiv.org/abs/2610.36652) | Maintains role-owned behavioral rules, versioned effects and use/avoid conditions. After scoring each task, full-team replays compare one rule with no memory. A fixed… | Memory | preprint · full-text | [Notes](#discernmem) · [Code](https://github.com/ECNU-ICALK/DiscernMem) |
 | 2026-10-27 | **CoHARL**<br>[CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning](https://arxiv.org/abs/2610.36469) | Trains one shared policy with group-relative RL across a scheduled population of executable harnesses. A separate fixed proposer edits prompts, parsers, handlers and… | Model weights, Agent code, Prompts / context | preprint · full-text | [Notes](#coharl) |
 | 2026-10-26 | **Skill∞**<br>[Skill$^{\infty}$: Recursive Self-Improvement for Agent Skill Optimization](https://arxiv.org/abs/2610.35434) | Encodes skill optimization in an editable meta-skill. An agent uses that procedure to revise task skills and the meta-skill itself, then reuses the refined optimizer… | Skills, Prompts / context, Agent code | preprint · full-text | [Notes](#skill-infinity) |
@@ -590,19 +590,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.37255)
 
-**Mechanism.** Decomposes regularized return into an interface-specific optimum and policy mismatch under a finite semantic-control model. It tests how presentation or execution changes can alter frozen-model behavior and how further training changes harness rankings.
+**Mechanism.** Under a finite KL-regularized semantic-control model, expresses return as an interface-specific optimum minus policy mismatch and separates target shift, training residual and changed model readout. Controlled adapter training tests interface-specific preferences; action sampling estimates mismatch, with a teacher substituted for the unavailable coding-agent optimum.
 
 **What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Task rewards support controlled policy training; sampled actions and stronger-teacher probes estimate deployment mismatch.
 
-**Evaluation.** Uses exact-control MiniWoB++ experiments with six harnesses, adaptation and sampling controls, plus five coding harnesses on Terminal-Bench Lite.
+**Evaluation.** Full v2 combines exact evaluation on compiled graphs for three MiniWoB++ families and six harnesses, nine selected adaptation swaps, presentation controls and estimator calibration. A separate five-harness study reports three runs on 39 Terminal-Bench Lite tasks, with teacher-based diagnostics on three probe tasks.
 
-**Boundary.** The theory assumes a specified KL-regularized control problem. Coding-agent ceilings are stronger-teacher proxies sampled on three tasks, not solved optima. Mismatch estimation requires substantial query budgets; observed ranking agreement does not establish universal prediction or autonomous harness optimization.
+**Boundary.** The exact ceiling depends on the reference and regularized objective, not just raw success or physical capability. Task-bootstrap intervals do not establish training-seed robustness. Adaptation prediction uses already-trained target checkpoints and oracle quantities; accurate sampled diagnostics require large query budgets. Coding estimates use coarse action categories, incomplete probe cohorts and a nonoptimal teacher, so five-harness rank agreement is not a certified regret bound or general selector.
 
-**Code / data.** [Official artifact](https://github.com/2020-qqtcg/HRP) — Paper-linked repository README inspected; controlled experiments and coding-agent integrations were not installed or executed.
+**Code / data.** [Official artifact](https://github.com/2020-qqtcg/HRP) — Complete 32-page arXiv v2, Appendices A–F, eleven figures/fourteen tables, all proofs and thirty-three equations read on 2026-11-09. Official README inspected at c91d859c21f38f10e358091265eea6e571e23e47, including separate controlled/coding experiments and external model, container and teacher-service requirements. No code, model or environment installed or run.
 
-**Topics:** foundations, architecture, model-training, evaluation. **Reviewed:** full-text · 2026-11-02.
+**Topics:** foundations, architecture, model-training, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.37255) · [Source 2](https://arxiv.org/html/2610.37255v2) · [Source 3](https://github.com/2020-qqtcg/HRP)
+[Source 1](https://arxiv.org/abs/2610.37255) · [Source 2](https://arxiv.org/html/2610.37255v2) · [Source 3](https://github.com/2020-qqtcg/HRP) · [Source 4](https://arxiv.org/pdf/2610.37255v2)
 
 <a id="mle-world"></a>
 
@@ -612,19 +612,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.37175)
 
-**Mechanism.** Fine-tunes a world model to predict execution feedback from code and task context. Its predictions guide candidate search, while confidence gates real runs and final submissions remain execution-verified. The trained predictor is reused rather than continually updated during search.
+**Mechanism.** Offline-fine-tunes a 4B predictor on code, execution context and observed outputs. A fixed AIDE search uses predicted logs, exception classes and metrics to select, revise or combine programs. Exception-class confidence gates real execution, with mandatory verification of new best candidates and final selection from real results; the predictor is frozen during search.
 
 **What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Earlier executed programs paired with terminal logs, exception classes, and validation scores train a separate surrogate.
 
-**Evaluation.** Tests prediction on held-out programs and five search policies over seventeen MLE-bench Lite tasks, with three search seeds per task and separate confidence-gating controls.
+**Evaluation.** Full v1 evaluates 1,700 new programs from seventeen training-covered tasks, five search policies with three seeds per task, fixed-state interventions and confidence/random-gating controls. Three excluded-task prediction probes test limited transfer. Screening and synthesis have clearer local evidence than metric ranking; all main policies improve observed mean percentile over base AIDE.
 
-**Boundary.** Main tasks were seen during surrogate training on roughly 500,000 executions. Base AIDE lacks that corpus knowledge; a corpus-aware agent baseline is untested. Three unseen-task prediction tests do not establish general cross-task search transfer, and prediction errors can misdirect optimization.
+**Boundary.** The main corpus and tuning cover the evaluated tasks, while base AIDE lacks the roughly 500,000 prior executions. Harder tasks are excluded; unseen-task search transfer is untested. Log agreement is model-judged with explicit tolerances. Confidence is an exception-class proxy, not a formal uncertainty bound. Execution savings exclude training/corpus and model-serving cost; historical cohorts and some control settings differ. Higher observed means and nonsignificant real-feedback differences do not establish universal gains or equivalence.
 
-**Code / data.** [Official artifact](https://github.com/ko120/MLE_World) — Paper-linked project and repository README inspected; no model/data download, installation, or execution.
+**Code / data.** [Official artifact](https://github.com/ko120/MLE_World) — Complete 41-page arXiv v1, Appendices A–R, ten figures/twenty-five tables, five algorithms and full prediction/judge prompts read on 2026-11-09. Official README and MIT license inspected at d390d2f736491da7d09af85ad00051d96c3177ba; it links model/data releases and documents separate servers, Enroot and benchmark prerequisites. No linked models/data downloaded or research software executed.
 
-**Topics:** model-training, workflows, evaluation, applications. **Reviewed:** full-text · 2026-10-31.
+**Topics:** model-training, workflows, evaluation, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.37175) · [Source 2](https://arxiv.org/html/2610.37175v1) · [Source 3](https://mle-world.github.io/) · [Source 4](https://github.com/ko120/MLE_World)
+[Source 1](https://arxiv.org/abs/2610.37175) · [Source 2](https://arxiv.org/html/2610.37175v1) · [Source 3](https://mle-world.github.io/) · [Source 4](https://github.com/ko120/MLE_World) · [Source 5](https://arxiv.org/pdf/2610.37175v1)
 
 <a id="discernmem"></a>
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded interface geometry and execution-model reviews
+
+- Completed both full papers, proofs, appendices, prediction controls and artifact documentation.
+- Qualified teacher-based diagnostics, estimator cost, task overlap, confidence thresholds and execution-saving claims.
+- Broader audit: 129 of 190 works complete, 61 pending.
+
 ## 2026-11-09 — Expanded CoHARL and DiscernMem review
 
 - Completed both papers and appendices, including proof assumptions, replay controls and historical diagnostics.

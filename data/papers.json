@@ -3716,10 +3716,11 @@
       "https://arxiv.org/abs/2610.37175",
       "https://arxiv.org/html/2610.37175v1",
       "https://mle-world.github.io/",
-      "https://github.com/ko120/MLE_World"
+      "https://github.com/ko120/MLE_World",
+      "https://arxiv.org/pdf/2610.37175v1"
     ],
     "code_url": "https://github.com/ko120/MLE_World",
-    "code_note": "Paper-linked project and repository README inspected; no model/data download, installation, or execution.",
+    "code_note": "Complete 41-page arXiv v1, Appendices A–R, ten figures/twenty-five tables, five algorithms and full prediction/judge prompts read on 2026-11-09. Official README and MIT license inspected at d390d2f736491da7d09af85ad00051d96c3177ba; it links model/data releases and documents separate servers, Enroot and benchmark prerequisites. No linked models/data downloaded or research software executed.",
     "topics": [
       "model-training",
       "workflows",
@@ -3732,11 +3733,11 @@
     ],
     "persistence": "across-tasks",
     "learning_signal": "Earlier executed programs paired with terminal logs, exception classes, and validation scores train a separate surrogate.",
-    "mechanism": "Fine-tunes a world model to predict execution feedback from code and task context. Its predictions guide candidate search, while confidence gates real runs and final submissions remain execution-verified. The trained predictor is reused rather than continually updated during search.",
-    "evaluation": "Tests prediction on held-out programs and five search policies over seventeen MLE-bench Lite tasks, with three search seeds per task and separate confidence-gating controls.",
-    "limitations": "Main tasks were seen during surrogate training on roughly 500,000 executions. Base AIDE lacks that corpus knowledge; a corpus-aware agent baseline is untested. Three unseen-task prediction tests do not establish general cross-task search transfer, and prediction errors can misdirect optimization.",
+    "mechanism": "Offline-fine-tunes a 4B predictor on code, execution context and observed outputs. A fixed AIDE search uses predicted logs, exception classes and metrics to select, revise or combine programs. Exception-class confidence gates real execution, with mandatory verification of new best candidates and final selection from real results; the predictor is frozen during search.",
+    "evaluation": "Full v1 evaluates 1,700 new programs from seventeen training-covered tasks, five search policies with three seeds per task, fixed-state interventions and confidence/random-gating controls. Three excluded-task prediction probes test limited transfer. Screening and synthesis have clearer local evidence than metric ranking; all main policies improve observed mean percentile over base AIDE.",
+    "limitations": "The main corpus and tuning cover the evaluated tasks, while base AIDE lacks the roughly 500,000 prior executions. Harder tasks are excluded; unseen-task search transfer is untested. Log agreement is model-judged with explicit tolerances. Confidence is an exception-class proxy, not a formal uncertainty bound. Execution savings exclude training/corpus and model-serving cost; historical cohorts and some control settings differ. Higher observed means and nonsignificant real-feedback differences do not establish universal gains or equivalence.",
     "review_depth": "full-text",
-    "checked": "2026-10-31",
+    "checked": "2026-11-09",
     "short_name": "MLE-World"
   },
   {
@@ -4353,10 +4354,11 @@
     "sources": [
       "https://arxiv.org/abs/2610.37255",
       "https://arxiv.org/html/2610.37255v2",
-      "https://github.com/2020-qqtcg/HRP"
+      "https://github.com/2020-qqtcg/HRP",
+      "https://arxiv.org/pdf/2610.37255v2"
     ],
     "code_url": "https://github.com/2020-qqtcg/HRP",
-    "code_note": "Paper-linked repository README inspected; controlled experiments and coding-agent integrations were not installed or executed.",
+    "code_note": "Complete 32-page arXiv v2, Appendices A–F, eleven figures/fourteen tables, all proofs and thirty-three equations read on 2026-11-09. Official README inspected at c91d859c21f38f10e358091265eea6e571e23e47, including separate controlled/coding experiments and external model, container and teacher-service requirements. No code, model or environment installed or run.",
     "topics": [
       "foundations",
       "architecture",
@@ -4369,11 +4371,11 @@
     ],
     "persistence": "not-applicable",
     "learning_signal": "Task rewards support controlled policy training; sampled actions and stronger-teacher probes estimate deployment mismatch.",
-    "mechanism": "Decomposes regularized return into an interface-specific optimum and policy mismatch under a finite semantic-control model. It tests how presentation or execution changes can alter frozen-model behavior and how further training changes harness rankings.",
-    "evaluation": "Uses exact-control MiniWoB++ experiments with six harnesses, adaptation and sampling controls, plus five coding harnesses on Terminal-Bench Lite.",
-    "limitations": "The theory assumes a specified KL-regularized control problem. Coding-agent ceilings are stronger-teacher proxies sampled on three tasks, not solved optima. Mismatch estimation requires substantial query budgets; observed ranking agreement does not establish universal prediction or autonomous harness optimization.",
+    "mechanism": "Under a finite KL-regularized semantic-control model, expresses return as an interface-specific optimum minus policy mismatch and separates target shift, training residual and changed model readout. Controlled adapter training tests interface-specific preferences; action sampling estimates mismatch, with a teacher substituted for the unavailable coding-agent optimum.",
+    "evaluation": "Full v2 combines exact evaluation on compiled graphs for three MiniWoB++ families and six harnesses, nine selected adaptation swaps, presentation controls and estimator calibration. A separate five-harness study reports three runs on 39 Terminal-Bench Lite tasks, with teacher-based diagnostics on three probe tasks.",
+    "limitations": "The exact ceiling depends on the reference and regularized objective, not just raw success or physical capability. Task-bootstrap intervals do not establish training-seed robustness. Adaptation prediction uses already-trained target checkpoints and oracle quantities; accurate sampled diagnostics require large query budgets. Coding estimates use coarse action categories, incomplete probe cohorts and a nonoptimal teacher, so five-harness rank agreement is not a certified regret bound or general selector.",
     "review_depth": "full-text",
-    "checked": "2026-11-02",
+    "checked": "2026-11-09",
     "short_name": "Policy–harness geometry"
   },
   {
