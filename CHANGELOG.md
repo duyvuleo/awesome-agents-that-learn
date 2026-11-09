@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded capability and state-revision diagnostics
+
+- Read Artifact-to-Capability and StateGraph with complete substantive appendices, formulas and visual results.
+- Qualified diagnostic criteria, metric denominators, dependency verification and missing evaluation records.
+- Broader audit: 118 of 190 works complete, 72 pending.
+
 ## 2026-11-09 — Expanded persistent-experience failure reviews
 
 - Read the complete benign-skill safety, harness-forgetting and Continual AutoResearch studies.

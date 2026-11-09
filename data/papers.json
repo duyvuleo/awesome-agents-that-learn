@@ -670,10 +670,11 @@
     "url": "https://arxiv.org/abs/2611.04952",
     "sources": [
       "https://arxiv.org/abs/2611.04952",
-      "https://arxiv.org/html/2611.04952v1"
+      "https://arxiv.org/html/2611.04952v1",
+      "https://arxiv.org/pdf/2611.04952v1"
     ],
     "code_url": null,
-    "code_note": "An official runnable artifact was not established in the inspected sources; no code was executed.",
+    "code_note": "All substantive text, Appendices A–G, five figures/eleven tables, formal criteria, board traces and code excerpts of the 19-page arXiv v1 read on 2026-11-09. An official runnable artifact was not established. No game, model or research code was executed.",
     "topics": [
       "evaluation",
       "memory",
@@ -688,11 +689,11 @@
     ],
     "persistence": "across-tasks",
     "learning_signal": "Game outcomes and traces drive the evaluated evolvers; independent game rules diagnose retained artifacts.",
-    "mechanism": "Tests artifact formation, behavioral change, useful action selection, preservation during composition, and extension across versions. Frozen-system interventions compare identical board states, complete games, and successive code versions rather than treating accumulated artifacts or higher scores as sufficient evidence of learning.",
-    "evaluation": "Studies Gomoku adaptations of Reflexion, Voyager, and DGM with one shared backbone, 1,876 fixed states, game traces, and a version lineage. Finds legality-only gains, conflicting skill composition, and later loss of previously passing states.",
-    "limitations": "These are study-specific adaptations in one rule-enumerable game, not replications of the original systems. Many diagnostic states come from DGM evolution games. Longer evolution, repeated training runs, other backbones, and open-ended transfer remain untested; the five-property definition is a proposed diagnostic framework.",
+    "mechanism": "Proposes a five-property diagnostic for converting persistent artifacts into useful behavior. Frozen-system interventions compare identical board states, complete games and successive code versions, separating legal moves, useful legal choices, composition failures and later retention.",
+    "evaluation": "Full v1 studies Gomoku adaptations of Reflexion, Voyager and DGM with one shared backbone, 120 constructed/transformed states, 1,756 evolution-derived states, twenty seeded games per tested configuration and a 7,234-state late-version comparison. It includes component removals, paired transition tables and score decomposition.",
+    "limitations": "The proposed definition excludes legality-only gains; it is not a universal definition of learning. These adaptations are not original-system replications, and diagnostic states largely come from DGM evolution. Reflexion has one sample per state/condition and only one control rerun. Game seeds are not independent evolution runs; local-state improvement need not beat the initial strategy at complete games. Generalization and failure prevalence remain untested.",
     "review_depth": "full-text",
-    "checked": "2026-11-05",
+    "checked": "2026-11-09",
     "short_name": "Artifact-to-Capability"
   },
   {
@@ -6278,11 +6279,11 @@
     "status": "preprint",
     "venue": "arXiv preprint",
     "code_url": null,
-    "code_note": "Official implementation availability was not established in this review; no code was executed.",
+    "code_note": "Complete 19-page arXiv v1, substantive Appendices A–D, three figures/ten tables, algorithm, metric formulas, nine module prompts and the worked case read on 2026-11-09. Referenced implementation filenames and an annotation hash do not establish an accessible runnable release. No research software or actions were executed.",
     "scope": "core",
     "persistence": "across-tasks",
     "review_depth": "full-text",
-    "checked": "2026-11-07",
+    "checked": "2026-11-09",
     "id": "stategraph",
     "short_name": "StateGraph",
     "title": "A State Change Is Local, Its Consequences Are Not: Dependency-Aware State Revision for Long-Term Agent Memory",
@@ -6290,7 +6291,8 @@
     "url": "https://arxiv.org/abs/2611.02912",
     "sources": [
       "https://arxiv.org/abs/2611.02912",
-      "https://arxiv.org/html/2611.02912v1"
+      "https://arxiv.org/html/2611.02912v1",
+      "https://arxiv.org/pdf/2611.02912v1"
     ],
     "topics": [
       "memory",
@@ -6302,9 +6304,9 @@
       "memory"
     ],
     "learning_signal": "New evidence, scoped state conflicts and model judgments of dependency strength and alternative support.",
-    "mechanism": "Maintains versioned memory states, proposes support dependencies from interaction histories, and checks them with counterfactual model judgments. Revisions propagate selectively, retaining independent support and historical states instead of invalidating every related record.",
-    "evaluation": "Reports dependency and cascade-revision tests on 50 constructed StateChangeBench cases with one backbone, plus supplementary memory benchmarks.",
-    "limitations": "The same model proposes and verifies dependencies. Run counts and the double-annotated subset size were not retained; action-decision and premise-gate results were omitted because their aggregation could not be reconstructed. Small depth strata lack significance tests, and closure consistency is not independent correctness evidence."
+    "mechanism": "Stores scoped, versioned states and proposes directed support dependencies from history. The same frozen LLM tests whether a dependent claim survives removal of a premise. Strict dependencies propagate revisions only when no independent current support survives; weak dependencies trigger uncertainty handling without recursive propagation.",
+    "evaluation": "Full v1 reports direct revision, dependency recovery and cascade invalidation on 50 constructed StateChangeBench cases with one backbone, including verification/support/propagation ablations and ported cascade mechanisms. It also gives point estimates on six public memory benchmarks; impact-set F1, edge F1 and closure consistency have different targets and denominators.",
+    "limitations": "Run counts and the double-annotated subset size were not retained; action-decision and premise-gate results were omitted because aggregation could not be reconstructed. Small depth strata lack uncertainty tests. The same model proposes, verifies and assesses support, so closure consistency is not independent correctness. Public-benchmark scores are mixed and do not establish non-degradation or deployed action safety."
   },
   {
     "id": "steplearn",

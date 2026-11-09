@@ -21,8 +21,8 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-11-03 | **Meta²**<br>[Meta$^2$: Precomputing Reusable Knowledge for Online Harness Evolution in Long-Horizon Agents](https://arxiv.org/abs/2611.05139) | Learns a textual Meta-Skill offline, then freezes it to guide a separate evolver at checkpoints within each task. Bounded notices, instructions, hooks and tools alter… | Skills, Prompts / context, Tools, Workflows | preprint · full-text | [Notes](#meta-square) |
 | 2026-11-03 | **Continual AutoResearch**<br>[From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?](https://arxiv.org/abs/2611.05108) | Compares retained native sessions, files and experimental state with reset instances of the same fixed agent. Hidden evaluation separates first-valid quality… | Memory | preprint · full-text | [Notes](#continual-autoresearch) |
 | 2026-11-03 | **Benign skill safety**<br>[Can Benign Skills Induce Misaligned Behavior in LLM Agents?](https://arxiv.org/abs/2611.04299) | Retrieves benign procedural skills for fixed-model agents, then measures executed safety violations separately from harmful-objective completion. A fixed editor also… | Skills | preprint · full-text | [Notes](#benign-skill-misalignment) |
-| 2026-11-03 | **Artifact-to-Capability**<br>[Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](https://arxiv.org/abs/2611.04952) | Tests artifact formation, behavioral change, useful action selection, preservation during composition, and extension across versions. Frozen-system interventions compare… | Memory, Skills, Agent code | preprint · full-text | [Notes](#artifact-to-capability) |
-| 2026-11-02 | **StateGraph**<br>[A State Change Is Local, Its Consequences Are Not: Dependency-Aware State Revision for Long-Term Agent Memory](https://arxiv.org/abs/2611.02912) | Maintains versioned memory states, proposes support dependencies from interaction histories, and checks them with counterfactual model judgments. Revisions propagate… | Memory | preprint · full-text | [Notes](#stategraph) |
+| 2026-11-03 | **Artifact-to-Capability**<br>[Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](https://arxiv.org/abs/2611.04952) | Proposes a five-property diagnostic for converting persistent artifacts into useful behavior. Frozen-system interventions compare identical board states, complete games… | Memory, Skills, Agent code | preprint · full-text | [Notes](#artifact-to-capability) |
+| 2026-11-02 | **StateGraph**<br>[A State Change Is Local, Its Consequences Are Not: Dependency-Aware State Revision for Long-Term Agent Memory](https://arxiv.org/abs/2611.02912) | Stores scoped, versioned states and proposes directed support dependencies from history. The same frozen LLM tests whether a dependent claim survives removal of a… | Memory | preprint · full-text | [Notes](#stategraph) |
 | 2026-11-02 | **Harness forgetting**<br>[Can Coding Agents Sustain Continual Evolution without Forgetting?](https://arxiv.org/abs/2611.03219) | Sequentially edits Mini-SWE-Agent prompts, control flow and tools with a fixed backbone using adapted AHE and Meta-Harness. Re-evaluation of source tasks measures… | Agent code, Prompts / context, Tools | preprint · full-text | [Notes](#continual-harness-forgetting) · [Code](https://github.com/THU-Agent/continual-harness-evolution) |
 | 2026-11-01 | **OMCE**<br>[Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](https://arxiv.org/abs/2611.01747) | Retains episodes and distilled guidance across tasks. A contextual bandit learns whether to solve directly, retrieve cases, retrieve guidance, or distill guidance before… | Memory, Model weights | preprint · full-text | [Notes](#omce) |
 | 2026-10-31 | **Skill++**<br>[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](https://arxiv.org/abs/2611.00544) | Rewrites an incoming skill’s name and description to clarify supported capabilities and scope relative to nearby skills. The revised metadata persists in the growing… | Skills, Prompts / context | preprint · full-text | [Notes](#skill-plus-plus) |
@@ -390,19 +390,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2611.04952)
 
-**Mechanism.** Tests artifact formation, behavioral change, useful action selection, preservation during composition, and extension across versions. Frozen-system interventions compare identical board states, complete games, and successive code versions rather than treating accumulated artifacts or higher scores as sufficient evidence of learning.
+**Mechanism.** Proposes a five-property diagnostic for converting persistent artifacts into useful behavior. Frozen-system interventions compare identical board states, complete games and successive code versions, separating legal moves, useful legal choices, composition failures and later retention.
 
 **What changes:** Memory, Skills, Agent code. **Persistence:** across-tasks. **Learning signal:** Game outcomes and traces drive the evaluated evolvers; independent game rules diagnose retained artifacts.
 
-**Evaluation.** Studies Gomoku adaptations of Reflexion, Voyager, and DGM with one shared backbone, 1,876 fixed states, game traces, and a version lineage. Finds legality-only gains, conflicting skill composition, and later loss of previously passing states.
+**Evaluation.** Full v1 studies Gomoku adaptations of Reflexion, Voyager and DGM with one shared backbone, 120 constructed/transformed states, 1,756 evolution-derived states, twenty seeded games per tested configuration and a 7,234-state late-version comparison. It includes component removals, paired transition tables and score decomposition.
 
-**Boundary.** These are study-specific adaptations in one rule-enumerable game, not replications of the original systems. Many diagnostic states come from DGM evolution games. Longer evolution, repeated training runs, other backbones, and open-ended transfer remain untested; the five-property definition is a proposed diagnostic framework.
+**Boundary.** The proposed definition excludes legality-only gains; it is not a universal definition of learning. These adaptations are not original-system replications, and diagnostic states largely come from DGM evolution. Reflexion has one sample per state/condition and only one control rerun. Game seeds are not independent evolution runs; local-state improvement need not beat the initial strategy at complete games. Generalization and failure prevalence remain untested.
 
-**Code / data.** An official runnable artifact was not established in the inspected sources; no code was executed.
+**Code / data.** All substantive text, Appendices A–G, five figures/eleven tables, formal criteria, board traces and code excerpts of the 19-page arXiv v1 read on 2026-11-09. An official runnable artifact was not established. No game, model or research code was executed.
 
-**Topics:** evaluation, memory, skills, recursive-improvement. **Reviewed:** full-text · 2026-11-05.
+**Topics:** evaluation, memory, skills, recursive-improvement. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2611.04952) · [Source 2](https://arxiv.org/html/2611.04952v1)
+[Source 1](https://arxiv.org/abs/2611.04952) · [Source 2](https://arxiv.org/html/2611.04952v1) · [Source 3](https://arxiv.org/pdf/2611.04952v1)
 
 <a id="stategraph"></a>
 
@@ -412,19 +412,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2611.02912)
 
-**Mechanism.** Maintains versioned memory states, proposes support dependencies from interaction histories, and checks them with counterfactual model judgments. Revisions propagate selectively, retaining independent support and historical states instead of invalidating every related record.
+**Mechanism.** Stores scoped, versioned states and proposes directed support dependencies from history. The same frozen LLM tests whether a dependent claim survives removal of a premise. Strict dependencies propagate revisions only when no independent current support survives; weak dependencies trigger uncertainty handling without recursive propagation.
 
 **What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** New evidence, scoped state conflicts and model judgments of dependency strength and alternative support.
 
-**Evaluation.** Reports dependency and cascade-revision tests on 50 constructed StateChangeBench cases with one backbone, plus supplementary memory benchmarks.
+**Evaluation.** Full v1 reports direct revision, dependency recovery and cascade invalidation on 50 constructed StateChangeBench cases with one backbone, including verification/support/propagation ablations and ported cascade mechanisms. It also gives point estimates on six public memory benchmarks; impact-set F1, edge F1 and closure consistency have different targets and denominators.
 
-**Boundary.** The same model proposes and verifies dependencies. Run counts and the double-annotated subset size were not retained; action-decision and premise-gate results were omitted because their aggregation could not be reconstructed. Small depth strata lack significance tests, and closure consistency is not independent correctness evidence.
+**Boundary.** Run counts and the double-annotated subset size were not retained; action-decision and premise-gate results were omitted because aggregation could not be reconstructed. Small depth strata lack uncertainty tests. The same model proposes, verifies and assesses support, so closure consistency is not independent correctness. Public-benchmark scores are mixed and do not establish non-degradation or deployed action safety.
 
-**Code / data.** Official implementation availability was not established in this review; no code was executed.
+**Code / data.** Complete 19-page arXiv v1, substantive Appendices A–D, three figures/ten tables, algorithm, metric formulas, nine module prompts and the worked case read on 2026-11-09. Referenced implementation filenames and an annotation hash do not establish an accessible runnable release. No research software or actions were executed.
 
-**Topics:** memory, continual-learning, evaluation, safety. **Reviewed:** full-text · 2026-11-07.
+**Topics:** memory, continual-learning, evaluation, safety. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2611.02912) · [Source 2](https://arxiv.org/html/2611.02912v1)
+[Source 1](https://arxiv.org/abs/2611.02912) · [Source 2](https://arxiv.org/html/2611.02912v1) · [Source 3](https://arxiv.org/pdf/2611.02912v1)
 
 <a id="continual-harness-forgetting"></a>
 
