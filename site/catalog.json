@@ -2759,10 +2759,12 @@
       "sources": [
         "https://arxiv.org/abs/2608.00155",
         "https://arxiv.org/html/2608.00155v2",
-        "https://github.com/Jasper-Yan/AgentStream"
+        "https://github.com/Jasper-Yan/AgentStream",
+        "https://arxiv.org/pdf/2608.00155v2",
+        "https://github.com/microsoft/Sico/tree/main/labs/AgentStream"
       ],
-      "code_url": "https://github.com/Jasper-Yan/AgentStream",
-      "code_note": "Official repository linked and inspected; not installed or executed.",
+      "code_url": "https://github.com/microsoft/Sico/tree/main/labs/AgentStream",
+      "code_note": "Full 43-page arXiv v2, substantive Appendices A–E, complete prompts, all plots and per-seed tables read on 2026-11-09. Paper-linked Sico subtree README at ee477dd and earlier author repository README at dc635f7 inspected. Sico maintains an adapted Exgentic snapshot with Python/uv, provider and benchmark setup; no installation or research execution performed.",
       "topics": [
         "evaluation",
         "continual-learning",
@@ -2779,11 +2781,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Execution outcomes and model-generated feedback; ground-truth test labels are withheld from adaptation.",
-      "mechanism": "Evaluates retained agent state under isolated domain streams, sequential domain shifts, and interleaved tasks, comparing each evolving agent with a no-evolution baseline.",
-      "evaluation": "Crosses five methods with three model backbones and six benchmarks; method benefits vary with the model and stream composition.",
-      "limitations": "The paper limits model-strength conclusions to its framework and selected benchmarks. Streaming performance is not proof of indefinite retention or deployment reliability.",
+      "mechanism": "Carries prompts, memories, skills or a custom harness between tasks with frozen foundation-model weights. Isolated streams maintain separate state, Sequential carries it across one domain order, and Interleaved mixes domains. Adapted methods use execution observations and self-generated feedback without test labels.",
+      "evaluation": "Full v2 crosses five adapted methods with three models and six benchmarks, using 50 fixed tasks per benchmark and three arrival-order seeds. It reports native task scores, per-seed results, cumulative curves, state/update counts and a separate single-evaluation cost analysis for two models.",
+      "limitations": "Model capability is specific to the selected harness, tasks and reasoning settings; it is not an experimentally isolated causal variable. Sequential tests one domain order and does not revisit old tasks to measure forgetting. Small aggregate differences and large task-level variance limit universal method rankings. Cost results use one evaluation and can accompany regressions.",
       "review_depth": "full-text",
-      "checked": "2026-10-28",
+      "checked": "2026-11-09",
       "short_name": "AgentStream"
     },
     {

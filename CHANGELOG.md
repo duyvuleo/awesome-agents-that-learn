@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded AgentStream review
+
+- Read all substantive AgentStream v2 methods, prompts, per-seed results, plots and cost analyses.
+- Qualified stream-order coverage, model-capability interpretation and cost evidence; linked the current paper-associated project location.
+- Broader audit: 105 of 190 works complete, 85 pending.
+
 ## 2026-11-09 — Expanded memory selection and collaboration reviews
 
 - Read AgentMemRec and COLLABMEM with their full substantive appendices, controls and formal claims.

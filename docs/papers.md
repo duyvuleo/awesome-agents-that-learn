@@ -89,7 +89,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-08-05 | **EvolveNet**<br>[EvolveNet: Collaborative Harness Evolution for Agent Self-Improvement](https://arxiv.org/abs/2608.04968) | Clients modify a shared executable harness using frozen models; a server integrates globally useful and domain-conditional edits, validates the merge, and redistributes… | Agent code, Workflows | preprint · full-text | [Notes](#evolvenet) · [Code](https://github.com/junnie00/EvolveNet) |
 | 2026-08-04 | **PAST-Bench**<br>[PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents](https://arxiv.org/abs/2608.04003) | Uses ordered fresh-session tasks with matched retention-on and retention-off conditions, and records evidence for saving, retrieving, and updating persistent state. | Memory, Skills | preprint · full-text | [Notes](#past-bench) · [Code](https://github.com/Gen-Verse/PAST-Bench) |
 | 2026-08-04 | **GDPevo**<br>[GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](https://arxiv.org/abs/2608.03764) | Distributes hidden business rules across training tasks and recombines them in held-out tasks, using an automated pipeline to construct environments and deterministic… | Skills, Memory | preprint · full-text | [Notes](#gdpevo) · [Code](https://github.com/Prism-Shadow/GDPevo) |
-| 2026-07-31 | **AgentStream**<br>[AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](https://arxiv.org/abs/2608.00155) | Evaluates retained agent state under isolated domain streams, sequential domain shifts, and interleaved tasks, comparing each evolving agent with a no-evolution baseline. | Memory, Skills, Prompts / context, Workflows | preprint · full-text | [Notes](#agentstream) · [Code](https://github.com/Jasper-Yan/AgentStream) |
+| 2026-07-31 | **AgentStream**<br>[AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](https://arxiv.org/abs/2608.00155) | Carries prompts, memories, skills or a custom harness between tasks with frozen foundation-model weights. Isolated streams maintain separate state, Sequential carries it… | Memory, Skills, Prompts / context, Workflows | preprint · full-text | [Notes](#agentstream) · [Code](https://github.com/microsoft/Sico/tree/main/labs/AgentStream) |
 | 2026-07-14 | **Agent self-improvement survey**<br>[Self-Improvements in Modern Agentic Systems: A Survey](https://arxiv.org/abs/2607.13104) | Models the agent as foundation-model parameters plus a persistent scaffold of prompts, memory, tools and control logic, distinct from ephemeral execution state. It… | Analysis / no retained update | preprint · full-text | [Notes](#modern-self-improvement-survey) · [Code](https://github.com/selfimproving-agent/awesome-Self-Improving-Agents) |
 | 2026-06-06 | **PACE**<br>[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](https://arxiv.org/abs/2606.08106) | Places a sequential statistical gate between proposed prompt edits and retention. A betting-based evidence process accepts an edit only after its paired outcomes cross a… | Prompts / context | preprint · full-text | [Notes](#pace) |
 | 2026-06-04 | **Membrane**<br>[Membrane: A Self-Evolving Contrastive Safety Memory for LLM Agent Defense](https://arxiv.org/abs/2606.05743) | An external guard retrieves cells pairing unsafe conditions with benign exceptions. A planner and writer revise the cell store under structural validation, while model… | Memory | peer-reviewed · full-text | [Notes](#membrane) · [Code](https://github.com/brightjade/membrane) |
@@ -1890,19 +1890,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2608.00155)
 
-**Mechanism.** Evaluates retained agent state under isolated domain streams, sequential domain shifts, and interleaved tasks, comparing each evolving agent with a no-evolution baseline.
+**Mechanism.** Carries prompts, memories, skills or a custom harness between tasks with frozen foundation-model weights. Isolated streams maintain separate state, Sequential carries it across one domain order, and Interleaved mixes domains. Adapted methods use execution observations and self-generated feedback without test labels.
 
 **What changes:** Memory, Skills, Prompts / context, Workflows. **Persistence:** across-tasks. **Learning signal:** Execution outcomes and model-generated feedback; ground-truth test labels are withheld from adaptation.
 
-**Evaluation.** Crosses five methods with three model backbones and six benchmarks; method benefits vary with the model and stream composition.
+**Evaluation.** Full v2 crosses five adapted methods with three models and six benchmarks, using 50 fixed tasks per benchmark and three arrival-order seeds. It reports native task scores, per-seed results, cumulative curves, state/update counts and a separate single-evaluation cost analysis for two models.
 
-**Boundary.** The paper limits model-strength conclusions to its framework and selected benchmarks. Streaming performance is not proof of indefinite retention or deployment reliability.
+**Boundary.** Model capability is specific to the selected harness, tasks and reasoning settings; it is not an experimentally isolated causal variable. Sequential tests one domain order and does not revisit old tasks to measure forgetting. Small aggregate differences and large task-level variance limit universal method rankings. Cost results use one evaluation and can accompany regressions.
 
-**Code / data.** [Official artifact](https://github.com/Jasper-Yan/AgentStream) — Official repository linked and inspected; not installed or executed.
+**Code / data.** [Official artifact](https://github.com/microsoft/Sico/tree/main/labs/AgentStream) — Full 43-page arXiv v2, substantive Appendices A–E, complete prompts, all plots and per-seed tables read on 2026-11-09. Paper-linked Sico subtree README at ee477dd and earlier author repository README at dc635f7 inspected. Sico maintains an adapted Exgentic snapshot with Python/uv, provider and benchmark setup; no installation or research execution performed.
 
-**Topics:** evaluation, continual-learning, memory, skills, workflows. **Reviewed:** full-text · 2026-10-28.
+**Topics:** evaluation, continual-learning, memory, skills, workflows. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2608.00155) · [Source 2](https://arxiv.org/html/2608.00155v2) · [Source 3](https://github.com/Jasper-Yan/AgentStream)
+[Source 1](https://arxiv.org/abs/2608.00155) · [Source 2](https://arxiv.org/html/2608.00155v2) · [Source 3](https://github.com/Jasper-Yan/AgentStream) · [Source 4](https://arxiv.org/pdf/2608.00155v2) · [Source 5](https://github.com/microsoft/Sico/tree/main/labs/AgentStream)
 
 <a id="modern-self-improvement-survey"></a>
 
