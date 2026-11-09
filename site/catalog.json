@@ -2631,10 +2631,12 @@
       "venue": "",
       "url": "https://arxiv.org/abs/2608.04968",
       "sources": [
-        "https://arxiv.org/abs/2608.04968"
+        "https://arxiv.org/abs/2608.04968",
+        "https://arxiv.org/pdf/2608.04968v3",
+        "https://github.com/junnie00/EvolveNet"
       ],
-      "code_url": null,
-      "code_note": "Official code availability was not established in this source review.",
+      "code_url": "https://github.com/junnie00/EvolveNet",
+      "code_note": "Official paper-linked repository and release/setup README inspected on 2026-11-09; no code, models or benchmarks run. The release documents four benchmark implementations and excludes original response caches/results; the five-setting paper is not independently reproduced.",
       "topics": [
         "architecture",
         "workflows",
@@ -2646,12 +2648,12 @@
         "workflows"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Local workload feedback and evidence-guided validation of combined program changes.",
-      "mechanism": "Different clients evolve copies of a shared harness on local tasks. A server combines compatible program adaptations and redistributes the result so later evolution can reuse discoveries from other clients.",
-      "evaluation": "The revised abstract reports five experimental settings and ablations separating adaptation composition from selecting a single specialist.",
-      "limitations": "The theoretical results are conditional on assumptions about retaining and composing improvements. Curator interpretation: sharing code adaptations without raw workloads does not by itself establish a formal privacy guarantee.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Labeled local task outcomes, full execution traces and separate server-validation feedback guide proposals, scoped merging and adoption.",
+      "mechanism": "Clients modify a shared executable harness using frozen models; a server integrates globally useful and domain-conditional edits, validates the merge, and redistributes it. The fixed outer procedure permits one revision before rollback; binary validation accepts equal aggregate accuracy even when individual tasks regress.",
+      "evaluation": "ArXiv v3 runs three evolution rounds on five benchmark subsets, with 30–200 held-out items each. It compares selection, centralized search and fixed-client aggregation variants, then analyzes retained client gains, search cost, a second BIRD model stack and conditional composition bounds.",
+      "limitations": "Confirmation settings and merger replays use single realizations. Matched proposer counts exclude added aggregation cost; end-to-end BIRD runtime is longer than centralized baselines. Validation is repeatedly reused, scope isolation is assumed rather than certified, and last-round gain retention is not lifelong non-forgetting. Full traces are shared, so no privacy guarantee follows.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "EvolveNet"
     },
     {
@@ -4203,10 +4205,12 @@
       "venue": "",
       "url": "https://arxiv.org/abs/2511.13646",
       "sources": [
-        "https://arxiv.org/abs/2511.13646"
+        "https://arxiv.org/abs/2511.13646",
+        "https://arxiv.org/pdf/2511.13646v3",
+        "https://github.com/OpenAutoCoder/live-swe-agent"
       ],
-      "code_url": null,
-      "code_note": "Official code availability was not established in this source review.",
+      "code_url": "https://github.com/OpenAutoCoder/live-swe-agent",
+      "code_note": "Official paper-linked repository and configuration/release README inspected on 2026-11-09; not installed or run. Later README model scores are separate from the reviewed v3 experiments.",
       "topics": [
         "architecture",
         "tools",
@@ -4214,16 +4218,15 @@
       ],
       "scope": "adjacent",
       "update_targets": [
-        "agent-code",
         "tools"
       ],
       "persistence": "within-task",
-      "learning_signal": "Runtime observations while solving the current software-engineering problem.",
-      "mechanism": "Starts with a minimal bash-based agent and permits edits to its own scaffold during task execution. It studies on-the-fly changes to the agent implementation without a separate offline evolution campaign.",
-      "evaluation": "The authors report software-repair evaluations on SWE-bench Verified and SWE-bench Pro.",
-      "limitations": "The abstract establishes adaptation during a task, not durable learning carried between independent tasks. Current leaderboard rankings and results from different model versions should not be inferred from the paper.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Current-issue execution feedback and repeated prompts to consider useful tool creation guide the agent.",
+      "mechanism": "Adds tool-creation instructions and step-level reminders to a bash-based mini-SWE-agent loop. The agent writes, revises and executes Python helper scripts during one issue. The evaluated loop and model weights remain fixed; saving tools across independent tasks is proposed future work.",
+      "evaluation": "ArXiv v3 reports one patch per issue on 500 SWE-bench Verified and 731 SWE-Bench Pro tasks, with 250-step and three-dollar caps. It includes a 50-task component/model ablation, a 50-task multilingual test and imported comparisons with offline-evolved agents.",
+      "limitations": "This is within-task tool synthesis, not demonstrated persistent cross-task learning. On the ablation subset GPT-5-Nano drops from 44% to 14%, and GPT-5-Mini also declines slightly. Baselines include imported results; repeated-run uncertainty is absent. Historical rankings and costs are not current guarantees.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "Live-SWE-agent"
     },
     {
@@ -4855,7 +4858,8 @@
       "url": "https://arxiv.org/abs/2507.03616",
       "sources": [
         "https://arxiv.org/abs/2507.03616",
-        "https://github.com/EvoAgentX/EvoAgentX"
+        "https://github.com/EvoAgentX/EvoAgentX",
+        "https://arxiv.org/pdf/2507.03616v2"
       ],
       "code_url": "https://github.com/EvoAgentX/EvoAgentX",
       "code_note": "Official repository inspected; the original URL redirects to ANative-Lab/EvoAgentX. No code was installed or executed.",
@@ -4873,12 +4877,12 @@
         "multi-agent-organization"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Task evaluations used by integrated prompt and workflow optimizers.",
-      "mechanism": "Integrates workflow generation and execution with optimization methods including TextGrad, AFlow, and MIPRO. The framework supports changes to prompts, tool configurations, and workflow topology.",
-      "evaluation": "The authors evaluate QA, coding, and math workflows on HotpotQA, MBPP, and MATH, with additional GAIA tasks.",
-      "limitations": "Integration of optimizers is distinct from demonstrating a new self-improvement mechanism. Curator interpretation: benchmark gains under configured optimization do not establish continual autonomous adaptation in deployment.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Task-specific reference scores and prompted feedback drive the integrated prompt and workflow optimizers.",
+      "mechanism": "Provides workflow generation, execution and evaluation around TextGrad, AFlow and MIPRO. Optimized prompts, demonstrations and executable workflow structures persist; the platform is an integration framework rather than a separately validated new learning algorithm. Its v2 memory optimizer remains under development.",
+      "evaluation": "ArXiv v2 compares optimization choices on HotpotQA, MBPP and MATH, and adapts Open Deep Research and OWL on GAIA. Appendix examples show expanded reasoning prompts and an AFlow workflow with multiple candidate solutions and an ensemble.",
+      "limitations": "The paper does not fully specify actual optimization/evaluation splits, model settings, budgets or run uncertainty. Added calls are not controlled for total compute. MIPRO lowers MBPP from 69% to 68%; GAIA percentage gains are relative changes, unlike the benchmark-table percentage-point gains.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "EvoAgentX"
     },
     {
@@ -5632,7 +5636,8 @@
       "url": "https://arxiv.org/abs/2406.18532",
       "sources": [
         "https://arxiv.org/abs/2406.18532",
-        "https://github.com/aiwaves-cn/agents"
+        "https://github.com/aiwaves-cn/agents",
+        "https://arxiv.org/pdf/2406.18532v1"
       ],
       "code_url": "https://github.com/aiwaves-cn/agents",
       "code_note": "Official repository landing page inspected; no installation or execution performed.",
@@ -5649,12 +5654,12 @@
         "workflows"
       ],
       "persistence": "across-tasks",
-      "learning_signal": "Natural-language representations of losses and gradients derived from task outcomes.",
-      "mechanism": "Represents an agent as a symbolic network whose editable components include prompts, tools, and their composition. Symbolic optimization uses textual feedback to revise that network.",
-      "evaluation": "The abstract describes proof-of-concept experiments on standard benchmarks and more complex tasks.",
-      "limitations": "These are natural-language analogues of gradient-based learning, not mathematical derivatives of a differentiable objective. The reviewed abstract does not establish unrestricted long-term learning after deployment.",
-      "review_depth": "abstract",
-      "checked": "2026-10-28",
+      "learning_signal": "Prompted task assessments, optionally supplied with reference answers and scores, produce textual feedback for upstream nodes.",
+      "mechanism": "Records an execution trajectory, propagates natural-language critiques backward, and edits prompts, tool definitions and pipeline configuration with fixed LLMs. Invalid edits are retried; a rollback check reevaluates the current training example. Batched feedback can guide a shared update.",
+      "evaluation": "ArXiv v1 presents GPT-3.5/GPT-4 experiments on HotpotQA, MATH and HumanEval with tools disabled, plus GPT-4-judged creative writing and five software-development tasks scored for executability. Appendix prompts illustrate feedback and configuration edits.",
+      "limitations": "Textual gradients are analogies, not derivatives or convergence guarantees. Split sizes, optimization budgets and repeated-run uncertainty are insufficiently specified. Same-example rollback does not establish held-out improvement; GPT-3.5 HumanEval trails DSPy. The proof-of-concept does not demonstrate sustained deployment learning.",
+      "review_depth": "full-text",
+      "checked": "2026-11-09",
       "short_name": "Symbolic agent learning"
     },
     {

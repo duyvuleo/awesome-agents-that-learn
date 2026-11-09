@@ -86,7 +86,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-08-20 | **Phantom Gains**<br>[Phantom Gains: Auditing Self-Improvement Against a Measured Null](https://arxiv.org/abs/2608.20290) | Measures apparent per-problem changes in frozen-model controls before interpreting changes after self-training. It uses sampled solve rates, a hysteresis-based… | Analysis / no retained update | preprint · full-text | [Notes](#phantom-gains) · [Code](https://github.com/chengxuphd/phantom-gains) |
 | 2026-08-17 | **HyperSkill**<br>[HyperSkill: Self-Evolving LLM Agents via Hypergraph-Structured Skill Memory](https://arxiv.org/abs/2608.16114) | Connects reusable skills and subtask steps through trajectory-level hyperedges. Retrieval combines subtask and trajectory evidence, while periodic maintenance merges… | Skills, Memory | preprint · abstract | [Notes](#hyperskill) |
 | 2026-08-09 | **Hierarchical improvement**<br>[Hierarchical Self-Improvement: A Framework for Task-Specific Evolvable Agent Harnesses](https://arxiv.org/abs/2608.08466) | Uses a frozen model at three levels: task execution, harness editing, and editing the strategy used by the harness evolver. Each task family maintains a reusable… | Agent code, Workflows | preprint · abstract | [Notes](#hierarchical-self-improvement) · [Code](https://github.com/TailinZhou/hsi) |
-| 2026-08-05 | **EvolveNet**<br>[EvolveNet: Collaborative Harness Evolution for Agent Self-Improvement](https://arxiv.org/abs/2608.04968) | Different clients evolve copies of a shared harness on local tasks. A server combines compatible program adaptations and redistributes the result so later evolution can… | Agent code, Workflows | preprint · abstract | [Notes](#evolvenet) |
+| 2026-08-05 | **EvolveNet**<br>[EvolveNet: Collaborative Harness Evolution for Agent Self-Improvement](https://arxiv.org/abs/2608.04968) | Clients modify a shared executable harness using frozen models; a server integrates globally useful and domain-conditional edits, validates the merge, and redistributes… | Agent code, Workflows | preprint · full-text | [Notes](#evolvenet) · [Code](https://github.com/junnie00/EvolveNet) |
 | 2026-08-04 | **PAST-Bench**<br>[PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents](https://arxiv.org/abs/2608.04003) | Uses ordered fresh-session tasks with matched retention-on and retention-off conditions, and records evidence for saving, retrieving, and updating persistent state. | Memory, Skills | preprint · full-text | [Notes](#past-bench) · [Code](https://github.com/Gen-Verse/PAST-Bench) |
 | 2026-08-04 | **GDPevo**<br>[GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](https://arxiv.org/abs/2608.03764) | Distributes hidden business rules across training tasks and recombines them in held-out tasks, using an automated pipeline to construct environments and deterministic… | Skills, Memory | preprint · full-text | [Notes](#gdpevo) · [Code](https://github.com/Prism-Shadow/GDPevo) |
 | 2026-07-31 | **AgentStream**<br>[AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](https://arxiv.org/abs/2608.00155) | Evaluates retained agent state under isolated domain streams, sequential domain shifts, and interleaved tasks, comparing each evolving agent with a no-evolution baseline. | Memory, Skills, Prompts / context, Workflows | preprint · full-text | [Notes](#agentstream) · [Code](https://github.com/Jasper-Yan/AgentStream) |
@@ -130,7 +130,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026 | **COLLABMEM**<br>[COLLABMEM: A Diagnostic Benchmark for Collaborative Memory Operations in Multi-Agent LLM Systems](https://aclanthology.org/2026.emnlp-main.1194/) | Holds the interaction trace and answering layer fixed to isolate sharing, access, routing, provenance, conflict resolution, and retention. TMS-GRAPH++ supplies… | Memory | peer-reviewed · full-text | [Notes](#collabmem) |
 | 2025-12-21 | **MemEvolve**<br>[MemEvolve: Meta-Evolution of Agent Memory Systems](https://arxiv.org/abs/2512.18746) | Searches implementations of encoding, storage, retrieval, and management while each candidate accumulates experience. Pareto selection and a fixed diagnose-and-design… | Memory, Agent code | peer-reviewed · full-text | [Notes](#memevolve) · [Code](https://github.com/bingreeky/MemEvolve) |
 | 2025-11-20 | **Agent0**<br>[Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](https://arxiv.org/abs/2511.16043) | Co-trains a curriculum agent and a tool-using executor in alternating stages. The proposer targets uncertain, diverse tasks, while filtered generated tasks and a code… | Model weights | peer-reviewed · full-text | [Notes](#agent0) · [Code](https://github.com/aiming-lab/Agent0) |
-| 2025-11-17 | **Live-SWE-agent**<br>[Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?](https://arxiv.org/abs/2511.13646) | Starts with a minimal bash-based agent and permits edits to its own scaffold during task execution. It studies on-the-fly changes to the agent implementation without a… | Agent code, Tools | preprint · abstract | [Notes](#live-swe-agent) |
+| 2025-11-17 | **Live-SWE-agent**<br>[Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?](https://arxiv.org/abs/2511.13646) | Adds tool-creation instructions and step-level reminders to a bash-based mini-SWE-agent loop. The agent writes, revises and executes Python helper scripts during one… | Tools | preprint · full-text | [Notes](#live-swe-agent) · [Code](https://github.com/OpenAutoCoder/live-swe-agent) |
 | 2025-11-03 | **Self-Harmony**<br>[Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](https://arxiv.org/abs/2511.01191) | One model plays solver and reframer roles, pooling answer frequencies with a harmonic-mean selector. Reinforcement learning updates shared model parameters from… | Model weights | peer-reviewed · full-text | [Notes](#self-harmony) · [Code](https://github.com/physicsru/self_harmony) |
 | 2025-11-01 | **OpenSIR**<br>[OpenSIR: Open-Ended Self-Improving Reasoner](https://arxiv.org/abs/2511.00602) | Updates one policy in teacher and student roles with GRPO-style training, expanding a problem pool from a trivial seed. Novelty selects generation and solving examples… | Model weights | preprint · full-text | [Notes](#opensir) · [Code](https://github.com/EdinburghNLP/OpenSIR) |
 | 2025-10-28 | **SPICE**<br>[SPICE: Self-Play In Corpus Environments Improves Reasoning](https://arxiv.org/abs/2510.24684) | A shared model alternates between a document-grounded challenger and a reasoner without document access. Role-specific reinforcement-learning updates improve question… | Model weights | preprint · full-text | [Notes](#spice) |
@@ -149,7 +149,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-08-07 | **R-Zero**<br>[R-Zero: Self-Evolving Reasoning LLM from Zero Data](https://arxiv.org/abs/2508.05004) | Initializes challenger and solver models from the same base model, then optimizes their roles separately. Their interaction generates an adaptive training curriculum… | Model weights | peer-reviewed · abstract | [Notes](#r-zero) |
 | 2025-07-28 | **What/when/how survey**<br>[A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence](https://arxiv.org/abs/2507.21046) | Organizes agent adaptation by the component that changes, the stage when it changes, the feedback and algorithm used, and the application setting. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#self-evolving-survey) |
 | 2025-07-25 | **GEPA**<br>[GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](https://arxiv.org/abs/2507.19457) | Mutates module instructions using trace reflection, retains complementary candidates through instance-wise Pareto selection, and optionally merges prompt sets from… | Prompts / context | peer-reviewed · full-text | [Notes](#gepa) · [Code](https://github.com/gepa-ai/gepa) |
-| 2025-07-04 | **EvoAgentX**<br>[EvoAgentX: An Automated Framework for Evolving Agentic Workflows](https://arxiv.org/abs/2507.03616) | Integrates workflow generation and execution with optimization methods including TextGrad, AFlow, and MIPRO. The framework supports changes to prompts, tool… | Prompts / context, Tools, Workflows, Multi-agent organization | preprint · abstract | [Notes](#evoagentx) · [Code](https://github.com/EvoAgentX/EvoAgentX) |
+| 2025-07-04 | **EvoAgentX**<br>[EvoAgentX: An Automated Framework for Evolving Agentic Workflows](https://arxiv.org/abs/2507.03616) | Provides workflow generation, execution and evaluation around TextGrad, AFlow and MIPRO. Optimized prompts, demonstrations and executable workflow structures persist… | Prompts / context, Tools, Workflows, Multi-agent organization | preprint · full-text | [Notes](#evoagentx) · [Code](https://github.com/EvoAgentX/EvoAgentX) |
 | 2025-06-30 | **SPIRAL**<br>[SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2506.24119) | One shared language-model policy plays both sides of zero-sum games and receives online policy-gradient updates. Separate baselines for each role stabilize training as… | Model weights | peer-reviewed · full-text | [Notes](#spiral) · [Code](https://github.com/spiral-rl/spiral) |
 | 2025-06-12 | **SEAL**<br>[Self-Adapting Language Models](https://arxiv.org/abs/2506.10943) | Learns to generate synthetic training material or adaptation directives, then applies gradient updates using those edits. An outer reward-based loop improves the… | Model weights | peer-reviewed · full-text | [Notes](#seal) · [Code](https://github.com/Continual-Intelligence/SEAL) |
 | 2025-06-09 | **G-Memory**<br>[G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems](https://arxiv.org/abs/2506.07398) | Organizes multi-agent experience into linked interaction, query, and insight graphs. Bidirectional traversal retrieves abstract guidance and condensed role-specific… | Memory | peer-reviewed · full-text | [Notes](#g-memory) · [Code](https://github.com/bingreeky/GMemory) |
@@ -171,7 +171,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2024-08-15 | **ADAS**<br>[Automated Design of Agentic Systems](https://arxiv.org/abs/2408.08435) | A fixed meta-agent writes executable forward functions, checks novelty, repairs execution errors, and archives designs with scores. Search changes prompts and control… | Agent code, Workflows, Prompts / context | peer-reviewed · full-text | [Notes](#adas) · [Code](https://github.com/ShengranHu/ADAS) |
 | 2024-07-25 | **RISE**<br>[Recursive Introspection: Teaching Language Model Agents How to Self-Improve](https://arxiv.org/abs/2407.18219) | Turns single-turn problems into multi-turn trajectories and trains the model to revise earlier unsuccessful responses. Its training loop uses reward-weighted supervised… | Model weights | peer-reviewed · full-text | [Notes](#rise) |
 | 2024-07-24 | **Model collapse**<br>[AI models collapse when trained on recursively generated data](https://www.nature.com/articles/s41586-024-07566-y) | Analyzes how repeated training on generated data can lose low-probability parts of an original distribution and amplify errors. The paper combines tractable distribution… | Model weights | peer-reviewed · full-text | [Notes](#model-collapse) |
-| 2024-06-26 | **Symbolic agent learning**<br>[Symbolic Learning Enables Self-Evolving Agents](https://arxiv.org/abs/2406.18532) | Represents an agent as a symbolic network whose editable components include prompts, tools, and their composition. Symbolic optimization uses textual feedback to revise… | Prompts / context, Tools, Workflows | preprint · abstract | [Notes](#symbolic-agent-learning) · [Code](https://github.com/aiwaves-cn/agents) |
+| 2024-06-26 | **Symbolic agent learning**<br>[Symbolic Learning Enables Self-Evolving Agents](https://arxiv.org/abs/2406.18532) | Records an execution trajectory, propagates natural-language critiques backward, and edits prompts, tool definitions and pipeline configuration with fixed LLMs. Invalid… | Prompts / context, Tools, Workflows | preprint · full-text | [Notes](#symbolic-agent-learning) · [Code](https://github.com/aiwaves-cn/agents) |
 | 2024-06-11 | **TextGrad**<br>[TextGrad: Automatic "Differentiation" via Text](https://arxiv.org/abs/2406.07496) | Backpropagates textual feedback through a computation graph and rewrites selected variables using a fixed LLM optimizer. Reusable prompt optimization and within-instance… | Prompts / context, Agent code | peer-reviewed · full-text | [Notes](#textgrad) · [Code](https://github.com/zou-group/textgrad) |
 | 2024-06-06 | **ReST-MCTS***<br>[ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search](https://arxiv.org/abs/2406.03816) | Combines process-reward-guided tree search with iterative training of the policy and reward models. Search supplies reasoning traces and step-value targets without… | Model weights | peer-reviewed · abstract | [Notes](#rest-mcts) · [Code](https://github.com/THUDM/ReST-MCTS) |
 | 2024-06-03 | **Re-ReST**<br>[Re-ReST: Reflection-Reinforced Self-Training for Language Agents](https://arxiv.org/abs/2406.01495) | Trains a separate reflector to repair unsuccessful model-generated examples. Accepted original and repaired trajectories then fine-tune the agent, so improvement is… | Model weights | peer-reviewed · full-text | [Notes](#re-rest) · [Code](https://github.com/PlusLabNLP/Re-ReST) |
@@ -1822,19 +1822,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2608.04968)
 
-**Mechanism.** Different clients evolve copies of a shared harness on local tasks. A server combines compatible program adaptations and redistributes the result so later evolution can reuse discoveries from other clients.
+**Mechanism.** Clients modify a shared executable harness using frozen models; a server integrates globally useful and domain-conditional edits, validates the merge, and redistributes it. The fixed outer procedure permits one revision before rollback; binary validation accepts equal aggregate accuracy even when individual tasks regress.
 
-**What changes:** Agent code, Workflows. **Persistence:** across-tasks. **Learning signal:** Local workload feedback and evidence-guided validation of combined program changes.
+**What changes:** Agent code, Workflows. **Persistence:** across-tasks. **Learning signal:** Labeled local task outcomes, full execution traces and separate server-validation feedback guide proposals, scoped merging and adoption.
 
-**Evaluation.** The revised abstract reports five experimental settings and ablations separating adaptation composition from selecting a single specialist.
+**Evaluation.** ArXiv v3 runs three evolution rounds on five benchmark subsets, with 30–200 held-out items each. It compares selection, centralized search and fixed-client aggregation variants, then analyzes retained client gains, search cost, a second BIRD model stack and conditional composition bounds.
 
-**Boundary.** The theoretical results are conditional on assumptions about retaining and composing improvements. Curator interpretation: sharing code adaptations without raw workloads does not by itself establish a formal privacy guarantee.
+**Boundary.** Confirmation settings and merger replays use single realizations. Matched proposer counts exclude added aggregation cost; end-to-end BIRD runtime is longer than centralized baselines. Validation is repeatedly reused, scope isolation is assumed rather than certified, and last-round gain retention is not lifelong non-forgetting. Full traces are shared, so no privacy guarantee follows.
 
-**Code / data.** Official code availability was not established in this source review.
+**Code / data.** [Official artifact](https://github.com/junnie00/EvolveNet) — Official paper-linked repository and release/setup README inspected on 2026-11-09; no code, models or benchmarks run. The release documents four benchmark implementations and excludes original response caches/results; the five-setting paper is not independently reproduced.
 
-**Topics:** architecture, workflows, continual-learning. **Reviewed:** abstract · 2026-10-28.
+**Topics:** architecture, workflows, continual-learning. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2608.04968)
+[Source 1](https://arxiv.org/abs/2608.04968) · [Source 2](https://arxiv.org/pdf/2608.04968v3) · [Source 3](https://github.com/junnie00/EvolveNet)
 
 <a id="past-bench"></a>
 
@@ -2800,19 +2800,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2511.13646)
 
-**Mechanism.** Starts with a minimal bash-based agent and permits edits to its own scaffold during task execution. It studies on-the-fly changes to the agent implementation without a separate offline evolution campaign.
+**Mechanism.** Adds tool-creation instructions and step-level reminders to a bash-based mini-SWE-agent loop. The agent writes, revises and executes Python helper scripts during one issue. The evaluated loop and model weights remain fixed; saving tools across independent tasks is proposed future work.
 
-**What changes:** Agent code, Tools. **Persistence:** within-task. **Learning signal:** Runtime observations while solving the current software-engineering problem.
+**What changes:** Tools. **Persistence:** within-task. **Learning signal:** Current-issue execution feedback and repeated prompts to consider useful tool creation guide the agent.
 
-**Evaluation.** The authors report software-repair evaluations on SWE-bench Verified and SWE-bench Pro.
+**Evaluation.** ArXiv v3 reports one patch per issue on 500 SWE-bench Verified and 731 SWE-Bench Pro tasks, with 250-step and three-dollar caps. It includes a 50-task component/model ablation, a 50-task multilingual test and imported comparisons with offline-evolved agents.
 
-**Boundary.** The abstract establishes adaptation during a task, not durable learning carried between independent tasks. Current leaderboard rankings and results from different model versions should not be inferred from the paper.
+**Boundary.** This is within-task tool synthesis, not demonstrated persistent cross-task learning. On the ablation subset GPT-5-Nano drops from 44% to 14%, and GPT-5-Mini also declines slightly. Baselines include imported results; repeated-run uncertainty is absent. Historical rankings and costs are not current guarantees.
 
-**Code / data.** Official code availability was not established in this source review.
+**Code / data.** [Official artifact](https://github.com/OpenAutoCoder/live-swe-agent) — Official paper-linked repository and configuration/release README inspected on 2026-11-09; not installed or run. Later README model scores are separate from the reviewed v3 experiments.
 
-**Topics:** architecture, tools, applications. **Reviewed:** abstract · 2026-10-28.
+**Topics:** architecture, tools, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2511.13646)
+[Source 1](https://arxiv.org/abs/2511.13646) · [Source 2](https://arxiv.org/pdf/2511.13646v3) · [Source 3](https://github.com/OpenAutoCoder/live-swe-agent)
 
 <a id="self-harmony"></a>
 
@@ -3222,19 +3222,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2507.03616)
 
-**Mechanism.** Integrates workflow generation and execution with optimization methods including TextGrad, AFlow, and MIPRO. The framework supports changes to prompts, tool configurations, and workflow topology.
+**Mechanism.** Provides workflow generation, execution and evaluation around TextGrad, AFlow and MIPRO. Optimized prompts, demonstrations and executable workflow structures persist; the platform is an integration framework rather than a separately validated new learning algorithm. Its v2 memory optimizer remains under development.
 
-**What changes:** Prompts / context, Tools, Workflows, Multi-agent organization. **Persistence:** across-tasks. **Learning signal:** Task evaluations used by integrated prompt and workflow optimizers.
+**What changes:** Prompts / context, Tools, Workflows, Multi-agent organization. **Persistence:** across-tasks. **Learning signal:** Task-specific reference scores and prompted feedback drive the integrated prompt and workflow optimizers.
 
-**Evaluation.** The authors evaluate QA, coding, and math workflows on HotpotQA, MBPP, and MATH, with additional GAIA tasks.
+**Evaluation.** ArXiv v2 compares optimization choices on HotpotQA, MBPP and MATH, and adapts Open Deep Research and OWL on GAIA. Appendix examples show expanded reasoning prompts and an AFlow workflow with multiple candidate solutions and an ensemble.
 
-**Boundary.** Integration of optimizers is distinct from demonstrating a new self-improvement mechanism. Curator interpretation: benchmark gains under configured optimization do not establish continual autonomous adaptation in deployment.
+**Boundary.** The paper does not fully specify actual optimization/evaluation splits, model settings, budgets or run uncertainty. Added calls are not controlled for total compute. MIPRO lowers MBPP from 69% to 68%; GAIA percentage gains are relative changes, unlike the benchmark-table percentage-point gains.
 
 **Code / data.** [Official artifact](https://github.com/EvoAgentX/EvoAgentX) — Official repository inspected; the original URL redirects to ANative-Lab/EvoAgentX. No code was installed or executed.
 
-**Topics:** workflows, architecture, tools, prompts. **Reviewed:** abstract · 2026-10-28.
+**Topics:** workflows, architecture, tools, prompts. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2507.03616) · [Source 2](https://github.com/EvoAgentX/EvoAgentX)
+[Source 1](https://arxiv.org/abs/2507.03616) · [Source 2](https://github.com/EvoAgentX/EvoAgentX) · [Source 3](https://arxiv.org/pdf/2507.03616v2)
 
 **Related software:** [EvoAgentX](systems.md#system-evoagentx). See each system's relationship note before equating it with the evaluated paper version.
 
@@ -3726,19 +3726,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2406.18532)
 
-**Mechanism.** Represents an agent as a symbolic network whose editable components include prompts, tools, and their composition. Symbolic optimization uses textual feedback to revise that network.
+**Mechanism.** Records an execution trajectory, propagates natural-language critiques backward, and edits prompts, tool definitions and pipeline configuration with fixed LLMs. Invalid edits are retried; a rollback check reevaluates the current training example. Batched feedback can guide a shared update.
 
-**What changes:** Prompts / context, Tools, Workflows. **Persistence:** across-tasks. **Learning signal:** Natural-language representations of losses and gradients derived from task outcomes.
+**What changes:** Prompts / context, Tools, Workflows. **Persistence:** across-tasks. **Learning signal:** Prompted task assessments, optionally supplied with reference answers and scores, produce textual feedback for upstream nodes.
 
-**Evaluation.** The abstract describes proof-of-concept experiments on standard benchmarks and more complex tasks.
+**Evaluation.** ArXiv v1 presents GPT-3.5/GPT-4 experiments on HotpotQA, MATH and HumanEval with tools disabled, plus GPT-4-judged creative writing and five software-development tasks scored for executability. Appendix prompts illustrate feedback and configuration edits.
 
-**Boundary.** These are natural-language analogues of gradient-based learning, not mathematical derivatives of a differentiable objective. The reviewed abstract does not establish unrestricted long-term learning after deployment.
+**Boundary.** Textual gradients are analogies, not derivatives or convergence guarantees. Split sizes, optimization budgets and repeated-run uncertainty are insufficiently specified. Same-example rollback does not establish held-out improvement; GPT-3.5 HumanEval trails DSPy. The proof-of-concept does not demonstrate sustained deployment learning.
 
 **Code / data.** [Official artifact](https://github.com/aiwaves-cn/agents) — Official repository landing page inspected; no installation or execution performed.
 
-**Topics:** foundations, prompts, tools, workflows. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, prompts, tools, workflows. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2406.18532) · [Source 2](https://github.com/aiwaves-cn/agents)
+[Source 1](https://arxiv.org/abs/2406.18532) · [Source 2](https://github.com/aiwaves-cn/agents) · [Source 3](https://arxiv.org/pdf/2406.18532v1)
 
 <a id="textgrad"></a>
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Workflow and harness review depth
+
+- Upgraded Symbolic agent learning, EvoAgentX, Live-SWE-agent and EvolveNet through full-text and appendix review.
+- Recovered two artifact links and corrected the evaluated update target, supervision, metric units, implementation scope and retention/cost boundaries.
+- Counts remain 190 works: 174 full-text and 16 abstract/metadata reviews. Forty-four broader appraisals are complete; 146 remain.
+
 ## 2026-11-09 — Evaluation and negative-result reviews
 
 - Upgraded Experience faithfulness, LongMemEval-V2, Phantom Gains and LifelongAgentBench through full-text and appendix review.
