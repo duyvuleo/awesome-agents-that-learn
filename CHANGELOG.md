@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded obsolete-memory and recursive-skill reviews
+
+- Completed both papers, appendices, scoring sensitivities and meta-skill procedure details.
+- Preserved negative outcomes, cohort reuse, resource limits and incomplete meta-training provenance.
+- Broader audit: 134 of 190 works complete, 56 pending.
+
 ## 2026-11-09 — Expanded prompt, retrospective and graph-learning reviews
 
 - Completed CEPO, the retrospective harness study and EoG with full methods, appendices and visual evidence.

@@ -34,10 +34,10 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-27 | **MLE-World**<br>[MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model](https://arxiv.org/abs/2610.37175) | Offline-fine-tunes a 4B predictor on code, execution context and observed outputs. A fixed AIDE search uses predicted logs, exception classes and metrics to select… | Model weights | preprint · full-text | [Notes](#mle-world) · [Code](https://github.com/ko120/MLE_World) |
 | 2026-10-27 | **DiscernMem**<br>[Remembering Is Not Enough: Refining Memories and Learning When to Use Them in Multi-Agent Systems](https://arxiv.org/abs/2610.36652) | Maintains role-owned behavioral rules, versioned effects and use/avoid conditions. After scoring each task, full-team replays compare one rule with no memory. A fixed… | Memory | preprint · full-text | [Notes](#discernmem) · [Code](https://github.com/ECNU-ICALK/DiscernMem) |
 | 2026-10-27 | **CoHARL**<br>[CoHARL: Co-Evolving Agent Policies and Executable Harnesses with Reinforcement Learning](https://arxiv.org/abs/2610.36469) | Trains one shared policy with group-relative RL across a scheduled population of executable harnesses. A separate fixed proposer edits prompts, parsers, handlers and… | Model weights, Agent code, Prompts / context | preprint · full-text | [Notes](#coharl) |
-| 2026-10-26 | **Skill∞**<br>[Skill$^{\infty}$: Recursive Self-Improvement for Agent Skill Optimization](https://arxiv.org/abs/2610.35434) | Encodes skill optimization in an editable meta-skill. An agent uses that procedure to revise task skills and the meta-skill itself, then reuses the refined optimizer… | Skills, Prompts / context, Agent code | preprint · full-text | [Notes](#skill-infinity) |
+| 2026-10-26 | **Skill∞**<br>[Skill$^{\infty}$: Recursive Self-Improvement for Agent Skill Optimization](https://arxiv.org/abs/2610.35434) | Encodes skill optimization in a mutable meta-skill that guides diagnosis, candidate creation, review and selection. The same process revises that meta-skill using gains… | Skills, Prompts / context, Agent code | preprint · full-text | [Notes](#skill-infinity) |
 | 2026-10-26 | **SciValidityBench**<br>[The Right Fact, the Wrong Decision: SciValidityBench for Scientific Agent Memory](https://arxiv.org/abs/2610.34767) | Generates scientific histories in which a remembered fact may be invalid to use. A supplied compiler exposes decision-governing relations, separating raw records… | Memory | preprint · full-text | [Notes](#scivaliditybench) · [Code](https://github.com/SciValidityBench/SciValidityBench) |
 | 2026-10-26 | **Retrospective harness study**<br>[How Do Coding-Agent Harnesses Self-Evolve? An Empirical Study of Retrospective Adaptation](https://arxiv.org/abs/2610.34938) | A fixed retrospective skill proposes persistent context instructions and known-failure artifacts after coding sessions. Researchers select changes; the agent implements… | Agent code, Prompts / context | preprint · full-text | [Notes](#retrospective-harness-study) · [Code](https://zenodo.org/records/23653700) |
-| 2026-10-26 | **Obsolete facts**<br>[When Retrieval Is Not Enough: Obsolete Facts in Agent Memory](https://arxiv.org/abs/2610.36308) | Separates retrieving the newest statement from selecting it correctly. Varies BM25 evidence budgets, then replaces an unrelated statement with an obsolete competitor… | Analysis / no retained update | preprint · full-text | [Notes](#obsolete-facts-memory) · [Code](https://github.com/oleeviyababu/Memory_Conflict) |
+| 2026-10-26 | **Obsolete facts**<br>[When Retrieval Is Not Enough: Obsolete Facts in Agent Memory](https://arxiv.org/abs/2610.36308) | Diagnoses retrieval and reader selection separately on synthetic chronological memories. It varies BM25 evidence budgets, then replaces one unrelated statement with an… | Analysis / no retained update | preprint · full-text | [Notes](#obsolete-facts-memory) · [Code](https://github.com/oleeviyababu/Memory_Conflict) |
 | 2026-10-26 | **MiniWeb / MiniWebAgent**<br>[Back to Basics: A Skill-Centric Approach to Generalist Web Agents](https://arxiv.org/abs/2610.35823) | Builds skill-level web tasks and generates verified practice trajectories. A LoRA-trained executor performs short interactions delegated by an untrained planner, so… | Model weights | preprint · full-text | [Notes](#miniweb) |
 | 2026-10-26 | **EoG**<br>[Evolve on Graph: Self-Evolving Knowledge Graph Reasoning without Question Annotations](https://arxiv.org/abs/2610.35598) | Uses six supplied graph-query patterns to build an offline set of executable tasks and complete graph-relative answer sets. One shared model alternates question-proposal… | Model weights | preprint · full-text | [Notes](#evolve-on-graph) · [Code](https://github.com/Szy5/EoG) |
 | 2026-10-26 | **CEPO**<br>[CEPO: A General Framework for Improving Prompt Optimization in Multi-Agent Systems](https://arxiv.org/abs/2610.34722) | Externally optimizes a shared coordination prompt prepended to each agent and selected local execution prompts. Fixed role-specific meta-instructions guide supplied… | Prompts / context | preprint · full-text | [Notes](#cepo) |
@@ -678,19 +678,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.35434)
 
-**Mechanism.** Encodes skill optimization in an editable meta-skill. An agent uses that procedure to revise task skills and the meta-skill itself, then reuses the refined optimizer across tasks through native skill discovery.
+**Mechanism.** Encodes skill optimization in a mutable meta-skill that guides diagnosis, candidate creation, review and selection. The same process revises that meta-skill using gains from inner task-skill optimizations, then reuses it for later searches. Skills load through native discovery; descriptions, instructions and scripts can change while model weights and scoring stay fixed.
 
 **What changes:** Skills, Prompts / context, Agent code. **Persistence:** across-tasks. **Learning signal:** Automatically scored task rollouts, gains of inner skill optimizations, and isolated model-review feedback.
 
-**Evaluation.** Tests 83 SkillsBench tasks and three KernelBench problems, comparing refined versus seed meta-skills, additional model/harness settings, and candidate-budget scaling.
+**Evaluation.** Full v1 reports 60.7% avg@5 on 83 SkillsBench tasks versus 55.9% with the seed meta-skill, 56.4% with human skills and 54.5% with SkillEvolver. It includes three kernel problems, alternate model/harness comparisons, a selected-subset budget curve and a concrete case where the meta-skill changes tied-candidate selection.
 
-**Boundary.** Scores and budget caps remain external, and reliable automatic verifiers are required. Following the evolving procedure depends on model adherence and review rather than enforced execution. Overall gains vary by domain; finite meta-skill refinement does not establish indefinite accelerating improvement. Task-level training/validation is described, but disjoint meta-training/meta-test tasks are not established by the inspected protocol.
+**Boundary.** The meta-training task identities/count and separation from the 83 evaluation tasks are not specified in the inspected paper. Domain gains are mixed; easy-task performance and several domains regress. Five-trial averages lack uncertainty intervals and do not establish independent meta-search robustness. Budget scaling selects tasks already helped by the default search. Token amortization excludes test trials and is not monetary/latency accounting. Editable instructions and isolated model review do not guarantee adherence, security or accelerating improvement.
 
-**Code / data.** Author-linked repository inspected; its README says code will be released soon. No runnable release was verified or executed.
+**Code / data.** Complete 17-page arXiv v1, Appendices A–G, five figures/four tables, algorithm, case proposals and reproduced meta-skill/workspace/tool documentation read on 2026-11-09. Official repository at 78197d69784665d38a74a327940783c48c8b4897 contains README, LICENSE and assets and explicitly says code will be released soon. No implementation or runnable meta-skill release was verified; nothing executed.
 
-**Topics:** skills, recursive-improvement, prompts, evaluation. **Reviewed:** full-text · 2026-11-02.
+**Topics:** skills, recursive-improvement, prompts, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.35434) · [Source 2](https://arxiv.org/html/2610.35434v1) · [Source 3](https://github.com/taowangcheng/Skill-Infinity)
+[Source 1](https://arxiv.org/abs/2610.35434) · [Source 2](https://arxiv.org/html/2610.35434v1) · [Source 3](https://github.com/taowangcheng/Skill-Infinity) · [Source 4](https://arxiv.org/pdf/2610.35434v1)
 
 <a id="scivaliditybench"></a>
 
@@ -744,19 +744,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.36308)
 
-**Mechanism.** Separates retrieving the newest statement from selecting it correctly. Varies BM25 evidence budgets, then replaces an unrelated statement with an obsolete competitor while keeping the latest statement, reader, prompt, and four-statement count fixed.
+**Mechanism.** Diagnoses retrieval and reader selection separately on synthetic chronological memories. It varies BM25 evidence budgets, then replaces one unrelated statement with an obsolete competitor while preserving the latest statement, model, prompt and four-statement count. No memory-learning or retirement procedure is trained or evaluated.
 
 **What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** No retained learning update; controlled evidence substitutions and benchmark answers diagnose use of revised facts.
 
-**Evaluation.** Studies single-hop FactConsolidation at 6K and 32K history lengths. A paired 74-question intervention finds stale-answer failures in two Qwen models despite the correction remaining visible.
+**Evaluation.** Full v1 reports a 100-question 6K budget sweep, paired 74-question substitutions on two Qwen models, a corrected 100-question 32K endpoint comparison and detailed scoring/sensitivity audits. Retrieved latest facts remain available, yet stale selections increase in the controlled contrast. Aggregate budget declines are not monotonic for every question.
 
-**Boundary.** Prompt development reused the intervention cohort. Synthetic stale facts often agree with pretrained world knowledge, so chronology alone is not isolated. Gold-assisted support audits are diagnostic; substring scoring has documented errors. Shared histories, short update chains, and one model family limit generalization.
+**Boundary.** Prompt development and the final intervention share the cohort. Obsolete values often agree with familiar world knowledge, so chronology is not isolated from priors. Gold-assisted support checks are diagnostic; official substring scores can reward stale or mixed answers. Shared histories, one deterministic run per condition, two related models and short single-hop chains limit inference. Invalid historical runs are excluded, and exact hardware/quantization metadata are unavailable.
 
-**Code / data.** [Official artifact](https://github.com/oleeviyababu/Memory_Conflict) — Paper-linked repository and saved-result inventory inspected; experiments and analysis scripts were not executed.
+**Code / data.** [Official artifact](https://github.com/oleeviyababu/Memory_Conflict) — Complete 23-page arXiv v1, Appendices A–K, two figures/twenty tables, all listed flips, scoring sensitivities and excluded-run records read on 2026-11-09. Official README at d15df5d2fb78ccd58d1981d69861d345451258c7 documents saved outputs and analysis scripts. No root LICENSE was verified; upstream licenses do not establish project licensing. Nothing installed or executed. PALM acceptance remains author-reported without a verified primary venue record.
 
-**Topics:** memory, evaluation, continual-learning. **Reviewed:** full-text · 2026-11-04.
+**Topics:** memory, evaluation, continual-learning. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.36308) · [Source 2](https://arxiv.org/html/2610.36308v1) · [Source 3](https://github.com/oleeviyababu/Memory_Conflict)
+[Source 1](https://arxiv.org/abs/2610.36308) · [Source 2](https://arxiv.org/html/2610.36308v1) · [Source 3](https://github.com/oleeviyababu/Memory_Conflict) · [Source 4](https://arxiv.org/pdf/2610.36308v1)
 
 <a id="miniweb"></a>
 

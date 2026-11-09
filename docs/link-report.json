@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-09T11:57:40.554581+00:00",
+  "checked_at_utc": "2026-11-09T12:05:25.680428+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -3466,9 +3466,21 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2610.35434v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2610.35434v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2610.35598v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2610.35598v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2610.36308v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2610.36308v1",
       "status": "reachable"
     },
     {
@@ -5283,21 +5295,21 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=c93eea70-7243-4a9b-ae93-9a53a89acb42",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=bd65798c-e08e-4d31-af20-3c28ef2a50ff",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=46bc051b-d454-460b-b67f-ab260449e967",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=02f4063c-72a0-4845-a575-dbd156ad2d8a",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=b2616b29-3fe4-4778-974c-38a97848400c",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=fd258ca8-d62c-4be2-8683-3cc1514a0beb",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -5311,21 +5323,21 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=5ae26643-3df6-4029-bd2f-5038ab5dcc7d",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=e21c03db-485e-4cd1-9ac8-efd4b4651c85",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=c4134867-8715-406a-9fdf-d56b032451ff",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=adaf4a07-7c81-4d5f-b657-add8f8495af6",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=765c9d5f-805c-4637-92fd-d1bf24cad37e",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=cbf79b27-056b-42e5-a9ba-93a99821109b",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
