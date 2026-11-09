@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-10 — Expanded memory-composition and harness-recursion reviews
+
+- Completed MemComposer v2 and Harness² v1, including full appendices, figures and prompts.
+- Clarified training supervision, task overlap, statistical uncertainty and cost accounting.
+- Recorded Harness² release/evaluation differences and its documented rubric-access risk without attributing it to historical paper runs.
+- Broader audit: 148 of 190 works complete, 42 pending.
+
 ## 2026-11-09 — Expanded experience-memory and continual-learning reviews
 
 - Completed REM and the continual-learning study, including full appendices and statistical limits.

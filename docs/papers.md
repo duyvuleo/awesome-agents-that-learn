@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-190 unique works. Catalog updated: 2026-11-09; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+190 unique works. Catalog updated: 2026-11-10; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -57,8 +57,8 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-20 | **RSI evidence audit**<br>[Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](https://arxiv.org/abs/2610.27610) | Measures reported evaluation designs against distinct claims about final products, accumulation, repeatability and improvement of the improver. Its codebook separates… | Analysis / no retained update | preprint · full-text | [Notes](#rsi-evaluation-audit) |
 | 2026-10-19 | **Continual learning limits**<br>[Are Self-Evolving Agents Continual Learners?](https://arxiv.org/abs/2610.25858) | Evaluates fixed-weight agents that retain retrieved reflections, a globally rewritten strategy prompt, or an editable workspace across task blocks. Shared harnesses… | Memory, Prompts / context, Agent code | preprint · full-text | [Notes](#self-evolving-continual-learners) |
 | 2026-10-19 | **REM**<br>[REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents](https://arxiv.org/abs/2610.27377) | Consolidates a fixed pool of solved coding traces into short localize/understand/fix/verify documents. A retrieved document persists throughout the new task; a… | Memory, Prompts / context | peer-reviewed · full-text | [Notes](#rem-experience-memory) |
-| 2026-10-15 | **MemComposer**<br>[MemComposer: Learning to Assemble Memories for LLM Agents via Reinforcement Learning](https://arxiv.org/abs/2610.21091) | Trains a memory-composition policy to choose the number, identity, and ordering of retrieved experiences. GRPO-based Experience Policy Optimization updates the composer… | Model weights, Prompts / context | preprint · full-text | [Notes](#memcomposer) · [Code](https://github.com/Makr-Xie/MemComposer) |
-| 2026-10-09 | **Harness²**<br>[Harness^2: Recursive Agent Harnessing for an Open World](https://arxiv.org/abs/2610.14224) | Proposes and probes harness edits on the current task, then composes a successor. Adopted harnesses and evidence-linked lessons enter a persistent library that guides… | Agent code, Prompts / context, Memory, Skills, Tools | preprint · full-text | [Notes](#harness2) · [Code](https://github.com/google-research/harness2) |
+| 2026-10-15 | **MemComposer**<br>[MemComposer: Learning to Assemble Memories for LLM Agents via Reinforcement Learning](https://arxiv.org/abs/2610.21091) | Trains a separate LoRA memory composer with GRPO-based ExPO to choose an ordered, variable-size subset of ten retrieved experiences. The composer reads digests and the… | Model weights, Prompts / context | preprint · full-text | [Notes](#memcomposer) · [Code](https://github.com/Makr-Xie/MemComposer) |
+| 2026-10-09 | **Harness²**<br>[Harness^2: Recursive Agent Harnessing for an Open World](https://arxiv.org/abs/2610.14224) | Proposes invariant and domain-specific edits to an eight-component harness, probes both, and composes an executed successor. Adopted harnesses and evidence-linked… | Agent code, Prompts / context, Memory, Skills, Tools | preprint · full-text | [Notes](#harness2) · [Code](https://github.com/google-research/harness2) |
 | 2026-10-07 | **EmbodiedRSI**<br>[EmbodiedRSI: Active Continual Robot Learning Through Hypothesis-Guided Co-Evolution](https://arxiv.org/abs/2610.10498) | Selects informative trials over code/skill hypotheses and retains successful revisions in hierarchical memory. A PPO-trained manager learns memory actions while the… | Agent code, Skills, Memory, Model weights | preprint · full-text | [Notes](#embodiedrsi) |
 | 2026-10-04 | **ASCENT**<br>[ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience](https://arxiv.org/abs/2610.05303) | After one scored attempt per task, a frozen copy of the initial model reads accepted experience with hindsight. Its token distributions train persistent LoRA adapters… | Model weights | preprint · full-text | [Notes](#ascent) · [Code](https://github.com/artificer-ai-lab/ASCENT) |
 | 2026-10-02 | **VERSE**<br>[VERSE: Verified Self-Evolving Optimizer for Agent Harnesses](https://arxiv.org/abs/2610.02616) | Updates an executor harness and the optimizer's own prompts, skills, tools, hooks, and notes. Verification tools test proposed fixes and diagnoses before submission… | Agent code, Prompts / context, Skills, Tools, Memory | preprint · full-text | [Notes](#verse) · [Code](https://github.com/wzekai/VERSE) |
@@ -1184,19 +1184,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.21091)
 
-**Mechanism.** Trains a memory-composition policy to choose the number, identity, and ordering of retrieved experiences. GRPO-based Experience Policy Optimization updates the composer while keeping the executor, retriever, and memory bank fixed.
+**Mechanism.** Trains a separate LoRA memory composer with GRPO-based ExPO to choose an ordered, variable-size subset of ten retrieved experiences. The composer reads digests and the executor receives selected full memories. Executor weights, retriever and experience bank stay fixed; this is offline policy training rather than an online-growing memory.
 
 **What changes:** Model weights, Prompts / context. **Persistence:** across-tasks. **Learning signal:** Downstream task-success rewards from complete agent interactions, plus selection-size and output-format penalties.
 
-**Evaluation.** Reports three tau-squared-bench domains with 4B and 8B executors, memory-token costs, ordering ablations, and transfer across domains, executors, and memory sources.
+**Evaluation.** Complete v2 evaluates three tau-squared-bench domains with two frozen executors, four trials per test task, ordering/transfer analyses and 133 unseen ALFWorld games. It reports higher macro-average success and fewer executor memory tokens than the strongest comparison for each executor. Pooled paired intervals favor pass-1, while several per-executor and pass-4 comparisons remain inconclusive.
 
-**Boundary.** This is external policy training, not continual growth of the memory bank. Frontier-scale executors and non-procedural memories are untested; sequence rewards confound selection and ordering, and several per-executor performance-gap confidence intervals include zero.
+**Boundary.** Bank reviews use training answer keys and evaluator feedback. Task-disjoint splits can share customers and orders; one case transfers exact API arguments. Four evaluation trials are not independent training runs. Reported token savings exclude composer, retrieval, bank-construction and training costs. Adapted fixed-bank baselines differ in capacity and truncation; selection and ordering credit remain entangled, and transfer gains are not uniform.
 
-**Code / data.** [Official artifact](https://github.com/Makr-Xie/MemComposer) — Author-linked public repository page inspected; not executed.
+**Code / data.** [Official artifact](https://github.com/Makr-Xie/MemComposer) — Complete 31-page v2, Appendices A–K, eight figures, fifteen tables, eight equations and all prompts/cases read on 2026-11-10; the arXiv comments retain an earlier page/table count. Official README at d5ae0af809348d40d774127107ac6bd56418f504 and Apache-2.0 license header inspected. Training requires separate model/benchmark environments and substantial GPU/API resources; README data/checkpoint links are availability evidence, not reproduction. Nothing installed, trained or executed.
 
-**Topics:** memory, model-training, prompts. **Reviewed:** full-text · 2026-10-29.
+**Topics:** memory, model-training, prompts. **Reviewed:** full-text · 2026-11-10.
 
-[Source 1](https://arxiv.org/abs/2610.21091) · [Source 2](https://arxiv.org/html/2610.21091v2) · [Source 3](https://github.com/Makr-Xie/MemComposer)
+[Source 1](https://arxiv.org/abs/2610.21091) · [Source 2](https://arxiv.org/html/2610.21091v2) · [Source 3](https://github.com/Makr-Xie/MemComposer) · [Source 4](https://arxiv.org/pdf/2610.21091v2) · [Source 5](https://github.com/Makr-Xie/MemComposer/blob/d5ae0af809348d40d774127107ac6bd56418f504/README.md) · [Source 6](https://github.com/Makr-Xie/MemComposer/blob/d5ae0af809348d40d774127107ac6bd56418f504/LICENSE)
 
 <a id="harness2"></a>
 
@@ -1206,19 +1206,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.14224)
 
-**Mechanism.** Proposes and probes harness edits on the current task, then composes a successor. Adopted harnesses and evidence-linked lessons enter a persistent library that guides later improvements; each new task starts from the common base harness.
+**Mechanism.** Proposes invariant and domain-specific edits to an eight-component harness, probes both, and composes an executed successor. Adopted harnesses and evidence-linked lessons accumulate in a domain library that guides later proposals; each new task starts from the common base. Model weights, stage instructions and decision rules remain fixed.
 
 **What changes:** Agent code, Prompts / context, Memory, Skills, Tools. **Persistence:** both. **Learning signal:** Contrasts between executions of candidate and reference harnesses, interpreted by model-based editors and reflection.
 
-**Evaluation.** Tests WorkBuddy-Bench, JobBench, and Legal Agent Benchmark across two models and two initial harnesses, with recursion budgets, component ablations, and library-transfer analyses.
+**Evaluation.** Complete v1 tests WorkBuddy-Bench, JobBench and LAB across two executors and two host harnesses, using three shuffled streams and budgets up to five. It includes library/scoping/composition ablations, same-model editors, transfer and failure cases. A budget k uses 4k executor sessions plus improvement calls; the leave-one-out library analysis is retrospective and includes later-task experience.
 
-**Boundary.** Behavioral contrasts do not verify correctness and can share model biases. Stage instructions, decision rules, and model weights remain fixed while the library evolves. Extra probes incur inference cost; benchmark gains do not establish unrestricted or indefinitely improving autonomy.
+**Boundary.** Execution contrasts and model selection do not verify correctness; the appendix shows worse candidates selected and mistaken edits reinforced. Equal k does not match total compute across methods. Some judges share the editor/executor model family. The public release documents a validation rollout fetching a public rubric under unrestricted network access; this establishes a release risk, not contamination of the paper’s reported runs. Library growth is not an evolving optimization algorithm.
 
-**Code / data.** [Official artifact](https://github.com/google-research/harness2) — Author repository and README inspected; not installed or executed. Its documented network defaults require separate evaluation-contamination controls.
+**Code / data.** [Official artifact](https://github.com/google-research/harness2) — Complete 37-page v1, Appendices A–H, nineteen figures, seven tables, four equations and full prompts read on 2026-11-10. README, SETUP and EXPERIMENTS at 6868817518876de8fd170c6a8354daca273b6191 and Apache-2.0 license header inspected. Linux/Python/Node, benchmark-specific tools and external model services are required. Release defaults, task counts, dataset pinning and failed-judge accounting differ from the paper’s reported setup. No research code, containers or model calls executed.
 
-**Topics:** recursive-improvement, architecture, memory, skills, applications. **Reviewed:** full-text · 2026-10-30.
+**Topics:** recursive-improvement, architecture, memory, skills, applications. **Reviewed:** full-text · 2026-11-10.
 
-[Source 1](https://arxiv.org/abs/2610.14224) · [Source 2](https://arxiv.org/html/2610.14224v1) · [Source 3](https://github.com/google-research/harness2)
+[Source 1](https://arxiv.org/abs/2610.14224) · [Source 2](https://arxiv.org/html/2610.14224v1) · [Source 3](https://github.com/google-research/harness2) · [Source 4](https://arxiv.org/pdf/2610.14224v1) · [Source 5](https://github.com/google-research/harness2/blob/6868817518876de8fd170c6a8354daca273b6191/README.md) · [Source 6](https://github.com/google-research/harness2/blob/6868817518876de8fd170c6a8354daca273b6191/docs/EXPERIMENTS.md) · [Source 7](https://github.com/google-research/harness2/blob/6868817518876de8fd170c6a8354daca273b6191/docs/SETUP.md) · [Source 8](https://github.com/google-research/harness2/blob/6868817518876de8fd170c6a8354daca273b6191/LICENSE)
 
 <a id="embodiedrsi"></a>
 
