@@ -182,8 +182,8 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2024 | **Self-correction survey**<br>[When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs](https://aclanthology.org/2024.tacl-1.78/) | Separates self-correction questions by feedback source and training assumptions, and examines whether experimental designs support the claimed correction ability. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#self-correction-survey) |
 | 2024 | **LoCoMo**<br>[Evaluating Very Long-Term Conversational Memory of LLM Agents](https://aclanthology.org/2024.acl-long.747/) | Builds extended conversations from persona and event structures, with human editing, to test recall, event summarization, and multimodal dialogue. | Memory | peer-reviewed · abstract | [Notes](#locomo) · [Code](https://github.com/snap-research/LoCoMo) |
 | 2024 | **Self-correction limits**<br>[Large Language Models Cannot Self-Correct Reasoning Yet](https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html) | Tests intrinsic correction: asking a model to revise its own reasoning using no external correctness signal. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#intrinsic-self-correction) |
-| 2023-10-12 | **MemGPT**<br>[MemGPT: Towards LLMs as Operating Systems](https://arxiv.org/abs/2310.08560) | Lets a language-model agent move information between a limited active context and external memory tiers through explicit operations. This supplies persistent state and… | Memory | preprint · abstract | [Notes](#memgpt) |
-| 2023-10-05 | **DSPy**<br>[DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines](https://arxiv.org/abs/2310.03714) | Represents language-model pipelines as declarative modules and compiles demonstrations for their component prompts. The reusable artifact is an optimized pipeline… | Prompts / context | peer-reviewed · abstract | [Notes](#dspy) · [Code](https://github.com/stanfordnlp/dspy) |
+| 2023-10-12 | **MemGPT**<br>[MemGPT: Towards LLMs as Operating Systems](https://arxiv.org/abs/2310.08560) | Separates active context from archival and recall storage. Function calls page information in and out, edit working memory, and request successive inference steps… | Memory | preprint · full-text | [Notes](#memgpt) |
+| 2023-10-05 | **DSPy**<br>[DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines](https://arxiv.org/abs/2310.03714) | Compiles declarative LM modules by bootstrapping and selecting demonstrations. Composed optimizers can ensemble programs or fine-tune smaller models. Optimized prompts… | Prompts / context, Workflows, Model weights | peer-reviewed · full-text | [Notes](#dspy) · [Code](https://github.com/stanfordnlp/dspy) |
 | 2023-10-03 | **STOP**<br>[Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation](https://arxiv.org/abs/2310.02304) | Begins with an LLM-assisted program improver and applies that improver to its own source. Candidate improvers are assessed through the quality of programs they generate… | Agent code | peer-reviewed · abstract | [Notes](#stop) |
 | 2023-09-28 | **Promptbreeder**<br>[Promptbreeder: Self-Referential Self-Improvement via Prompt Evolution](https://arxiv.org/abs/2309.16797) | Evolves a population of task instructions together with the instructions that produce their mutations. It provides a concrete example of changing part of the improvement… | Prompts / context | peer-reviewed · abstract | [Notes](#promptbreeder) |
 | 2023-09-07 | **OPRO**<br>[Large Language Models as Optimizers](https://arxiv.org/abs/2309.03409) | Uses an LLM to propose candidates from a history of instructions and their measured scores. Selected instructions can be reused on new examples without changing model… | Prompts / context | peer-reviewed · abstract | [Notes](#opro) · [Code](https://github.com/google-deepmind/opro) |
@@ -195,12 +195,12 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2023-05-23 | **CREATOR**<br>[CREATOR: Tool Creation for Disentangling Abstract and Concrete Reasoning of Large Language Models](https://arxiv.org/abs/2305.14318) | Decomposes problem solving into tool design, implementation, execution, and revision so an agent can create tools beyond a fixed API inventory. It also examines reuse of… | Tools | peer-reviewed · abstract | [Notes](#creator) · [Code](https://github.com/qiancheng0/CREATOR) |
 | 2023-05-17 | **MemoryBank**<br>[MemoryBank: Enhancing Large Language Models with Long-Term Memory](https://arxiv.org/abs/2305.10250) | Maintains retrievable interaction memories and user summaries, with time- and importance-sensitive forgetting and reinforcement. The SiliconFriend application combines… | Memory | peer-reviewed · abstract | [Notes](#memorybank) |
 | 2023-04-07 | **Generative Agents**<br>[Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) | Stores experiences, synthesizes higher-level reflections, and retrieves relevant memories to plan behavior in a simulated town. The accumulated state shapes subsequent… | Memory | peer-reviewed · abstract | [Notes](#generative-agents) · [Code](https://github.com/joonspk-research/generative_agents) |
-| 2023-03-30 | **Self-Refine**<br>[Self-Refine: Iterative Refinement with Self-Feedback](https://arxiv.org/abs/2303.17651) | Uses the same language model to draft, critique, and revise an answer iteratively without updating model weights. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#self-refine) |
+| 2023-03-30 | **Self-Refine**<br>[Self-Refine: Iterative Refinement with Self-Feedback](https://arxiv.org/abs/2303.17651) | Alternates drafting, feedback and revision while retaining the current task history. No weights or cross-task memory are updated; stopping and output selection vary… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#self-refine) |
 | 2023-03-20 | **Reflexion**<br>[Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366) | Converts task feedback into verbal reflections and carries those reflections into later attempts through an episodic memory buffer. The underlying language-model weights… | Memory | peer-reviewed · full-text | [Notes](#reflexion) · [Code](https://github.com/noahshinn/reflexion) |
 | 2023-02-09 | **Toolformer**<br>[Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) | Teaches a language model when to call a predefined API, which arguments to produce, and how to incorporate the returned information. The learned capability is stored in… | Model weights | peer-reviewed · abstract | [Notes](#toolformer) |
 | 2023 | **Self-Instruct**<br>[Self-Instruct: Aligning Language Models with Self-Generated Instructions](https://aclanthology.org/2023.acl-long.754/) | Bootstraps an instruction-tuning dataset from the model, filters unsuitable examples, and fine-tunes the original model on the retained data. It is a foundation for… | Model weights | peer-reviewed · abstract | [Notes](#self-instruct) · [Code](https://github.com/yizhongw/self-instruct) |
 | 2022-12-15 | **Constitutional AI**<br>[Constitutional AI: Harmlessness from AI Feedback](https://arxiv.org/abs/2212.08073) | Uses self-critiques and revisions for supervised learning, then learns a preference model from AI comparisons and optimizes the assistant with reinforcement learning.… | Model weights | preprint · abstract | [Notes](#constitutional-ai) |
-| 2022-10-06 | **ReAct**<br>[ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629) | Interleaves reasoning traces with actions and observations so a language model can gather information and revise its plan during a task. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#react) |
+| 2022-10-06 | **ReAct**<br>[ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629) | Interleaves language reasoning, tool actions and observations to revise a plan within a task. The main prompted variant keeps weights fixed; the separately evaluated… | Model weights | peer-reviewed · full-text | [Notes](#react) |
 | 2022-03-28 | **STaR**<br>[STaR: Bootstrapping Reasoning With Reasoning](https://arxiv.org/abs/2203.14465) | Generates reasoning traces, keeps traces ending in the reference answer, and fine-tunes on them. Failed problems can be retried with the answer supplied as a hint; each… | Model weights | peer-reviewed · full-text | [Notes](#star) · [Code](https://github.com/ezelikman/STaR) |
 | 2017-10-19 | **AlphaGo Zero**<br>[Mastering the game of Go without human knowledge](https://www.nature.com/articles/nature24270) | Trains a policy/value network on games generated by its own search, then uses the updated network to improve subsequent search and play. This is an early concrete… | Model weights | peer-reviewed · abstract | [Notes](#alphago-zero) |
 
@@ -3968,19 +3968,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2310.08560)
 
-**Mechanism.** Lets a language-model agent move information between a limited active context and external memory tiers through explicit operations. This supplies persistent state and self-managed context for later interactions.
+**Mechanism.** Separates active context from archival and recall storage. Function calls page information in and out, edit working memory, and request successive inference steps; persistent records support later conversations without changing model weights.
 
-**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Interaction history and agent-selected memory operations.
+**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Conversation history, retrieved documents, memory-pressure notices and function outcomes guide a frozen model in choosing memory edits and searches.
 
-**Evaluation.** The authors evaluate document analysis beyond the active context window and memory across multiple chat sessions.
+**Evaluation.** Augmented Multi-Session Chat tests recall and persona-based opening messages; document QA uses 50 NaturalQuestions questions, and synthetic nested-key retrieval varies nesting with 30 orderings. GPT-4-based memory retrieval improves over summary-only chat baselines; function-calling ability affects results.
 
-**Boundary.** This is an adjacent memory architecture: remembered facts and context management do not alone establish accumulation of reusable task competence. Current software descended from the research may differ from the evaluated version.
+**Boundary.** Chat baselines see lossy summaries while MemGPT can search full history, with different answer instructions. The recall judge is permissive; engagement is measured by similarity, not demonstrated user satisfaction. Limited benchmark horizons and premature search stopping do not establish reliable unlimited memory or reusable procedural learning.
 
 **Code / data.** Code availability not verified in this review.
 
-**Topics:** foundations, memory, architecture. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, memory, architecture. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2310.08560)
+[Source 1](https://arxiv.org/abs/2310.08560) · [Source 2](https://arxiv.org/html/2310.08560v2) · [Source 3](https://arxiv.org/pdf/2310.08560v2)
 
 **Related software:** [Letta Code](systems.md#system-letta). See each system's relationship note before equating it with the evaluated paper version.
 
@@ -3992,19 +3992,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2310.03714)
 
-**Mechanism.** Represents language-model pipelines as declarative modules and compiles demonstrations for their component prompts. The reusable artifact is an optimized pipeline configuration.
+**Mechanism.** Compiles declarative LM modules by bootstrapping and selecting demonstrations. Composed optimizers can ensemble programs or fine-tune smaller models. Optimized prompts, program configurations or weights persist, while the developer supplies the task decomposition and metric.
 
-**What changes:** Prompts / context. **Persistence:** across-tasks. **Learning signal:** A developer-specified metric and examples used to bootstrap demonstrations.
+**What changes:** Prompts / context, Workflows, Model weights. **Persistence:** across-tasks. **Learning signal:** Developer-defined metrics and training examples filter generated execution traces; optional teacher programs supply intermediate demonstrations or fine-tuning targets.
 
-**Evaluation.** The paper studies math reasoning and retrieval-based question-answering pipelines, comparing compiled programs with hand-written prompts and demonstrations.
+**Evaluation.** GSM8K and HotpotQA comparisons cover prompting, bootstrapping, ensembles and T5 distillation. GSM8K separates 200 training, 300 development and official test questions; HotpotQA uses an official-development subset as test. The GPT-3.5 ensemble test result uses only 500 of those 1,000 questions.
 
-**Boundary.** Compilation is externally configured optimization; the paper does not establish an agent that autonomously maintains learning after deployment. The proceedings landing page uses a title variant ending in State-of-the-Art Pipelines.
+**Boundary.** External compilation is not autonomous continual learning. Development and test numbers are distinct; the T5 distillation result is development-only. Ensembles and search add computation, and strong teachers or answer labels remain inputs. This review concerns the original v1 paper, not every feature of current DSPy.
 
 **Code / data.** [Official artifact](https://github.com/stanfordnlp/dspy) — Official repository landing page inspected; no installation or execution performed.
 
-**Topics:** foundations, prompts, workflows. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, prompts, workflows. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2310.03714) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2024/hash/f1cf02ce09757f57c3b93c0db83181e0-Abstract-Conference.html) · [Source 3](https://github.com/stanfordnlp/dspy)
+[Source 1](https://arxiv.org/abs/2310.03714) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2024/hash/f1cf02ce09757f57c3b93c0db83181e0-Abstract-Conference.html) · [Source 3](https://github.com/stanfordnlp/dspy) · [Source 4](https://arxiv.org/html/2310.03714v1) · [Source 5](https://arxiv.org/pdf/2310.03714v1)
 
 **Related software:** [DSPy](systems.md#system-dspy). See each system's relationship note before equating it with the evaluated paper version.
 
@@ -4262,19 +4262,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2303.17651)
 
-**Mechanism.** Uses the same language model to draft, critique, and revise an answer iteratively without updating model weights.
+**Mechanism.** Alternates drafting, feedback and revision while retaining the current task history. No weights or cross-task memory are updated; stopping and output selection vary across the evaluated tasks.
 
-**What changes:** Analysis / no retained update. **Persistence:** within-task. **Learning signal:** Model-generated feedback on the current answer.
+**What changes:** Analysis / no retained update. **Persistence:** within-task. **Learning signal:** The same model generates task-specific critiques using curated few-shot examples; separate oracle experiments additionally use answer correctness to control refinement.
 
-**Evaluation.** The paper compares iterative refinement with one-shot generation on several generation and reasoning tasks using human and automatic assessments.
+**Evaluation.** Seven text/code tasks with automatic measures, model preferences and blinded author assessments; feedback ablations, repeated-sampling controls and weaker-model analysis. Main-table math gains are only 0–0.2 percentage points. Oracle-guided math results in Appendices H/O are a different setting.
 
-**Boundary.** These are within-task output improvements. They do not establish retained learning on later tasks, and the evaluation conditions differ from studies of intrinsic reasoning correction.
+**Boundary.** The headline average combines heterogeneous metrics and is not a universal accuracy gain. Prompt examples include human-written feedback and revisions. Quality can regress and weaker models fail to refine. Appendix J labels its intervals 95% in the caption and 99% in the text, leaving their confidence level ambiguous.
 
 **Code / data.** No implementation link independently inspected for this entry; this does not establish that none exists.
 
-**Topics:** foundations, evaluation, prompts. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, evaluation, prompts. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2303.17651) · [Source 2](https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html)
+[Source 1](https://arxiv.org/abs/2303.17651) · [Source 2](https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html) · [Source 3](https://arxiv.org/html/2303.17651v2) · [Source 4](https://arxiv.org/pdf/2303.17651v2)
 
 <a id="reflexion"></a>
 
@@ -4372,19 +4372,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2210.03629)
 
-**Mechanism.** Interleaves reasoning traces with actions and observations so a language model can gather information and revise its plan during a task.
+**Mechanism.** Interleaves language reasoning, tool actions and observations to revise a plan within a task. The main prompted variant keeps weights fixed; the separately evaluated fine-tuned variant retains learned weights across tasks.
 
-**What changes:** Analysis / no retained update. **Persistence:** within-task. **Learning signal:** Environment observations during task execution.
+**What changes:** Model weights. **Persistence:** both. **Learning signal:** Environment observations guide the prompted task loop; a separate offline experiment uses 3,000 answer-correct generated trajectories to fine-tune smaller models.
 
-**Evaluation.** Experiments cover question answering, fact verification, ALFWorld, and WebShop with comparisons to reasoning-only and acting-only approaches.
+**Evaluation.** HotpotQA, FEVER, 134 ALFWorld games and 500 WebShop instructions, with reasoning-only/action-only controls and fine-tuning comparisons. ReAct alone trails CoT on HotpotQA; hybrids perform better. The headline ALFWorld result is the best of six prompt configurations, distinct from their mean.
 
-**Boundary.** Included as a baseline agent loop. The prompted interaction loop does not itself establish persistent self-learning between tasks.
+**Boundary.** Prompted interaction does not itself retain learning between tasks. Human-authored demonstrations and external retrieval support performance; retrieval failures and reasoning loops remain. Offline fine-tuning is distinct from self-directed online improvement, and interpretable traces do not guarantee faithful reasoning.
 
 **Code / data.** No implementation link independently inspected for this entry; this does not establish that none exists.
 
-**Topics:** foundations, tools. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, tools. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2210.03629) · [Source 2](https://iclr.cc/virtual/2023/poster/11003)
+[Source 1](https://arxiv.org/abs/2210.03629) · [Source 2](https://iclr.cc/virtual/2023/poster/11003) · [Source 3](https://arxiv.org/html/2210.03629v3) · [Source 4](https://arxiv.org/pdf/2210.03629v3)
 
 <a id="star"></a>
 

@@ -177,3 +177,5 @@ Targeted guidance and HarnessFlow close queued training and architecture leads. 
 ## 2026-11-09 — Existing-catalog full-text review
 
 Revisited the primary arXiv records and complete article bodies for A-MEM, ADAS, AgentDevel and AgentSquare, including relevant appendices and PDF evidence objects. This is a depth audit of existing works, not a new-release search; it does not advance discovery coverage or add publications. The [review log](review-log.md#2026-11-09--detailed-review-of-existing-entries-batch-1) records inspected versions, remaining collection-wide scope and interpretation changes.
+
+The second detailed-reading batch covers DSPy, MemGPT, ReAct and Self-Refine at pinned arXiv versions, including their methods, results and appendices. See the [second review map](review-log.md#2026-11-09--detailed-review-of-existing-entries-batch-2). It changes existing annotations and method classifications, without adding works or advancing discovery coverage.

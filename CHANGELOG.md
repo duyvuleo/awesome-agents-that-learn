@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Detailed source review, second batch
+
+- Upgraded DSPy, MemGPT, ReAct and Self-Refine using full-text methods, evaluations, appendices and visual evidence.
+- Distinguished persistent compilation/training from within-task refinement, and clarified metric, baseline, selection and oracle-feedback conditions.
+- Research total remains 190; review depth is 138 full-text and 52 abstract/metadata. Eight broader appraisals are complete; the collection-wide audit remains open.
+
 ## 2026-11-09 — Detailed source review, first batch
 
 - Upgraded A-MEM, ADAS, AgentDevel and AgentSquare from abstract-level annotations using their methods, results, relevant appendices and visual evidence.

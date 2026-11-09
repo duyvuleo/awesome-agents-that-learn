@@ -1462,7 +1462,9 @@
     "sources": [
       "https://arxiv.org/abs/2310.03714",
       "https://proceedings.iclr.cc/paper_files/paper/2024/hash/f1cf02ce09757f57c3b93c0db83181e0-Abstract-Conference.html",
-      "https://github.com/stanfordnlp/dspy"
+      "https://github.com/stanfordnlp/dspy",
+      "https://arxiv.org/html/2310.03714v1",
+      "https://arxiv.org/pdf/2310.03714v1"
     ],
     "code_url": "https://github.com/stanfordnlp/dspy",
     "code_note": "Official repository landing page inspected; no installation or execution performed.",
@@ -1473,15 +1475,17 @@
     ],
     "scope": "adjacent",
     "update_targets": [
-      "prompts"
+      "prompts",
+      "workflows",
+      "model-weights"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "A developer-specified metric and examples used to bootstrap demonstrations.",
-    "mechanism": "Represents language-model pipelines as declarative modules and compiles demonstrations for their component prompts. The reusable artifact is an optimized pipeline configuration.",
-    "evaluation": "The paper studies math reasoning and retrieval-based question-answering pipelines, comparing compiled programs with hand-written prompts and demonstrations.",
-    "limitations": "Compilation is externally configured optimization; the paper does not establish an agent that autonomously maintains learning after deployment. The proceedings landing page uses a title variant ending in State-of-the-Art Pipelines.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Developer-defined metrics and training examples filter generated execution traces; optional teacher programs supply intermediate demonstrations or fine-tuning targets.",
+    "mechanism": "Compiles declarative LM modules by bootstrapping and selecting demonstrations. Composed optimizers can ensemble programs or fine-tune smaller models. Optimized prompts, program configurations or weights persist, while the developer supplies the task decomposition and metric.",
+    "evaluation": "GSM8K and HotpotQA comparisons cover prompting, bootstrapping, ensembles and T5 distillation. GSM8K separates 200 training, 300 development and official test questions; HotpotQA uses an official-development subset as test. The GPT-3.5 ensemble test result uses only 500 of those 1,000 questions.",
+    "limitations": "External compilation is not autonomous continual learning. Development and test numbers are distinct; the T5 distillation result is development-only. Ensembles and search add computation, and strong teachers or answer labels remain inputs. This review concerns the original v1 paper, not every feature of current DSPy.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "DSPy"
   },
   {
@@ -3031,7 +3035,9 @@
     "venue": "",
     "url": "https://arxiv.org/abs/2310.08560",
     "sources": [
-      "https://arxiv.org/abs/2310.08560"
+      "https://arxiv.org/abs/2310.08560",
+      "https://arxiv.org/html/2310.08560v2",
+      "https://arxiv.org/pdf/2310.08560v2"
     ],
     "code_url": null,
     "code_note": "Code availability not verified in this review.",
@@ -3045,12 +3051,12 @@
       "memory"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Interaction history and agent-selected memory operations.",
-    "mechanism": "Lets a language-model agent move information between a limited active context and external memory tiers through explicit operations. This supplies persistent state and self-managed context for later interactions.",
-    "evaluation": "The authors evaluate document analysis beyond the active context window and memory across multiple chat sessions.",
-    "limitations": "This is an adjacent memory architecture: remembered facts and context management do not alone establish accumulation of reusable task competence. Current software descended from the research may differ from the evaluated version.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Conversation history, retrieved documents, memory-pressure notices and function outcomes guide a frozen model in choosing memory edits and searches.",
+    "mechanism": "Separates active context from archival and recall storage. Function calls page information in and out, edit working memory, and request successive inference steps; persistent records support later conversations without changing model weights.",
+    "evaluation": "Augmented Multi-Session Chat tests recall and persona-based opening messages; document QA uses 50 NaturalQuestions questions, and synthetic nested-key retrieval varies nesting with 30 orderings. GPT-4-based memory retrieval improves over summary-only chat baselines; function-calling ability affects results.",
+    "limitations": "Chat baselines see lossy summaries while MemGPT can search full history, with different answer instructions. The recall judge is permissive; engagement is measured by similarity, not demonstrated user satisfaction. Limited benchmark horizons and premature search stopping do not establish reliable unlimited memory or reusable procedural learning.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "MemGPT"
   },
   {
@@ -4456,7 +4462,9 @@
     "url": "https://arxiv.org/abs/2210.03629",
     "sources": [
       "https://arxiv.org/abs/2210.03629",
-      "https://iclr.cc/virtual/2023/poster/11003"
+      "https://iclr.cc/virtual/2023/poster/11003",
+      "https://arxiv.org/html/2210.03629v3",
+      "https://arxiv.org/pdf/2210.03629v3"
     ],
     "code_url": null,
     "code_note": "No implementation link independently inspected for this entry; this does not establish that none exists.",
@@ -4466,15 +4474,15 @@
     ],
     "scope": "adjacent",
     "update_targets": [
-      "none"
+      "model-weights"
     ],
-    "persistence": "within-task",
-    "learning_signal": "Environment observations during task execution.",
-    "mechanism": "Interleaves reasoning traces with actions and observations so a language model can gather information and revise its plan during a task.",
-    "evaluation": "Experiments cover question answering, fact verification, ALFWorld, and WebShop with comparisons to reasoning-only and acting-only approaches.",
-    "limitations": "Included as a baseline agent loop. The prompted interaction loop does not itself establish persistent self-learning between tasks.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "persistence": "both",
+    "learning_signal": "Environment observations guide the prompted task loop; a separate offline experiment uses 3,000 answer-correct generated trajectories to fine-tune smaller models.",
+    "mechanism": "Interleaves language reasoning, tool actions and observations to revise a plan within a task. The main prompted variant keeps weights fixed; the separately evaluated fine-tuned variant retains learned weights across tasks.",
+    "evaluation": "HotpotQA, FEVER, 134 ALFWorld games and 500 WebShop instructions, with reasoning-only/action-only controls and fine-tuning comparisons. ReAct alone trails CoT on HotpotQA; hybrids perform better. The headline ALFWorld result is the best of six prompt configurations, distinct from their mean.",
+    "limitations": "Prompted interaction does not itself retain learning between tasks. Human-authored demonstrations and external retrieval support performance; retrieval failures and reasoning loops remain. Offline fine-tuning is distinct from self-directed online improvement, and interpretable traces do not guarantee faithful reasoning.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "ReAct"
   },
   {
@@ -5559,7 +5567,9 @@
     "url": "https://arxiv.org/abs/2303.17651",
     "sources": [
       "https://arxiv.org/abs/2303.17651",
-      "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html"
+      "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html",
+      "https://arxiv.org/html/2303.17651v2",
+      "https://arxiv.org/pdf/2303.17651v2"
     ],
     "code_url": null,
     "code_note": "No implementation link independently inspected for this entry; this does not establish that none exists.",
@@ -5573,12 +5583,12 @@
       "none"
     ],
     "persistence": "within-task",
-    "learning_signal": "Model-generated feedback on the current answer.",
-    "mechanism": "Uses the same language model to draft, critique, and revise an answer iteratively without updating model weights.",
-    "evaluation": "The paper compares iterative refinement with one-shot generation on several generation and reasoning tasks using human and automatic assessments.",
-    "limitations": "These are within-task output improvements. They do not establish retained learning on later tasks, and the evaluation conditions differ from studies of intrinsic reasoning correction.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "The same model generates task-specific critiques using curated few-shot examples; separate oracle experiments additionally use answer correctness to control refinement.",
+    "mechanism": "Alternates drafting, feedback and revision while retaining the current task history. No weights or cross-task memory are updated; stopping and output selection vary across the evaluated tasks.",
+    "evaluation": "Seven text/code tasks with automatic measures, model preferences and blinded author assessments; feedback ablations, repeated-sampling controls and weaker-model analysis. Main-table math gains are only 0–0.2 percentage points. Oracle-guided math results in Appendices H/O are a different setting.",
+    "limitations": "The headline average combines heterogeneous metrics and is not a universal accuracy gain. Prompt examples include human-written feedback and revisions. Quality can regress and weaker models fail to refine. Appendix J labels its intervals 95% in the caption and 99% in the text, leaving their confidence level ambiguous.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "Self-Refine"
   },
   {

@@ -300,3 +300,16 @@ The broader audit covers all 190 research works. This first batch upgrades four 
 | [AgentSquare](papers.md#agentsquare) | [arXiv v3](https://arxiv.org/html/2410.06153v3): §§1–6, Appendix A, algorithm and tables; Figures 4–6 and A.7–A.15 visually inspected; example-module text read from PDF | Separate search cost, heterogeneous task metrics, and an unspecified independent search/test split and run uncertainty. |
 
 A-MEM §4.3 describes twofold multi-hop gains, but Table 1's GPT-4o multi-hop F1 is 32.86 versus MemGPT's 30.36; the larger temporal improvements must not be relabeled as multi-hop evidence. The annotation retains the category-specific results. AgentDevel's WebArena final score is 35.5 in Table 1 and 34.2 in Table 3; the paper does not explain the difference, so those figures are not merged. The same ablation reports a higher final score without the gate alongside more regressions. ADAS and AgentSquare demonstrate bounded external search; neither establishes unrestricted post-deployment continual improvement.
+
+## 2026-11-09 — Detailed review of existing entries, batch 2
+
+DSPy, MemGPT, ReAct and Self-Refine now have full-text annotations. The catalog has **138 full-text and 52 abstract/metadata reviews**. Eight works have received the broader appraisal begun today; the other 182 remain pending for that broader pass, including the 130 earlier selected-section inspections. Source reading is not reproduction.
+
+| Work | Version and material inspected | Qualification added |
+| --- | --- | --- |
+| [DSPy](papers.md#dspy) | [arXiv v1](https://arxiv.org/html/2310.03714v1): §§1–8, Appendices A–F, prompt/code examples read only; Tables 1–2 checked in PDF | Metric-conditioned compilation, ensembles and optional weight training; development/test and teacher-input distinctions. |
+| [MemGPT](papers.md#memgpt) | [arXiv v2](https://arxiv.org/html/2310.08560v2): §§1–5, Appendix 6.1, Tables 1–3 and Figures 1–8 | Full-history access versus summary-only baselines, permissive judging, small document-QA sample and function-call failures. |
+| [ReAct](papers.md#react) | [arXiv v3](https://arxiv.org/html/2210.03629v3): §§1–6, Appendices A–E, prompts and trajectories; main result tables and Figures 1–5 checked in PDF | Prompted within-task behavior and separate offline fine-tuning are distinct; best-prompt results are not average performance. |
+| [Self-Refine](papers.md#self-refine) | [arXiv v2](https://arxiv.org/html/2303.17651v2): §§1–7, Appendices A–S and prompt examples; main tables, oracle comparison, confidence-interval page and key figures inspected visually | Main-table math gains are negligible; oracle-guided refinement, human-written examples and preference measures must be identified separately. |
+
+DSPy's reusable changes include optional fine-tuned weights and ensemble composition, not only prompts. ReAct's tags now accommodate its explicitly separate fine-tuned variant; the prompted loop remains a within-task baseline. MemGPT's conversation-opener similarity scores are not a human-preference result. Self-Refine's Table 1 reports math gains of 0, 0.2 and 0.2 percentage points; Appendix H.1 and Appendix O use correctness-guided variants. Its Appendix J caption says 95% while the following paragraph says 99%; this unresolved discrepancy is retained rather than assigning an assumed confidence level.

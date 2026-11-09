@@ -22,7 +22,7 @@ How do agents turn experience into something useful on the next task? This colle
 
 **190 research works** (168 papers, 6 surveys, 16 benchmark papers) · **24 systems and frameworks** · **8 reading routes**
 
-Source review: **2026-11-09**. For research works, 134 entries include inspection of selected full-text sections and 56 are based on primary abstracts/metadata. Systems are separate project-documentation/source inspections. No linked research code was executed and no published result was independently reproduced for this release.
+Source review: **2026-11-09**. For research works, 138 entries include inspection of selected full-text sections and 52 are based on primary abstracts/metadata. Systems are separate project-documentation/source inspections. No linked research code was executed and no published result was independently reproduced for this release.
 
 ## Top Papers of the Week
 
@@ -68,7 +68,7 @@ These are complementary starting points, not a leaderboard. Their tasks, feedbac
 | --- | --- |
 | [Voyager: An Open-Ended Embodied Agent with Large Language Models](docs/papers.md#voyager) | Builds an expanding library of executable Minecraft skills, retrieved and composed for later tasks. An automatic curriculum proposes objectives, while execution feedback and a model-based critic guide program repair before a skill is retained. |
 | [ExpeL: LLM Agents Are Experiential Learners](docs/papers.md#expel) | Collects training-task trajectories, contrasts successes and failures to extract reusable textual insights, and retrieves relevant experiences for new tasks. Learning changes the external experience and insight stores without updating the base model. |
-| [DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines](docs/papers.md#dspy) | Represents language-model pipelines as declarative modules and compiles demonstrations for their component prompts. The reusable artifact is an optimized pipeline configuration. |
+| [DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines](docs/papers.md#dspy) | Compiles declarative LM modules by bootstrapping and selecting demonstrations. Composed optimizers can ensemble programs or fine-tune smaller models. Optimized prompts, program configurations or weights persist, while the developer supplies the task decomposition and metric. |
 | [Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](docs/papers.md#darwin-godel-machine) | A coding agent rewrites its own implementation, and an archive retains runnable variants as possible parents for later edits. This permits exploration beyond the latest or immediately best-performing agent. |
 | [Self-Adapting Language Models](docs/papers.md#seal) | Learns to generate synthetic training material or adaptation directives, then applies gradient updates using those edits. An outer reward-based loop improves the edit-generation policy while an inner loop adapts the model. |
 | [AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](docs/papers.md#agentstream) | Evaluates retained agent state under isolated domain streams, sequential domain shifts, and interleaved tasks, comparing each evolving agent with a no-evolution baseline. |
