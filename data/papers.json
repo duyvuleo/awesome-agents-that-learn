@@ -1520,20 +1520,24 @@
   },
   {
     "id": "ell-stulife",
-    "title": "Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark",
+    "title": "A Benchmark for Self-Evolving Agents via Experience-Driven Lifelong Learning",
     "date": "2025-08-26",
     "year": 2025,
     "kind": "benchmark",
     "status": "peer-reviewed",
     "venue": "Findings of EMNLP 2026",
-    "url": "https://arxiv.org/abs/2508.19005",
+    "url": "https://aclanthology.org/2026.findings-emnlp.770/",
     "sources": [
       "https://arxiv.org/abs/2508.19005",
       "https://arxiv.org/html/2508.19005v6",
-      "https://aclanthology.org/2026.findings-emnlp.770/"
+      "https://aclanthology.org/2026.findings-emnlp.770/",
+      "https://aclanthology.org/2026.findings-emnlp.770.pdf",
+      "https://github.com/ECNU-ICALK/ELL-StuLife",
+      "https://ecnu-icalk.github.io/ELL-StuLife/",
+      "https://github.com/ECNU-ICALK/ELL-StuLife/blob/025741eb0e0954064338bb35d0822390ca7ddad8/Stulife/calculate_stulife_metrics.py"
     ],
-    "code_url": null,
-    "code_note": "Official runnable code was not verified in this source review.",
+    "code_url": "https://github.com/ECNU-ICALK/ELL-StuLife",
+    "code_note": "Final 41-page Findings of EMNLP 2026 paper, substantive appendices, full prompts, metrics and rollout records read on 2026-11-09. Official README, source inventory and metric calculator at 025741e inspected as text. The release retains earlier LAB documentation; final-paper version equivalence and a project-specific license were not established. No benchmark, model or research code was executed.",
     "topics": [
       "continual-learning",
       "memory",
@@ -1545,12 +1549,12 @@
       "none"
     ],
     "persistence": "not-applicable",
-    "learning_signal": "Benchmark task success, long-term retention through environmental tools, and proactive initiative metrics.",
-    "mechanism": "Defines experience-driven lifelong learning around exploration, memory, skill abstraction, and internalization, and introduces StuLife as a stateful simulated student-life environment. Its framework is a research agenda and evaluation setting rather than a single demonstrated learning algorithm.",
-    "evaluation": "The inspected preprint v6 resets agent context between tasks; retained information must be explicitly stored and retrieved through environmental tools such as calendars and drafts. The later published abstract additionally describes context-engineering comparisons, whose full protocol was not reviewed here.",
-    "limitations": "The selected full-text review concerns the preprint v6 baseline in a designed simulation, not a trained lifelong learner’s learning curve. The renamed Findings of EMNLP 2026 version has verified publication metadata; its full experimental revision was not inspected.",
+    "learning_signal": "Task-state correctness, delayed information use and execution of earlier commitments at timestamp-only prompts. Evaluated variants add successful-trajectory fine-tuning, workflow/reflection memory, or supplied prompt and memory support.",
+    "mechanism": "Provides a synthetic, chronological campus environment with persistent calendars, bookings and other state, while raw model context resets between tasks. StuGPA combines exam, class and daily-life outcomes; retention and initiative metrics test tool-mediated information use and scheduled action.",
+    "evaluation": "The full final publication reports 1,284 instances across ten scenarios, default LLM baselines, an eight-student reference, oracle-context checks, rejection-sampling fine-tuning, AWM/Reflexion and context-engineering comparisons. The supplied skill prompt is authored guidance, not evidence of learned skill abstraction.",
+    "limitations": "One synthetic text domain and aggregate scores do not establish continual capability growth or intrinsic forgetting. Oracle context removes several bottlenecks simultaneously. Memory/prompt variants show mixed effects; independent-run uncertainty and the fine-tuning evaluation split are insufficiently specified. The current metric calculator differs from the final paper’s denominators and scoring formulas.",
     "review_depth": "full-text",
-    "checked": "2026-10-29",
+    "checked": "2026-11-09",
     "short_name": "ELL / StuLife"
   },
   {

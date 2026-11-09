@@ -190,7 +190,7 @@ Does learning persist when tasks and environments change?
 
 1. **[LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners](papers.md#lifelongagentbench)** — Inspect inter-task dependencies and the limits of replay.
 
-2. **[Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark](papers.md#ell-stulife)** — Separate a proposed lifelong framework from its evaluated baseline protocol.
+2. **[A Benchmark for Self-Evolving Agents via Experience-Driven Lifelong Learning](papers.md#ell-stulife)** — Separate a proposed lifelong framework from its evaluated baseline protocol.
 
 3. **[LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory](papers.md#longmemeval)** — Study updates, temporal reasoning, and abstention in recalled information.
 

@@ -133,7 +133,7 @@
 - 2025-09-29 — [ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](papers.md#reasoningbank)
 - 2025-09-29 — [A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory](papers.md#a-memguard)
 - 2025-08-27 — [Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](papers.md#memory-r1)
-- 2025-08-26 — [Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark](papers.md#ell-stulife)
+- 2025-08-26 — [A Benchmark for Self-Evolving Agents via Experience-Driven Lifelong Learning](papers.md#ell-stulife)
 - 2025-08-22 — [Memento: Fine-tuning LLM Agents without Fine-tuning LLMs](papers.md#memento)
 - 2025-08-10 — [A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](papers.md#comprehensive-evolving-survey)
 - 2025-08-08 — [Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](papers.md#temporal-self-rewarding)

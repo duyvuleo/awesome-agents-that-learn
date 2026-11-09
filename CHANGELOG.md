@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Reviewed StuLife final publication and artifact
+
+- Read the final 41-page StuLife paper and substantive appendices; aligned its authoritative title and added the official artifact.
+- Added evaluated learning/context conditions and qualified metric definitions, protocol interpretation and release-version differences.
+- Broader audit: 102 of 190 works complete, 88 pending.
+
 ## 2026-11-09 — Expanded self-play and adaptation reviews
 
 - Read MARSHAL, Search Self-Play and Self-Harmony with their substantive appendices, controls and derivations.

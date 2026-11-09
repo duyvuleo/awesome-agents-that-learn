@@ -141,7 +141,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-09-29 | **ReasoningBank**<br>[ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](https://arxiv.org/abs/2509.25140) | Extracts short strategy notes from successes and failures, appends them to persistent memory, and retrieves notes from similar prior queries. Parallel or sequential… | Memory | peer-reviewed · full-text | [Notes](#reasoningbank) · [Code](https://github.com/google-research/reasoning-bank) |
 | 2025-09-29 | **A-MemGuard**<br>[A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory](https://arxiv.org/abs/2510.02373) | Wraps a fixed agent with structured-path generation, consensus/safety validation and a separate lesson store. Query- and action-related retrieval brings previous failure… | Memory | peer-reviewed · full-text | [Notes](#a-memguard) · [Code](https://github.com/TangciuYueng/AMemGuard) |
 | 2025-08-27 | **Memory-R1**<br>[Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](https://arxiv.org/abs/2508.19828) | Uses PPO or GRPO to train a manager that adds, updates, deletes or retains memory entries, then trains an answer agent to select relevant content from retrieved… | Model weights, Memory | preprint · full-text | [Notes](#memory-r1) |
-| 2025-08-26 | **ELL / StuLife**<br>[Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark](https://arxiv.org/abs/2508.19005) | Defines experience-driven lifelong learning around exploration, memory, skill abstraction, and internalization, and introduces StuLife as a stateful simulated… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#ell-stulife) |
+| 2025-08-26 | **ELL / StuLife**<br>[A Benchmark for Self-Evolving Agents via Experience-Driven Lifelong Learning](https://aclanthology.org/2026.findings-emnlp.770/) | Provides a synthetic, chronological campus environment with persistent calendars, bookings and other state, while raw model context resets between tasks. StuGPA combines… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#ell-stulife) · [Code](https://github.com/ECNU-ICALK/ELL-StuLife) |
 | 2025-08-22 | **Memento**<br>[Memento: Fine-tuning LLM Agents without Fine-tuning LLMs](https://arxiv.org/abs/2508.16153) | A planner–executor agent retains final-state, plan and outcome cases. Retrieval uses fixed embedding similarity or a trained Q-network with top-k selection; this… | Memory, Model weights | preprint · full-text | [Notes](#memento) · [Code](https://github.com/Memento-Teams/Memento) |
 | 2025-08-10 | **Agent evolution survey**<br>[A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](https://arxiv.org/abs/2508.07407) | Connects system inputs, an agent system, environment feedback and an optimizer over a defined search space. It separates task-level from instance-level optimization and… | Analysis / no retained update | preprint · full-text | [Notes](#comprehensive-evolving-survey) · [Code](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents) |
 | 2025-08-08 | **Temporal self-rewarding**<br>[Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](https://proceedings.mlr.press/v306/wang26ik.html) | Selects rejected answers from the lower-scoring initial/current candidates, trains a temporary model, then chooses better-scoring current/temporary answers. A second DPO… | Model weights | peer-reviewed · full-text | [Notes](#temporal-self-rewarding) · [Code](https://github.com/TemporalSelfRewarding/TSR) |
@@ -3038,25 +3038,25 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 <a id="ell-stulife"></a>
 
-## Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark
+## A Benchmark for Self-Evolving Agents via Experience-Driven Lifelong Learning
 
 **2025-08-26 · peer-reviewed · Findings of EMNLP 2026 · core · benchmark**
 
-[Primary source](https://arxiv.org/abs/2508.19005)
+[Primary source](https://aclanthology.org/2026.findings-emnlp.770/)
 
-**Mechanism.** Defines experience-driven lifelong learning around exploration, memory, skill abstraction, and internalization, and introduces StuLife as a stateful simulated student-life environment. Its framework is a research agenda and evaluation setting rather than a single demonstrated learning algorithm.
+**Mechanism.** Provides a synthetic, chronological campus environment with persistent calendars, bookings and other state, while raw model context resets between tasks. StuGPA combines exam, class and daily-life outcomes; retention and initiative metrics test tool-mediated information use and scheduled action.
 
-**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Benchmark task success, long-term retention through environmental tools, and proactive initiative metrics.
+**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Task-state correctness, delayed information use and execution of earlier commitments at timestamp-only prompts. Evaluated variants add successful-trajectory fine-tuning, workflow/reflection memory, or supplied prompt and memory support.
 
-**Evaluation.** The inspected preprint v6 resets agent context between tasks; retained information must be explicitly stored and retrieved through environmental tools such as calendars and drafts. The later published abstract additionally describes context-engineering comparisons, whose full protocol was not reviewed here.
+**Evaluation.** The full final publication reports 1,284 instances across ten scenarios, default LLM baselines, an eight-student reference, oracle-context checks, rejection-sampling fine-tuning, AWM/Reflexion and context-engineering comparisons. The supplied skill prompt is authored guidance, not evidence of learned skill abstraction.
 
-**Boundary.** The selected full-text review concerns the preprint v6 baseline in a designed simulation, not a trained lifelong learner’s learning curve. The renamed Findings of EMNLP 2026 version has verified publication metadata; its full experimental revision was not inspected.
+**Boundary.** One synthetic text domain and aggregate scores do not establish continual capability growth or intrinsic forgetting. Oracle context removes several bottlenecks simultaneously. Memory/prompt variants show mixed effects; independent-run uncertainty and the fine-tuning evaluation split are insufficiently specified. The current metric calculator differs from the final paper’s denominators and scoring formulas.
 
-**Code / data.** Official runnable code was not verified in this source review.
+**Code / data.** [Official artifact](https://github.com/ECNU-ICALK/ELL-StuLife) — Final 41-page Findings of EMNLP 2026 paper, substantive appendices, full prompts, metrics and rollout records read on 2026-11-09. Official README, source inventory and metric calculator at 025741e inspected as text. The release retains earlier LAB documentation; final-paper version equivalence and a project-specific license were not established. No benchmark, model or research code was executed.
 
-**Topics:** continual-learning, memory, skills, evaluation. **Reviewed:** full-text · 2026-10-29.
+**Topics:** continual-learning, memory, skills, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2508.19005) · [Source 2](https://arxiv.org/html/2508.19005v6) · [Source 3](https://aclanthology.org/2026.findings-emnlp.770/)
+[Source 1](https://arxiv.org/abs/2508.19005) · [Source 2](https://arxiv.org/html/2508.19005v6) · [Source 3](https://aclanthology.org/2026.findings-emnlp.770/) · [Source 4](https://aclanthology.org/2026.findings-emnlp.770.pdf) · [Source 5](https://github.com/ECNU-ICALK/ELL-StuLife) · [Source 6](https://ecnu-icalk.github.io/ELL-StuLife/) · [Source 7](https://github.com/ECNU-ICALK/ELL-StuLife/blob/025741eb0e0954064338bb35d0822390ca7ddad8/Stulife/calculate_stulife_metrics.py)
 
 <a id="memento"></a>
 

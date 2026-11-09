@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-09T09:56:36.528785+00:00",
+  "checked_at_utc": "2026-11-09T10:02:16.320095+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -217,6 +217,12 @@
       "url": "https://aclanthology.org/2026.findings-emnlp.471/",
       "http_status": 200,
       "final_url": "https://aclanthology.org/2026.findings-emnlp.471/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2026.findings-emnlp.770.pdf",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.findings-emnlp.770.pdf",
       "status": "reachable"
     },
     {
@@ -823,11 +829,7 @@
       "url": "https://arxiv.org/abs/2508.19005",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2508.19005",
-      "status": "reachable",
-      "expected_title": "Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark",
-      "observed_title": "Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark",
-      "title_similarity": 1.0,
-      "title_check": "match"
+      "status": "reachable"
     },
     {
       "url": "https://arxiv.org/abs/2508.19828",
@@ -3476,6 +3478,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://ecnu-icalk.github.io/ELL-StuLife/",
+      "http_status": 200,
+      "final_url": "https://ecnu-icalk.github.io/ELL-StuLife/",
+      "status": "reachable"
+    },
+    {
       "url": "https://eurekaarrow.github.io/",
       "http_status": 200,
       "final_url": "https://eurekaarrow.github.io/",
@@ -3623,6 +3631,18 @@
       "url": "https://github.com/ECNU-ICALK/DiscernMem",
       "http_status": 200,
       "final_url": "https://github.com/ECNU-ICALK/DiscernMem",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ECNU-ICALK/ELL-StuLife",
+      "http_status": 200,
+      "final_url": "https://github.com/ECNU-ICALK/ELL-StuLife",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ECNU-ICALK/ELL-StuLife/blob/025741eb0e0954064338bb35d0822390ca7ddad8/Stulife/calculate_stulife_metrics.py",
+      "http_status": 200,
+      "final_url": "https://github.com/ECNU-ICALK/ELL-StuLife/blob/025741eb0e0954064338bb35d0822390ca7ddad8/Stulife/calculate_stulife_metrics.py",
       "status": "reachable"
     },
     {
@@ -5035,21 +5055,21 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=9f5eae36-683c-4580-bd06-8dcce8f72c64",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=7ed412ce-c6ac-417e-89d1-c5f9906d3346",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=1d2b982c-69d2-48e1-944f-be191e37d0a7",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=15eee8ca-1b68-4907-8026-4552a60c3f61",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=6a87e312-35b3-43ae-9fcd-42f9466c8a27",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=f26f037c-5ce9-4fff-bd0a-03add8f4d151",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -5063,21 +5083,21 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=5ca9b906-fd46-435a-8bde-1be473187d1f",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=3b7c06f1-2d0b-467a-a670-431c759e9135",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=257ca84c-95be-4a9a-9906-ce39a9a9219b",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=bbf10d00-2d97-4b17-be6e-59f58e3ed5d1",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=548030f8-14a9-42cf-8845-66773748644f",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=74b3a31a-7a42-4384-aeb3-31a256799117",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },

@@ -121,7 +121,7 @@ A work may appear in several topics; counts here are not additive.
 - 2025-09-29 — [ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](papers.md#reasoningbank) · core · peer-reviewed
 - 2025-09-29 — [A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory](papers.md#a-memguard) · core · peer-reviewed
 - 2025-08-27 — [Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](papers.md#memory-r1) · core · preprint
-- 2025-08-26 — [Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark](papers.md#ell-stulife) · core · peer-reviewed
+- 2025-08-26 — [A Benchmark for Self-Evolving Agents via Experience-Driven Lifelong Learning](papers.md#ell-stulife) · core · peer-reviewed
 - 2025-08-22 — [Memento: Fine-tuning LLM Agents without Fine-tuning LLMs](papers.md#memento) · core · preprint
 - 2025-08-08 — [Memp: Exploring Agent Procedural Memory](papers.md#memp) · core · peer-reviewed
 - 2025-06-09 — [G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems](papers.md#g-memory) · core · peer-reviewed
@@ -181,7 +181,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026-01-29 — [Meta Context Engineering via Agentic Skill Evolution](papers.md#meta-context-engineering) · core · peer-reviewed
 - 2026 — [SkillRubricsRL: Evolving Skill-Grounded Agents with Rubric-Guided Reinforcement Learning](papers.md#skillrubricsrl) · core · peer-reviewed
 - 2025-09-29 — [ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](papers.md#reasoningbank) · core · peer-reviewed
-- 2025-08-26 — [Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark](papers.md#ell-stulife) · core · peer-reviewed
+- 2025-08-26 — [A Benchmark for Self-Evolving Agents via Experience-Driven Lifelong Learning](papers.md#ell-stulife) · core · peer-reviewed
 - 2025-08-08 — [Memp: Exploring Agent Procedural Memory](papers.md#memp) · core · peer-reviewed
 - 2025-05-17 — [LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners](papers.md#lifelongagentbench) · core · preprint
 - 2024-09-11 — [Agent Workflow Memory](papers.md#agent-workflow-memory) · core · peer-reviewed
@@ -479,7 +479,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026-01-06 — [MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory](papers.md#memrl) · core · preprint
 - 2026-01-05 — [Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents](papers.md#agemem) · core · peer-reviewed
 - 2025-09-29 — [ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](papers.md#reasoningbank) · core · peer-reviewed
-- 2025-08-26 — [Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark](papers.md#ell-stulife) · core · peer-reviewed
+- 2025-08-26 — [A Benchmark for Self-Evolving Agents via Experience-Driven Lifelong Learning](papers.md#ell-stulife) · core · peer-reviewed
 - 2025-08-22 — [Memento: Fine-tuning LLM Agents without Fine-tuning LLMs](papers.md#memento) · core · preprint
 - 2025-08-10 — [A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](papers.md#comprehensive-evolving-survey) · core · preprint
 - 2025-08-08 — [Memp: Exploring Agent Procedural Memory](papers.md#memp) · core · peer-reviewed
@@ -614,7 +614,7 @@ A work may appear in several topics; counts here are not additive.
 - 2025-11-03 — [Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](papers.md#self-harmony) · adjacent · peer-reviewed
 - 2025-10-17 — [MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs](papers.md#marshal) · core · peer-reviewed
 - 2025-09-29 — [A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory](papers.md#a-memguard) · core · peer-reviewed
-- 2025-08-26 — [Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark](papers.md#ell-stulife) · core · peer-reviewed
+- 2025-08-26 — [A Benchmark for Self-Evolving Agents via Experience-Driven Lifelong Learning](papers.md#ell-stulife) · core · peer-reviewed
 - 2025-08-08 — [Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](papers.md#temporal-self-rewarding) · adjacent · peer-reviewed
 - 2025-07-25 — [GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](papers.md#gepa) · core · peer-reviewed
 - 2025-06-30 — [SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](papers.md#spiral) · core · peer-reviewed
