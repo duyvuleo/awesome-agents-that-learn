@@ -326,3 +326,29 @@ AlphaGo Zero, Constitutional AI, Generative Agents and Toolformer received detai
 | [Toolformer](papers.md#toolformer) | [arXiv v1](https://arxiv.org/html/2302.04761v1): §§1–8, Appendices A–D, result tables and method/scaling figures | Loss-based filtering, externally supplied APIs, tool restrictions, decoding intervention and non-uniform downstream gains. |
 
 The AlphaGo Zero publisher page had a cookie/access failure and UCL's PDF returned an access error; the author's openly linked PDF supplied the article and Methods with the matching DOI. Four TPUs refer to playing, whereas the optimization pipeline uses 64 GPU workers and 19 CPU parameter servers. Constitutional AI retains human helpfulness labels and prompt authorship despite replacing human harmlessness labels. Generative Agents' earlier code note incorrectly continued to describe the work as a preprint after its status had been verified; the note now agrees with the [official UIST record](https://uist.acm.org/2023/proceedings/) while retaining the original repository-inspection date. Toolformer's one-call restriction and top-ten API-token decoding rule are part of the evaluated system, not evidence of unconstrained multi-tool learning.
+
+## 2026-11-09 — Detailed review of existing entries, batch 4
+
+Mem0, MemoryBank, LongMemEval and LoCoMo now have full-text annotations; A-MEM received a version-comparison follow-up. Counts are **146 full-text and 44 abstract/metadata reviews**. Sixteen broader appraisals are complete and 174 remain pending, including the earlier selected-section reviews. No memory system, benchmark or training procedure was executed.
+
+| Work | Version and material inspected | Qualification added |
+| --- | --- | --- |
+| [Mem0](papers.md#mem0) | [arXiv v1](https://arxiv.org/html/2504.19413v1): §§1–5, Appendices A–C, Tables 1–2, architecture and latency figures | Higher full-context QA accuracy, category-dependent graph gains, query-time versus construction cost, excluded adversarial questions. |
+| [MemoryBank](papers.md#memorybank) | [arXiv v3](https://arxiv.org/html/2305.10250v3): §§1–6, Tables 1–2 and Figures 1–4 | Synthetic bilingual probes compare backbones, not a controlled forgetting-rule intervention; no clinical validation. |
+| [LongMemEval](papers.md#longmemeval) | [arXiv v2](https://arxiv.org/html/2410.10813v2): §§1–6, Appendices A–E, tables, construction examples and performance/error figures | Constructed histories, limited judge meta-evaluation, reader effects and a separate shorter-history commercial study. |
+| [LoCoMo](papers.md#locomo) | [ACL 2024 PDF](https://aclanthology.org/2024.acl-long.747.pdf): §§1–9, Appendices A–D, tables, pipeline/multimodal/editing figures; preprint metadata and project page | Ten edited evaluation conversations versus fifty unedited training conversations; single-run results and publication-specific statistics. |
+
+LoCoMo's first-public date is now resolved from year-only precision to **2024-02-27** using its [arXiv record](https://arxiv.org/abs/2402.17753). The ACL paper's Table 5 reports 1,986 questions and approximately 16.6k tokens per conversation; its preprint/project describes approximately 9k tokens. These are retained as different source descriptions, not silently combined. MemoryBank's AAAI page denied this reading tool access; the new body review concerns arXiv v3 and does not assert identity of the later proceedings experiments.
+
+### A-MEM category-label follow-up
+
+The [v5 PDF](https://arxiv.org/pdf/2502.12110v5) and [v11 PDF](https://arxiv.org/pdf/2502.12110v11) display identical GPT-4o-mini Table 1 F1 values under different question-type labels. [Mem0 v1 Table 1](https://arxiv.org/pdf/2504.19413v1) imports these values under another labeling combination:
+
+| F1 value | A-MEM v5 label | A-MEM v11 label | Imported label in Mem0 |
+| --- | --- | --- | --- |
+| 27.02 | Single hop | Multi hop | Single hop |
+| 45.85 | Multi hop | Temporal | Temporal |
+| 12.14 | Temporal | Open domain | Multi hop |
+| 44.65 | Open domain | Single hop | Open domain |
+
+The first audit batch accurately described v11's displayed table, but this comparison adds a material version ambiguity. The canonical annotation now withholds an unconditional category-level interpretation. The mapping must be resolved against a pinned evaluation artifact before using these imported numbers for cross-paper rankings; this review does not infer which labeling is correct.

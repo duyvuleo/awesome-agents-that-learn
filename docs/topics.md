@@ -130,7 +130,7 @@ A work may appear in several topics; counts here are not additive.
 - 2024-10-14 — [LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory](papers.md#longmemeval) · adjacent · peer-reviewed
 - 2024-10-08 — [AgentSquare: Automatic LLM Agent Search in Modular Design Space](papers.md#agentsquare) · core · peer-reviewed
 - 2024-09-11 — [Agent Workflow Memory](papers.md#agent-workflow-memory) · core · peer-reviewed
-- 2024 — [Evaluating Very Long-Term Conversational Memory of LLM Agents](papers.md#locomo) · adjacent · peer-reviewed
+- 2024-02-27 — [Evaluating Very Long-Term Conversational Memory of LLM Agents](papers.md#locomo) · adjacent · peer-reviewed
 - 2023-10-12 — [MemGPT: Towards LLMs as Operating Systems](papers.md#memgpt) · adjacent · preprint
 - 2023-08-20 — [ExpeL: LLM Agents Are Experiential Learners](papers.md#expel) · core · peer-reviewed
 - 2023-05-17 — [MemoryBank: Enhancing Large Language Models with Long-Term Memory](papers.md#memorybank) · adjacent · peer-reviewed
@@ -625,10 +625,10 @@ A work may appear in several topics; counts here are not additive.
 - 2024-07-24 — [AI models collapse when trained on recursively generated data](papers.md#model-collapse) · adjacent · peer-reviewed
 - 2024-06-06 — [ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search](papers.md#rest-mcts) · adjacent · peer-reviewed
 - 2024-04-01 — [Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](papers.md#accumulating-data-model-collapse) · adjacent · preprint
+- 2024-02-27 — [Evaluating Very Long-Term Conversational Memory of LLM Agents](papers.md#locomo) · adjacent · peer-reviewed
 - 2024-01-23 — [TroVE: Inducing Verifiable and Efficient Toolboxes for Solving Programmatic Tasks](papers.md#trove) · core · peer-reviewed
 - 2024-01-18 — [Self-Rewarding Language Models](papers.md#self-rewarding-lms) · adjacent · peer-reviewed
 - 2024 — [When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs](papers.md#self-correction-survey) · adjacent · peer-reviewed
-- 2024 — [Evaluating Very Long-Term Conversational Memory of LLM Agents](papers.md#locomo) · adjacent · peer-reviewed
 - 2024 — [Large Language Models Cannot Self-Correct Reasoning Yet](papers.md#intrinsic-self-correction) · adjacent · peer-reviewed
 - 2023-03-30 — [Self-Refine: Iterative Refinement with Self-Feedback](papers.md#self-refine) · adjacent · peer-reviewed
 

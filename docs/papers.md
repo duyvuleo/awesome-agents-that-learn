@@ -157,12 +157,12 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-05-29 | **DGM**<br>[Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](https://arxiv.org/abs/2505.22954) | A coding agent rewrites its own implementation, and an archive retains runnable variants as possible parents for later edits. This permits exploration beyond the latest… | Agent code, Tools, Workflows, Prompts / context | peer-reviewed · full-text | [Notes](#darwin-godel-machine) · [Code](https://github.com/jennyzzt/dgm) |
 | 2025-05-17 | **LifelongAgentBench**<br>[LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners](https://arxiv.org/abs/2505.11942) | Constructs interdependent tasks grounded in reusable skills across database, operating-system, and knowledge-graph environments. | Memory, Skills | preprint · abstract | [Notes](#lifelongagentbench) |
 | 2025-05-06 | **Absolute Zero**<br>[Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://arxiv.org/abs/2505.03335) | A single model proposes and solves code-based tasks, with a code executor validating problems and answers. Reinforcement learning updates both roles while the generated… | Model weights | peer-reviewed · full-text | [Notes](#absolute-zero) · [Code](https://github.com/LeapLabTHU/Absolute-Zero-Reasoner) |
-| 2025-04-28 | **Mem0**<br>[Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/abs/2504.19413) | Extracts and consolidates facts from conversations for later retrieval, with a graph variant for relational information. Persistent conversational state provides a… | Memory | preprint · abstract | [Notes](#mem0) |
+| 2025-04-28 | **Mem0**<br>[Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/abs/2504.19413) | Extracts facts from recent exchanges and background summaries, then updates an external memory store through add/update/delete/no-op decisions. The graph variant stores… | Memory | preprint · full-text | [Notes](#mem0) |
 | 2025-04-24 | **RAGEN**<br>[RAGEN: Understanding Self-Evolution in LLM Agents via Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2504.20073) | StarPO optimizes reasoning-action trajectories with reinforcement learning. The study identifies repetitive reasoning collapse and tests StarPO-S interventions including… | Model weights | preprint · full-text | [Notes](#ragen) · [Code](https://github.com/mll-lab-nu/RAGEN) |
 | 2025-04-21 | **SICA**<br>[A Self-Improving Coding Agent](https://arxiv.org/abs/2504.15228) | Equips a coding agent with tools to edit its own implementation and reuses improved versions in later iterations. Learning changes the surrounding agent code rather than… | Agent code, Tools, Workflows | preprint · full-text | [Notes](#sica) · [Code](https://github.com/MaximeRobeyns/self_improving_coding_agent) |
 | 2025-02-17 | **A-MEM**<br>[A-MEM: Agentic Memory for LLM Agents](https://arxiv.org/abs/2502.12110) | Creates atomic notes, retrieves candidate neighbors by embedding similarity, links relevant notes, and revises neighboring contextual attributes. Persistent external… | Memory | peer-reviewed · full-text | [Notes](#a-mem) · [Code](https://github.com/WujiangXu/A-mem-sys) |
 | 2025-01-20 | **Agent-R**<br>[Agent-R: Training Language Model Agents to Reflect via Iterative Self-Training](https://arxiv.org/abs/2501.11425) | Uses Monte Carlo tree search to pair unsuccessful and successful paths. The current actor selects a revision point, and spliced correction trajectories support iterative… | Model weights | preprint · full-text | [Notes](#agent-r) |
-| 2024-10-14 | **LongMemEval**<br>[LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory](https://arxiv.org/abs/2410.10813) | Tests information extraction, cross-session and temporal reasoning, knowledge updates, and abstention from long interaction histories, separating indexing, retrieval… | Memory | peer-reviewed · abstract | [Notes](#longmemeval) · [Code](https://github.com/xiaowu0162/LongMemEval) |
+| 2024-10-14 | **LongMemEval**<br>[LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory](https://arxiv.org/abs/2410.10813) | Constructs 500 curated questions with annotated evidence embedded in scalable user-assistant histories, testing extraction, multi-session reasoning, updates, temporal… | Memory | peer-reviewed · full-text | [Notes](#longmemeval) · [Code](https://github.com/xiaowu0162/LongMemEval) |
 | 2024-10-14 | **AFlow**<br>[AFlow: Automating Agentic Workflow Generation](https://arxiv.org/abs/2410.10762) | Searches over code-represented workflows using a Monte Carlo tree-search variant. An LLM changes prompts and connections between operations, while the tree retains… | Workflows, Prompts / context, Agent code | peer-reviewed · full-text | [Notes](#aflow) · [Code](https://github.com/FoundationAgents/AFlow) |
 | 2024-10-08 | **AgentSquare**<br>[AgentSquare: Automatic LLM Agent Search in Modular Design Space](https://arxiv.org/abs/2410.06153) | Alternates code-level module evolution with recombination of planning, reasoning, tool-use and memory modules. Novel modules receive environment evaluation… | Workflows, Prompts / context, Tools, Memory | peer-reviewed · full-text | [Notes](#agentsquare) · [Code](https://github.com/tsinghua-fib-lab/AgentSquare) |
 | 2024-10-06 | **Gödel Agent**<br>[Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement](https://arxiv.org/abs/2410.04444) | Lets an LLM-based agent inspect and revise its own logic through a self-referential learning framework. The editable artifact is the agent program rather than the… | Agent code, Prompts / context, Workflows | peer-reviewed · abstract | [Notes](#godel-agent) · [Code](https://github.com/Arvid-pku/Godel_Agent) |
@@ -176,11 +176,11 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2024-06-06 | **ReST-MCTS***<br>[ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search](https://arxiv.org/abs/2406.03816) | Combines process-reward-guided tree search with iterative training of the policy and reward models. Search supplies reasoning traces and step-value targets without… | Model weights | peer-reviewed · abstract | [Notes](#rest-mcts) · [Code](https://github.com/THUDM/ReST-MCTS) |
 | 2024-06-03 | **Re-ReST**<br>[Re-ReST: Reflection-Reinforced Self-Training for Language Agents](https://arxiv.org/abs/2406.01495) | Trains a separate reflector to repair unsuccessful model-generated examples. Accepted original and repaired trajectories then fine-tune the agent, so improvement is… | Model weights | peer-reviewed · full-text | [Notes](#re-rest) · [Code](https://github.com/PlusLabNLP/Re-ReST) |
 | 2024-04-01 | **Accumulation vs. collapse**<br>[Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](https://arxiv.org/abs/2404.01413) | Compares replacement of earlier datasets with accumulation of original and synthetic data. It supplies a linear-model analysis and generative-model experiments showing… | Model weights | preprint · full-text | [Notes](#accumulating-data-model-collapse) |
+| 2024-02-27 | **LoCoMo**<br>[Evaluating Very Long-Term Conversational Memory of LLM Agents](https://aclanthology.org/2024.acl-long.747/) | Creates persona- and event-grounded simulated conversations, then uses human editing to repair consistency and image alignment. The benchmark tests QA, event… | Memory | peer-reviewed · full-text | [Notes](#locomo) · [Code](https://github.com/snap-research/LoCoMo) |
 | 2024-01-23 | **TroVE**<br>[TroVE: Inducing Verifiable and Efficient Toolboxes for Solving Programmatic Tasks](https://arxiv.org/abs/2401.12869) | Samples solutions that import existing functions, create new ones, or use only supplied primitives. Execution agreement and simplicity select a solution whose functions… | Tools, Skills | peer-reviewed · full-text | [Notes](#trove) · [Code](https://github.com/zorazrw/trove) |
 | 2024-01-18 | **Self-Rewarding LMs**<br>[Self-Rewarding Language Models](https://arxiv.org/abs/2401.10020) | Uses one language model both to answer instructions and to score responses, updating it through successive rounds of preference optimization. This couples the response… | Model weights | peer-reviewed · abstract | [Notes](#self-rewarding-lms) |
 | 2024-01-02 | **SPIN**<br>[Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](https://arxiv.org/abs/2401.01335) | Starts with a supervised model and iteratively learns to distinguish its own generated responses from reference demonstrations. Successive model versions provide the… | Model weights | peer-reviewed · abstract | [Notes](#spin) · [Code](https://github.com/uclaml/SPIN) |
 | 2024 | **Self-correction survey**<br>[When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs](https://aclanthology.org/2024.tacl-1.78/) | Separates self-correction questions by feedback source and training assumptions, and examines whether experimental designs support the claimed correction ability. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#self-correction-survey) |
-| 2024 | **LoCoMo**<br>[Evaluating Very Long-Term Conversational Memory of LLM Agents](https://aclanthology.org/2024.acl-long.747/) | Builds extended conversations from persona and event structures, with human editing, to test recall, event summarization, and multimodal dialogue. | Memory | peer-reviewed · abstract | [Notes](#locomo) · [Code](https://github.com/snap-research/LoCoMo) |
 | 2024 | **Self-correction limits**<br>[Large Language Models Cannot Self-Correct Reasoning Yet](https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html) | Tests intrinsic correction: asking a model to revise its own reasoning using no external correctness signal. | Analysis / no retained update | peer-reviewed · abstract | [Notes](#intrinsic-self-correction) |
 | 2023-10-12 | **MemGPT**<br>[MemGPT: Towards LLMs as Operating Systems](https://arxiv.org/abs/2310.08560) | Separates active context from archival and recall storage. Function calls page information in and out, edit working memory, and request successive inference steps… | Memory | preprint · full-text | [Notes](#memgpt) |
 | 2023-10-05 | **DSPy**<br>[DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines](https://arxiv.org/abs/2310.03714) | Compiles declarative LM modules by bootstrapping and selecting demonstrations. Composed optimizers can ensemble programs or fine-tune smaller models. Optimized prompts… | Prompts / context, Workflows, Model weights | peer-reviewed · full-text | [Notes](#dspy) · [Code](https://github.com/stanfordnlp/dspy) |
@@ -193,7 +193,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2023-05-26 | **LLMs as Tool Makers**<br>[Large Language Models as Tool Makers](https://arxiv.org/abs/2305.17126) | Separates tool creation from tool use, allowing a stronger model to create reusable programs that a cheaper model can invoke on related requests. A functional cache… | Tools | peer-reviewed · abstract | [Notes](#llms-as-tool-makers) · [Code](https://github.com/ctlllll/LLM-ToolMaker) |
 | 2023-05-25 | **Voyager**<br>[Voyager: An Open-Ended Embodied Agent with Large Language Models](https://arxiv.org/abs/2305.16291) | Builds an expanding library of executable Minecraft skills, retrieved and composed for later tasks. An automatic curriculum proposes objectives, while execution feedback… | Skills, Tools | peer-reviewed · full-text | [Notes](#voyager) · [Code](https://github.com/MineDojo/Voyager) |
 | 2023-05-23 | **CREATOR**<br>[CREATOR: Tool Creation for Disentangling Abstract and Concrete Reasoning of Large Language Models](https://arxiv.org/abs/2305.14318) | Decomposes problem solving into tool design, implementation, execution, and revision so an agent can create tools beyond a fixed API inventory. It also examines reuse of… | Tools | peer-reviewed · abstract | [Notes](#creator) · [Code](https://github.com/qiancheng0/CREATOR) |
-| 2023-05-17 | **MemoryBank**<br>[MemoryBank: Enhancing Large Language Models with Long-Term Memory](https://arxiv.org/abs/2305.10250) | Maintains retrievable interaction memories and user summaries, with time- and importance-sensitive forgetting and reinforcement. The SiliconFriend application combines… | Memory | peer-reviewed · abstract | [Notes](#memorybank) |
+| 2023-05-17 | **MemoryBank**<br>[MemoryBank: Enhancing Large Language Models with Long-Term Memory](https://arxiv.org/abs/2305.10250) | Stores dialogue records, daily/global summaries and user profiles, retrieves them with dense embeddings, and proposes exponential time decay with stronger retention… | Memory | peer-reviewed · full-text | [Notes](#memorybank) |
 | 2023-04-07 | **Generative Agents**<br>[Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) | Stores observations, plans and recursive reflections in a persistent memory stream. Recency, importance and embedding relevance determine retrieval; a frozen language… | Memory | peer-reviewed · full-text | [Notes](#generative-agents) · [Code](https://github.com/joonspk-research/generative_agents) |
 | 2023-03-30 | **Self-Refine**<br>[Self-Refine: Iterative Refinement with Self-Feedback](https://arxiv.org/abs/2303.17651) | Alternates drafting, feedback and revision while retaining the current task history. No weights or cross-task memory are updated; stopping and output selection vary… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#self-refine) |
 | 2023-03-20 | **Reflexion**<br>[Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366) | Converts task feedback into verbal reflections and carries those reflections into later attempts through an episodic memory buffer. The underlying language-model weights… | Memory | peer-reviewed · full-text | [Notes](#reflexion) · [Code](https://github.com/noahshinn/reflexion) |
@@ -3406,19 +3406,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2504.19413)
 
-**Mechanism.** Extracts and consolidates facts from conversations for later retrieval, with a graph variant for relational information. Persistent conversational state provides a useful comparison point for more explicit experience-learning methods.
+**Mechanism.** Extracts facts from recent exchanges and background summaries, then updates an external memory store through add/update/delete/no-op decisions. The graph variant stores entities and relations and can invalidate obsolete edges; neither variant trains model weights during memory management.
 
-**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Ongoing conversations and model-mediated fact extraction and consolidation.
+**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Conversation messages, summaries and LLM decisions about whether candidate facts add, update, contradict or duplicate stored information.
 
-**Evaluation.** The paper compares memory systems, retrieval approaches, and full-context baselines on LoCoMo using answer-quality, latency, and token-cost measures.
+**Evaluation.** LoCoMo conversational QA excluding adversarial questions, with lexical metrics, repeated judge scoring and query-time latency/token measurements. The full-context baseline has higher overall judge accuracy; graph memory helps some categories but trails base Mem0 on single- and multi-hop questions.
 
-**Boundary.** The reported evaluation concerns conversational recall and QA. The title’s production-readiness wording is an author characterization; this review does not establish deployment reliability or procedural self-improvement.
+**Boundary.** Query-time savings do not include the full cost of building and updating memory. Hosted/manual baselines and imported results require version-matched protocols; A-MEM category labels differ across the compared documents. The permissive judge and exclusion of unanswerable questions limit factuality/abstention conclusions. Production readiness is not independently established.
 
 **Code / data.** Code availability not verified in this review.
 
-**Topics:** memory, evaluation. **Reviewed:** abstract · 2026-10-28.
+**Topics:** memory, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2504.19413)
+[Source 1](https://arxiv.org/abs/2504.19413) · [Source 2](https://arxiv.org/html/2504.19413v1) · [Source 3](https://arxiv.org/pdf/2504.19413v1)
 
 **Related software:** [Mem0](systems.md#system-mem0). See each system's relationship note before equating it with the evaluated paper version.
 
@@ -3480,15 +3480,15 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 **What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** New conversation content and LLM-generated contextual descriptions, tags, relationship decisions and neighbor updates.
 
-**Evaluation.** LoCoMo and DialSim conversational QA; six main-table models plus three appendix models, link/evolution ablations, retrieval-size sweeps and storage/retrieval scaling. GPT-4o improves temporal QA but trails the full-history baseline on single-hop and adversarial questions.
+**Evaluation.** LoCoMo and DialSim conversational QA; six main-table models plus three appendix models, link/evolution ablations, retrieval-size sweeps and storage/retrieval scaling. Category-level comparisons require resolving the version-specific table-label differences described below.
 
-**Boundary.** Retrieval k is tuned by model and question category; the checklist explicitly reports no repeated-run significance analysis. Section 4.3 claims twofold multi-hop gains, but Table 1 GPT multi-hop results do not double the strongest baselines. QA and embedding visualizations do not establish growing procedural skills.
+**Boundary.** Retrieval k is tuned by model and question category; the checklist reports no repeated-run significance analysis. Table 1 in v5 and v11 assigns different category names to unchanged score columns, and v11 retains a twofold multi-hop claim inconsistent with its displayed labels. Category-specific gains remain uncertain until the labeling is reconciled.
 
 **Code / data.** [Official artifact](https://github.com/WujiangXu/A-mem-sys) — Official system repository inspected; it distinguishes this reusable memory package from the separate paper-evaluation repository. Neither was executed.
 
 **Topics:** memory. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2502.12110) · [Source 2](https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html) · [Source 3](https://github.com/WujiangXu/A-mem-sys) · [Source 4](https://arxiv.org/html/2502.12110v11) · [Source 5](https://arxiv.org/pdf/2502.12110v11)
+[Source 1](https://arxiv.org/abs/2502.12110) · [Source 2](https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html) · [Source 3](https://github.com/WujiangXu/A-mem-sys) · [Source 4](https://arxiv.org/html/2502.12110v11) · [Source 5](https://arxiv.org/pdf/2502.12110v11) · [Source 6](https://arxiv.org/html/2502.12110v5) · [Source 7](https://arxiv.org/pdf/2502.12110v5)
 
 **Related software:** [A-MEM memory system](systems.md#system-a-mem). See each system's relationship note before equating it with the evaluated paper version.
 
@@ -3522,19 +3522,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2410.10813)
 
-**Mechanism.** Tests information extraction, cross-session and temporal reasoning, knowledge updates, and abstention from long interaction histories, separating indexing, retrieval, and reading.
+**Mechanism.** Constructs 500 curated questions with annotated evidence embedded in scalable user-assistant histories, testing extraction, multi-session reasoning, updates, temporal reasoning and abstention. It separates indexing, retrieval and reading, then varies their designs without training a continually improving policy.
 
 **What changes:** Memory. **Persistence:** not-applicable. **Learning signal:** Not applicable: analysis or evaluation resource.
 
-**Evaluation.** Evaluates memory designs and downstream question answering over controlled histories with scalable length.
+**Evaluation.** Studies roughly 115k-token and 1.5M-token histories, retrieval granularity, fact-expanded keys, temporal filters and reader prompts. A GPT-4o judge is checked against humans on thirty responses per question type from each of two answer models; retrieval and answer scores are reported separately.
 
-**Boundary.** Recall and evidence use are components of learning agents, not direct proof of procedural improvement. History version, reader, retrieval budget, and grader must be matched for comparisons.
+**Boundary.** Histories combine simulated/human-edited evidence with sampled background sessions. The 97-question commercial-system study used shorter histories in August 2024 and omitted several abilities. Reader and query-model choices affect gains; retrieval correctness can require obsolete evidence unnecessary for a correct updated answer. Recall scores do not establish procedural learning.
 
 **Code / data.** [Official artifact](https://github.com/xiaowu0162/LongMemEval) — Official repository linked and inspected; not installed or executed.
 
-**Topics:** evaluation, memory. **Reviewed:** abstract · 2026-10-28.
+**Topics:** evaluation, memory. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2410.10813) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2025/file/d813d324dbf0598bbdc9c8e79740ed01-Paper-Conference.pdf) · [Source 3](https://github.com/xiaowu0162/LongMemEval)
+[Source 1](https://arxiv.org/abs/2410.10813) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2025/file/d813d324dbf0598bbdc9c8e79740ed01-Paper-Conference.pdf) · [Source 3](https://github.com/xiaowu0162/LongMemEval) · [Source 4](https://arxiv.org/html/2410.10813v2) · [Source 5](https://arxiv.org/pdf/2410.10813v2)
 
 <a id="aflow"></a>
 
@@ -3828,6 +3828,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Source 1](https://arxiv.org/abs/2404.01413) · [Source 2](https://arxiv.org/html/2404.01413v2)
 
+<a id="locomo"></a>
+
+## Evaluating Very Long-Term Conversational Memory of LLM Agents
+
+**2024-02-27 · peer-reviewed · ACL 2024 · adjacent · benchmark**
+
+[Primary source](https://aclanthology.org/2024.acl-long.747/)
+
+**Mechanism.** Creates persona- and event-grounded simulated conversations, then uses human editing to repair consistency and image alignment. The benchmark tests QA, event summarization and multimodal dialogue generation; a separate training corpus supports the multimodal model experiments.
+
+**What changes:** Memory. **Persistence:** not-applicable. **Learning signal:** Not applicable: analysis or evaluation resource.
+
+**Evaluation.** The ACL paper reports ten edited conversations and 1,986 QA items, averaging 16,618 tokens per conversation. It compares truncated/long-context models and RAG, then MiniGPT-5 variants trained on fifty additional unedited conversations. Experiments report a single inference run per model.
+
+**Boundary.** Primarily synthetic English conversations and web images do not reproduce real longitudinal user histories or persistent personal imagery. QA mostly substitutes image captions and uses lexical scoring. The preprint/project reports different statistics; pin the publication, data artifact and evaluator rather than combining those descriptions. This tests memory use, not autonomous skill acquisition.
+
+**Code / data.** [Official artifact](https://github.com/snap-research/LoCoMo) — Official repository linked and inspected; not installed or executed.
+
+**Topics:** evaluation, memory. **Reviewed:** full-text · 2026-11-09.
+
+[Source 1](https://aclanthology.org/2024.acl-long.747/) · [Source 2](https://snap-research.github.io/locomo/) · [Source 3](https://github.com/snap-research/LoCoMo) · [Source 4](https://aclanthology.org/2024.acl-long.747.pdf) · [Source 5](https://arxiv.org/abs/2402.17753)
+
 <a id="trove"></a>
 
 ## TroVE: Inducing Verifiable and Efficient Toolboxes for Solving Programmatic Tasks
@@ -3915,28 +3937,6 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** surveys, foundations, evaluation. **Reviewed:** abstract · 2026-10-28.
 
 [Source 1](https://aclanthology.org/2024.tacl-1.78/)
-
-<a id="locomo"></a>
-
-## Evaluating Very Long-Term Conversational Memory of LLM Agents
-
-**2024 · peer-reviewed · ACL 2024 · adjacent · benchmark**
-
-[Primary source](https://aclanthology.org/2024.acl-long.747/)
-
-**Mechanism.** Builds extended conversations from persona and event structures, with human editing, to test recall, event summarization, and multimodal dialogue.
-
-**What changes:** Memory. **Persistence:** not-applicable. **Learning signal:** Not applicable: analysis or evaluation resource.
-
-**Evaluation.** Compares memory approaches on the LoCoMo conversational benchmark.
-
-**Boundary.** Recall from generated and edited conversations differs from learning a reusable procedure or improving an agent. Dataset statistics differ between paper and project versions; pin the artifact before comparing scores.
-
-**Code / data.** [Official artifact](https://github.com/snap-research/LoCoMo) — Official repository linked and inspected; not installed or executed.
-
-**Topics:** evaluation, memory. **Reviewed:** abstract · 2026-10-28.
-
-[Source 1](https://aclanthology.org/2024.acl-long.747/) · [Source 2](https://snap-research.github.io/locomo/) · [Source 3](https://github.com/snap-research/LoCoMo)
 
 <a id="intrinsic-self-correction"></a>
 
@@ -4218,19 +4218,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2305.10250)
 
-**Mechanism.** Maintains retrievable interaction memories and user summaries, with time- and importance-sensitive forgetting and reinforcement. The SiliconFriend application combines this memory mechanism with a separately tuned conversational model.
+**Mechanism.** Stores dialogue records, daily/global summaries and user profiles, retrieves them with dense embeddings, and proposes exponential time decay with stronger retention after recall. SiliconFriend separately LoRA-tunes open models on 38,000 psychological dialogues before integrating memory.
 
-**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Past interactions, elapsed time, and assigned memory importance.
+**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Past conversations, generated event/personality summaries, elapsed time and recall frequency shape stored context and proposed memory retention.
 
-**Evaluation.** The paper combines qualitative user-dialogue analysis with quantitative tests on model-generated long-term conversations.
+**Evaluation.** ArXiv v3 reports 194 manually written questions over ten simulated days for fifteen synthetic users, split equally between English and Chinese. Human ratings compare three SiliconFriend backbones on retrieval, correctness and coherence; real-user examples illustrate recall and personalization.
 
-**Boundary.** Simulated dialogue and personalization outcomes are not clinical validation or evidence of general task-skill improvement. The memory mechanism should be distinguished from separate model tuning.
+**Boundary.** The quantitative study does not isolate the forgetting rule or compare memory versus no-memory under a matched backbone. Synthetic probes and selected empathy examples are not clinical validation or general skill learning. The reviewed body is arXiv v3; current AAAI body access was restricted, so publication-version equivalence is not assumed.
 
 **Code / data.** Code availability not verified in this review.
 
-**Topics:** foundations, memory. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, memory. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2305.10250) · [Source 2](https://ojs.aaai.org/index.php/AAAI/article/view/29946)
+[Source 1](https://arxiv.org/abs/2305.10250) · [Source 2](https://ojs.aaai.org/index.php/AAAI/article/view/29946) · [Source 3](https://arxiv.org/html/2305.10250v3) · [Source 4](https://arxiv.org/pdf/2305.10250v3)
 
 <a id="generative-agents"></a>
 

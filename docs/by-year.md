@@ -170,11 +170,11 @@
 - 2024-06-06 — [ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search](papers.md#rest-mcts)
 - 2024-06-03 — [Re-ReST: Reflection-Reinforced Self-Training for Language Agents](papers.md#re-rest)
 - 2024-04-01 — [Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](papers.md#accumulating-data-model-collapse)
+- 2024-02-27 — [Evaluating Very Long-Term Conversational Memory of LLM Agents](papers.md#locomo)
 - 2024-01-23 — [TroVE: Inducing Verifiable and Efficient Toolboxes for Solving Programmatic Tasks](papers.md#trove)
 - 2024-01-18 — [Self-Rewarding Language Models](papers.md#self-rewarding-lms)
 - 2024-01-02 — [Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](papers.md#spin)
 - 2024 — [When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs](papers.md#self-correction-survey)
-- 2024 — [Evaluating Very Long-Term Conversational Memory of LLM Agents](papers.md#locomo)
 - 2024 — [Large Language Models Cannot Self-Correct Reasoning Yet](papers.md#intrinsic-self-correction)
 
 ## 2023

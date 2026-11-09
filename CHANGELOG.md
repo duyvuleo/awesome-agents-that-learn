@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Detailed memory and benchmark reviews
+
+- Upgraded Mem0, MemoryBank, LongMemEval and LoCoMo from abstract-level records using methods, evaluation protocols, appendices and visual evidence.
+- Documented A-MEM's version-dependent category labels and withheld an unconditional category-specific comparison; clarified benchmark versions and cost boundaries.
+- Resolved LoCoMo's first-public date from its arXiv record. Counts remain 190 works: 146 full-text and 44 abstract/metadata reviews. Sixteen broader appraisals are complete.
+
 ## 2026-11-09 — Detailed source review, third batch
 
 - Upgraded AlphaGo Zero, Constitutional AI, Generative Agents and Toolformer from abstract-only records, with version-specific methods, evaluations and limitations.
