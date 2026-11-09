@@ -28,8 +28,8 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-31 | **Skill++**<br>[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](https://arxiv.org/abs/2611.00544) | Refines an incoming skill’s name and description using its body and similar earlier skills, adding differentiating capabilities, scope exclusions and name qualifiers.… | Skills, Prompts / context | preprint · full-text | [Notes](#skill-plus-plus) |
 | 2026-10-30 | **LIFE**<br>[Learning to Live: A Step Toward Lifelong Embodied Intelligence](https://arxiv.org/abs/2611.00180) | Combines an offline-trained causal perception gate, a revisitable store of visual observations and ReSight’s Explore–Distill–Mount procedure for reusable tools and… | Memory, Skills, Tools, Model weights | preprint · full-text | [Notes](#life-embodied) · [Code](https://github.com/AgibotTech/LIFE) |
 | 2026-10-30 | **Exo**<br>[Exo: An Architecture for Self-Improving Systems at Runtime](https://arxiv.org/abs/2611.00463) | Makes the running harness executor editable, including tools, context construction and the procedures for further revision. A separate mechanism is intended to preserve… | Agent code, Tools, Workflows | preprint · full-text | [Notes](#exo-runtime) · [Code](https://github.com/exoharness/exo/tree/c5c1963a3445417e64938c139da88edd9154075d) |
-| 2026-10-29 | **Curriculum or easy start?**<br>[Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds](https://arxiv.org/abs/2610.40364) | Places fourteen curriculum and environment-design methods around a common PPO learner, including easy-start randomization controls. A shared terrain space separates… | Model weights | preprint · full-text | [Notes](#quadruped-curriculum-benchmark) · [Code](https://github.com/Solvro/ml-wojtek-ued) |
-| 2026-10-28 | **MUSE scientific memory**<br>[MUSE: Multi-Level Memory with Selective Runtime Injection for Scientific Coding Agents](https://arxiv.org/abs/2610.38332) | Builds global, approach-level, and implementation-level memories from source attempts. After offline consolidation, the banks are frozen. New tasks receive global and… | Memory, Prompts / context | preprint · full-text | [Notes](#muse-scientific-memory) · [Code](https://github.com/hr-jin/MUSE) |
+| 2026-10-29 | **Curriculum or easy start?**<br>[Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds](https://arxiv.org/abs/2610.40364) | Compares fourteen terrain-selection curricula around a shared PPO training design. Methods change randomization difficulty, replay buffers, mutated levels or a learned… | Model weights | preprint · full-text | [Notes](#quadruped-curriculum-benchmark) · [Code](https://github.com/Solvro/ml-wojtek-ued) |
+| 2026-10-28 | **MUSE scientific memory**<br>[MUSE: Multi-Level Memory with Selective Runtime Injection for Scientific Coding Agents](https://arxiv.org/abs/2610.38332) | Extracts approach and implementation lessons, including conditional explanations of failures, then consolidates global guidance offline. Frozen global and Top5 approach… | Memory, Prompts / context | preprint · full-text | [Notes](#muse-scientific-memory) · [Code](https://github.com/hr-jin/MUSE) |
 | 2026-10-27 | **Policy–harness geometry**<br>[Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces](https://arxiv.org/abs/2610.37255) | Decomposes regularized return into an interface-specific optimum and policy mismatch under a finite semantic-control model. It tests how presentation or execution… | Analysis / no retained update | preprint · full-text | [Notes](#policy-harness-geometry) · [Code](https://github.com/2020-qqtcg/HRP) |
 | 2026-10-27 | **MLE-World**<br>[MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model](https://arxiv.org/abs/2610.37175) | Fine-tunes a world model to predict execution feedback from code and task context. Its predictions guide candidate search, while confidence gates real runs and final… | Model weights | preprint · full-text | [Notes](#mle-world) · [Code](https://github.com/ko120/MLE_World) |
 | 2026-10-27 | **DiscernMem**<br>[Remembering Is Not Enough: Refining Memories and Learning When to Use Them in Multi-Agent Systems](https://arxiv.org/abs/2610.36652) | Repairs role-owned behavioral memories and separately learns conditions for using or avoiding them. A task is scored before its experience updates memory; model weights… | Memory | preprint · full-text | [Notes](#discernmem) · [Code](https://github.com/ECNU-ICALK/DiscernMem) |
@@ -546,19 +546,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.40364)
 
-**Mechanism.** Places fourteen curriculum and environment-design methods around a common PPO learner, including easy-start randomization controls. A shared terrain space separates adaptive level selection from simply exposing the learner to easier levels.
+**Mechanism.** Compares fourteen terrain-selection curricula around a shared PPO training design. Methods change randomization difficulty, replay buffers, mutated levels or a learned generator using success, value-loss, learning-progress or regret signals. Five robot-specific policies learn persistent weights; the curriculum algorithms themselves remain fixed.
 
 **What changes:** Model weights. **Persistence:** not-applicable. **Learning signal:** Student rewards and curriculum-specific regret, learning-progress, replay, or terrain-difficulty rules.
 
-**Evaluation.** Runs five simulated quadrupeds with five training seeds per method, evaluating random terrain, unseen structured terrain, hard-level performance, repeatability, and costs.
+**Evaluation.** Full v1 reports 350 training runs: fourteen methods, five simulated quadrupeds and five seeds. Final policies face random and held-out structured terrain, cross-fitted tail evaluation and feature envelopes. Easy/mixed randomization is competitive on several random-level sets, while held-out leaders differ on three robots.
 
-**Boundary.** Comparisons match student environment steps, not total simulation compute: PAIRED adds an antagonist. One student architecture and robot-specific budgets are used; no physical transfer is tested. No curriculum leads every setting, and easy starts do not explain every held-out-terrain result.
+**Boundary.** One PPO design and finite robot-specific budgets do not establish universal curriculum rankings or physical-robot transfer. Nominal environment-step matching excludes PAIRED antagonist work and includes non-training replay-scoring steps. SFL and robotics methods are adapted variants. Uncorrected five-seed tests define top groups by failure to reject a gap, not equivalence; high variance can enlarge those groups. Terrain ranges and success constraints are not equally difficult across robots.
 
-**Code / data.** [Official artifact](https://github.com/Solvro/ml-wojtek-ued) — Paper-linked repository inspected; simulator, robot models, and training code were not installed or run.
+**Code / data.** [Official artifact](https://github.com/Solvro/ml-wojtek-ued) — Complete 22-page arXiv v1, Appendices A–F, ten figures/twelve tables, metrics and terrain equations read on 2026-11-09. Official README, MIT license and dependency manifest inspected at 56036e5bc22ab6c961701925dab8a83bb6367869. Documented reproduction requires external/generated assets and GPU training; ONNX export support is not physical-robot validation. No installation, simulation or training executed.
 
-**Topics:** self-play, model-training, evaluation, applications. **Reviewed:** full-text · 2026-11-02.
+**Topics:** self-play, model-training, evaluation, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.40364) · [Source 2](https://arxiv.org/html/2610.40364v1) · [Source 3](https://github.com/Solvro/ml-wojtek-ued)
+[Source 1](https://arxiv.org/abs/2610.40364) · [Source 2](https://arxiv.org/html/2610.40364v1) · [Source 3](https://github.com/Solvro/ml-wojtek-ued) · [Source 4](https://arxiv.org/pdf/2610.40364v1)
 
 <a id="muse-scientific-memory"></a>
 
@@ -568,19 +568,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.38332)
 
-**Mechanism.** Builds global, approach-level, and implementation-level memories from source attempts. After offline consolidation, the banks are frozen. New tasks receive global and problem-matched guidance; an LLM gate can inject a relevant implementation lesson and check suggestion after tool interactions. Agent weights and tools stay fixed.
+**Mechanism.** Extracts approach and implementation lessons, including conditional explanations of failures, then consolidates global guidance offline. Frozen global and Top5 approach memories initialize new tasks. Four runtime retrieval routes produce at most four source records; a fixed LLM gate injects one with generated review advice or abstains. Model weights, tools and the tested bank remain fixed.
 
 **What changes:** Memory, Prompts / context. **Persistence:** across-tasks. **Learning signal:** Historical task requirements, trajectories, submissions, and success/failure feedback support lesson extraction and review.
 
-**Evaluation.** Uses shared source trajectories and disjoint test problems across PDEAgent-Bench, KernelBenchX, KernelGenBench-MS, and SWE-bench Science, with gate/level ablations and transfer between kernel benchmarks.
+**Evaluation.** Full v1 uses shared source trajectories and problem-disjoint test splits across PDEAgent-Bench, KernelBenchX, KernelGenBench-MS and SWE-bench Science. All six reported metrics favor MUSE; cumulative level ablations and a gate/advice ablation support the bundle. Frozen kernel memories also transfer in one benchmark direction.
 
-**Boundary.** The study uses one solving backbone and agent setup. Gate ablation changes both selection and generated advice. Memory stays frozen during testing, so results do not demonstrate continual online memory improvement. Kernel acceleration counts all test tasks that are both correct and at least 1.01 times faster, and transfer remains within related kernel tasks.
+**Boundary.** One solving backbone/agent setup, without reported repeated-run uncertainty or per-method total costs, limits robustness and efficiency claims. The gate control changes selection, advice and extra model computation together. Random problem splits and related-kernel transfer do not establish broader domain transfer. Banks remain frozen during testing; model-written corrections and prompt-level evidence checks are not independently verified repairs.
 
-**Code / data.** [Official artifact](https://github.com/hr-jin/MUSE) — Author README documents memory components and agent callbacks; benchmark environments and verifiers are separate. Not installed or executed.
+**Code / data.** [Official artifact](https://github.com/hr-jin/MUSE) — Complete 17-page arXiv v1, Appendices A–B, eight figures/six tables, retrieval equations and all prompt templates read on 2026-11-09. Official README and root inventory inspected at 524ddcd70fa5412e24601fa69d367fab2838170c. Release provides memory components/callbacks; historical trajectories, scientific agent, benchmarks and verifiers are separate. No root LICENSE file was present in the inspected revision; reuse licensing was not established. Nothing installed or executed.
 
-**Topics:** memory, workflows, applications, evaluation. **Reviewed:** full-text · 2026-11-05.
+**Topics:** memory, workflows, applications, evaluation. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.38332) · [Source 2](https://arxiv.org/html/2610.38332v1) · [Source 3](https://github.com/hr-jin/MUSE)
+[Source 1](https://arxiv.org/abs/2610.38332) · [Source 2](https://arxiv.org/html/2610.38332v1) · [Source 3](https://github.com/hr-jin/MUSE) · [Source 4](https://arxiv.org/pdf/2610.38332v1)
 
 <a id="policy-harness-geometry"></a>
 

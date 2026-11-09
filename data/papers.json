@@ -3930,10 +3930,11 @@
     "sources": [
       "https://arxiv.org/abs/2610.38332",
       "https://arxiv.org/html/2610.38332v1",
-      "https://github.com/hr-jin/MUSE"
+      "https://github.com/hr-jin/MUSE",
+      "https://arxiv.org/pdf/2610.38332v1"
     ],
     "code_url": "https://github.com/hr-jin/MUSE",
-    "code_note": "Author README documents memory components and agent callbacks; benchmark environments and verifiers are separate. Not installed or executed.",
+    "code_note": "Complete 17-page arXiv v1, Appendices A–B, eight figures/six tables, retrieval equations and all prompt templates read on 2026-11-09. Official README and root inventory inspected at 524ddcd70fa5412e24601fa69d367fab2838170c. Release provides memory components/callbacks; historical trajectories, scientific agent, benchmarks and verifiers are separate. No root LICENSE file was present in the inspected revision; reuse licensing was not established. Nothing installed or executed.",
     "topics": [
       "memory",
       "workflows",
@@ -3947,11 +3948,11 @@
     ],
     "persistence": "across-tasks",
     "learning_signal": "Historical task requirements, trajectories, submissions, and success/failure feedback support lesson extraction and review.",
-    "mechanism": "Builds global, approach-level, and implementation-level memories from source attempts. After offline consolidation, the banks are frozen. New tasks receive global and problem-matched guidance; an LLM gate can inject a relevant implementation lesson and check suggestion after tool interactions. Agent weights and tools stay fixed.",
-    "evaluation": "Uses shared source trajectories and disjoint test problems across PDEAgent-Bench, KernelBenchX, KernelGenBench-MS, and SWE-bench Science, with gate/level ablations and transfer between kernel benchmarks.",
-    "limitations": "The study uses one solving backbone and agent setup. Gate ablation changes both selection and generated advice. Memory stays frozen during testing, so results do not demonstrate continual online memory improvement. Kernel acceleration counts all test tasks that are both correct and at least 1.01 times faster, and transfer remains within related kernel tasks.",
+    "mechanism": "Extracts approach and implementation lessons, including conditional explanations of failures, then consolidates global guidance offline. Frozen global and Top5 approach memories initialize new tasks. Four runtime retrieval routes produce at most four source records; a fixed LLM gate injects one with generated review advice or abstains. Model weights, tools and the tested bank remain fixed.",
+    "evaluation": "Full v1 uses shared source trajectories and problem-disjoint test splits across PDEAgent-Bench, KernelBenchX, KernelGenBench-MS and SWE-bench Science. All six reported metrics favor MUSE; cumulative level ablations and a gate/advice ablation support the bundle. Frozen kernel memories also transfer in one benchmark direction.",
+    "limitations": "One solving backbone/agent setup, without reported repeated-run uncertainty or per-method total costs, limits robustness and efficiency claims. The gate control changes selection, advice and extra model computation together. Random problem splits and related-kernel transfer do not establish broader domain transfer. Banks remain frozen during testing; model-written corrections and prompt-level evidence checks are not independently verified repairs.",
     "review_depth": "full-text",
-    "checked": "2026-11-05",
+    "checked": "2026-11-09",
     "short_name": "MUSE scientific memory"
   },
   {
@@ -4456,10 +4457,11 @@
     "sources": [
       "https://arxiv.org/abs/2610.40364",
       "https://arxiv.org/html/2610.40364v1",
-      "https://github.com/Solvro/ml-wojtek-ued"
+      "https://github.com/Solvro/ml-wojtek-ued",
+      "https://arxiv.org/pdf/2610.40364v1"
     ],
     "code_url": "https://github.com/Solvro/ml-wojtek-ued",
-    "code_note": "Paper-linked repository inspected; simulator, robot models, and training code were not installed or run.",
+    "code_note": "Complete 22-page arXiv v1, Appendices A–F, ten figures/twelve tables, metrics and terrain equations read on 2026-11-09. Official README, MIT license and dependency manifest inspected at 56036e5bc22ab6c961701925dab8a83bb6367869. Documented reproduction requires external/generated assets and GPU training; ONNX export support is not physical-robot validation. No installation, simulation or training executed.",
     "topics": [
       "self-play",
       "model-training",
@@ -4472,11 +4474,11 @@
     ],
     "persistence": "not-applicable",
     "learning_signal": "Student rewards and curriculum-specific regret, learning-progress, replay, or terrain-difficulty rules.",
-    "mechanism": "Places fourteen curriculum and environment-design methods around a common PPO learner, including easy-start randomization controls. A shared terrain space separates adaptive level selection from simply exposing the learner to easier levels.",
-    "evaluation": "Runs five simulated quadrupeds with five training seeds per method, evaluating random terrain, unseen structured terrain, hard-level performance, repeatability, and costs.",
-    "limitations": "Comparisons match student environment steps, not total simulation compute: PAIRED adds an antagonist. One student architecture and robot-specific budgets are used; no physical transfer is tested. No curriculum leads every setting, and easy starts do not explain every held-out-terrain result.",
+    "mechanism": "Compares fourteen terrain-selection curricula around a shared PPO training design. Methods change randomization difficulty, replay buffers, mutated levels or a learned generator using success, value-loss, learning-progress or regret signals. Five robot-specific policies learn persistent weights; the curriculum algorithms themselves remain fixed.",
+    "evaluation": "Full v1 reports 350 training runs: fourteen methods, five simulated quadrupeds and five seeds. Final policies face random and held-out structured terrain, cross-fitted tail evaluation and feature envelopes. Easy/mixed randomization is competitive on several random-level sets, while held-out leaders differ on three robots.",
+    "limitations": "One PPO design and finite robot-specific budgets do not establish universal curriculum rankings or physical-robot transfer. Nominal environment-step matching excludes PAIRED antagonist work and includes non-training replay-scoring steps. SFL and robotics methods are adapted variants. Uncorrected five-seed tests define top groups by failure to reject a gap, not equivalence; high variance can enlarge those groups. Terrain ranges and success constraints are not equally difficult across robots.",
     "review_depth": "full-text",
-    "checked": "2026-11-02",
+    "checked": "2026-11-09",
     "short_name": "Curriculum or easy start?"
   },
   {

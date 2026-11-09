@@ -261,3 +261,5 @@ The [forty-first depth-audit batch](review-log.md#2026-11-09--detailed-review-of
 The [forty-second depth-audit batch](review-log.md#2026-11-09--detailed-review-of-existing-entries-batch-42) completes Exo v1, including its preservation proof, negative result, all visual measurements and pinned/current artifact distinction. Broader appraisal is 121/190; no new discovery coverage or production validation is claimed.
 
 The [forty-third depth-audit batch](review-log.md#2026-11-09--detailed-review-of-existing-entries-batch-43) completes LIFE v2 and ReSight v1, including all appendices, visual evidence and shared-experiment provenance. LIFE’s official component release is now accessible. Broader appraisal is 123/190; no new discovery-window coverage or execution is claimed.
+
+The [forty-fourth depth-audit batch](review-log.md#2026-11-09--detailed-review-of-existing-entries-batch-44) completes the quadruped curriculum benchmark and MUSE scientific memory, including all appendices, statistical definitions, prompts and visual evidence. Broader appraisal is 125/190; no new discovery coverage or replication is claimed.

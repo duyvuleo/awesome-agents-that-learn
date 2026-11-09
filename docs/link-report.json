@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-09T11:27:16.964885+00:00",
+  "checked_at_utc": "2026-11-09T11:33:25.244856+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -3454,6 +3454,18 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2610.38332v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2610.38332v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2610.40364v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2610.40364v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2611.00180v2",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2611.00180v2",
@@ -5217,21 +5229,21 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=9e249cc7-d5d3-4a81-84da-809066282644",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=9c963ab3-17c0-44ee-ac58-a855494b629c",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=3c3e5851-8e8d-48cf-a769-7a520c51dfa6",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=b1555557-25cb-46a0-a9f1-96141fbdb18e",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=1aa036f2-1995-4f2c-afad-6cd6daf1a6d3",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=f36995c3-97ee-4e88-ab93-2cc5610de889",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -5245,21 +5257,21 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=57f5a14b-c066-4063-93b9-97ca27ff7efe",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=074b0ccd-19f4-4d03-b6a7-987abcb2d5d5",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=14d9e971-6309-4422-acc5-ff959651273b",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=9b8f22fc-ac12-4446-a629-331c88cdf8b9",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=b4e278e6-f10f-4900-8d65-6fdd8f9ad8f1",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=162f5fa0-8aff-49c7-b642-0d3f44f7faaf",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },

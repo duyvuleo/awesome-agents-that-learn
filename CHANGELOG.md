@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Expanded curriculum and scientific-memory reviews
+
+- Completed the quadruped benchmark and MUSE papers, appendices, visual results and official artifact documentation.
+- Qualified curriculum statistics/compute matching and MUSE’s frozen-bank, gate-ablation and artifact limits.
+- Broader audit: 125 of 190 works complete, 65 pending.
+
 ## 2026-11-09 — Expanded LIFE and ReSight review
 
 - Read both complete papers and appendices; separated held-out transfer from construction-query results and shared experiments.
