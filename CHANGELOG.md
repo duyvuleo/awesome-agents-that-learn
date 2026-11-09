@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-09 — Expanded DGM evidence review
+
+- Appraised DGM’s revised paper and full substantive appendices, adding diagnostic, evaluation, cost and objective-hacking qualifications alongside transfer and replication evidence.
+- Broader audit: 87 of 190 works complete, 103 pending.
+
 ## 2026-11-09 — Expanded code and workflow evolution reviews
 
 - Appraised SICA and AFlow through complete substantive appendices, preserving negative findings and evaluation, cost, theory and artifact boundaries.

@@ -1379,10 +1379,11 @@
       "https://arxiv.org/abs/2505.22954",
       "https://arxiv.org/html/2505.22954v1",
       "https://github.com/jennyzzt/dgm",
-      "https://proceedings.iclr.cc/paper_files/paper/2026/hash/aa5f5e6eb6f613ec412f1d948dfa21a5-Abstract-Conference.html"
+      "https://proceedings.iclr.cc/paper_files/paper/2026/hash/aa5f5e6eb6f613ec412f1d948dfa21a5-Abstract-Conference.html",
+      "https://arxiv.org/pdf/2505.22954v3"
     ],
     "code_url": "https://github.com/jennyzzt/dgm",
-    "code_note": "Official repository landing page inspected; no installation or execution performed.",
+    "code_note": "Official README inspected on 2026-11-09; it documents the outer loop, benchmark setup and experiment-log release. The paper’s full code-diff appendix was read, but no research code, model calls, containers or benchmarks were executed; current code was not matched to a paper-run commit.",
     "topics": [
       "architecture",
       "recursive-improvement",
@@ -1396,12 +1397,12 @@
       "prompts"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Coding-benchmark outcomes and evaluation logs used to propose self-edits.",
-    "mechanism": "A coding agent rewrites its own implementation, and an archive retains runnable variants as possible parents for later edits. This permits exploration beyond the latest or immediately best-performing agent.",
-    "evaluation": "The paper evaluates SWE-bench Verified and Polyglot subsets, ablates self-improvement and archive exploration, and studies transfer across foundation models.",
-    "limitations": "Foundation models, archive management, and parent selection remain fixed in the inspected study. Staged search and evaluation use benchmark subsets, so the reported curves should not be interpreted as a fully separate hidden-task deployment evaluation.",
+    "learning_signal": "Coding-benchmark outcomes and logs inform a separate fixed o1 diagnostic model, which proposes changes for the selected coding agent to implement. The SWE-bench diagnosis prompt includes private-test information from prior evaluations.",
+    "mechanism": "Selected coding agents modify their own implementation, and an archive retains functional variants, including weaker candidates that may support later improvements. Agent tools and workflows evolve; foundation models, diagnostic prompting, archive management and parent selection remain fixed.",
+    "evaluation": "ArXiv v3 reports staged SWE-bench and Polyglot search evaluations, full-Polyglot and cross-benchmark/model transfer tests, fixed-modifier/latest-agent/greedy baselines and three Polyglot runs. A separate three-task study examines tool-use hallucination and objective hacking.",
+    "limitations": "The 50% SWE-bench result is on a 200-task subset used during search. Staged selection, private-test diagnostic feedback and higher compute than baselines qualify the main curves; cross-benchmark tests provide stronger transfer evidence. A perfect hallucination score was obtained by bypassing logging-based detection, not by solving hallucination.",
     "review_depth": "full-text",
-    "checked": "2026-10-28",
+    "checked": "2026-11-09",
     "short_name": "DGM"
   },
   {
