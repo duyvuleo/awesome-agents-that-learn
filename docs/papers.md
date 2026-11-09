@@ -52,9 +52,9 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-23 | **FlexA-Mem**<br>[FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents](https://arxiv.org/abs/2610.33274) | Preserves raw history alongside LLM-written records and links, then renders a compact timeline plus retrieved detail under a token budget. A fixed fit-or-degrade rule… | Memory | preprint · full-text | [Notes](#flexa-mem) · [Code](https://github.com/WujiangXu/Flex-Amem) |
 | 2026-10-22 | **Value of memory**<br>[The Value of Memory in Language Agents](https://arxiv.org/abs/2610.31303) | Defines retained decision value separately from a fixed reader’s realized benefit, with explicit costs for recovery and revision. Conditional simulation bounds and… | Analysis / no retained update | preprint · full-text | [Notes](#value-of-memory) |
 | 2026-10-22 | **METTA**<br>[METTA: Memory-Enhanced Test-Time Adaptation for Meta-Reinforcement Learning](https://arxiv.org/abs/2610.31656) | Meta-trains a policy, neural-memory initialization and update machinery with PPO. Within each episode, causal self-supervised gradient updates change temporary fast… | Memory, Model weights | preprint · full-text | [Notes](#metta) |
-| 2026-10-21 | **Code-edit readout**<br>[Recursive Self-Improvement on a Budget: Scoring Code Edits Before They Run](https://arxiv.org/abs/2610.29121) | Fits a linear predictor of candidate-edit utility from parent scores and projected diff embeddings, then freezes it. The predictor chooses which scaffold edit to… | Agent code, Prompts / context | preprint · full-text | [Notes](#rsi-budget-code-scoring) |
+| 2026-10-21 | **Code-edit readout**<br>[Recursive Self-Improvement on a Budget: Scoring Code Edits Before They Run](https://arxiv.org/abs/2610.29121) | Fits a per-run linear predictor from a parent’s steering-set score and eight random projections of a proposed scaffold diff embedding. After calibration, the predictor… | Agent code, Prompts / context | preprint · full-text | [Notes](#rsi-budget-code-scoring) |
 | 2026-10-21 | **MemoryTax**<br>[MemoryTax: The Bitter Lesson of Agent Memory](https://arxiv.org/abs/2610.29823) | Compares raw-history context and BM25, extracted-fact and graph stores, and coding agents that search conversation files. Writer–reader swaps hold each store and its… | Analysis / no retained update | preprint · full-text | [Notes](#memorytax) · [Code](https://github.com/zedong-peng/memorytax) |
-| 2026-10-20 | **RSI evidence audit**<br>[Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](https://arxiv.org/abs/2610.27610) | Codes whether self-improvement studies evaluate final artifacts, repeat the entire learning loop, or compare earlier and later improvers from identical starting… | Analysis / no retained update | preprint · full-text | [Notes](#rsi-evaluation-audit) |
+| 2026-10-20 | **RSI evidence audit**<br>[Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](https://arxiv.org/abs/2610.27610) | Measures reported evaluation designs against distinct claims about final products, accumulation, repeatability and improvement of the improver. Its codebook separates… | Analysis / no retained update | preprint · full-text | [Notes](#rsi-evaluation-audit) |
 | 2026-10-19 | **Continual learning limits**<br>[Are Self-Evolving Agents Continual Learners?](https://arxiv.org/abs/2610.25858) | Evaluates frozen-model agents that update retrieved experience, a shared prompt, or harness files on drifting streams. It separates gains on current tasks from… | Memory, Prompts / context, Agent code | preprint · full-text | [Notes](#self-evolving-continual-learners) |
 | 2026-10-19 | **REM**<br>[REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents](https://arxiv.org/abs/2610.27377) | Consolidates past coding traces into phased documents, injects a retrieved document at task start, and exposes a detailed implementation record only when the agent… | Memory, Prompts / context | preprint · full-text | [Notes](#rem-experience-memory) |
 | 2026-10-15 | **MemComposer**<br>[MemComposer: Learning to Assemble Memories for LLM Agents via Reinforcement Learning](https://arxiv.org/abs/2610.21091) | Trains a memory-composition policy to choose the number, identity, and ordering of retrieved experiences. GRPO-based Experience Policy Optimization updates the composer… | Model weights, Prompts / context | preprint · full-text | [Notes](#memcomposer) · [Code](https://github.com/Makr-Xie/MemComposer) |
@@ -1074,19 +1074,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.29121)
 
-**Mechanism.** Fits a linear predictor of candidate-edit utility from parent scores and projected diff embeddings, then freezes it. The predictor chooses which scaffold edit to evaluate; steering scores maintain a small archive and select the final agent.
+**Mechanism.** Fits a per-run linear predictor from a parent’s steering-set score and eight random projections of a proposed scaffold diff embedding. After calibration, the predictor stays frozen while selecting one of eight edits per search step. A four-node archive and final-agent selection use steering scores; the returned agent is evaluated on separate held-out tasks.
 
 **What changes:** Agent code, Prompts / context. **Persistence:** across-tasks. **Learning signal:** Calibration-set solve rates and evaluated parent performance on a separate steering split.
 
-**Evaluation.** Compares the readout, parent-rate ablation, and Huxley–Gödel selection over twelve runs on HumanEval+ and Polyglot with two model backbones and disjoint held-out scoring.
+**Evaluation.** Full v1 reports twelve runs for each of two generators and two coding benchmarks, with calibration-best, parent-only and Huxley–Gödel selection controls at equal checker counts. GPT-4o HumanEval+ reaches 87.0% versus 84.2% for parent-only selection; their paired interval excludes zero, while the interval against Huxley–Gödel selection includes zero. First-step selection and a Beta-distribution proof are also reported.
 
-**Boundary.** The predictor is calibrated separately per run and stays fixed through 24 retained-search steps. Some paired gain intervals include zero. Curator interpretation: matching checker evaluations does not establish equal total proposal, token, or wall-clock cost; this does not demonstrate an evolving improver.
+**Boundary.** The calibration labels repeatedly use sixteen tasks, and the predictor is never updated during its twenty-four search steps. Equal checker counts do not match proposal, embedding, token or wall-clock costs. Several comparisons are uncertain; twelve runs do not resample the fixed held-out task set. The zero-count Beta theorem does not prove readout quality or invalidate selection of already-evaluated parents. No improved improver or indefinite recursion is demonstrated.
 
-**Code / data.** An official implementation was not independently verified in this review; this does not establish that none exists.
+**Code / data.** Complete nine-page arXiv v1, Appendices A–C, three figures/two tables, search algorithm, full Beta-law proof, budget/aggregation rules and scaffold instruction read on 2026-11-09. No official implementation, split identifiers or per-run artifact was independently verified. Algorithm 1 updates ancestor clade counts; abbreviated own-node-count descriptions leave implementation detail to verify. No code or benchmark executed.
 
-**Topics:** architecture, recursive-improvement, evaluation, applications. **Reviewed:** full-text · 2026-10-30.
+**Topics:** architecture, recursive-improvement, evaluation, applications. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.29121) · [Source 2](https://arxiv.org/html/2610.29121v1)
+[Source 1](https://arxiv.org/abs/2610.29121) · [Source 2](https://arxiv.org/html/2610.29121v1) · [Source 3](https://arxiv.org/pdf/2610.29121v1)
 
 <a id="memorytax"></a>
 
@@ -1118,19 +1118,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.27610)
 
-**Mechanism.** Codes whether self-improvement studies evaluate final artifacts, repeat the entire learning loop, or compare earlier and later improvers from identical starting artifacts at matched budgets.
+**Mechanism.** Measures reported evaluation designs against distinct claims about final products, accumulation, repeatability and improvement of the improver. Its codebook separates selection-independent tasks, grader type, loop reruns and matched same-start comparisons; three propositions explain selection bias, shared grader errors and confounding between solver state and improver.
 
 **What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable: a study of reported evaluation designs.
 
-**Evaluation.** The authors analyze 114 eligible studies from an arXiv phrase-based search frozen on 17 October 2026, including 90 RSI-labeled studies. Only four of 26 improver claimants report the specified same-start comparison; separate human coding checks selected evidence.
+**Evaluation.** Full v1 codes 114 eligible studies in an arXiv phrase-based frame frozen on 17 October 2026, including 90 strong-label RSI studies and a separate twenty-work anchor set. It reports a random human-adjudicated sample, blind coding of 43 improver-comparison cases and full major-code tables. Four of 26 improver claimants report matched same-start comparisons; this counts designs, not successful demonstrations.
 
-**Boundary.** This measures reporting within a restricted literature frame, not the success rate of all self-improving agents. AI-assisted coding outside the adjudicated sample and improver-comparison set was not individually human-checked; coding disagreements materially affect estimates.
+**Boundary.** The frame omits similarly motivated work without the RSI wording, and screening was not independently checked. Most individual codes outside the adjudicated/comparison sets remain AI-assisted and unreviewed by humans. Strict evaluation-separation agreement is modest; revised rules lack fresh independent validation. Scope gaps include motivation, evidence tiers can combine different experiments, and Wilson intervals omit coding/coverage error. Neither the counts nor the stylized propositions estimate the failure rate of self-improving systems.
 
-**Code / data.** Official runnable code was not verified in this source review.
+**Code / data.** Complete 39-page arXiv v1, Appendices A–D, twenty tables, figure, all three proofs, codebook revisions, query log, 114-study table and twenty-anchor comparison read on 2026-11-09. The paper promises complete item-level codes and locators with release; no official machine-readable dataset or analysis implementation was independently verified. This review did not independently recode the 114 studies or execute the authors’ analyses.
 
-**Topics:** evaluation, recursive-improvement. **Reviewed:** full-text · 2026-10-29.
+**Topics:** evaluation, recursive-improvement. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2610.27610) · [Source 2](https://arxiv.org/html/2610.27610v1)
+[Source 1](https://arxiv.org/abs/2610.27610) · [Source 2](https://arxiv.org/html/2610.27610v1) · [Source 3](https://arxiv.org/pdf/2610.27610v1)
 
 <a id="self-evolving-continual-learners"></a>
 

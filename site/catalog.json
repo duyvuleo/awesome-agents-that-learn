@@ -1492,10 +1492,11 @@
       "url": "https://arxiv.org/abs/2610.29121",
       "sources": [
         "https://arxiv.org/abs/2610.29121",
-        "https://arxiv.org/html/2610.29121v1"
+        "https://arxiv.org/html/2610.29121v1",
+        "https://arxiv.org/pdf/2610.29121v1"
       ],
       "code_url": null,
-      "code_note": "An official implementation was not independently verified in this review; this does not establish that none exists.",
+      "code_note": "Complete nine-page arXiv v1, Appendices A–C, three figures/two tables, search algorithm, full Beta-law proof, budget/aggregation rules and scaffold instruction read on 2026-11-09. No official implementation, split identifiers or per-run artifact was independently verified. Algorithm 1 updates ancestor clade counts; abbreviated own-node-count descriptions leave implementation detail to verify. No code or benchmark executed.",
       "topics": [
         "architecture",
         "recursive-improvement",
@@ -1509,11 +1510,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Calibration-set solve rates and evaluated parent performance on a separate steering split.",
-      "mechanism": "Fits a linear predictor of candidate-edit utility from parent scores and projected diff embeddings, then freezes it. The predictor chooses which scaffold edit to evaluate; steering scores maintain a small archive and select the final agent.",
-      "evaluation": "Compares the readout, parent-rate ablation, and Huxley–Gödel selection over twelve runs on HumanEval+ and Polyglot with two model backbones and disjoint held-out scoring.",
-      "limitations": "The predictor is calibrated separately per run and stays fixed through 24 retained-search steps. Some paired gain intervals include zero. Curator interpretation: matching checker evaluations does not establish equal total proposal, token, or wall-clock cost; this does not demonstrate an evolving improver.",
+      "mechanism": "Fits a per-run linear predictor from a parent’s steering-set score and eight random projections of a proposed scaffold diff embedding. After calibration, the predictor stays frozen while selecting one of eight edits per search step. A four-node archive and final-agent selection use steering scores; the returned agent is evaluated on separate held-out tasks.",
+      "evaluation": "Full v1 reports twelve runs for each of two generators and two coding benchmarks, with calibration-best, parent-only and Huxley–Gödel selection controls at equal checker counts. GPT-4o HumanEval+ reaches 87.0% versus 84.2% for parent-only selection; their paired interval excludes zero, while the interval against Huxley–Gödel selection includes zero. First-step selection and a Beta-distribution proof are also reported.",
+      "limitations": "The calibration labels repeatedly use sixteen tasks, and the predictor is never updated during its twenty-four search steps. Equal checker counts do not match proposal, embedding, token or wall-clock costs. Several comparisons are uncertain; twelve runs do not resample the fixed held-out task set. The zero-count Beta theorem does not prove readout quality or invalidate selection of already-evaluated parents. No improved improver or indefinite recursion is demonstrated.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-09",
       "short_name": "Code-edit readout"
     },
     {
@@ -1562,10 +1563,11 @@
       "url": "https://arxiv.org/abs/2610.27610",
       "sources": [
         "https://arxiv.org/abs/2610.27610",
-        "https://arxiv.org/html/2610.27610v1"
+        "https://arxiv.org/html/2610.27610v1",
+        "https://arxiv.org/pdf/2610.27610v1"
       ],
       "code_url": null,
-      "code_note": "Official runnable code was not verified in this source review.",
+      "code_note": "Complete 39-page arXiv v1, Appendices A–D, twenty tables, figure, all three proofs, codebook revisions, query log, 114-study table and twenty-anchor comparison read on 2026-11-09. The paper promises complete item-level codes and locators with release; no official machine-readable dataset or analysis implementation was independently verified. This review did not independently recode the 114 studies or execute the authors’ analyses.",
       "topics": [
         "evaluation",
         "recursive-improvement"
@@ -1576,11 +1578,11 @@
       ],
       "persistence": "not-applicable",
       "learning_signal": "Not applicable: a study of reported evaluation designs.",
-      "mechanism": "Codes whether self-improvement studies evaluate final artifacts, repeat the entire learning loop, or compare earlier and later improvers from identical starting artifacts at matched budgets.",
-      "evaluation": "The authors analyze 114 eligible studies from an arXiv phrase-based search frozen on 17 October 2026, including 90 RSI-labeled studies. Only four of 26 improver claimants report the specified same-start comparison; separate human coding checks selected evidence.",
-      "limitations": "This measures reporting within a restricted literature frame, not the success rate of all self-improving agents. AI-assisted coding outside the adjudicated sample and improver-comparison set was not individually human-checked; coding disagreements materially affect estimates.",
+      "mechanism": "Measures reported evaluation designs against distinct claims about final products, accumulation, repeatability and improvement of the improver. Its codebook separates selection-independent tasks, grader type, loop reruns and matched same-start comparisons; three propositions explain selection bias, shared grader errors and confounding between solver state and improver.",
+      "evaluation": "Full v1 codes 114 eligible studies in an arXiv phrase-based frame frozen on 17 October 2026, including 90 strong-label RSI studies and a separate twenty-work anchor set. It reports a random human-adjudicated sample, blind coding of 43 improver-comparison cases and full major-code tables. Four of 26 improver claimants report matched same-start comparisons; this counts designs, not successful demonstrations.",
+      "limitations": "The frame omits similarly motivated work without the RSI wording, and screening was not independently checked. Most individual codes outside the adjudicated/comparison sets remain AI-assisted and unreviewed by humans. Strict evaluation-separation agreement is modest; revised rules lack fresh independent validation. Scope gaps include motivation, evidence tiers can combine different experiments, and Wilson intervals omit coding/coverage error. Neither the counts nor the stylized propositions estimate the failure rate of self-improving systems.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-09",
       "short_name": "RSI evidence audit"
     },
     {

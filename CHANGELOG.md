@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-09 — Expanded RSI selection and evidence-audit reviews
+
+- Completed both RSI papers, their proofs, codebook and full study-code tables.
+- Clarified statistical uncertainty, checker-budget accounting and coding-reliability limits.
+- Preserved the distinction between reporting an evaluation design and demonstrating an improver gain.
+- Broader audit: 144 of 190 works complete, 46 pending.
+
 ## 2026-11-09 — Expanded self-training and meta-RL reviews
 
 - Completed OPST and METTA, including full appendices, algorithms and mathematical checks.
