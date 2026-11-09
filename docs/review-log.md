@@ -287,3 +287,16 @@ Four further additions received selected full-text review: three papers and one 
 RIFAR retains its 2 October first-public date and the current v3 title. Its reliability model is updated sequentially in v3; the earlier v1 description of a frozen model was not carried into the annotation. HarnessFlow's additional executor experiment reruns search rather than demonstrating transfer of an unchanged harness. Targeted guidance retains its original 3 November date despite the v2 revision on 4 November.
 
 ReScopeBench separates programmatically scored task outcomes from model-judged coverage of saved experience. Its simulated applications do not establish live deployment, and background skill review is outside foreground tool-call counts. No linked implementation, training procedure or benchmark was executed.
+
+## 2026-11-09 — Detailed review of existing entries, batch 1
+
+The broader audit covers all 190 research works. This first batch upgrades four previously abstract-only entries; it does **not** complete the collection-wide audit. There are now **134 full-text and 56 abstract/metadata reviews**. Earlier full-text labels still describe their documented, selected-section inspections. No research code was executed and no result was independently reproduced.
+
+| Work | Version and material inspected | Qualification added |
+| --- | --- | --- |
+| [A-MEM](papers.md#a-mem) | [arXiv v11](https://arxiv.org/html/2502.12110v11): §§1–6, Appendices A–B, Tables 1–8, figure captions, checklist; PDF inspection of Table 1 and Figures 3–5 | Model/category-specific retrieval settings, missing repeated-run significance analysis, and category-level losses. |
+| [ADAS](papers.md#adas) | [arXiv v2](https://arxiv.org/html/2408.08435v2): §§1–6, Appendices A–J, Tables 1–6; framework/example code read only; Figure 3 visually inspected | Small ARC split, source-test selection for transfer candidates, variable transfer outcomes, and fixed outer search. |
+| [AgentDevel](papers.md#agentdevel) | [arXiv v1](https://arxiv.org/html/2601.04620v1): §§1–4, Appendices A–C; Figure 1 and Tables 1–3 visually inspected in PDF | Regression control trades off against final score; configurable gates do not guarantee zero regressions. |
+| [AgentSquare](papers.md#agentsquare) | [arXiv v3](https://arxiv.org/html/2410.06153v3): §§1–6, Appendix A, algorithm and tables; Figures 4–6 and A.7–A.15 visually inspected; example-module text read from PDF | Separate search cost, heterogeneous task metrics, and an unspecified independent search/test split and run uncertainty. |
+
+A-MEM §4.3 describes twofold multi-hop gains, but Table 1's GPT-4o multi-hop F1 is 32.86 versus MemGPT's 30.36; the larger temporal improvements must not be relabeled as multi-hop evidence. The annotation retains the category-specific results. AgentDevel's WebArena final score is 35.5 in Table 1 and 34.2 in Table 3; the paper does not explain the difference, so those figures are not merged. The same ablation reports a higher final score without the gate alongside more regressions. ADAS and AgentSquare demonstrate bounded external search; neither establishes unrestricted post-deployment continual improvement.

@@ -173,3 +173,7 @@ Discovery continued over the overlapping 30 October–9 November window across a
 Positions 61–75 of the preserved 93-title training inventory received title triage, leaving eighteen positions in that filtered inventory. Candidate eligibility and body reviews remain unfinished. DexFlyWheel's official NeurIPS 2025 record and SkillShift-Bench's EMNLP 2026 record were inspected as follow-up leads; neither was automatically admitted from metadata.
 
 Targeted guidance and HarnessFlow close queued training and architecture leads. ReScopeBench and RIFAR add experience-maintenance and robot-replay perspectives. Current CIDER, Memory Anchors, PEAM and Meta-Harness records were spot-checked without changing their historical review dates. Unresolved source identities, venue tails, artifact availability and full correction/withdrawal coverage remain open.
+
+## 2026-11-09 — Existing-catalog full-text review
+
+Revisited the primary arXiv records and complete article bodies for A-MEM, ADAS, AgentDevel and AgentSquare, including relevant appendices and PDF evidence objects. This is a depth audit of existing works, not a new-release search; it does not advance discovery coverage or add publications. The [review log](review-log.md#2026-11-09--detailed-review-of-existing-entries-batch-1) records inspected versions, remaining collection-wide scope and interpretation changes.

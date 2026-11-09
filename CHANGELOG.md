@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Detailed source review, first batch
+
+- Upgraded A-MEM, ADAS, AgentDevel and AgentSquare from abstract-level annotations using their methods, results, relevant appendices and visual evidence.
+- Added version-pinned sources and clarified evaluation splits, search costs, variability, transfer limits and unresolved reporting differences.
+- Research total remains 190; review depth is 134 full-text and 56 abstract/metadata. The broader detailed-reading audit remains incomplete.
+
 ## 2026-11-09 — Weekly reading tables
 
 - Presented the weekly reading list and latest-issue README preview as Markdown tables, with direct paper, review and catalog links.

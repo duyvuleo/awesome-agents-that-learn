@@ -11,7 +11,9 @@
     "sources": [
       "https://arxiv.org/abs/2502.12110",
       "https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html",
-      "https://github.com/WujiangXu/A-mem-sys"
+      "https://github.com/WujiangXu/A-mem-sys",
+      "https://arxiv.org/html/2502.12110v11",
+      "https://arxiv.org/pdf/2502.12110v11"
     ],
     "code_url": "https://github.com/WujiangXu/A-mem-sys",
     "code_note": "Official system repository inspected; it distinguishes this reusable memory package from the separate paper-evaluation repository. Neither was executed.",
@@ -23,12 +25,12 @@
       "memory"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "New observations and language-model judgments of relationships among notes.",
-    "mechanism": "Constructs structured notes, links related memories, and updates older contextual descriptions when new information arrives. The evolving note network changes retrieval context without modifying model weights.",
-    "evaluation": "The primary abstract reports comparisons with memory baselines across six foundation models.",
-    "limitations": "This review covers the abstract and official memory-system page. Interpretation: reorganizing a memory store is a form of adaptation, but it is not sufficient evidence of growing procedural skill or reliable long-term retention.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "New conversation content and LLM-generated contextual descriptions, tags, relationship decisions and neighbor updates.",
+    "mechanism": "Creates atomic notes, retrieves candidate neighbors by embedding similarity, links relevant notes, and revises neighboring contextual attributes. Persistent external notes change subsequent retrieval; model weights remain fixed.",
+    "evaluation": "LoCoMo and DialSim conversational QA; six main-table models plus three appendix models, link/evolution ablations, retrieval-size sweeps and storage/retrieval scaling. GPT-4o improves temporal QA but trails the full-history baseline on single-hop and adversarial questions.",
+    "limitations": "Retrieval k is tuned by model and question category; the checklist explicitly reports no repeated-run significance analysis. Section 4.3 claims twofold multi-hop gains, but Table 1 GPT multi-hop results do not double the strongest baselines. QA and embedding visualizations do not establish growing procedural skills.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "A-MEM"
   },
   {
@@ -181,7 +183,9 @@
       "https://arxiv.org/abs/2408.08435",
       "https://proceedings.iclr.cc/paper_files/paper/2025/hash/36b7acf6f6010652b3f2a433774a66fe-Abstract-Conference.html",
       "https://www.shengranhu.com/ADAS/",
-      "https://github.com/ShengranHu/ADAS"
+      "https://github.com/ShengranHu/ADAS",
+      "https://arxiv.org/html/2408.08435v2",
+      "https://arxiv.org/pdf/2408.08435v2"
     ],
     "code_url": "https://github.com/ShengranHu/ADAS",
     "code_note": "Official repository landing page inspected; no installation or execution performed.",
@@ -196,12 +200,12 @@
       "prompts"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Benchmark feedback and an archive of previously generated agent designs.",
-    "mechanism": "A meta-agent writes new agent programs, evaluates them, and uses the growing archive to propose further designs. Code represents the prompts, control flow, and other components being searched.",
-    "evaluation": "Experiments cover coding, science, and math, with reported transfer of discovered designs across tasks and models.",
-    "limitations": "The meta-agent search procedure is fixed; improving a task agent is distinct from improving the mechanism that invents agents. The reported transfer remains bounded by the evaluated domains and models.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Validation-task scores, runtime errors and an archive of earlier code designs; the pretrained meta-agent proposes and reflects on candidates.",
+    "mechanism": "A fixed meta-agent writes executable forward functions, checks novelty, repairs execution errors, and archives designs with scores. Search changes prompts and control flow in task agents; the outer search algorithm and model weights are fixed.",
+    "evaluation": "ARC grid-transformation code and DROP, MGSM, MMLU and GPQA; cross-domain/model transfer and empty-archive controls. ARC uses 20 validation and 60 test problems with grids at most 5 by 5; reported intervals are bootstrap estimates, not independent search-run variation.",
+    "limitations": "Experiments concern bounded question-answering tasks; continual deployment and optimization of the meta-agent are proposed future work. ARC transfer candidates were selected by source test accuracy. Transfer does not benefit every agent/model pairing, and performance-only search does not establish equal-cost superiority.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "ADAS"
   },
   {
@@ -392,7 +396,9 @@
     "venue": "",
     "url": "https://arxiv.org/abs/2601.04620",
     "sources": [
-      "https://arxiv.org/abs/2601.04620"
+      "https://arxiv.org/abs/2601.04620",
+      "https://arxiv.org/html/2601.04620v1",
+      "https://arxiv.org/pdf/2601.04620v1"
     ],
     "code_url": null,
     "code_note": "Official code availability was not established in this source review.",
@@ -407,12 +413,12 @@
       "workflows"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Implementation-blind trace critiques, executable diagnosis, and per-task regression/fix outcomes.",
-    "mechanism": "Externalizes improvement into a release pipeline that constructs one candidate at a time. Promotion emphasizes which previously passing tasks fail and which failing tasks are repaired.",
-    "evaluation": "The abstract reports execution-heavy benchmark experiments with fewer regressions and auditable version histories.",
-    "limitations": "This is an external improvement pipeline rather than in-agent autonomous learning. The abstract review does not establish the benchmark composition, statistical uncertainty, or protection against every regression.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Programmatic scores or an implementation-blind LLM critic, trace-derived symptoms, and development-set pass-to-fail/fail-to-pass changes.",
+    "mechanism": "A fixed development engine generates diagnostic scripts and one prompt/code/tool-wrapper release candidate per iteration. A configurable regression gate retains accepted blueprints; the same development set drives diagnosis, promotion and stopping.",
+    "evaluation": "Reports improvements over an initial blueprint on SWE-bench Lite/Verified, WebArena and StableToolBench. Its WebArena ablation reduces regressions with gating while the ungated variant has a slightly higher final test score; cited external baselines were not rerun.",
+    "limitations": "No non-regression guarantee: accepted releases can still break cases, and gate thresholds, split sizes and repeated-run uncertainty are insufficiently specified. WebArena final scores differ between Table 1 (35.5) and Table 3 (34.2) without an explicit reconciliation. The test set is described as final-only, but iterative development reuses its training cases.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "AgentDevel"
   },
   {
@@ -460,7 +466,9 @@
     "sources": [
       "https://arxiv.org/abs/2410.06153",
       "https://proceedings.iclr.cc/paper_files/paper/2025/hash/0ae94013da7cd459402fd77874e09ee3-Abstract-Conference.html",
-      "https://github.com/tsinghua-fib-lab/AgentSquare"
+      "https://github.com/tsinghua-fib-lab/AgentSquare",
+      "https://arxiv.org/html/2410.06153v3",
+      "https://arxiv.org/pdf/2410.06153v3"
     ],
     "code_url": "https://github.com/tsinghua-fib-lab/AgentSquare",
     "code_note": "Official repository landing page inspected; no installation or execution performed.",
@@ -478,12 +486,12 @@
       "memory"
     ],
     "persistence": "across-tasks",
-    "learning_signal": "Task scores and an in-context performance predictor used to screen candidates.",
-    "mechanism": "Defines interchangeable planning, reasoning, tool-use, and memory modules, then searches by evolving and recombining them. A performance predictor reduces evaluations of unpromising designs.",
-    "evaluation": "The authors compare generated agents on six benchmarks spanning web, embodied, tool-use, and game tasks.",
-    "limitations": "Optimization operates within predefined module interfaces and an external search framework. Curator interpretation: gains under these tasks do not establish unrestricted architectural invention or continual learning after deployment.",
-    "review_depth": "abstract",
-    "checked": "2026-10-28",
+    "learning_signal": "Task-performance evaluations and an in-context predictor conditioned on examples of previously evaluated module combinations.",
+    "mechanism": "Alternates code-level module evolution with recombination of planning, reasoning, tool-use and memory modules. Novel modules receive environment evaluation; recombinations use an LLM surrogate. Module pools and scored designs persist within a fixed external search procedure.",
+    "evaluation": "GPT-3.5 and GPT-4o comparisons on WebShop, ALFWorld, ScienceWorld, M3ToolEval, TravelPlanner and PDDL, with module ablations, surrogate-versus-observed plots and search/execution-cost analyses. Reported metrics differ across tasks: success, reward, progress and micro pass rate.",
+    "limitations": "Search remains constrained by standardized interfaces. Execution-cost plots exclude search costs, which are tabulated separately. The inspected paper does not specify a separate held-out search/test partition or independent-run uncertainty; surrogate correlation is not a guarantee that novel designs generalize.",
+    "review_depth": "full-text",
+    "checked": "2026-11-09",
     "short_name": "AgentSquare"
   },
   {

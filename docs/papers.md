@@ -120,7 +120,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-02-02 | **MemSkill**<br>[MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents](https://arxiv.org/abs/2602.02474) | A PPO-trained controller selects memory-operation skills for a fixed executor. A fixed designer periodically refines the skill bank, with rollback based on stabilized… | Model weights, Skills, Memory | preprint · full-text | [Notes](#memskill) · [Code](https://github.com/ViktorAxelsen/MemSkill) |
 | 2026-01-29 | **MCE**<br>[Meta Context Engineering via Agentic Skill Evolution](https://arxiv.org/abs/2601.21557) | A meta-agent revises context-engineering skills; a base agent executes them to construct context as files and code. History-informed evolutionary selection retains… | Prompts / context, Skills, Agent code | peer-reviewed · full-text | [Notes](#meta-context-engineering) · [Code](https://github.com/metaevo-ai/meta-context-engineering) |
 | 2026-01-11 | **Dr. Zero**<br>[Dr. Zero: Self-Evolving Search Agents without Training Data](https://arxiv.org/abs/2601.07055) | Co-evolves a proposer that generates diverse, challenging questions and a search-enabled solver. Hop-grouped policy optimization shares baselines among structurally… | Model weights | peer-reviewed · abstract | [Notes](#dr-zero) |
-| 2026-01-08 | **AgentDevel**<br>[AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering](https://arxiv.org/abs/2601.04620) | Externalizes improvement into a release pipeline that constructs one candidate at a time. Promotion emphasizes which previously passing tasks fail and which failing… | Agent code, Workflows | preprint · abstract | [Notes](#agentdevel) |
+| 2026-01-08 | **AgentDevel**<br>[AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering](https://arxiv.org/abs/2601.04620) | A fixed development engine generates diagnostic scripts and one prompt/code/tool-wrapper release candidate per iteration. A configurable regression gate retains accepted… | Agent code, Workflows | preprint · full-text | [Notes](#agentdevel) |
 | 2026-01-06 | **MemRL**<br>[MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory](https://arxiv.org/abs/2601.03192) | Uses outcome feedback to adjust the utility of episodic memories while keeping the reasoning model fixed. Two-stage retrieval combines semantic relevance with learned… | Memory | preprint · abstract | [Notes](#memrl) · [Code](https://github.com/MemTensor/MemRL) |
 | 2026-01-05 | **AgeMem**<br>[Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents](https://arxiv.org/abs/2601.01885) | Trains an agent to select long-term memory edits and short-term context operations as tools. Three progressive stages and step-wise GRPO assign delayed task rewards to… | Model weights, Memory, Prompts / context | peer-reviewed · full-text | [Notes](#agemem) · [Code](https://github.com/y1y5/AgeMem) |
 | 2026 | **Temporal self-rewarding**<br>[Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](https://proceedings.mlr.press/v306/wang26ik.html) | Separates the model generations used to provide rejected and chosen samples so their learning signal does not shrink as both improve together. The paper applies this… | Model weights | peer-reviewed · abstract | [Notes](#temporal-self-rewarding) · [Code](https://github.com/TemporalSelfRewarding/TSR) |
@@ -160,15 +160,15 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-04-28 | **Mem0**<br>[Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/abs/2504.19413) | Extracts and consolidates facts from conversations for later retrieval, with a graph variant for relational information. Persistent conversational state provides a… | Memory | preprint · abstract | [Notes](#mem0) |
 | 2025-04-24 | **RAGEN**<br>[RAGEN: Understanding Self-Evolution in LLM Agents via Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2504.20073) | StarPO optimizes reasoning-action trajectories with reinforcement learning. The study identifies repetitive reasoning collapse and tests StarPO-S interventions including… | Model weights | preprint · full-text | [Notes](#ragen) · [Code](https://github.com/mll-lab-nu/RAGEN) |
 | 2025-04-21 | **SICA**<br>[A Self-Improving Coding Agent](https://arxiv.org/abs/2504.15228) | Equips a coding agent with tools to edit its own implementation and reuses improved versions in later iterations. Learning changes the surrounding agent code rather than… | Agent code, Tools, Workflows | preprint · full-text | [Notes](#sica) · [Code](https://github.com/MaximeRobeyns/self_improving_coding_agent) |
-| 2025-02-17 | **A-MEM**<br>[A-MEM: Agentic Memory for LLM Agents](https://arxiv.org/abs/2502.12110) | Constructs structured notes, links related memories, and updates older contextual descriptions when new information arrives. The evolving note network changes retrieval… | Memory | peer-reviewed · abstract | [Notes](#a-mem) · [Code](https://github.com/WujiangXu/A-mem-sys) |
+| 2025-02-17 | **A-MEM**<br>[A-MEM: Agentic Memory for LLM Agents](https://arxiv.org/abs/2502.12110) | Creates atomic notes, retrieves candidate neighbors by embedding similarity, links relevant notes, and revises neighboring contextual attributes. Persistent external… | Memory | peer-reviewed · full-text | [Notes](#a-mem) · [Code](https://github.com/WujiangXu/A-mem-sys) |
 | 2025-01-20 | **Agent-R**<br>[Agent-R: Training Language Model Agents to Reflect via Iterative Self-Training](https://arxiv.org/abs/2501.11425) | Uses Monte Carlo tree search to pair unsuccessful and successful paths. The current actor selects a revision point, and spliced correction trajectories support iterative… | Model weights | preprint · full-text | [Notes](#agent-r) |
 | 2024-10-14 | **LongMemEval**<br>[LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory](https://arxiv.org/abs/2410.10813) | Tests information extraction, cross-session and temporal reasoning, knowledge updates, and abstention from long interaction histories, separating indexing, retrieval… | Memory | peer-reviewed · abstract | [Notes](#longmemeval) · [Code](https://github.com/xiaowu0162/LongMemEval) |
 | 2024-10-14 | **AFlow**<br>[AFlow: Automating Agentic Workflow Generation](https://arxiv.org/abs/2410.10762) | Searches over code-represented workflows using a Monte Carlo tree-search variant. An LLM changes prompts and connections between operations, while the tree retains… | Workflows, Prompts / context, Agent code | peer-reviewed · full-text | [Notes](#aflow) · [Code](https://github.com/FoundationAgents/AFlow) |
-| 2024-10-08 | **AgentSquare**<br>[AgentSquare: Automatic LLM Agent Search in Modular Design Space](https://arxiv.org/abs/2410.06153) | Defines interchangeable planning, reasoning, tool-use, and memory modules, then searches by evolving and recombining them. A performance predictor reduces evaluations of… | Workflows, Prompts / context, Tools, Memory | peer-reviewed · abstract | [Notes](#agentsquare) · [Code](https://github.com/tsinghua-fib-lab/AgentSquare) |
+| 2024-10-08 | **AgentSquare**<br>[AgentSquare: Automatic LLM Agent Search in Modular Design Space](https://arxiv.org/abs/2410.06153) | Alternates code-level module evolution with recombination of planning, reasoning, tool-use and memory modules. Novel modules receive environment evaluation… | Workflows, Prompts / context, Tools, Memory | peer-reviewed · full-text | [Notes](#agentsquare) · [Code](https://github.com/tsinghua-fib-lab/AgentSquare) |
 | 2024-10-06 | **Gödel Agent**<br>[Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement](https://arxiv.org/abs/2410.04444) | Lets an LLM-based agent inspect and revise its own logic through a self-referential learning framework. The editable artifact is the agent program rather than the… | Agent code, Prompts / context, Workflows | peer-reviewed · abstract | [Notes](#godel-agent) · [Code](https://github.com/Arvid-pku/Godel_Agent) |
 | 2024-09-19 | **SCoRe**<br>[Training Language Models to Self-Correct via Reinforcement Learning](https://arxiv.org/abs/2409.12917) | Trains a correction policy on its own response distribution, with an initialization stage and a reward bonus encouraging successful revision. The method targets… | Model weights | peer-reviewed · abstract | [Notes](#score) |
 | 2024-09-11 | **AWM**<br>[Agent Workflow Memory](https://arxiv.org/abs/2409.07429) | Abstracts reusable subroutines from action trajectories and adds them to the agent context as workflow memory. It supports an offline store built from training examples… | Memory, Workflows | peer-reviewed · full-text | [Notes](#agent-workflow-memory) · [Code](https://github.com/zorazrw/agent-workflow-memory) |
-| 2024-08-15 | **ADAS**<br>[Automated Design of Agentic Systems](https://arxiv.org/abs/2408.08435) | A meta-agent writes new agent programs, evaluates them, and uses the growing archive to propose further designs. Code represents the prompts, control flow, and other… | Agent code, Workflows, Prompts / context | peer-reviewed · abstract | [Notes](#adas) · [Code](https://github.com/ShengranHu/ADAS) |
+| 2024-08-15 | **ADAS**<br>[Automated Design of Agentic Systems](https://arxiv.org/abs/2408.08435) | A fixed meta-agent writes executable forward functions, checks novelty, repairs execution errors, and archives designs with scores. Search changes prompts and control… | Agent code, Workflows, Prompts / context | peer-reviewed · full-text | [Notes](#adas) · [Code](https://github.com/ShengranHu/ADAS) |
 | 2024-07-25 | **RISE**<br>[Recursive Introspection: Teaching Language Model Agents How to Self-Improve](https://arxiv.org/abs/2407.18219) | Turns single-turn problems into multi-turn trajectories and trains the model to revise earlier unsuccessful responses. Its training loop uses reward-weighted supervised… | Model weights | peer-reviewed · full-text | [Notes](#rise) |
 | 2024-07-24 | **Model collapse**<br>[AI models collapse when trained on recursively generated data](https://www.nature.com/articles/s41586-024-07566-y) | Analyzes how repeated training on generated data can lose low-probability parts of an original distribution and amplify errors. The paper combines tractable distribution… | Model weights | peer-reviewed · full-text | [Notes](#model-collapse) |
 | 2024-06-26 | **Symbolic agent learning**<br>[Symbolic Learning Enables Self-Evolving Agents](https://arxiv.org/abs/2406.18532) | Represents an agent as a symbolic network whose editable components include prompts, tools, and their composition. Symbolic optimization uses textual feedback to revise… | Prompts / context, Tools, Workflows | preprint · abstract | [Notes](#symbolic-agent-learning) · [Code](https://github.com/aiwaves-cn/agents) |
@@ -2576,19 +2576,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2601.04620)
 
-**Mechanism.** Externalizes improvement into a release pipeline that constructs one candidate at a time. Promotion emphasizes which previously passing tasks fail and which failing tasks are repaired.
+**Mechanism.** A fixed development engine generates diagnostic scripts and one prompt/code/tool-wrapper release candidate per iteration. A configurable regression gate retains accepted blueprints; the same development set drives diagnosis, promotion and stopping.
 
-**What changes:** Agent code, Workflows. **Persistence:** across-tasks. **Learning signal:** Implementation-blind trace critiques, executable diagnosis, and per-task regression/fix outcomes.
+**What changes:** Agent code, Workflows. **Persistence:** across-tasks. **Learning signal:** Programmatic scores or an implementation-blind LLM critic, trace-derived symptoms, and development-set pass-to-fail/fail-to-pass changes.
 
-**Evaluation.** The abstract reports execution-heavy benchmark experiments with fewer regressions and auditable version histories.
+**Evaluation.** Reports improvements over an initial blueprint on SWE-bench Lite/Verified, WebArena and StableToolBench. Its WebArena ablation reduces regressions with gating while the ungated variant has a slightly higher final test score; cited external baselines were not rerun.
 
-**Boundary.** This is an external improvement pipeline rather than in-agent autonomous learning. The abstract review does not establish the benchmark composition, statistical uncertainty, or protection against every regression.
+**Boundary.** No non-regression guarantee: accepted releases can still break cases, and gate thresholds, split sizes and repeated-run uncertainty are insufficiently specified. WebArena final scores differ between Table 1 (35.5) and Table 3 (34.2) without an explicit reconciliation. The test set is described as final-only, but iterative development reuses its training cases.
 
 **Code / data.** Official code availability was not established in this source review.
 
-**Topics:** architecture, evaluation, workflows. **Reviewed:** abstract · 2026-10-28.
+**Topics:** architecture, evaluation, workflows. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2601.04620)
+[Source 1](https://arxiv.org/abs/2601.04620) · [Source 2](https://arxiv.org/html/2601.04620v1) · [Source 3](https://arxiv.org/pdf/2601.04620v1)
 
 <a id="memrl"></a>
 
@@ -3476,19 +3476,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2502.12110)
 
-**Mechanism.** Constructs structured notes, links related memories, and updates older contextual descriptions when new information arrives. The evolving note network changes retrieval context without modifying model weights.
+**Mechanism.** Creates atomic notes, retrieves candidate neighbors by embedding similarity, links relevant notes, and revises neighboring contextual attributes. Persistent external notes change subsequent retrieval; model weights remain fixed.
 
-**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** New observations and language-model judgments of relationships among notes.
+**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** New conversation content and LLM-generated contextual descriptions, tags, relationship decisions and neighbor updates.
 
-**Evaluation.** The primary abstract reports comparisons with memory baselines across six foundation models.
+**Evaluation.** LoCoMo and DialSim conversational QA; six main-table models plus three appendix models, link/evolution ablations, retrieval-size sweeps and storage/retrieval scaling. GPT-4o improves temporal QA but trails the full-history baseline on single-hop and adversarial questions.
 
-**Boundary.** This review covers the abstract and official memory-system page. Interpretation: reorganizing a memory store is a form of adaptation, but it is not sufficient evidence of growing procedural skill or reliable long-term retention.
+**Boundary.** Retrieval k is tuned by model and question category; the checklist explicitly reports no repeated-run significance analysis. Section 4.3 claims twofold multi-hop gains, but Table 1 GPT multi-hop results do not double the strongest baselines. QA and embedding visualizations do not establish growing procedural skills.
 
 **Code / data.** [Official artifact](https://github.com/WujiangXu/A-mem-sys) — Official system repository inspected; it distinguishes this reusable memory package from the separate paper-evaluation repository. Neither was executed.
 
-**Topics:** memory. **Reviewed:** abstract · 2026-10-28.
+**Topics:** memory. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2502.12110) · [Source 2](https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html) · [Source 3](https://github.com/WujiangXu/A-mem-sys)
+[Source 1](https://arxiv.org/abs/2502.12110) · [Source 2](https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html) · [Source 3](https://github.com/WujiangXu/A-mem-sys) · [Source 4](https://arxiv.org/html/2502.12110v11) · [Source 5](https://arxiv.org/pdf/2502.12110v11)
 
 **Related software:** [A-MEM memory system](systems.md#system-a-mem). See each system's relationship note before equating it with the evaluated paper version.
 
@@ -3568,19 +3568,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2410.06153)
 
-**Mechanism.** Defines interchangeable planning, reasoning, tool-use, and memory modules, then searches by evolving and recombining them. A performance predictor reduces evaluations of unpromising designs.
+**Mechanism.** Alternates code-level module evolution with recombination of planning, reasoning, tool-use and memory modules. Novel modules receive environment evaluation; recombinations use an LLM surrogate. Module pools and scored designs persist within a fixed external search procedure.
 
-**What changes:** Workflows, Prompts / context, Tools, Memory. **Persistence:** across-tasks. **Learning signal:** Task scores and an in-context performance predictor used to screen candidates.
+**What changes:** Workflows, Prompts / context, Tools, Memory. **Persistence:** across-tasks. **Learning signal:** Task-performance evaluations and an in-context predictor conditioned on examples of previously evaluated module combinations.
 
-**Evaluation.** The authors compare generated agents on six benchmarks spanning web, embodied, tool-use, and game tasks.
+**Evaluation.** GPT-3.5 and GPT-4o comparisons on WebShop, ALFWorld, ScienceWorld, M3ToolEval, TravelPlanner and PDDL, with module ablations, surrogate-versus-observed plots and search/execution-cost analyses. Reported metrics differ across tasks: success, reward, progress and micro pass rate.
 
-**Boundary.** Optimization operates within predefined module interfaces and an external search framework. Curator interpretation: gains under these tasks do not establish unrestricted architectural invention or continual learning after deployment.
+**Boundary.** Search remains constrained by standardized interfaces. Execution-cost plots exclude search costs, which are tabulated separately. The inspected paper does not specify a separate held-out search/test partition or independent-run uncertainty; surrogate correlation is not a guarantee that novel designs generalize.
 
 **Code / data.** [Official artifact](https://github.com/tsinghua-fib-lab/AgentSquare) — Official repository landing page inspected; no installation or execution performed.
 
-**Topics:** architecture, workflows, memory, tools. **Reviewed:** abstract · 2026-10-28.
+**Topics:** architecture, workflows, memory, tools. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2410.06153) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2025/hash/0ae94013da7cd459402fd77874e09ee3-Abstract-Conference.html) · [Source 3](https://github.com/tsinghua-fib-lab/AgentSquare)
+[Source 1](https://arxiv.org/abs/2410.06153) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2025/hash/0ae94013da7cd459402fd77874e09ee3-Abstract-Conference.html) · [Source 3](https://github.com/tsinghua-fib-lab/AgentSquare) · [Source 4](https://arxiv.org/html/2410.06153v3) · [Source 5](https://arxiv.org/pdf/2410.06153v3)
 
 <a id="godel-agent"></a>
 
@@ -3658,19 +3658,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2408.08435)
 
-**Mechanism.** A meta-agent writes new agent programs, evaluates them, and uses the growing archive to propose further designs. Code represents the prompts, control flow, and other components being searched.
+**Mechanism.** A fixed meta-agent writes executable forward functions, checks novelty, repairs execution errors, and archives designs with scores. Search changes prompts and control flow in task agents; the outer search algorithm and model weights are fixed.
 
-**What changes:** Agent code, Workflows, Prompts / context. **Persistence:** across-tasks. **Learning signal:** Benchmark feedback and an archive of previously generated agent designs.
+**What changes:** Agent code, Workflows, Prompts / context. **Persistence:** across-tasks. **Learning signal:** Validation-task scores, runtime errors and an archive of earlier code designs; the pretrained meta-agent proposes and reflects on candidates.
 
-**Evaluation.** Experiments cover coding, science, and math, with reported transfer of discovered designs across tasks and models.
+**Evaluation.** ARC grid-transformation code and DROP, MGSM, MMLU and GPQA; cross-domain/model transfer and empty-archive controls. ARC uses 20 validation and 60 test problems with grids at most 5 by 5; reported intervals are bootstrap estimates, not independent search-run variation.
 
-**Boundary.** The meta-agent search procedure is fixed; improving a task agent is distinct from improving the mechanism that invents agents. The reported transfer remains bounded by the evaluated domains and models.
+**Boundary.** Experiments concern bounded question-answering tasks; continual deployment and optimization of the meta-agent are proposed future work. ARC transfer candidates were selected by source test accuracy. Transfer does not benefit every agent/model pairing, and performance-only search does not establish equal-cost superiority.
 
 **Code / data.** [Official artifact](https://github.com/ShengranHu/ADAS) — Official repository landing page inspected; no installation or execution performed.
 
-**Topics:** architecture, workflows. **Reviewed:** abstract · 2026-10-28.
+**Topics:** architecture, workflows. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2408.08435) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2025/hash/36b7acf6f6010652b3f2a433774a66fe-Abstract-Conference.html) · [Source 3](https://www.shengranhu.com/ADAS/) · [Source 4](https://github.com/ShengranHu/ADAS)
+[Source 1](https://arxiv.org/abs/2408.08435) · [Source 2](https://proceedings.iclr.cc/paper_files/paper/2025/hash/36b7acf6f6010652b3f2a433774a66fe-Abstract-Conference.html) · [Source 3](https://www.shengranhu.com/ADAS/) · [Source 4](https://github.com/ShengranHu/ADAS) · [Source 5](https://arxiv.org/html/2408.08435v2) · [Source 6](https://arxiv.org/pdf/2408.08435v2)
 
 **Related software:** [ADAS / Meta Agent Search](systems.md#system-adas). See each system's relationship note before equating it with the evaluated paper version.
 
