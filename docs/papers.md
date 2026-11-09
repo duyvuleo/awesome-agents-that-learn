@@ -194,15 +194,15 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2023-05-25 | **Voyager**<br>[Voyager: An Open-Ended Embodied Agent with Large Language Models](https://arxiv.org/abs/2305.16291) | Builds an expanding library of executable Minecraft skills, retrieved and composed for later tasks. An automatic curriculum proposes objectives, while execution feedback… | Skills, Tools | peer-reviewed · full-text | [Notes](#voyager) · [Code](https://github.com/MineDojo/Voyager) |
 | 2023-05-23 | **CREATOR**<br>[CREATOR: Tool Creation for Disentangling Abstract and Concrete Reasoning of Large Language Models](https://arxiv.org/abs/2305.14318) | Decomposes problem solving into tool design, implementation, execution, and revision so an agent can create tools beyond a fixed API inventory. It also examines reuse of… | Tools | peer-reviewed · abstract | [Notes](#creator) · [Code](https://github.com/qiancheng0/CREATOR) |
 | 2023-05-17 | **MemoryBank**<br>[MemoryBank: Enhancing Large Language Models with Long-Term Memory](https://arxiv.org/abs/2305.10250) | Maintains retrievable interaction memories and user summaries, with time- and importance-sensitive forgetting and reinforcement. The SiliconFriend application combines… | Memory | peer-reviewed · abstract | [Notes](#memorybank) |
-| 2023-04-07 | **Generative Agents**<br>[Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) | Stores experiences, synthesizes higher-level reflections, and retrieves relevant memories to plan behavior in a simulated town. The accumulated state shapes subsequent… | Memory | peer-reviewed · abstract | [Notes](#generative-agents) · [Code](https://github.com/joonspk-research/generative_agents) |
+| 2023-04-07 | **Generative Agents**<br>[Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) | Stores observations, plans and recursive reflections in a persistent memory stream. Recency, importance and embedding relevance determine retrieval; a frozen language… | Memory | peer-reviewed · full-text | [Notes](#generative-agents) · [Code](https://github.com/joonspk-research/generative_agents) |
 | 2023-03-30 | **Self-Refine**<br>[Self-Refine: Iterative Refinement with Self-Feedback](https://arxiv.org/abs/2303.17651) | Alternates drafting, feedback and revision while retaining the current task history. No weights or cross-task memory are updated; stopping and output selection vary… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#self-refine) |
 | 2023-03-20 | **Reflexion**<br>[Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366) | Converts task feedback into verbal reflections and carries those reflections into later attempts through an episodic memory buffer. The underlying language-model weights… | Memory | peer-reviewed · full-text | [Notes](#reflexion) · [Code](https://github.com/noahshinn/reflexion) |
-| 2023-02-09 | **Toolformer**<br>[Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) | Teaches a language model when to call a predefined API, which arguments to produce, and how to incorporate the returned information. The learned capability is stored in… | Model weights | peer-reviewed · abstract | [Notes](#toolformer) |
+| 2023-02-09 | **Toolformer**<br>[Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) | Samples API calls into ordinary text, executes and filters them using future-token loss reduction, and fine-tunes GPT-J on the augmented corpus. Learned tool invocation… | Model weights | peer-reviewed · full-text | [Notes](#toolformer) |
 | 2023 | **Self-Instruct**<br>[Self-Instruct: Aligning Language Models with Self-Generated Instructions](https://aclanthology.org/2023.acl-long.754/) | Bootstraps an instruction-tuning dataset from the model, filters unsuitable examples, and fine-tunes the original model on the retained data. It is a foundation for… | Model weights | peer-reviewed · abstract | [Notes](#self-instruct) · [Code](https://github.com/yizhongw/self-instruct) |
-| 2022-12-15 | **Constitutional AI**<br>[Constitutional AI: Harmlessness from AI Feedback](https://arxiv.org/abs/2212.08073) | Uses self-critiques and revisions for supervised learning, then learns a preference model from AI comparisons and optimizes the assistant with reinforcement learning.… | Model weights | preprint · abstract | [Notes](#constitutional-ai) |
+| 2022-12-15 | **Constitutional AI**<br>[Constitutional AI: Harmlessness from AI Feedback](https://arxiv.org/abs/2212.08073) | Fine-tunes on constitution-guided response revisions, then fits a preference model to mixed human-helpfulness and AI-harmlessness labels and trains a policy with RL.… | Model weights | preprint · full-text | [Notes](#constitutional-ai) |
 | 2022-10-06 | **ReAct**<br>[ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629) | Interleaves language reasoning, tool actions and observations to revise a plan within a task. The main prompted variant keeps weights fixed; the separately evaluated… | Model weights | peer-reviewed · full-text | [Notes](#react) |
 | 2022-03-28 | **STaR**<br>[STaR: Bootstrapping Reasoning With Reasoning](https://arxiv.org/abs/2203.14465) | Generates reasoning traces, keeps traces ending in the reference answer, and fine-tunes on them. Failed problems can be retried with the answer supplied as a hint; each… | Model weights | peer-reviewed · full-text | [Notes](#star) · [Code](https://github.com/ezelikman/STaR) |
-| 2017-10-19 | **AlphaGo Zero**<br>[Mastering the game of Go without human knowledge](https://www.nature.com/articles/nature24270) | Trains a policy/value network on games generated by its own search, then uses the updated network to improve subsequent search and play. This is an early concrete… | Model weights | peer-reviewed · abstract | [Notes](#alphago-zero) |
+| 2017-10-19 | **AlphaGo Zero**<br>[Mastering the game of Go without human knowledge](https://www.nature.com/articles/nature24270) | Alternates search-guided self-play with gradient updates to a shared policy/value network. Recent games are replayed to fit improved move distributions and outcomes. The… | Model weights | peer-reviewed · full-text | [Notes](#alphago-zero) |
 
 ## Full annotations
 
@@ -4240,19 +4240,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2304.03442)
 
-**Mechanism.** Stores experiences, synthesizes higher-level reflections, and retrieves relevant memories to plan behavior in a simulated town. The accumulated state shapes subsequent actions and social interactions.
+**Mechanism.** Stores observations, plans and recursive reflections in a persistent memory stream. Recency, importance and embedding relevance determine retrieval; a frozen language model generates plans, dialogue and reactions from that context.
 
-**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Observed simulated events and model-generated reflections.
+**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Observed sandbox events, model-scored memory importance and model-generated reflections influence later retrieval and plans; identities and initial goals are human-authored.
 
-**Evaluation.** The authors assess behavioral believability and emergent coordination in a sandbox populated by simulated agents, including architecture ablations.
+**Evaluation.** Twenty-five agents interact for two simulated days. One hundred evaluators rank interview responses from the full architecture, ablations and crowdworker-written baselines. Ablations reuse histories generated by the full system; separate descriptive analyses examine information diffusion, relationships and party attendance.
 
-**Boundary.** Believability is a different outcome from task competence or factual correctness. This is an adjacent foundation for persistent reflective memory, not a demonstration of open-ended capability improvement.
+**Boundary.** Believability is not factual accuracy or increasing task competence. Ablations do not independently rerun the social simulation, and the human baseline is not expert performance. Retrieval failures, embellished memories, over-cooperation, simulation cost and short observation horizons limit claims of reliable lifelong learning.
 
-**Code / data.** [Official artifact](https://github.com/joonspk-research/generative_agents) — Official repository inspected; not executed. The ACM record was inaccessible during this review, so the catalog status conservatively describes the inspected preprint.
+**Code / data.** [Official artifact](https://github.com/joonspk-research/generative_agents) — Official repository inspected on 2026-10-28; not executed. UIST 2023 publication is verified from the official proceedings; the earlier ACM access limitation is retained in the review history.
 
-**Topics:** foundations, memory, architecture. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, memory, architecture. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2304.03442) · [Source 2](https://github.com/joonspk-research/generative_agents) · [Source 3](https://uist.acm.org/2023/proceedings/)
+[Source 1](https://arxiv.org/abs/2304.03442) · [Source 2](https://github.com/joonspk-research/generative_agents) · [Source 3](https://uist.acm.org/2023/proceedings/) · [Source 4](https://arxiv.org/html/2304.03442v2) · [Source 5](https://arxiv.org/pdf/2304.03442v2)
 
 <a id="self-refine"></a>
 
@@ -4306,19 +4306,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2302.04761)
 
-**Mechanism.** Teaches a language model when to call a predefined API, which arguments to produce, and how to incorporate the returned information. The learned capability is stored in model parameters rather than a growing tool library.
+**Mechanism.** Samples API calls into ordinary text, executes and filters them using future-token loss reduction, and fine-tunes GPT-J on the augmented corpus. Learned tool invocation persists in weights; the tool set and data-selection heuristics remain fixed.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Self-supervised tool-use examples seeded by a small number of demonstrations for each API.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Human-seeded API examples propose calls; tool responses are retained when they reduce loss on subsequent corpus tokens, then become fine-tuning data.
 
-**Evaluation.** The paper evaluates zero-shot downstream tasks using tools such as a calculator, question answering, search, translation, and a calendar.
+**Evaluation.** LAMA, arithmetic, QA, multilingual and temporal tasks, plus language-model perplexity and size/decoding analyses. Gains vary by task: QA remains below GPT-3, and some multilingual results regress relative to GPT-J. Evaluation allows at most one call and encourages it when the API token is among the top ten.
 
-**Boundary.** The available APIs and initial demonstrations are supplied by researchers. Curator interpretation: learning to invoke these tools is distinct from autonomously creating new tools or learning continually after deployment.
+**Boundary.** Training calls are sampled independently, so chained or interactive tool use is not learned. Benchmarks selectively disable tools and use relaxed answer matching. Tool costs are not optimized; API outputs can be noisy, and externally supplied QA/translation models contribute capability. Zero-shot downstream evaluation is not zero-demonstration training.
 
 **Code / data.** Official runnable code was not verified in this source review.
 
-**Topics:** foundations, tools, model-training. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, tools, model-training. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2302.04761) · [Source 2](https://proceedings.neurips.cc/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html)
+[Source 1](https://arxiv.org/abs/2302.04761) · [Source 2](https://proceedings.neurips.cc/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html) · [Source 3](https://arxiv.org/html/2302.04761v1) · [Source 4](https://arxiv.org/pdf/2302.04761v1)
 
 <a id="self-instruct"></a>
 
@@ -4350,19 +4350,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2212.08073)
 
-**Mechanism.** Uses self-critiques and revisions for supervised learning, then learns a preference model from AI comparisons and optimizes the assistant with reinforcement learning. The process automates parts of supervision while retaining an externally chosen constitution.
+**Mechanism.** Fine-tunes on constitution-guided response revisions, then fits a preference model to mixed human-helpfulness and AI-harmlessness labels and trains a policy with RL. Learned weights persist; the constitution, training procedure and evaluation rules are externally chosen.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Human-authored principles guide AI critiques, revisions, and preference judgments.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Human-written principles and few-shot examples guide AI critiques and harmlessness comparisons; human helpfulness preference labels and human/model-generated prompts remain training inputs.
 
-**Evaluation.** The authors report human evaluations of helpfulness and harmlessness for trained assistants.
+**Evaluation.** Crowdworker comparisons assess helpfulness and harmlessness across model sizes and training snapshots, alongside critique/revision controls, AI-label evaluations and a learned harmfulness scorer. Evaluators explicitly prefer non-evasive answers when similarly harmless, unlike the earlier baseline-labeling instructions.
 
-**Boundary.** The constitution and training procedure are designed externally. Curator interpretation: this supports AI-assisted alignment training, not unsupervised value discovery or a guarantee that safety persists through later self-modification.
+**Boundary.** This removes human harmlessness preference labels, not all human supervision. Over-training can produce boilerplate and overly harsh replies; critiques can be inaccurate. Different initialization and feedback-model choices complicate isolated component attribution, and finite red-team evaluations do not guarantee safety under later self-modification.
 
 **Code / data.** Official runnable code was not verified in this source review.
 
-**Topics:** foundations, model-training, safety. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, model-training, safety. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2212.08073)
+[Source 1](https://arxiv.org/abs/2212.08073) · [Source 2](https://arxiv.org/html/2212.08073v1) · [Source 3](https://arxiv.org/pdf/2212.08073v1)
 
 <a id="react"></a>
 
@@ -4416,16 +4416,16 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://www.nature.com/articles/nature24270)
 
-**Mechanism.** Trains a policy/value network on games generated by its own search, then uses the updated network to improve subsequent search and play. This is an early concrete example of a coupled data-generation and policy-improvement loop.
+**Mechanism.** Alternates search-guided self-play with gradient updates to a shared policy/value network. Recent games are replayed to fit improved move distributions and outcomes. The training/search algorithm and network design remain externally specified.
 
-**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Game outcomes and search-improved move selections from self-play.
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** MCTS visit distributions and scored self-play outcomes train a policy/value network; a 400-game comparison gate admits new data-generating checkpoints above 55% wins.
 
-**Evaluation.** The authors evaluate playing strength against earlier Go programs, including the previously published champion-defeating AlphaGo.
+**Evaluation.** The 3-day, 20-block run generated 4.9 million games and defeated AlphaGo Lee 100–0; a separate 40-day, 40-block run generated 29 million games and defeated AlphaGo Master 89–11. Architecture controls use fixed self-play data, and move prediction differs from playing strength.
 
-**Boundary.** The environment supplies exact rules, legal moves, and a reliable win/loss signal. Curator interpretation: success in this closed game does not establish open-ended language-agent learning.
+**Boundary.** No human game demonstrations are used for the principal training runs, but exact rules, legal moves, board symmetries, architecture and search-parameter tuning remain inputs. Four TPUs describe the playing configuration, not total training compute; optimization used 64 GPU workers and 19 CPU parameter servers. Evidence is specific to Go.
 
 **Code / data.** Official runnable code was not verified in this source review.
 
-**Topics:** foundations, self-play, model-training. **Reviewed:** abstract · 2026-10-28.
+**Topics:** foundations, self-play, model-training. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://www.nature.com/articles/nature24270) · [Source 2](https://discovery.ucl.ac.uk/id/eprint/10045895/)
+[Source 1](https://www.nature.com/articles/nature24270) · [Source 2](https://discovery.ucl.ac.uk/id/eprint/10045895/) · [Source 3](https://www.julian.ac/papers/) · [Source 4](https://drive.google.com/file/d/1XN0QXdYKjbuMuVnQ7ASb6oxVo7DHy1Hx/view)

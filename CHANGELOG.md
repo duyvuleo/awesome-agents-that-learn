@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 — Detailed source review, third batch
+
+- Upgraded AlphaGo Zero, Constitutional AI, Generative Agents and Toolformer from abstract-only records, with version-specific methods, evaluations and limitations.
+- Clarified self-play compute, retained human supervision, simulation evidence and tool-use restrictions; reconciled Generative Agents' stale publication note.
+- Research total remains 190; review depth is 142 full-text and 48 abstract/metadata. Twelve broader appraisals are complete; the overall audit remains open.
+
 ## 2026-11-09 — Detailed source review, second batch
 
 - Upgraded DSPy, MemGPT, ReAct and Self-Refine using full-text methods, evaluations, appendices and visual evidence.
