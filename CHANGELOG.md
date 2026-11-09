@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-09 — Expanded STaR and SEAL evidence reviews
+
+- Appraised full methods, experiments, limitations and appendices for STaR and SEAL, including evaluation denominators, stronger controls and negative results.
+- Broader audit: 78 of 190 works complete, 112 pending; no new catalog works.
+
 ## 2026-11-09 — Expanded agent-training evidence reviews
 
 - Completed detailed appraisals of Agent-R, Re-ReST, RAGEN and RISE, distinguishing training feedback, correction protocols, negative results and final-paper additions.

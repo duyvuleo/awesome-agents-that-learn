@@ -5316,10 +5316,11 @@
       "https://arxiv.org/html/2506.10943v2",
       "https://proceedings.neurips.cc/paper_files/paper/2025/hash/6b41e04c41726e2a60e456d0a2b961ab-Abstract-Conference.html",
       "https://jyopari.github.io/posts/seal",
-      "https://github.com/Continual-Intelligence/SEAL"
+      "https://github.com/Continual-Intelligence/SEAL",
+      "https://arxiv.org/pdf/2506.10943v2"
     ],
     "code_url": "https://github.com/Continual-Intelligence/SEAL",
-    "code_note": "Official repository page checked; code and training were not executed.",
+    "code_note": "Official README inspected on 2026-11-09; it documents separate knowledge and few-shot studies, GPU training requirements and an external grading API. No installation, model training or benchmark execution was performed.",
     "topics": [
       "model-training",
       "continual-learning"
@@ -5329,12 +5330,12 @@
       "model-weights"
     ],
     "persistence": "both",
-    "learning_signal": "Downstream performance after applying a generated self-edit.",
-    "mechanism": "Learns to generate synthetic training material or adaptation directives, then applies gradient updates using those edits. An outer reward-based loop improves the edit-generation policy while an inner loop adapts the model.",
-    "evaluation": "Experiments cover knowledge incorporation and few-shot ARC adaptation; the paper also tests retention after sequential knowledge edits.",
-    "limitations": "ARC evaluation uses a small subset selected for solvability under suitable adaptation settings. Sequential edits still show forgetting, and evaluating each candidate edit requires model tuning; the paper does not establish stable lifelong adaptation.",
+    "learning_signal": "Training-time downstream performance after actual adaptation selects self-edits. ARC uses supplied target grids; knowledge evaluation uses reference answers and GPT-4.1 grading. External inputs, evaluation tasks and adaptation tools remain supplied.",
+    "mechanism": "An outer filtered-training loop learns to generate useful self-edits, while an inner gradient update adapts model weights. Knowledge edits generate training text; ARC edits select predefined augmentations and tuning settings. The update framework itself stays fixed.",
+    "evaluation": "ArXiv v2 studies no-context SQuAD knowledge incorporation, joint continued pretraining, and 40 sampled adaptation configurations on eight preselected ARC evaluation tasks. Appendices add prompting, alternative-generator and proxy-reward comparisons; sequential edits test forgetting.",
+    "limitations": "ARC results are conditional on preselected solvable tasks. Stronger prompt baselines exceed the default learned-edit result, although training also improves those prompts. Some competing generators win in other settings. Sequential edits still forget; labeled evaluation and expensive candidate fine-tuning constrain broader continual learning.",
     "review_depth": "full-text",
-    "checked": "2026-10-28",
+    "checked": "2026-11-09",
     "short_name": "SEAL"
   },
   {
@@ -6190,10 +6191,11 @@
     "sources": [
       "https://arxiv.org/abs/2203.14465",
       "https://proceedings.neurips.cc/paper_files/paper/2022/file/639a9a172c044fbb64175b5fad42e9a5-Paper-Conference.pdf",
-      "https://github.com/ezelikman/STaR"
+      "https://github.com/ezelikman/STaR",
+      "https://arxiv.org/pdf/2203.14465v2"
     ],
     "code_url": "https://github.com/ezelikman/STaR",
-    "code_note": "Official repository page checked; code and training were not executed.",
+    "code_note": "Official README inspected on 2026-11-09; it identifies the STaR training wrapper and largely inherited mesh-transformer-jax setup. No model, training code or benchmark execution was performed.",
     "topics": [
       "foundations",
       "model-training"
@@ -6205,10 +6207,10 @@
     "persistence": "across-tasks",
     "learning_signal": "Known correct answers filter generated rationales; answer hints support rationalization of failed examples.",
     "mechanism": "Generates reasoning traces, keeps traces ending in the reference answer, and fine-tunes on them. Failed problems can be retried with the answer supplied as a hint; each outer iteration retrains from the original base model on the newly collected traces.",
-    "evaluation": "Experiments cover arithmetic, CommonsenseQA, and GSM8K, with comparisons to direct-answer fine-tuning and prompted reasoning.",
-    "limitations": "The method needs training questions, reference answers, and a small rationale seed. Correct final answers do not independently certify that every intermediate explanation is valid.",
+    "evaluation": "GPT-J experiments cover arithmetic, CommonsenseQA development accuracy and GSM8K test accuracy. Ablations examine answer hints, prompting and sampling; a small human study ranks explanations only for questions both compared models answered correctly.",
+    "limitations": "Answer filtering does not certify rationale validity or faithfulness; the appendices document circular and incorrect reasoning with correct answers. Results depend on pretrained ability, supplied labels, prompt seeds and training schedules. Rationalization adds little on GSM8K, and the study does not establish stable continual improvement.",
     "review_depth": "full-text",
-    "checked": "2026-10-28",
+    "checked": "2026-11-09",
     "short_name": "STaR"
   },
   {

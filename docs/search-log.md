@@ -215,3 +215,5 @@ The [eighteenth depth-audit batch](review-log.md#2026-11-09--detailed-review-of-
 The [nineteenth depth-audit batch](review-log.md#2026-11-09--detailed-review-of-existing-entries-batch-19) revisits Reflexion, Voyager, TroVE and AutoSkill through methods, experiments, limitations and substantive appendices. Broader appraisal is 72/190, with same-task retries, skill reuse, tool selection and instruction extraction kept distinct. No new works or discovery-coverage window is claimed.
 
 The [twentieth depth-audit batch](review-log.md#2026-11-09--detailed-review-of-existing-entries-batch-20) covers Agent-R, Re-ReST, RAGEN and RISE, including final-paper additions and explicit source/version limits. Two official code links were recovered. Broader appraisal is 76/190; new leads remain queued and discovery-coverage dates are unchanged.
+
+The [twenty-first depth-audit batch](review-log.md#2026-11-09--detailed-review-of-existing-entries-batch-21) revisits STaR and SEAL through their complete substantive appendices, including negative findings and stronger controls. Broader appraisal is 78/190; no research works were added and no discovery-coverage date advanced.

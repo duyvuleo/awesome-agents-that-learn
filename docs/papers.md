@@ -151,7 +151,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-07-25 | **GEPA**<br>[GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](https://arxiv.org/abs/2507.19457) | Mutates module instructions using trace reflection, retains complementary candidates through instance-wise Pareto selection, and optionally merges prompt sets from… | Prompts / context | peer-reviewed · full-text | [Notes](#gepa) · [Code](https://github.com/gepa-ai/gepa) |
 | 2025-07-04 | **EvoAgentX**<br>[EvoAgentX: An Automated Framework for Evolving Agentic Workflows](https://arxiv.org/abs/2507.03616) | Provides workflow generation, execution and evaluation around TextGrad, AFlow and MIPRO. Optimized prompts, demonstrations and executable workflow structures persist… | Prompts / context, Tools, Workflows, Multi-agent organization | preprint · full-text | [Notes](#evoagentx) · [Code](https://github.com/EvoAgentX/EvoAgentX) |
 | 2025-06-30 | **SPIRAL**<br>[SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2506.24119) | One shared language-model policy plays both sides of zero-sum games and receives online policy-gradient updates. Separate baselines for each role stabilize training as… | Model weights | peer-reviewed · full-text | [Notes](#spiral) · [Code](https://github.com/spiral-rl/spiral) |
-| 2025-06-12 | **SEAL**<br>[Self-Adapting Language Models](https://arxiv.org/abs/2506.10943) | Learns to generate synthetic training material or adaptation directives, then applies gradient updates using those edits. An outer reward-based loop improves the… | Model weights | peer-reviewed · full-text | [Notes](#seal) · [Code](https://github.com/Continual-Intelligence/SEAL) |
+| 2025-06-12 | **SEAL**<br>[Self-Adapting Language Models](https://arxiv.org/abs/2506.10943) | An outer filtered-training loop learns to generate useful self-edits, while an inner gradient update adapts model weights. Knowledge edits generate training text; ARC… | Model weights | peer-reviewed · full-text | [Notes](#seal) · [Code](https://github.com/Continual-Intelligence/SEAL) |
 | 2025-06-09 | **G-Memory**<br>[G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems](https://arxiv.org/abs/2506.07398) | Maintains linked insight, query and interaction graphs with fixed models and orchestration. Similar-query retrieval, graph traversal, trajectory compression and… | Memory | peer-reviewed · full-text | [Notes](#g-memory) · [Code](https://github.com/bingreeky/GMemory) |
 | 2025-06-02 | **Self-Challenging Agents**<br>[Self-Challenging Language Model Agents](https://arxiv.org/abs/2506.01716) | A fixed challenger explores tools and proposes Code-as-Task instructions and checks. In the main self-improvement setting, successful offline trajectories from the same… | Model weights | peer-reviewed · full-text | [Notes](#self-challenging-agents) |
 | 2025-05-29 | **DGM**<br>[Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](https://arxiv.org/abs/2505.22954) | A coding agent rewrites its own implementation, and an archive retains runnable variants as possible parents for later edits. This permits exploration beyond the latest… | Agent code, Tools, Workflows, Prompts / context | peer-reviewed · full-text | [Notes](#darwin-godel-machine) · [Code](https://github.com/jennyzzt/dgm) |
@@ -3268,19 +3268,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2506.10943)
 
-**Mechanism.** Learns to generate synthetic training material or adaptation directives, then applies gradient updates using those edits. An outer reward-based loop improves the edit-generation policy while an inner loop adapts the model.
+**Mechanism.** An outer filtered-training loop learns to generate useful self-edits, while an inner gradient update adapts model weights. Knowledge edits generate training text; ARC edits select predefined augmentations and tuning settings. The update framework itself stays fixed.
 
-**What changes:** Model weights. **Persistence:** both. **Learning signal:** Downstream performance after applying a generated self-edit.
+**What changes:** Model weights. **Persistence:** both. **Learning signal:** Training-time downstream performance after actual adaptation selects self-edits. ARC uses supplied target grids; knowledge evaluation uses reference answers and GPT-4.1 grading. External inputs, evaluation tasks and adaptation tools remain supplied.
 
-**Evaluation.** Experiments cover knowledge incorporation and few-shot ARC adaptation; the paper also tests retention after sequential knowledge edits.
+**Evaluation.** ArXiv v2 studies no-context SQuAD knowledge incorporation, joint continued pretraining, and 40 sampled adaptation configurations on eight preselected ARC evaluation tasks. Appendices add prompting, alternative-generator and proxy-reward comparisons; sequential edits test forgetting.
 
-**Boundary.** ARC evaluation uses a small subset selected for solvability under suitable adaptation settings. Sequential edits still show forgetting, and evaluating each candidate edit requires model tuning; the paper does not establish stable lifelong adaptation.
+**Boundary.** ARC results are conditional on preselected solvable tasks. Stronger prompt baselines exceed the default learned-edit result, although training also improves those prompts. Some competing generators win in other settings. Sequential edits still forget; labeled evaluation and expensive candidate fine-tuning constrain broader continual learning.
 
-**Code / data.** [Official artifact](https://github.com/Continual-Intelligence/SEAL) — Official repository page checked; code and training were not executed.
+**Code / data.** [Official artifact](https://github.com/Continual-Intelligence/SEAL) — Official README inspected on 2026-11-09; it documents separate knowledge and few-shot studies, GPU training requirements and an external grading API. No installation, model training or benchmark execution was performed.
 
-**Topics:** model-training, continual-learning. **Reviewed:** full-text · 2026-10-28.
+**Topics:** model-training, continual-learning. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2506.10943) · [Source 2](https://arxiv.org/html/2506.10943v2) · [Source 3](https://proceedings.neurips.cc/paper_files/paper/2025/hash/6b41e04c41726e2a60e456d0a2b961ab-Abstract-Conference.html) · [Source 4](https://jyopari.github.io/posts/seal) · [Source 5](https://github.com/Continual-Intelligence/SEAL)
+[Source 1](https://arxiv.org/abs/2506.10943) · [Source 2](https://arxiv.org/html/2506.10943v2) · [Source 3](https://proceedings.neurips.cc/paper_files/paper/2025/hash/6b41e04c41726e2a60e456d0a2b961ab-Abstract-Conference.html) · [Source 4](https://jyopari.github.io/posts/seal) · [Source 5](https://github.com/Continual-Intelligence/SEAL) · [Source 6](https://arxiv.org/pdf/2506.10943v2)
 
 **Related software:** [SEAL](systems.md#system-seal). See each system's relationship note before equating it with the evaluated paper version.
 
@@ -4398,15 +4398,15 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 **What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Known correct answers filter generated rationales; answer hints support rationalization of failed examples.
 
-**Evaluation.** Experiments cover arithmetic, CommonsenseQA, and GSM8K, with comparisons to direct-answer fine-tuning and prompted reasoning.
+**Evaluation.** GPT-J experiments cover arithmetic, CommonsenseQA development accuracy and GSM8K test accuracy. Ablations examine answer hints, prompting and sampling; a small human study ranks explanations only for questions both compared models answered correctly.
 
-**Boundary.** The method needs training questions, reference answers, and a small rationale seed. Correct final answers do not independently certify that every intermediate explanation is valid.
+**Boundary.** Answer filtering does not certify rationale validity or faithfulness; the appendices document circular and incorrect reasoning with correct answers. Results depend on pretrained ability, supplied labels, prompt seeds and training schedules. Rationalization adds little on GSM8K, and the study does not establish stable continual improvement.
 
-**Code / data.** [Official artifact](https://github.com/ezelikman/STaR) — Official repository page checked; code and training were not executed.
+**Code / data.** [Official artifact](https://github.com/ezelikman/STaR) — Official README inspected on 2026-11-09; it identifies the STaR training wrapper and largely inherited mesh-transformer-jax setup. No model, training code or benchmark execution was performed.
 
-**Topics:** foundations, model-training. **Reviewed:** full-text · 2026-10-28.
+**Topics:** foundations, model-training. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2203.14465) · [Source 2](https://proceedings.neurips.cc/paper_files/paper/2022/file/639a9a172c044fbb64175b5fad42e9a5-Paper-Conference.pdf) · [Source 3](https://github.com/ezelikman/STaR)
+[Source 1](https://arxiv.org/abs/2203.14465) · [Source 2](https://proceedings.neurips.cc/paper_files/paper/2022/file/639a9a172c044fbb64175b5fad42e9a5-Paper-Conference.pdf) · [Source 3](https://github.com/ezelikman/STaR) · [Source 4](https://arxiv.org/pdf/2203.14465v2)
 
 <a id="alphago-zero"></a>
 
