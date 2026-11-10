@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-09T23:20:45.857609+00:00",
+  "checked_at_utc": "2026-11-10T01:27:23.566450+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -88,6 +88,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://aclanthology.org/2026.emnlp-main.1024.pdf",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.emnlp-main.1024.pdf",
+      "status": "reachable"
+    },
+    {
       "url": "https://aclanthology.org/2026.emnlp-main.1024/",
       "http_status": 200,
       "final_url": "https://aclanthology.org/2026.emnlp-main.1024/",
@@ -106,15 +112,33 @@
       "status": "reachable"
     },
     {
+      "url": "https://aclanthology.org/2026.emnlp-main.2100.pdf",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.emnlp-main.2100.pdf",
+      "status": "reachable"
+    },
+    {
       "url": "https://aclanthology.org/2026.emnlp-main.2100/",
       "http_status": 200,
       "final_url": "https://aclanthology.org/2026.emnlp-main.2100/",
       "status": "reachable"
     },
     {
+      "url": "https://aclanthology.org/2026.emnlp-main.2651.pdf",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.emnlp-main.2651.pdf",
+      "status": "reachable"
+    },
+    {
       "url": "https://aclanthology.org/2026.emnlp-main.2651/",
       "http_status": 200,
       "final_url": "https://aclanthology.org/2026.emnlp-main.2651/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2026.emnlp-main.57.pdf",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.emnlp-main.57.pdf",
       "status": "reachable"
     },
     {
@@ -166,6 +190,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://aclanthology.org/2026.findings-emnlp.1326.pdf",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.findings-emnlp.1326.pdf",
+      "status": "reachable"
+    },
+    {
       "url": "https://aclanthology.org/2026.findings-emnlp.1326/",
       "http_status": 200,
       "final_url": "https://aclanthology.org/2026.findings-emnlp.1326/",
@@ -184,6 +214,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://aclanthology.org/2026.findings-emnlp.1453.pdf",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.findings-emnlp.1453.pdf",
+      "status": "reachable"
+    },
+    {
       "url": "https://aclanthology.org/2026.findings-emnlp.1453/",
       "http_status": 200,
       "final_url": "https://aclanthology.org/2026.findings-emnlp.1453/",
@@ -193,6 +229,12 @@
       "url": "https://aclanthology.org/2026.findings-emnlp.1455/",
       "http_status": 200,
       "final_url": "https://aclanthology.org/2026.findings-emnlp.1455/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2026.findings-emnlp.1996.pdf",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.findings-emnlp.1996.pdf",
       "status": "reachable"
     },
     {
@@ -229,6 +271,12 @@
       "url": "https://aclanthology.org/2026.findings-emnlp.770/",
       "http_status": 200,
       "final_url": "https://aclanthology.org/2026.findings-emnlp.770/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://aclanthology.org/2026.findings-emnlp.775.pdf",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.findings-emnlp.775.pdf",
       "status": "reachable"
     },
     {
@@ -1163,11 +1211,7 @@
       "url": "https://arxiv.org/abs/2604.04247",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2604.04247",
-      "status": "reachable",
-      "expected_title": "Combee: Scaling Prompt Learning for Self-Improving Language Model Agents",
-      "observed_title": "Combee: Scaling Prompt Learning for Self-Improving Language Model Agents",
-      "title_similarity": 1.0,
-      "title_check": "match"
+      "status": "reachable"
     },
     {
       "url": "https://arxiv.org/abs/2604.16968",
@@ -1253,11 +1297,7 @@
       "url": "https://arxiv.org/abs/2605.27762",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2605.27762",
-      "status": "reachable",
-      "expected_title": "PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft",
-      "observed_title": "PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft",
-      "title_similarity": 1.0,
-      "title_check": "match"
+      "status": "reachable"
     },
     {
       "url": "https://arxiv.org/abs/2606.01075",
@@ -3334,6 +3374,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2602.23413v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2602.23413v2",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2603.01145v2",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2603.01145v2",
@@ -3352,9 +3398,27 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2604.04247v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2604.04247v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2604.16968v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2604.16968v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2604.17308v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2604.17308v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2605.07242v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2605.07242v1",
       "status": "reachable"
     },
     {
@@ -3364,9 +3428,39 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2605.19633v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2605.19633v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2605.23904v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2605.23904v2",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2605.27366v2",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2605.27366v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2605.27762v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2605.27762v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2606.01075v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2606.01075v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2606.08106v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2606.08106v1",
       "status": "reachable"
     },
     {
@@ -3376,9 +3470,27 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2607.21596v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2607.21596v2",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2608.00155v2",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2608.00155v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2608.03764v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2608.03764v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2608.04003v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2608.04003v1",
       "status": "reachable"
     },
     {
@@ -3406,9 +3518,69 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2608.21899v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2608.21899v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2608.22339v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2608.22339v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2608.22610v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2608.22610v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2608.26545v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2608.26545v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2609.00621v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2609.00621v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2609.02094v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2609.02094v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2609.05736v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2609.05736v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2609.14857v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2609.14857v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2609.17817v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2609.17817v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2609.22792v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2609.22792v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2609.26457v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2609.26457v1",
       "status": "reachable"
     },
     {
@@ -3418,9 +3590,51 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2609.30936v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2609.30936v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2609.31760v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2609.31760v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2609.33180v2",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2609.33180v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2609.35911v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2609.35911v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2609.36043v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2609.36043v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2609.36603v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2609.36603v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2610.00093v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2610.00093v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2610.02616v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2610.02616v1",
       "status": "reachable"
     },
     {
@@ -3439,6 +3653,12 @@
       "url": "https://arxiv.org/pdf/2610.10498v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2610.10498v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2610.13995v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2610.13995v1",
       "status": "reachable"
     },
     {
@@ -3718,6 +3938,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/src/2608.22610v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/src/2608.22610v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/src/2610.10498v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/src/2610.10498v1",
@@ -3733,6 +3959,12 @@
       "url": "https://cohenqu.github.io/rise.github.io/",
       "http_status": 200,
       "final_url": "https://cohenqu.github.io/rise.github.io/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://colm.cc/Conferences/2026/AcceptedPapers",
+      "http_status": 200,
+      "final_url": "https://colm.cc/Conferences/2026/AcceptedPapers",
       "status": "reachable"
     },
     {
@@ -3874,6 +4106,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/BITHLP/LifeMem/blob/7df36ca896544d21d3f00df80f74ffc4935aba03/README_en.md",
+      "http_status": 200,
+      "final_url": "https://github.com/BITHLP/LifeMem/blob/7df36ca896544d21d3f00df80f74ffc4935aba03/README_en.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/ByteDance-Seed/Agent-R",
       "http_status": 200,
       "final_url": "https://github.com/ByteDance-Seed/Agent-R",
@@ -3928,9 +4166,21 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/DEFENSE-SEU/FlowEvo/blob/36e81efd4d1fdbabca7366200b15808ebef157fa/src/code_math/runner.py",
+      "http_status": 200,
+      "final_url": "https://github.com/DEFENSE-SEU/FlowEvo/blob/36e81efd4d1fdbabca7366200b15808ebef157fa/src/code_math/runner.py",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/DaRL-GenAI/MASkills",
       "http_status": 200,
       "final_url": "https://github.com/DaRL-GenAI/MASkills",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/DaRL-GenAI/MASkills/blob/7b72f8b412a5b2143cedc6986261dd06fffe04c1/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/DaRL-GenAI/MASkills/blob/7b72f8b412a5b2143cedc6986261dd06fffe04c1/README.md",
       "status": "reachable"
     },
     {
@@ -4012,15 +4262,75 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/Gen-Verse/PAST-Bench/blob/0b56a9877d5bbd0680803614672f33375181d2b6/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/Gen-Verse/PAST-Bench/blob/0b56a9877d5bbd0680803614672f33375181d2b6/README.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Gen-Verse/PAST-Bench/blob/f8223517ae7491e776b69793d9f11e9d074ab42e/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/Gen-Verse/PAST-Bench/blob/f8223517ae7491e776b69793d9f11e9d074ab42e/README.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Greysahy/permemsafe",
+      "http_status": 200,
+      "final_url": "https://github.com/Greysahy/permemsafe",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Greysahy/permemsafe/blob/58e73467bb70d773cd3d1133deed8b78b91dedeb/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/Greysahy/permemsafe/blob/58e73467bb70d773cd3d1133deed8b78b91dedeb/README.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/IQuestLab/ModularRSI",
+      "http_status": 200,
+      "final_url": "https://github.com/IQuestLab/ModularRSI",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/IQuestLab/ModularRSI/blob/ed1e545bc60f050b404474e51ee18021777a0e23/LICENSE-MODULARRSI.md",
+      "http_status": 200,
+      "final_url": "https://github.com/IQuestLab/ModularRSI/blob/ed1e545bc60f050b404474e51ee18021777a0e23/LICENSE-MODULARRSI.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/IQuestLab/ModularRSI/blob/ed1e545bc60f050b404474e51ee18021777a0e23/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/IQuestLab/ModularRSI/blob/ed1e545bc60f050b404474e51ee18021777a0e23/README.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/IanYHWu/rc",
       "http_status": 200,
       "final_url": "https://github.com/IanYHWu/rc",
       "status": "reachable"
     },
     {
+      "url": "https://github.com/IanYHWu/rc/tree/c1ce61e7c027992c2c049cfaa1416a252d92baf4",
+      "http_status": 200,
+      "final_url": "https://github.com/IanYHWu/rc/tree/c1ce61e7c027992c2c049cfaa1416a252d92baf4",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/Infini-AI-Lab/SED",
       "http_status": 200,
       "final_url": "https://github.com/Infini-AI-Lab/SED",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Infini-AI-Lab/SED/blob/7cda0834511df386b9e1c57632dfa537e1d0fdab/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/Infini-AI-Lab/SED/blob/7cda0834511df386b9e1c57632dfa537e1d0fdab/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Infini-AI-Lab/SED/tree/7cda0834511df386b9e1c57632dfa537e1d0fdab",
+      "http_status": 200,
+      "final_url": "https://github.com/Infini-AI-Lab/SED/tree/7cda0834511df386b9e1c57632dfa537e1d0fdab",
       "status": "reachable"
     },
     {
@@ -4174,6 +4484,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/Prism-Shadow/GDPevo/blob/5082a777379156a048881e94940d640702e5e09a/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/Prism-Shadow/GDPevo/blob/5082a777379156a048881e94940d640702e5e09a/README.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/Qwen-Applications/SSP",
       "http_status": 200,
       "final_url": "https://github.com/Qwen-Applications/SSP",
@@ -4183,6 +4499,12 @@
       "url": "https://github.com/SII-YUCHENG2002/tame_code",
       "http_status": 200,
       "final_url": "https://github.com/SII-YUCHENG2002/tame_code",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/SII-YUCHENG2002/tame_code/blob/521ba6534fc48c5b98b46c1b722edd140cc30eb7/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/SII-YUCHENG2002/tame_code/blob/521ba6534fc48c5b98b46c1b722edd140cc30eb7/README.md",
       "status": "reachable"
     },
     {
@@ -4366,6 +4688,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/airbnb/agent-harness-optimizer/blob/0d7652b42296c8df07532fa3787fc956250741e7/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/airbnb/agent-harness-optimizer/blob/0d7652b42296c8df07532fa3787fc956250741e7/README.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/airbnb/agent-harness-optimizer/blob/main/REPRODUCIBILITY.md",
       "http_status": 200,
       "final_url": "https://github.com/airbnb/agent-harness-optimizer/blob/main/REPRODUCIBILITY.md",
@@ -4411,6 +4739,18 @@
       "url": "https://github.com/brightjade/membrane",
       "http_status": 200,
       "final_url": "https://github.com/brightjade/membrane",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/brightjade/membrane/blob/8d9c08aa352da0424b9d7c6122cc78e32b38477d/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/brightjade/membrane/blob/8d9c08aa352da0424b9d7c6122cc78e32b38477d/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/brightjade/membrane/blob/8d9c08aa352da0424b9d7c6122cc78e32b38477d/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/brightjade/membrane/blob/8d9c08aa352da0424b9d7c6122cc78e32b38477d/README.md",
       "status": "reachable"
     },
     {
@@ -4492,6 +4832,18 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/froeschele/trusting-trust-revisited",
+      "http_status": 200,
+      "final_url": "https://github.com/froeschele/trusting-trust-revisited",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/froeschele/trusting-trust-revisited/blob/93f1a8f32fd22261852445d6a348e7a8f417da28/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/froeschele/trusting-trust-revisited/blob/93f1a8f32fd22261852445d6a348e7a8f417da28/README.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/gepa-ai/gepa",
       "http_status": 200,
       "final_url": "https://github.com/gepa-ai/gepa",
@@ -4510,9 +4862,39 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/gepa-ai/gepa/issues/395",
+      "http_status": 200,
+      "final_url": "https://github.com/gepa-ai/gepa/issues/395",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/gepa-ai/gepa/pull/394",
+      "http_status": 200,
+      "final_url": "https://github.com/gepa-ai/gepa/pull/394",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/gepa-ai/gepa/pull/492",
+      "http_status": 200,
+      "final_url": "https://github.com/gepa-ai/gepa/pull/492",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/gepa-ai/optimize-anything-artifact",
       "http_status": 200,
       "final_url": "https://github.com/gepa-ai/optimize-anything-artifact",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/gepa-ai/optimize-anything-artifact/blob/58cdf89d856f2fbc174991b89076eccdcf68e4ca/acm_cais_artifact_evaluation/OFFLINE_ARTIFACTS.md",
+      "http_status": 200,
+      "final_url": "https://github.com/gepa-ai/optimize-anything-artifact/blob/58cdf89d856f2fbc174991b89076eccdcf68e4ca/acm_cais_artifact_evaluation/OFFLINE_ARTIFACTS.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/gepa-ai/optimize-anything-artifact/blob/58cdf89d856f2fbc174991b89076eccdcf68e4ca/acm_cais_artifact_evaluation/domains/kernelbench/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/gepa-ai/optimize-anything-artifact/blob/58cdf89d856f2fbc174991b89076eccdcf68e4ca/acm_cais_artifact_evaluation/domains/kernelbench/README.md",
       "status": "reachable"
     },
     {
@@ -4684,6 +5066,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/microsoft/SkillOpt/blob/ccfdcdf7ab50456e2556200499f2bccf1e1b43b2/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/microsoft/SkillOpt/blob/ccfdcdf7ab50456e2556200499f2bccf1e1b43b2/README.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/microsoft/agent-lightning",
       "http_status": 200,
       "final_url": "https://github.com/microsoft/agent-lightning",
@@ -4786,6 +5174,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/skydiscover-ai/skydiscover/blob/0d932b690670a7e544388ad362e9876c8bd256a0/skydiscover/optimize/search/evox/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/skydiscover-ai/skydiscover/blob/0d932b690670a7e544388ad362e9876c8bd256a0/skydiscover/optimize/search/evox/README.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/snap-research/LoCoMo",
       "http_status": 200,
       "final_url": "https://github.com/snap-research/LoCoMo",
@@ -4882,6 +5276,24 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/wzekai/VERSE/blob/d8ff0adab0cf82e13d7878f84ff84f823cb2f6c9/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/wzekai/VERSE/blob/d8ff0adab0cf82e13d7878f84ff84f823cb2f6c9/README.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/wzekai/VERSE/blob/d8ff0adab0cf82e13d7878f84ff84f823cb2f6c9/data/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/wzekai/VERSE/blob/d8ff0adab0cf82e13d7878f84ff84f823cb2f6c9/data/README.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/wzekai/VERSE/blob/d8ff0adab0cf82e13d7878f84ff84f823cb2f6c9/results/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/wzekai/VERSE/blob/d8ff0adab0cf82e13d7878f84ff84f823cb2f6c9/results/README.md",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/xaddwell/awesome-self-evolving-agent-safety",
       "http_status": 200,
       "final_url": "https://github.com/xaddwell/awesome-self-evolving-agent-safety",
@@ -4915,6 +5327,12 @@
       "url": "https://github.com/yuntian-group/cdsep",
       "http_status": 200,
       "final_url": "https://github.com/yuntian-group/cdsep",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/yuntian-group/cdsep/blob/c0d7d0ae4cc14ac54a5e97eba393273f5c7add52/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/yuntian-group/cdsep/blob/c0d7d0ae4cc14ac54a5e97eba393273f5c7add52/README.md",
       "status": "reachable"
     },
     {
@@ -5062,6 +5480,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://neurips.cc/virtual/2026/poster/151264",
+      "http_status": 200,
+      "final_url": "https://neurips.cc/virtual/2026/loc/sydney/poster/151264",
+      "status": "reachable"
+    },
+    {
       "url": "https://oatml.cs.ox.ac.uk/code.html",
       "http_status": 200,
       "final_url": "https://oatml.cs.ox.ac.uk/code.html",
@@ -5099,6 +5523,20 @@
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
+      "url": "https://openreview.net/forum?id=bgUar0JP5t",
+      "http_status": 200,
+      "final_url": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DbgUar0JP5t",
+      "status": "restricted-or-transient",
+      "note": "Redirected to an access gate; source content was not verified."
+    },
+    {
+      "url": "https://openreview.net/forum?id=lSvAsTjpTW",
+      "http_status": 200,
+      "final_url": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DlSvAsTjpTW",
+      "status": "restricted-or-transient",
+      "note": "Redirected to an access gate; source content was not verified."
+    },
+    {
       "url": "https://openreview.net/pdf?id=46Zgqo4QIU",
       "http_status": 403,
       "status": "restricted-or-transient"
@@ -5114,134 +5552,166 @@
       "status": "restricted-or-transient"
     },
     {
+      "url": "https://proceedings.colm.cc/paper_files/paper/2026",
+      "http_status": 200,
+      "final_url": "https://proceedings.colm.cc/paper_files/paper/2026",
+      "status": "reachable"
+    },
+    {
       "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/01977a08d8e76cf4df40b5b57407c9eb-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/01977a08d8e76cf4df40b5b57407c9eb-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/0bcf9cf6ffe26bba3af99e18be0e1d8d-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/0bcf9cf6ffe26bba3af99e18be0e1d8d-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/8204f54f6cd8f0db1765a274e94ceaac-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/8204f54f6cd8f0db1765a274e94ceaac-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/87b321515dc33137ffcc5d1654b7d182-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/87b321515dc33137ffcc5d1654b7d182-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/fc9f83d9925e6885e8f1ae1e17b3c44b-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/fc9f83d9925e6885e8f1ae1e17b3c44b-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/fde1a69a5b6e554b2f1f727197d2651d-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/fde1a69a5b6e554b2f1f727197d2651d-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/fe24df54d5ccd95cdf830a309f2bf5c0-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/fe24df54d5ccd95cdf830a309f2bf5c0-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/3339f19c5fcee3ad74502947a32be9e6-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/3339f19c5fcee3ad74502947a32be9e6-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/f1cf02ce09757f57c3b93c0db83181e0-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/f1cf02ce09757f57c3b93c0db83181e0-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/d813d324dbf0598bbdc9c8e79740ed01-Paper-Conference.pdf",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/d813d324dbf0598bbdc9c8e79740ed01-Paper-Conference.pdf",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/0ae94013da7cd459402fd77874e09ee3-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/0ae94013da7cd459402fd77874e09ee3-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/36b7acf6f6010652b3f2a433774a66fe-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/36b7acf6f6010652b3f2a433774a66fe-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/5492ecbce4439401798dcd2c90be94cd-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/5492ecbce4439401798dcd2c90be94cd-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/871ac99fdc5282d0301934d23945ebaa-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/871ac99fdc5282d0301934d23945ebaa-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/6ac12f42db406e6be14d669884e73212-Paper-Conference.pdf",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/6ac12f42db406e6be14d669884e73212-Paper-Conference.pdf",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/86178c06fd59ebc58dc31f8edb3c54af-Paper-Conference.pdf",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/86178c06fd59ebc58dc31f8edb3c54af-Paper-Conference.pdf",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/0b1b52b624ce69e0241eac91f8df0bce-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/0b1b52b624ce69e0241eac91f8df0bce-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/0e9e708b6f48e14fd0ac29e167413f76-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/0e9e708b6f48e14fd0ac29e167413f76-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/3ba7c8c36b71b2fc31fae3361aefefbf-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/3ba7c8c36b71b2fc31fae3361aefefbf-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/6ac12f42db406e6be14d669884e73212-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/6ac12f42db406e6be14d669884e73212-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/86178c06fd59ebc58dc31f8edb3c54af-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/86178c06fd59ebc58dc31f8edb3c54af-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/8a94ff6f922d995d7d3f4ebf4143e442-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/8a94ff6f922d995d7d3f4ebf4143e442-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/980ea04d23d1f6908964eba2a74afe45-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/980ea04d23d1f6908964eba2a74afe45-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/aa5f5e6eb6f613ec412f1d948dfa21a5-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/aa5f5e6eb6f613ec412f1d948dfa21a5-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/d49b9aacebda61051166335af6fd3061-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/d49b9aacebda61051166335af6fd3061-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.mlr.press/v235/chen24j.html",
@@ -5323,63 +5793,98 @@
     },
     {
       "url": "https://proceedings.neurips.cc/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/639a9a172c044fbb64175b5fad42e9a5-Paper-Conference.pdf",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/639a9a172c044fbb64175b5fad42e9a5-Paper-Conference.pdf",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/76ec4dc30e9faaf0e4b6093eaa377218-Paper-Conference.pdf",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/76ec4dc30e9faaf0e4b6093eaa377218-Paper-Conference.pdf",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/639d992f819c2b40387d4d5170b8ffd7-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/639d992f819c2b40387d4d5170b8ffd7-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/136a45cd9b841bf785625709a19c6508-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/136a45cd9b841bf785625709a19c6508-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/6b41e04c41726e2a60e456d0a2b961ab-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/6b41e04c41726e2a60e456d0a2b961ab-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/9837dc00ff67d176373268ed48042d49-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/9837dc00ff67d176373268ed48042d49-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/a5a305fac88fb4ae40969cfec5eef48d-Abstract-Conference.html",
-      "status": "inconclusive",
-      "error": "URLError"
+      "http_status": 200,
+      "final_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/a5a305fac88fb4ae40969cfec5eef48d-Abstract-Conference.html",
+      "status": "reachable"
     },
     {
       "url": "https://raw.githubusercontent.com/SII-YUCHENG2002/tame_code/main/README.md",
       "http_status": 200,
       "final_url": "https://raw.githubusercontent.com/SII-YUCHENG2002/tame_code/main/README.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ace-agent/ace/main/LICENSE.txt",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/ace-agent/ace/main/LICENSE.txt",
+      "status": "reachable"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ace-agent/ace/main/README.md",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/ace-agent/ace/main/README.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ace-agent/ace/main/ace/ace_batch.py",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/ace-agent/ace/main/ace/ace_batch.py",
+      "status": "reachable"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ace-agent/ace/main/pyproject.toml",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/ace-agent/ace/main/pyproject.toml",
       "status": "reachable"
     },
     {
@@ -5392,6 +5897,12 @@
       "url": "https://raw.githubusercontent.com/exoharness/exo/c5c1963a3445417e64938c139da88edd9154075d/README.md",
       "http_status": 200,
       "final_url": "https://raw.githubusercontent.com/exoharness/exo/c5c1963a3445417e64938c139da88edd9154075d/README.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gepa-ai/gepa/main/LICENSE",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/gepa-ai/gepa/main/LICENSE",
       "status": "reachable"
     },
     {
@@ -5443,6 +5954,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wu26as/wu26as.pdf",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wu26as/wu26as.pdf",
+      "status": "reachable"
+    },
+    {
       "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/ye26g/ye26g.pdf",
       "http_status": 200,
       "final_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/ye26g/ye26g.pdf",
@@ -5458,6 +5975,12 @@
       "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhao26aw/zhao26aw.pdf",
       "http_status": 200,
       "final_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhao26aw/zhao26aw.pdf",
+      "status": "reachable"
+    },
+    {
+      "url": "https://robot-adaptation.github.io/MemoryAnchors/",
+      "http_status": 200,
+      "final_url": "https://robot-adaptation.github.io/MemoryAnchors/",
       "status": "reachable"
     },
     {
@@ -5505,21 +6028,21 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=cc6ec801-1224-4dbd-b634-3b3241129cc4",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=d672319c-8309-41bb-80de-2ce07db8f561",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=de5100cc-b90c-4d69-8f95-75a99bd2c69b",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=4fc7dfbd-45ed-4c61-beb4-488837adf02d",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=c7670918-cd05-4ad3-a9ad-f59c162f4238",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=552f5059-83e9-4cb4-bf9d-40c60f0b3aad",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -5533,21 +6056,21 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=5e666ef3-ce4c-4c67-9764-875baa611129",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=ecd52fca-05ef-4a4d-b557-4b5d5af096c6",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=a4b4fa25-141c-4405-a41b-0ae8b5e487bf",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=dbf18542-d530-43fb-a549-8a6f854c4ae4",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=77928cc1-41d0-45e7-a7f0-db3e51d0664e",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=0f4dc6ce-30a9-45c3-8ef9-adafa6d535c0",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -5564,6 +6087,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://www.weco.ai/blog/first-evidence-of-recursive-self-improvement",
+      "http_status": 200,
+      "final_url": "https://www.weco.ai/blog/first-evidence-of-recursive-self-improvement",
+      "status": "reachable"
+    },
+    {
       "url": "https://xaddwell.github.io/Awesome-Self-Evolving-Agent-Safety/",
       "http_status": 200,
       "final_url": "https://xaddwell.github.io/Awesome-Self-Evolving-Agent-Safety/",
@@ -5573,6 +6102,12 @@
       "url": "https://xiaowu0162.github.io/longmemeval-v2/",
       "http_status": 200,
       "final_url": "https://xiaowu0162.github.io/longmemeval-v2/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://yigitcankaya.github.io/",
+      "http_status": 200,
+      "final_url": "https://yigitcankaya.github.io/",
       "status": "reachable"
     },
     {

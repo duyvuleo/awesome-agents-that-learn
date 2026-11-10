@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-10 — Completed remaining full-text audit
+
+- Addressed all 39 remaining works, including full supplied appendices and visual evidence checks.
+- Updated mechanisms, evaluation units, negative outcomes, cost boundaries and source-version reporting limits.
+- Verified the PEAM and Combee publication titles, SkillOpt’s NeurIPS acceptance and three official artifact links.
+- Audit status: 188 complete inspected-source appraisals, two missing-supplement reviews, no wholly unreviewed works. SkillOpt’s newer restricted final body remains a separate lead.
+- Preserved historical records and weekly citation snapshots; no research experiments executed.
+
 ## 2026-11-10 — Expanded continual robot replay review
 
 - Completed RIFAR v3 and all supplementary methods, tables and algorithm.

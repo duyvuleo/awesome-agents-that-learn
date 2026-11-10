@@ -92,14 +92,14 @@ A work may appear in several topics; counts here are not additive.
 - 2026-08-04 — [PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents](papers.md#past-bench) · core · preprint
 - 2026-07-31 — [AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](papers.md#agentstream) · core · preprint
 - 2026-06-04 — [Membrane: A Self-Evolving Contrastive Safety Memory for LLM Agent Defense](papers.md#membrane) · core · peer-reviewed
-- 2026-05-26 — [PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft](papers.md#peam) · core · peer-reviewed
+- 2026-05-26 — [PEAM: Parametric Embodied Agent Memory for Continual Skill Learning via Internalization of Experience in Minecraft](papers.md#peam) · core · peer-reviewed
 - 2026-05-26 — [MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation](papers.md#muse-autoskill) · core · preprint
 - 2026-05-12 — [LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues](papers.md#longmemeval-v2) · adjacent · preprint
 - 2026-05-08 — [MEMOREPAIR: Barrier-First Cascade Repair in Agentic Memory](papers.md#memorepair) · core · preprint
 - 2026-04-22 — [Ask Only When Needed: Proactive Retrieval from Memory and Skills for Experience-Driven Lifelong Agents](papers.md#proactagent) · core · peer-reviewed
 - 2026-04-18 — [FlowEvo: Self-Evolving Agents through the Co-Evolution of Workflows and Executable Skills](papers.md#flowevo) · core · peer-reviewed
 - 2026-04-18 — [On Safety Risks in Experience-Driven Self-Evolving Agents](papers.md#experience-driven-safety) · core · peer-reviewed
-- 2026-04-05 — [Combee: Scaling Prompt Learning for Self-Improving Language Model Agents](papers.md#combee) · core · peer-reviewed
+- 2026-04-05 — [Combee: Scaling Parallel Prompt Learning for Self-Improving LLM Agents](papers.md#combee) · core · peer-reviewed
 - 2026-03-31 — [APEX-EM: Non-Parametric Online Learning for Autonomous Agents via Structured Procedural-Episodic Experience Replay](papers.md#apex-em) · core · peer-reviewed
 - 2026-03-30 — [Meta-Harness: End-to-End Optimization of Model Harnesses](papers.md#meta-harness) · core · peer-reviewed
 - 2026-03-18 — [Retrieval-Augmented LLM Agents: Learning to Learn from Experience](papers.md#exprag) · core · peer-reviewed
@@ -165,9 +165,9 @@ A work may appear in several topics; counts here are not additive.
 - 2026-08-04 — [PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents](papers.md#past-bench) · core · preprint
 - 2026-08-04 — [GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](papers.md#gdpevo) · core · preprint
 - 2026-07-31 — [AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](papers.md#agentstream) · core · preprint
-- 2026-05-26 — [PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft](papers.md#peam) · core · peer-reviewed
+- 2026-05-26 — [PEAM: Parametric Embodied Agent Memory for Continual Skill Learning via Internalization of Experience in Minecraft](papers.md#peam) · core · peer-reviewed
 - 2026-05-26 — [MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation](papers.md#muse-autoskill) · core · preprint
-- 2026-05-22 — [SkillOpt: Executive Strategy for Self-Evolving Agent Skills](papers.md#skillopt) · core · preprint
+- 2026-05-22 — [SkillOpt: Executive Strategy for Self-Evolving Agent Skills](papers.md#skillopt) · core · peer-reviewed
 - 2026-05-19 — [optimize_anything: A Universal API for Optimizing any Text Parameter](papers.md#optimize-anything) · core · preprint
 - 2026-05-12 — [LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues](papers.md#longmemeval-v2) · adjacent · preprint
 - 2026-05-08 — [MEMOREPAIR: Barrier-First Cascade Repair in Agentic Memory](papers.md#memorepair) · core · preprint
@@ -234,9 +234,9 @@ A work may appear in several topics; counts here are not additive.
 - 2026-09-04 — [Beyond Prompts: Measuring and Optimizing LLM Tool-Agent Harnesses](papers.md#beyond-prompts-prism) · core · peer-reviewed
 - 2026-09-01 — [Control-Data Flow Separation: Stable Prompt Optimization in Multi-Agent LLMs](papers.md#control-data-flow-separation) · core · peer-reviewed
 - 2026-06-06 — [PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace) · core · preprint
-- 2026-05-22 — [SkillOpt: Executive Strategy for Self-Evolving Agent Skills](papers.md#skillopt) · core · preprint
+- 2026-05-22 — [SkillOpt: Executive Strategy for Self-Evolving Agent Skills](papers.md#skillopt) · core · peer-reviewed
 - 2026-05-19 — [optimize_anything: A Universal API for Optimizing any Text Parameter](papers.md#optimize-anything) · core · preprint
-- 2026-04-05 — [Combee: Scaling Prompt Learning for Self-Improving Language Model Agents](papers.md#combee) · core · peer-reviewed
+- 2026-04-05 — [Combee: Scaling Parallel Prompt Learning for Self-Improving LLM Agents](papers.md#combee) · core · peer-reviewed
 - 2026-03-30 — [Meta-Harness: End-to-End Optimization of Model Harnesses](papers.md#meta-harness) · core · peer-reviewed
 - 2026-02-26 — [EvoX: Meta-Evolution for Automated Discovery](papers.md#evox) · core · peer-reviewed
 - 2026-01-29 — [Meta Context Engineering via Agentic Skill Evolution](papers.md#meta-context-engineering) · core · peer-reviewed
@@ -271,7 +271,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026-07-31 — [AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](papers.md#agentstream) · core · preprint
 - 2026-05-19 — [optimize_anything: A Universal API for Optimizing any Text Parameter](papers.md#optimize-anything) · core · preprint
 - 2026-04-18 — [FlowEvo: Self-Evolving Agents through the Co-Evolution of Workflows and Executable Skills](papers.md#flowevo) · core · peer-reviewed
-- 2026-04-05 — [Combee: Scaling Prompt Learning for Self-Improving Language Model Agents](papers.md#combee) · core · peer-reviewed
+- 2026-04-05 — [Combee: Scaling Parallel Prompt Learning for Self-Improving LLM Agents](papers.md#combee) · core · peer-reviewed
 - 2026-03-23 — [From Static Templates to Dynamic Runtime Graphs: A Survey of Workflow Optimization for LLM Agents](papers.md#workflow-optimization-survey) · core · peer-reviewed
 - 2026-01-08 — [AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering](papers.md#agentdevel) · core · preprint
 - 2025-10-06 — [Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](papers.md#ace) · core · peer-reviewed
@@ -367,7 +367,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026-08-20 — [Phantom Gains: Auditing Self-Improvement Against a Measured Null](papers.md#phantom-gains) · adjacent · preprint
 - 2026-07-14 — [Self-Improvements in Modern Agentic Systems: A Survey](papers.md#modern-self-improvement-survey) · core · preprint
 - 2026-05-31 — [On the Generalization Gap in Self-Evolving Language Model Reasoning](papers.md#self-evolution-generalization-gap) · adjacent · peer-reviewed
-- 2026-05-26 — [PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft](papers.md#peam) · core · peer-reviewed
+- 2026-05-26 — [PEAM: Parametric Embodied Agent Memory for Continual Skill Learning via Internalization of Experience in Minecraft](papers.md#peam) · core · peer-reviewed
 - 2026-04-22 — [Ask Only When Needed: Proactive Retrieval from Memory and Skills for Experience-Driven Lifelong Agents](papers.md#proactagent) · core · peer-reviewed
 - 2026-03-18 — [Retrieval-Augmented LLM Agents: Learning to Learn from Experience](papers.md#exprag) · core · peer-reviewed
 - 2026-02-09 — [SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl) · core · peer-reviewed
@@ -466,7 +466,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026-08-04 — [GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](papers.md#gdpevo) · core · preprint
 - 2026-07-31 — [AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](papers.md#agentstream) · core · preprint
 - 2026-06-04 — [Membrane: A Self-Evolving Contrastive Safety Memory for LLM Agent Defense](papers.md#membrane) · core · peer-reviewed
-- 2026-05-26 — [PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft](papers.md#peam) · core · peer-reviewed
+- 2026-05-26 — [PEAM: Parametric Embodied Agent Memory for Continual Skill Learning via Internalization of Experience in Minecraft](papers.md#peam) · core · peer-reviewed
 - 2026-05-08 — [MEMOREPAIR: Barrier-First Cascade Repair in Agentic Memory](papers.md#memorepair) · core · preprint
 - 2026-04-22 — [Ask Only When Needed: Proactive Retrieval from Memory and Skills for Experience-Driven Lifelong Agents](papers.md#proactagent) · core · peer-reviewed
 - 2026-04-19 — [SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](papers.md#skillflow) · core · preprint
@@ -592,12 +592,12 @@ A work may appear in several topics; counts here are not additive.
 - 2026-06-04 — [Membrane: A Self-Evolving Contrastive Safety Memory for LLM Agent Defense](papers.md#membrane) · core · peer-reviewed
 - 2026-05-31 — [On the Generalization Gap in Self-Evolving Language Model Reasoning](papers.md#self-evolution-generalization-gap) · adjacent · peer-reviewed
 - 2026-05-26 — [MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation](papers.md#muse-autoskill) · core · preprint
-- 2026-05-22 — [SkillOpt: Executive Strategy for Self-Evolving Agent Skills](papers.md#skillopt) · core · preprint
+- 2026-05-22 — [SkillOpt: Executive Strategy for Self-Evolving Agent Skills](papers.md#skillopt) · core · peer-reviewed
 - 2026-05-12 — [LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues](papers.md#longmemeval-v2) · adjacent · preprint
 - 2026-05-08 — [MEMOREPAIR: Barrier-First Cascade Repair in Agentic Memory](papers.md#memorepair) · core · preprint
 - 2026-04-19 — [SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](papers.md#skillflow) · core · preprint
 - 2026-04-18 — [On Safety Risks in Experience-Driven Self-Evolving Agents](papers.md#experience-driven-safety) · core · peer-reviewed
-- 2026-04-05 — [Combee: Scaling Prompt Learning for Self-Improving Language Model Agents](papers.md#combee) · core · peer-reviewed
+- 2026-04-05 — [Combee: Scaling Parallel Prompt Learning for Self-Improving LLM Agents](papers.md#combee) · core · peer-reviewed
 - 2026-03-23 — [From Static Templates to Dynamic Runtime Graphs: A Survey of Workflow Optimization for LLM Agents](papers.md#workflow-optimization-survey) · core · peer-reviewed
 - 2026-03-19 — [Hyperagents](papers.md#hyperagents) · core · preprint
 - 2026-03-18 — [Retrieval-Augmented LLM Agents: Learning to Learn from Experience](papers.md#exprag) · core · peer-reviewed
@@ -689,8 +689,8 @@ A work may appear in several topics; counts here are not additive.
 - 2026-08-27 — [Memory Anchors for Continual Robot Learning](papers.md#memory-anchors) · core · preprint
 - 2026-08-22 — [CIDER: Continual Interactive Distillation for Embodied Reinforcement Learning](papers.md#cider) · core · preprint
 - 2026-08-04 — [GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](papers.md#gdpevo) · core · preprint
-- 2026-05-26 — [PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft](papers.md#peam) · core · peer-reviewed
-- 2026-05-22 — [SkillOpt: Executive Strategy for Self-Evolving Agent Skills](papers.md#skillopt) · core · preprint
+- 2026-05-26 — [PEAM: Parametric Embodied Agent Memory for Continual Skill Learning via Internalization of Experience in Minecraft](papers.md#peam) · core · peer-reviewed
+- 2026-05-22 — [SkillOpt: Executive Strategy for Self-Evolving Agent Skills](papers.md#skillopt) · core · peer-reviewed
 - 2026-05-19 — [optimize_anything: A Universal API for Optimizing any Text Parameter](papers.md#optimize-anything) · core · preprint
 - 2026-03-31 — [APEX-EM: Non-Parametric Online Learning for Autonomous Agents via Structured Procedural-Episodic Experience Replay](papers.md#apex-em) · core · peer-reviewed
 - 2026-03-30 — [Meta-Harness: End-to-End Optimization of Model Harnesses](papers.md#meta-harness) · core · peer-reviewed

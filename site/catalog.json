@@ -1835,10 +1835,14 @@
       "sources": [
         "https://arxiv.org/abs/2610.02616",
         "https://arxiv.org/html/2610.02616v1",
-        "https://github.com/wzekai/VERSE"
+        "https://github.com/wzekai/VERSE",
+        "https://arxiv.org/pdf/2610.02616v1",
+        "https://github.com/wzekai/VERSE/blob/d8ff0adab0cf82e13d7878f84ff84f823cb2f6c9/README.md",
+        "https://github.com/wzekai/VERSE/blob/d8ff0adab0cf82e13d7878f84ff84f823cb2f6c9/data/README.md",
+        "https://github.com/wzekai/VERSE/blob/d8ff0adab0cf82e13d7878f84ff84f823cb2f6c9/results/README.md"
       ],
       "code_url": "https://github.com/wzekai/VERSE",
-      "code_note": "Official repository and README inspected; released harnesses and result files were not independently audited or executed.",
+      "code_note": "Complete 45-page v1, Appendices A–L, thirteen figures, fifteen tables, Algorithm 1, full proofs and optimizer-artifact excerpts read on 2026-11-10. Official MIT-licensed release d8ff0adab0cf82e13d7878f84ff84f823cb2f6c9 includes source, configurations, split IDs, selected harnesses and per-task outcomes. README and data/results notes inspected; Python 3.12+, Docker and model-serving resources required. No research code, models or benchmark environments executed.",
       "topics": [
         "recursive-improvement",
         "architecture",
@@ -1855,11 +1859,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Executed draft checks, failure replay and perturbation, training regressions, and validation summaries.",
-      "mechanism": "Updates an executor harness and the optimizer's own prompts, skills, tools, hooks, and notes. Verification tools test proposed fixes and diagnoses before submission while both models remain frozen.",
-      "evaluation": "Adds VERSE to four reimplemented harness optimizers, evaluating held-out SWE-rebench and newer multilingual tasks; also studies Terminal-Bench and component ablations.",
-      "limitations": "Selection rules and core verification tools remain fixed. Matched candidate counts do not imply equal total compute. Reimplemented baselines differ from their original systems; self-evolution benefits vary by host, and noisy outcome changes often fail to reproduce.",
+      "mechanism": "Keeps executor and optimizer weights frozen while evolving separate harnesses. The optimizer diagnoses failures, tests drafts, replays and perturbs recorded actions, and retains training audits. Between rounds it rewrites its own prompts, skills, tools, hooks and notes; fixed evaluation rules and verification primitives bound these changes. Adaptive validation summaries guide subsequent edits and final harness selection.",
+      "evaluation": "Complete v1 studies four reimplemented harness optimizers on 108 held-out Python tasks and 107 newer multilingual tasks. Main Qwen comparisons use one evolution run and three test evaluations; a separate anonymous-model study repeats evolution three times. It includes component, budget, replay and transfer studies. Best reported selected scores are 42.28% and 37.69%, while self-evolution does not improve every tools-only comparison.",
+      "limitations": "Repeated validation feedback includes task IDs and outcome changes; the final test remains separate. Main effects and many ablations lack independently repeated evolution runs, while total compute differs and wall time rises 1.3–2.5 times. Theory depends on informative checks, population-improving repairs and bounded selection error. Verification does not force rejection of a draft, artifact presence is not correctness, and transfer to new executors can regress.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-10",
       "short_name": "VERSE"
     },
     {
@@ -1911,10 +1915,13 @@
       "sources": [
         "https://arxiv.org/abs/2609.36603",
         "https://arxiv.org/html/2609.36603v1",
-        "https://github.com/Infini-AI-Lab/SED"
+        "https://github.com/Infini-AI-Lab/SED",
+        "https://arxiv.org/pdf/2609.36603v1",
+        "https://github.com/Infini-AI-Lab/SED/tree/7cda0834511df386b9e1c57632dfa537e1d0fdab",
+        "https://github.com/Infini-AI-Lab/SED/blob/7cda0834511df386b9e1c57632dfa537e1d0fdab/LICENSE"
       ],
       "code_url": "https://github.com/Infini-AI-Lab/SED",
-      "code_note": "Author-linked repository and setup documentation inspected; not installed or executed.",
+      "code_note": "Complete 39-page arXiv v1 main text and Appendix A.1–A.13 reviewed, including all six figures, seven tables, prompts and case studies. Official MIT-licensed release documentation and requirements inspected at commit 7cda0834511df386b9e1c57632dfa537e1d0fdab; public source availability is not reproduction. No code, attack generation, models or paid APIs run.",
       "topics": [
         "memory",
         "safety",
@@ -1928,11 +1935,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "An external judge flags harmful completed trajectories; model components synthesize and organize defensive policies.",
-      "mechanism": "Stores failure episodes and distills them into a hierarchical policy memory. Relevant policies condition later tasks while the acting model stays frozen.",
-      "evaluation": "The authors evaluate eight benchmarks spanning jailbreaks, prompt injection, and coding, plus adaptive attackers and a frozen-memory control. Each benchmark starts with empty memory; updates occur only after completed episodes.",
-      "limitations": "The reported protocol does not establish cross-benchmark retention. Retrieval and enforcement failures remain, and learning depends on the external judge. DTap additionally uses a pre-tool guard, which must be retained when interpreting comparisons.",
+      "mechanism": "After each completed episode, a separate call to the fixed actor’s base model judges harm; judged failures enter episodic memory and are distilled into hierarchical security policies. Later episodes retrieve specific rules and covering parents into context. Memory stays read-only during an episode; DTap additionally uses per-turn policy injection and a pre-tool guard.",
+      "evaluation": "Full v1 reports static and adaptive jailbreaks, prompt injection and coding benchmarks, including three-model adaptive/DTap comparisons, cumulative memory ablations and a frozen-memory control. Each benchmark starts empty and learns online. Reported attack success falls substantially, while some benign utility scores fall and specialized baselines remain stronger in individual cells.",
+      "limitations": "Same-model harm judgments can accumulate overly restrictive policies. Reset memories do not establish cross-benchmark retention. FCV’s resolved-patch denominator and judge-disagreement case qualify security claims; adaptive case excerpts are partly representative. Reported inference savings exclude post-episode judging and synthesis. Retrieval and enforcement failures remain.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-10",
       "short_name": "SED"
     },
     {
@@ -1946,10 +1953,11 @@
       "url": "https://arxiv.org/abs/2609.35911",
       "sources": [
         "https://arxiv.org/abs/2609.35911",
-        "https://arxiv.org/html/2609.35911v1"
+        "https://arxiv.org/html/2609.35911v1",
+        "https://arxiv.org/pdf/2609.35911v1"
       ],
       "code_url": null,
-      "code_note": "Official runnable code was not independently established in this review; this does not imply that no release exists.",
+      "code_note": "Complete 18-page arXiv v1, Appendices A–E, four figures, six tables, eight equations, Algorithm 1 and all prompt/example excerpts read on 2026-11-10; figures, tables and synchronization settings visually inspected. No official StepLearn implementation independently verified; linked BrowserGym/VisualAgentBench projects are dependencies. No agent runs, model inference or training executed.",
       "topics": [
         "memory",
         "continual-learning",
@@ -1962,11 +1970,11 @@
       ],
       "persistence": "both",
       "learning_signal": "Observed action transitions and prospective checks of predicted effects in later, non-source episodes.",
-      "mechanism": "Extracts testable policy hypotheses that can guide the next decision, while keeping persistent reuse behind an evidence gate. Candidate predictions are frozen before later observations; counterevidence can withdraw promoted guidance. Model weights remain fixed.",
-      "evaluation": "The paper compares two actor configurations and learning baselines across five rounds on WebArena-Lite and ALFWorld, including first-attempt analysis, safeguards ablations, and costs.",
-      "limitations": "Evaluation repeats tasks and excludes ten WebArena-Lite cases. Promotion relies on environment-specific evidence adapters; predictive validation does not by itself establish causal policy utility. Longer changing streams remain future work.",
+      "mechanism": "Extracts policy–effect hypotheses after informative transitions while actor and learner weights stay fixed. A runtime copy can guide the next step; a hidden persistent candidate must accumulate prospective support from other episodes before retrieval. Predictions are frozen before matching actions execute, and later counterevidence can retire guidance. A separate successful-trajectory memory also supplies browser context.",
+      "evaluation": "Full v1 evaluates five task repetitions on 155 WebArena-Lite and 134 ALFWorld tasks with API and local actors. Aggregate success improves over the strongest baseline by 2.2–12.7 points across four settings, with acquisition, runtime and retention ablations. First attempts can benefit from earlier tasks, and some individual websites or task types favor other methods.",
+      "limitations": "Promotion is a heuristic predictive-support gate, not a causal utility or calibrated reliability guarantee. Repeated tasks and observational terminal feedback limit generalization claims; not every historical-context channel is gated. Main results lack independently repeated learning streams and uncertainty estimates. Parameter-training comparators differ in initialization, prompts, algorithm and evaluation repeats. Logged API savings exclude evaluators and discarded development work.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-10",
       "short_name": "StepLearn"
     },
     {
@@ -1980,10 +1988,11 @@
       "url": "https://arxiv.org/abs/2609.36043",
       "sources": [
         "https://arxiv.org/abs/2609.36043",
-        "https://arxiv.org/html/2609.36043v1"
+        "https://arxiv.org/html/2609.36043v1",
+        "https://arxiv.org/pdf/2609.36043v1"
       ],
       "code_url": null,
-      "code_note": "Official implementation availability was not established in this review; no code was executed.",
+      "code_note": "Complete 10-page arXiv v1, both figures, both tables and equations 1–11 read on 2026-11-10; figures and tables visually checked. The first public date is September 28 despite a September 30 running header. No official implementation was independently verified. Source review only; nothing installed or executed.",
       "topics": [
         "evaluation",
         "skills",
@@ -1995,11 +2004,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Binary verifier outcomes for the incumbent and candidate skill on the same validation items.",
-      "mechanism": "Retains skill edits only when paired wins outweigh penalized regressions, an exact binomial test rejects the null, and a regression cap is satisfied. The acting model and edit proposer remain fixed.",
-      "evaluation": "Compares the gate with the same SkillOpt proposer across five benchmarks and four backbones, including component ablations and reported matched proposal/token budgets.",
-      "limitations": "Error control is per fixed comparison; reuse of validation data does not provide a trajectory-level guarantee. Thresholds still require held-out tuning, and tests assume binary outcomes. Multimodal and multi-agent transfer remain untested.",
+      "mechanism": "Compares a proposed persistent skill edit with the incumbent on identical validation items. It accepts only when paired wins exceed asymmetrically penalized regressions, an exact conditional binomial test rejects the break-even null, and an empirical regression cap holds. Actor weights and the SkillOpt proposal mechanism remain fixed.",
+      "evaluation": "Complete v1 reports five text-only benchmarks and four backbones with the same proposer and stated equal proposal/token budgets. Regression rates fall in nineteen of twenty settings and tie once; final test point estimates favor the full gate in all twenty, with a paired-only component ablation.",
+      "limitations": "Fixed-comparison error control does not extend to repeated adaptive validation reuse. Empirical zero regressions and a regression cap do not ensure zero future harm. The paper omits concrete threshold values, split sizes, optimization-round counts and independent-run uncertainty. Its refinement result applies to the same candidate comparison, while adaptive trajectories can diverge. Graded rewards and multi-agent transfer remain unevaluated.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-10",
       "short_name": "SAGE acceptance gate"
     },
     {
@@ -2013,10 +2022,11 @@
       "url": "https://arxiv.org/abs/2609.33180",
       "sources": [
         "https://arxiv.org/abs/2609.33180",
-        "https://arxiv.org/html/2609.33180v2"
+        "https://arxiv.org/html/2609.33180v2",
+        "https://arxiv.org/pdf/2609.33180v2"
       ],
       "code_url": null,
-      "code_note": "Official runnable implementation was not verified in this review; no research code was executed.",
+      "code_note": "Complete 41-page arXiv v2, Appendix A proofs/constructions, Appendix B protocols/prompts, sixty per-seed rows, six figures, ten tables and Algorithm 1 read on 2026-11-10; equations, figures and tables visually inspected. First September 27 release and September 29 revision verified. No official implementation independently verified and no code, classifier training or LLM experiments executed.",
       "topics": [
         "evaluation",
         "recursive-improvement",
@@ -2028,11 +2038,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Paired incumbent-candidate scores on a protected evaluation set; only promotion decisions from that set return to the proposer.",
-      "mechanism": "Allocates a global error budget over possible candidate and promotion histories, accepting updates only after paired tests pass. Audit certificates stay hidden from the proposer; the paper derives simultaneous guarantees under an independent evaluation sample and decision-only feedback.",
-      "evaluation": "Tests LLM-proposed classification-pipeline revisions on Covertype for 200 rounds and 30 seeds per evaluation-set size; a separate holdout estimates accepted improvements.",
-      "limitations": "Guarantees require bounded scores, an independent identically distributed evaluation sample, and strict feedback isolation. Experiments concern classification, and baselines are adapted styles rather than original agent systems. Finite holdout estimates are not known population truth; coding-agent and safety-metric transfer remain untested.",
+      "mechanism": "Protects a fixed evaluation sample by returning only categorical promotion decisions. It tests paired candidate–incumbent outcomes and allocates error across rounds, candidates and possible decision histories. Under independent IID evaluation and strict feedback isolation, promotions and a private cumulative progress certificate have simultaneous statistical validity.",
+      "evaluation": "Complete v2 provides finite-sample validity proofs, conditional power and restricted lower-bound results, plus 200-round Covertype pipeline searches with thirty seeds per evaluation size. A separate finite holdout labels false promotions. REUSE records zero such promotions and similar final mean gains to strong baselines; prescreening and test-removal ablations probe its implementation.",
+      "limitations": "Guarantees depend on initial evaluation independence, bounded stationary scores and decision-only feedback, not merely a hidden score table. Holdout-estimated improvement is not known population truth. Main search also uses development drafts/prescreening absent from comparators, and named baselines are adapted styles. Lower bounds concern a restricted threshold class; near-equal mean gains do not establish equivalence or transfer to coding and safety metrics.",
       "review_depth": "full-text",
-      "checked": "2026-11-02",
+      "checked": "2026-11-10",
       "short_name": "REUSE"
     },
     {
@@ -2046,10 +2056,11 @@
       "url": "https://arxiv.org/abs/2610.13995",
       "sources": [
         "https://arxiv.org/abs/2610.13995",
-        "https://arxiv.org/html/2610.13995v1"
+        "https://arxiv.org/html/2610.13995v1",
+        "https://arxiv.org/pdf/2610.13995v1"
       ],
       "code_url": null,
-      "code_note": "An official runnable implementation was not verified in this review; no research code was executed.",
+      "code_note": "Complete 38-page arXiv v1, Appendices A–E, five figures, twenty-two tables, proofs and all synthesis prompts read on 2026-11-10; figures, tables and proof pages visually inspected. The paper promises corpus, synthesis code, training configurations and evaluation code upon acceptance; no official release was independently verified. No game generation, self-play, model training or linked code executed.",
       "topics": [
         "self-play",
         "model-training",
@@ -2061,11 +2072,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Game-engine outcomes, stronger-teacher self-play traces, and a corpus-informed advantage baseline.",
-      "mechanism": "Synthesizes games inside fixed reward and observation templates, checks replay and independent implementations, then distills teacher trajectories into a student. Subsequent student self-play updates its weights using the Crab estimator.",
-      "evaluation": "Reports 29 game families and 336 variants, four language-model configurations, thirteen reasoning benchmarks, corpus scaling, and matched teacher/token controls.",
-      "limitations": "The pipeline uses three engineered templates and a Qwen3-32B teacher. Independent implementations can share specification errors, which the manual audit observed. Transfer differs by backbone: a non-game data control performs better on Mistral. These tests do not establish indefinite self-improvement.",
+      "mechanism": "Synthesizes two-player games inside fixed reward, observation and information-routing templates, then checks finite-seed replays and agreement with a separately generated implementation. A larger teacher supplies self-play distillation data. The student subsequently learns through self-play RL, using CRAB to combine same-game/seat peer returns with a prior across variants and a state-value baseline.",
+      "evaluation": "Full v1 compares four models on thirteen reasoning benchmarks with matched teacher/token distillation controls, self-play estimator controls, family/trajectory scaling and held-out variants. Qwen3-4B rises from 45.5% to 62.5% after distillation and 64.9% after CRAB. Frozen-policy replay probes support lower baseline error; transfer and per-capability gains vary, and non-game data outperform games on Mistral.",
+      "limitations": "Finite replay and cross-model agreement do not certify specification correctness: manual inspection finds deviations in two of ten games. Baseline-variance theory requires independence and residual/score assumptions; it is not a guarantee for the full clipped RL pipeline. Main training comparisons have limited seed replication and incompletely specified RL checkpoint selection. Variant transfer stays within source families, and removing reasoning also changes supervision length and format.",
       "review_depth": "full-text",
-      "checked": "2026-10-31",
+      "checked": "2026-11-10",
       "short_name": "GameSmith"
     },
     {
@@ -2079,10 +2090,11 @@
       "url": "https://arxiv.org/abs/2609.30936",
       "sources": [
         "https://arxiv.org/abs/2609.30936",
-        "https://arxiv.org/pdf/2609.30936"
+        "https://arxiv.org/pdf/2609.30936",
+        "https://arxiv.org/pdf/2609.30936v1"
       ],
       "code_url": null,
-      "code_note": "An official runnable implementation was not verified in this review; no research code was executed.",
+      "code_note": "Complete thirty-page v1, Appendices A–K, nine figures, eleven tables, Algorithm 1, all game cards and prompt/trace examples read on 2026-11-10; figures/tables and objective definitions visually inspected. No official implementation or reproducibility artifact was independently verified. No self-play, search, language-model inference, training or benchmark experiments executed.",
       "topics": [
         "self-play",
         "model-training",
@@ -2094,11 +2106,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Replay-checked decisions, alternatives, and branch outcomes from separately trained EfficientZero search experts.",
-      "mechanism": "Converts expert self-play search into an offline corpus of action-choice traces and state questions. Supervised tuning or on-policy self-distillation transfers this information into an LLM; the LLM does not participate in expert self-play or receive search traces at inference.",
-      "evaluation": "Tests four source games, fifteen disjoint held-out games, six mathematics suites, rule variants, and training-duration comparisons across Qwen and Llama configurations.",
-      "limitations": "Supervision depends on engineered games and external search experts. Mathematical results mix pass@1 and AVG@32 protocols, transfer varies by backbone, and longer supervised training can lose earlier gains. Curator interpretation: replay validity is not proof of globally optimal decisions.",
+      "mechanism": "Trains separate self-play search experts, then converts their selected moves, alternatives and replayed consequences into offline language-model supervision. Executable checks validate retained transitions and state questions. LLM parameters learn through supervised or privileged-context distillation; the student neither generates the self-play corpus nor receives search traces at inference.",
+      "evaluation": "Complete v1 reports four model conditions on held-out games and six mathematics benchmarks, with rule-bot and supervised controls and a rule-variant curriculum. The Qwen3-4B math mean rises from 24.1% to 36.6%, while native-thinking Qwen3-8B gains little and Llama-3.1-8B slightly regresses. Analyses relate selected moves to search values and expert agreement.",
+      "limitations": "Replay verifies implemented transitions, not globally optimal or demonstrably superhuman labels. Most reported training uses one seed, and math scores also inform hyperparameter search. Baseline and distillation controls differ in supervision detail and compute. Main text specifies forward KL while appendix main-configuration labels specify generalized JSD; FIDE and win-rate aggregation is also unreconciled. Correlations with search agreement do not establish internal algorithm transfer.",
       "review_depth": "full-text",
-      "checked": "2026-10-31",
+      "checked": "2026-11-10",
       "short_name": "SPSD"
     },
     {
@@ -2112,10 +2124,11 @@
       "url": "https://arxiv.org/abs/2609.31760",
       "sources": [
         "https://arxiv.org/abs/2609.31760",
-        "https://arxiv.org/html/2609.31760v1"
+        "https://arxiv.org/html/2609.31760v1",
+        "https://arxiv.org/pdf/2609.31760v1"
       ],
       "code_url": null,
-      "code_note": "Official runnable code was not independently verified in this review; no research implementation was executed.",
+      "code_note": "Complete 20-page arXiv v1, Appendices A–E, all 123 round records, seven figures, eight tables and the conditional-chain calculation read on 2026-11-10; figures and key tables visually inspected. No official implementation or complete raw-trace release independently verified. No robot, simulator or research code executed.",
       "topics": [
         "recursive-improvement",
         "skills",
@@ -2131,11 +2144,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Simulator-state diagnoses, recorded failures, replay and paired tests, and logged skill outcomes.",
-      "mechanism": "Coding agents revise task programs and skill implementations or request external model providers. Accepted revisions feed later rounds, while humans repair the evaluators, tests, memory machinery, and actuator descriptions.",
-      "evaluation": "Reports one 123-round RoboCasa experiment over three kitchen tasks with an additional held-out task. Some local skills improve, but the target fridge task never succeeds; the record analyzes early-step bottlenecks and evaluator failures.",
-      "limitations": "One simulator, layout, and unreplicated run provide no matched-budget causal estimate. Human repairs and model/provider changes share the timeline. Suggested design remedies are hypotheses, and simulated skill discovery is not evidence of autonomous real-robot learning or improvement of the outer evaluation procedure.",
+      "mechanism": "Runs coding agents that revise robot task programs and persistent skills, request external model providers, and refit routing from logged calls. Simulator diagnoses, recorded failures and paired tests guide promotion. Human maintainers separately repair the evaluators, gates, memory and actuator descriptions that govern the improvement loop.",
+      "evaluation": "Complete v1 documents one 123-round RoboCasa sequence with 972 completed rollouts: the fridge and cabinet tasks never succeed, while fourteen sink successes include nine with failed intermediate steps. It traces 57 accepted library changes, provider integration, early-step bottlenecks, gate noise and 113 human harness repairs.",
+      "limitations": "Rounds reuse a few scenes and are not independent experiments. Models, tasks, providers, tests and human repairs change on the same timeline, preventing matched causal attribution. Local wins and model registration do not establish end-task improvement. Four-view VLM feasibility and proposed remedies remain limited observations or hypotheses; no autonomous real-robot or self-improving evaluation-harness result is demonstrated.",
       "review_depth": "full-text",
-      "checked": "2026-11-02",
+      "checked": "2026-11-10",
       "short_name": "Robot RSI failure study"
     },
     {
@@ -2149,10 +2162,12 @@
       "url": "https://arxiv.org/abs/2609.26457",
       "sources": [
         "https://arxiv.org/abs/2609.26457",
-        "https://arxiv.org/html/2609.26457v1"
+        "https://arxiv.org/html/2609.26457v1",
+        "https://arxiv.org/pdf/2609.26457v1",
+        "https://www.weco.ai/blog/first-evidence-of-recursive-self-improvement"
       ],
       "code_url": null,
-      "code_note": "Official implementation availability was not established in this review; no code was executed.",
+      "code_note": "Complete 28-page arXiv v1, Appendices A–E, ten figures, three tables, four equations and Algorithm 1 read on 2026-11-10. Author project blog inspected; its earlier reward-hacking values differ from the technical report and are not substituted. No official AIDE2 implementation or complete selection-suite reproduction package was independently verified. No research code, agents, models, GPUs or benchmark runs executed.",
       "topics": [
         "recursive-improvement",
         "architecture",
@@ -2167,11 +2182,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Grades from evaluator-held-out task data under fixed per-task budgets, with separate public feedback for inner optimization.",
-      "mechanism": "Searches research-agent harness rewrites, retaining the best incumbent for further edits. The editable agent controls search and context management; the outer selection rule remains fixed.",
-      "evaluation": "Reports seven accepted rewrites in the main eight-day run, transfer to ALE-Bench, MLE-Bench, FML-Bench and WeatherBench 2, and a separate comparison using an evolved agent as the outer optimizer.",
-      "limitations": "The outer-optimizer comparison is inconclusive with three seeds per arm. Noisy grades can accept false improvements. Harness gains do not establish accelerating self-improvement or independent reproduction.",
+      "mechanism": "A fixed outer research agent rewrites an incumbent inner research agent’s code. Candidates optimize public task signals under fixed budgets, then receive private held-out grades that the outer loop uses to retain rewrites. Search policies, result selection and context management persist in the evolving inner harness; the main outer selector and model weights stay fixed.",
+      "evaluation": "Complete v1 reports an eight-day, 99-proposal run with seven accepted rewrites and two further runs. Selected checkpoints transfer to ALE/MLE lite sets, eighteen FML tasks and one weather-core optimization task. A matched-start ignition test compares evolved and original outer agents across three seeds per arm, with inconclusive results.",
+      "limitations": "Private grades are adaptively reused by outer search, and acceptance can retain noisy winners. Held-out gains are nonmonotonic; reported mean parity is not a noninferiority test. Reward-hacking reduction concerns thirty-eight kernel/context pairs and has no isolated rewrite attribution. One retained change repairs an evaluator; a proposed selection safeguard never changes rankings. Better-improver efficiency and accelerating progress remain unestablished.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-10",
       "short_name": "AIDE²"
     },
     {
@@ -2185,10 +2200,12 @@
       "url": "https://arxiv.org/abs/2609.22792",
       "sources": [
         "https://arxiv.org/abs/2609.22792",
-        "https://arxiv.org/html/2609.22792v1"
+        "https://arxiv.org/html/2609.22792v1",
+        "https://arxiv.org/pdf/2609.22792v1",
+        "https://yigitcankaya.github.io/"
       ],
       "code_url": null,
-      "code_note": "Official implementation availability was not established in this review; no code was executed.",
+      "code_note": "Complete 20-page arXiv v1, all appendices, equations, figures, tables and selected skill read on 2026-11-10. Nine supporting skill-reference bodies are not printed in the paper; an official implementation/license was not verified. Author-reported IEEE S&P 2027 acceptance awaits primary venue confirmation. No research/security code or models executed.",
       "topics": [
         "prompts",
         "skills",
@@ -2202,11 +2219,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Execution outcomes, vulnerability metadata, and cross-instance agreement among textual critiques.",
-      "mechanism": "Traces errors backward through outcomes, trajectories, and context, then clusters critiques to revise persistent skill instructions and reference documents. Model weights and the execution harness remain fixed.",
-      "evaluation": "Studies CyberGym vulnerability reproduction, component ablations, checkpoint selection, and cross-model transfer; the held-out test subset contains 80 tasks.",
-      "limitations": "Evaluation covers a cost-limited benchmark subset. Baselines are adapted to shared supervision. Stopping avoids validation during the final optimization run, but its noise floor and window were empirically calibrated using earlier runs with validation scoring. Other security tasks remain future work.",
+      "mechanism": "A frozen Codex/GPT agent learns a persistent text skill and reference library from CyberGym trajectories plus bug descriptions, patch commits and sanitizer feedback. A three-stage LLM diagnosis separates behavioral analysis from instruction attribution, then support/outcome-weighted accumulation and missing-rule versus compliance edits update the skill. A hard-gradient heuristic selects when to stop; model weights and execution harness stay fixed.",
+      "evaluation": "On a 224/40/80 CyberGym train/validation/test split, authors report GPT-5.4-mini improving 38%→55% and GPT-5.4 improving 49%→67.5%, plus skill transfer between these models. Decomposition, aggregation thresholds, edit types, batch size and checkpoint choice are ablated. The stopping rule selects 55% test versus 51% at the validation-selected checkpoint; these are author-reported single-system pass@1 results, not independent reproduction.",
+      "limitations": "The final stopping run avoids validation calls, but its noise floor and window were calibrated using validation-scored earlier runs. Only 80 test tasks and related GPT backbones; stricter aggregation and larger batches can hurt substantially. Repeated checkpoint analyses do not establish general convergence or calibrated statistical guarantees. Privileged patch/sanitizer training metadata, incomplete total optimization/calibration cost and unavailable selected reference-document bodies constrain interpretation and reproducibility.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-10",
       "short_name": "SelfOp"
     },
     {
@@ -2220,10 +2237,13 @@
       "url": "https://arxiv.org/abs/2609.17817",
       "sources": [
         "https://arxiv.org/abs/2609.17817",
-        "https://arxiv.org/html/2609.17817v1"
+        "https://arxiv.org/html/2609.17817v1",
+        "https://arxiv.org/pdf/2609.17817v1",
+        "https://github.com/froeschele/trusting-trust-revisited",
+        "https://github.com/froeschele/trusting-trust-revisited/blob/93f1a8f32fd22261852445d6a348e7a8f417da28/README.md"
       ],
-      "code_url": null,
-      "code_note": "No implementation link independently inspected for this entry; this does not establish that none exists.",
+      "code_url": "https://github.com/froeschele/trusting-trust-revisited",
+      "code_note": "Complete 22-page arXiv v1, Appendices A–E, nine figures, seven tables, all prompt diffs, negative cases and defense probes read on 2026-11-10; figures and key tables visually inspected. Paper-linked froeschele/trusting-trust-revisited README, methodology documentation and MIT license inspected at 93f1a8f32fd22261852445d6a348e7a8f417da28. Public generators/results establish availability only; no attack code or agents executed.",
       "topics": [
         "safety",
         "evaluation",
@@ -2237,11 +2257,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Benchmark feedback during the self-modification process.",
-      "mechanism": "Studies whether poisoned optimization benchmarks can induce persistent changes that cause self-modifying coding agents to emit vulnerable code on later clean tasks.",
-      "evaluation": "Presents proof-of-concept studies on a modified Darwin Gödel Machine, SICA, and Hyperagents, including continued evolution after poison removal.",
-      "limitations": "These are constructed attacks under specified agent and benchmark conditions, not an estimate of attack prevalence. Clean subsequent tasks do not reliably remove contaminated components in the studied cases.",
+      "mechanism": "Poisons the benchmark feedback used to evolve fixed-model coding-agent scaffolds, inducing persistent code emitters or prompt directives that later generate insecure code on clean tasks. It tests transfer through both evolved helper tools and standing instructions, including subsequent evolution after the poisoned benchmark is removed.",
+      "evaluation": "Complete v1 presents paired clean/poison proofs of concept for a substantially modified DGM, SICA and Hyperagents, with few evolution chains, related held-out tasks, negative attacks and recovery probes. Some selected contaminated agents repeatedly disable verification; targeted decontamination succeeds or partially succeeds in different systems.",
+      "limitations": "The attacker controls an entirely constructed benchmark, and DGM requires an out-of-threat-model prompt modification. Rates condition on selected carrier-bearing agents and repeated related tasks, not attack prevalence. Host/model changes and a patched answer-key leak bound stock-system claims. YAML FullLoader outcomes differ from unsafe_load RCE; clean continuation can retain poison but targeted recovery is possible.",
       "review_depth": "full-text",
-      "checked": "2026-10-28",
+      "checked": "2026-11-10",
       "short_name": "Poisoned benchmarks"
     },
     {
@@ -2255,10 +2275,14 @@
       "url": "https://arxiv.org/abs/2609.14857",
       "sources": [
         "https://arxiv.org/abs/2609.14857",
-        "https://arxiv.org/html/2609.14857v2"
+        "https://arxiv.org/html/2609.14857v2",
+        "https://arxiv.org/pdf/2609.14857v2",
+        "https://github.com/IQuestLab/ModularRSI",
+        "https://github.com/IQuestLab/ModularRSI/blob/ed1e545bc60f050b404474e51ee18021777a0e23/README.md",
+        "https://github.com/IQuestLab/ModularRSI/blob/ed1e545bc60f050b404474e51ee18021777a0e23/LICENSE-MODULARRSI.md"
       ],
-      "code_url": null,
-      "code_note": "Official code availability was not established in this source review.",
+      "code_url": "https://github.com/IQuestLab/ModularRSI",
+      "code_note": "Complete 28-page arXiv v2, Appendices A–M, six figures, fourteen tables, all interfaces/prompts/cases and bootstrap details read on 2026-11-10. Paper-linked repository ed1e545bc60f050b404474e51ee18021777a0e23 is public. Original research contributions use CC BY-NC 4.0; Harbor-derived code retains Apache-2.0. Its roadmap leaves paired before/after and cross-batch validation as future work. No research code, models or benchmarks executed.",
       "topics": [
         "architecture",
         "recursive-improvement",
@@ -2274,11 +2298,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Contrasts between successful and failed trajectories, followed by validation gates.",
-      "mechanism": "Evolves five harness modules in separate restricted lineages, then integrates their changes. The evolved agent performs trajectory analysis and code modification; a function library controls reuse and redundancy.",
-      "evaluation": "Evolution uses a separately constructed task collection; the frozen learned library is evaluated on TerminalBench 2.0 and SWE-bench Verified, including cross-model transfer.",
-      "limitations": "The reported benchmark separation depends on the documented curation and similarity-screening procedure. Infrastructure is outside the editable scope, and downstream evaluation allows function selection but no further function modification.",
+      "mechanism": "Evolves five harness modules independently from the same seed using trajectory contrasts, task-level support votes and function histories. Static checks, reward-blind diff review and small execution checks govern acceptance; an integration epoch combines modules. A frozen downstream function library remains selectable by a task-aware composer.",
+      "evaluation": "Complete v2 evaluates TerminalBench 2.0 and SWE-Bench Verified after evolution on 120 external tasks per domain from a 2,000-task pool. Three evaluations per fixed harness support task-level paired-bootstrap intervals. It reports in-domain accuracy gains of 4.86 and 3.0 percentage points, cross-domain/model transfer, matched-epoch baselines and component ablations.",
+      "limitations": "Confidence intervals condition on learned harnesses and do not measure independent evolution-run variability. Validation checks executability and perceived task specificity, rather than paired success improvement on a separate batch. Aggregate epochs do not match all model/token costs. Trajectory contrasts and later case outcomes do not independently identify single-edit causes; the full harness uses slightly more steps than its seed.",
       "review_depth": "full-text",
-      "checked": "2026-10-28",
+      "checked": "2026-11-10",
       "short_name": "ModularRSI"
     },
     {
@@ -2294,10 +2318,12 @@
         "https://arxiv.org/abs/2609.12655",
         "https://arxiv.org/html/2609.12655v1",
         "https://aclanthology.org/2026.emnlp-main.1024/",
-        "https://github.com/BITHLP/LifeMem"
+        "https://github.com/BITHLP/LifeMem",
+        "https://aclanthology.org/2026.emnlp-main.1024.pdf",
+        "https://github.com/BITHLP/LifeMem/blob/7df36ca896544d21d3f00df80f74ffc4935aba03/README_en.md"
       ],
       "code_url": "https://github.com/BITHLP/LifeMem",
-      "code_note": "Author-linked public repository page inspected; no installation, execution, or dataset download.",
+      "code_note": "Complete 33-page final EMNLP 2026 paper, Appendices A–N, ten figures, thirty tables, thirteen equations and all prompts/raster trajectory cases read on 2026-11-10; figures and quantitative tables visually inspected. Official English README and source inventory inspected at 7df36ca896544d21d3f00df80f74ffc4935aba03. Memory-building/retrieval code is public; a framework-wide license and complete reproduction were not independently verified. No agent, dataset or benchmark code executed.",
       "topics": [
         "memory",
         "skills",
@@ -2311,11 +2337,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Accumulated interaction trajectories and language-model judgments of shared workflows and reusable skills.",
-      "mechanism": "Clusters trajectories by procedural workflow, updates and splits clusters as experience grows, and distills transferable skills. Inference retrieves both environment-aligned examples and abstract skills without retraining the acting model.",
-      "evaluation": "Uses ten environments across embodied action, tools, search, data analysis, and browsing, with 12,489 training and 1,230 test instances; measures performance, backward transfer, ablations, and two held-out transfer settings.",
-      "limitations": "Experience construction includes model-generated and human-reviewed trajectories, rather than only autonomous deployment experience. Task order affects outcomes, and some domain/backbone combinations retain negative backward transfer. Million-experience deployment efficiency is not established.",
+      "mechanism": "Incrementally groups training trajectories into workflow clusters, splitting heterogeneous clusters and distilling local textual skills with fixed helper models. At inference, a frozen actor receives environment-filtered trajectory examples and their associated cross-environment skill abstractions. Persistent clusters, exemplars and skill text change without actor parameter updates.",
+      "evaluation": "The full final paper builds memory across ten environments and evaluates nine held-out dataset sets with three actor backbones, relative backward transfer, shuffled/buffered streams and two cross-task transfer settings. Aggregate performance and average retention improve, while individual tasks retain regressions. New training traces are model-generated and receive bounded human quality checks.",
+      "limitations": "Uses known environment tags and stronger helper/trajectory-generation models; improvements do not establish teacher-free autonomous learning. Relative backward-transfer averages hide some losses, and run/order uncertainty is not quantified. Transfer tests are small and task-label details have ambiguities. Initial-prompt token comparisons omit full interaction and memory-maintenance costs; million-scale behavior is untested.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-10",
       "short_name": "LifeMem"
     },
     {
@@ -2368,10 +2394,12 @@
         "https://arxiv.org/html/2609.05736v2",
         "https://aclanthology.org/2026.findings-emnlp.1455/",
         "https://github.com/airbnb/agent-harness-optimizer",
-        "https://github.com/airbnb/agent-harness-optimizer/blob/main/REPRODUCIBILITY.md"
+        "https://github.com/airbnb/agent-harness-optimizer/blob/main/REPRODUCIBILITY.md",
+        "https://arxiv.org/pdf/2609.05736v2",
+        "https://github.com/airbnb/agent-harness-optimizer/blob/0d7652b42296c8df07532fa3787fc956250741e7/README.md"
       ],
       "code_url": "https://github.com/airbnb/agent-harness-optimizer",
-      "code_note": "Official repository and paper-specific reproducibility guide inspected; not executed.",
+      "code_note": "Complete 19-page arXiv v2 and Appendices A–F, all figures/tables, estimator definitions and repair examples read on 2026-11-10. Official Apache-2.0 release 0d7652b42296c8df07532fa3787fc956250741e7 supplies implementation, configurations and reproduction documentation. Python 3.12, external benchmark artifacts and model APIs are required; documentation availability is not execution evidence. No research code or benchmark runs executed.",
       "topics": [
         "prompts",
         "architecture",
@@ -2385,11 +2413,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Execution failures, tool-state traces, and separate repair/gate scores before final held-out evaluation.",
-      "mechanism": "Clusters failures and routes repairs to prompts, tool-boundary middleware, or both. Evolution retains candidates on a Pareto frontier while the underlying model stays fixed.",
-      "evaluation": "Compares harness optimizers on BFCL multi-round and tau2 Retail/Telecom, measuring held-out lift, repeatability, costs, and an empirical lower-tail selection metric.",
-      "limitations": "Telecom PRISM arms use a different scoring orchestration path from comparison arms. Lower-tail estimates are not guarantees; budgets count inner rollouts, and the study does not evaluate repeated deployment cycles or unrestricted harness rewrites.",
+      "mechanism": "Optimizes a fixed-model agent’s prompt and guarded tool-boundary middleware. PRISM clusters failures, routes them to prompt, middleware or joint mutation slots, and retains a Pareto frontier over gate success and completion reliability. Accepted harness files persist; a separate scorecard evaluates the selected result.",
+      "evaluation": "Complete v2 compares four optimizer families and surface variants on BFCL and tau-squared Retail/Telecom. It uses separate repair, gate and scorecard splits, up to sixteen search runs per arm, component/model-role ablations and a bootstrap of budgeted pre-scorecard selection. Reported mean lifts are 14.2, 14.9 and 10.1 percentage points.",
+      "limitations": "RelLift95 estimates a fifth percentile, not a future-performance guarantee. Whole runs below a repair-reliability threshold are excluded, and scorecards overlap across split seeds. Telecom PRISM results use post-hoc four-trial aggregation unlike native comparison arms. Monetary budget curves price inner calls only. Middleware effects and transfer are domain-specific; no repeated deployment cycle is demonstrated.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-10",
       "short_name": "PRISM"
     },
     {
@@ -2405,10 +2433,13 @@
         "https://arxiv.org/abs/2609.02094",
         "https://arxiv.org/html/2609.02094v1",
         "https://aclanthology.org/2026.findings-emnlp.1453/",
-        "https://github.com/DaRL-GenAI/MASkills"
+        "https://github.com/DaRL-GenAI/MASkills",
+        "https://arxiv.org/pdf/2609.02094v1",
+        "https://aclanthology.org/2026.findings-emnlp.1453.pdf",
+        "https://github.com/DaRL-GenAI/MASkills/blob/7b72f8b412a5b2143cedc6986261dd06fffe04c1/README.md"
       ],
       "code_url": "https://github.com/DaRL-GenAI/MASkills",
-      "code_note": "Author-linked public repository and README inspected; not installed or executed.",
+      "code_note": "Complete 14-page arXiv v1 and the substantive body of the 11-page final Findings of EMNLP 2026 paper read on 2026-11-10; all figures and key tables visually inspected. Official README, MIT license and package requirements inspected at 7b72f8b412a5b2143cedc6986261dd06fffe04c1. Python/model API, search and dataset dependencies are documented; neither installation nor experiments were run.",
       "topics": [
         "skills",
         "workflows",
@@ -2421,11 +2452,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Team task outcomes, LLM judgments of individual skill contributions, and validation performance.",
-      "mechanism": "Uses a separate critic and optimizer to refine, induce, merge, or prune persistent skill artifacts for cooperating agents. Aggregated textual feedback is smoothed across cycles; a validation gate rolls back edits that fail its acceptance threshold.",
-      "evaluation": "Evaluates HotpotQA, LoCoMo, and GAIA, with transferred skill libraries, actor/topology variations, and operator ablations.",
-      "limitations": "Its gradient and momentum terminology describes language-space analogies, not differentiable model training. Skill attribution depends on critic judgments and researchers supply validation tasks. Benchmark transfer does not establish indefinite retention under changing deployments.",
+      "mechanism": "Evolves persistent skill libraries for cooperating fixed-weight agents. A centralized language critic assigns textual credit to invoked skills, aggregates feedback across trajectories and agents, and carries earlier edit directions into refinement, induction, consolidation and pruning. A validation gate permits changes within a performance tolerance and rolls back larger measured losses.",
+      "evaluation": "Full preprint and final venue methods/results cover HotpotQA, LoCoMo and GAIA, five-cycle learning curves, selected cross-task transfers, three coordination topologies, actor variations and component ablations. Overall scores improve in the reported tables, while GAIA Level 3 remains zero and topology preferences vary by task.",
+      "limitations": "Critic counterfactuals are language judgments, not executed causal contrasts. Gradient and momentum language is conceptual; the gate permits tolerance-sized regressions and has no trajectory-wide guarantee. Independent-run uncertainty, detailed paper split accounting and total API costs are limited. Short benchmark optimization and selected transfers do not establish indefinite retention; release GAIA evaluation engines are not score-interchangeable.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-10",
       "short_name": "MASkills"
     },
     {
@@ -2441,10 +2472,12 @@
         "https://arxiv.org/abs/2609.00621",
         "https://arxiv.org/html/2609.00621v1",
         "https://aclanthology.org/2026.findings-emnlp.2198/",
-        "https://github.com/yuntian-group/cdsep"
+        "https://github.com/yuntian-group/cdsep",
+        "https://arxiv.org/pdf/2609.00621v1",
+        "https://github.com/yuntian-group/cdsep/blob/c0d7d0ae4cc14ac54a5e97eba393273f5c7add52/README.md"
       ],
       "code_url": "https://github.com/yuntian-group/cdsep",
-      "code_note": "Author reference implementation and README inspected; not executed.",
+      "code_note": "Complete 23-page arXiv v1, Appendices A–H, Lemma 1 proof, four figures, ten tables and all prompts/listings read on 2026-11-10; figures, key tables and proof visually inspected. Official Findings of EMNLP venue identity and README, MIT license and requirements verified at c0d7d0ae4cc14ac54a5e97eba393273f5c7add52. The final venue body was not separately reread. No code or experiments executed.",
       "topics": [
         "prompts",
         "architecture",
@@ -2456,11 +2489,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Task outcomes and per-example feedback on multi-agent interaction traces.",
-      "mechanism": "Keeps routing, formatting, and termination schemas outside the optimizer’s editable prompt surface. Typed validation rejects malformed control before routing while textual feedback improves task-facing prompts.",
-      "evaluation": "Tests BIG-Bench Hard subsets, collaborative paper-review generation, and synthetic insurance-rating workflows, with schema/retry ablations and smaller cross-model comparisons.",
-      "limitations": "Eventual protocol validity can include retries and does not imply correct decisions. Roles and schemas remain fixed; review quality uses an LLM judge, and additional model-family comparisons use one seed. Insurance experiments do not establish operational suitability.",
+      "mechanism": "Optimizes task-facing prompts around fixed-weight agents while keeping control schemas and their prompt scaffolding outside the editable surface. The controller routes only through validated typed objects; malformed output triggers bounded retries, a valid fallback or a controlled failure. Agents can still learn which valid route or stopping action to choose.",
+      "evaluation": "Complete v1 studies four BBH subtasks, collaborative paper-review generation and two synthetic underwriting settings, with three-seed main comparisons and cumulative schema/retry/feedback ablations. A smaller three-family review experiment uses one seed. Protocol stability is high, while some task/subgroup scores fall below fixed prompts.",
+      "limitations": "The theorem excludes unhandled protocol errors under correct-router and recovery assumptions; it guarantees neither semantic correctness nor successful completion. Eventual validity permits retries. Small samples, judge-dependent review quality, differing baseline architectures and figure/configuration ambiguities limit broader claims. Industry inputs/manual are synthetic and not redistributed; those experiments do not establish operational suitability.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-10",
       "short_name": "Control–data separation"
     },
     {
@@ -2474,10 +2507,12 @@
       "url": "https://arxiv.org/abs/2608.26545",
       "sources": [
         "https://arxiv.org/abs/2608.26545",
-        "https://arxiv.org/html/2608.26545v1"
+        "https://arxiv.org/html/2608.26545v1",
+        "https://arxiv.org/pdf/2608.26545v1",
+        "https://robot-adaptation.github.io/MemoryAnchors/"
       ],
       "code_url": null,
-      "code_note": "Official runnable code was not established in this source review; nothing was installed or executed.",
+      "code_note": "Complete 22-page arXiv v1, Appendices A–C, fifteen figures, five tables, Algorithm 1 and metric/selection definitions read on 2026-11-10; figures, tables and the AUC equation visually inspected. The official project page’s Code button opens a coming-soon notice. No robot, policy training, model inference or linked code executed.",
       "topics": [
         "continual-learning",
         "memory",
@@ -2491,11 +2526,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Old and new task demonstrations, observation-representation overlap, and disagreement between predicted and labeled actions.",
-      "mechanism": "Selects old experiences near new-task observations that require conflicting actions, then enriches the replay buffer with these anchors during sequential policy training. Retention changes through both replay selection and policy updates.",
-      "evaluation": "The authors test removal and enrichment of anchors on four LIBERO suites, diffusion and VLA policies, and two real-robot sequences involving jars and sweater folding, with buffer-selection ablations.",
-      "limitations": "Extraction requires policy latents and past training data, and recomputing their representations has a cost. Sequences contain only three to ten tasks; retention on these settings does not establish indefinite continual deployment.",
+      "mechanism": "Selects old supervised transitions to rehearse while policy weights learn new robot tasks. Before adaptation, AnchorER finds new observations overlapping old-policy latents, filters those with high denoising disagreement against demonstrated actions, and retrieves nearby historical states. A reserved share of replay contains these anchors, with the remainder sampled for diversity.",
+      "evaluation": "Full v1 studies four ten-task LIBERO suites, a pi-0.5 VLA and two three-task real-robot sequences. Removing anchor access worsens aggregate forgetting; enrichment reduces forgetting on six selected high-conflict task pairs. Benefits are strongest with small buffers and similar scenes, while large random buffers largely match the method and some whole-suite metrics regress.",
+      "limitations": "Requires policy representations, new action labels and access to past training data beyond the selected replay buffer. High-conflict pairs are selected from baseline outcomes; task/permutation observations are not independent training replicates. Enrichment trades diversity for specificity and does not help every suite. Real tasks are short, curated and demonstration-driven. The printed AUC normalization is inconsistent with its stated range; implementation details remain unverified.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-10",
       "short_name": "Memory Anchors"
     },
     {
@@ -2504,11 +2539,11 @@
       "status": "preprint",
       "venue": "arXiv preprint",
       "code_url": null,
-      "code_note": "The inspected paper promises an audit toolkit, method code and trained checkpoints; a released official implementation was not established. No code was executed.",
+      "code_note": "Read all nine available v1 pages, six figures, four tables, seven equations and the masking algorithm on 2026-11-10. Cited Appendices A.1/A.3/C.1, Algorithm A1 and Table 5 are missing from both the PDF and public source archive; their proof and configuration details remain pending. No official implementation or checkpoint release was independently verified. No research code or training executed.",
       "scope": "core",
       "persistence": "across-tasks",
       "review_depth": "full-text",
-      "checked": "2026-11-07",
+      "checked": "2026-11-10",
       "id": "coalition-skill-reliability",
       "short_name": "Coalition skill reliability",
       "title": "Coalition-Aware Skill Reliability for Self-Evolving Agents",
@@ -2517,7 +2552,8 @@
       "sources": [
         "https://arxiv.org/abs/2608.22610",
         "https://arxiv.org/html/2608.22610v1",
-        "https://arxiv.org/pdf/2608.22610v1"
+        "https://arxiv.org/pdf/2608.22610v1",
+        "https://arxiv.org/src/2608.22610v1"
       ],
       "topics": [
         "skills",
@@ -2531,9 +2567,9 @@
         "model-weights"
       ],
       "learning_signal": "Source outcome rewards and sampled skill-coalition knockout scores; unlabeled target-query retrieval similarity guides transfer masking.",
-      "mechanism": "Changes MemSkill's bank-admission score to include sampled joint skill effects while retaining its trained controller. Before deployment, a separate greedy procedure rebuilds target memories and masks skills whose removal improves a retrieval-quality proxy; the retained bank and mask persist.",
-      "evaluation": "Studies LoCoMo, LongMemEval, HotpotQA and ALFWorld with three seeds, coalition audits and six-bank target masking; the gate study covers twelve proposals.",
-      "limitations": "Evidence concerns one MemSkill-based setup and small banks. The highlighted target-side utility reversal has an interval including zero. Retrieval similarity is a proxy, and masking adds quadratic memory rebuild work before inference. This does not establish online adaptation to changing APIs or general skill compositions."
+      "mechanism": "Audits memory-writing skills through paired bank knockouts. CASS ranks candidate banks using sampled, size-normalized coalition-removal margins plus outcome reward, rather than computing every skill’s Shapley value. After transfer, u-SMCO greedily masks skills whose removal improves a cosine-retrieval proxy on unlabeled target queries and contexts; the retained bank persists for later inference.",
+      "evaluation": "The available v1 text compares a MemSkill-based system on conversational memory and ALFWorld, with three seeds and a HotpotQA-50 masking study. CASS admits one of twelve proposals versus six for the outcome gate; target masking improves all six inspected banks. Source-positive insert has a negative target point estimate, but its target confidence interval includes zero.",
+      "limitations": "Cited proof and implementation appendices are absent from the inspected PDF and source archive. CASS’s sampled coalition score is not per-skill Shapley attribution. Exact positive bank gain identifies the new skill’s full-bank marginal, while other contributions remain unidentified. Retrieval similarity is a proxy; target data are required, probe/evaluation separation is unspecified, and small point improvements and step costs do not establish uniform superiority."
     },
     {
       "year": 2026,
@@ -2541,11 +2577,11 @@
       "status": "peer-reviewed",
       "venue": "Findings of EMNLP 2026",
       "code_url": null,
-      "code_note": "Official implementation availability was not established in this review; no code was executed.",
+      "code_note": "Complete 16-page arXiv v1 plus substantive changes in the 17-page final Findings EMNLP 2026 paper read on 2026-11-10, including the added implementation/provenance appendix, twelve figures and six final tables. The final version clarifies that 69.4% is a fraction of risky samples shifted by knockout, and enables thinking for the 397B evaluation. Official venue identity verified; no official implementation independently verified and no research code executed.",
       "scope": "core",
       "persistence": "across-tasks",
       "review_depth": "full-text",
-      "checked": "2026-11-07",
+      "checked": "2026-11-10",
       "id": "basm",
       "short_name": "BASM",
       "title": "When Not to Imitate: Boundary-Aware Skill Memory for Reliable Tool-Use LLM Agents",
@@ -2555,7 +2591,8 @@
         "https://arxiv.org/abs/2608.22339",
         "https://arxiv.org/html/2608.22339v1",
         "https://aclanthology.org/2026.findings-emnlp.1141/",
-        "https://aclanthology.org/2026.findings-emnlp.1141.pdf"
+        "https://aclanthology.org/2026.findings-emnlp.1141.pdf",
+        "https://arxiv.org/pdf/2608.22339v1"
       ],
       "topics": [
         "memory",
@@ -2569,9 +2606,9 @@
         "memory"
       ],
       "learning_signal": "Offline successful trajectories and nearby failures supply procedures, applicability conditions and recovery notes.",
-      "mechanism": "Builds a reusable skill library with explicit conditions, risk cues and avoidance rules. Retrieval exposes relevant boundaries under a context budget; runtime checks can block or revise tool calls, with local repair hints after failures. Model weights remain fixed.",
-      "evaluation": "Tests BFCL, AppWorld and AgentDojo across four model scales, with tool-choice probes, boundary-attention interventions and component controls.",
-      "limitations": "Library construction is offline, and structural validation does not certify boundary semantics. Safety and utility differ: Qwen3-8B's AgentDojo utility remains below the memory-free baseline despite lower attack success. Dynamic API changes and long-running delayed feedback are untested."
+      "mechanism": "Builds a fixed seven-field skill library from procedural examples and boundary evidence. Retrieval exposes relevant applicability, risk, avoidance and recovery text under a context budget. Deterministic checks with LLM adjudication screen proposed calls, and a bounded runtime loop supplies local repair hints; model weights remain fixed.",
+      "evaluation": "Full preprint and final venue revisions study BFCL, AppWorld and AgentDojo with four Qwen model scales, attention/logit interventions and component controls. Aggregate function-calling and AppWorld success improve over basic skill memories. The stronger equal-token procedure-padding control ties BFCL and differs by two AppWorld tasks; AgentDojo utility and safety gains depend on model and comparator.",
+      "limitations": "AgentDojo memories use benchmark ground truth and schemas, while AppWorld/BFCL use successful source trajectories; generalization beyond that supervision is not established. The 23.8-point AppWorld headline compares with a memory-free base. Lower attack success can accompany lower utility. Local attention interventions do not establish full mediation of task gains; independent-run uncertainty and total retrieval/checking costs are not reported."
     },
     {
       "id": "cider",
@@ -2584,10 +2621,11 @@
       "url": "https://arxiv.org/abs/2608.21899",
       "sources": [
         "https://arxiv.org/abs/2608.21899",
-        "https://arxiv.org/html/2608.21899v1"
+        "https://arxiv.org/html/2608.21899v1",
+        "https://arxiv.org/pdf/2608.21899v1"
       ],
       "code_url": null,
-      "code_note": "Official runnable code was not established in this source review; nothing was installed or executed.",
+      "code_note": "Complete twenty-page v1, Appendices A–F, ten figures, eleven tables, all loss definitions and Algorithm 1 read on 2026-11-10; figures/tables and baseline equations visually checked. Appendix details distinguish system-level task selection from policy conditioning. No official CIDER implementation was independently verified. No robot control, data collection, training or linked code executed.",
       "topics": [
         "continual-learning",
         "model-training",
@@ -2599,11 +2637,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Current-task rewards, human demonstrations and corrective interventions, plus a frozen prior actor’s action distributions on archived states.",
-      "mechanism": "Interleaves online actor-critic learning with distillation from the preceding consolidated policy. Gradient routing separates acquisition and retention updates while producing one shared actor; historical states support distillation rather than old-task Bellman updates.",
-      "evaluation": "Reports sequential acquisition and retention across six real-robot household and industrial manipulation tasks, with evaluation after each stage and gradient-routing, initialization, and sampling ablations.",
-      "limitations": "This is human-assisted, reward-driven acquisition on short-horizon tasks. Longer tasks with sparse rewards or delayed failures may need additional supervision; the six-task result does not establish unbounded skill accumulation.",
+      "mechanism": "Learns one shared visuomotor actor by interleaving current-task human-assisted RL with reverse-KL distillation on archived past states. A frozen copy of the accumulated actor supplies cached Gaussian action targets, and task-balanced sampling preserves earlier behavior. Current-task actor gradients are blocked from the shared visual adapter while retention gradients update it; policy parameters and archives persist across tasks.",
+      "evaluation": "Full v1 reports six real-robot manipulation tasks, with 100 evaluation trials per task/checkpoint, acquisition curves over three training runs per task, alternate orders and routing, initialization, replay and loss ablations. The main sequence reports 100% measured success throughout; two alternate orders finish at 96.2% and 98.4%. RL/distillation ratios show a retention-versus-time tradeoff.",
+      "limitations": "Needs demonstrations, human corrections/resets and a reward classifier. Task identity selects scene-specific perception preprocessing despite a shared policy without an explicit task-ID input. Repeated evaluation sets do not establish repeated full-curriculum reliability, and all-success trials do not guarantee zero failure. Historical storage grows with tasks; the six short tasks leave larger-scale capacity unresolved. Some baseline objectives and training budgets are described inconsistently.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-10",
       "short_name": "CIDER"
     },
     {
@@ -2755,10 +2793,13 @@
       "sources": [
         "https://arxiv.org/abs/2608.04003",
         "https://arxiv.org/html/2608.04003v1",
-        "https://github.com/Gen-Verse/PAST-Bench"
+        "https://github.com/Gen-Verse/PAST-Bench",
+        "https://arxiv.org/pdf/2608.04003v1",
+        "https://github.com/Gen-Verse/PAST-Bench/blob/0b56a9877d5bbd0680803614672f33375181d2b6/README.md",
+        "https://github.com/Gen-Verse/PAST-Bench/blob/f8223517ae7491e776b69793d9f11e9d074ab42e/README.md"
       ],
       "code_url": "https://github.com/Gen-Verse/PAST-Bench",
-      "code_note": "Official repository linked and inspected; not installed or executed.",
+      "code_note": "Complete 33-page arXiv v1, Appendices A–F, ten figures, fifteen tables, scorer definitions and all case traces read on 2026-11-10; figures, tables and aggregation visually inspected. Official Apache-2.0 release documentation and paper-named revision 0b56a9877d5bbd0680803614672f33375181d2b6 inspected. Third-party components retain their licenses. No benchmark agents, graders, Docker workloads or model calls executed.",
       "topics": [
         "evaluation",
         "memory",
@@ -2773,11 +2814,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Earlier task experience and explicit state updates; controls remove or corrupt retained information.",
-      "mechanism": "Uses ordered fresh-session tasks with matched retention-on and retention-off conditions, and records evidence for saving, retrieving, and updating persistent state.",
-      "evaluation": "Tests personal-agent frameworks across memory, procedural reuse, information gathering, and update, with diagnostic interventions in Hermes+.",
-      "limitations": "The controlled families and model-dependent gains test prerequisites for recursive improvement, not an open-ended recursive process. Task scores and intended mechanism evidence are separate outcomes.",
+      "mechanism": "Evaluates persistent personal agents on ordered fresh-session task families, pairing access to retained state with a matched persistence-off condition. It measures memory, procedure reuse, retrieval timing and correction, while artifact and trace contracts score expected pathways. Hermes+ adds manually designed planning, rendering, routing, retrieval and closeout interventions; the benchmark does not establish improvement of the learning algorithm itself.",
+      "evaluation": "Full v1 covers 26 synthetic families/204 episodes, seven base models, four baseline frameworks and Hermes+ ablations. Persistence helps every tested Hermes backbone but can hurt other framework/capability combinations. Hermes+ raises the MiniMax mean gap from 0.13 to 0.15 while preserving the same 0.66 persistence-on score; the paper treats the aggregate difference as within run variation and highlights stronger Update gains.",
+      "limitations": "Task score blends completion, recovery and safety; mechanism evidence is contract alignment rather than causal necessity and partly reuses outcome scores. Synthetic isolated families and benchmark-driven runtime design limit ecological and unseen-family generalization. Transfer is mixed, procedural performance can regress, and Hermes+ uses about 2.5 times the tokens. Native adapters, budgets and release instructions require configuration reconciliation.",
       "review_depth": "full-text",
-      "checked": "2026-10-28",
+      "checked": "2026-11-10",
       "short_name": "PAST-Bench"
     },
     {
@@ -2792,10 +2833,12 @@
       "sources": [
         "https://arxiv.org/abs/2608.03764",
         "https://arxiv.org/html/2608.03764v1",
-        "https://github.com/Prism-Shadow/GDPevo"
+        "https://github.com/Prism-Shadow/GDPevo",
+        "https://arxiv.org/pdf/2608.03764v1",
+        "https://github.com/Prism-Shadow/GDPevo/blob/5082a777379156a048881e94940d640702e5e09a/README.md"
       ],
       "code_url": "https://github.com/Prism-Shadow/GDPevo",
-      "code_note": "Official repository linked and inspected; not installed or executed.",
+      "code_note": "Complete 22-page arXiv v1, Appendices A–H, five figures, six tables and all four diagnostic cases read on 2026-11-10. Official Apache-2.0 repository snapshot 5082a777379156a048881e94940d640702e5e09a documents construction/evaluation workspaces and released results. Reading these artifacts does not verify agent isolation or grader correctness at runtime; no research agents, code, containers or experiments executed.",
       "topics": [
         "evaluation",
         "skills",
@@ -2809,11 +2852,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Training tasks with controlled supervision; held-out rules are recombinations of training evidence.",
-      "mechanism": "Distributes hidden business rules across training tasks and recombines them in held-out tasks, using an automated pipeline to construct environments and deterministic graders.",
-      "evaluation": "Compares agent/model combinations and supervision types on generated enterprise workflow tasks and analyzes rule transfer.",
-      "limitations": "Construction calibrates task groups partly for an expected improvement range, which can favor detectable learning gains. These are generated business scenarios, not a live enterprise deployment study.",
+      "mechanism": "Constructs synthetic enterprise workflows by splitting business rules across five training tasks and recombining them in five test tasks per group. Frozen-model agents distill permitted demonstrations, environment exploration or three rounds of score feedback into persistent skills, which fresh agents load for held-out work.",
+      "evaluation": "Full v1 covers 240 tasks in 24 groups across six domains, with deterministic weighted rubric scores and three attempts per test task. Four model–harness combinations improve aggregate scores after skill generation, with up to 16.44 percentage points of lift. It includes creator comparisons, a three-group transfer study and detailed negative-transfer cases.",
+      "limitations": "Generated groups are calibrated for positive few-shot gains using the construction model family. Deterministic graders do not establish expert semantic validity, and group-level standard deviations are not confidence intervals. The 91.6% reference in Appendix D uses human–Codex pairs with complete training packages, rather than an autonomous model ceiling. Some groups regress, transfer coverage is narrow, and skill-generation costs can erase serving savings.",
       "review_depth": "full-text",
-      "checked": "2026-10-28",
+      "checked": "2026-11-10",
       "short_name": "GDPevo"
     },
     {
@@ -2904,10 +2947,11 @@
       "url": "https://arxiv.org/abs/2606.08106",
       "sources": [
         "https://arxiv.org/abs/2606.08106",
-        "https://arxiv.org/html/2606.08106v1"
+        "https://arxiv.org/html/2606.08106v1",
+        "https://arxiv.org/pdf/2606.08106v1"
       ],
       "code_url": null,
-      "code_note": "Official runnable code was not verified in this source review.",
+      "code_note": "Complete twelve-page v1, Appendix A, two figures, five tables, Algorithm 1 and the anytime-valid argument read on 2026-11-10; figures, tables and gate equations visually inspected. No official research implementation was independently verified. Findings concern the paper’s reported experiments; no prompt-evolution runs, model calls or benchmark code executed.",
       "topics": [
         "evaluation",
         "prompts"
@@ -2918,11 +2962,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Paired candidate/incumbent correctness on development instances.",
-      "mechanism": "Places a sequential statistical gate between proposed prompt edits and retention. A betting-based evidence process accepts an edit only after its paired outcomes cross a threshold; otherwise the incumbent remains.",
-      "evaluation": "Author experiments use Qwen2.5 prompt evolution on GSM8K, SVAMP, and ARC-Challenge, with planted-gain and stochastic regimes and a separate audit pool. Statistical gates reduce noisy commitments relative to greedy selection.",
-      "limitations": "The guarantee is per candidate under a conditional paired-null assumption, not a guarantee for the whole adaptive search. Experiments cover one model family and prompt edits; the finite audit and development-set coverage limit interpretation. Small genuine gains may be rejected.",
+      "mechanism": "Wraps prompt-edit acceptance in a paired sequential betting test. Discordant candidate/incumbent outcomes update an e-process; an edit persists only if wealth crosses 1/alpha before the evaluation budget ends. Wealth resets for each candidate, while model weights stay fixed. Ground-truth dev answers supply the evidence; no additional model training is required.",
+      "evaluation": "Complete v1 tests a small Qwen2.5 prompt-evolution loop on GSM8K, SVAMP and ARC-Challenge. A planted harmful instruction provides one large recoverable gain; a separate stochastic regime probes noise-driven commits. Controlled comparisons use five seeds, with three in stochastic and sensitivity studies. Statistical gates greatly reduce commit counts; fixed-n paired testing also performs well.",
+      "limitations": "The per-candidate bound requires conditionally fair discordant outcomes and does not establish validity under arbitrary adaptive reuse or run-wide error control. The audit is finite and uses temperature zero while stochastic dev evaluation uses 0.7. Some PACE commits are audit-labelled false, and small gains may be rejected. Planted repairs, one model family and an incompletely specified proposer limit system-level generalization; evaluation-count savings are not total-cost savings.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-10",
       "short_name": "PACE"
     },
     {
@@ -2938,10 +2982,13 @@
         "https://arxiv.org/abs/2606.05743",
         "https://arxiv.org/html/2606.05743v2",
         "https://aclanthology.org/2026.emnlp-main.2651/",
-        "https://github.com/brightjade/membrane"
+        "https://github.com/brightjade/membrane",
+        "https://aclanthology.org/2026.emnlp-main.2651.pdf",
+        "https://github.com/brightjade/membrane/blob/8d9c08aa352da0424b9d7c6122cc78e32b38477d/README.md",
+        "https://github.com/brightjade/membrane/blob/8d9c08aa352da0424b9d7c6122cc78e32b38477d/LICENSE"
       ],
       "code_url": "https://github.com/brightjade/membrane",
-      "code_note": "Author repository README inspected; research code and attack data were not executed or downloaded.",
+      "code_note": "Complete 35-page final EMNLP 2026 paper, Appendices A–E, twelve figures, twenty-three tables, full prompts and qualitative examples read on 2026-11-10; figures/tables visually inspected. Official Apache-2.0 release README and inventory inspected at 8d9c08aa352da0424b9d7c6122cc78e32b38477d. Requires model/embedding serving and additional reviewer/evaluation infrastructure. No attacks, agents or benchmarks executed and no attack data redistributed.",
       "topics": [
         "memory",
         "safety",
@@ -2954,11 +3001,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Paired harmful/benign examples, guard decisions, and feedback about jailbreaks or false refusals.",
-      "mechanism": "An external guard retrieves cells pairing unsafe conditions with benign exceptions. A planner and writer revise the cell store under structural validation, while model weights remain fixed.",
-      "evaluation": "Reports HarmBench and AgentHarm tests with development-set memory frozen for primary comparisons, plus separate evolving-memory streams, transfer, poisoning, and component studies.",
-      "limitations": "AgentHarm headline metrics measure refusal/admission, not completed harmful tool actions. Online streams receive preconstructed benign counterparts. Text-only English tests and limited attacker capabilities do not establish robustness against an adversary controlling both guard prompts and memory.",
+      "mechanism": "Uses fixed language models to maintain contrastive safety cells pairing unsafe conditions with nearby benign exemptions. A planner creates, revises or deletes cells after paired interactions; schema checks constrain writes, and retrieval plus a critic supplies context for an external SAFE/UNSAFE guard. Separate prequential experiments allow reviewer-driven memory updates after each decision.",
+      "evaluation": "The complete final paper studies HarmBench and AgentHarm-derived descriptive-compliance tasks, six attacks, frozen warmup memories, cross-attack transfer and held-out-attack streams. It reports strong balanced refusal/admission scores and lower benign refusal at its main 8B operating point, alongside component, human-label, judge, backbone, poisoning and cost checks.",
+      "limitations": "AgentHarm evaluation uses verbal compliance rather than executed harmful tool actions. Residual harmful admissions remain high on several attacks, and online gains raise benign refusal. Contrastive online learning assumes supplied benign counterparts; poisoning robustness excludes fully adaptive prompt-and-store attackers and can hide denial-of-service effects. Transfer retention ratios are not absolute F1, and results do not establish deployment safety.",
       "review_depth": "full-text",
-      "checked": "2026-11-01",
+      "checked": "2026-11-10",
       "short_name": "Membrane"
     },
     {
@@ -2973,10 +3020,11 @@
       "sources": [
         "https://arxiv.org/abs/2606.01075",
         "https://arxiv.org/html/2606.01075v2",
-        "https://proceedings.mlr.press/v306/qi26a.html"
+        "https://proceedings.mlr.press/v306/qi26a.html",
+        "https://arxiv.org/pdf/2606.01075v2"
       ],
       "code_url": null,
-      "code_note": "Official runnable code was not independently verified in this review; no research implementation was executed.",
+      "code_note": "Complete 26-page arXiv v2, Appendices A–C, four figures, thirteen tables, DPO definition and all verifier/reviser prompts read on 2026-11-10; quantitative figures and tables visually inspected. First May 31 submission and ICML 2026 venue verified from primary records. The final PMLR body was not separately reread. No official implementation independently verified and no code or model training executed.",
       "topics": [
         "model-training",
         "evaluation",
@@ -2988,30 +3036,32 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Preference labels and revision feedback generated by the same base model from supplied unlabeled prompts; oracle labels form comparison arms.",
-      "mechanism": "Compares single-round verification, feedback-guided revision, repeated preference training, and curricula inside a controlled generator-verifier loop. Retained changes are trained policy weights rather than an evolving agent harness.",
-      "evaluation": "Studies easy-to-hard Knights and Knaves reasoning and OpenThoughts-based training with mathematical/generalization tests. Gains often plateau below oracle supervision; a larger-model revision condition nearly closes the gap.",
-      "limitations": "The restricted offline setup is not an impossibility result for all self-improvement. Open-ended tests cannot isolate verifier error from prompt-distribution shifts, and online-RL comparison rows use different starting models and supervision. Improved pass@1 with nearly unchanged pass@32 limits claims about expanded solution coverage.",
+      "mechanism": "Uses one instruction-tuned model as both generator and verifier, collecting self-labeled preference pairs for full-parameter offline DPO. It compares thresholded voting, feedback-guided revision, repeated training on the same prompts and easy-to-hard curricula; retained changes are model weights. Ground-truth verifier arms supply separate comparison signals.",
+      "evaluation": "Complete v2 tests Knights-and-Knaves across difficulty levels and model scales, OpenThoughts-based training with downstream reasoning tests, pass@1/pass@32 coverage, revision errors, verifier prompts and data/compute scaling. Larger-model revision nearly reaches its reported oracle comparator, while smaller models, some tasks and later iterations show regressions.",
+      "limitations": "The chosen offline closed loop is not a bound on all self-improvement. Oracle gaps depend on model, training stages and comparator; near-matching means do not establish equivalence. Online-method comparisons use different starting models and supervision. Verifier diagnostics sometimes use a stronger gold-informed judge, and training-run uncertainty is limited. Nearly unchanged pass@32 supports a bounded sharpening interpretation rather than a universal no-new-capability claim.",
       "review_depth": "full-text",
-      "checked": "2026-11-02",
+      "checked": "2026-11-10",
       "short_name": "Self-evolution gap"
     },
     {
       "id": "peam",
-      "title": "PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft",
+      "title": "PEAM: Parametric Embodied Agent Memory for Continual Skill Learning via Internalization of Experience in Minecraft",
       "date": "2026-05-26",
       "year": 2026,
       "kind": "paper",
       "status": "peer-reviewed",
       "venue": "Findings of EMNLP 2026",
-      "url": "https://arxiv.org/abs/2605.27762",
+      "url": "https://aclanthology.org/2026.findings-emnlp.1326/",
       "sources": [
         "https://arxiv.org/abs/2605.27762",
         "https://arxiv.org/html/2605.27762v2",
         "https://aclanthology.org/2026.findings-emnlp.1326/",
-        "https://eurekaarrow.github.io/"
+        "https://eurekaarrow.github.io/",
+        "https://arxiv.org/pdf/2605.27762v2",
+        "https://aclanthology.org/2026.findings-emnlp.1326.pdf"
       ],
       "code_url": null,
-      "code_note": "Official runnable code was not established in this source review; nothing was installed or executed.",
+      "code_note": "Complete 13-page arXiv v2 and 14-page final Findings EMNLP 2026 paper read on 2026-11-10, including all four figures, five tables, algorithm and Appendices A–E. The final title and added within-adapter experiment were verified against the official venue and author page. The reported McNemar statistic and some interval values remain unreconciled with the stated 33-trial summaries. No official implementation independently verified; no models, Minecraft agents or training executed.",
       "topics": [
         "memory",
         "skills",
@@ -3026,11 +3076,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Verified successful trajectories, matched failure-correction pairs, and failure statistics used by fixed consolidation gates.",
-      "mechanism": "A deliberative model collects experience for category-specific LoRA adapters. Behavioral cloning and trajectory-preference training internalize selected skills; the fast adapter path falls back to deliberation when verification fails.",
-      "evaluation": "Inspected preprint v2 tests eleven Minecraft tasks over three seeds, sequential craft/gather/combat consolidation, cost, and trigger ablations. Official publication metadata confirms the renamed Findings paper; its PDF was not inspected.",
-      "limitations": "The forgetting test concerns three isolated categories, not general within-category retention. Consolidation rules remain fixed, adapter storage grows with categories, and trigger robustness uses re-sliced trajectories. No real-robot transfer is evaluated.",
+      "mechanism": "Uses a slow GPT-4o agent to acquire and verify executable Minecraft programs, then consolidates selected successes and matched failure–correction pairs into category-specific LoRA adapters on Qwen3-VL-8B. A fixed worthiness score and self-referenced failure-rate trigger control updates. A confidence-gated fast path falls back to the slow tier when no suitable skill exists or execution fails.",
+      "evaluation": "The final paper evaluates eleven Minecraft tasks with three seeds, cross-category retention, a shared-adapter craft-wave sequence, consolidation ablations and serving diagnostics. It reports 23/33 successes versus 18/33 for VOYAGER, lower inference tokens and latency, and modest within-adapter forgetting alongside positive forward transfer. The headline paired-test inference cannot be reconciled from the supplied counts and unspecified pairing details.",
+      "limitations": "Only three consolidated categories and a small repeated task suite are tested; navigation yields no usable correction pairs. Isolated adapters prevent cross-category parameter changes but do not guarantee within-category retention. Trigger robustness mainly re-slices existing experience and retains fixed hyperparameters. Training cost is excluded from inference savings, hardware descriptions differ, and reported significance/intervals require clarification from raw trial records.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-10",
       "short_name": "PEAM"
     },
     {
@@ -3073,17 +3123,21 @@
       "date": "2026-05-22",
       "year": 2026,
       "kind": "paper",
-      "status": "preprint",
-      "venue": "",
+      "status": "peer-reviewed",
+      "venue": "NeurIPS 2026 — official poster record; spotlight designation not independently verified",
       "url": "https://arxiv.org/abs/2605.23904",
       "sources": [
         "https://arxiv.org/abs/2605.23904",
         "https://arxiv.org/html/2605.23904v2",
         "https://microsoft.github.io/SkillOpt/",
-        "https://github.com/microsoft/SkillOpt"
+        "https://github.com/microsoft/SkillOpt",
+        "https://arxiv.org/pdf/2605.23904v2",
+        "https://github.com/microsoft/SkillOpt/blob/ccfdcdf7ab50456e2556200499f2bccf1e1b43b2/README.md",
+        "https://neurips.cc/virtual/2026/poster/151264",
+        "https://openreview.net/forum?id=bgUar0JP5t"
       ],
       "code_url": "https://github.com/microsoft/SkillOpt",
-      "code_note": "Paper-linked project and official repository inspected; newer SkillOpt-Sleep features are separate from the reviewed paper experiments. Not executed.",
+      "code_note": "Complete 27-page arXiv v2, Appendices A–C, four figures, six tables, algorithm and all prompt contracts read on 2026-11-10. Official MIT release ccfdcdf7ab50456e2556200499f2bccf1e1b43b2 inspected. NeurIPS poster 151264 verifies acceptance and a changed abstract; OpenReview final PDF returned HTTP 403. No research code, model/API training calls, datasets or benchmark runs executed.",
       "topics": [
         "skills",
         "prompts",
@@ -3097,11 +3151,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Scored task rollouts, optimizer-model critiques, and separate selection-set scores gate retained text edits.",
-      "mechanism": "An external optimizer revises one skill document through bounded edits, rejected-edit memory, and slow epoch-level updates. The target model and execution harness stay fixed; a selected text artifact is reused on later tasks.",
-      "evaluation": "Reports six benchmarks, seven target models, and direct-chat/Codex/Claude Code settings, plus component, budget, and nearby model/harness/task-transfer comparisons.",
-      "limitations": "Requires reliable scoring and selection data plus substantial optimization calls. Zero extra deployment model calls does not mean zero training cost. A single skill can be insufficient for heterogeneous domains, and near-domain transfer is not unrestricted continual improvement.",
+      "mechanism": "Optimizes one persistent skill document around a frozen target agent. A separate model reflects on scored training batches, merges and ranks bounded text edits, and accepts updates only when the selection score increases. Rejected-edit memory and epoch-wise slow/meta guidance inform future edits; deployment exports a static skill artifact.",
+      "evaluation": "The fully read arXiv v2 evaluates six benchmarks, seven targets and three execution modes, with component, hyperparameter and transfer studies. A newer official NeurIPS abstract reports changed headline results: +21.5 points for GPT-5.5 direct chat and best measured performance on five of six benchmarks. Its final PDF remains inaccessible, so that revision’s detailed evidence was not appraised.",
+      "limitations": "Strict score improvement on a repeatedly reused selection set does not provide statistical risk control. Headline experiments lack independent optimization-run uncertainty and matched search/length controls. The v2 paper has conflicting ablation split ratios and unreconciled cost-per-point arithmetic. Static skills avoid extra optimizer calls but still consume input tokens. Version-specific headlines and the unavailable final body must remain explicit.",
       "review_depth": "full-text",
-      "checked": "2026-11-01",
+      "checked": "2026-11-10",
       "short_name": "SkillOpt"
     },
     {
@@ -3117,10 +3171,13 @@
         "https://arxiv.org/abs/2605.19633",
         "https://arxiv.org/html/2605.19633v1",
         "https://github.com/gepa-ai/gepa",
-        "https://github.com/gepa-ai/optimize-anything-artifact"
+        "https://github.com/gepa-ai/optimize-anything-artifact",
+        "https://arxiv.org/pdf/2605.19633v1",
+        "https://github.com/gepa-ai/optimize-anything-artifact/blob/58cdf89d856f2fbc174991b89076eccdcf68e4ca/acm_cais_artifact_evaluation/OFFLINE_ARTIFACTS.md",
+        "https://github.com/gepa-ai/optimize-anything-artifact/blob/58cdf89d856f2fbc174991b89076eccdcf68e4ca/acm_cais_artifact_evaluation/domains/kernelbench/README.md"
       ],
       "code_url": "https://github.com/gepa-ai/gepa",
-      "code_note": "Paper-linked GEPA framework and separate author artifact repository inspected; neither executed or reproduced.",
+      "code_note": "Complete 16-page arXiv v1, Appendices A–L, Algorithm 1, eleven figures, ten tables and all code/prompt excerpts read on 2026-11-10. Author-linked MIT artifact at 58cdf89d856f2fbc174991b89076eccdcf68e4ca includes offline evidence and rerun requirements. Its kernel README records 26/31 saved cases at speedup >=1, versus the paper’s 87% headline. No research code, offline verifier, models, GPUs or benchmarks executed.",
       "topics": [
         "prompts",
         "architecture",
@@ -3137,11 +3194,11 @@
       ],
       "persistence": "both",
       "learning_signal": "Supplied evaluator scores and domain-specific diagnostics such as execution traces, errors, and per-example results.",
-      "mechanism": "Exposes single-task search, shared multi-task search, and reusable-artifact optimization through one interface. Its default GEPA backend retains a Pareto frontier and uses reflective proposals to revise textual artifacts around fixed models.",
-      "evaluation": "Reports coding-agent skills, agent architecture, prompt learning, cloud scheduling, kernel generation, and mathematical optimization, with feedback, transfer, and proposer ablations.",
-      "limitations": "Evaluators and diagnostic feedback require domain expertise. Multi-task search can hurt unrelated problems, as in circle packing; proposal quality and evaluation cost vary. Curator interpretation: a general optimization interface does not establish autonomous improvement of its search algorithm.",
+      "mechanism": "Wraps text artifacts in an external evaluator and uses GEPA reflection, diagnostic side information and Pareto-based candidate selection to revise prompts, code, skills or agent architectures. Single-instance search, related-task search and held-out generalization share an API. The evaluator and search procedure remain externally supplied; model weights stay fixed.",
+      "evaluation": "Complete v1 reports coding skills, cloud scheduling, ARC-AGI architectures, AIME prompts, 31 V100 kernel tasks and circle packing, plus preliminary image and black-box examples. It includes side-information and multi-task ablations. ARC accuracy rises from 32.5% to 89.5% with a more elaborate inference architecture; multi-task gains include ties and a negative circle-packing result.",
+      "limitations": "Expert-designed evaluators and diagnostics are essential. Most results lack independent search-run uncertainty; a kernel ablation selects the best multi-task tasks. Larger inference budgets qualify the ARC comparison. The paper and release disagree on some skill/kernel counts, and storage/API costs are not total compute. Benchmarked scheduling savings and scored images do not establish live deployment or universal superiority.",
       "review_depth": "full-text",
-      "checked": "2026-11-01",
+      "checked": "2026-11-10",
       "short_name": "optimize_anything"
     },
     {
@@ -3185,11 +3242,11 @@
       "status": "preprint",
       "venue": "arXiv preprint",
       "code_url": null,
-      "code_note": "Official implementation availability was not established in this review; no code was executed.",
+      "code_note": "Complete 12-page arXiv v1, all three figures, four tables, theorem/reduction and Algorithm 1 read on 2026-11-10; figures, tables and metric equations visually inspected. No official implementation was independently verified. No memory system, unlearning code or benchmark was executed.",
       "scope": "core",
       "persistence": "across-tasks",
       "review_depth": "full-text",
-      "checked": "2026-11-07",
+      "checked": "2026-11-10",
       "id": "memorepair",
       "short_name": "MemoRepair",
       "title": "MEMOREPAIR: Barrier-First Cascade Repair in Agentic Memory",
@@ -3197,7 +3254,8 @@
       "url": "https://arxiv.org/abs/2605.07242",
       "sources": [
         "https://arxiv.org/abs/2605.07242",
-        "https://arxiv.org/html/2605.07242v1"
+        "https://arxiv.org/html/2605.07242v1",
+        "https://arxiv.org/pdf/2605.07242v1"
       ],
       "topics": [
         "memory",
@@ -3212,9 +3270,9 @@
         "model-weights"
       ],
       "learning_signal": "Explicit deletion, correction or interface-migration events, recorded dependencies and artifact-specific validation.",
-      "mechanism": "Withdraws an invalidated artifact's recorded descendants before repair, rebuilds successors from retained support, and republishes only validated dependency-closed selections. A fixed cost–value tradeoff reduces selection to a min-cut; optional neural-artifact repairs use supplied unlearning operators.",
-      "evaluation": "Uses ToolBench/StableToolBench and MemoryArena traces to compare stale exposure, successor recovery and repair cost, including a ToolLLaMA adapter repair study.",
-      "limitations": "Isolation assumes complete influence provenance and adequate validators; missing edges can leave stale descendants visible. The reported task diagnostic is constructed from repair/exposure sets, not native end-to-end task success. Costs exclude the withdrawal barrier, and parameter erasure is not guaranteed."
+      "mechanism": "Withdraws an invalidated memory source and all influence descendants before repair. It rebuilds successor artifacts from retained support and staged predecessors, then uses a maximum-closure min-cut to select a cost-weighted, predecessor-closed repair plan. Only successors passing artifact-specific checks return to service; a chosen unlearning operator can also repair neural skills.",
+      "evaluation": "Full v1 studies deletion, correction and migration on ToolBench-derived and MemoryArena memory artifacts. It compares publication coverage and repair cost with exhaustive and greedy repair, tests provenance omissions and validation variants, and combines store repair with neural unlearning. The reported frontier uses three seeds; zero stale serving is conditional on the withdrawal/provenance contract.",
+      "limitations": "Requires complete causal provenance and adequate validators; dropping 1% of influence edges yields 17.7% leak in the reported check. Exact min-cut optimizes fixed values and costs, not a hard budget or future task success. The task-score diagnostic is constructed from artifact penalties rather than end-task accuracy, and repair cost excludes withdrawal. Event counts, implementation settings and numerical validation thresholds are insufficiently detailed for independent reproduction; neural repair is not exact erasure."
     },
     {
       "id": "proactagent",
@@ -3228,10 +3286,11 @@
       "sources": [
         "https://arxiv.org/abs/2604.20572",
         "https://arxiv.org/html/2604.20572v2",
-        "https://aclanthology.org/2026.findings-emnlp.775/"
+        "https://aclanthology.org/2026.findings-emnlp.775/",
+        "https://aclanthology.org/2026.findings-emnlp.775.pdf"
       ],
       "code_url": null,
-      "code_note": "An official implementation was not independently verified in this review; this does not establish that none exists.",
+      "code_note": "Complete 17-page final Findings EMNLP 2026 paper, Appendices A–F, four figures, seven tables, twenty-one equations and both algorithms read on 2026-11-10; figures/tables and proof equations visually inspected. Official venue identity verified. An official runnable implementation was not independently established; no policy training, simulator or extraction code executed.",
       "topics": [
         "memory",
         "skills",
@@ -3246,11 +3305,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Environment rewards, paired retrieval/no-retrieval continuations, and interaction-length penalties.",
-      "mechanism": "Interleaves GRPO policy updates with typed factual, episodic, and skill-memory extraction. Replaying a shared interaction prefix creates a no-retrieval branch whose outcome helps train the timing and content of later retrieval actions.",
-      "evaluation": "Reports SciWorld, AlfWorld, and StuLife experiments, memory/policy ablations, retrieval costs, and two Qwen2.5 model sizes. StuLife uses online evolution without a supplied training split.",
-      "limitations": "Requires reward-bearing environments and prefix replay; the training pipeline includes supervised cold-start trajectories and a separate extraction model. The paired reward is a shaped empirical signal, not an unbiased causal-effect estimator. Long-term open-world retention is not established.",
+      "mechanism": "Jointly trains an agent policy and expands factual, episodic, success, failure and comparative experience stores. After initial context retrieval, the policy can query memory as an action. Replayed prefixes create retrieval/no-retrieval continuations whose shaped outcome and length differences train retrieval timing and query content through GRPO.",
+      "evaluation": "The complete final paper evaluates ScienceWorld, ALFWorld and StuLife with a 7B agent and larger extraction model, plus 3B scaling, typed-store ablations and matched retrieval-controller baselines. It reports 73.5% ScienceWorld success with fewer interaction rounds; removing paired rewards or supervised initialization reduces performance in the tested configuration.",
+      "limitations": "Requires supervised cold start, parameter-update compute, a larger extractor and replayable simulator states. The formal analysis identifies a local noisy gradient signal rather than unbiased causal retrieval value or a policy-improvement guarantee. The experience store has no capacity bound, run/order uncertainty and exact online test-update accounting are underreported, and interaction/prompt savings exclude much of the learning pipeline.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-10",
       "short_name": "ProactAgent"
     },
     {
@@ -3300,10 +3359,14 @@
         "https://arxiv.org/abs/2607.21596",
         "https://arxiv.org/html/2607.21596v2",
         "https://proceedings.colm.cc/paper_files/paper/2026/hash/0bcf9cf6ffe26bba3af99e18be0e1d8d-Abstract-Conference.html",
-        "https://github.com/DEFENSE-SEU/FlowEvo"
+        "https://github.com/DEFENSE-SEU/FlowEvo",
+        "https://arxiv.org/pdf/2607.21596v2",
+        "https://github.com/DEFENSE-SEU/FlowEvo/blob/36e81efd4d1fdbabca7366200b15808ebef157fa/src/code_math/runner.py",
+        "https://colm.cc/Conferences/2026/AcceptedPapers",
+        "https://proceedings.colm.cc/paper_files/paper/2026"
       ],
       "code_url": "https://github.com/DEFENSE-SEU/FlowEvo",
-      "code_note": "Author repository, paper backlink, layout, and setup documentation inspected; not executed.",
+      "code_note": "Complete 25-page arXiv v2, Appendices A–H, three figures, sixteen tables, algorithm and all prompts/records read on 2026-11-10. Official Apache-2.0 release 36e81efd4d1fdbabca7366200b15808ebef157fa and targeted code/math verification/retry paths inspected. Its math failure feedback includes the gold answer, which retries receive. No research code, benchmark, environment or model executed.",
       "topics": [
         "workflows",
         "skills",
@@ -3319,11 +3382,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Verified task outcomes, skill interface/replay checks, and observed downstream utility.",
-      "mechanism": "Compiles successful workflows into persistent executable skills. Later tasks either replay compatible skills or use them as context for new workflows; lifecycle rules restrict or suppress harmful reuse without updating model weights.",
-      "evaluation": "Reports ALFWorld, HumanEval, MBPP, GSM8K, and MATH-500 comparisons, a backbone sweep, and admission/curation ablations. Main streams accumulate skills online; separate fixed-bank MBPP analyses test reuse mechanisms.",
-      "limitations": "Correctness feedback or tests are available in the studied domains; signal-free tasks remain outside scope. Full-split MBPP router comparisons are not statistically separated. Long-running bank maintenance and adversarial feedback remain open.",
+      "mechanism": "Compiles verifier-passed workflows into persistent executable templates, guidelines and experience records around a frozen model. Retrieved records support direct execution, fallback or context-guided generation; observed utility and guided/withheld contrasts can suppress harmful skills. Code/math solving additionally escalates through verification-guided retries.",
+      "evaluation": "Complete v2 reports five benchmark splits and ten backbones, with online accumulation on ALFWorld and frozen-bank MBPP mechanism studies. It reports 85.6% ALFWorld success and positive contrasts against ExpeL in 49/50 model–dataset cells. Router comparisons on full MBPP are inconclusive, and one backbone loses ten points on MATH-500.",
+      "limitations": "Reuse success includes fallback executions, while small guided/withheld comparisons do not establish causal skill utility. Nested ablations combine memory, routing and retries. The inspected release feeds current gold math answers into failure-repair prompts and disables math skill-context retrieval; these paths qualify answer-free capability and mechanism claims. Historical execution was not independently replayed. Noise nonsignificance does not prove equivalence or broad robustness.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-10",
       "short_name": "FlowEvo"
     },
     {
@@ -3338,10 +3401,11 @@
       "sources": [
         "https://arxiv.org/abs/2604.16968",
         "https://arxiv.org/html/2604.16968v1",
-        "https://aclanthology.org/2026.findings-acl.2091/"
+        "https://aclanthology.org/2026.findings-acl.2091/",
+        "https://arxiv.org/pdf/2604.16968v1"
       ],
       "code_url": null,
-      "code_note": "Official runnable code was not verified in this review; no implementation was installed or executed.",
+      "code_note": "Complete 25-page arXiv v1, Appendices A–D, nineteen figures, six tables, attribution equations and all cases/prompts read on 2026-11-10; plots, tables and equations visually inspected. Official ACL venue identity verified; the final venue body was not separately reread. No implementation independently reproduced and nothing installed or executed.",
       "topics": [
         "memory",
         "safety",
@@ -3354,30 +3418,43 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Benign execution experience and, in mixed-stream experiments, execution or refusal experiences retained by the evaluated frameworks.",
-      "mechanism": "Studies safety changes when offline Agent Workflow Memory or online ReasoningBank supplies accumulated experience to frozen models. Varying experience size and a length-matched prompt control probe the contribution of retrieved content.",
-      "evaluation": "Tests web and simulated household settings using BrowserART, Agent-SafetyBench, and SafeAgentBench, with several model backbones and mixed benign/harmful experience streams.",
-      "limitations": "Results cover two frameworks and finite runs up to 800 steps, using automated safety grading. Refusal experience reduces unsafe behavior but can increase over-refusal. Curator interpretation: attribution and prompt controls support a bounded explanation, not universal causality or inevitable failure of every learning agent.",
+      "mechanism": "Examines fixed-weight agents supplied with offline AWM workflows or online ReasoningBank experience. Benign interaction traces populate external memory; retrieval, memory size and manually controlled refusal/execution mixtures change later behavior. Length-expanded prompt controls and attribution analyses probe why safety outcomes differ.",
+      "evaluation": "Complete v1 evaluates seven backbones on web and simulated household safety tasks. All reported offline aggregate comparisons increase attack success after benign experience; online traces show elevated but fluctuating rates, including an 812-step run. Mixed-memory tests compare harmful-task execution and refusal experience alongside benign task success.",
+      "limitations": "Findings concern two memory frameworks, constructed mixtures and finite benchmark streams. Automated grading and limited independent-run uncertainty qualify persistent-drift claims. The length control also changes prompt content and placement; gradient attribution does not establish causality, and some curve descriptions overstate the plotted trends. Observed safety–utility tradeoffs are not universal impossibility results.",
       "review_depth": "full-text",
-      "checked": "2026-11-01",
+      "checked": "2026-11-10",
       "short_name": "Experience-driven safety"
     },
     {
       "id": "combee",
-      "title": "Combee: Scaling Prompt Learning for Self-Improving Language Model Agents",
+      "title": "Combee: Scaling Parallel Prompt Learning for Self-Improving LLM Agents",
       "date": "2026-04-05",
       "year": 2026,
       "kind": "paper",
       "status": "peer-reviewed",
       "venue": "COLM 2026",
-      "url": "https://arxiv.org/abs/2604.04247",
+      "url": "https://openreview.net/forum?id=lSvAsTjpTW",
       "sources": [
         "https://arxiv.org/abs/2604.04247",
         "https://arxiv.org/html/2604.04247v2",
         "https://proceedings.colm.cc/paper_files/paper/2026/hash/fe24df54d5ccd95cdf830a309f2bf5c0-Abstract-Conference.html",
-        "https://gepa-ai.github.io/gepa/blog/2026/04/09/gepa-at-scale-with-combee/"
+        "https://gepa-ai.github.io/gepa/blog/2026/04/09/gepa-at-scale-with-combee/",
+        "https://arxiv.org/pdf/2604.04247v2",
+        "https://colm.cc/Conferences/2026/AcceptedPapers",
+        "https://proceedings.colm.cc/paper_files/paper/2026",
+        "https://openreview.net/forum?id=lSvAsTjpTW",
+        "https://github.com/gepa-ai/gepa/pull/394",
+        "https://github.com/gepa-ai/gepa/issues/395",
+        "https://github.com/gepa-ai/gepa/pull/492",
+        "https://github.com/ace-agent/ace",
+        "https://raw.githubusercontent.com/ace-agent/ace/main/README.md",
+        "https://raw.githubusercontent.com/ace-agent/ace/main/LICENSE.txt",
+        "https://raw.githubusercontent.com/ace-agent/ace/main/pyproject.toml",
+        "https://raw.githubusercontent.com/ace-agent/ace/main/ace/ace_batch.py",
+        "https://raw.githubusercontent.com/gepa-ai/gepa/main/LICENSE"
       ],
       "code_url": null,
-      "code_note": "Author blog describes ACE/GEPA integrations; a pinned runnable paper implementation was not independently verified or executed.",
+      "code_note": "Complete 51-page arXiv v2 jointly reviewed on 2026-11-10, including all printed playbook excerpts and visual figure/table checks. Official COLM 2026 records verify the renamed title; the venue final body was not separately compared. Official ACE (Apache-2.0; Python >=3.10 and model/API dependencies) and GEPA (MIT) sources were inspected without execution. GEPA pull request 394 is merged; controller issue 395/pull request 492 remains open. No independent reproduction.",
       "topics": [
         "prompts",
         "workflows",
@@ -3391,11 +3468,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Textual reflections from task executions, downstream scores, and measured iteration latency.",
-      "mechanism": "Adds a scaling layer to existing generate-reflect-update methods: hierarchical parallel aggregation, duplicated/shuffled reflections, and latency-based batch selection produce reusable context updates without weight training.",
-      "evaluation": "Tests ACE and GEPA on AppWorld, Terminal-Bench, Formula, and FiNER, including held-out tasks, aggregation controls, cost measurements, and selected repeated-run analyses.",
-      "limitations": "The largest speedup does not preserve identical accuracy: Terminal-Bench Combee scores below sequential ACE. Rare or conflicting reflections can still be lost. The batch controller uses single-trial profiling and a fixed threshold; asynchronous execution and broader framework transfer remain untested.",
+      "mechanism": "A parallel scaling layer around fixed ACE/GEPA prompt-learning rules. Agents produce reflections; duplication/shuffling and two-level grouped aggregation retain more local lessons before updating persistent prompts or playbooks. A controller chooses batch size from a profiled delay curve. Model weights and the underlying improvement rule remain fixed.",
+      "evaluation": "The reviewed v2 reports delay/quality comparisons on AppWorld, Terminal-Bench 2.0, Formula and FiNER. AppWorld Combee reaches 65.8% in seven minutes versus sequential ACE’s 58.1% in 86 minutes; the best naive batch reaches 65.4% in nineteen minutes. Terminal-Bench learning time falls from 42.4 to 2.4 minutes while accuracy falls from 37.9% to 35.6%. Some GEPA finance comparisons repeat optimization three times; playbook-quality scores use five judging runs.",
+      "limitations": "Speedups depend on the comparator and exclude offline Terminal-Bench trace generation and downstream context cost. LLM aggregation is not exactly associative or quality-preserving; several ACE settings lack independent optimization repeats. Playbook judging has no equal-length control or expert truth check, and printed entries are intentionally truncated. Single-profile synchronous batching does not establish asynchronous scalability. Some batch labels differ between figures and tables. Core GEPA aggregation is released, while its dynamic controller remains in an open pull request.",
       "review_depth": "full-text",
-      "checked": "2026-11-01",
+      "checked": "2026-11-10",
       "short_name": "Combee"
     },
     {
@@ -3410,10 +3487,11 @@
       "sources": [
         "https://arxiv.org/abs/2603.29093",
         "https://arxiv.org/html/2603.29093v3",
-        "https://aclanthology.org/2026.findings-emnlp.1996/"
+        "https://aclanthology.org/2026.findings-emnlp.1996/",
+        "https://aclanthology.org/2026.findings-emnlp.1996.pdf"
       ],
       "code_url": null,
-      "code_note": "The inspected v3 promises an artifact release; no official repository was verified and no code was executed.",
+      "code_note": "Complete 22-page final Findings EMNLP 2026 paper, Appendices A–Q, six figures, nineteen tables and detailed ontology/cost/feedback cases read on 2026-11-10; figures and quantitative tables visually inspected. Official venue identity verified. The paper promises implementation and reproducibility artifacts, but an official runnable release was not independently verified. No model or benchmark code executed.",
       "topics": [
         "memory",
         "skills",
@@ -3426,11 +3504,11 @@
       ],
       "persistence": "both",
       "learning_signal": "Task verification and teacher-model scores/feedback on completed successful and failed executions.",
-      "mechanism": "Stores procedural-episodic traces in a typed graph and retrieves them by semantic, structural, and graph signals. A plan/retrieve/generate/iterate/ingest loop separates within-task repair from retaining experience without weight updates.",
-      "evaluation": "Version 3 evaluates code, structured queries, HLE, Lifelong Agent Bench, and ALFWorld. It distinguishes recurring training tasks from held-out transfer using frozen memory and adds same-backbone comparisons.",
-      "limitations": "Cumulative success means solved at least once across repeated epochs, not first-attempt generalization. Teacher/verifier feedback and domain adapters remain inputs; cross-backbone reference rows are not controlled comparisons. Monotonic storage growth alone does not establish freedom from forgetting.",
+      "mechanism": "Stores structured procedural traces, failures and repairs in a typed graph. A fixed workflow combines semantic, operation-sequence and graph retrieval, uses retrieved successes and failures during generation, iterates with environment feedback, and ingests teacher-scored experience. Persistent memory changes while all model weights remain fixed.",
+      "evaluation": "The full final paper reports five-seed recurring-task and frozen-memory transfer experiments across code, knowledge-graph queries, HLE, lifelong tools and ALFWorld. On blind KGQA transfer, structural retrieval reaches 73.7% versus 42.0% without memory. Components help differently by domain, and within-task iteration remains active during transfer.",
+      "limitations": "Recurring-task cumulative success combines memory with repeated attempts; oracle-scored feedback and stronger judges add supervision and compute. Several headline gains mix baselines or metrics: the claimed 7.6-point same-backbone code gain is unreconciled with the displayed GPT-4o values, and lifelong gains concern cumulative success. Some channel ablations also change judge/configuration. Cost estimates omit parts of the full pipeline, and fixed weights do not guarantee behavioral retention.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-10",
       "short_name": "APEX-EM"
     },
     {
@@ -3558,10 +3636,11 @@
       "sources": [
         "https://arxiv.org/abs/2603.18272",
         "https://arxiv.org/html/2603.18272v2",
-        "https://aclanthology.org/2026.emnlp-main.57/"
+        "https://aclanthology.org/2026.emnlp-main.57/",
+        "https://aclanthology.org/2026.emnlp-main.57.pdf"
       ],
       "code_url": null,
-      "code_note": "Official runnable code was not independently verified in this source review; this does not establish that none exists.",
+      "code_note": "Complete 39-page EMNLP 2026 final paper, all appendices, reliability/stress analyses, prompts, figures and tables read on 2026-11-10. The final paper announces naver/RAGents code and a model collection. Exact public GitHub web/API/raw endpoints returned HTTP 404 and the collection returned HTTP 401 during this review, so release contents, requirements and license remain unverified. No research code or models were executed.",
       "topics": [
         "memory",
         "model-training",
@@ -3573,11 +3652,11 @@
       ],
       "persistence": "both",
       "learning_signal": "Supervised assistant-token targets from environment trajectories, augmented with retrieved experience during LoRA training.",
-      "mechanism": "Trains the policy to use full retrieved trajectories instead of adding memory only at inference. The main retrieval bank stays read-only; separate experiments reuse a first attempt as context for a second without parameter updates.",
-      "evaluation": "Compares inference-only retrieval and retrieval-aware fine-tuning on ALFWorld and ScienceWorld, including easy-to-hard task-group transfer, retrieval ablations, and imperfect or self-generated experience.",
-      "limitations": "Main hard-task evaluations retrieve matched hard-task expert traces despite easy-only policy training. Self-experience covers one retry and hurts ScienceWorld despite helping ALFWorld. Cross-paper headline comparisons are qualitative; long-term heterogeneous memory accumulation is not evaluated.",
+      "mechanism": "Supervises LoRA agents on successful easy-task trajectories while also inserting retrieved full episodes into the training context. A frozen embedding retriever reads a fixed bank containing successes and failures; inference changes context without weight updates. Separate stress tests reuse first-attempt trajectories for one retry, with outcomes labeled by the environment.",
+      "evaluation": "The complete EMNLP final evaluates ALFWorld and a 149-instance ScienceWorld subset. Retrieval-aware training improves hard-task ALF success across four backbones, reaching 88.5% for Ministral versus 67.2% for LoRA with inference-only retrieval. Paired task-level analyses and three-seed retrieval/stress tests support bounded gains. Sparse and teacher-generated relevant memory often remains useful; self-experience benefits ALF but can strongly degrade ScienceWorld when added to useful memory.",
+      "limitations": "Main hard-task evaluations retrieve matched hard-task expert episodes despite easy-only policy training, within fixed simulator dynamics. Benefits depend on memory relevance and backbone; Gemma shows no hard-ScienceWorld gain. One retry does not establish continual heterogeneous experience accumulation. Dynamic retrieval and longer training can regress. Cross-paper scores are qualitative; seed variation in environment/retrieval is distinct from independent training replications, and cost tables omit memory collection and training.",
       "review_depth": "full-text",
-      "checked": "2026-10-31",
+      "checked": "2026-11-10",
       "short_name": "ExpRAG"
     },
     {
@@ -3630,10 +3709,14 @@
         "https://arxiv.org/abs/2602.23413",
         "https://arxiv.org/html/2602.23413v2",
         "https://proceedings.colm.cc/paper_files/paper/2026/hash/fc9f83d9925e6885e8f1ae1e17b3c44b-Abstract-Conference.html",
-        "https://github.com/skydiscover-ai/skydiscover"
+        "https://github.com/skydiscover-ai/skydiscover",
+        "https://arxiv.org/pdf/2602.23413v2",
+        "https://github.com/skydiscover-ai/skydiscover/blob/0d932b690670a7e544388ad362e9876c8bd256a0/skydiscover/optimize/search/evox/README.md",
+        "https://colm.cc/Conferences/2026/AcceptedPapers",
+        "https://proceedings.colm.cc/paper_files/paper/2026"
       ],
       "code_url": "https://github.com/skydiscover-ai/skydiscover",
-      "code_note": "Official SkyDiscover repository linked by the paper and inspected; it also contains other algorithms. Not executed.",
+      "code_note": "Complete 28-page arXiv v2, Appendices A–D, Algorithm 1, four figures, all result tables and search prompts read on 2026-11-10. Official Apache-2.0 SkyDiscover snapshot 0d932b690670a7e544388ad362e9876c8bd256a0 and EvoX-specific documentation inspected. Its documented strategy-score formula differs from the printed equation. No source-code execution, model calls, benchmark runs or independent reproduction performed.",
       "topics": [
         "recursive-improvement",
         "architecture",
@@ -3647,11 +3730,11 @@
       ],
       "persistence": "within-task",
       "learning_signal": "Task-evaluator scores, execution artifacts, and changes in population performance over search windows.",
-      "mechanism": "Co-evolves candidate programs and the search strategy that selects parents, variation operators, and examples. Stagnation triggers strategy revisions informed by earlier strategies and current population state.",
-      "evaluation": "Evaluates 196 mathematical, systems, and algorithmic optimization tasks, with three runs and generally 100 iterations for open-framework comparisons.",
-      "limitations": "Search adapts within each optimization problem; cross-task lifelong retention is not established. AlphaEvolve comparisons use published scores with an undisclosed iteration budget. Evaluators and outer monitoring rules remain supplied.",
+      "mechanism": "Co-evolves candidate solutions and executable search strategies within each optimization problem. A strategy chooses parents, variation operators and inspiration programs; stagnation triggers an LLM rewrite conditioned on population statistics and strategy history. Candidate state persists through validated strategy replacement, while the model, evaluator and outer control loop remain fixed.",
+      "evaluation": "Full v2 reports 196 optimization problems across mathematics, systems, ALE-Bench-Lite and Frontier-CS, generally using 100 candidate iterations and three runs under two solution models. It includes fixed-strategy comparisons, a one-task cost study and adaptive ARC-AGI-2 experiments. Aggregate gains are substantial, but several tasks and simple random baselines remain competitive.",
+      "limitations": "The study measures within-instance search rather than transfer of a learned optimizer to unseen tasks. Equal candidate counts do not match every model or evaluation cost, and AlphaEvolve comparisons use published results with unknown budgets. Main and appendix tables disagree on some numerical results. Strategy-window gains and illustrative breakthroughs do not independently identify causal optimizer improvement; broad optimality and ARC comparability remain unestablished.",
       "review_depth": "full-text",
-      "checked": "2026-10-29",
+      "checked": "2026-11-10",
       "short_name": "EvoX"
     },
     {
@@ -3781,10 +3864,12 @@
         "https://arxiv.org/html/2602.03224v2",
         "https://aclanthology.org/2026.emnlp-main.2100/",
         "https://github.com/SII-YUCHENG2002/tame_code",
-        "https://raw.githubusercontent.com/SII-YUCHENG2002/tame_code/main/README.md"
+        "https://raw.githubusercontent.com/SII-YUCHENG2002/tame_code/main/README.md",
+        "https://aclanthology.org/2026.emnlp-main.2100.pdf",
+        "https://github.com/SII-YUCHENG2002/tame_code/blob/521ba6534fc48c5b98b46c1b722edd140cc30eb7/README.md"
       ],
       "code_url": "https://github.com/SII-YUCHENG2002/tame_code",
-      "code_note": "Author repository README links the paper and describes a small smoke-test sample; no installation or execution performed.",
+      "code_note": "Complete 19-page final EMNLP 2026 paper, Appendices A–I, three figures, thirteen tables, equations and full prompts read on 2026-11-10. Official README/source inventory inspected at 521ba6534fc48c5b98b46c1b722edd140cc30eb7: core implementation and a small smoke-test example are present, while a full paper reproduction package and repository license were not verified. No model, evaluator or benchmark code executed.",
       "topics": [
         "memory",
         "safety",
@@ -3797,11 +3882,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Accurate binary task-outcome feedback, evaluator judgments of memory contribution, and model-generated trust annotations.",
-      "mechanism": "An executor retrieves useful experiences with risk guidance from a shared memory bank. An evaluator revises reuse priorities after outcomes, while new experiences enter with trust annotations; model weights remain fixed.",
-      "evaluation": "Trust-Memevo evolves initially empty memory on benign science, math, tool-use, and coding streams using two backbones, then freezes memory for separate trustworthiness tests.",
-      "limitations": "The inspected v2 uses a shared bank, differing from the initial dual-memory description. Aggregate trust scores need not reflect every safety dimension. Evaluation is text-only, and accurate outcome feedback is supplied; this does not certify safe open-ended adaptation.",
+      "mechanism": "Maintains query-anchored experiences with utility estimates and textual trust notes. A fixed semantic filter and utility ranking select memories; an LLM evaluator assigns outcome-conditioned contribution scores that update reuse values. Successes and failures supply new experiences with cautionary annotations, while all model weights remain fixed.",
+      "evaluation": "The full final paper evaluates sequential science, mathematics, code and tool-use streams, then freezes memory for separate multidimensional trust probes. It reports three-run means, component and evaluator ablations, aggregation sensitivity and several bounded human audits. GPT-5.2 AIME improves by 14.6 points over the strongest listed baseline, while other utility and trust outcomes are mixed.",
+      "limitations": "Requires reliable task-correctness feedback and LLM judgments; contribution scores are not causal attribution. Memory insertion is not a formal safety gate, and TAME still loses trustworthiness in some domains. Pre-evolution scores differ across method wrappers, aggregation is domain-specific, and tuning/evaluation separation, independent-run uncertainty and total costs remain insufficiently specified. Human agreement does not establish deployment safety.",
       "review_depth": "full-text",
-      "checked": "2026-10-30",
+      "checked": "2026-11-10",
       "short_name": "TAME"
     },
     {
@@ -3817,10 +3902,12 @@
         "https://arxiv.org/abs/2602.03773",
         "https://arxiv.org/html/2602.03773v2",
         "https://proceedings.mlr.press/v306/wu26as.html",
-        "https://github.com/IanYHWu/rc"
+        "https://github.com/IanYHWu/rc",
+        "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wu26as/wu26as.pdf",
+        "https://github.com/IanYHWu/rc/tree/c1ce61e7c027992c2c049cfaa1416a252d92baf4"
       ],
       "code_url": "https://github.com/IanYHWu/rc",
-      "code_note": "Author repository README inspected; inference/training code and checkpoints were not installed, downloaded, or executed.",
+      "code_note": "Complete 31-page ICML 2026 final paper, all appendices, proof-generation extension, examples, prompts, figures and tables read on 2026-11-10. Official rc repository provides vLLM inference, modified verl/FSDP training and model/data links. READMEs and training-subtree Apache-2.0 license inspected at a pinned revision; root-wide licensing not established. Not installed, trained or executed.",
       "topics": [
         "model-training",
         "memory",
@@ -3833,11 +3920,11 @@
       ],
       "persistence": "both",
       "learning_signal": "Correctness rewards on supplied mathematical prompt-answer pairs, with generated reasoning summaries reused during training.",
-      "mechanism": "Alternates bounded reasoning attempts with summary updates for the same problem. GRPO trains summary-conditioned generation, and a replay buffer supplies later-turn summaries; inference expands the reasoning budget without updating weights.",
-      "evaluation": "Tests mathematical benchmarks and FrontierScience, budget extrapolation, summary/replay ablations, and integration with other inference scaffolds. The main trained model uses a two-stage mathematics curriculum.",
-      "limitations": "Continual improvement here is longer within-problem inference, not persistent deployment learning. Myopic rewards can miss exploration useful only later, and summarization quality depends on the backbone. Version 2 changes IMO-AnswerBench grading after the earlier parser rejected valid answers.",
+      "mechanism": "Alternates bounded reasoning traces with compressed summaries, using the latest summary as within-problem state. Offline GRPO trains summary-conditioned reasoning from answer correctness; replayed summaries expose short rollouts to later-turn contexts. Model weights retain learned behavior, while inference caches restart for each problem.",
+      "evaluation": "The ICML final paper evaluates math and FrontierScience with reasoning budgets up to 512K. At 192K/256K caps RCT-4B reaches 66.3 HMMT, 58.0 IMO-AnswerBench and 34.1 FrontierScience, exceeding reported 4B autoregressive baselines on three of four benchmarks; it trails QwenThinking on AIME. Ablations support replay and reasoning-focused training. A separate 50K proof-training experiment improves judge-graded IMO-ProofBench scores.",
+      "limitations": "Inference gains use extra sequential computation; reasoning-token caps omit summary overhead. The 16K claim concerns each optimized rollout rather than total training cost, and standardRL controls match steps rather than complete FLOPs. Rewards are myopic and summaries can discard useful search history. Main final-answer metrics and separately judge-graded proofs do not certify reasoning correctness; independent training-run uncertainty is unreported.",
       "review_depth": "full-text",
-      "checked": "2026-11-02",
+      "checked": "2026-11-10",
       "short_name": "Reasoning Cache"
     },
     {
@@ -4146,10 +4233,12 @@
       "url": "https://aclanthology.org/2026.findings-acl.320/",
       "sources": [
         "https://aclanthology.org/2026.findings-acl.320/",
-        "https://aclanthology.org/2026.findings-acl.320.pdf"
+        "https://aclanthology.org/2026.findings-acl.320.pdf",
+        "https://github.com/Greysahy/permemsafe",
+        "https://github.com/Greysahy/permemsafe/blob/58e73467bb70d773cd3d1133deed8b78b91dedeb/README.md"
       ],
-      "code_url": null,
-      "code_note": "Official runnable code was not verified in this review; no implementation was installed or executed.",
+      "code_url": "https://github.com/Greysahy/permemsafe",
+      "code_note": "Complete 19-page final Findings of ACL 2026 paper, Appendices A–G, seven figures, five tables, equations and all prompts read on 2026-11-10. Paper-linked Greysahy/permemsafe README, MIT license and requirements inspected at 58e73467bb70d773cd3d1133deed8b78b91dedeb. Release descriptions differ in domain count and scoring scale; availability is not reproduction. No research code executed or benchmark data downloaded.",
       "topics": [
         "memory",
         "safety",
@@ -4161,11 +4250,11 @@
       ],
       "persistence": "across-tasks",
       "learning_signal": "Changing implicit user-risk cues in constructed multi-session conversations, with annotated safety contexts for evaluation.",
-      "mechanism": "Separates recognizing implicit personalized risks from tracking their changes over time. The accompanying SentinelMem retains explicit fact-state transitions and separates preference information from safety constraints.",
-      "evaluation": "Compares full-context models and five memory frameworks on safety perception and dynamic evolution, scoring retrieval, personalized response safety, and helpfulness; model grading is checked against a human sample.",
-      "limitations": "Conversations are synthetic and text-only. Budget limits restrict memory-framework backbones; judge agreement on a sample does not establish reliability for all cases. Response-level scores are not clinical outcomes or evidence of safe autonomous action, and year-only dating avoids inventing a first-public day.",
+      "mechanism": "Benchmarks retrieval and response reasoning about implicit user risks, separating current-risk perception from tracking a previously resolved risk. Its SentinelMem method retains LLM-inferred safety facts, separate preference/risk profiles and explicit transitions linking a current fact to its predecessor. The evaluated adaptation changes external memory rather than model weights.",
+      "evaluation": "Complete final paper evaluates 750 constructed test instances from 276 synthetic conversations, with over 90% noise interactions, full-context models and five memory frameworks. GPT-4o grades risk awareness, provenance and helpfulness; agreement is assessed on 100 human-labeled cases. Stronger-model appendix results exceed the roughly 50% level of the main lightweight comparison.",
+      "limitations": "Safety labels measure rubric-based risk awareness and explicit resolution references, not observed harm or clinical outcomes. Synthetic rejection sampling selects a difficult distribution; queries sharing conversations are not independent users. The reported 23.8% gain is a relative contrast for one backbone, and SentinelMem does not lead every retrieval score. Human–judge agreement validates rubric consistency only; risk inference, deployment calibration and cost remain unresolved.",
       "review_depth": "full-text",
-      "checked": "2026-11-01",
+      "checked": "2026-11-10",
       "short_name": "PerMemSafe"
     },
     {
