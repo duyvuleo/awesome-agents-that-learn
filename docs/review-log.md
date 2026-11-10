@@ -1665,3 +1665,7 @@ VERSE changes a separate optimizer harness as well as its executor harness, with
 - **CASS and EmbodiedRSI:** cited supplementary bodies remain missing from their inspected public PDFs/source archives. These two appraisals remain available-text reviews, with proof/configuration gaps retained.
 - **SkillOpt:** the official NeurIPS poster verifies acceptance and a changed abstract; the final OpenReview PDF remains unread after HTTP 403. The complete v2 appraisal does not substitute for that newer body.
 - **Artifact boundaries:** ExpRAG’s announced public release could not be inspected; Memory Anchors still labels code forthcoming. Other inspected repositories and partial implementations are availability evidence, not reproductions or proof of historical paper execution.
+
+## 2026-11-10 — agent-qa listing conflict refresh
+
+Retained the standalone application-QA system annotation and its original 2026-11-07 documentation-review date. The entry describes persistent memidex knowledge, evidence-backed updates, licensing and setup limits. No new product execution, performance reproduction or source-review claim. Sources remain the official product, documentation, repository and license linked in data/systems.json. Submitted on behalf of vostride.
