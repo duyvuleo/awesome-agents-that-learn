@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-11 — Complementary memory curation and consolidation
+
+- Added one full-final-paper appraisal from Findings of IJCNLP-AACL 2026; total 191 works and 24 systems.
+- Distinguished QA gains, imported baselines, compression/accuracy tradeoffs and missing implementation details.
+- Continued overlapping arXiv/proceedings discovery with incomplete coverage and unresolved leads retained. No research code executed.
+
 ## 2026-11-10 — Completed remaining full-text audit
 
 - Addressed all 39 remaining works, including full supplied appendices and visual evidence checks.

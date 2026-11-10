@@ -6959,5 +6959,37 @@
     "review_depth": "full-text",
     "checked": "2026-11-09",
     "short_name": "Workflow optimization survey"
+  },
+  {
+    "id": "hybrid-curation-consolidation",
+    "short_name": "Hybrid Curation",
+    "title": "Long-Term Agent Memory through Complementary Curation and Consolidation",
+    "date": "2026-10-29",
+    "year": 2026,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "Findings of IJCNLP-AACL 2026",
+    "url": "https://aclanthology.org/2026.findings-aacl.218/",
+    "sources": [
+      "https://aclanthology.org/2026.findings-aacl.218/",
+      "https://aclanthology.org/2026.findings-aacl.218.pdf",
+      "https://arxiv.org/abs/2610.39790"
+    ],
+    "code_url": null,
+    "code_note": "Complete nine-page final paper and Appendices A–E read on 2026-11-11; key result tables and retrieval plot visually inspected. Official implementation not independently verified. No research code executed.",
+    "topics": [
+      "memory"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Conversation transcripts and timestamps drive model-generated episode/tuple extraction and offline merge/delete decisions; model weights stay fixed.",
+    "mechanism": "Stores session-level episodes beside timestamped relational tuples with source context. UMAP/HDBSCAN clusters memories for LLM consolidation. Separate semantic retrieval supplies ten episodes and twenty tuples; the tuple store does not perform graph traversal.",
+    "evaluation": "Final paper reports LoCoMo and LongMemEval-S QA, memory-component ablations, four backbones and retrieval/clustering sweeps. GPT-4.1-mini scores 90.2% on LoCoMo versus 91.3% full context and 85.5% on LongMemEval-S. Consolidation reduces memory items by about 16.3% while lowering LoCoMo score by one point.",
+    "limitations": "Several baseline scores are imported from prior work, and repeated-run uncertainty is unreported. QA on stored dialogues does not demonstrate online task learning or lifelong retention. Preference questions regress relative to Nemori; compression is not total compute or latency savings. Missing consolidation-prompt and noise-point handling details limit reconstruction.",
+    "review_depth": "full-text",
+    "checked": "2026-11-11"
   }
 ]

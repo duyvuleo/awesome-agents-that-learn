@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-190 unique works. Catalog updated: 2026-11-10; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+191 unique works. Catalog updated: 2026-11-11; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -29,6 +29,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-30 | **LIFE**<br>[Learning to Live: A Step Toward Lifelong Embodied Intelligence](https://arxiv.org/abs/2611.00180) | Combines an offline-trained causal perception gate, a revisitable store of visual observations and ReSight’s Explore–Distill–Mount procedure for reusable tools and… | Memory, Skills, Tools, Model weights | preprint · full-text | [Notes](#life-embodied) · [Code](https://github.com/AgibotTech/LIFE) |
 | 2026-10-30 | **Exo**<br>[Exo: An Architecture for Self-Improving Systems at Runtime](https://arxiv.org/abs/2611.00463) | Makes the running harness executor editable, including tools, context construction and the procedures for further revision. A separate mechanism is intended to preserve… | Agent code, Tools, Workflows | preprint · full-text | [Notes](#exo-runtime) · [Code](https://github.com/exoharness/exo/tree/c5c1963a3445417e64938c139da88edd9154075d) |
 | 2026-10-29 | **Curriculum or easy start?**<br>[Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds](https://arxiv.org/abs/2610.40364) | Compares fourteen terrain-selection curricula around a shared PPO training design. Methods change randomization difficulty, replay buffers, mutated levels or a learned… | Model weights | preprint · full-text | [Notes](#quadruped-curriculum-benchmark) · [Code](https://github.com/Solvro/ml-wojtek-ued) |
+| 2026-10-29 | **Hybrid Curation**<br>[Long-Term Agent Memory through Complementary Curation and Consolidation](https://aclanthology.org/2026.findings-aacl.218/) | Stores session-level episodes beside timestamped relational tuples with source context. UMAP/HDBSCAN clusters memories for LLM consolidation. Separate semantic retrieval… | Memory | peer-reviewed · full-text | [Notes](#hybrid-curation-consolidation) |
 | 2026-10-28 | **MUSE scientific memory**<br>[MUSE: Multi-Level Memory with Selective Runtime Injection for Scientific Coding Agents](https://arxiv.org/abs/2610.38332) | Extracts approach and implementation lessons, including conditional explanations of failures, then consolidates global guidance offline. Frozen global and Top5 approach… | Memory, Prompts / context | preprint · full-text | [Notes](#muse-scientific-memory) · [Code](https://github.com/hr-jin/MUSE) |
 | 2026-10-27 | **Policy–harness geometry**<br>[Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces](https://arxiv.org/abs/2610.37255) | Under a finite KL-regularized semantic-control model, expresses return as an interface-specific optimum minus policy mismatch and separates target shift, training… | Analysis / no retained update | preprint · full-text | [Notes](#policy-harness-geometry) · [Code](https://github.com/2020-qqtcg/HRP) |
 | 2026-10-27 | **MLE-World**<br>[MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model](https://arxiv.org/abs/2610.37175) | Offline-fine-tunes a 4B predictor on code, execution context and observed outputs. A fixed AIDE search uses predicted logs, exception classes and metrics to select… | Model weights | preprint · full-text | [Notes](#mle-world) · [Code](https://github.com/ko120/MLE_World) |
@@ -559,6 +560,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** self-play, model-training, evaluation, applications. **Reviewed:** full-text · 2026-11-09.
 
 [Source 1](https://arxiv.org/abs/2610.40364) · [Source 2](https://arxiv.org/html/2610.40364v1) · [Source 3](https://github.com/Solvro/ml-wojtek-ued) · [Source 4](https://arxiv.org/pdf/2610.40364v1)
+
+<a id="hybrid-curation-consolidation"></a>
+
+## Long-Term Agent Memory through Complementary Curation and Consolidation
+
+**2026-10-29 · peer-reviewed · Findings of IJCNLP-AACL 2026 · core · paper**
+
+[Primary source](https://aclanthology.org/2026.findings-aacl.218/)
+
+**Mechanism.** Stores session-level episodes beside timestamped relational tuples with source context. UMAP/HDBSCAN clusters memories for LLM consolidation. Separate semantic retrieval supplies ten episodes and twenty tuples; the tuple store does not perform graph traversal.
+
+**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Conversation transcripts and timestamps drive model-generated episode/tuple extraction and offline merge/delete decisions; model weights stay fixed.
+
+**Evaluation.** Final paper reports LoCoMo and LongMemEval-S QA, memory-component ablations, four backbones and retrieval/clustering sweeps. GPT-4.1-mini scores 90.2% on LoCoMo versus 91.3% full context and 85.5% on LongMemEval-S. Consolidation reduces memory items by about 16.3% while lowering LoCoMo score by one point.
+
+**Boundary.** Several baseline scores are imported from prior work, and repeated-run uncertainty is unreported. QA on stored dialogues does not demonstrate online task learning or lifelong retention. Preference questions regress relative to Nemori; compression is not total compute or latency savings. Missing consolidation-prompt and noise-point handling details limit reconstruction.
+
+**Code / data.** Complete nine-page final paper and Appendices A–E read on 2026-11-11; key result tables and retrieval plot visually inspected. Official implementation not independently verified. No research code executed.
+
+**Topics:** memory. **Reviewed:** full-text · 2026-11-11.
+
+[Source 1](https://aclanthology.org/2026.findings-aacl.218/) · [Source 2](https://aclanthology.org/2026.findings-aacl.218.pdf) · [Source 3](https://arxiv.org/abs/2610.39790)
 
 <a id="muse-scientific-memory"></a>
 
