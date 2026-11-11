@@ -19,6 +19,7 @@
 - 2026-10-30 — [Learning to Live: A Step Toward Lifelong Embodied Intelligence](papers.md#life-embodied)
 - 2026-10-30 — [Exo: An Architecture for Self-Improving Systems at Runtime](papers.md#exo-runtime)
 - 2026-10-29 — [Is It the Curriculum or Just the Easy Start? Benchmarking Unsupervised Environment Design on Quadrupeds](papers.md#quadruped-curriculum-benchmark)
+- 2026-10-29 — [Long-Term Agent Memory through Complementary Curation and Consolidation](papers.md#hybrid-curation-consolidation)
 - 2026-10-28 — [MUSE: Multi-Level Memory with Selective Runtime Injection for Scientific Coding Agents](papers.md#muse-scientific-memory)
 - 2026-10-27 — [Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces](papers.md#policy-harness-geometry)
 - 2026-10-27 — [MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model](papers.md#mle-world)

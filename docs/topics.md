@@ -52,7 +52,7 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="memory"></a>
 
-## Memory and experience (83)
+## Memory and experience (84)
 - 2026-11-03 — [Route to Remember: Adaptive Memory Selection for LLM Agents](papers.md#route-to-remember) · core · preprint
 - 2026-11-03 — [Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](papers.md#rescopebench) · core · preprint
 - 2026-11-03 — [From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?](papers.md#continual-autoresearch) · core · preprint
@@ -60,6 +60,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026-11-02 — [A State Change Is Local, Its Consequences Are Not: Dependency-Aware State Revision for Long-Term Agent Memory](papers.md#stategraph) · core · preprint
 - 2026-11-01 — [Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](papers.md#omce) · core · preprint
 - 2026-10-30 — [Learning to Live: A Step Toward Lifelong Embodied Intelligence](papers.md#life-embodied) · core · preprint
+- 2026-10-29 — [Long-Term Agent Memory through Complementary Curation and Consolidation](papers.md#hybrid-curation-consolidation) · core · peer-reviewed
 - 2026-10-28 — [MUSE: Multi-Level Memory with Selective Runtime Injection for Scientific Coding Agents](papers.md#muse-scientific-memory) · core · preprint
 - 2026-10-27 — [Remembering Is Not Enough: Refining Memories and Learning When to Use Them in Multi-Agent Systems](papers.md#discernmem) · core · preprint
 - 2026-10-26 — [The Right Fact, the Wrong Decision: SciValidityBench for Scientific Agent Memory](papers.md#scivaliditybench) · adjacent · preprint
