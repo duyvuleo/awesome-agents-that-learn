@@ -471,3 +471,7 @@
 - Resolved four publication-status uncertainties using official ICLR, TMLR, and UIST records; retained unresolved access and acceptance notes explicitly.
 
 No research experiments were reproduced and no recurring autonomous curation job was configured.
+
+## 2026-11-10 — agent-qa listing conflict refresh
+
+Retained the standalone application-QA system annotation and its original 2026-11-07 documentation-review date. The entry describes persistent memidex knowledge, evidence-backed updates, licensing and setup limits. No new product execution, performance reproduction or source-review claim. Sources remain the official product, documentation, repository and license linked in data/systems.json. Submitted on behalf of vostride.

@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Research papers](papers.md) · [Filter systems in the explorer](https://duyvuleo.github.io/awesome-agents-that-learn/?kind=system#catalog)
 
-24 software records. Catalog updated: 2026-11-11; individual inspection dates are recorded per entry. Systems are counted separately from the 191 research works; a paper and its software can describe the same research program. These are documentation/source inspections, not installations, reproductions, or deployment endorsements. No release date is inferred from the review date.
+25 software records. Catalog updated: 2026-11-11; individual inspection dates are recorded per entry. Systems are counted separately from the 191 research works; a paper and its software can describe the same research program. These are documentation/source inspections, not installations, reproductions, or deployment endorsements. No release date is inferred from the review date.
 
 ## Compare at a glance
 
@@ -17,6 +17,7 @@
 | [AFlow](#system-aflow) | Research implementation | Workflows, Prompts / context, Agent code | MIT |
 | [Agent Lightning v1.0](#system-agent-lightning) | Training framework | Model weights | MIT |
 | [Agent Workflow Memory](#system-agent-workflow-memory) | Research implementation | Memory, Workflows | Apache-2.0 |
+| [agent-qa](#system-agent-qa) | Agent application | Memory | FSL-1.1-ALv2; Apache-2.0 future license after two years for each version |
 | [Agent0](#system-agent0) | Research implementation | Model weights | Apache-2.0 |
 | [Darwin Gödel Machine](#system-darwin-godel-machine) | Research implementation | Agent code, Tools, Workflows, Prompts / context | Apache-2.0 |
 | [DSPy](#system-dspy) | Optimization framework | Prompts / context, Model weights | MIT |
@@ -233,6 +234,39 @@ No associated work in the current paper catalog.
 **Source inspection:** 2026-10-28 · project · not-run. **Topics:** memory, skills, workflows, applications.
 
 [Source 1](https://github.com/zorazrw/agent-workflow-memory) · [Source 2](https://github.com/zorazrw/agent-workflow-memory/tree/main/mind2web) · [Source 3](https://github.com/zorazrw/agent-workflow-memory/blob/main/LICENSE)
+
+
+<a id="system-agent-qa"></a>
+
+## agent-qa
+
+**Agent application · core · source inspected · not run**
+
+[Official repository](https://github.com/vostride/agent-qa) · [Documentation](https://vostride.com/docs/agent-qa/self-improvement)
+
+**Learning mechanism.** After a run verdict is final, memidex derives candidate facts, cautions and reusable procedures from recorded evidence. A curator proposes record changes; deterministic checks and a promotion gate control which facts and cautions become active. Local runs apply eligible changes while CI retains proposals. Later tests receive relevant records in a brief and can reuse confirmed procedures.
+
+**Capabilities.** Plain-English web, Android and iOS testing through CLI and local MCP; Persistent memidex app knowledge with provenance and outcome logs; Evidence-checked learning with human correction and rollback; Optional replay and canary evaluation of candidate knowledge
+
+**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Verified test-step evidence, later confirmations or contradictions, failure root causes, and user corrections to run verdicts.
+
+**Paper relationship.** Standalone QA application documented by its maintainers. No relationship to an existing paper in this collection was established in this source review.
+
+No associated work in the current paper catalog.
+
+**Evaluation evidence.** Official documentation describes an optional corpus of reviewed recorded decisions. Canary comparisons start when the corpus exists; replay checks require a measured noise floor. Candidates are compared with and without their memory contribution, alongside evidence from later runs. This describes the project evaluation protocol, not independently reproduced performance.
+
+**Boundary.** The documented improvement loop changes app knowledge rather than its own prompts or code; it is not evidence of recursive agent redesign or model training. CI does not automatically promote learned records. Parts of the online documentation label search and cross-workspace limits as v0.2: semantic retrieval depends on local model availability, and learned knowledge serving depends on local indexes and evidence. Release-to-documentation correspondence and runtime behavior were not audited.
+
+**Availability.** Public repository, npm package and official documentation inspected as sources. No package was installed and no agent-qa runtime, model call or benchmark was executed for this collection.
+
+**Requirements.** Node.js 24 or newer, a configured compatible model endpoint or supported subscription workflow, and the relevant browser or mobile test environment. Docker is required only for tests using hooks. Model/API and execution infrastructure costs are separate.
+
+**License.** [FSL-1.1-ALv2; Apache-2.0 future license after two years for each version](https://github.com/vostride/agent-qa/blob/main/LICENSE.md). Linked models, datasets, services, and dependencies can have separate terms.
+
+**Source inspection:** 2026-11-07 · project · not-run. **Topics:** memory, skills, evaluation, applications.
+
+[Source 1](https://vostride.com) · [Source 2](https://github.com/vostride/agent-qa) · [Source 3](https://github.com/vostride/agent-qa/blob/main/LICENSE.md) · [Source 4](https://vostride.com/docs/agent-qa/self-improvement) · [Source 5](https://vostride.com/docs/agent-qa/memory) · [Source 6](https://vostride.com/docs/agent-qa/memory/learning) · [Source 7](https://vostride.com/docs/agent-qa/memory/architecture) · [Source 8](https://vostride.com/docs/agent-qa/memory/serving) · [Source 9](https://vostride.com/docs/agent-qa/self-improvement/evals) · [Source 10](https://vostride.com/docs/agent-qa/quickstart)
 
 
 <a id="system-agent0"></a>
