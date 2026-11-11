@@ -3,6 +3,7 @@
 # Papers by year
 [Overview](../README.md) · [Full annotations](papers.md)
 ## 2026
+- 2026-11-09 — [Correct Answers from Insufficient Histories: A Controlled Study of Agent Memory Evaluation](papers.md#insufficient-histories)
 - 2026-11-05 — [Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)
 - 2026-11-04 — [HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](papers.md#harnessflow)
 - 2026-11-03 — [Stabilizing On-Policy Targeted Guidance in Agentic Reinforcement Learning](papers.md#targeted-guidance)

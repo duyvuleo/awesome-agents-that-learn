@@ -52,7 +52,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="memory"></a>
 
-## Memory and experience (84)
+## Memory and experience (85)
+- 2026-11-09 — [Correct Answers from Insufficient Histories: A Controlled Study of Agent Memory Evaluation](papers.md#insufficient-histories) · core · preprint
 - 2026-11-03 — [Route to Remember: Adaptive Memory Selection for LLM Agents](papers.md#route-to-remember) · core · preprint
 - 2026-11-03 — [Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](papers.md#rescopebench) · core · preprint
 - 2026-11-03 — [From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?](papers.md#continual-autoresearch) · core · preprint
@@ -524,7 +525,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="evaluation"></a>
 
-## Evaluation and negative results (107)
+## Evaluation and negative results (108)
+- 2026-11-09 — [Correct Answers from Insufficient Histories: A Controlled Study of Agent Memory Evaluation](papers.md#insufficient-histories) · core · preprint
 - 2026-11-05 — [Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution) · core · preprint
 - 2026-11-04 — [HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](papers.md#harnessflow) · core · preprint
 - 2026-11-03 — [Stabilizing On-Policy Targeted Guidance in Agentic Reinforcement Learning](papers.md#targeted-guidance) · core · preprint

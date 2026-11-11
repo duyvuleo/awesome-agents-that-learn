@@ -245,6 +245,10 @@
         "why": "Study matched retained-experience controls with fresh sessions."
       },
       {
+        "paper": "insufficient-histories",
+        "why": "Separate reference agreement from what visible evidence determines, and test model judges against deterministic controls."
+      },
+      {
         "paper": "experience-faithfulness",
         "why": "Distinguish a stored lesson from causal use of that lesson."
       },

@@ -163,21 +163,23 @@ What experiment would convince you that an agent learned something useful?
 
 2. **[PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents](papers.md#past-bench)** — Study matched retained-experience controls with fresh sessions.
 
-3. **[Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness)** — Distinguish a stored lesson from causal use of that lesson.
+3. **[Correct Answers from Insufficient Histories: A Controlled Study of Agent Memory Evaluation](papers.md#insufficient-histories)** — Separate reference agreement from what visible evidence determines, and test model judges against deterministic controls.
 
-4. **[Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](papers.md#artifact-to-capability)** — Distinguish changed behavior, legal actions, useful decisions, and preservation when artifacts are combined.
+4. **[Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness)** — Distinguish a stored lesson from causal use of that lesson.
 
-5. **[AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](papers.md#agentstream)** — Compare performance under different task-stream compositions.
+5. **[Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](papers.md#artifact-to-capability)** — Distinguish changed behavior, legal actions, useful decisions, and preservation when artifacts are combined.
 
-6. **[GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](papers.md#gdpevo)** — Inspect training/test rule recombination and task-selection effects.
+6. **[AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](papers.md#agentstream)** — Compare performance under different task-stream compositions.
 
-7. **[Phantom Gains: Auditing Self-Improvement Against a Measured Null](papers.md#phantom-gains)** — Measure a frozen null before interpreting per-problem changes.
+7. **[GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](papers.md#gdpevo)** — Inspect training/test rule recombination and task-selection effects.
 
-8. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Include integrity of the learning signal and persistence of bad updates.
+8. **[Phantom Gains: Auditing Self-Improvement Against a Measured Null](papers.md#phantom-gains)** — Measure a frozen null before interpreting per-problem changes.
 
-9. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
+9. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Include integrity of the learning signal and persistence of bad updates.
 
-10. **[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)** — Separate average success, covered tasks, regressions, component interactions and search replication.
+10. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
+
+11. **[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)** — Separate average success, covered tasks, regressions, component interactions and search replication.
 
 
 **Study exercise:** Draft a matched frozen baseline, a held-out family split, a budget ledger, and one intervention that could falsify your preferred mechanism.

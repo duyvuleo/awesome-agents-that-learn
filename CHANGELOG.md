@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-12 — Evidence-aware memory evaluation
+
+- Added one complete-source review of reference agreement, evidence sufficiency and judge reliability; total 192 works and 24 systems.
+- Extended the evaluation reading route with deterministic controls and retained synthetic-domain, replication and unreleased-artifact limits.
+- Flagged the newer Value of Memory v4 body as pending, preserving its historical v2 appraisal.
+- Continued overlapping discovery and prioritized unresolved leads; no exhaustive coverage or independent reproduction claimed.
+
 ## 2026-11-11 — Complementary memory curation and consolidation
 
 - Added one full-final-paper appraisal from Findings of IJCNLP-AACL 2026; total 191 works and 24 systems.

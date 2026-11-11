@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-191 unique works. Catalog updated: 2026-11-11; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+192 unique works. Catalog updated: 2026-11-12; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -13,6 +13,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-09 | **Insufficient Histories**<br>[Correct Answers from Insufficient Histories: A Controlled Study of Agent Memory Evaluation](https://arxiv.org/abs/2611.11840) | Separates hidden-reference agreement from evidence sufficiency and appropriate answering. Legal histories with identical visible bytes but different answers certify… | Analysis / no retained update | preprint · full-text | [Notes](#insufficient-histories) |
 | 2026-11-05 | **Beneath the Surface**<br>[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](https://arxiv.org/abs/2611.07624) | Audits frozen evolved harnesses for repeated success, gained/lost task coverage, component interactions and candidate retention. EvoAudit uses those diagnostics to… | Agent code, Prompts / context, Skills, Workflows | preprint · full-text | [Notes](#beneath-surface-agent-evolution) · [Code](https://github.com/simple-agent-lab/RSIHub) |
 | 2026-11-04 | **HarnessFlow**<br>[HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](https://arxiv.org/abs/2611.06254) | A fixed coding agent proposes complete executable harness edits using an optional component library. Tree-based selection mixes validation score and direct-child… | Agent code, Prompts / context, Workflows | preprint · full-text | [Notes](#harnessflow) |
 | 2026-11-03 | **Targeted guidance**<br>[Stabilizing On-Policy Targeted Guidance in Agentic Reinforcement Learning](https://arxiv.org/abs/2611.05266) | Combines GRPO coding/criterion rewards with full-vocabulary reverse-KL distillation at failing turns. The teacher shares current policy weights but receives a designed… | Model weights | preprint · full-text | [Notes](#targeted-guidance) |
@@ -206,6 +207,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2017-10-19 | **AlphaGo Zero**<br>[Mastering the game of Go without human knowledge](https://www.nature.com/articles/nature24270) | Alternates search-guided self-play with gradient updates to a shared policy/value network. Recent games are replayed to fit improved move distributions and outcomes. The… | Model weights | peer-reviewed · full-text | [Notes](#alphago-zero) |
 
 ## Full annotations
+
+<a id="insufficient-histories"></a>
+
+## Correct Answers from Insufficient Histories: A Controlled Study of Agent Memory Evaluation
+
+**2026-11-09 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.11840)
+
+**Mechanism.** Separates hidden-reference agreement from evidence sufficiency and appropriate answering. Legal histories with identical visible bytes but different answers certify insufficiency; public chronological/cutoff rules certify some sufficient prefixes. Unclassified cases remain separate.
+
+**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** No agent-learning method is proposed; masking, packing, event replay and same-context counterexamples supply evaluation labels.
+
+**Evaluation.** Two hosted readers each receive 1,600 requests over the same eighty confirmation histories. On 203 insufficient raw-prefix cases, Qwen and DeepSeek match 87 and 85 hidden references but appropriately abstain only seven and twenty-one times. A separate 120-history judge audit reports 99.38% accuracy yet retains support errors; a deterministic baseline matches the hybrid’s perfect constructed-case score.
+
+**Boundary.** Short synthetic logs and fixed queries do not establish natural-domain prevalence or lifelong-memory gains. Replication reuses exposed histories and Qwen-tokenized inputs. Certified-subset intervals leave CSV improvements inconclusive, not equivalent. Programs share certifier rules; no human adjudication or public artifact independently validates them. Abstention is a declared contract, not every application’s optimal policy.
+
+**Code / data.** Complete fourteen-page v1 and Appendices A–F read on 2026-11-12; certificate definitions and main result tables visually inspected. Authors retain code and receipts but state that the artifact is not publicly released. No research code or models executed.
+
+**Topics:** memory, evaluation. **Reviewed:** full-text · 2026-11-12.
+
+[Source 1](https://arxiv.org/abs/2611.11840) · [Source 2](https://arxiv.org/pdf/2611.11840v1)
 
 <a id="beneath-surface-agent-evolution"></a>
 
@@ -1061,7 +1084,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 **Boundary.** Theoretical orderings depend on specified access, policy and budget assumptions. The LoCoMo pilot has one draw per condition and post hoc prompt controls; private longitudinal cases concern one owner. Evaluator repairs are not agent improvements, and the proposed allocation and revision policies remain hypotheses rather than validated general algorithms.
 
-**Code / data.** The complete v2 paper and substantive appendices were inspected on 2026-11-09. An official runnable artifact for this study was not established; its longitudinal originals remain private. No research code, benchmark postchecks or model calls were executed.
+**Code / data.** The complete v2 paper and substantive appendices were inspected on 2026-11-09. An official runnable artifact for this study was not established; its longitudinal originals remain private. No research code, benchmark postchecks or model calls were executed. Metadata rechecked on 2026-11-12 lists arXiv v4, revised November 10; that newer body is not yet appraised. Scientific annotations retain the explicitly inspected v2 boundary.
 
 **Topics:** foundations, memory, evaluation. **Reviewed:** full-text · 2026-11-09.
 

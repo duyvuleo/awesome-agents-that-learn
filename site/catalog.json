@@ -4,7 +4,7 @@
     "subtitle": "A research guide to self-learning, self-improving, and self-evolving AI agents.",
     "repository": "https://github.com/duyvuleo/awesome-agents-that-learn",
     "site": "https://duyvuleo.github.io/awesome-agents-that-learn/",
-    "updated": "2026-11-11",
+    "updated": "2026-11-12",
     "schema_version": 2,
     "topics": {
       "foundations": "Foundations and boundaries",
@@ -43,6 +43,38 @@
     }
   },
   "papers": [
+    {
+      "id": "insufficient-histories",
+      "short_name": "Insufficient Histories",
+      "title": "Correct Answers from Insufficient Histories: A Controlled Study of Agent Memory Evaluation",
+      "date": "2026-11-09",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.11840",
+      "sources": [
+        "https://arxiv.org/abs/2611.11840",
+        "https://arxiv.org/pdf/2611.11840v1"
+      ],
+      "code_url": null,
+      "code_note": "Complete fourteen-page v1 and Appendices A–F read on 2026-11-12; certificate definitions and main result tables visually inspected. Authors retain code and receipts but state that the artifact is not publicly released. No research code or models executed.",
+      "topics": [
+        "memory",
+        "evaluation"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "none"
+      ],
+      "persistence": "not-applicable",
+      "learning_signal": "No agent-learning method is proposed; masking, packing, event replay and same-context counterexamples supply evaluation labels.",
+      "mechanism": "Separates hidden-reference agreement from evidence sufficiency and appropriate answering. Legal histories with identical visible bytes but different answers certify insufficiency; public chronological/cutoff rules certify some sufficient prefixes. Unclassified cases remain separate.",
+      "evaluation": "Two hosted readers each receive 1,600 requests over the same eighty confirmation histories. On 203 insufficient raw-prefix cases, Qwen and DeepSeek match 87 and 85 hidden references but appropriately abstain only seven and twenty-one times. A separate 120-history judge audit reports 99.38% accuracy yet retains support errors; a deterministic baseline matches the hybrid’s perfect constructed-case score.",
+      "limitations": "Short synthetic logs and fixed queries do not establish natural-domain prevalence or lifelong-memory gains. Replication reuses exposed histories and Qwen-tokenized inputs. Certified-subset intervals leave CSV improvements inconclusive, not equivalent. Programs share certifier rules; no human adjudication or public artifact independently validates them. Abstention is a declared contract, not every application’s optimal policy.",
+      "review_depth": "full-text",
+      "checked": "2026-11-12"
+    },
     {
       "year": 2026,
       "kind": "paper",
@@ -1457,7 +1489,7 @@
         "https://arxiv.org/pdf/2610.31303v2"
       ],
       "code_url": null,
-      "code_note": "The complete v2 paper and substantive appendices were inspected on 2026-11-09. An official runnable artifact for this study was not established; its longitudinal originals remain private. No research code, benchmark postchecks or model calls were executed.",
+      "code_note": "The complete v2 paper and substantive appendices were inspected on 2026-11-09. An official runnable artifact for this study was not established; its longitudinal originals remain private. No research code, benchmark postchecks or model calls were executed. Metadata rechecked on 2026-11-12 lists arXiv v4, revised November 10; that newer body is not yet appraised. Scientific annotations retain the explicitly inspected v2 boundary.",
       "topics": [
         "foundations",
         "memory",
@@ -8352,6 +8384,10 @@
         {
           "paper": "past-bench",
           "why": "Study matched retained-experience controls with fresh sessions."
+        },
+        {
+          "paper": "insufficient-histories",
+          "why": "Separate reference agreement from what visible evidence determines, and test model judges against deterministic controls."
         },
         {
           "paper": "experience-faithfulness",
