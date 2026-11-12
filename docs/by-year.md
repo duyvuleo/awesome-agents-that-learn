@@ -3,6 +3,7 @@
 # Papers by year
 [Overview](../README.md) · [Full annotations](papers.md)
 ## 2026
+- 2026-11-10 — [The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](papers.md#rsi-tax)
 - 2026-11-09 — [Correct Answers from Insufficient Histories: A Controlled Study of Agent Memory Evaluation](papers.md#insufficient-histories)
 - 2026-11-05 — [Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)
 - 2026-11-04 — [HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](papers.md#harnessflow)
@@ -56,6 +57,7 @@
 - 2026-10-02 — [VERSE: Verified Self-Evolving Optimizer for Agent Harnesses](papers.md#verse)
 - 2026-10-02 — [RIFAR: Reliability-Informed and Forgetting-Aware Replay for Continual Robot Learning with World-Action Models](papers.md#rifar)
 - 2026-09-29 — [Self-Evolving Defense: Continual Security Policy Learning for LLM Agents](papers.md#self-evolving-defense)
+- 2026-09-29 — [Context Language Models](papers.md#context-language-models)
 - 2026-09-28 — [Learn Now, Use Next, Trust Later: Prequential Test-Time Learning for LLM Agents](papers.md#steplearn)
 - 2026-09-28 — [SAGE: A Statistical Acceptance Gate for Self-Evolving Agents](papers.md#sage-acceptance-gate)
 - 2026-09-27 — [Which Self-Improvements Should We Trust? Reliable Self-Improvement When Agents Reuse Their Benchmarks](papers.md#reuse-evaluation)

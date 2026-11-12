@@ -51,3 +51,9 @@ Re-read the official README and Apache-2.0 license at the current repository rev
 ## 2026-11-09 — ExpeL memory-path correction
 
 Re-read ExpeL's official README and Apache-2.0 license alongside the full paper. Corrected the software description: the studied inference path retrieves similar successful trajectories and supplies the entire extracted insight list; extra insight retrieval is a proposed extension for larger stores. Recorded the paper's stronger insight model and environment feedback. This is source inspection only; no installation, data download, model execution or result reproduction. The earlier inspection remains historical.
+
+## 2026-11-13 — Context Language Models research implementation
+
+Added one [CLM software record](systems.md#system-context-language-models), bringing the software catalog to 25. The author-linked source at 483198229ab7b90c0eed4651306ab3b3505aaf50 provides a mirrored-context Harbor harness and a reusable skill-evolution workflow with candidate validation, development-set selection, archives and resume. Its top-level license is CC BY-NC 4.0, distinct from the paper license; Python 3.12–3.13, Harbor and model/tool-serving requirements were checked in primary documentation.
+
+Current serving adapters and defaults differ from the v1 experiment descriptions, and RL integration is partial. The inspected release is not a pinned reproduction of every paper result. Preserved all 24 earlier source-inspection dates and execution records. No software, model, training pipeline or benchmark was installed or executed.

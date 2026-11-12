@@ -4,7 +4,7 @@
     "subtitle": "A research guide to self-learning, self-improving, and self-evolving AI agents.",
     "repository": "https://github.com/duyvuleo/awesome-agents-that-learn",
     "site": "https://duyvuleo.github.io/awesome-agents-that-learn/",
-    "updated": "2026-11-12",
+    "updated": "2026-11-13",
     "schema_version": 2,
     "topics": {
       "foundations": "Foundations and boundaries",
@@ -43,6 +43,41 @@
     }
   },
   "papers": [
+    {
+      "id": "rsi-tax",
+      "short_name": "RSI Tax",
+      "title": "The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost",
+      "date": "2026-11-10",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.13524",
+      "sources": [
+        "https://arxiv.org/abs/2611.13524",
+        "https://arxiv.org/pdf/2611.13524v1"
+      ],
+      "code_url": null,
+      "code_note": "Complete nineteen-page arXiv v1, Appendices A–D, four figures, nine tables, accounting equations and note prompt read on 2026-11-13; main figures and detailed cost tables visually inspected. An official implementation or complete run-log release was not independently verified. No research code, agents, benchmarks or models executed.",
+      "topics": [
+        "evaluation",
+        "continual-learning",
+        "recursive-improvement"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "memory",
+        "skills",
+        "agent-code"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Completed-task trajectories and scalar verifier outcomes guide note, skill or harness updates around frozen backbones; ReasoningBank uses its separate internal trajectory judge.",
+      "mechanism": "Scores each arriving task before its feedback can update retained state, and separates task-execution tokens from verification, exploration and writing tokens. A bounded-note baseline revises up to 2,048 tokens from failed-task excerpts every four tasks without candidate search. State resets between repository chains; terminal tasks retain it across one ordered stream.",
+      "evaluation": "Complete v1 compares six methods and two backbones on seven selected fifteen-task repository chains and 89 terminal tasks. The note baseline matches or exceeds the observed accuracy of three search-heavy methods in all four settings, with 65.6–71.0% mean within-setting token savings. Verification contributes 74.8–93.6% of their pooled update tokens.",
+      "limitations": "Fixed streams and no independent-run uncertainty limit comparative generalization. Meta-Harness uses an adapted strict-improvement selector and EvoSkill refreshes a rolling frontier, so some overhead reflects these implementations. Feedback use also differs. Tokens, including cached input, are not dollars or FLOPs. Subsequent use is not causal benefit, and finite-horizon non-use does not prove removable waste; the study does not test a learned cost-aware update policy.",
+      "review_depth": "full-text",
+      "checked": "2026-11-13"
+    },
     {
       "id": "insufficient-histories",
       "short_name": "Insufficient Histories",
@@ -1486,10 +1521,13 @@
       "sources": [
         "https://arxiv.org/abs/2610.31303",
         "https://arxiv.org/html/2610.31303v2",
-        "https://arxiv.org/pdf/2610.31303v2"
+        "https://arxiv.org/pdf/2610.31303v2",
+        "https://arxiv.org/html/2610.31303v4",
+        "https://arxiv.org/pdf/2610.31303v4",
+        "https://github.com/MemTensor/MemOps"
       ],
       "code_url": null,
-      "code_note": "The complete v2 paper and substantive appendices were inspected on 2026-11-09. An official runnable artifact for this study was not established; its longitudinal originals remain private. No research code, benchmark postchecks or model calls were executed. Metadata rechecked on 2026-11-12 lists arXiv v4, revised November 10; that newer body is not yet appraised. Scientific annotations retain the explicitly inspected v2 boundary.",
+      "code_note": "Complete 35-page v4 and Appendices A–C read on 2026-11-13; key figures, proofs and result tables visually inspected. A study-specific public artifact was not established; linked MemOps is a separate benchmark. The complete v2 appraisal dated 2026-11-09 remains historical. No research code, benchmark postchecks or model calls were run.",
       "topics": [
         "foundations",
         "memory",
@@ -1500,12 +1538,12 @@
         "none"
       ],
       "persistence": "not-applicable",
-      "learning_signal": "Not applicable: a decision-theoretic and empirical analysis of memory value.",
-      "mechanism": "Defines retained decision value separately from a fixed reader’s realized benefit, with explicit costs for recovery and revision. Conditional simulation bounds and finite counterexamples distinguish information timing, access, reader interaction, feedback and unknown future demand.",
-      "evaluation": "ArXiv v2 includes proofs, finite controls, a twelve-question LoCoMo diagnostic, an authored two-project update study, three longitudinal cases and a MemOps measurement audit. Fixed-evidence and fixed-output controls distinguish changes in memory use from changes in scoring.",
-      "limitations": "Theoretical orderings depend on specified access, policy and budget assumptions. The LoCoMo pilot has one draw per condition and post hoc prompt controls; private longitudinal cases concern one owner. Evaluator repairs are not agent improvements, and the proposed allocation and revision policies remain hypotheses rather than validated general algorithms.",
+      "learning_signal": "An analysis of decision value rather than a trained agent; experiments vary retained evidence, recovery, checker feedback and revision rules.",
+      "mechanism": "Separates history, retained capability and realized reader benefit in avoided task loss. Simulation conditions, allocation bounds and a priced recovery option connect capability to access and selection costs. Dependency and commit rules formalize preservation during revision.",
+      "evaluation": "V4 reports 3,075 questions from complete LoCoMo, LongMemEval-S and PersonaMem-v1 32k splits with two readers, plus two sets of six authored multi-project workspaces. Paired comparisons examine retention, recovery, instructions, revision scope, feedback and commit validation; finite controls, longitudinal cases and a MemOps audit add complementary evidence.",
+      "limitations": "Benchmarks use one writer, fixed budgets and one draw per cell, with queries clustered by history or persona. LoCoMo rankings depend on task composition and scoring conventions. Two-event revision studies use deterministic rules; guarantees require complete dependencies and sound checks. Carryover and validation benefits vary by reader, and natural-language checking remains unvalidated.",
       "review_depth": "full-text",
-      "checked": "2026-11-09",
+      "checked": "2026-11-13",
       "short_name": "Value of memory"
     },
     {
@@ -2005,6 +2043,51 @@
       "review_depth": "full-text",
       "checked": "2026-11-10",
       "short_name": "SED"
+    },
+    {
+      "id": "context-language-models",
+      "short_name": "CLM",
+      "title": "Context Language Models",
+      "date": "2026-09-29",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2609.37725",
+      "sources": [
+        "https://arxiv.org/abs/2609.37725",
+        "https://arxiv.org/pdf/2609.37725v1",
+        "https://arxiv.org/html/2609.37725v1",
+        "https://github.com/facebookresearch/context-language-models",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_icl/README.md",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_rl/README.md",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/suffix_cache_reuse/README.md",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/LICENSE",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/pyproject.toml",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_harness/README.md"
+      ],
+      "code_url": "https://github.com/facebookresearch/context-language-models",
+      "code_note": "Complete available 27-page arXiv v1, main sections and Appendices A-G, read on 2026-11-13; all 22 figures and five tables visually checked. Official README, license, requirements and component documentation inspected at commit 4831982. The current repository adds serving results beyond v1 and provides partial RL integration patches rather than the training pipeline. No research code or models executed.",
+      "topics": [
+        "memory",
+        "prompts",
+        "skills",
+        "model-training",
+        "evaluation"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "prompts",
+        "skills",
+        "model-weights"
+      ],
+      "persistence": "both",
+      "learning_signal": "Task observations guide live edits; deterministic rewards and rollout comparisons select reusable skills; judged task success and success-gated inference FLOPs drive RL.",
+      "mechanism": "Mirrors the live context into a file whose model-authored edits become subsequent model inputs. Zero-shot edits retain state within a task. A separate proposer searches skill documents across training tasks and selects them on development tasks with fixed weights; stepwise GRPO instead retains context-management changes in model weights.",
+      "evaluation": "Authors report 59.4% accuracy on 830 BrowseComp-Plus questions; assisted skill search raises held-out KV Store accuracy from 38.3% to 74.2%. RL raises Qwen3.5-9B from 28.8% to 42.5% at 1.52 to 1.34 prefix-reuse PFLOPs per question. Further tests cover coding, four single-run math problems, ten EdgeBench tasks, repository swarms and approximate cache reuse.",
+      "limitations": "Synthetic ContextBench and judged answers limit generalization; EdgeBench reports best-of-three runs on a subset. Editing-turn exemptions, rollback and context hints condition comparisons, and some caption/configuration values differ. FLOPs approximate inference work, while the swarm comparison uses API spend. Suffix reuse preserves stale states, so matched accuracy does not prove exact equivalence or forgetting. Safety is discussed without a dedicated attack evaluation; results were not reproduced.",
+      "review_depth": "full-text",
+      "checked": "2026-11-13"
     },
     {
       "id": "steplearn",
@@ -7376,6 +7459,61 @@
       "short_name": "Agent0"
     },
     {
+      "id": "system-context-language-models",
+      "short_name": "CLM",
+      "name": "Context Language Models",
+      "category": "research-system",
+      "url": "https://github.com/facebookresearch/context-language-models",
+      "docs_url": "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/README.md",
+      "related_papers": [
+        "context-language-models"
+      ],
+      "relationship_note": "Official implementation linked from arXiv 2609.37725v1. Documentation inspected at commit 483198229ab7b90c0eed4651306ab3b3505aaf50 (2026-10-14). It now includes updated SGLang averages and a vLLM SCR port beyond v1; no experiment commit was established and the current tree was not claimed to reproduce the paper.",
+      "topics": [
+        "memory",
+        "prompts",
+        "skills",
+        "evaluation"
+      ],
+      "update_targets": [
+        "prompts",
+        "skills"
+      ],
+      "persistence": "both",
+      "scope": "core",
+      "learning_signal": "Environment observations guide context edits; rewards and contrastive training traces propose skills, while task-level development accuracy and cost select reusable skill documents.",
+      "mechanism": "A Harbor harness mirrors editable conversation turns to a file and synchronizes accepted edits to later model calls, with system and task messages pinned. A separate evolution workflow rewrites and validates skills, evaluates candidates on development tasks, retains selected skills and supports resuming. SCR adapters reuse surviving cached spans approximately. RL integration is documented separately as partial patches.",
+      "capabilities": [
+        "Editable live context in Harbor tasks",
+        "Reusable skill evolution with development-set selection and resume",
+        "Intermediate-context trajectory records and inference-cost accounting",
+        "Optional SGLang and vLLM suffix-cache adapters"
+      ],
+      "evaluation": "Project documentation connects the harness and skill workflow to the paper experiments. Current SCR documentation additionally reports three-seed SGLang averages and a vLLM comparison on 830 BrowseComp-Plus questions; these are project-reported results beyond the v1 snapshot, with none run here.",
+      "limitations": "Documentation review does not validate runtime behavior or benchmark reproduction. Current defaults differ from paper configurations. Missing development tasks make selection reuse training tasks, which the workflow flags. SCR reuses stale states and can lose throughput under cache pressure. The RL directory omits training infrastructure and requires externally supplied efficiency scores and role masks. Model, dataset and dependency licenses remain separate.",
+      "availability_note": "Public research source and setup documentation inspected at commit 4831982; not installed or executed. RL training is outside this repository; its patches do not constitute a complete training release.",
+      "license": "CC BY-NC 4.0",
+      "license_url": "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/LICENSE",
+      "requirements": "Python >=3.12,<3.14; harbor==0.16.1, litellm>=1.70,<2, tiktoken>=0.7 and PyYAML>=6.0; optional transformers>=4.40 for exact tokenization. Harbor tasks need a supported container environment and a model endpoint with tool calling. ContextBench needs its separate source checkout. Optional SCR adapters target SGLang 0.5.16 or vLLM 0.19.1, compatible models and GPU cache capacity; RL needs external ProRL-Agent-Server and Slime integration.",
+      "sources": [
+        "https://github.com/facebookresearch/context-language-models",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/README.md",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/LICENSE",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/NOTICE",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/pyproject.toml",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_harness/README.md",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_icl/README.md",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_rl/README.md",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_contextbench/README.md",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/suffix_cache_reuse/README.md",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/suffix_cache_reuse/sglang/README.md",
+        "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/suffix_cache_reuse/vllm/README.md"
+      ],
+      "checked": "2026-11-13",
+      "review_depth": "project",
+      "execution_status": "not-run"
+    },
+    {
       "id": "system-darwin-godel-machine",
       "name": "Darwin Gödel Machine",
       "category": "research-system",
@@ -8250,6 +8388,10 @@
           "why": "Contrast whole-prompt replacement with incremental context updates."
         },
         {
+          "paper": "context-language-models",
+          "why": "Separate native live-context editing, reusable context-management skills and parametric training; inspect their different evidence and cost metrics."
+        },
+        {
           "paper": "harnessflow",
           "why": "Compare fixed tree-search control with the executable harnesses it optimizes, including search and deployment costs."
         }
@@ -8400,6 +8542,10 @@
         {
           "paper": "agentstream",
           "why": "Compare performance under different task-stream compositions."
+        },
+        {
+          "paper": "rsi-tax",
+          "why": "Count acquisition and validation overhead alongside serving cost, and distinguish later artifact use from causal benefit."
         },
         {
           "paper": "gdpevo",

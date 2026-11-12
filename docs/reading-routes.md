@@ -75,7 +75,9 @@ Which parts of an agent can be optimized, and who performs that optimization?
 
 6. **[Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](papers.md#ace)** — Contrast whole-prompt replacement with incremental context updates.
 
-7. **[HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](papers.md#harnessflow)** — Compare fixed tree-search control with the executable harnesses it optimizes, including search and deployment costs.
+7. **[Context Language Models](papers.md#context-language-models)** — Separate native live-context editing, reusable context-management skills and parametric training; inspect their different evidence and cost metrics.
+
+8. **[HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](papers.md#harnessflow)** — Compare fixed tree-search control with the executable harnesses it optimizes, including search and deployment costs.
 
 
 **Study exercise:** Make an editable/fixed component table. Include proposer, search space, selector, evaluation set, and stopping rule.
@@ -171,15 +173,17 @@ What experiment would convince you that an agent learned something useful?
 
 6. **[AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](papers.md#agentstream)** — Compare performance under different task-stream compositions.
 
-7. **[GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](papers.md#gdpevo)** — Inspect training/test rule recombination and task-selection effects.
+7. **[The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](papers.md#rsi-tax)** — Count acquisition and validation overhead alongside serving cost, and distinguish later artifact use from causal benefit.
 
-8. **[Phantom Gains: Auditing Self-Improvement Against a Measured Null](papers.md#phantom-gains)** — Measure a frozen null before interpreting per-problem changes.
+8. **[GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](papers.md#gdpevo)** — Inspect training/test rule recombination and task-selection effects.
 
-9. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Include integrity of the learning signal and persistence of bad updates.
+9. **[Phantom Gains: Auditing Self-Improvement Against a Measured Null](papers.md#phantom-gains)** — Measure a frozen null before interpreting per-problem changes.
 
-10. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
+10. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Include integrity of the learning signal and persistence of bad updates.
 
-11. **[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)** — Separate average success, covered tasks, regressions, component interactions and search replication.
+11. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
+
+12. **[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)** — Separate average success, covered tasks, regressions, component interactions and search replication.
 
 
 **Study exercise:** Draft a matched frozen baseline, a held-out family split, a budget ledger, and one intervention that could falsify your preferred mechanism.

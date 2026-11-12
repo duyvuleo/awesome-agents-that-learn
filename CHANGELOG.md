@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-13 — Context learning, memory-value revision and RSI cost
+
+- Added full-source appraisals of Context Language Models and The RSI Tax; total 194 research works.
+- Expanded Value of Memory to v4 while preserving the historical v2 inspection and source links.
+- Added the official CLM software record with license, requirements and partial-training-release boundaries; total 25 systems.
+- Extended two reading routes and retained cost, evaluation-unit, source-version and unresolved-discovery limits. No experiments reproduced.
+
 ## 2026-11-12 — Evidence-aware memory evaluation
 
 - Added one complete-source review of reference agreement, evidence sufficiency and judge reliability; total 192 works and 24 systems.

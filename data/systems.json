@@ -1066,5 +1066,60 @@
     "review_depth": "project",
     "execution_status": "not-run",
     "short_name": "Voyager"
+  },
+  {
+    "id": "system-context-language-models",
+    "short_name": "CLM",
+    "name": "Context Language Models",
+    "category": "research-system",
+    "url": "https://github.com/facebookresearch/context-language-models",
+    "docs_url": "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/README.md",
+    "related_papers": [
+      "context-language-models"
+    ],
+    "relationship_note": "Official implementation linked from arXiv 2609.37725v1. Documentation inspected at commit 483198229ab7b90c0eed4651306ab3b3505aaf50 (2026-10-14). It now includes updated SGLang averages and a vLLM SCR port beyond v1; no experiment commit was established and the current tree was not claimed to reproduce the paper.",
+    "topics": [
+      "memory",
+      "prompts",
+      "skills",
+      "evaluation"
+    ],
+    "update_targets": [
+      "prompts",
+      "skills"
+    ],
+    "persistence": "both",
+    "scope": "core",
+    "learning_signal": "Environment observations guide context edits; rewards and contrastive training traces propose skills, while task-level development accuracy and cost select reusable skill documents.",
+    "mechanism": "A Harbor harness mirrors editable conversation turns to a file and synchronizes accepted edits to later model calls, with system and task messages pinned. A separate evolution workflow rewrites and validates skills, evaluates candidates on development tasks, retains selected skills and supports resuming. SCR adapters reuse surviving cached spans approximately. RL integration is documented separately as partial patches.",
+    "capabilities": [
+      "Editable live context in Harbor tasks",
+      "Reusable skill evolution with development-set selection and resume",
+      "Intermediate-context trajectory records and inference-cost accounting",
+      "Optional SGLang and vLLM suffix-cache adapters"
+    ],
+    "evaluation": "Project documentation connects the harness and skill workflow to the paper experiments. Current SCR documentation additionally reports three-seed SGLang averages and a vLLM comparison on 830 BrowseComp-Plus questions; these are project-reported results beyond the v1 snapshot, with none run here.",
+    "limitations": "Documentation review does not validate runtime behavior or benchmark reproduction. Current defaults differ from paper configurations. Missing development tasks make selection reuse training tasks, which the workflow flags. SCR reuses stale states and can lose throughput under cache pressure. The RL directory omits training infrastructure and requires externally supplied efficiency scores and role masks. Model, dataset and dependency licenses remain separate.",
+    "availability_note": "Public research source and setup documentation inspected at commit 4831982; not installed or executed. RL training is outside this repository; its patches do not constitute a complete training release.",
+    "license": "CC BY-NC 4.0",
+    "license_url": "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/LICENSE",
+    "requirements": "Python >=3.12,<3.14; harbor==0.16.1, litellm>=1.70,<2, tiktoken>=0.7 and PyYAML>=6.0; optional transformers>=4.40 for exact tokenization. Harbor tasks need a supported container environment and a model endpoint with tool calling. ContextBench needs its separate source checkout. Optional SCR adapters target SGLang 0.5.16 or vLLM 0.19.1, compatible models and GPU cache capacity; RL needs external ProRL-Agent-Server and Slime integration.",
+    "sources": [
+      "https://github.com/facebookresearch/context-language-models",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/README.md",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/LICENSE",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/NOTICE",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/pyproject.toml",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_harness/README.md",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_icl/README.md",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_rl/README.md",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_contextbench/README.md",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/suffix_cache_reuse/README.md",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/suffix_cache_reuse/sglang/README.md",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/suffix_cache_reuse/vllm/README.md"
+    ],
+    "checked": "2026-11-13",
+    "review_depth": "project",
+    "execution_status": "not-run"
   }
 ]

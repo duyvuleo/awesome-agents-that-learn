@@ -109,6 +109,10 @@
         "why": "Contrast whole-prompt replacement with incremental context updates."
       },
       {
+        "paper": "context-language-models",
+        "why": "Separate native live-context editing, reusable context-management skills and parametric training; inspect their different evidence and cost metrics."
+      },
+      {
         "paper": "harnessflow",
         "why": "Compare fixed tree-search control with the executable harnesses it optimizes, including search and deployment costs."
       }
@@ -259,6 +263,10 @@
       {
         "paper": "agentstream",
         "why": "Compare performance under different task-stream compositions."
+      },
+      {
+        "paper": "rsi-tax",
+        "why": "Count acquisition and validation overhead alongside serving cost, and distinguish later artifact use from causal benefit."
       },
       {
         "paper": "gdpevo",

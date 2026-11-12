@@ -6822,10 +6822,13 @@
     "sources": [
       "https://arxiv.org/abs/2610.31303",
       "https://arxiv.org/html/2610.31303v2",
-      "https://arxiv.org/pdf/2610.31303v2"
+      "https://arxiv.org/pdf/2610.31303v2",
+      "https://arxiv.org/html/2610.31303v4",
+      "https://arxiv.org/pdf/2610.31303v4",
+      "https://github.com/MemTensor/MemOps"
     ],
     "code_url": null,
-    "code_note": "The complete v2 paper and substantive appendices were inspected on 2026-11-09. An official runnable artifact for this study was not established; its longitudinal originals remain private. No research code, benchmark postchecks or model calls were executed. Metadata rechecked on 2026-11-12 lists arXiv v4, revised November 10; that newer body is not yet appraised. Scientific annotations retain the explicitly inspected v2 boundary.",
+    "code_note": "Complete 35-page v4 and Appendices A–C read on 2026-11-13; key figures, proofs and result tables visually inspected. A study-specific public artifact was not established; linked MemOps is a separate benchmark. The complete v2 appraisal dated 2026-11-09 remains historical. No research code, benchmark postchecks or model calls were run.",
     "topics": [
       "foundations",
       "memory",
@@ -6836,12 +6839,12 @@
       "none"
     ],
     "persistence": "not-applicable",
-    "learning_signal": "Not applicable: a decision-theoretic and empirical analysis of memory value.",
-    "mechanism": "Defines retained decision value separately from a fixed reader’s realized benefit, with explicit costs for recovery and revision. Conditional simulation bounds and finite counterexamples distinguish information timing, access, reader interaction, feedback and unknown future demand.",
-    "evaluation": "ArXiv v2 includes proofs, finite controls, a twelve-question LoCoMo diagnostic, an authored two-project update study, three longitudinal cases and a MemOps measurement audit. Fixed-evidence and fixed-output controls distinguish changes in memory use from changes in scoring.",
-    "limitations": "Theoretical orderings depend on specified access, policy and budget assumptions. The LoCoMo pilot has one draw per condition and post hoc prompt controls; private longitudinal cases concern one owner. Evaluator repairs are not agent improvements, and the proposed allocation and revision policies remain hypotheses rather than validated general algorithms.",
+    "learning_signal": "An analysis of decision value rather than a trained agent; experiments vary retained evidence, recovery, checker feedback and revision rules.",
+    "mechanism": "Separates history, retained capability and realized reader benefit in avoided task loss. Simulation conditions, allocation bounds and a priced recovery option connect capability to access and selection costs. Dependency and commit rules formalize preservation during revision.",
+    "evaluation": "V4 reports 3,075 questions from complete LoCoMo, LongMemEval-S and PersonaMem-v1 32k splits with two readers, plus two sets of six authored multi-project workspaces. Paired comparisons examine retention, recovery, instructions, revision scope, feedback and commit validation; finite controls, longitudinal cases and a MemOps audit add complementary evidence.",
+    "limitations": "Benchmarks use one writer, fixed budgets and one draw per cell, with queries clustered by history or persona. LoCoMo rankings depend on task composition and scoring conventions. Two-event revision studies use deterministic rules; guarantees require complete dependencies and sound checks. Carryover and validation benefits vary by reader, and natural-language checking remains unvalidated.",
     "review_depth": "full-text",
-    "checked": "2026-11-09",
+    "checked": "2026-11-13",
     "short_name": "Value of memory"
   },
   {
@@ -7023,5 +7026,85 @@
     "limitations": "Short synthetic logs and fixed queries do not establish natural-domain prevalence or lifelong-memory gains. Replication reuses exposed histories and Qwen-tokenized inputs. Certified-subset intervals leave CSV improvements inconclusive, not equivalent. Programs share certifier rules; no human adjudication or public artifact independently validates them. Abstention is a declared contract, not every application’s optimal policy.",
     "review_depth": "full-text",
     "checked": "2026-11-12"
+  },
+  {
+    "id": "context-language-models",
+    "short_name": "CLM",
+    "title": "Context Language Models",
+    "date": "2026-09-29",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2609.37725",
+    "sources": [
+      "https://arxiv.org/abs/2609.37725",
+      "https://arxiv.org/pdf/2609.37725v1",
+      "https://arxiv.org/html/2609.37725v1",
+      "https://github.com/facebookresearch/context-language-models",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_icl/README.md",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_rl/README.md",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/suffix_cache_reuse/README.md",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/LICENSE",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/pyproject.toml",
+      "https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_harness/README.md"
+    ],
+    "code_url": "https://github.com/facebookresearch/context-language-models",
+    "code_note": "Complete available 27-page arXiv v1, main sections and Appendices A-G, read on 2026-11-13; all 22 figures and five tables visually checked. Official README, license, requirements and component documentation inspected at commit 4831982. The current repository adds serving results beyond v1 and provides partial RL integration patches rather than the training pipeline. No research code or models executed.",
+    "topics": [
+      "memory",
+      "prompts",
+      "skills",
+      "model-training",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "prompts",
+      "skills",
+      "model-weights"
+    ],
+    "persistence": "both",
+    "learning_signal": "Task observations guide live edits; deterministic rewards and rollout comparisons select reusable skills; judged task success and success-gated inference FLOPs drive RL.",
+    "mechanism": "Mirrors the live context into a file whose model-authored edits become subsequent model inputs. Zero-shot edits retain state within a task. A separate proposer searches skill documents across training tasks and selects them on development tasks with fixed weights; stepwise GRPO instead retains context-management changes in model weights.",
+    "evaluation": "Authors report 59.4% accuracy on 830 BrowseComp-Plus questions; assisted skill search raises held-out KV Store accuracy from 38.3% to 74.2%. RL raises Qwen3.5-9B from 28.8% to 42.5% at 1.52 to 1.34 prefix-reuse PFLOPs per question. Further tests cover coding, four single-run math problems, ten EdgeBench tasks, repository swarms and approximate cache reuse.",
+    "limitations": "Synthetic ContextBench and judged answers limit generalization; EdgeBench reports best-of-three runs on a subset. Editing-turn exemptions, rollback and context hints condition comparisons, and some caption/configuration values differ. FLOPs approximate inference work, while the swarm comparison uses API spend. Suffix reuse preserves stale states, so matched accuracy does not prove exact equivalence or forgetting. Safety is discussed without a dedicated attack evaluation; results were not reproduced.",
+    "review_depth": "full-text",
+    "checked": "2026-11-13"
+  },
+  {
+    "id": "rsi-tax",
+    "short_name": "RSI Tax",
+    "title": "The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost",
+    "date": "2026-11-10",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.13524",
+    "sources": [
+      "https://arxiv.org/abs/2611.13524",
+      "https://arxiv.org/pdf/2611.13524v1"
+    ],
+    "code_url": null,
+    "code_note": "Complete nineteen-page arXiv v1, Appendices A–D, four figures, nine tables, accounting equations and note prompt read on 2026-11-13; main figures and detailed cost tables visually inspected. An official implementation or complete run-log release was not independently verified. No research code, agents, benchmarks or models executed.",
+    "topics": [
+      "evaluation",
+      "continual-learning",
+      "recursive-improvement"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "skills",
+      "agent-code"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Completed-task trajectories and scalar verifier outcomes guide note, skill or harness updates around frozen backbones; ReasoningBank uses its separate internal trajectory judge.",
+    "mechanism": "Scores each arriving task before its feedback can update retained state, and separates task-execution tokens from verification, exploration and writing tokens. A bounded-note baseline revises up to 2,048 tokens from failed-task excerpts every four tasks without candidate search. State resets between repository chains; terminal tasks retain it across one ordered stream.",
+    "evaluation": "Complete v1 compares six methods and two backbones on seven selected fifteen-task repository chains and 89 terminal tasks. The note baseline matches or exceeds the observed accuracy of three search-heavy methods in all four settings, with 65.6–71.0% mean within-setting token savings. Verification contributes 74.8–93.6% of their pooled update tokens.",
+    "limitations": "Fixed streams and no independent-run uncertainty limit comparative generalization. Meta-Harness uses an adapted strict-improvement selector and EvoSkill refreshes a rolling frontier, so some overhead reflects these implementations. Feedback use also differs. Tokens, including cached input, are not dollars or FLOPs. Subsequent use is not causal benefit, and finite-horizon non-use does not prove removable waste; the study does not test a learned cost-aware update policy.",
+    "review_depth": "full-text",
+    "checked": "2026-11-13"
   }
 ]

@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-192 unique works. Catalog updated: 2026-11-12; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+194 unique works. Catalog updated: 2026-11-13; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -13,6 +13,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-10 | **RSI Tax**<br>[The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](https://arxiv.org/abs/2611.13524) | Scores each arriving task before its feedback can update retained state, and separates task-execution tokens from verification, exploration and writing tokens. A… | Memory, Skills, Agent code | preprint · full-text | [Notes](#rsi-tax) |
 | 2026-11-09 | **Insufficient Histories**<br>[Correct Answers from Insufficient Histories: A Controlled Study of Agent Memory Evaluation](https://arxiv.org/abs/2611.11840) | Separates hidden-reference agreement from evidence sufficiency and appropriate answering. Legal histories with identical visible bytes but different answers certify… | Analysis / no retained update | preprint · full-text | [Notes](#insufficient-histories) |
 | 2026-11-05 | **Beneath the Surface**<br>[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](https://arxiv.org/abs/2611.07624) | Audits frozen evolved harnesses for repeated success, gained/lost task coverage, component interactions and candidate retention. EvoAudit uses those diagnostics to… | Agent code, Prompts / context, Skills, Workflows | preprint · full-text | [Notes](#beneath-surface-agent-evolution) · [Code](https://github.com/simple-agent-lab/RSIHub) |
 | 2026-11-04 | **HarnessFlow**<br>[HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](https://arxiv.org/abs/2611.06254) | A fixed coding agent proposes complete executable harness edits using an optional component library. Tree-based selection mixes validation score and direct-child… | Agent code, Prompts / context, Workflows | preprint · full-text | [Notes](#harnessflow) |
@@ -52,7 +53,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-24 | **ReSight**<br>[ReSight: Task-Driven Self-Improving Memory for Embodied Agents](https://arxiv.org/abs/2610.33487) | Retains visual evidence while a separate coding agent explores difficult query sets and distills reusable processing programs, memory fields and skills. Executor traces… | Memory, Skills, Tools, Agent code | preprint · full-text | [Notes](#resight) |
 | 2026-10-23 | **OPST**<br>[On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models](https://arxiv.org/abs/2610.32770) | Generates questions and candidate rationales/answers from hand-chosen topics, checks answer consistency and removes questions all sampled student rollouts solve. A… | Model weights | preprint · full-text | [Notes](#on-policy-self-training) |
 | 2026-10-23 | **FlexA-Mem**<br>[FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents](https://arxiv.org/abs/2610.33274) | Preserves raw history alongside LLM-written records and links, then renders a compact timeline plus retrieved detail under a token budget. A fixed fit-or-degrade rule… | Memory | preprint · full-text | [Notes](#flexa-mem) · [Code](https://github.com/WujiangXu/Flex-Amem) |
-| 2026-10-22 | **Value of memory**<br>[The Value of Memory in Language Agents](https://arxiv.org/abs/2610.31303) | Defines retained decision value separately from a fixed reader’s realized benefit, with explicit costs for recovery and revision. Conditional simulation bounds and… | Analysis / no retained update | preprint · full-text | [Notes](#value-of-memory) |
+| 2026-10-22 | **Value of memory**<br>[The Value of Memory in Language Agents](https://arxiv.org/abs/2610.31303) | Separates history, retained capability and realized reader benefit in avoided task loss. Simulation conditions, allocation bounds and a priced recovery option connect… | Analysis / no retained update | preprint · full-text | [Notes](#value-of-memory) |
 | 2026-10-22 | **METTA**<br>[METTA: Memory-Enhanced Test-Time Adaptation for Meta-Reinforcement Learning](https://arxiv.org/abs/2610.31656) | Meta-trains a policy, neural-memory initialization and update machinery with PPO. Within each episode, causal self-supervised gradient updates change temporary fast… | Memory, Model weights | preprint · full-text | [Notes](#metta) |
 | 2026-10-21 | **Code-edit readout**<br>[Recursive Self-Improvement on a Budget: Scoring Code Edits Before They Run](https://arxiv.org/abs/2610.29121) | Fits a per-run linear predictor from a parent’s steering-set score and eight random projections of a proposed scaffold diff embedding. After calibration, the predictor… | Agent code, Prompts / context | preprint · full-text | [Notes](#rsi-budget-code-scoring) |
 | 2026-10-21 | **MemoryTax**<br>[MemoryTax: The Bitter Lesson of Agent Memory](https://arxiv.org/abs/2610.29823) | Compares raw-history context and BM25, extracted-fact and graph stores, and coding agents that search conversation files. Writer–reader swaps hold each store and its… | Analysis / no retained update | preprint · full-text | [Notes](#memorytax) · [Code](https://github.com/zedong-peng/memorytax) |
@@ -66,6 +67,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-10-02 | **VERSE**<br>[VERSE: Verified Self-Evolving Optimizer for Agent Harnesses](https://arxiv.org/abs/2610.02616) | Keeps executor and optimizer weights frozen while evolving separate harnesses. The optimizer diagnoses failures, tests drafts, replays and perturbs recorded actions, and… | Agent code, Prompts / context, Skills, Tools, Memory | preprint · full-text | [Notes](#verse) · [Code](https://github.com/wzekai/VERSE) |
 | 2026-10-02 | **RIFAR**<br>[RIFAR: Reliability-Informed and Forgetting-Aware Replay for Continual Robot Learning with World-Action Models](https://arxiv.org/abs/2610.03079) | Retains short real demonstration prefixes and generates historical replay with a world-action model. A trainable inverse-dynamics model screens action–visual… | Model weights, Memory | preprint · full-text | [Notes](#rifar) |
 | 2026-09-29 | **SED**<br>[Self-Evolving Defense: Continual Security Policy Learning for LLM Agents](https://arxiv.org/abs/2609.36603) | After each completed episode, a separate call to the fixed actor’s base model judges harm; judged failures enter episodic memory and are distilled into hierarchical… | Memory, Prompts / context | preprint · full-text | [Notes](#self-evolving-defense) · [Code](https://github.com/Infini-AI-Lab/SED) |
+| 2026-09-29 | **CLM**<br>[Context Language Models](https://arxiv.org/abs/2609.37725) | Mirrors the live context into a file whose model-authored edits become subsequent model inputs. Zero-shot edits retain state within a task. A separate proposer searches… | Prompts / context, Skills, Model weights | preprint · full-text | [Notes](#context-language-models) · [Code](https://github.com/facebookresearch/context-language-models) |
 | 2026-09-28 | **StepLearn**<br>[Learn Now, Use Next, Trust Later: Prequential Test-Time Learning for LLM Agents](https://arxiv.org/abs/2609.35911) | Extracts policy–effect hypotheses after informative transitions while actor and learner weights stay fixed. A runtime copy can guide the next step; a hidden persistent… | Memory | preprint · full-text | [Notes](#steplearn) |
 | 2026-09-28 | **SAGE acceptance gate**<br>[SAGE: A Statistical Acceptance Gate for Self-Evolving Agents](https://arxiv.org/abs/2609.36043) | Compares a proposed persistent skill edit with the incumbent on identical validation items. It accepts only when paired wins exceed asymmetrically penalized regressions… | Skills | preprint · full-text | [Notes](#sage-acceptance-gate) |
 | 2026-09-27 | **REUSE**<br>[Which Self-Improvements Should We Trust? Reliable Self-Improvement When Agents Reuse Their Benchmarks](https://arxiv.org/abs/2609.33180) | Protects a fixed evaluation sample by returning only categorical promotion decisions. It tests paired candidate–incumbent outcomes and allocates error across rounds… | Model weights | preprint · full-text | [Notes](#reuse-evaluation) |
@@ -207,6 +209,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2017-10-19 | **AlphaGo Zero**<br>[Mastering the game of Go without human knowledge](https://www.nature.com/articles/nature24270) | Alternates search-guided self-play with gradient updates to a shared policy/value network. Recent games are replayed to fit improved move distributions and outcomes. The… | Model weights | peer-reviewed · full-text | [Notes](#alphago-zero) |
 
 ## Full annotations
+
+<a id="rsi-tax"></a>
+
+## The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost
+
+**2026-11-10 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.13524)
+
+**Mechanism.** Scores each arriving task before its feedback can update retained state, and separates task-execution tokens from verification, exploration and writing tokens. A bounded-note baseline revises up to 2,048 tokens from failed-task excerpts every four tasks without candidate search. State resets between repository chains; terminal tasks retain it across one ordered stream.
+
+**What changes:** Memory, Skills, Agent code. **Persistence:** across-tasks. **Learning signal:** Completed-task trajectories and scalar verifier outcomes guide note, skill or harness updates around frozen backbones; ReasoningBank uses its separate internal trajectory judge.
+
+**Evaluation.** Complete v1 compares six methods and two backbones on seven selected fifteen-task repository chains and 89 terminal tasks. The note baseline matches or exceeds the observed accuracy of three search-heavy methods in all four settings, with 65.6–71.0% mean within-setting token savings. Verification contributes 74.8–93.6% of their pooled update tokens.
+
+**Boundary.** Fixed streams and no independent-run uncertainty limit comparative generalization. Meta-Harness uses an adapted strict-improvement selector and EvoSkill refreshes a rolling frontier, so some overhead reflects these implementations. Feedback use also differs. Tokens, including cached input, are not dollars or FLOPs. Subsequent use is not causal benefit, and finite-horizon non-use does not prove removable waste; the study does not test a learned cost-aware update policy.
+
+**Code / data.** Complete nineteen-page arXiv v1, Appendices A–D, four figures, nine tables, accounting equations and note prompt read on 2026-11-13; main figures and detailed cost tables visually inspected. An official implementation or complete run-log release was not independently verified. No research code, agents, benchmarks or models executed.
+
+**Topics:** evaluation, continual-learning, recursive-improvement. **Reviewed:** full-text · 2026-11-13.
+
+[Source 1](https://arxiv.org/abs/2611.13524) · [Source 2](https://arxiv.org/pdf/2611.13524v1)
 
 <a id="insufficient-histories"></a>
 
@@ -1076,19 +1100,19 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Primary source](https://arxiv.org/abs/2610.31303)
 
-**Mechanism.** Defines retained decision value separately from a fixed reader’s realized benefit, with explicit costs for recovery and revision. Conditional simulation bounds and finite counterexamples distinguish information timing, access, reader interaction, feedback and unknown future demand.
+**Mechanism.** Separates history, retained capability and realized reader benefit in avoided task loss. Simulation conditions, allocation bounds and a priced recovery option connect capability to access and selection costs. Dependency and commit rules formalize preservation during revision.
 
-**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** Not applicable: a decision-theoretic and empirical analysis of memory value.
+**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** An analysis of decision value rather than a trained agent; experiments vary retained evidence, recovery, checker feedback and revision rules.
 
-**Evaluation.** ArXiv v2 includes proofs, finite controls, a twelve-question LoCoMo diagnostic, an authored two-project update study, three longitudinal cases and a MemOps measurement audit. Fixed-evidence and fixed-output controls distinguish changes in memory use from changes in scoring.
+**Evaluation.** V4 reports 3,075 questions from complete LoCoMo, LongMemEval-S and PersonaMem-v1 32k splits with two readers, plus two sets of six authored multi-project workspaces. Paired comparisons examine retention, recovery, instructions, revision scope, feedback and commit validation; finite controls, longitudinal cases and a MemOps audit add complementary evidence.
 
-**Boundary.** Theoretical orderings depend on specified access, policy and budget assumptions. The LoCoMo pilot has one draw per condition and post hoc prompt controls; private longitudinal cases concern one owner. Evaluator repairs are not agent improvements, and the proposed allocation and revision policies remain hypotheses rather than validated general algorithms.
+**Boundary.** Benchmarks use one writer, fixed budgets and one draw per cell, with queries clustered by history or persona. LoCoMo rankings depend on task composition and scoring conventions. Two-event revision studies use deterministic rules; guarantees require complete dependencies and sound checks. Carryover and validation benefits vary by reader, and natural-language checking remains unvalidated.
 
-**Code / data.** The complete v2 paper and substantive appendices were inspected on 2026-11-09. An official runnable artifact for this study was not established; its longitudinal originals remain private. No research code, benchmark postchecks or model calls were executed. Metadata rechecked on 2026-11-12 lists arXiv v4, revised November 10; that newer body is not yet appraised. Scientific annotations retain the explicitly inspected v2 boundary.
+**Code / data.** Complete 35-page v4 and Appendices A–C read on 2026-11-13; key figures, proofs and result tables visually inspected. A study-specific public artifact was not established; linked MemOps is a separate benchmark. The complete v2 appraisal dated 2026-11-09 remains historical. No research code, benchmark postchecks or model calls were run.
 
-**Topics:** foundations, memory, evaluation. **Reviewed:** full-text · 2026-11-09.
+**Topics:** foundations, memory, evaluation. **Reviewed:** full-text · 2026-11-13.
 
-[Source 1](https://arxiv.org/abs/2610.31303) · [Source 2](https://arxiv.org/html/2610.31303v2) · [Source 3](https://arxiv.org/pdf/2610.31303v2)
+[Source 1](https://arxiv.org/abs/2610.31303) · [Source 2](https://arxiv.org/html/2610.31303v2) · [Source 3](https://arxiv.org/pdf/2610.31303v2) · [Source 4](https://arxiv.org/html/2610.31303v4) · [Source 5](https://arxiv.org/pdf/2610.31303v4) · [Source 6](https://github.com/MemTensor/MemOps)
 
 <a id="metta"></a>
 
@@ -1375,6 +1399,30 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** memory, safety, continual-learning, applications. **Reviewed:** full-text · 2026-11-10.
 
 [Source 1](https://arxiv.org/abs/2609.36603) · [Source 2](https://arxiv.org/html/2609.36603v1) · [Source 3](https://github.com/Infini-AI-Lab/SED) · [Source 4](https://arxiv.org/pdf/2609.36603v1) · [Source 5](https://github.com/Infini-AI-Lab/SED/tree/7cda0834511df386b9e1c57632dfa537e1d0fdab) · [Source 6](https://github.com/Infini-AI-Lab/SED/blob/7cda0834511df386b9e1c57632dfa537e1d0fdab/LICENSE)
+
+<a id="context-language-models"></a>
+
+## Context Language Models
+
+**2026-09-29 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2609.37725)
+
+**Mechanism.** Mirrors the live context into a file whose model-authored edits become subsequent model inputs. Zero-shot edits retain state within a task. A separate proposer searches skill documents across training tasks and selects them on development tasks with fixed weights; stepwise GRPO instead retains context-management changes in model weights.
+
+**What changes:** Prompts / context, Skills, Model weights. **Persistence:** both. **Learning signal:** Task observations guide live edits; deterministic rewards and rollout comparisons select reusable skills; judged task success and success-gated inference FLOPs drive RL.
+
+**Evaluation.** Authors report 59.4% accuracy on 830 BrowseComp-Plus questions; assisted skill search raises held-out KV Store accuracy from 38.3% to 74.2%. RL raises Qwen3.5-9B from 28.8% to 42.5% at 1.52 to 1.34 prefix-reuse PFLOPs per question. Further tests cover coding, four single-run math problems, ten EdgeBench tasks, repository swarms and approximate cache reuse.
+
+**Boundary.** Synthetic ContextBench and judged answers limit generalization; EdgeBench reports best-of-three runs on a subset. Editing-turn exemptions, rollback and context hints condition comparisons, and some caption/configuration values differ. FLOPs approximate inference work, while the swarm comparison uses API spend. Suffix reuse preserves stale states, so matched accuracy does not prove exact equivalence or forgetting. Safety is discussed without a dedicated attack evaluation; results were not reproduced.
+
+**Code / data.** [Official artifact](https://github.com/facebookresearch/context-language-models) — Complete available 27-page arXiv v1, main sections and Appendices A-G, read on 2026-11-13; all 22 figures and five tables visually checked. Official README, license, requirements and component documentation inspected at commit 4831982. The current repository adds serving results beyond v1 and provides partial RL integration patches rather than the training pipeline. No research code or models executed.
+
+**Topics:** memory, prompts, skills, model-training, evaluation. **Reviewed:** full-text · 2026-11-13.
+
+[Source 1](https://arxiv.org/abs/2609.37725) · [Source 2](https://arxiv.org/pdf/2609.37725v1) · [Source 3](https://arxiv.org/html/2609.37725v1) · [Source 4](https://github.com/facebookresearch/context-language-models) · [Source 5](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_icl/README.md) · [Source 6](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_rl/README.md) · [Source 7](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/suffix_cache_reuse/README.md) · [Source 8](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/LICENSE) · [Source 9](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/pyproject.toml) · [Source 10](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_harness/README.md)
+
+**Related software:** [Context Language Models](systems.md#system-context-language-models). See each system's relationship note before equating it with the evaluated paper version.
 
 <a id="steplearn"></a>
 

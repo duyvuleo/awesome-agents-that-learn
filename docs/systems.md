@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Research papers](papers.md) · [Filter systems in the explorer](https://duyvuleo.github.io/awesome-agents-that-learn/?kind=system#catalog)
 
-24 software records. Catalog updated: 2026-11-12; individual inspection dates are recorded per entry. Systems are counted separately from the 192 research works; a paper and its software can describe the same research program. These are documentation/source inspections, not installations, reproductions, or deployment endorsements. No release date is inferred from the review date.
+25 software records. Catalog updated: 2026-11-13; individual inspection dates are recorded per entry. Systems are counted separately from the 194 research works; a paper and its software can describe the same research program. These are documentation/source inspections, not installations, reproductions, or deployment endorsements. No release date is inferred from the review date.
 
 ## Compare at a glance
 
@@ -18,6 +18,7 @@
 | [Agent Lightning v1.0](#system-agent-lightning) | Training framework | Model weights | MIT |
 | [Agent Workflow Memory](#system-agent-workflow-memory) | Research implementation | Memory, Workflows | Apache-2.0 |
 | [Agent0](#system-agent0) | Research implementation | Model weights | Apache-2.0 |
+| [Context Language Models](#system-context-language-models) | Research implementation | Prompts / context, Skills | CC BY-NC 4.0 |
 | [Darwin Gödel Machine](#system-darwin-godel-machine) | Research implementation | Agent code, Tools, Workflows, Prompts / context | Apache-2.0 |
 | [DSPy](#system-dspy) | Optimization framework | Prompts / context, Model weights | MIT |
 | [EvoAgentX](#system-evoagentx) | Optimization framework | Prompts / context, Tools, Workflows, Multi-agent organization | MIT; bundled MIT notices are included in LICENSE |
@@ -266,6 +267,39 @@ No associated work in the current paper catalog.
 **Source inspection:** 2026-10-28 · project · not-run. **Topics:** model-training, self-play, tools.
 
 [Source 1](https://github.com/aiming-lab/Agent0) · [Source 2](https://github.com/aiming-lab/Agent0/blob/main/README.md) · [Source 3](https://github.com/aiming-lab/Agent0/blob/main/Agent0/README.md) · [Source 4](https://github.com/aiming-lab/Agent0/blob/main/LICENSE)
+
+
+<a id="system-context-language-models"></a>
+
+## Context Language Models
+
+**Research implementation · core · source inspected · not run**
+
+[Official repository](https://github.com/facebookresearch/context-language-models) · [Documentation](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/README.md)
+
+**Learning mechanism.** A Harbor harness mirrors editable conversation turns to a file and synchronizes accepted edits to later model calls, with system and task messages pinned. A separate evolution workflow rewrites and validates skills, evaluates candidates on development tasks, retains selected skills and supports resuming. SCR adapters reuse surviving cached spans approximately. RL integration is documented separately as partial patches.
+
+**Capabilities.** Editable live context in Harbor tasks; Reusable skill evolution with development-set selection and resume; Intermediate-context trajectory records and inference-cost accounting; Optional SGLang and vLLM suffix-cache adapters
+
+**What changes:** Prompts / context, Skills. **Persistence:** both. **Learning signal:** Environment observations guide context edits; rewards and contrastive training traces propose skills, while task-level development accuracy and cost select reusable skill documents.
+
+**Paper relationship.** Official implementation linked from arXiv 2609.37725v1. Documentation inspected at commit 483198229ab7b90c0eed4651306ab3b3505aaf50 (2026-10-14). It now includes updated SGLang averages and a vLLM SCR port beyond v1; no experiment commit was established and the current tree was not claimed to reproduce the paper.
+
+[Context Language Models](papers.md#context-language-models)
+
+**Evaluation evidence.** Project documentation connects the harness and skill workflow to the paper experiments. Current SCR documentation additionally reports three-seed SGLang averages and a vLLM comparison on 830 BrowseComp-Plus questions; these are project-reported results beyond the v1 snapshot, with none run here.
+
+**Boundary.** Documentation review does not validate runtime behavior or benchmark reproduction. Current defaults differ from paper configurations. Missing development tasks make selection reuse training tasks, which the workflow flags. SCR reuses stale states and can lose throughput under cache pressure. The RL directory omits training infrastructure and requires externally supplied efficiency scores and role masks. Model, dataset and dependency licenses remain separate.
+
+**Availability.** Public research source and setup documentation inspected at commit 4831982; not installed or executed. RL training is outside this repository; its patches do not constitute a complete training release.
+
+**Requirements.** Python >=3.12,<3.14; harbor==0.16.1, litellm>=1.70,<2, tiktoken>=0.7 and PyYAML>=6.0; optional transformers>=4.40 for exact tokenization. Harbor tasks need a supported container environment and a model endpoint with tool calling. ContextBench needs its separate source checkout. Optional SCR adapters target SGLang 0.5.16 or vLLM 0.19.1, compatible models and GPU cache capacity; RL needs external ProRL-Agent-Server and Slime integration.
+
+**License.** [CC BY-NC 4.0](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/LICENSE). Linked models, datasets, services, and dependencies can have separate terms.
+
+**Source inspection:** 2026-11-13 · project · not-run. **Topics:** memory, prompts, skills, evaluation.
+
+[Source 1](https://github.com/facebookresearch/context-language-models) · [Source 2](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/README.md) · [Source 3](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/LICENSE) · [Source 4](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/NOTICE) · [Source 5](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/pyproject.toml) · [Source 6](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_harness/README.md) · [Source 7](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_icl/README.md) · [Source 8](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_rl/README.md) · [Source 9](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/clm/clm_contextbench/README.md) · [Source 10](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/suffix_cache_reuse/README.md) · [Source 11](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/suffix_cache_reuse/sglang/README.md) · [Source 12](https://github.com/facebookresearch/context-language-models/blob/483198229ab7b90c0eed4651306ab3b3505aaf50/suffix_cache_reuse/vllm/README.md)
 
 
 <a id="system-darwin-godel-machine"></a>
