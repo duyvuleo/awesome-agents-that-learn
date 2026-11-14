@@ -1615,10 +1615,13 @@
       "https://geeksongs.github.io/agentic_robotics/",
       "https://arxiv.org/pdf/2610.10498v1",
       "https://arxiv.org/src/2610.10498v1",
-      "https://github.com/Geeksongs/agentic_robotics"
+      "https://github.com/Geeksongs/agentic_robotics",
+      "https://arxiv.org/pdf/2610.10498v2",
+      "https://arxiv.org/html/2610.10498v2",
+      "https://github.com/Geeksongs/agentic_robotics/blob/2abb35eaa05abb3dc8963c3847ce0a28a72ef243/README.md"
     ],
     "code_url": null,
-    "code_note": "All twelve available v1 pages, seven figures, five tables, ten equations and the official project page were read on 2026-11-10. The public arXiv source contains supplementary-reference labels but not the cited appendix bodies; their review remains unresolved. The author’s linked repository hosts the website, not a verified research implementation. No robot experiments, models or code executed.",
+    "code_note": "Complete seventeen-page arXiv v2, Appendices A-I and Algorithm 1 read on 2026-11-14; all eight figures, twelve tables and eleven equations visually checked. The prior twelve-page v1 lacked these appendix bodies; that historical access gap is resolved for v2. The author-linked repository at 2abb35e hosts website assets, without a verified research implementation or project license. No robot experiments, models or research code executed.",
     "topics": [
       "architecture",
       "skills",
@@ -1637,10 +1640,10 @@
     "persistence": "across-tasks",
     "learning_signal": "Matched execution outcomes, hypothesis uncertainty, experiment cost, and later improvement used to train a memory manager.",
     "mechanism": "Evolves code and skills around a frozen robot policy, using matched experiments to update hypothesis support and rank further trials by expected information gain per cost. Raw episodes, hypothesis relations and distilled guidance persist in hierarchical memory. A PPO-trained manager selects memory operations; the robot policy and language-model operator stay fixed during harness evolution.",
-    "evaluation": "The available v1 reports RoboCasa365 and LIBERO-Pro with disjoint evolution/evaluation seeds, code/skill/exploration/memory ablations, and transfer to five SO-101 tasks with thirty trials per condition. It reports 77.0% and 86.8% simulation success and 71.3% real-robot success, including a regression on glasses grasping. Cited supplementary experimental details are not bundled with the public paper.",
-    "limitations": "The public PDF/source lacks cited appendices specifying the simulated backbone, exact budgets, outcome model and PPO settings, limiting comparison and reproducibility checks. “Zero-shot” concerns the transferred harness: SmolVLA first receives fifty demonstrations per real task and 20,000 fine-tuning steps. Joint gain over the best single component is not proof of superadditive interaction. A representative learning curve and point estimates do not establish indefinite improvement or retention.",
+    "evaluation": "V2 retains the v1 results: 77.0% RoboCasa365, 86.8% LIBERO-Pro and 71.3% over five real-robot tasks, including a glasses-grasp regression. Appendices now specify shared VLA weights, a 200-episode task-run budget, matched comparisons and ten independent PPO training seeds. The appendix describes final-100-episode online success alongside the main disjoint-seed evaluation protocol; their metric alignment remains unclear.",
+    "limitations": "Zero-shot concerns the transferred harness: real SmolVLA first receives fifty demonstrations per task and 20,000 fine-tuning steps. Reward weights, the intermediate success estimator and manager architecture remain unspecified. No intervals or statistical works-with criterion are given; joint gain over the best component is not superadditivity. Partial LIBERO comparator coverage, online-reporting ambiguity and a representative curve limit generalization, cost and retention claims. Results were not reproduced.",
     "review_depth": "full-text",
-    "checked": "2026-11-10",
+    "checked": "2026-11-14",
     "short_name": "EmbodiedRSI"
   },
   {
@@ -2617,10 +2620,11 @@
       "https://github.com/AgibotTech/LIFE",
       "https://github.com/AgibotTech/LIFE/blob/a63e763c515136a5090f9fb251f7b72f702ad93a/README.md",
       "https://github.com/AgibotTech/LIFE/blob/a63e763c515136a5090f9fb251f7b72f702ad93a/LICENSE",
-      "https://github.com/AgibotTech/LIFE/blob/a63e763c515136a5090f9fb251f7b72f702ad93a/sss_bench/data/LICENSE"
+      "https://github.com/AgibotTech/LIFE/blob/a63e763c515136a5090f9fb251f7b72f702ad93a/sss_bench/data/LICENSE",
+      "https://arxiv.org/abs/2611.00180v3"
     ],
     "code_url": "https://github.com/AgibotTech/LIFE",
-    "code_note": "Complete 39-page arXiv v2, Appendices A–D, thirteen figures/eighteen tables and official component documentation read on 2026-11-09. The formerly unavailable repository is now accessible: RoboBeats inference and SSS benchmark/evaluation components were inspected at a63e763c515136a5090f9fb251f7b72f702ad93a. This is not a verified complete robot-memory/EDM release or reproduction. Code is Apache-2.0; benchmark questions/rubrics have a separate CC BY-NC 4.0 license. Nothing installed or executed.",
+    "code_note": "Complete 39-page arXiv v2, Appendices A–D, thirteen figures/eighteen tables and official component documentation read on 2026-11-09. The formerly unavailable repository is now accessible: RoboBeats inference and SSS benchmark/evaluation components were inspected at a63e763c515136a5090f9fb251f7b72f702ad93a. This is not a verified complete robot-memory/EDM release or reproduction. Code is Apache-2.0; benchmark questions/rubrics have a separate CC BY-NC 4.0 license. Nothing installed or executed. A v3 revision dated 2026-11-12 was verified at the primary record on 2026-11-14; its newer body remains pending. Scientific annotations still concern the inspected v2.",
     "topics": [
       "memory",
       "skills",
@@ -7106,5 +7110,123 @@
     "limitations": "Fixed streams and no independent-run uncertainty limit comparative generalization. Meta-Harness uses an adapted strict-improvement selector and EvoSkill refreshes a rolling frontier, so some overhead reflects these implementations. Feedback use also differs. Tokens, including cached input, are not dollars or FLOPs. Subsequent use is not causal benefit, and finite-horizon non-use does not prove removable waste; the study does not test a learned cost-aware update policy.",
     "review_depth": "full-text",
     "checked": "2026-11-13"
+  },
+  {
+    "id": "continual-arc",
+    "title": "Continual-ARC: Measuring Skill Acquisition over a Working Lifetime",
+    "date": "2026-11-10",
+    "year": 2026,
+    "kind": "benchmark",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.14505",
+    "sources": [
+      "https://arxiv.org/abs/2611.14505",
+      "https://arxiv.org/html/2611.14505v2",
+      "https://arxiv.org/pdf/2611.14505v2",
+      "https://github.com/unifyai/continual-arc",
+      "https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/paper/README.md",
+      "https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/baselines/README.md",
+      "https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/training/README.md",
+      "https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/experiments/engine/README.md",
+      "https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/LICENSE",
+      "https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/pyproject.toml"
+    ],
+    "code_url": "https://github.com/unifyai/continual-arc",
+    "code_note": "Complete 51-page arXiv v2, substantive Appendices A–L and all thirteen figures reviewed on 2026-11-14. Official licensing, requirements and experiment-version documentation inspected at b7886cf. Current guidance and adapter fixes differ from evaluated code; historical artifacts remain partial. No research code, models, data or training executed.",
+    "topics": [
+      "continual-learning",
+      "evaluation",
+      "memory",
+      "skills",
+      "model-training"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "skills",
+      "model-weights"
+    ],
+    "persistence": "both",
+    "learning_signal": "Binary answer verdicts and paid demonstration requests within each instance; persistent demonstrations, programs or harness notes across recurring tasks. The trained baseline additionally imitates a stronger teacher at student-visited states.",
+    "mechanism": "Serves recurring, aliased ARC tasks with fresh inputs and dormant gaps, allowing external state or weight updates between rounds. Frozen seen-task and held-out tests compare each learner with its own reset on identical instances, separating retained task skill from improved solving of new tasks in feedback-budget units.",
+    "evaluation": "Main ARC-AGI-1 protocol uses 25 tasks, eight exposures each over 200 rounds at seed 0, with 100-instance seen and held-out tests. It compares demo caching, program libraries, harness persistence/guidance and Qwen3.5-9B DAgger from GLM-5.3 Flash; appendices add GPT-6 Luna across three harnesses, 2/4-user regimes and preliminary ARC-AGI-2/3 tests. Default persistence usually saves little; guidance improves returning-task reuse, while DAgger reports held-out savings.",
+    "limitations": "Task-bootstrap intervals condition on fixed learned states, rather than independent learning runs. DAgger uses guided stronger-teacher supervision, partly repairs a weak harness baseline, and tuning overlaps 23 held-out tasks. Historical harness import failures, public-task exposure risk, unscored compute and corrected cost accounting limit interpretation. Default GLM persistence has unreconciled prose/table aggregates; results do not establish a general memory-versus-weights ranking.",
+    "review_depth": "full-text",
+    "checked": "2026-11-14",
+    "short_name": "Continual-ARC"
+  },
+  {
+    "id": "peer-memory-consultation",
+    "short_name": "PeerMem",
+    "title": "Peer Memory Changes Who LLM Agents Consult Without a Detected Gain in Answer Accuracy",
+    "date": "2026-11-02",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.09990",
+    "sources": [
+      "https://arxiv.org/abs/2611.09990",
+      "https://arxiv.org/pdf/2611.09990v1",
+      "https://arxiv.org/html/2611.09990v1",
+      "https://palm-neurips-2026.github.io/",
+      "https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/PALM"
+    ],
+    "code_url": null,
+    "code_note": "Complete 27-page arXiv v1, main sections, Appendices A-G and checklist read on 2026-11-14; all five figures, ten tables, reward/context equations and prompt templates visually checked. Appendix C and the checklist state that public code release is pending; no official artifact or project license was verified. Nothing installed or executed. PALM acceptance remains author-reported because the official schedule is TBD and no primary paper record was verified.",
+    "topics": [
+      "memory",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "multi-agent-organization"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Reference-answer token F1 after every revision rewards retained correctness and improvement; numeric feedback updates pair-specific peer-selection statistics while answering agents never receive the reference.",
+    "mechanism": "Reuses MACE LinUCB matrices, reward vectors and counts under persistent agent IDs across question blocks. Six agents exchange extracted answers while holding private passages. Cold, correctly indexed and shuffled starts continue online updates; a separate study moves evidence to former distractor holders.",
+    "evaluation": "Authors use one fixed 80-question HotpotQA slice and twelve paired lineages per model. Warm starts increase external evidence-holder consultation on Qwen3-32B and Gemma-4-31B-it, but final-F1 contrasts remain uncertain. A fresh Qwen3.5-9B study gives a changed-minus-stable F1 interaction of -1.38 points, 95% interval [-3.50,+0.73].",
+    "limitations": "Intervals condition on fixed questions and twelve lineages, with marginal unadjusted comparisons. Hindsight regret uses policy-selected pooled observations; it is not counterfactual utility. Stable IDs mainly proxy evidence access, shuffle retains partial alignment, and reassignment changes readers too. Reference feedback, answer-only exchange, possible pretraining overlap and incomplete serving records limit transfer. Uncertain F1 is not equivalence. No cost or adversarial-trust test is reported; results were not reproduced.",
+    "review_depth": "full-text",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "task-conditioned-memory-utility",
+    "short_name": "Task-Conditioned Utility",
+    "title": "What Is This Memory Useful For? Measuring Task-Conditioned Utility in Long-Term Agent Memory",
+    "date": "2026-11-02",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.03930",
+    "sources": [
+      "https://arxiv.org/abs/2611.03930",
+      "https://arxiv.org/pdf/2611.03930v1",
+      "https://arxiv.org/html/2611.03930v1",
+      "https://chihhsuan-yang.github.io/AAMAS2027-ConditionalMemory/",
+      "https://github.com/ChihHsuan-Yang/AAMAS2027-ConditionalMemory",
+      "https://github.com/ChihHsuan-Yang/AAMAS2027-ConditionalMemory/blob/386ac65a8b5fc46414abdd2755375f2a52d4d3b8/docs/RELEASE_COVERAGE.md",
+      "https://github.com/ChihHsuan-Yang/AAMAS2027-ConditionalMemory/blob/386ac65a8b5fc46414abdd2755375f2a52d4d3b8/pyproject.toml"
+    ],
+    "code_url": "https://github.com/ChihHsuan-Yang/AAMAS2027-ConditionalMemory",
+    "code_note": "Complete eighteen-page v1 and Supplements S1–S12 read on 2026-11-14; key plots and defect-sensitive tables visually inspected. Official documentation inspected at 386ac65. Current follow-up releases extend the frozen v0.6-length-control dataset snapshot but retain script/output gaps; a repository-wide code license was not established. No data downloaded or research code executed.",
+    "topics": [
+      "memory",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "none"
+    ],
+    "persistence": "not-applicable",
+    "learning_signal": "Paired answer-reward differences measure frozen memories’ task-conditioned effects; a separate ledger records formation, storage, retrieval and exposure costs.",
+    "mechanism": "A task-blind writer produces raw, summarized or structured memories; a frozen reader receives identical filler with or without one memory. An answer-containment screen constructs bearing/control strata rather than a deployable retrieval policy.",
+    "evaluation": "On LongMemEval-V2, sixty memories from thirty-five episodes yield 1,157 paired cells. Authors report a mean within-memory bearing-minus-control binary-reward contrast of +0.33 (95% bootstrap interval [0.21,0.46]). Raw beats tested compression at fixed total context; aggregate direction survives another session and reader. Coding checks detect no benefit.",
+    "limitations": "Constructed pairings, a selected factual-recall subset and sparse harm opportunities limit generalization. Individual labels vary with session/position; retrieval labels cover answer-bearing content, not all useful memories. Cache-defect exclusions affect the fixed-context analysis. Null coding results do not establish equivalence; this is no demonstrated retention or acting-agent improvement.",
+    "review_depth": "full-text",
+    "checked": "2026-11-14"
   }
 ]

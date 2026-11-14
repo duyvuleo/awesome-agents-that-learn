@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-14 — Measuring durable capability and memory utility
+
+- Added complete-source reviews of Continual-ARC, Peer Memory and Task-Conditioned Utility; total 197 research works and 25 systems.
+- Appraised EmbodiedRSI v2 and its newly supplied appendices, preserving the historical v1 gap and remaining protocol/reproducibility limits.
+- Flagged LIFE v3 as pending without changing its historical v2 inspection date or conclusions.
+- Extended two reading routes; retained teacher supervision, measurement uncertainty, source-version and cost-correction boundaries. No experiments reproduced.
+
 ## 2026-11-13 — Context learning, memory-value revision and RSI cost
 
 - Added full-source appraisals of Context Language Models and The RSI Tax; total 194 research works.

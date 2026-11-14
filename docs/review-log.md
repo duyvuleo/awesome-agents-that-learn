@@ -1707,3 +1707,33 @@ Revision outcomes are mixed: carryover reduces calls/checks for one reader but i
 Read all nineteen pages of v1, including the cost-accounting appendix, complete stage totals, note prompt and illustrative traces. The comparison is prequential: replay never replaces an arriving task’s original result. SRN’s reported accuracy is competitive at much lower token volume in the measured settings, but no repeated-run uncertainty establishes equivalence. Seven selected chains and one terminal ordering restrict scope. The strict Meta-Harness deployment rule and rolling EvoSkill frontier are streaming adaptations; their overhead is not an intrinsic property of the original algorithms. Figure labels referring to impact mean subsequent use, not causal influence or accuracy benefit. Unused artifacts and decision-invariant evaluations do not by themselves identify calls that can be removed without changing future search. Cost ratios are computed within settings before averaging; pooled token counts across model tokenizers are neither dollars nor common physical compute. No independent reproduction.
 
 [Inspected v1](https://arxiv.org/pdf/2611.13524v1); first submitted November 10. All nineteen pages, Appendices A–D, four figures, nine tables, accounting equations and the note prompt were read. Key figures and detailed cost tables were visually inspected. An official runnable artifact was not independently established.
+
+## 2026-11-14 — Reuse, utility and a supplied robot supplement
+
+Completed three new full-source appraisals and one revision review, reconciling independent research notes before catalog edits. All results below are author-reported; source review is not reproduction.
+
+### Continual-ARC
+
+Read all substantive text of the 51-page [v2](https://arxiv.org/pdf/2611.14505v2), Appendices A–L and all thirteen figures. Recurring task rules receive fresh instances; paid feedback, matched resets and frozen seen/held-out tests distinguish returning-task reuse from new-task solving. The main stream uses twenty-five rules, eight exposures each and seed zero. Task-bootstrap intervals condition on learned states rather than independent acquisition runs.
+
+The positive weight-learning result uses stronger-teacher DAgger, including guidance and harness-use learning; configuration search overlaps twenty-three held-out tasks. This is not autonomous teacher-free learning or a general memory-versus-weights ranking. Historical import failures, incomplete trajectories/adapters and current guidance changes qualify software comparisons. GLM default-persistence prose and table aggregates remain unreconciled. The [pinned official documentation](https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/paper/README.md) corrects Table 18's API subtotal from $12,406.75 to $13,042.22; neither is total project cost. Apache-2.0 code and separately licensed records were inspected, without execution or a separate software entry.
+
+### Peer Memory
+
+Read the complete 27-page [v1](https://arxiv.org/pdf/2611.09990v1), Appendices A–G, checklist, all five figures and ten tables. Persistent LinUCB peer-selection statistics change consultation under reference-answer feedback. The design reuses one eighty-question slice and twelve paired lineages per model; response counts are not independent task samples. Warm memory increases evidence-holder consultation, while final-F1 intervals retain possible gains and losses. The reassignment interaction also includes zero: no equivalence or general memory-harm conclusion follows.
+
+Pooled hindsight regret uses policy-selected observations rather than counterfactual peer utility. Stable IDs mainly encode evidence access; shuffled state retains partial alignment and role reassignment changes readers too. Answer-only exchange, unadjusted intervals, hosted-serving records and possible benchmark exposure limit transfer. The paper's PALM acceptance is author-reported: the official schedule is TBD and no primary paper record was verified. Public code is explicitly pending; no system or license claim was added.
+
+### Task-Conditioned Utility
+
+Read all eighteen pages of [v1](https://arxiv.org/pdf/2611.03930v1), Supplements S1–S12 and selected key plots/tables. A task-blind writer and frozen reader measure with/without-memory reward differences; costs are a separate ledger. The +0.33 headline is an absolute mean bearing-minus-control reward contrast over sixty memories, not a relative accuracy gain. Constructed answer-bearing labels are a measurement instrument, not a deployable retriever or all useful memories.
+
+Raw outperforms the tested summaries at fixed total context, after disclosed cache-defect exclusions. Individual utility labels change across sessions/positions; sparse harm opportunities and null coding contrasts do not prove safety or equivalence. The study demonstrates neither a learned retention policy nor improved acting agents. Official release documentation extends the frozen dataset snapshot with paper-reported follow-ups but retains scripts/output gaps; the repository-wide code license was not established. No dataset records or research code were downloaded or run.
+
+### EmbodiedRSI v2 and remaining version boundaries
+
+The [November 12 revision](https://arxiv.org/abs/2610.10498v2) now supplies Appendices A–I and Algorithm 1. Read all seventeen pages, eight figures, twelve tables and eleven equations. Its first twelve pages retain the earlier results; this supplies missing methods rather than a new experiment. The November 10 v1 missing-supplement observation remains historical and correct.
+
+The supplement specifies matched-reset episode accounting, the two-Beta outcome model, a 200-episode task-run cap, shared VLA weights and ten independent PPO training seeds. Reward coefficients, the intermediate success estimator and manager architecture remain incomplete. Final-hundred online success is not clearly reconciled with the main disjoint-seed evaluation description. Positive joint gain is not superadditivity, and real-policy fine-tuning precedes zero-shot harness transfer. The author repository still hosts a website, not a verified research implementation. CASS's separate supplement gap remains unresolved.
+
+[LIFE v3](https://arxiv.org/abs/2611.00180v3), revised November 12, was identified at the primary record but not appraised in full. Its catalog annotation and November 9 inspection date still concern v2. SkillOpt's restricted newer final body and other explicitly versioned access/artifact leads also remain pending.

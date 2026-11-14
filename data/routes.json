@@ -253,6 +253,10 @@
         "why": "Separate reference agreement from what visible evidence determines, and test model judges against deterministic controls."
       },
       {
+        "paper": "task-conditioned-memory-utility",
+        "why": "Measure task-conditioned memory effects with paired rewards; inspect screen-defined labels, context controls and measurement stability."
+      },
+      {
         "paper": "experience-faithfulness",
         "why": "Distinguish a stored lesson from causal use of that lesson."
       },
@@ -299,6 +303,10 @@
       {
         "paper": "lifelongagentbench",
         "why": "Inspect inter-task dependencies and the limits of replay."
+      },
+      {
+        "paper": "continual-arc",
+        "why": "Separate returning-task reuse from new-task transfer on fresh instances; account for guided teacher training and conditional uncertainty."
       },
       {
         "paper": "ell-stulife",

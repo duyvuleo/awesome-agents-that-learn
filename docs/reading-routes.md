@@ -167,23 +167,25 @@ What experiment would convince you that an agent learned something useful?
 
 3. **[Correct Answers from Insufficient Histories: A Controlled Study of Agent Memory Evaluation](papers.md#insufficient-histories)** — Separate reference agreement from what visible evidence determines, and test model judges against deterministic controls.
 
-4. **[Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness)** — Distinguish a stored lesson from causal use of that lesson.
+4. **[What Is This Memory Useful For? Measuring Task-Conditioned Utility in Long-Term Agent Memory](papers.md#task-conditioned-memory-utility)** — Measure task-conditioned memory effects with paired rewards; inspect screen-defined labels, context controls and measurement stability.
 
-5. **[Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](papers.md#artifact-to-capability)** — Distinguish changed behavior, legal actions, useful decisions, and preservation when artifacts are combined.
+5. **[Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness)** — Distinguish a stored lesson from causal use of that lesson.
 
-6. **[AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](papers.md#agentstream)** — Compare performance under different task-stream compositions.
+6. **[Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](papers.md#artifact-to-capability)** — Distinguish changed behavior, legal actions, useful decisions, and preservation when artifacts are combined.
 
-7. **[The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](papers.md#rsi-tax)** — Count acquisition and validation overhead alongside serving cost, and distinguish later artifact use from causal benefit.
+7. **[AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](papers.md#agentstream)** — Compare performance under different task-stream compositions.
 
-8. **[GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](papers.md#gdpevo)** — Inspect training/test rule recombination and task-selection effects.
+8. **[The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](papers.md#rsi-tax)** — Count acquisition and validation overhead alongside serving cost, and distinguish later artifact use from causal benefit.
 
-9. **[Phantom Gains: Auditing Self-Improvement Against a Measured Null](papers.md#phantom-gains)** — Measure a frozen null before interpreting per-problem changes.
+9. **[GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](papers.md#gdpevo)** — Inspect training/test rule recombination and task-selection effects.
 
-10. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Include integrity of the learning signal and persistence of bad updates.
+10. **[Phantom Gains: Auditing Self-Improvement Against a Measured Null](papers.md#phantom-gains)** — Measure a frozen null before interpreting per-problem changes.
 
-11. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
+11. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Include integrity of the learning signal and persistence of bad updates.
 
-12. **[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)** — Separate average success, covered tasks, regressions, component interactions and search replication.
+12. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
+
+13. **[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)** — Separate average success, covered tasks, regressions, component interactions and search replication.
 
 
 **Study exercise:** Draft a matched frozen baseline, a held-out family split, a budget ledger, and one intervention that could falsify your preferred mechanism.
@@ -196,29 +198,31 @@ Does learning persist when tasks and environments change?
 
 1. **[LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners](papers.md#lifelongagentbench)** — Inspect inter-task dependencies and the limits of replay.
 
-2. **[A Benchmark for Self-Evolving Agents via Experience-Driven Lifelong Learning](papers.md#ell-stulife)** — Separate a proposed lifelong framework from its evaluated baseline protocol.
+2. **[Continual-ARC: Measuring Skill Acquisition over a Working Lifetime](papers.md#continual-arc)** — Separate returning-task reuse from new-task transfer on fresh instances; account for guided teacher training and conditional uncertainty.
 
-3. **[LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory](papers.md#longmemeval)** — Study updates, temporal reasoning, and abstention in recalled information.
+3. **[A Benchmark for Self-Evolving Agents via Experience-Driven Lifelong Learning](papers.md#ell-stulife)** — Separate a proposed lifelong framework from its evaluated baseline protocol.
 
-4. **[AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](papers.md#agentstream)** — Test whether one domain’s experience helps or interferes with another.
+4. **[LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory](papers.md#longmemeval)** — Study updates, temporal reasoning, and abstention in recalled information.
 
-5. **[Self-Adapting Language Models](papers.md#seal)** — Examine parameter adaptation and forgetting.
+5. **[AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](papers.md#agentstream)** — Test whether one domain’s experience helps or interferes with another.
 
-6. **[Memory Anchors for Continual Robot Learning](papers.md#memory-anchors)** — Connect forgetting to replay selection and conflicting action labels in continual robot learning.
+6. **[Self-Adapting Language Models](papers.md#seal)** — Examine parameter adaptation and forgetting.
 
-7. **[AI models collapse when trained on recursively generated data](papers.md#model-collapse)** — Understand distributional loss under recursive replacement assumptions.
+7. **[Memory Anchors for Continual Robot Learning](papers.md#memory-anchors)** — Connect forgetting to replay selection and conflicting action labels in continual robot learning.
 
-8. **[Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](papers.md#accumulating-data-model-collapse)** — Compare replacement with accumulation, retaining the cost and assumption differences.
+8. **[AI models collapse when trained on recursively generated data](papers.md#model-collapse)** — Understand distributional loss under recursive replacement assumptions.
 
-9. **[Safety in Self-Evolving Agents: A Survey](papers.md#safety-self-evolving-survey)** — Extend retention questions to unsafe influence, repair, and resumed adaptation.
+9. **[Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](papers.md#accumulating-data-model-collapse)** — Compare replacement with accumulation, retaining the cost and assumption differences.
 
-10. **[Are Self-Evolving Agents Continual Learners?](papers.md#self-evolving-continual-learners)** — Test for interference and forgetting when memory, shared prompts, or harness files evolve.
+10. **[Safety in Self-Evolving Agents: A Survey](papers.md#safety-self-evolving-survey)** — Extend retention questions to unsafe influence, repair, and resumed adaptation.
 
-11. **[Can Coding Agents Sustain Continual Evolution without Forgetting?](papers.md#continual-harness-forgetting)** — Compare this small-subset harness study with the preceding held-out stream evaluation; trace conflicts in task-specific checks.
+11. **[Are Self-Evolving Agents Continual Learners?](papers.md#self-evolving-continual-learners)** — Test for interference and forgetting when memory, shared prompts, or harness files evolve.
 
-12. **[MEMOREPAIR: Barrier-First Cascade Repair in Agentic Memory](papers.md#memorepair)** — Trace how a corrected source affects stored descendants and what complete provenance assumes.
+12. **[Can Coding Agents Sustain Continual Evolution without Forgetting?](papers.md#continual-harness-forgetting)** — Compare this small-subset harness study with the preceding held-out stream evaluation; trace conflicts in task-specific checks.
 
-13. **[Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](papers.md#rescopebench)** — Track selective revision after silent environmental changes, separating saved knowledge from completed tasks.
+13. **[MEMOREPAIR: Barrier-First Cascade Repair in Agentic Memory](papers.md#memorepair)** — Trace how a corrected source affects stored descendants and what complete provenance assumes.
+
+14. **[Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](papers.md#rescopebench)** — Track selective revision after silent environmental changes, separating saved knowledge from completed tasks.
 
 
 **Study exercise:** Specify separate measures for factual memory, procedural transfer, backward retention, cost, and safety drift. Do not collapse them into one score.
