@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-16 — Memory value, audited learning and weekly reading
+
+- Added complete-source appraisals of CoReMem and Migration Agent Audit; total 199 research works and 25 systems.
+- Compared LIFE v3 against the fully reviewed v2 and clarified RSI Tax’s aggregation, preserving historical inspections.
+- Published the November 9–15 Top Papers of the Week brief with five dated, source-versioned picks and a generated README/archive preview.
+- Preserved reporting conflicts, unavailable artifacts, incomplete costs and negative-result limits. No research experiments reproduced.
+
 ## 2026-11-14 — Measuring durable capability and memory utility
 
 - Added complete-source reviews of Continual-ARC, Peer Memory and Task-Conditioned Utility; total 197 research works and 25 systems.

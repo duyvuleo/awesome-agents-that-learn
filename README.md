@@ -10,7 +10,7 @@
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/sindresorhus/awesome/blob/main/awesome.md)
 [![Validate catalog](https://github.com/duyvuleo/awesome-agents-that-learn/actions/workflows/validate-and-publish.yml/badge.svg?branch=main)](https://github.com/duyvuleo/awesome-agents-that-learn/actions/workflows/validate-and-publish.yml)
 [![License: CC0 1.0](https://img.shields.io/badge/License-CC0%201.0-315da7?style=flat-square)](LICENSE)
-[![Research works: 197](https://img.shields.io/badge/Research%20works-197-315da7?style=flat-square)](docs/papers.md)
+[![Research works: 199](https://img.shields.io/badge/Research%20works-199-315da7?style=flat-square)](docs/papers.md)
 [![Systems & frameworks: 25](https://img.shields.io/badge/Systems%20%26%20frameworks-25-0f766e?style=flat-square)](docs/systems.md)
 [![Benchmark papers: 17](https://img.shields.io/badge/Benchmark%20papers-17-b45309?style=flat-square)](docs/benchmarks.md)
 
@@ -20,23 +20,23 @@ How do agents turn experience into something useful on the next task? This colle
 
 [Explore the collection](https://duyvuleo.github.io/awesome-agents-that-learn/) · [Start reading](docs/reading-routes.md) · [Browse papers](docs/papers.md) · [Compare systems](docs/systems.md) · [Compare benchmarks](docs/benchmarks.md)
 
-**197 research works** (174 papers, 6 surveys, 17 benchmark papers) · **25 systems and frameworks** · **8 reading routes**
+**199 research works** (176 papers, 6 surveys, 17 benchmark papers) · **25 systems and frameworks** · **8 reading routes**
 
-Source review: **2026-11-14**. For research works, 197 entries include inspection of selected full-text sections and 0 are based on primary abstracts/metadata. Systems are separate project-documentation/source inspections. No linked research code was executed and no published result was independently reproduced for this release.
+Source review: **2026-11-16**. For research works, 199 entries include inspection of selected full-text sections and 0 are based on primary abstracts/metadata. Systems are separate project-documentation/source inspections. No linked research code was executed and no published result was independently reproduced for this release.
 
 ## Top Papers of the Week
 
-**Latest issue: [2026-11-02–2026-11-08](docs/weekly/2026-11-02.md)** — When accumulated experience becomes reliable capability
+**Latest issue: [2026-11-09–2026-11-15](docs/weekly/2026-11-09.md)** — When does experience pay for itself?
 
-Five readings on whether experience survives reuse: measure regressions, revise outdated knowledge, search harnesses, compare memory stores, and target training feedback.
+Trace retained experience through new-task performance, evidence sufficiency and the full cost of learning.
 
 | Paper | Why read it now |
 | --- | --- |
-| [Beneath the Surface](docs/weekly/2026-11-02.md#pick-1) | Read this first for a sharper definition of improvement: a higher average score can coexist with lost capabilities and higher deployment cost. |
-| [ReScopeBench](docs/weekly/2026-11-02.md#pick-2) | This gives the week a longitudinal test: an agent must keep useful experience current after the environment changes without announcing it. |
-| [HarnessFlow](docs/weekly/2026-11-02.md#pick-3) | A useful methods counterpart to the two evaluation picks: it makes executable harness design the object of a bounded search. |
+| [Continual-ARC](docs/weekly/2026-11-09.md#pick-1) | This new benchmark makes a useful distinction between reusing a task rule and becoming better at solving rules absent from the stream. |
+| [RSI Tax](docs/weekly/2026-11-09.md#pick-2) | The new cost audit asks whether an improved executor justifies the expense of acquiring and validating its retained changes. |
+| [CoReMem](docs/weekly/2026-11-09.md#pick-3) | This new method connects measured next-task memory value to how a coding actor learns to use retained experience. |
 
-[Read the issue](docs/weekly/2026-11-02.md) · [Browse the weekly archive](docs/weekly/README.md)
+[Read the issue](docs/weekly/2026-11-09.md) · [Browse the weekly archive](docs/weekly/README.md)
 
 ## Start here
 

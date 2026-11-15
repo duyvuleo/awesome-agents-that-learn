@@ -8,4 +8,5 @@ A weekly reading guide to agents that learn. New papers and substantive updates 
 
 | Covered week (Australia/Sydney) | Published | Issue | Picks |
 | --- | --- | --- | --- |
+| 2026-11-09–2026-11-15 | 2026-11-16 | [When does experience pay for itself?](2026-11-09.md) | 5 |
 | 2026-11-02–2026-11-08 | 2026-11-09 | [When accumulated experience becomes reliable capability](2026-11-02.md) | 5 |

@@ -2621,10 +2621,11 @@
       "https://github.com/AgibotTech/LIFE/blob/a63e763c515136a5090f9fb251f7b72f702ad93a/README.md",
       "https://github.com/AgibotTech/LIFE/blob/a63e763c515136a5090f9fb251f7b72f702ad93a/LICENSE",
       "https://github.com/AgibotTech/LIFE/blob/a63e763c515136a5090f9fb251f7b72f702ad93a/sss_bench/data/LICENSE",
-      "https://arxiv.org/abs/2611.00180v3"
+      "https://arxiv.org/abs/2611.00180v3",
+      "https://arxiv.org/pdf/2611.00180v3"
     ],
     "code_url": "https://github.com/AgibotTech/LIFE",
-    "code_note": "Complete 39-page arXiv v2, Appendices A–D, thirteen figures/eighteen tables and official component documentation read on 2026-11-09. The formerly unavailable repository is now accessible: RoboBeats inference and SSS benchmark/evaluation components were inspected at a63e763c515136a5090f9fb251f7b72f702ad93a. This is not a verified complete robot-memory/EDM release or reproduction. Code is Apache-2.0; benchmark questions/rubrics have a separate CC BY-NC 4.0 license. Nothing installed or executed. A v3 revision dated 2026-11-12 was verified at the primary record on 2026-11-14; its newer body remains pending. Scientific annotations still concern the inspected v2.",
+    "code_note": "Complete 39-page v2 and Appendices A–D appraised on 2026-11-09. On 2026-11-16, compared the complete v3 extraction and reviewed all changed passages, with affected pages visually checked: wording, citations and credits changed; no new numerical or method text was found. Scientific annotations retain the v2 evidence. Artifact/license inspection at a63e763 remains dated November 9: released perception/benchmark components are not the complete memory/EDM system. Nothing installed or executed.",
     "topics": [
       "memory",
       "skills",
@@ -2645,7 +2646,7 @@
     "evaluation": "Full v2 evaluates streaming perception, selective memory writing and a reconstructed 24-hour robot recording with six questions repeated three times. ReSight supplies the capability-expansion experiments, including separate held-out episodes. Matched-condition gains coexist with protocol-sensitive comparisons and accuracy–cost tradeoffs.",
     "limitations": "The integrated experiment is offline replay of one day, without actions changing future observations. Partial-credit answer scores are not physical task success; input and turn protocols differ across configurations. ReSight results are reused evidence, and online token savings exclude construction and training. Some gating/review settings reduce accuracy; writer, reader and judge dependence limits attribution. Retention exemptions mean the nominal per-view budget is not a global storage bound.",
     "review_depth": "full-text",
-    "checked": "2026-11-09",
+    "checked": "2026-11-16",
     "short_name": "LIFE"
   },
   {
@@ -7106,7 +7107,7 @@
     "persistence": "across-tasks",
     "learning_signal": "Completed-task trajectories and scalar verifier outcomes guide note, skill or harness updates around frozen backbones; ReasoningBank uses its separate internal trajectory judge.",
     "mechanism": "Scores each arriving task before its feedback can update retained state, and separates task-execution tokens from verification, exploration and writing tokens. A bounded-note baseline revises up to 2,048 tokens from failed-task excerpts every four tasks without candidate search. State resets between repository chains; terminal tasks retain it across one ordered stream.",
-    "evaluation": "Complete v1 compares six methods and two backbones on seven selected fifteen-task repository chains and 89 terminal tasks. The note baseline matches or exceeds the observed accuracy of three search-heavy methods in all four settings, with 65.6–71.0% mean within-setting token savings. Verification contributes 74.8–93.6% of their pooled update tokens.",
+    "evaluation": "Complete v1 compares six methods and two backbones on seven selected fifteen-task repository chains and 89 terminal tasks. The note baseline matches or exceeds the observed accuracy of three search-heavy methods in all four settings, with mean total-token savings of 65.6–71.0% across the three comparisons, each averaging four within-setting ratios. Verification contributes 74.8–93.6% of their pooled update tokens.",
     "limitations": "Fixed streams and no independent-run uncertainty limit comparative generalization. Meta-Harness uses an adapted strict-improvement selector and EvoSkill refreshes a rolling frontier, so some overhead reflects these implementations. Feedback use also differs. Tokens, including cached input, are not dollars or FLOPs. Subsequent use is not causal benefit, and finite-horizon non-use does not prove removable waste; the study does not test a learned cost-aware update policy.",
     "review_depth": "full-text",
     "checked": "2026-11-13"
@@ -7228,5 +7229,78 @@
     "limitations": "Constructed pairings, a selected factual-recall subset and sparse harm opportunities limit generalization. Individual labels vary with session/position; retrieval labels cover answer-bearing content, not all useful memories. Cache-defect exclusions affect the fixed-context analysis. Null coding results do not establish equivalence; this is no demonstrated retention or acting-agent improvement.",
     "review_depth": "full-text",
     "checked": "2026-11-14"
+  },
+  {
+    "id": "coremem",
+    "short_name": "CoReMem",
+    "title": "CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation",
+    "date": "2026-11-12",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.17316",
+    "sources": [
+      "https://arxiv.org/abs/2611.17316",
+      "https://arxiv.org/pdf/2611.17316v1",
+      "https://arxiv.org/html/2611.17316v1",
+      "https://anonymous.4open.science/r/CoReMem-F728/"
+    ],
+    "code_url": "https://anonymous.4open.science/r/CoReMem-F728/",
+    "code_note": "Complete 26-page arXiv v1, Appendices A-N, Algorithm 1 and Proposition 1 proof read on 2026-11-16; all eleven figures, nine tables and nine numbered equations visually inspected. The paper-linked anonymous artifact returned HTTP 403 through direct retrieval and was inaccessible through web retrieval. Its files, license, requirements and relationship to the reported runs remain unverified. No research code, models, datasets, training or paid API calls executed.",
+    "topics": [
+      "memory",
+      "model-training",
+      "evaluation",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "model-weights"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Offline paired next-task replays guide the memory format; hidden executable-test outcomes, partial test progress and successful-session step counts train actor adapters. The writer uses source-task observations before the next task is issued, with hidden-test verdicts excluded from memory.",
+    "mechanism": "Writes a compact note of repository locations and executable checks while carrying the edited repository between tasks. Offline segment interventions inform the note format. LoRA actor training compares own, absent and cross-repository memories, adding measured memory-value credit at first eligible anchor appearances, including reasoning mentions, absent from current history and early memory-free rollouts.",
+    "evaluation": "Authors split ChainSWE into 52 training chains with 97 boundaries and 48 test chains with 96 boundaries. Memory-only tests cover six actors and post-training covers three. On the 27B actor, the full method raises resolve rate from 21.0% to 25.7%, with 17% fewer assistant steps and 11% fewer total cache-aware inference tokens, including memory-module calls.",
+    "limitations": "Uneven replays and chain bootstrap intervals do not estimate independent training-run variation. String provenance is not causal step utility, and the population proof does not guarantee preserved success. Some efficiency ratios and external-evaluation descriptions remain unreconciled with tables. Inference savings exclude design and training costs, latency and energy. The anonymous artifact was inaccessible; results were not reproduced.",
+    "review_depth": "full-text",
+    "checked": "2026-11-16"
+  },
+  {
+    "id": "self-learning-migration-audit",
+    "title": "Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration",
+    "date": "2026-11-12",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.16143",
+    "sources": [
+      "https://arxiv.org/abs/2611.16143",
+      "https://arxiv.org/pdf/2611.16143v1"
+    ],
+    "code_url": null,
+    "code_note": "Complete seventeen-page v1 substantive text, all fifteen figures and twenty-five tables reviewed on 2026-11-16; metadata lists sixteen pages. No public study-specific repository was established. Study 1/2 artifacts are offered on request, while the Study 3 harness/corpus and Study 4 code are internal. No research code, models, datasets, migration environment or paid calls executed.",
+    "topics": [
+      "memory",
+      "continual-learning",
+      "evaluation",
+      "workflows",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "workflows"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Documentation studies use static dialect and reference-conformity checks to label generated experiences and reward a strategy ranker. A separate lab study uses Oracle outputs/errors and human-gated prompt or harness fixes; these are different evidence sources.",
+    "mechanism": "Stores generated migration attempts with provenance and evidence grades, retrieves positive or counter-examples, and updates strategy selection while keeping the base LLM fixed. An audit tests apparent cross-task improvement against static retrieval, fixed-policy memory and model-free copying, then removes shared-target paths through reference-grouped splitting.",
+    "evaluation": "Four author studies cover 1,833 documentation-derived pairs, original 367-unit and repaired 374-unit panels, an execution-judged 216-224-unit lab corpus, and correction retrieval in 12-1,200-entry stores. On the repaired split's 118 target groups, memory adds 0.005 RC [-0.003, 0.017] and adaptive policy yields identical outputs to fixed policy. The lab reports gains from human-gated fixes and exposes acceptance, silence and judge-instability artifacts.",
+    "limitations": "Documentation references are topical examples, not validated translations; no pair was human-reviewed. The original split shares targets, and unit-weighted gains concentrate in one large group. The repaired run admits no rule or verified experience; specification and dependency components remain untested. One run/model, incomplete cost accounting and nonpublic lab artifacts limit generalization. Retrieval-margin shrinkage on synthetic fillers is not a measured accuracy decline.",
+    "review_depth": "full-text",
+    "checked": "2026-11-16",
+    "short_name": "Migration Agent Audit"
   }
 ]

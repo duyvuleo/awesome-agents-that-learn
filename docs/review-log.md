@@ -1737,3 +1737,31 @@ The [November 12 revision](https://arxiv.org/abs/2610.10498v2) now supplies Appe
 The supplement specifies matched-reset episode accounting, the two-Beta outcome model, a 200-episode task-run cap, shared VLA weights and ten independent PPO training seeds. Reward coefficients, the intermediate success estimator and manager architecture remain incomplete. Final-hundred online success is not clearly reconciled with the main disjoint-seed evaluation description. Positive joint gain is not superadditivity, and real-policy fine-tuning precedes zero-shot harness transfer. The author repository still hosts a website, not a verified research implementation. CASS's separate supplement gap remains unresolved.
 
 [LIFE v3](https://arxiv.org/abs/2611.00180v3), revised November 12, was identified at the primary record but not appraised in full. Its catalog annotation and November 9 inspection date still concern v2. SkillOpt's restricted newer final body and other explicitly versioned access/artifact leads also remain pending.
+
+## 2026-11-16 — Prospective memory value, learning audits and the weekly brief
+
+### CoReMem
+
+Completed all twenty-six pages of [v1](https://arxiv.org/pdf/2611.17316v1), Appendices A–N, eleven figures, nine tables, Algorithm 1 and the complete Proposition 1 proof. Offline next-task interventions inform a fixed compact writer; memory-only deployment is separate from actor adapter training. The main 27B comparison combines both: 21.0% to 25.7% resolution, 35.1 to 29.2 assistant steps and 32.2K to 28.5K writer-inclusive cache-aware inference tokens. Memory-only uses 32.4K tokens, so the trained result is not attributable to retaining a note alone.
+
+The step gate matches string provenance, including reasoning mentions, rather than measuring causal step utility. The population identity assumes fixed distributions/gates and does not guarantee preserved success or optimal total cost. Uneven replays and chain-bootstrap intervals do not estimate training-seed variation; acquisition, design and training costs are outside inference savings.
+
+Some reporting remains unreconciled. Table 1's 9B resolution/token ratios do not follow directly from its printed means under the stated metric; an underlying aggregation explanation is unavailable. The 41% average efficiency headline is therefore not certified here. Appendix E describes an inherited-tree external protocol, while Table 5 describes independent checkouts and adapted instructions after initial runs. OpenHands improves the reported success/token ratio while using more steps and tokens. These are bounded results, not universal memory savings. The official paper-linked anonymous artifact returned HTTP 403; files, license, requirements and paper-version equivalence remain unverified. No implementation or models were executed.
+
+### Migration Agent Audit
+
+Completed all seventeen PDF pages of [v1](https://arxiv.org/pdf/2611.16143v1), all fifteen figures and twenty-five tables; the primary record lists sixteen pages. Four studies use different evidence and must remain separate. Documentation-derived source/reference pairs are topical examples, not human-validated translations or Oracle-grounded correctness labels. The original held-out panel shares many targets with training despite source/pair checks. A target-grouped rerun removes the detected ID/text path, while topical families still overlap.
+
+On 374 rerun units in 118 target groups, the equal-group memory contrast is 0.005 [-0.003,0.017] reference-conformity units. Adaptive and fixed-policy systems produce identical outputs. Fixed policy is not fixed memory: retrieved counter-examples still change, while no experience becomes verified and no rule is admitted. The full specification/dependency architecture was not operationally tested. This is no demonstrated robust gain in this setting, not proof that memory agents cannot learn.
+
+Separate execution studies report useful human-gated prompt/harness engineering over an evolving corpus, not autonomous learning or execution validation of the documentation pairs. Synthetic-fill retrieval margin shrinkage is not a measured accuracy decline. Costs are incomplete; study artifacts are on-request or internal, with no public code license/environment established. Source review is not reproduction.
+
+### LIFE revision comparison
+
+Compared the complete thirty-nine-page [v3](https://arxiv.org/pdf/2611.00180v3) extraction against the v2 appraised November 9. Reviewed all changed passages and visually inspected the affected cover, methods and contributor pages. Changes concern wording, related-work citations, team/project presentation and credits; no new numerical or method text was found. This is a version comparison, not a fresh independent rereading of unchanged text or a claim of pixel-identical figures. Scientific annotations retain their v2 evidence and limitations. The earlier artifact/license inspection remains dated November 9.
+
+### Weekly selection
+
+The [November 9–15 edition](weekly/2026-11-09.md), published November 16, connects Continual-ARC, RSI Tax, CoReMem, Migration Agent Audit and Insufficient Histories through transfer, evidence sufficiency and full acquisition cost. All five have verified first-release events within the Sydney week; inspection dates were not substituted. Citation/source snapshots and the preceding edition remain separate from later catalog edits. The five papers concern different tasks and budgets and are suggested reading order, not a common performance ranking.
+
+Editorial cross-review also clarified RSI Tax’s cost aggregation: 65.6–71.0% are three method-specific means, each equally averaging four within-setting ratios. The catalog wording now states this explicitly; its November 13 source-inspection date and original results remain historical. CoReMem’s gate is described as anchor appearance, including reasoning mentions, rather than verified execution.

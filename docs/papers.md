@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-197 unique works. Catalog updated: 2026-11-14; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+199 unique works. Catalog updated: 2026-11-16; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -13,6 +13,8 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-12 | **Migration Agent Audit**<br>[Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](https://arxiv.org/abs/2611.16143) | Stores generated migration attempts with provenance and evidence grades, retrieves positive or counter-examples, and updates strategy selection while keeping the base… | Memory, Workflows | preprint · full-text | [Notes](#self-learning-migration-audit) |
+| 2026-11-12 | **CoReMem**<br>[CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](https://arxiv.org/abs/2611.17316) | Writes a compact note of repository locations and executable checks while carrying the edited repository between tasks. Offline segment interventions inform the note… | Memory, Model weights | preprint · full-text | [Notes](#coremem) · [Code](https://anonymous.4open.science/r/CoReMem-F728/) |
 | 2026-11-10 | **RSI Tax**<br>[The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](https://arxiv.org/abs/2611.13524) | Scores each arriving task before its feedback can update retained state, and separates task-execution tokens from verification, exploration and writing tokens. A… | Memory, Skills, Agent code | preprint · full-text | [Notes](#rsi-tax) |
 | 2026-11-10 | **Continual-ARC**<br>[Continual-ARC: Measuring Skill Acquisition over a Working Lifetime](https://arxiv.org/abs/2611.14505) | Serves recurring, aliased ARC tasks with fresh inputs and dormant gaps, allowing external state or weight updates between rounds. Frozen seen-task and held-out tests… | Memory, Skills, Model weights | preprint · full-text | [Notes](#continual-arc) · [Code](https://github.com/unifyai/continual-arc) |
 | 2026-11-09 | **Insufficient Histories**<br>[Correct Answers from Insufficient Histories: A Controlled Study of Agent Memory Evaluation](https://arxiv.org/abs/2611.11840) | Separates hidden-reference agreement from evidence sufficiency and appropriate answering. Legal histories with identical visible bytes but different answers certify… | Analysis / no retained update | preprint · full-text | [Notes](#insufficient-histories) |
@@ -213,6 +215,50 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 ## Full annotations
 
+<a id="self-learning-migration-audit"></a>
+
+## Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration
+
+**2026-11-12 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.16143)
+
+**Mechanism.** Stores generated migration attempts with provenance and evidence grades, retrieves positive or counter-examples, and updates strategy selection while keeping the base LLM fixed. An audit tests apparent cross-task improvement against static retrieval, fixed-policy memory and model-free copying, then removes shared-target paths through reference-grouped splitting.
+
+**What changes:** Memory, Workflows. **Persistence:** across-tasks. **Learning signal:** Documentation studies use static dialect and reference-conformity checks to label generated experiences and reward a strategy ranker. A separate lab study uses Oracle outputs/errors and human-gated prompt or harness fixes; these are different evidence sources.
+
+**Evaluation.** Four author studies cover 1,833 documentation-derived pairs, original 367-unit and repaired 374-unit panels, an execution-judged 216-224-unit lab corpus, and correction retrieval in 12-1,200-entry stores. On the repaired split's 118 target groups, memory adds 0.005 RC [-0.003, 0.017] and adaptive policy yields identical outputs to fixed policy. The lab reports gains from human-gated fixes and exposes acceptance, silence and judge-instability artifacts.
+
+**Boundary.** Documentation references are topical examples, not validated translations; no pair was human-reviewed. The original split shares targets, and unit-weighted gains concentrate in one large group. The repaired run admits no rule or verified experience; specification and dependency components remain untested. One run/model, incomplete cost accounting and nonpublic lab artifacts limit generalization. Retrieval-margin shrinkage on synthetic fillers is not a measured accuracy decline.
+
+**Code / data.** Complete seventeen-page v1 substantive text, all fifteen figures and twenty-five tables reviewed on 2026-11-16; metadata lists sixteen pages. No public study-specific repository was established. Study 1/2 artifacts are offered on request, while the Study 3 harness/corpus and Study 4 code are internal. No research code, models, datasets, migration environment or paid calls executed.
+
+**Topics:** memory, continual-learning, evaluation, workflows, applications. **Reviewed:** full-text · 2026-11-16.
+
+[Source 1](https://arxiv.org/abs/2611.16143) · [Source 2](https://arxiv.org/pdf/2611.16143v1)
+
+<a id="coremem"></a>
+
+## CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation
+
+**2026-11-12 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.17316)
+
+**Mechanism.** Writes a compact note of repository locations and executable checks while carrying the edited repository between tasks. Offline segment interventions inform the note format. LoRA actor training compares own, absent and cross-repository memories, adding measured memory-value credit at first eligible anchor appearances, including reasoning mentions, absent from current history and early memory-free rollouts.
+
+**What changes:** Memory, Model weights. **Persistence:** across-tasks. **Learning signal:** Offline paired next-task replays guide the memory format; hidden executable-test outcomes, partial test progress and successful-session step counts train actor adapters. The writer uses source-task observations before the next task is issued, with hidden-test verdicts excluded from memory.
+
+**Evaluation.** Authors split ChainSWE into 52 training chains with 97 boundaries and 48 test chains with 96 boundaries. Memory-only tests cover six actors and post-training covers three. On the 27B actor, the full method raises resolve rate from 21.0% to 25.7%, with 17% fewer assistant steps and 11% fewer total cache-aware inference tokens, including memory-module calls.
+
+**Boundary.** Uneven replays and chain bootstrap intervals do not estimate independent training-run variation. String provenance is not causal step utility, and the population proof does not guarantee preserved success. Some efficiency ratios and external-evaluation descriptions remain unreconciled with tables. Inference savings exclude design and training costs, latency and energy. The anonymous artifact was inaccessible; results were not reproduced.
+
+**Code / data.** [Official artifact](https://anonymous.4open.science/r/CoReMem-F728/) — Complete 26-page arXiv v1, Appendices A-N, Algorithm 1 and Proposition 1 proof read on 2026-11-16; all eleven figures, nine tables and nine numbered equations visually inspected. The paper-linked anonymous artifact returned HTTP 403 through direct retrieval and was inaccessible through web retrieval. Its files, license, requirements and relationship to the reported runs remain unverified. No research code, models, datasets, training or paid API calls executed.
+
+**Topics:** memory, model-training, evaluation, applications. **Reviewed:** full-text · 2026-11-16.
+
+[Source 1](https://arxiv.org/abs/2611.17316) · [Source 2](https://arxiv.org/pdf/2611.17316v1) · [Source 3](https://arxiv.org/html/2611.17316v1) · [Source 4](https://anonymous.4open.science/r/CoReMem-F728/)
+
 <a id="rsi-tax"></a>
 
 ## The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost
@@ -225,7 +271,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 **What changes:** Memory, Skills, Agent code. **Persistence:** across-tasks. **Learning signal:** Completed-task trajectories and scalar verifier outcomes guide note, skill or harness updates around frozen backbones; ReasoningBank uses its separate internal trajectory judge.
 
-**Evaluation.** Complete v1 compares six methods and two backbones on seven selected fifteen-task repository chains and 89 terminal tasks. The note baseline matches or exceeds the observed accuracy of three search-heavy methods in all four settings, with 65.6–71.0% mean within-setting token savings. Verification contributes 74.8–93.6% of their pooled update tokens.
+**Evaluation.** Complete v1 compares six methods and two backbones on seven selected fifteen-task repository chains and 89 terminal tasks. The note baseline matches or exceeds the observed accuracy of three search-heavy methods in all four settings, with mean total-token savings of 65.6–71.0% across the three comparisons, each averaging four within-setting ratios. Verification contributes 74.8–93.6% of their pooled update tokens.
 
 **Boundary.** Fixed streams and no independent-run uncertainty limit comparative generalization. Meta-Harness uses an adapted strict-improvement selector and EvoSkill refreshes a rolling frontier, so some overhead reflects these implementations. Feedback use also differs. Tokens, including cached input, are not dollars or FLOPs. Subsequent use is not causal benefit, and finite-horizon non-use does not prove removable waste; the study does not test a learned cost-aware update policy.
 
@@ -625,11 +671,11 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 **Boundary.** The integrated experiment is offline replay of one day, without actions changing future observations. Partial-credit answer scores are not physical task success; input and turn protocols differ across configurations. ReSight results are reused evidence, and online token savings exclude construction and training. Some gating/review settings reduce accuracy; writer, reader and judge dependence limits attribution. Retention exemptions mean the nominal per-view budget is not a global storage bound.
 
-**Code / data.** [Official artifact](https://github.com/AgibotTech/LIFE) — Complete 39-page arXiv v2, Appendices A–D, thirteen figures/eighteen tables and official component documentation read on 2026-11-09. The formerly unavailable repository is now accessible: RoboBeats inference and SSS benchmark/evaluation components were inspected at a63e763c515136a5090f9fb251f7b72f702ad93a. This is not a verified complete robot-memory/EDM release or reproduction. Code is Apache-2.0; benchmark questions/rubrics have a separate CC BY-NC 4.0 license. Nothing installed or executed. A v3 revision dated 2026-11-12 was verified at the primary record on 2026-11-14; its newer body remains pending. Scientific annotations still concern the inspected v2.
+**Code / data.** [Official artifact](https://github.com/AgibotTech/LIFE) — Complete 39-page v2 and Appendices A–D appraised on 2026-11-09. On 2026-11-16, compared the complete v3 extraction and reviewed all changed passages, with affected pages visually checked: wording, citations and credits changed; no new numerical or method text was found. Scientific annotations retain the v2 evidence. Artifact/license inspection at a63e763 remains dated November 9: released perception/benchmark components are not the complete memory/EDM system. Nothing installed or executed.
 
-**Topics:** memory, skills, tools, continual-learning, applications. **Reviewed:** full-text · 2026-11-09.
+**Topics:** memory, skills, tools, continual-learning, applications. **Reviewed:** full-text · 2026-11-16.
 
-[Source 1](https://arxiv.org/abs/2611.00180) · [Source 2](https://arxiv.org/html/2611.00180v1) · [Source 3](https://arxiv.org/abs/2610.33487) · [Source 4](https://arxiv.org/pdf/2611.00180v2) · [Source 5](https://github.com/AgibotTech/LIFE) · [Source 6](https://github.com/AgibotTech/LIFE/blob/a63e763c515136a5090f9fb251f7b72f702ad93a/README.md) · [Source 7](https://github.com/AgibotTech/LIFE/blob/a63e763c515136a5090f9fb251f7b72f702ad93a/LICENSE) · [Source 8](https://github.com/AgibotTech/LIFE/blob/a63e763c515136a5090f9fb251f7b72f702ad93a/sss_bench/data/LICENSE) · [Source 9](https://arxiv.org/abs/2611.00180v3)
+[Source 1](https://arxiv.org/abs/2611.00180) · [Source 2](https://arxiv.org/html/2611.00180v1) · [Source 3](https://arxiv.org/abs/2610.33487) · [Source 4](https://arxiv.org/pdf/2611.00180v2) · [Source 5](https://github.com/AgibotTech/LIFE) · [Source 6](https://github.com/AgibotTech/LIFE/blob/a63e763c515136a5090f9fb251f7b72f702ad93a/README.md) · [Source 7](https://github.com/AgibotTech/LIFE/blob/a63e763c515136a5090f9fb251f7b72f702ad93a/LICENSE) · [Source 8](https://github.com/AgibotTech/LIFE/blob/a63e763c515136a5090f9fb251f7b72f702ad93a/sss_bench/data/LICENSE) · [Source 9](https://arxiv.org/abs/2611.00180v3) · [Source 10](https://arxiv.org/pdf/2611.00180v3)
 
 <a id="exo-runtime"></a>
 

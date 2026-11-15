@@ -52,7 +52,9 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="memory"></a>
 
-## Memory and experience (89)
+## Memory and experience (91)
+- 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit) · core · preprint
+- 2026-11-12 — [CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](papers.md#coremem) · core · preprint
 - 2026-11-10 — [Continual-ARC: Measuring Skill Acquisition over a Working Lifetime](papers.md#continual-arc) · core · preprint
 - 2026-11-09 — [Correct Answers from Insufficient Histories: A Controlled Study of Agent Memory Evaluation](papers.md#insufficient-histories) · core · preprint
 - 2026-11-03 — [Route to Remember: Adaptive Memory Selection for LLM Agents](papers.md#route-to-remember) · core · preprint
@@ -262,7 +264,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="workflows"></a>
 
-## Workflow improvement (30)
+## Workflow improvement (31)
+- 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit) · core · preprint
 - 2026-11-05 — [Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution) · core · preprint
 - 2026-11-04 — [HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](papers.md#harnessflow) · core · preprint
 - 2026-11-03 — [Meta$^2$: Precomputing Reusable Knowledge for Online Harness Evolution in Long-Horizon Agents](papers.md#meta-square) · core · preprint
@@ -351,7 +354,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="model-training"></a>
 
-## Learning in model weights (67)
+## Learning in model weights (68)
+- 2026-11-12 — [CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](papers.md#coremem) · core · preprint
 - 2026-11-10 — [Continual-ARC: Measuring Skill Acquisition over a Working Lifetime](papers.md#continual-arc) · core · preprint
 - 2026-11-03 — [Stabilizing On-Policy Targeted Guidance in Agentic Reinforcement Learning](papers.md#targeted-guidance) · core · preprint
 - 2026-11-03 — [Route to Remember: Adaptive Memory Selection for LLM Agents](papers.md#route-to-remember) · core · preprint
@@ -449,7 +453,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="continual-learning"></a>
 
-## Continual and lifelong learning (52)
+## Continual and lifelong learning (53)
+- 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit) · core · preprint
 - 2026-11-10 — [The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](papers.md#rsi-tax) · core · preprint
 - 2026-11-10 — [Continual-ARC: Measuring Skill Acquisition over a Working Lifetime](papers.md#continual-arc) · core · preprint
 - 2026-11-03 — [Route to Remember: Adaptive Memory Selection for LLM Agents](papers.md#route-to-remember) · core · preprint
@@ -537,7 +542,9 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="evaluation"></a>
 
-## Evaluation and negative results (113)
+## Evaluation and negative results (115)
+- 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit) · core · preprint
+- 2026-11-12 — [CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](papers.md#coremem) · core · preprint
 - 2026-11-10 — [The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](papers.md#rsi-tax) · core · preprint
 - 2026-11-10 — [Continual-ARC: Measuring Skill Acquisition over a Working Lifetime](papers.md#continual-arc) · core · preprint
 - 2026-11-09 — [Correct Answers from Insufficient Histories: A Controlled Study of Agent Memory Evaluation](papers.md#insufficient-histories) · core · preprint
@@ -676,7 +683,9 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="applications"></a>
 
-## Applied learning agents (50)
+## Applied learning agents (52)
+- 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit) · core · preprint
+- 2026-11-12 — [CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](papers.md#coremem) · core · preprint
 - 2026-11-03 — [Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](papers.md#rescopebench) · core · preprint
 - 2026-11-03 — [From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?](papers.md#continual-autoresearch) · core · preprint
 - 2026-11-03 — [Can Benign Skills Induce Misaligned Behavior in LLM Agents?](papers.md#benign-skill-misalignment) · core · preprint

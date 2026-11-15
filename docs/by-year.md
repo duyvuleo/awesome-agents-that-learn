@@ -3,6 +3,8 @@
 # Papers by year
 [Overview](../README.md) · [Full annotations](papers.md)
 ## 2026
+- 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit)
+- 2026-11-12 — [CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](papers.md#coremem)
 - 2026-11-10 — [The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](papers.md#rsi-tax)
 - 2026-11-10 — [Continual-ARC: Measuring Skill Acquisition over a Working Lifetime](papers.md#continual-arc)
 - 2026-11-09 — [Correct Answers from Insufficient Histories: A Controlled Study of Agent Memory Evaluation](papers.md#insufficient-histories)

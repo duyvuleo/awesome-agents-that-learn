@@ -4,7 +4,11 @@
 
 The report records public HTTP requests for catalog and weekly-edition sources and, for canonical arXiv abstract URLs, comparison of the page's citation title with the catalog title. It includes final redirect URLs and access failures. The scientific annotations were reviewed separately; HTTP success is not a scientific verification or a runnable-code check.
 
-Latest paper-and-systems pass (2026-11-14): **955 source URLs checked; 938 reachable, 15 restricted/transient responses and two inconclusive timeouts**. No 404/410 responses or title-review flags were recorded; 181 canonical arXiv titles matched. All twenty-six newly added source URLs and all weekly-edition sources were reachable. The fifteen restrictions match the preceding OpenReview/Nature access gates; no controls were bypassed.
+Latest paper-and-systems pass (2026-11-16): **962 source URLs checked; 946 reachable and sixteen restricted/transient responses**. No inconclusive requests, 404/410 responses or title-review flags were recorded; 183 canonical arXiv titles matched. Six of seven new URLs were reachable. CoReMem's paper-linked anonymous artifact returned HTTP 403, matching separate direct/web failures. Its files, license, requirements and paper-version relationship remain unverified; this is inconclusive access, not proof of absence.
+
+All weekly-edition sources were reachable. The prior fifteen restrictions match the existing OpenReview/Nature gates; no controls were bypassed. Both PMLR mirrors that timed out on November 14 were reachable. The UTC report timestamp falls on November 16 in Sydney. Reachability does not establish scientific correctness, artifact completeness or reproduction.
+
+Previous paper-and-systems pass (2026-11-14): **955 source URLs checked; 938 reachable, 15 restricted/transient responses and two inconclusive timeouts**. No 404/410 responses or title-review flags were recorded; 181 canonical arXiv titles matched. All twenty-six newly added source URLs and all weekly-edition sources were reachable. The fifteen restrictions match the preceding OpenReview/Nature access gates; no controls were bypassed.
 
 The two automated timeouts concern unchanged public PMLR PDF mirrors. Individual follow-up requests returned HTTP 200 and PDF signatures for both; the machine report preserves the earlier timeout observations. Peer Memory's reachable workshop home/group does not supply a verified acceptance record: the schedule remains TBD and the group content was loading-only. Its acceptance remains author-reported.
 

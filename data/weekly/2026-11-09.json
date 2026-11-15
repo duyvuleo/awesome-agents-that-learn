@@ -1,0 +1,203 @@
+{
+  "week_start": "2026-11-09",
+  "week_end": "2026-11-15",
+  "published_on": "2026-11-16",
+  "title": "When does experience pay for itself?",
+  "takeaway": "Trace retained experience through new-task performance, evidence sufficiency and the full cost of learning.",
+  "introduction": "This week sharpens the tests behind a claim that an agent learns. A reusable artifact must help on the right future task, preserve the evidence needed for its decisions, and justify its acquisition cost. The selected studies examine different links in that chain: recurring-rule transfer, improvement overhead, prospective memory value, an audited negative outcome and evidence-sufficient answering. The connecting lesson is methodological: measure the effect of retained state alongside how it was acquired, what it exposes and what it costs.",
+  "picks": [
+    {
+      "paper_id": "continual-arc",
+      "why_now": "This new benchmark makes a useful distinction between reusing a task rule and becoming better at solving rules absent from the stream.",
+      "problem": "A single encounter cannot show whether a retained artifact will help when the same task returns with a different input.",
+      "mechanism": "Recurring ARC rules receive fresh instances, stable aliases and paid feedback. Frozen tests compare retained state with matched resets on rules seen and absent from the stream.",
+      "evidence": "Guidance helps some harnesses reuse returning-task solutions; stronger-teacher DAgger reports held-out savings. The main stream has twenty-five rules and eight exposures each.",
+      "limitation": "One schedule and conditional task-bootstrap intervals limit generalization. Guided teacher supervision, twenty-three overlapping tuning/test tasks, historical import failures and unreconciled GLM aggregates qualify the comparison; feedback savings do not equal total compute savings.",
+      "citation": {
+        "title": "Continual-ARC: Measuring Skill Acquisition over a Working Lifetime",
+        "short_name": "Continual-ARC",
+        "date": "2026-11-10",
+        "status": "preprint",
+        "url": "https://arxiv.org/abs/2611.14505",
+        "review_depth": "full-text",
+        "checked": "2026-11-14",
+        "reviewed_sources": [
+          {
+            "url": "https://arxiv.org/pdf/2611.14505v2",
+            "version": "arXiv v2",
+            "sections": "Complete main text and Appendices A–L; all thirteen figures; protocol, teacher training, held-out overlap and artifact-version limits."
+          },
+          {
+            "url": "https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/paper/README.md",
+            "version": "Repository b7886cf",
+            "sections": "Paper-version provenance and Table 18 cost correction."
+          }
+        ]
+      },
+      "event": {
+        "kind": "new",
+        "date": "2026-11-11",
+        "occurred_at": "2026-11-10T18:55:01Z",
+        "source": "https://arxiv.org/abs/2611.14505"
+      },
+      "connections": [
+        {
+          "paper_id": "lifelongagentbench",
+          "short_name": "LifelongAgentBench",
+          "why": "Compare different ways of constructing a stream whose earlier experience may matter."
+        }
+      ]
+    },
+    {
+      "paper_id": "rsi-tax",
+      "why_now": "The new cost audit asks whether an improved executor justifies the expense of acquiring and validating its retained changes.",
+      "problem": "Reporting task-execution tokens alone can conceal expensive proposal search, repeated verification and memory writing.",
+      "mechanism": "Each task is scored before feedback updates future state. A token ledger separates execution from verification, exploration and writing; a bounded-note baseline avoids candidate search.",
+      "evidence": "Across six methods and two backbones, notes match or exceed three search-heavy methods’ observed accuracy. Mean token savings are 65.6–71.0% depending on comparison method, equally averaging four within-setting ratios. Evaluation covers seven selected repository chains and eighty-nine terminal tasks.",
+      "limitation": "Fixed streams lack independent-run uncertainty. Streaming adaptations and feedback rules differ; tokens are not dollars or FLOPs. Later artifact use is not causal benefit, and finite-horizon non-use does not prove that its acquisition cost could safely be removed. Public code/run-log availability remains unverified.",
+      "citation": {
+        "title": "The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost",
+        "short_name": "RSI Tax",
+        "date": "2026-11-10",
+        "status": "preprint",
+        "url": "https://arxiv.org/abs/2611.13524",
+        "review_depth": "full-text",
+        "checked": "2026-11-13",
+        "reviewed_sources": [
+          {
+            "url": "https://arxiv.org/pdf/2611.13524v1",
+            "version": "arXiv v1",
+            "sections": "Complete nineteen pages, Sections 1–7 and Appendices A–D; cost definitions, all result tables, baseline adaptations and note prompt."
+          }
+        ]
+      },
+      "event": {
+        "kind": "new",
+        "date": "2026-11-10",
+        "occurred_at": "2026-11-10T03:48:55Z",
+        "source": "https://arxiv.org/abs/2611.13524"
+      },
+      "connections": [
+        {
+          "paper_id": "meta-harness",
+          "short_name": "Meta-Harness",
+          "why": "Read the original harness-search approach before interpreting the audited streaming adaptation."
+        }
+      ]
+    },
+    {
+      "paper_id": "coremem",
+      "why_now": "This new method connects measured next-task memory value to how a coding actor learns to use retained experience.",
+      "problem": "A compact note can save actor effort yet cost more to write and read than it returns.",
+      "mechanism": "Offline paired replays inform a fixed note-writing format of repository locations and checks. Actor adapters learn from with-memory and memory-free rollouts; string-provenance gates focus added credit on first eligible anchor appearances, including reasoning mentions.",
+      "evidence": "The 27B full method raises resolution from 21.0% to 25.7%, with 17% fewer steps and 11% fewer cache-aware inference tokens, including memory-module calls.",
+      "limitation": "This combines memory and actor training. Replay intervals omit training-run variation; provenance is not causal step utility. Ratio-accounting and external-protocol conflicts remain. Design/training costs are excluded, and the official artifact was inaccessible.",
+      "citation": {
+        "title": "CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation",
+        "short_name": "CoReMem",
+        "date": "2026-11-12",
+        "status": "preprint",
+        "url": "https://arxiv.org/abs/2611.17316",
+        "review_depth": "full-text",
+        "checked": "2026-11-16",
+        "reviewed_sources": [
+          {
+            "url": "https://arxiv.org/pdf/2611.17316v1",
+            "version": "arXiv v1",
+            "sections": "Complete twenty-six pages, Appendices A–N, all figures/tables, Algorithm 1 and Proposition 1 proof; especially Table 1 and Appendix E protocol conflicts."
+          }
+        ]
+      },
+      "event": {
+        "kind": "new",
+        "date": "2026-11-13",
+        "occurred_at": "2026-11-12T18:58:22Z",
+        "source": "https://arxiv.org/abs/2611.17316"
+      },
+      "connections": [
+        {
+          "paper_id": "task-conditioned-memory-utility",
+          "short_name": "Task-Conditioned Utility",
+          "why": "Compare measuring memory value under fixed conditions with turning noisy value estimates into actor-training credit."
+        }
+      ]
+    },
+    {
+      "paper_id": "self-learning-migration-audit",
+      "why_now": "This new audit follows a positive-looking memory curve through target sharing and a repaired evaluation rather than stopping at the headline.",
+      "problem": "Preventing held-out write-back does not prevent training and test units from sharing the same reference answer.",
+      "mechanism": "Target-ID and text grouping, model-free copying and equal-group contrasts test what the retained state actually contributes. Monitors distinguish a changed retrieval set from successful admission of new rules.",
+      "evidence": "On 374 repaired test units in 118 target groups, the memory contrast is 0.005 [-0.003,0.017] reference-conformity units. Adaptive and fixed-policy outputs are identical; no experience is verified or rule admitted.",
+      "limitation": "Topical documentation references are not validated translations. This narrow negative result does not rule out memory learning. Separate human-gated lab improvements use evolving cohorts and nonpublic artifacts; they do not validate autonomous adaptation.",
+      "citation": {
+        "title": "Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration",
+        "short_name": "Migration Agent Audit",
+        "date": "2026-11-12",
+        "status": "preprint",
+        "url": "https://arxiv.org/abs/2611.16143",
+        "review_depth": "full-text",
+        "checked": "2026-11-16",
+        "reviewed_sources": [
+          {
+            "url": "https://arxiv.org/pdf/2611.16143v1",
+            "version": "arXiv v1; seventeen-page PDF",
+            "sections": "Complete substantive Sections I–XII, Conclusions and availability statement; all fifteen figures and twenty-five tables, including grouped rerun and separate lab studies."
+          }
+        ]
+      },
+      "event": {
+        "kind": "new",
+        "date": "2026-11-12",
+        "occurred_at": "2026-11-12T01:09:26Z",
+        "source": "https://arxiv.org/abs/2611.16143"
+      },
+      "connections": [
+        {
+          "paper_id": "experience-faithfulness",
+          "short_name": "Experience faithfulness",
+          "why": "Distinguish an artifact being present or influencing an answer from demonstrably useful cross-task learning."
+        }
+      ]
+    },
+    {
+      "paper_id": "insufficient-histories",
+      "why_now": "This new controlled study tests whether an apparently correct memory answer is actually justified by what the reader can see.",
+      "problem": "Agreement with a complete-history reference can reward guesses when the visible history leaves several answers possible.",
+      "mechanism": "Executable logs provide public semantics. Two legal histories with identical packed bytes but different answers certify insufficiency; chronological rules certify some sufficient prefixes.",
+      "evidence": "Two hosted readers share eighty confirmation histories. On 203 insufficient raw-prefix cases, Qwen matches eighty-seven references but appropriately abstains seven times. A separate judge audit retains support errors despite high aggregate accuracy.",
+      "limitation": "Synthetic rules, shared histories and a fixed abstention contract limit transfer. Compact-context effects remain inconclusive. A deterministic baseline matches the constructed judge study’s perfect hybrid score; neither that result nor source review independently validates natural-language evidence assessment. The artifact is unreleased.",
+      "citation": {
+        "title": "Correct Answers from Insufficient Histories: A Controlled Study of Agent Memory Evaluation",
+        "short_name": "Insufficient Histories",
+        "date": "2026-11-09",
+        "status": "preprint",
+        "url": "https://arxiv.org/abs/2611.11840",
+        "review_depth": "full-text",
+        "checked": "2026-11-12",
+        "reviewed_sources": [
+          {
+            "url": "https://arxiv.org/pdf/2611.11840v1",
+            "version": "arXiv v1",
+            "sections": "Complete fourteen pages and Appendices A–F; certificates, reader protocols, clustered inference and judge/deterministic controls."
+          }
+        ]
+      },
+      "event": {
+        "kind": "new",
+        "date": "2026-11-09",
+        "occurred_at": "2026-11-09T03:54:25Z",
+        "source": "https://arxiv.org/abs/2611.11840"
+      },
+      "connections": [
+        {
+          "paper_id": "value-of-memory",
+          "short_name": "Value of memory",
+          "why": "Distinguish the information a retained state preserves from the benefit a particular reader realizes."
+        }
+      ]
+    }
+  ],
+  "older_paper": null,
+  "study_question": "For one retained artifact, how would you compare frozen agents with and without it on the same future tasks and inherited state, while measuring evidence sufficiency and every acquisition, validation and serving cost?",
+  "corrections": []
+}
