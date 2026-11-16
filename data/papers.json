@@ -7302,5 +7302,81 @@
     "review_depth": "full-text",
     "checked": "2026-11-16",
     "short_name": "Migration Agent Audit"
+  },
+  {
+    "id": "mape",
+    "short_name": "MAPE",
+    "title": "Discovering Effective Agent Memory Designs through Program Evolution",
+    "date": "2026-11-12",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.17068",
+    "sources": [
+      "https://arxiv.org/abs/2611.17068",
+      "https://arxiv.org/pdf/2611.17068v1",
+      "https://arxiv.org/html/2611.17068v1",
+      "https://github.com/ash-ding/MAPE",
+      "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/README.md",
+      "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/LICENSE",
+      "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/pyproject.toml",
+      "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/docs/reproduction.md"
+    ],
+    "code_url": "https://github.com/ash-ding/MAPE",
+    "code_note": "Complete 24-page v1 and Appendices A–E read on 2026-11-17; all eight figures and ten tables visually checked. Official documentation, license and requirements inspected at 9d35636. Current release changes historical prompts and supplies one final program without results/traces. No research code or models executed.",
+    "topics": [
+      "memory",
+      "architecture",
+      "workflows",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "agent-code"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Execution diagnostics, LLM-judged QA correctness and price-valued serving tokens guide external program search; manual practicality filtering and evaluation-set accuracy select the final design.",
+    "mechanism": "An external proposer rewrites memory construction, retrieval and evidence-composition code around fixed answering models. Diagnoses and candidate archives guide accuracy-only or Pareto search. Selected programs retain raw histories and apply query-specific scaffolds; the improver itself and model weights remain fixed.",
+    "evaluation": "LoCoMo uses two search and eight evaluation conversations; LongMemEval uses 100/400 instances. On Qwen LoCoMo, the cost-aware program reaches 81.33% versus SimpleMem’s 69.32% at estimated, history-averaged API-price-valued serving costs of $1.14 versus $3.24 per thousand queries. Paired-retrieval transplantation improves five systems by 2.75–9.25 points; transfer and category outcomes are mixed.",
+    "limitations": "The native evaluation partition selects the reported program after manual practicality filtering; no separate untouched native test is reported. Seed sets differ by objective; few searches and model judges lack uncertainty or human validation. Added composition work is not compute-matched. Historical prompts contain design-specific guidance; minimal seeds do not mean prior-free search. Serving estimates omit search, local computation, storage and latency.",
+    "review_depth": "full-text",
+    "checked": "2026-11-17"
+  },
+  {
+    "id": "easyfoam",
+    "short_name": "EasyFoam",
+    "title": "EasyFoam: Skill-Oriented OpenFOAM Agents with Evidence-Driven Evolution",
+    "date": "2026-09-27",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.14525",
+    "sources": [
+      "https://arxiv.org/abs/2611.14525",
+      "https://arxiv.org/pdf/2611.14525v1",
+      "https://arxiv.org/html/2611.14525v1"
+    ],
+    "code_url": null,
+    "code_note": "Complete 26-page v1, Appendices A–E, all three figures, nineteen tables and five numbered equations read and visually inspected on 2026-11-17. No official research repository, code license or installation manifest was established from the primary paper/record and bounded search. No research code, models, simulations or datasets executed or downloaded.",
+    "topics": [
+      "skills",
+      "workflows",
+      "evaluation",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "skills"
+    ],
+    "persistence": "both",
+    "learning_signal": "Task-visible execution, numerical and quantity-of-interest evidence guides local repair; offline dimension-level outcomes on separate per-round validation tasks select persistent skill instructions.",
+    "mechanism": "A frozen-backbone coding agent follows external skill instructions and staged case records, repairs the implicated workflow stage and invalidates affected outputs. A separate proposal loop revises designated skill files from prior trajectories and retains candidates using paired validation gains with family-regression penalties.",
+    "evaluation": "Manually authored initial skills accept 52/126 FoamBench and 6/100 ExtFoamBench tasks under joint execution/numerical/QoI criteria. A separate three-round evolution increases acceptance from 18/57 to 27/57 on the same within-family held-out tasks, with fixed model weights. Additional studies cover 63-task ablations, tolerance sensitivity and selected reference controls.",
+    "limitations": "No independent evolution repeats or uncertainty estimates establish generalization. Baseline runtime limits differ, held-out tasks share development families, and surrogate selection permits family regressions without guaranteeing higher acceptance. Reference-relative criteria are not physical ground truth; some repairs restore evidence recognition. Recorded-token costs omit skill development and evaluation, with missing usage unpriced. Results were not reproduced.",
+    "review_depth": "full-text",
+    "checked": "2026-11-17"
   }
 ]

@@ -105,6 +105,10 @@
         "why": "Study search over workflow operators and evaluation-driven selection."
       },
       {
+        "paper": "mape",
+        "why": "Optimize a whole memory program around a fixed host, then audit evaluation-set selection, prompt guidance and serving-cost assumptions."
+      },
+      {
         "paper": "ace",
         "why": "Contrast whole-prompt replacement with incremental context updates."
       },

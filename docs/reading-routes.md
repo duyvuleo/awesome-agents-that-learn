@@ -73,11 +73,13 @@ Which parts of an agent can be optimized, and who performs that optimization?
 
 5. **[AFlow: Automating Agentic Workflow Generation](papers.md#aflow)** — Study search over workflow operators and evaluation-driven selection.
 
-6. **[Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](papers.md#ace)** — Contrast whole-prompt replacement with incremental context updates.
+6. **[Discovering Effective Agent Memory Designs through Program Evolution](papers.md#mape)** — Optimize a whole memory program around a fixed host, then audit evaluation-set selection, prompt guidance and serving-cost assumptions.
 
-7. **[Context Language Models](papers.md#context-language-models)** — Separate native live-context editing, reusable context-management skills and parametric training; inspect their different evidence and cost metrics.
+7. **[Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](papers.md#ace)** — Contrast whole-prompt replacement with incremental context updates.
 
-8. **[HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](papers.md#harnessflow)** — Compare fixed tree-search control with the executable harnesses it optimizes, including search and deployment costs.
+8. **[Context Language Models](papers.md#context-language-models)** — Separate native live-context editing, reusable context-management skills and parametric training; inspect their different evidence and cost metrics.
+
+9. **[HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](papers.md#harnessflow)** — Compare fixed tree-search control with the executable harnesses it optimizes, including search and deployment costs.
 
 
 **Study exercise:** Make an editable/fixed component table. Include proposer, search space, selector, evaluation set, and stopping rule.

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-17 — Memory-program evolution and scientific skill learning
+
+- Added complete-source appraisals of MAPE and EasyFoam; total 201 research works.
+- Added the official licensed MAPE optimization framework with current-release/historical-prompt boundaries; total 26 systems.
+- Connected whole-memory-program optimization to the agent-design reading route.
+- Preserved evaluation-selection, scientific-acceptance, cost, source-date and inaccessible-artifact limits; existing weekly editions unchanged. No research experiments reproduced.
+
 ## 2026-11-16 — Memory value, audited learning and weekly reading
 
 - Added complete-source appraisals of CoReMem and Migration Agent Audit; total 199 research works and 25 systems.

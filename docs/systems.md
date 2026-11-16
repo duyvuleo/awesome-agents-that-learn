@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Research papers](papers.md) · [Filter systems in the explorer](https://duyvuleo.github.io/awesome-agents-that-learn/?kind=system#catalog)
 
-25 software records. Catalog updated: 2026-11-16; individual inspection dates are recorded per entry. Systems are counted separately from the 199 research works; a paper and its software can describe the same research program. These are documentation/source inspections, not installations, reproductions, or deployment endorsements. No release date is inferred from the review date.
+26 software records. Catalog updated: 2026-11-17; individual inspection dates are recorded per entry. Systems are counted separately from the 201 research works; a paper and its software can describe the same research program. These are documentation/source inspections, not installations, reproductions, or deployment endorsements. No release date is inferred from the review date.
 
 ## Compare at a glance
 
@@ -29,6 +29,7 @@
 | [HyperAgents](#system-hyperagents) | Research implementation | Agent code, Workflows, Memory | CC-BY-NC-SA-4.0 |
 | [LangMem](#system-langmem) | Memory library | Memory, Prompts / context | MIT |
 | [Letta Code](#system-letta) | Agent application | Memory, Skills, Prompts / context, Agent code | Apache-2.0 |
+| [MAPE memory-program evolution framework](#system-mape) | Optimization framework | Memory, Agent code | Apache-2.0 for project-owned code; bundled upstream code retains separate MIT/Apache-2.0 terms |
 | [Mem0](#system-mem0) | Memory library | Memory | Apache-2.0 |
 | [MemRL](#system-memrl) | Research implementation | Memory | MIT |
 | [ReasoningBank](#system-reasoningbank) | Research implementation | Memory | Apache-2.0 |
@@ -630,6 +631,39 @@ No associated work in the current paper catalog.
 **Source inspection:** 2026-10-28 · project · not-run. **Topics:** memory, skills, prompts, architecture.
 
 [Source 1](https://github.com/letta-ai/letta-code) · [Source 2](https://github.com/letta-ai/letta) · [Source 3](https://docs.letta.com/configuration/mods) · [Source 4](https://docs.letta.com/configuration/memory) · [Source 5](https://github.com/letta-ai/letta-code/blob/main/LICENSE)
+
+
+<a id="system-mape"></a>
+
+## MAPE memory-program evolution framework
+
+**Optimization framework · core · source inspected · not run**
+
+[Official repository](https://github.com/ash-ding/MAPE) · [Documentation](https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/README.md)
+
+**Learning mechanism.** User-configured external evolution rewrites MemoClass construction, retrieval and composition implementations. The orchestrator retains candidate code, parents, evaluations, diagnoses and a Pareto frontier across proposals. A fixed host calls the answering model and judge; the framework does not train model weights or evolve its own optimizer.
+
+**Capabilities.** Whole-memory-program evolution with repair and diagnosis; Accuracy-only and accuracy–cost candidate archives; Lifecycle adapters for LoCoMo, LongMemEval and five memory baselines; Runners for the released case-study program, retrieval-replay ablations and composition transplants using locally generated traces
+
+**What changes:** Memory, Agent code. **Persistence:** across-tasks. **Learning signal:** Execution failures, benchmark-specific LLM QA judgments and price-valued token usage score candidate memory programs; diagnostic records guide later proposals and configured objectives shortlist designs.
+
+**Paper relationship.** Official project linked by arXiv 2611.17068v1. Documentation and interface inspected at 9d356362094b1048a05655002059a191c8ff3d22. It provides a reusable search/evaluation framework and one final MAPE-A_LME program, not all four selected programs or historical traces. The paper and this software describe the same research program.
+
+[Discovering Effective Agent Memory Designs through Program Evolution](papers.md#mape)
+
+**Evaluation evidence.** Documentation links the framework to the paper’s conversational-QA experiments and supplies runners for search, ablation and transfer. No separate post-release performance or historical-result reproduction was independently verified.
+
+**Boundary.** The release omits results, traces, caches and three selected final programs. Official reproduction notes disclose three design-specific historical prompt passages rewritten for this release; minimal program seeds do not imply prior-free search. Current commands/configuration are not proof of exact historical execution. Replay-only costs omit source construction/retrieval. Paper selection uses evaluation data; model-judged QA is not demonstrated acting-agent learning.
+
+**Availability.** Public source application/environment inspected at pinned revision; root pyproject disables package building. Only documentation and the lifecycle interface were read, not the entire implementation. Nothing installed or executed.
+
+**Requirements.** Python >=3.12 and uv; root dependencies include python-dotenv, PyYAML, openai, httpx, jsonschema, tiktoken, scipy, rich and anthropic. Full evaluation/search needs Linux with Singularity/Apptainer, appropriate model/API access and separately obtained benchmark data. Search additionally uses the Claude Code CLI and Anthropic API; judge/embedding examples use OpenAI APIs. Qwen examples use a compatible vLLM endpoint; current README estimates about 61 GB bf16 model memory. Baselines have separate environments, some local embedders/rerankers benefit from GPU. These documented needs were not installed or tested.
+
+**License.** [Apache-2.0 for project-owned code; bundled upstream code retains separate MIT/Apache-2.0 terms](https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/LICENSE). Linked models, datasets, services, and dependencies can have separate terms.
+
+**Source inspection:** 2026-11-17 · project · not-run. **Topics:** memory, architecture, workflows, evaluation.
+
+[Source 1](https://github.com/ash-ding/MAPE) · [Source 2](https://arxiv.org/abs/2611.17068) · [Source 3](https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/README.md) · [Source 4](https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/LICENSE) · [Source 5](https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/NOTICE) · [Source 6](https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/pyproject.toml) · [Source 7](https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/docs/reproduction.md) · [Source 8](https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/docs/third_party.md) · [Source 9](https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/core/memo_class.py)
 
 
 <a id="system-mem0"></a>

@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-15T22:26:54.917035+00:00",
+  "checked_at_utc": "2026-11-16T22:19:18.386737+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -2210,12 +2210,32 @@
       "title_check": "match"
     },
     {
+      "url": "https://arxiv.org/abs/2611.14525",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2611.14525",
+      "status": "reachable",
+      "expected_title": "EasyFoam: Skill-Oriented OpenFOAM Agents with Evidence-Driven Evolution",
+      "observed_title": "EasyFoam: Skill-Oriented OpenFOAM Agents with Evidence-Driven Evolution",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
       "url": "https://arxiv.org/abs/2611.16143",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2611.16143",
       "status": "reachable",
       "expected_title": "Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration",
       "observed_title": "Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.17068",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2611.17068",
+      "status": "reachable",
+      "expected_title": "Discovering Effective Agent Memory Designs through Program Evolution",
+      "observed_title": "Discovering Effective Agent Memory Designs through Program Evolution",
       "title_similarity": 1.0,
       "title_check": "match"
     },
@@ -3127,6 +3147,18 @@
       "url": "https://arxiv.org/html/2611.14505v2",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2611.14505v2",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2611.14525v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2611.14525v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2611.17068v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2611.17068v1",
       "status": "reachable"
     },
     {
@@ -4144,9 +4176,21 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2611.14525v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2611.14525v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2611.16143v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2611.16143v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2611.17068v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2611.17068v1",
       "status": "reachable"
     },
     {
@@ -4193,8 +4237,9 @@
     },
     {
       "url": "https://dev.mysql.com/doc/refman/8.4/en/select.html",
-      "http_status": 403,
-      "status": "restricted-or-transient"
+      "http_status": 200,
+      "final_url": "https://dev.mysql.com/doc/refman/8.4/en/select.html",
+      "status": "reachable"
     },
     {
       "url": "https://discovery.ucl.ac.uk/id/eprint/10045895/",
@@ -4974,6 +5019,54 @@
       "url": "https://github.com/artificer-ai-lab/ASCENT/tree/55fb32d4081f665371cdcaf9a89f927a43470897",
       "http_status": 200,
       "final_url": "https://github.com/artificer-ai-lab/ASCENT/tree/55fb32d4081f665371cdcaf9a89f927a43470897",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ash-ding/MAPE",
+      "http_status": 200,
+      "final_url": "https://github.com/ash-ding/MAPE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/NOTICE",
+      "http_status": 200,
+      "final_url": "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/NOTICE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/README.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/core/memo_class.py",
+      "http_status": 200,
+      "final_url": "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/core/memo_class.py",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/docs/reproduction.md",
+      "http_status": 200,
+      "final_url": "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/docs/reproduction.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/docs/third_party.md",
+      "http_status": 200,
+      "final_url": "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/docs/third_party.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/pyproject.toml",
+      "http_status": 200,
+      "final_url": "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/pyproject.toml",
       "status": "reachable"
     },
     {
@@ -6407,21 +6500,21 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=f8c4d54a-df66-4c5b-b995-ae2505174aea",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=3884cab5-90bd-4edc-aa27-b8b4fc98996d",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=de36b6ef-0483-434c-90e1-a0294217b855",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=c5f7e89f-af4a-422a-ae1b-1b7ab766de50",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=67b808bf-78b2-4629-89dd-6c26327fdab3",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=5bd85f53-5a60-40d2-9f7b-b7d3ad6f5262",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -6435,21 +6528,21 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=3965df07-231c-4144-bdb3-7d7e4fa1b1c0",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=0e29578a-e303-42c2-8351-0bcd68801f95",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=3ae38f5b-1657-4d2b-9868-97b71b229c1f",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=6b7e5953-9a29-4a8d-b3e9-0416a11a290a",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=7626839c-2c56-48e5-a600-8f0274f3f4dd",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=47014663-324c-45da-a543-64273ec1a034",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },

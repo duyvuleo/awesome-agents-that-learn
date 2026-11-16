@@ -4,6 +4,7 @@
 [Overview](../README.md) · [Full annotations](papers.md)
 ## 2026
 - 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit)
+- 2026-11-12 — [Discovering Effective Agent Memory Designs through Program Evolution](papers.md#mape)
 - 2026-11-12 — [CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](papers.md#coremem)
 - 2026-11-10 — [The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](papers.md#rsi-tax)
 - 2026-11-10 — [Continual-ARC: Measuring Skill Acquisition over a Working Lifetime](papers.md#continual-arc)
@@ -66,6 +67,7 @@
 - 2026-09-28 — [Learn Now, Use Next, Trust Later: Prequential Test-Time Learning for LLM Agents](papers.md#steplearn)
 - 2026-09-28 — [SAGE: A Statistical Acceptance Gate for Self-Evolving Agents](papers.md#sage-acceptance-gate)
 - 2026-09-27 — [Which Self-Improvements Should We Trust? Reliable Self-Improvement When Agents Reuse Their Benchmarks](papers.md#reuse-evaluation)
+- 2026-09-27 — [EasyFoam: Skill-Oriented OpenFOAM Agents with Evidence-Driven Evolution](papers.md#easyfoam)
 - 2026-09-26 — [GameSmith: Scaling Zero-Sum Self-Play with Synthesised Games](papers.md#gamesmith)
 - 2026-09-25 — [Self-Play Search Distillation for Large Language Model Reasoning](papers.md#spsd)
 - 2026-09-23 — [What Stops Recursive Self-Improvement in Robotics? Lessons from 123 Rounds of Agentic Skill Discovery](papers.md#robot-rsi-123-rounds)

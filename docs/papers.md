@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-199 unique works. Catalog updated: 2026-11-16; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+201 unique works. Catalog updated: 2026-11-17; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -14,6 +14,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-12 | **Migration Agent Audit**<br>[Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](https://arxiv.org/abs/2611.16143) | Stores generated migration attempts with provenance and evidence grades, retrieves positive or counter-examples, and updates strategy selection while keeping the base… | Memory, Workflows | preprint · full-text | [Notes](#self-learning-migration-audit) |
+| 2026-11-12 | **MAPE**<br>[Discovering Effective Agent Memory Designs through Program Evolution](https://arxiv.org/abs/2611.17068) | An external proposer rewrites memory construction, retrieval and evidence-composition code around fixed answering models. Diagnoses and candidate archives guide… | Memory, Agent code | preprint · full-text | [Notes](#mape) · [Code](https://github.com/ash-ding/MAPE) |
 | 2026-11-12 | **CoReMem**<br>[CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](https://arxiv.org/abs/2611.17316) | Writes a compact note of repository locations and executable checks while carrying the edited repository between tasks. Offline segment interventions inform the note… | Memory, Model weights | preprint · full-text | [Notes](#coremem) · [Code](https://anonymous.4open.science/r/CoReMem-F728/) |
 | 2026-11-10 | **RSI Tax**<br>[The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](https://arxiv.org/abs/2611.13524) | Scores each arriving task before its feedback can update retained state, and separates task-execution tokens from verification, exploration and writing tokens. A… | Memory, Skills, Agent code | preprint · full-text | [Notes](#rsi-tax) |
 | 2026-11-10 | **Continual-ARC**<br>[Continual-ARC: Measuring Skill Acquisition over a Working Lifetime](https://arxiv.org/abs/2611.14505) | Serves recurring, aliased ARC tasks with fresh inputs and dormant gaps, allowing external state or weight updates between rounds. Frozen seen-task and held-out tests… | Memory, Skills, Model weights | preprint · full-text | [Notes](#continual-arc) · [Code](https://github.com/unifyai/continual-arc) |
@@ -76,6 +77,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-09-28 | **StepLearn**<br>[Learn Now, Use Next, Trust Later: Prequential Test-Time Learning for LLM Agents](https://arxiv.org/abs/2609.35911) | Extracts policy–effect hypotheses after informative transitions while actor and learner weights stay fixed. A runtime copy can guide the next step; a hidden persistent… | Memory | preprint · full-text | [Notes](#steplearn) |
 | 2026-09-28 | **SAGE acceptance gate**<br>[SAGE: A Statistical Acceptance Gate for Self-Evolving Agents](https://arxiv.org/abs/2609.36043) | Compares a proposed persistent skill edit with the incumbent on identical validation items. It accepts only when paired wins exceed asymmetrically penalized regressions… | Skills | preprint · full-text | [Notes](#sage-acceptance-gate) |
 | 2026-09-27 | **REUSE**<br>[Which Self-Improvements Should We Trust? Reliable Self-Improvement When Agents Reuse Their Benchmarks](https://arxiv.org/abs/2609.33180) | Protects a fixed evaluation sample by returning only categorical promotion decisions. It tests paired candidate–incumbent outcomes and allocates error across rounds… | Model weights | preprint · full-text | [Notes](#reuse-evaluation) |
+| 2026-09-27 | **EasyFoam**<br>[EasyFoam: Skill-Oriented OpenFOAM Agents with Evidence-Driven Evolution](https://arxiv.org/abs/2611.14525) | A frozen-backbone coding agent follows external skill instructions and staged case records, repairs the implicated workflow stage and invalidates affected outputs. A… | Skills | preprint · full-text | [Notes](#easyfoam) |
 | 2026-09-26 | **GameSmith**<br>[GameSmith: Scaling Zero-Sum Self-Play with Synthesised Games](https://arxiv.org/abs/2610.13995) | Synthesizes two-player games inside fixed reward, observation and information-routing templates, then checks finite-seed replays and agreement with a separately… | Model weights | preprint · full-text | [Notes](#gamesmith) |
 | 2026-09-25 | **SPSD**<br>[Self-Play Search Distillation for Large Language Model Reasoning](https://arxiv.org/abs/2609.30936) | Trains separate self-play search experts, then converts their selected moves, alternatives and replayed consequences into offline language-model supervision. Executable… | Model weights | preprint · full-text | [Notes](#spsd) |
 | 2026-09-23 | **Robot RSI failure study**<br>[What Stops Recursive Self-Improvement in Robotics? Lessons from 123 Rounds of Agentic Skill Discovery](https://arxiv.org/abs/2609.31760) | Runs coding agents that revise robot task programs and persistent skills, request external model providers, and refit routing from logged calls. Simulator diagnoses… | Agent code, Skills, Tools | preprint · full-text | [Notes](#robot-rsi-123-rounds) |
@@ -236,6 +238,30 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** memory, continual-learning, evaluation, workflows, applications. **Reviewed:** full-text · 2026-11-16.
 
 [Source 1](https://arxiv.org/abs/2611.16143) · [Source 2](https://arxiv.org/pdf/2611.16143v1)
+
+<a id="mape"></a>
+
+## Discovering Effective Agent Memory Designs through Program Evolution
+
+**2026-11-12 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.17068)
+
+**Mechanism.** An external proposer rewrites memory construction, retrieval and evidence-composition code around fixed answering models. Diagnoses and candidate archives guide accuracy-only or Pareto search. Selected programs retain raw histories and apply query-specific scaffolds; the improver itself and model weights remain fixed.
+
+**What changes:** Memory, Agent code. **Persistence:** across-tasks. **Learning signal:** Execution diagnostics, LLM-judged QA correctness and price-valued serving tokens guide external program search; manual practicality filtering and evaluation-set accuracy select the final design.
+
+**Evaluation.** LoCoMo uses two search and eight evaluation conversations; LongMemEval uses 100/400 instances. On Qwen LoCoMo, the cost-aware program reaches 81.33% versus SimpleMem’s 69.32% at estimated, history-averaged API-price-valued serving costs of $1.14 versus $3.24 per thousand queries. Paired-retrieval transplantation improves five systems by 2.75–9.25 points; transfer and category outcomes are mixed.
+
+**Boundary.** The native evaluation partition selects the reported program after manual practicality filtering; no separate untouched native test is reported. Seed sets differ by objective; few searches and model judges lack uncertainty or human validation. Added composition work is not compute-matched. Historical prompts contain design-specific guidance; minimal seeds do not mean prior-free search. Serving estimates omit search, local computation, storage and latency.
+
+**Code / data.** [Official artifact](https://github.com/ash-ding/MAPE) — Complete 24-page v1 and Appendices A–E read on 2026-11-17; all eight figures and ten tables visually checked. Official documentation, license and requirements inspected at 9d35636. Current release changes historical prompts and supplies one final program without results/traces. No research code or models executed.
+
+**Topics:** memory, architecture, workflows, evaluation. **Reviewed:** full-text · 2026-11-17.
+
+[Source 1](https://arxiv.org/abs/2611.17068) · [Source 2](https://arxiv.org/pdf/2611.17068v1) · [Source 3](https://arxiv.org/html/2611.17068v1) · [Source 4](https://github.com/ash-ding/MAPE) · [Source 5](https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/README.md) · [Source 6](https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/LICENSE) · [Source 7](https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/pyproject.toml) · [Source 8](https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/docs/reproduction.md)
+
+**Related software:** [MAPE memory-program evolution framework](systems.md#system-mape). See each system's relationship note before equating it with the evaluated paper version.
 
 <a id="coremem"></a>
 
@@ -1604,6 +1630,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** evaluation, recursive-improvement, model-training. **Reviewed:** full-text · 2026-11-10.
 
 [Source 1](https://arxiv.org/abs/2609.33180) · [Source 2](https://arxiv.org/html/2609.33180v2) · [Source 3](https://arxiv.org/pdf/2609.33180v2)
+
+<a id="easyfoam"></a>
+
+## EasyFoam: Skill-Oriented OpenFOAM Agents with Evidence-Driven Evolution
+
+**2026-09-27 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.14525)
+
+**Mechanism.** A frozen-backbone coding agent follows external skill instructions and staged case records, repairs the implicated workflow stage and invalidates affected outputs. A separate proposal loop revises designated skill files from prior trajectories and retains candidates using paired validation gains with family-regression penalties.
+
+**What changes:** Skills. **Persistence:** both. **Learning signal:** Task-visible execution, numerical and quantity-of-interest evidence guides local repair; offline dimension-level outcomes on separate per-round validation tasks select persistent skill instructions.
+
+**Evaluation.** Manually authored initial skills accept 52/126 FoamBench and 6/100 ExtFoamBench tasks under joint execution/numerical/QoI criteria. A separate three-round evolution increases acceptance from 18/57 to 27/57 on the same within-family held-out tasks, with fixed model weights. Additional studies cover 63-task ablations, tolerance sensitivity and selected reference controls.
+
+**Boundary.** No independent evolution repeats or uncertainty estimates establish generalization. Baseline runtime limits differ, held-out tasks share development families, and surrogate selection permits family regressions without guaranteeing higher acceptance. Reference-relative criteria are not physical ground truth; some repairs restore evidence recognition. Recorded-token costs omit skill development and evaluation, with missing usage unpriced. Results were not reproduced.
+
+**Code / data.** Complete 26-page v1, Appendices A–E, all three figures, nineteen tables and five numbered equations read and visually inspected on 2026-11-17. No official research repository, code license or installation manifest was established from the primary paper/record and bounded search. No research code, models, simulations or datasets executed or downloaded.
+
+**Topics:** skills, workflows, evaluation, applications. **Reviewed:** full-text · 2026-11-17.
+
+[Source 1](https://arxiv.org/abs/2611.14525) · [Source 2](https://arxiv.org/pdf/2611.14525v1) · [Source 3](https://arxiv.org/html/2611.14525v1)
 
 <a id="gamesmith"></a>
 
