@@ -42,17 +42,19 @@ How can experience become useful knowledge, a procedure, or a reusable tool?
 
 4. **[MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory](papers.md#memrl)** — Separate learning a memory utility estimate from updating the reasoning model.
 
-5. **[Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](papers.md#omce)** — Compare memory-utility scoring with learning when to retrieve, distill, or skip experience.
+5. **[Top-$k$ Retrieval Leaves Memory Value Undetermined](papers.md#topk-memory-value)** — Check what retrieval logs identify under a declared outcome model before interpreting memory utility scores as causal contributions.
 
-6. **[Route to Remember: Adaptive Memory Selection for LLM Agents](papers.md#route-to-remember)** — Compare external experience routing with learned factual adapters; inspect forgetting, fallback retrieval, and write cost.
+6. **[Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](papers.md#omce)** — Compare memory-utility scoring with learning when to retrieve, distill, or skip experience.
 
-7. **[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl)** — Contrast external skills with parameter learning and teacher-derived supervision.
+7. **[Route to Remember: Adaptive Memory Selection for LLM Agents](papers.md#route-to-remember)** — Compare external experience routing with learned factual adapters; inspect forgetting, fallback retrieval, and write cost.
 
-8. **[SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](papers.md#skillflow)** — Examine whether skill use produces measurable benefit.
+8. **[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl)** — Contrast external skills with parameter learning and teacher-derived supervision.
 
-9. **[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](papers.md#skill-plus-plus)** — Separate retaining a skill from keeping it selectable as the library grows; compare routing with task success.
+9. **[SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](papers.md#skillflow)** — Examine whether skill use produces measurable benefit.
 
-10. **[Coalition-Aware Skill Reliability for Self-Evolving Agents](papers.md#coalition-skill-reliability)** — Test whether a useful skill stays useful in another bank or deployment domain.
+10. **[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](papers.md#skill-plus-plus)** — Separate retaining a skill from keeping it selectable as the library grows; compare routing with task success.
+
+11. **[Coalition-Aware Skill Reliability for Self-Evolving Agents](papers.md#coalition-skill-reliability)** — Test whether a useful skill stays useful in another bank or deployment domain.
 
 
 **Study exercise:** For three methods, write the stored artifact, admission rule, retrieval rule, revision rule, and evidence that reuse helps.
@@ -102,9 +104,11 @@ Where does supervision come from when a model helps generate its own training da
 
 6. **[Self-Adapting Language Models](papers.md#seal)** — Study generated self-edits, adaptation rewards, and retention limits.
 
-7. **[Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](papers.md#self-harmony)** — Distinguish label-free adaptation to test questions from transfer to unseen tasks, and agreement from correctness.
+7. **[AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](papers.md#autorl)** — Separate fixed supervisory agents from the downstream model they train; audit monitoring-set reuse and full resource accounting.
 
-8. **[ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience](papers.md#ascent)** — Compare persistent online adapter updates with external training and within-task retries.
+8. **[Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](papers.md#self-harmony)** — Distinguish label-free adaptation to test questions from transfer to unseen tasks, and agreement from correctness.
+
+9. **[ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience](papers.md#ascent)** — Compare persistent online adapter updates with external training and within-task retries.
 
 
 **Study exercise:** For each loop, label which information is human-provided, pretrained, environment-verified, or model-judged.

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-18 — Attribution, training supervision and benchmark revision
+
+- Added complete-source reviews of LEDGER/Top-k Retrieval and AutoRL; total 203 works and 26 systems.
+- Appraised Continual-ARC v3 changes and its small GLM transfer result while preserving historical v2 evidence.
+- Appended a dated weekly clarification without changing original editorial bodies or citation snapshots.
+- Extended two reading routes; retained identification, evaluation-reuse, resource and unavailable-artifact boundaries. No research experiments reproduced.
+
 ## 2026-11-17 — Memory-program evolution and scientific skill learning
 
 - Added complete-source appraisals of MAPE and EasyFoam; total 201 research works.

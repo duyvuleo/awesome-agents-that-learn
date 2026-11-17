@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-201 unique works. Catalog updated: 2026-11-17; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+203 unique works. Catalog updated: 2026-11-18; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -13,6 +13,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-13 | **AutoRL**<br>[AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](https://arxiv.org/abs/2611.17790) | Researchers supply data, objectives, budgets and allowed controls. Fixed-role LLM agents monitor ongoing RL, debate and check reward, loss or data changes, then… | Model weights, Workflows | preprint · full-text | [Notes](#autorl) |
 | 2026-11-12 | **Migration Agent Audit**<br>[Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](https://arxiv.org/abs/2611.16143) | Stores generated migration attempts with provenance and evidence grades, retrieves positive or counter-examples, and updates strategy selection while keeping the base… | Memory, Workflows | preprint · full-text | [Notes](#self-learning-migration-audit) |
 | 2026-11-12 | **MAPE**<br>[Discovering Effective Agent Memory Designs through Program Evolution](https://arxiv.org/abs/2611.17068) | An external proposer rewrites memory construction, retrieval and evidence-composition code around fixed answering models. Diagnoses and candidate archives guide… | Memory, Agent code | preprint · full-text | [Notes](#mape) · [Code](https://github.com/ash-ding/MAPE) |
 | 2026-11-12 | **CoReMem**<br>[CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](https://arxiv.org/abs/2611.17316) | Writes a compact note of repository locations and executable checks while carrying the edited repository between tasks. Offline segment interventions inform the note… | Memory, Model weights | preprint · full-text | [Notes](#coremem) · [Code](https://anonymous.4open.science/r/CoReMem-F728/) |
@@ -28,6 +29,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2026-11-03 | **Continual AutoResearch**<br>[From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?](https://arxiv.org/abs/2611.05108) | Compares retained native sessions, files and experimental state with reset instances of the same fixed agent. Hidden evaluation separates first-valid quality… | Memory | preprint · full-text | [Notes](#continual-autoresearch) |
 | 2026-11-03 | **Benign skill safety**<br>[Can Benign Skills Induce Misaligned Behavior in LLM Agents?](https://arxiv.org/abs/2611.04299) | Retrieves benign procedural skills for fixed-model agents, then measures executed safety violations separately from harmful-objective completion. A fixed editor also… | Skills | preprint · full-text | [Notes](#benign-skill-misalignment) |
 | 2026-11-03 | **Artifact-to-Capability**<br>[Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](https://arxiv.org/abs/2611.04952) | Proposes a five-property diagnostic for converting persistent artifacts into useful behavior. Frozen-system interventions compare identical board states, complete games… | Memory, Skills, Agent code | preprint · full-text | [Notes](#artifact-to-capability) |
+| 2026-11-02 | **LEDGER**<br>[Top-$k$ Retrieval Leaves Memory Value Undetermined](https://arxiv.org/abs/2611.03289) | Tests which Shapley functionals a finite-order outcome design identifies with an unknown no-memory baseline. LEDGER estimates only identified directions, groups… | Memory | preprint · full-text | [Notes](#topk-memory-value) · [Code](https://anonymous.4open.science/r/ledger-review-AF71/) |
 | 2026-11-02 | **Task-Conditioned Utility**<br>[What Is This Memory Useful For? Measuring Task-Conditioned Utility in Long-Term Agent Memory](https://arxiv.org/abs/2611.03930) | A task-blind writer produces raw, summarized or structured memories; a frozen reader receives identical filler with or without one memory. An answer-containment screen… | Analysis / no retained update | preprint · full-text | [Notes](#task-conditioned-memory-utility) · [Code](https://github.com/ChihHsuan-Yang/AAMAS2027-ConditionalMemory) |
 | 2026-11-02 | **StateGraph**<br>[A State Change Is Local, Its Consequences Are Not: Dependency-Aware State Revision for Long-Term Agent Memory](https://arxiv.org/abs/2611.02912) | Stores scoped, versioned states and proposes directed support dependencies from history. The same frozen LLM tests whether a dependent claim survives removal of a… | Memory | preprint · full-text | [Notes](#stategraph) |
 | 2026-11-02 | **PeerMem**<br>[Peer Memory Changes Who LLM Agents Consult Without a Detected Gain in Answer Accuracy](https://arxiv.org/abs/2611.09990) | Reuses MACE LinUCB matrices, reward vectors and counts under persistent agent IDs across question blocks. Six agents exchange extracted answers while holding private… | Memory, Multi-agent organization | preprint · full-text | [Notes](#peer-memory-consultation) |
@@ -217,6 +219,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 ## Full annotations
 
+<a id="autorl"></a>
+
+## AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning
+
+**2026-11-13 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.17790)
+
+**Mechanism.** Researchers supply data, objectives, budgets and allowed controls. Fixed-role LLM agents monitor ongoing RL, debate and check reward, loss or data changes, then authorize hot updates or checkpoint resumptions. Downstream weights, training recipes and intervention histories persist; supervisory models and coordination rules remain fixed.
+
+**What changes:** Model weights, Workflows. **Persistence:** across-tasks. **Learning signal:** Training rewards, rollout and gradient diagnostics, aggregate evaluation feedback and CPU-check receipts guide recipe changes; ordinary RL updates downstream model weights.
+
+**Evaluation.** Qwen3-4B point estimates exceed static GRPO and native Codex supervision on nine benchmarks. A separate 352.5-hour coding campaign reaches step 79 after eleven recoveries; its last reported coding-benchmark evaluation at step 75 is 63.20%, from 52.29% (65.13% peak). Authors report twenty deployed plans from 131 candidates, with no learning-rule redesign.
+
+**Boundary.** No independent training-run replication or confidence intervals are reported. Four math benchmark datasets also supply adaptive monitoring; fixed scoring is not an untouched test. Matched steps do not equal total compute, and components are not separately ablated. LongCat uses private training corpora and an underspecified coding evaluation; that campaign lacks a matched control. This is local recipe refinement, not demonstrated recursive learning of the supervisor.
+
+**Code / data.** Complete 23-page v1 and Appendix A.1–A.6 read on 2026-11-18; all seven figures, eleven tables and four equations visually inspected. No official AutoRL artifact, code license or installable environment was established. No research code, models, training or benchmarks executed.
+
+**Topics:** model-training, workflows, architecture, evaluation. **Reviewed:** full-text · 2026-11-18.
+
+[Source 1](https://arxiv.org/abs/2611.17790) · [Source 2](https://arxiv.org/pdf/2611.17790v1) · [Source 3](https://arxiv.org/html/2611.17790v1)
+
 <a id="self-learning-migration-audit"></a>
 
 ## Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration
@@ -319,15 +343,15 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 **What changes:** Memory, Skills, Model weights. **Persistence:** both. **Learning signal:** Binary answer verdicts and paid demonstration requests within each instance; persistent demonstrations, programs or harness notes across recurring tasks. The trained baseline additionally imitates a stronger teacher at student-visited states.
 
-**Evaluation.** Main ARC-AGI-1 protocol uses 25 tasks, eight exposures each over 200 rounds at seed 0, with 100-instance seen and held-out tests. It compares demo caching, program libraries, harness persistence/guidance and Qwen3.5-9B DAgger from GLM-5.3 Flash; appendices add GPT-6 Luna across three harnesses, 2/4-user regimes and preliminary ARC-AGI-2/3 tests. Default persistence usually saves little; guidance improves returning-task reuse, while DAgger reports held-out savings.
+**Evaluation.** The main ARC-AGI-1 stream has 25 rules and eight exposures each, followed by seen and stream-absent task tests. V3 adds a thirteen-setting GLM sweep and aggregates three default-stream learning runs; test repetitions report held-out savings of 0.08 [0.03,0.12] of serving-week-matched reset feedback spend. Giving Qwen all teacher files improves seen-task reuse without measurable new-rule savings; guided stronger-teacher DAgger retains larger held-out gains.
 
-**Boundary.** Task-bootstrap intervals condition on fixed learned states, rather than independent learning runs. DAgger uses guided stronger-teacher supervision, partly repairs a weak harness baseline, and tuning overlaps 23 held-out tasks. Historical harness import failures, public-task exposure risk, unscored compute and corrected cost accounting limit interpretation. Default GLM persistence has unreconciled prose/table aggregates; results do not establish a general memory-versus-weights ranking.
+**Boundary.** Most configurations have one learned state; extra frozen-test repetitions are not new learning runs. Serving drift, shared-play variation and reset choice condition the GLM result. DAgger uses guided stronger-teacher supervision and tuning overlaps 23 held-out tasks. Public-task exposure, historical import failures and unscored compute remain. Corrected recorded costs are not the full project bill; no general memory-versus-weights ranking follows.
 
-**Code / data.** [Official artifact](https://github.com/unifyai/continual-arc) — Complete 51-page arXiv v2, substantive Appendices A–L and all thirteen figures reviewed on 2026-11-14. Official licensing, requirements and experiment-version documentation inspected at b7886cf. Current guidance and adapter fixes differ from evaluated code; historical artifacts remain partial. No research code, models, data or training executed.
+**Code / data.** [Official artifact](https://github.com/unifyai/continual-arc) — Complete 51-page v2 and Appendices A–L appraised on 2026-11-14. On 2026-11-18, compared the complete 54-page v3 extraction and appraised changed scientific material; new sweep, aggregate, prompt and cost evidence visually checked. This reuses unchanged v2 reading, rather than independently rereading all v3 pages. Artifact-documentation inspection remains dated November 14 at b7886cf; v3 execution was not reproduced.
 
-**Topics:** continual-learning, evaluation, memory, skills, model-training. **Reviewed:** full-text · 2026-11-14.
+**Topics:** continual-learning, evaluation, memory, skills, model-training. **Reviewed:** full-text · 2026-11-18.
 
-[Source 1](https://arxiv.org/abs/2611.14505) · [Source 2](https://arxiv.org/html/2611.14505v2) · [Source 3](https://arxiv.org/pdf/2611.14505v2) · [Source 4](https://github.com/unifyai/continual-arc) · [Source 5](https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/paper/README.md) · [Source 6](https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/baselines/README.md) · [Source 7](https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/training/README.md) · [Source 8](https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/experiments/engine/README.md) · [Source 9](https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/LICENSE) · [Source 10](https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/pyproject.toml)
+[Source 1](https://arxiv.org/abs/2611.14505) · [Source 2](https://arxiv.org/html/2611.14505v2) · [Source 3](https://arxiv.org/pdf/2611.14505v2) · [Source 4](https://github.com/unifyai/continual-arc) · [Source 5](https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/paper/README.md) · [Source 6](https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/baselines/README.md) · [Source 7](https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/training/README.md) · [Source 8](https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/experiments/engine/README.md) · [Source 9](https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/LICENSE) · [Source 10](https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/pyproject.toml) · [Source 11](https://arxiv.org/pdf/2611.14505v3) · [Source 12](https://arxiv.org/html/2611.14505v3)
 
 <a id="insufficient-histories"></a>
 
@@ -548,6 +572,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** evaluation, memory, skills, recursive-improvement. **Reviewed:** full-text · 2026-11-09.
 
 [Source 1](https://arxiv.org/abs/2611.04952) · [Source 2](https://arxiv.org/html/2611.04952v1) · [Source 3](https://arxiv.org/pdf/2611.04952v1)
+
+<a id="topk-memory-value"></a>
+
+## Top-$k$ Retrieval Leaves Memory Value Undetermined
+
+**2026-11-02 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.03289)
+
+**Mechanism.** Tests which Shapley functionals a finite-order outcome design identifies with an unknown no-memory baseline. LEDGER estimates only identified directions, groups identical retrieval columns at first order, and varies retrieval size while favoring rarely retrieved candidates within a relevant window.
+
+**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Retrieved-set counts drive the next retrieval; scalar QA outcomes fit log-based attribution. Model weights and the retrieval rule are fixed, and outcome rewards do not adapt that rule.
+
+**Evaluation.** An outcome-free design audit under the unknown-baseline model finds no identified absolute values in 55 configurations of fourteen benchmark families. A pooled HotpotQA study raises identification from 0.001 under a variable-size baseline to 0.797 over 300 questions and 24 passes, while a 1,600-question QA comparison loses 2.6 points [-4.2,-0.9]. LoCoMo gains 2.7 points; LongMemEval is inconclusive.
+
+**Boundary.** Real-log estimates use a first-order model and are associational without exogeneity. Practical intervals omit ridge bias; synthetic known-noise coverage is partly post hoc. Pooling has a separate accuracy cost; identification and QA use different cohorts and grouping changes denominators. No real-data retention gain or deployable cost-free gate is demonstrated. Artifact files remain unverified; results were not reproduced.
+
+**Code / data.** [Official artifact](https://anonymous.4open.science/r/ledger-review-AF71/) — Complete 44-page v1 and Appendices A–I, proofs and all three algorithms read on 2026-11-18; all three figures, sixteen tables and key proof displays visually checked. The paper-linked anonymous artifact returned HTTP 403 or blank/unavailable content; files, license, requirements and preregistration records remain unverified. No research code, models, datasets or benchmarks executed.
+
+**Topics:** foundations, memory, evaluation. **Reviewed:** full-text · 2026-11-18.
+
+[Source 1](https://arxiv.org/abs/2611.03289) · [Source 2](https://arxiv.org/pdf/2611.03289v1) · [Source 3](https://arxiv.org/html/2611.03289v1) · [Source 4](https://anonymous.4open.science/r/ledger-review-AF71/)
 
 <a id="task-conditioned-memory-utility"></a>
 

@@ -1785,3 +1785,29 @@ The execution loop repairs the current simulation case from stage-specific evide
 Execution completion, numerical checks and quantity-of-interest acceptance are separate outcomes. Reference-relative criteria and selected perturbation checks do not establish physical ground truth. One reported repair restores log recognition without changing case inputs or mesh. Candidate selection penalizes family regressions but does not guarantee higher joint acceptance or nonregression everywhere. Unequal baseline runtime budgets, no independent evolution repeats or uncertainty intervals, and omitted evolution/development costs qualify comparisons. No official implementation, code license or installation manifest was established; no simulations or research code were executed.
 
 Existing-gap checks found no newer CASS version supplying its missing appendices. SkillOpt's official poster/project remain accessible, but no accessible final body was established; its historical v2 appraisal remains separate. CoReMem's artifact files remain unverified despite automated page reachability. These checks do not advance earlier complete-paper inspection dates or resolve those evidence gaps.
+
+## 2026-11-18 — Attribution, RL supervision and a revised benchmark
+
+### LEDGER and log identifiability
+
+Completed all forty-four pages of [Top-k Retrieval v1](https://arxiv.org/pdf/2611.03289v1), Appendices A–I, proofs, three algorithms, three figures and sixteen tables. The result concerns finite-order log models with an unknown no-memory baseline. Fixed-cardinality retrieval leaves absolute Shapley functionals unidentified in that class; relative contrasts, a known baseline, additional assumptions or designed interventions can change what is estimable. Higher-order positive identification needs more than pair counts. Relevance-selected real logs lack guaranteed exogeneity, so fitted values need not be causal memory effects.
+
+The practical interval omits a ridge-bias term present in the proved bound and differs from its noise assumptions. Synthetic known-noise calibration includes a post hoc higher-order restriction. Retrieval is a frequency heuristic motivated by a variance bound, not exact optimal design. Exact first-order grouping preserves estimable log functionals rather than proving lossless semantic compression; grouped fractions use a different denominator.
+
+The 300-question identification experiment and 1,600-question accuracy comparison use different cohorts and stores. Extra readers test pooling, not independent replication of LEDGER retrieval gains. Positive LoCoMo and negative HotpotQA effects coexist; real-data retention was not completed, and one synthetic retention comparison favors reward averaging. The gold-label oracle is unavailable at deployment and the label-free gate fails its declared rule. Official anonymous artifact files, licenses, requirements and registration timing remain unverified. No experiments were run.
+
+### AutoRL
+
+Completed all twenty-three pages of [v1](https://arxiv.org/pdf/2611.17790v1), Appendix A.1–A.6, seven figures, eleven tables and four equations. Fixed supervisory agents change downstream RL recipes and weights; the supervisor does not learn or recursively modify itself. Researchers supply objectives, training data, resources and allowed controls.
+
+Qwen3-4B has higher reported point estimates than the compared static and general-agent runs on nine benchmarks. Four math benchmark datasets also feed adaptive monitoring, however; fixed scoring and separately sampled outputs do not make them untouched tests. Matched training steps exclude supervision, evaluation cadence and total resource matching; generation draws and model sizes are not independent training repetitions. No component ablations isolate the prescribed roles or hot-update machinery.
+
+The separate 352.5-hour coding campaign reports an initial 224-H800 allocation and eleven recoveries. Its 65.13% peak differs from the last reported 63.20% evaluation at step 75, and training later ends at step 79. That last score is not verified after the final recovery. Seven ordinary restarts and four agent-directed paths are distinct; one proposed repair causes a dtype failure. The coding cohort is underspecified and lacks a matched campaign control. Author-record analysis reports local improvements but no deployed redesign of the learning rule. No official implementation/license/setup was established or executed.
+
+### Continual-ARC v3 and the weekly clarification
+
+Compared complete v2/v3 extractions, reusing the full v2 appraisal from November 14, and reviewed changed scientific material in the 54-page [v3](https://arxiv.org/pdf/2611.14505v3), released November 15. The new sweep, aggregate, teacher-prompt, training-fit and cost evidence was checked with six key PDF pages visually inspected. This is a source-version comparison, not an independent rereading of all unchanged pages or a reproduction.
+
+V3 explains the first-run GLM seen-task saving of 0.12 versus the three-run aggregate of 0.25, and reports small held-out savings of 0.08 [0.03,0.12] of serving-week-matched reset feedback spend. Three learning runs are distinct from additional frozen-test and reset plays; provider drift, shared-play noise and reset choices remain material. A teacher-all-files prompt improves returning-task reuse without measurable new-rule transfer. The corrected API subtotal is incorporated, while excluded costs remain excluded.
+
+Appended a dated clarification to the [November 9–15 edition](weekly/2026-11-09.md). Its original body and v2 citation snapshot remain unchanged. Historical artifact inspection remains dated November 14; v3 implementation/results were not independently executed or verified. CASS's missing supplement, SkillOpt's newer final body and inaccessible artifact files remain unresolved.

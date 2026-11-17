@@ -4,7 +4,7 @@
     "subtitle": "A research guide to self-learning, self-improving, and self-evolving AI agents.",
     "repository": "https://github.com/duyvuleo/awesome-agents-that-learn",
     "site": "https://duyvuleo.github.io/awesome-agents-that-learn/",
-    "updated": "2026-11-17",
+    "updated": "2026-11-18",
     "schema_version": 2,
     "topics": {
       "foundations": "Foundations and boundaries",
@@ -43,6 +43,42 @@
     }
   },
   "papers": [
+    {
+      "id": "autorl",
+      "short_name": "AutoRL",
+      "title": "AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning",
+      "date": "2026-11-13",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.17790",
+      "sources": [
+        "https://arxiv.org/abs/2611.17790",
+        "https://arxiv.org/pdf/2611.17790v1",
+        "https://arxiv.org/html/2611.17790v1"
+      ],
+      "code_url": null,
+      "code_note": "Complete 23-page v1 and Appendix A.1–A.6 read on 2026-11-18; all seven figures, eleven tables and four equations visually inspected. No official AutoRL artifact, code license or installable environment was established. No research code, models, training or benchmarks executed.",
+      "topics": [
+        "model-training",
+        "workflows",
+        "architecture",
+        "evaluation"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "model-weights",
+        "workflows"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Training rewards, rollout and gradient diagnostics, aggregate evaluation feedback and CPU-check receipts guide recipe changes; ordinary RL updates downstream model weights.",
+      "mechanism": "Researchers supply data, objectives, budgets and allowed controls. Fixed-role LLM agents monitor ongoing RL, debate and check reward, loss or data changes, then authorize hot updates or checkpoint resumptions. Downstream weights, training recipes and intervention histories persist; supervisory models and coordination rules remain fixed.",
+      "evaluation": "Qwen3-4B point estimates exceed static GRPO and native Codex supervision on nine benchmarks. A separate 352.5-hour coding campaign reaches step 79 after eleven recoveries; its last reported coding-benchmark evaluation at step 75 is 63.20%, from 52.29% (65.13% peak). Authors report twenty deployed plans from 131 candidates, with no learning-rule redesign.",
+      "limitations": "No independent training-run replication or confidence intervals are reported. Four math benchmark datasets also supply adaptive monitoring; fixed scoring is not an untouched test. Matched steps do not equal total compute, and components are not separately ablated. LongCat uses private training corpora and an underspecified coding evaluation; that campaign lacks a matched control. This is local recipe refinement, not demonstrated recursive learning of the supervisor.",
+      "review_depth": "full-text",
+      "checked": "2026-11-18"
+    },
     {
       "id": "self-learning-migration-audit",
       "title": "Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration",
@@ -211,10 +247,12 @@
         "https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/training/README.md",
         "https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/experiments/engine/README.md",
         "https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/LICENSE",
-        "https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/pyproject.toml"
+        "https://github.com/unifyai/continual-arc/blob/b7886cfb10337e74dccb3c1e5b74dde244df2c2f/pyproject.toml",
+        "https://arxiv.org/pdf/2611.14505v3",
+        "https://arxiv.org/html/2611.14505v3"
       ],
       "code_url": "https://github.com/unifyai/continual-arc",
-      "code_note": "Complete 51-page arXiv v2, substantive Appendices A–L and all thirteen figures reviewed on 2026-11-14. Official licensing, requirements and experiment-version documentation inspected at b7886cf. Current guidance and adapter fixes differ from evaluated code; historical artifacts remain partial. No research code, models, data or training executed.",
+      "code_note": "Complete 51-page v2 and Appendices A–L appraised on 2026-11-14. On 2026-11-18, compared the complete 54-page v3 extraction and appraised changed scientific material; new sweep, aggregate, prompt and cost evidence visually checked. This reuses unchanged v2 reading, rather than independently rereading all v3 pages. Artifact-documentation inspection remains dated November 14 at b7886cf; v3 execution was not reproduced.",
       "topics": [
         "continual-learning",
         "evaluation",
@@ -231,10 +269,10 @@
       "persistence": "both",
       "learning_signal": "Binary answer verdicts and paid demonstration requests within each instance; persistent demonstrations, programs or harness notes across recurring tasks. The trained baseline additionally imitates a stronger teacher at student-visited states.",
       "mechanism": "Serves recurring, aliased ARC tasks with fresh inputs and dormant gaps, allowing external state or weight updates between rounds. Frozen seen-task and held-out tests compare each learner with its own reset on identical instances, separating retained task skill from improved solving of new tasks in feedback-budget units.",
-      "evaluation": "Main ARC-AGI-1 protocol uses 25 tasks, eight exposures each over 200 rounds at seed 0, with 100-instance seen and held-out tests. It compares demo caching, program libraries, harness persistence/guidance and Qwen3.5-9B DAgger from GLM-5.3 Flash; appendices add GPT-6 Luna across three harnesses, 2/4-user regimes and preliminary ARC-AGI-2/3 tests. Default persistence usually saves little; guidance improves returning-task reuse, while DAgger reports held-out savings.",
-      "limitations": "Task-bootstrap intervals condition on fixed learned states, rather than independent learning runs. DAgger uses guided stronger-teacher supervision, partly repairs a weak harness baseline, and tuning overlaps 23 held-out tasks. Historical harness import failures, public-task exposure risk, unscored compute and corrected cost accounting limit interpretation. Default GLM persistence has unreconciled prose/table aggregates; results do not establish a general memory-versus-weights ranking.",
+      "evaluation": "The main ARC-AGI-1 stream has 25 rules and eight exposures each, followed by seen and stream-absent task tests. V3 adds a thirteen-setting GLM sweep and aggregates three default-stream learning runs; test repetitions report held-out savings of 0.08 [0.03,0.12] of serving-week-matched reset feedback spend. Giving Qwen all teacher files improves seen-task reuse without measurable new-rule savings; guided stronger-teacher DAgger retains larger held-out gains.",
+      "limitations": "Most configurations have one learned state; extra frozen-test repetitions are not new learning runs. Serving drift, shared-play variation and reset choice condition the GLM result. DAgger uses guided stronger-teacher supervision and tuning overlaps 23 held-out tasks. Public-task exposure, historical import failures and unscored compute remain. Corrected recorded costs are not the full project bill; no general memory-versus-weights ranking follows.",
       "review_depth": "full-text",
-      "checked": "2026-11-14",
+      "checked": "2026-11-18",
       "short_name": "Continual-ARC"
     },
     {
@@ -602,6 +640,41 @@
       "review_depth": "full-text",
       "checked": "2026-11-09",
       "short_name": "Artifact-to-Capability"
+    },
+    {
+      "id": "topk-memory-value",
+      "short_name": "LEDGER",
+      "title": "Top-$k$ Retrieval Leaves Memory Value Undetermined",
+      "date": "2026-11-02",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.03289",
+      "sources": [
+        "https://arxiv.org/abs/2611.03289",
+        "https://arxiv.org/pdf/2611.03289v1",
+        "https://arxiv.org/html/2611.03289v1",
+        "https://anonymous.4open.science/r/ledger-review-AF71/"
+      ],
+      "code_url": "https://anonymous.4open.science/r/ledger-review-AF71/",
+      "code_note": "Complete 44-page v1 and Appendices A–I, proofs and all three algorithms read on 2026-11-18; all three figures, sixteen tables and key proof displays visually checked. The paper-linked anonymous artifact returned HTTP 403 or blank/unavailable content; files, license, requirements and preregistration records remain unverified. No research code, models, datasets or benchmarks executed.",
+      "topics": [
+        "foundations",
+        "memory",
+        "evaluation"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "memory"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Retrieved-set counts drive the next retrieval; scalar QA outcomes fit log-based attribution. Model weights and the retrieval rule are fixed, and outcome rewards do not adapt that rule.",
+      "mechanism": "Tests which Shapley functionals a finite-order outcome design identifies with an unknown no-memory baseline. LEDGER estimates only identified directions, groups identical retrieval columns at first order, and varies retrieval size while favoring rarely retrieved candidates within a relevant window.",
+      "evaluation": "An outcome-free design audit under the unknown-baseline model finds no identified absolute values in 55 configurations of fourteen benchmark families. A pooled HotpotQA study raises identification from 0.001 under a variable-size baseline to 0.797 over 300 questions and 24 passes, while a 1,600-question QA comparison loses 2.6 points [-4.2,-0.9]. LoCoMo gains 2.7 points; LongMemEval is inconclusive.",
+      "limitations": "Real-log estimates use a first-order model and are associational without exogeneity. Practical intervals omit ridge bias; synthetic known-noise coverage is partly post hoc. Pooling has a separate accuracy cost; identification and QA use different cohorts and grouping changes denominators. No real-data retention gain or deployable cost-free gate is demonstrated. Artifact files remain unverified; results were not reproduced.",
+      "review_depth": "full-text",
+      "checked": "2026-11-18"
     },
     {
       "id": "task-conditioned-memory-utility",
@@ -8656,6 +8729,10 @@
           "why": "Separate learning a memory utility estimate from updating the reasoning model."
         },
         {
+          "paper": "topk-memory-value",
+          "why": "Check what retrieval logs identify under a declared outcome model before interpreting memory utility scores as causal contributions."
+        },
+        {
           "paper": "omce",
           "why": "Compare memory-utility scoring with learning when to retrieve, distill, or skip experience."
         },
@@ -8754,6 +8831,10 @@
         {
           "paper": "seal",
           "why": "Study generated self-edits, adaptation rewards, and retention limits."
+        },
+        {
+          "paper": "autorl",
+          "why": "Separate fixed supervisory agents from the downstream model they train; audit monitoring-set reuse and full resource accounting."
         },
         {
           "paper": "self-harmony",

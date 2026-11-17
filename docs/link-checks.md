@@ -4,7 +4,13 @@
 
 The report records public HTTP requests for catalog and weekly-edition sources and, for canonical arXiv abstract URLs, comparison of the page's citation title with the catalog title. It includes final redirect URLs and access failures. The scientific annotations were reviewed separately; HTTP success is not a scientific verification or a runnable-code check.
 
-Latest paper-and-systems pass (2026-11-17): **976 source URLs checked; 961 reachable and fifteen restricted/transient responses**. No inconclusive requests, 404/410 responses or title-review flags were recorded; 185 canonical arXiv titles matched. All fourteen new URLs were reachable, including versioned papers and pinned MAPE license, requirements and reproduction documentation. All weekly-edition sources were reachable.
+Latest paper-and-systems pass (2026-11-18): **986 source URLs checked; 951 reachable and thirty-five restricted/transient responses**. All ten new URLs were reachable; 187 canonical arXiv titles matched, with no 404/410 responses or title-review flags. Sources for the dated weekly clarification were reachable.
+
+Twenty newly transient GitHub file URLs returned HTTP 503. Each was checked individually through the same public file's official raw URL; all twenty returned HTTP 200. The report retains the automated observations. The other fifteen responses match the existing OpenReview/Nature gates. These access failures are not dead-link findings, and no controls were bypassed.
+
+Anonymous artifact landing-page reachability does not verify source files: direct LEDGER and CoReMem browsing remained restricted or unavailable, leaving their code licenses, requirements and version relationships unverified. Scientific claims, source-version review and independent execution remain separate from HTTP status.
+
+Previous paper-and-systems pass (2026-11-17): **976 source URLs checked; 961 reachable and fifteen restricted/transient responses**. No inconclusive requests, 404/410 responses or title-review flags were recorded; 185 canonical arXiv titles matched. All fourteen new URLs were reachable, including versioned papers and pinned MAPE license, requirements and reproduction documentation. All weekly-edition sources were reachable.
 
 The remaining restrictions are eight OpenReview and seven Nature URLs. MySQL SELECT documentation recovered from its preceding restriction; an individual request returned its public reference page. CoReMem's anonymous page is HTTP-reachable in the automated report while source browsing remained unavailable; its files, license, requirements and paper-version relationship remain unverified. HTTP success alone does not certify an artifact release, runtime behavior or scientific reproduction.
 

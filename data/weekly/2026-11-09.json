@@ -199,5 +199,14 @@
   ],
   "older_paper": null,
   "study_question": "For one retained artifact, how would you compare frozen agents with and without it on the same future tasks and inherited state, while measuring evidence sufficiency and every acquisition, validation and serving cost?",
-  "corrections": []
+  "corrections": [
+    {
+      "date": "2026-11-18",
+      "note": "Continual-ARC v3, released November 15 and reviewed November 18, distinguishes the first GLM run from three-run aggregates and adds serving-week-matched test repetitions. It reports a small held-out saving of 0.08 [0.03,0.12] of the serving-week-matched reset feedback spend for the default GLM harness. This resolves the aggregate warning in the original pick, which assessed v2 on November 14; its body and citation remain unchanged. Repeated frozen-test plays are not independent learning runs, and this result does not establish a general memory-versus-weights ranking.",
+      "sources": [
+        "https://arxiv.org/pdf/2611.14505v3",
+        "https://arxiv.org/abs/2611.14505v3"
+      ]
+    }
+  ]
 }

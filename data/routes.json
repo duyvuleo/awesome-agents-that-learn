@@ -53,6 +53,10 @@
         "why": "Separate learning a memory utility estimate from updating the reasoning model."
       },
       {
+        "paper": "topk-memory-value",
+        "why": "Check what retrieval logs identify under a declared outcome model before interpreting memory utility scores as causal contributions."
+      },
+      {
         "paper": "omce",
         "why": "Compare memory-utility scoring with learning when to retrieve, distill, or skip experience."
       },
@@ -151,6 +155,10 @@
       {
         "paper": "seal",
         "why": "Study generated self-edits, adaptation rewards, and retention limits."
+      },
+      {
+        "paper": "autorl",
+        "why": "Separate fixed supervisory agents from the downstream model they train; audit monitoring-set reuse and full resource accounting."
       },
       {
         "paper": "self-harmony",

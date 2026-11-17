@@ -5,7 +5,8 @@
 A work may appear in several topics; counts here are not additive.
 <a id="foundations"></a>
 
-## Foundations and boundaries (33)
+## Foundations and boundaries (34)
+- 2026-11-02 — [Top-$k$ Retrieval Leaves Memory Value Undetermined](papers.md#topk-memory-value) · core · preprint
 - 2026-10-27 — [Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces](papers.md#policy-harness-geometry) · adjacent · preprint
 - 2026-10-22 — [The Value of Memory in Language Agents](papers.md#value-of-memory) · core · preprint
 - 2026-10-22 — [METTA: Memory-Enhanced Test-Time Adaptation for Meta-Reinforcement Learning](papers.md#metta) · adjacent · preprint
@@ -52,7 +53,7 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="memory"></a>
 
-## Memory and experience (92)
+## Memory and experience (93)
 - 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit) · core · preprint
 - 2026-11-12 — [Discovering Effective Agent Memory Designs through Program Evolution](papers.md#mape) · core · preprint
 - 2026-11-12 — [CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](papers.md#coremem) · core · preprint
@@ -62,6 +63,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026-11-03 — [Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](papers.md#rescopebench) · core · preprint
 - 2026-11-03 — [From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?](papers.md#continual-autoresearch) · core · preprint
 - 2026-11-03 — [Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](papers.md#artifact-to-capability) · core · preprint
+- 2026-11-02 — [Top-$k$ Retrieval Leaves Memory Value Undetermined](papers.md#topk-memory-value) · core · preprint
 - 2026-11-02 — [What Is This Memory Useful For? Measuring Task-Conditioned Utility in Long-Term Agent Memory](papers.md#task-conditioned-memory-utility) · core · preprint
 - 2026-11-02 — [A State Change Is Local, Its Consequences Are Not: Dependency-Aware State Revision for Long-Term Agent Memory](papers.md#stategraph) · core · preprint
 - 2026-11-02 — [Peer Memory Changes Who LLM Agents Consult Without a Detected Gain in Answer Accuracy](papers.md#peer-memory-consultation) · core · preprint
@@ -266,7 +268,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="workflows"></a>
 
-## Workflow improvement (33)
+## Workflow improvement (34)
+- 2026-11-13 — [AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](papers.md#autorl) · core · preprint
 - 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit) · core · preprint
 - 2026-11-12 — [Discovering Effective Agent Memory Designs through Program Evolution](papers.md#mape) · core · preprint
 - 2026-11-05 — [Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution) · core · preprint
@@ -303,7 +306,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="architecture"></a>
 
-## Agent architecture (52)
+## Agent architecture (53)
+- 2026-11-13 — [AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](papers.md#autorl) · core · preprint
 - 2026-11-12 — [Discovering Effective Agent Memory Designs through Program Evolution](papers.md#mape) · core · preprint
 - 2026-11-05 — [Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution) · core · preprint
 - 2026-11-04 — [HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](papers.md#harnessflow) · core · preprint
@@ -359,7 +363,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="model-training"></a>
 
-## Learning in model weights (68)
+## Learning in model weights (69)
+- 2026-11-13 — [AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](papers.md#autorl) · core · preprint
 - 2026-11-12 — [CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](papers.md#coremem) · core · preprint
 - 2026-11-10 — [Continual-ARC: Measuring Skill Acquisition over a Working Lifetime](papers.md#continual-arc) · core · preprint
 - 2026-11-03 — [Stabilizing On-Policy Targeted Guidance in Agentic Reinforcement Learning](papers.md#targeted-guidance) · core · preprint
@@ -547,7 +552,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="evaluation"></a>
 
-## Evaluation and negative results (117)
+## Evaluation and negative results (119)
+- 2026-11-13 — [AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](papers.md#autorl) · core · preprint
 - 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit) · core · preprint
 - 2026-11-12 — [Discovering Effective Agent Memory Designs through Program Evolution](papers.md#mape) · core · preprint
 - 2026-11-12 — [CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](papers.md#coremem) · core · preprint
@@ -563,6 +569,7 @@ A work may appear in several topics; counts here are not additive.
 - 2026-11-03 — [From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?](papers.md#continual-autoresearch) · core · preprint
 - 2026-11-03 — [Can Benign Skills Induce Misaligned Behavior in LLM Agents?](papers.md#benign-skill-misalignment) · core · preprint
 - 2026-11-03 — [Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](papers.md#artifact-to-capability) · core · preprint
+- 2026-11-02 — [Top-$k$ Retrieval Leaves Memory Value Undetermined](papers.md#topk-memory-value) · core · preprint
 - 2026-11-02 — [What Is This Memory Useful For? Measuring Task-Conditioned Utility in Long-Term Agent Memory](papers.md#task-conditioned-memory-utility) · core · preprint
 - 2026-11-02 — [A State Change Is Local, Its Consequences Are Not: Dependency-Aware State Revision for Long-Term Agent Memory](papers.md#stategraph) · core · preprint
 - 2026-11-02 — [Peer Memory Changes Who LLM Agents Consult Without a Detected Gain in Answer Accuracy](papers.md#peer-memory-consultation) · core · preprint

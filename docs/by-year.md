@@ -3,6 +3,7 @@
 # Papers by year
 [Overview](../README.md) · [Full annotations](papers.md)
 ## 2026
+- 2026-11-13 — [AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](papers.md#autorl)
 - 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit)
 - 2026-11-12 — [Discovering Effective Agent Memory Designs through Program Evolution](papers.md#mape)
 - 2026-11-12 — [CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](papers.md#coremem)
@@ -18,6 +19,7 @@
 - 2026-11-03 — [From AutoResearch to Continual AutoResearch: Do Agents Learn Across Tasks?](papers.md#continual-autoresearch)
 - 2026-11-03 — [Can Benign Skills Induce Misaligned Behavior in LLM Agents?](papers.md#benign-skill-misalignment)
 - 2026-11-03 — [Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](papers.md#artifact-to-capability)
+- 2026-11-02 — [Top-$k$ Retrieval Leaves Memory Value Undetermined](papers.md#topk-memory-value)
 - 2026-11-02 — [What Is This Memory Useful For? Measuring Task-Conditioned Utility in Long-Term Agent Memory](papers.md#task-conditioned-memory-utility)
 - 2026-11-02 — [A State Change Is Local, Its Consequences Are Not: Dependency-Aware State Revision for Long-Term Agent Memory](papers.md#stategraph)
 - 2026-11-02 — [Peer Memory Changes Who LLM Agents Consult Without a Detected Gain in Answer Accuracy](papers.md#peer-memory-consultation)
