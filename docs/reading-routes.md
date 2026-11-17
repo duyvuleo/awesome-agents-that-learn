@@ -150,13 +150,15 @@ Does a method change only the solver, or also the process that improves it?
 
 4. **[Hyperagents](papers.md#hyperagents)** — Trace which meta-agent components become editable and which outer controls remain fixed.
 
-5. **[Exo: An Architecture for Self-Improving Systems at Runtime](papers.md#exo-runtime)** — Compare runtime harness edits with the fixed mechanisms that retain history and activate replacements.
+5. **[Self-Improvement Memory Enables Continual Recursive Self-Improvement](papers.md#self-improvement-memory)** — Compare memory for a fixed optimizer with optimizer-code evolution; inspect same-harness continuation controls and unmatched context costs.
 
-6. **[ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement](papers.md#modularrsi)** — Inspect modular evolution and frozen downstream evaluation.
+6. **[Exo: An Architecture for Self-Improving Systems at Runtime](papers.md#exo-runtime)** — Compare runtime harness edits with the fixed mechanisms that retain history and activate replacements.
 
-7. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Test the assumption that an optimization benchmark is a trustworthy teacher.
+7. **[ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement](papers.md#modularrsi)** — Inspect modular evolution and frozen downstream evaluation.
 
-8. **[Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](papers.md#rsi-evaluation-audit)** — Distinguish final-system gains from repeated loops and same-start comparisons of improvers.
+8. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Test the assumption that an optimization benchmark is a trustworthy teacher.
+
+9. **[Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](papers.md#rsi-evaluation-audit)** — Distinguish final-system gains from repeated loops and same-start comparisons of improvers.
 
 
 **Study exercise:** Draw the solver, proposer, selector, and evaluator separately. Highlight what can change and what evidence would demonstrate improvement of the improver.

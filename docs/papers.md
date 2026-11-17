@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-203 unique works. Catalog updated: 2026-11-18; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+204 unique works. Catalog updated: 2026-11-18; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -13,6 +13,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-13 | **SIM**<br>[Self-Improvement Memory Enables Continual Recursive Self-Improvement](https://arxiv.org/abs/2611.18856) | A fixed proposer and selector read the complete problem-linked SIM record, including edit rationale, predictions, observed outcomes and provenance. Selected attempts… | Memory, Agent code | preprint · full-text | [Notes](#self-improvement-memory) |
 | 2026-11-13 | **AutoRL**<br>[AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](https://arxiv.org/abs/2611.17790) | Researchers supply data, objectives, budgets and allowed controls. Fixed-role LLM agents monitor ongoing RL, debate and check reward, loss or data changes, then… | Model weights, Workflows | preprint · full-text | [Notes](#autorl) |
 | 2026-11-12 | **Migration Agent Audit**<br>[Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](https://arxiv.org/abs/2611.16143) | Stores generated migration attempts with provenance and evidence grades, retrieves positive or counter-examples, and updates strategy selection while keeping the base… | Memory, Workflows | preprint · full-text | [Notes](#self-learning-migration-audit) |
 | 2026-11-12 | **MAPE**<br>[Discovering Effective Agent Memory Designs through Program Evolution](https://arxiv.org/abs/2611.17068) | An external proposer rewrites memory construction, retrieval and evidence-composition code around fixed answering models. Diagnoses and candidate archives guide… | Memory, Agent code | preprint · full-text | [Notes](#mape) · [Code](https://github.com/ash-ding/MAPE) |
@@ -218,6 +219,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2017-10-19 | **AlphaGo Zero**<br>[Mastering the game of Go without human knowledge](https://www.nature.com/articles/nature24270) | Alternates search-guided self-play with gradient updates to a shared policy/value network. Recent games are replayed to fit improved move distributions and outcomes. The… | Model weights | peer-reviewed · full-text | [Notes](#alphago-zero) |
 
 ## Full annotations
+
+<a id="self-improvement-memory"></a>
+
+## Self-Improvement Memory Enables Continual Recursive Self-Improvement
+
+**2026-11-13 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.18856)
+
+**Mechanism.** A fixed proposer and selector read the complete problem-linked SIM record, including edit rationale, predictions, observed outcomes and provenance. Selected attempts extend it across compatible benchmark or model changes while task-solving harness code evolves. Raw SIM conditions the optimizer, not the task policy; the optimizer’s outer procedures stay fixed and policy weights are frozen within each stage.
+
+**What changes:** Memory, Agent code. **Persistence:** across-tasks. **Learning signal:** Evolve-set scores, traces, root-cause diagnoses and selected-edit outcomes guide proposal, selection and optimizer-memory updates; the reported protocol excludes held-out feedback from this loop.
+
+**Evaluation.** Four domains supply six dataset and four Opus-to-Gemini point comparisons. In coding, ten independent Terminus-2 source runs each initialize paired ten-round TB4 continuations: SIM wins nine pairs, with a 2.36-point mean final-score advantage (95% CI [1.05,3.68], paired p=.003). Other main conditions use one optimization run per arm with five rollouts per task.
+
+**Boundary.** The paired inference concerns one coding transition. Full SIM combines inherited history with target updates, without isolating components or matching memory length, tokens or runtime. Compatible interfaces and fixed optimization rules bound the continual claim. One model generation trails fresh RSI; the single source-retention trace still loses performance. Selected edits can miss predicted fixes, and model-judged workspace scores are not independent human validation. Results were not reproduced.
+
+**Code / data.** Complete 35-page v1 and Appendices A–F read on 2026-11-18; all twelve figures, eight numbered tables, six equations and supplied code/JSON cases visually checked. No official SIM artifact, code license or installation manifest was established. No research code or models executed.
+
+**Topics:** memory, recursive-improvement, continual-learning, workflows, evaluation. **Reviewed:** full-text · 2026-11-18.
+
+[Source 1](https://arxiv.org/abs/2611.18856) · [Source 2](https://arxiv.org/pdf/2611.18856v1) · [Source 3](https://arxiv.org/html/2611.18856v1)
 
 <a id="autorl"></a>
 

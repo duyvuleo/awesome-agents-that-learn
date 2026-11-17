@@ -229,6 +229,10 @@
         "why": "Trace which meta-agent components become editable and which outer controls remain fixed."
       },
       {
+        "paper": "self-improvement-memory",
+        "why": "Compare memory for a fixed optimizer with optimizer-code evolution; inspect same-harness continuation controls and unmatched context costs."
+      },
+      {
         "paper": "exo-runtime",
         "why": "Compare runtime harness edits with the fixed mechanisms that retain history and activate replacements."
       },

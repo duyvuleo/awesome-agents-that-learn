@@ -7451,5 +7451,42 @@
     "limitations": "No independent training-run replication or confidence intervals are reported. Four math benchmark datasets also supply adaptive monitoring; fixed scoring is not an untouched test. Matched steps do not equal total compute, and components are not separately ablated. LongCat uses private training corpora and an underspecified coding evaluation; that campaign lacks a matched control. This is local recipe refinement, not demonstrated recursive learning of the supervisor.",
     "review_depth": "full-text",
     "checked": "2026-11-18"
+  },
+  {
+    "id": "self-improvement-memory",
+    "short_name": "SIM",
+    "title": "Self-Improvement Memory Enables Continual Recursive Self-Improvement",
+    "date": "2026-11-13",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.18856",
+    "sources": [
+      "https://arxiv.org/abs/2611.18856",
+      "https://arxiv.org/pdf/2611.18856v1",
+      "https://arxiv.org/html/2611.18856v1"
+    ],
+    "code_url": null,
+    "code_note": "Complete 35-page v1 and Appendices A–F read on 2026-11-18; all twelve figures, eight numbered tables, six equations and supplied code/JSON cases visually checked. No official SIM artifact, code license or installation manifest was established. No research code or models executed.",
+    "topics": [
+      "memory",
+      "recursive-improvement",
+      "continual-learning",
+      "workflows",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "agent-code"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Evolve-set scores, traces, root-cause diagnoses and selected-edit outcomes guide proposal, selection and optimizer-memory updates; the reported protocol excludes held-out feedback from this loop.",
+    "mechanism": "A fixed proposer and selector read the complete problem-linked SIM record, including edit rationale, predictions, observed outcomes and provenance. Selected attempts extend it across compatible benchmark or model changes while task-solving harness code evolves. Raw SIM conditions the optimizer, not the task policy; the optimizer’s outer procedures stay fixed and policy weights are frozen within each stage.",
+    "evaluation": "Four domains supply six dataset and four Opus-to-Gemini point comparisons. In coding, ten independent Terminus-2 source runs each initialize paired ten-round TB4 continuations: SIM wins nine pairs, with a 2.36-point mean final-score advantage (95% CI [1.05,3.68], paired p=.003). Other main conditions use one optimization run per arm with five rollouts per task.",
+    "limitations": "The paired inference concerns one coding transition. Full SIM combines inherited history with target updates, without isolating components or matching memory length, tokens or runtime. Compatible interfaces and fixed optimization rules bound the continual claim. One model generation trails fresh RSI; the single source-retention trace still loses performance. Selected edits can miss predicted fixes, and model-judged workspace scores are not independent human validation. Results were not reproduced.",
+    "review_depth": "full-text",
+    "checked": "2026-11-18"
   }
 ]

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-18 — Optimizer-memory supplement
+
+- Added a complete-source appraisal of Self-Improvement Memory (SIM); total 204 works and 26 systems.
+- Distinguished fixed-optimizer memory from optimizer-code evolution and retained paired-study, cost and artifact limits.
+- Expanded discovery with mechanism-only queries after verifying a mandatory-agent metadata blind spot; older recovered leads remain pending.
+
 ## 2026-11-18 — Attribution, training supervision and benchmark revision
 
 - Added complete-source reviews of LEDGER/Top-k Retrieval and AutoRL; total 203 works and 26 systems.
