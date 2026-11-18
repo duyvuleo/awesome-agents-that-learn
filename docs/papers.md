@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-204 unique works. Catalog updated: 2026-11-18; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+207 unique works. Catalog updated: 2026-11-19; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -13,6 +13,9 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-16 | **Experience Rot**<br>[Experience Rot: Experienced Agents Fail Where Novices Succeed](https://arxiv.org/abs/2611.20922) | Pairs the same final tasks with valid, stale or absent experience after controlled silent tool-interface changes. Tests live histories, persistent notes, retrieved notes… | Memory, Skills, Prompts / context | preprint · full-text | [Notes](#experience-rot) |
+| 2026-11-16 | **CLAM**<br>[Instant Weight-Space Consolidation for Long-Term Memory in LLMs](https://arxiv.org/abs/2611.20759) | A recurrent hypernetwork reads frozen-model session activations, gates them into a fixed-size latent state, and decodes a rank-8 LoRA adapter reused across queries. A… | Model weights, Memory | preprint · full-text | [Notes](#clam) |
+| 2026-11-15 | **Context-Weight Adaptation**<br>[Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](https://arxiv.org/abs/2611.19700) | A shared online loop compares raw-trajectory replay, persistent rank-32 LoRA updates and their combinations. FIFO or Prefix retention combines with All or Successful… | Memory, Model weights | preprint · full-text | [Notes](#context-weight-agent-adaptation) |
 | 2026-11-13 | **SIM**<br>[Self-Improvement Memory Enables Continual Recursive Self-Improvement](https://arxiv.org/abs/2611.18856) | A fixed proposer and selector read the complete problem-linked SIM record, including edit rationale, predictions, observed outcomes and provenance. Selected attempts… | Memory, Agent code | preprint · full-text | [Notes](#self-improvement-memory) |
 | 2026-11-13 | **AutoRL**<br>[AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](https://arxiv.org/abs/2611.17790) | Researchers supply data, objectives, budgets and allowed controls. Fixed-role LLM agents monitor ongoing RL, debate and check reward, loss or data changes, then… | Model weights, Workflows | preprint · full-text | [Notes](#autorl) |
 | 2026-11-12 | **Migration Agent Audit**<br>[Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](https://arxiv.org/abs/2611.16143) | Stores generated migration attempts with provenance and evidence grades, retrieves positive or counter-examples, and updates strategy selection while keeping the base… | Memory, Workflows | preprint · full-text | [Notes](#self-learning-migration-audit) |
@@ -219,6 +222,72 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2017-10-19 | **AlphaGo Zero**<br>[Mastering the game of Go without human knowledge](https://www.nature.com/articles/nature24270) | Alternates search-guided self-play with gradient updates to a shared policy/value network. Recent games are replayed to fit improved move distributions and outcomes. The… | Model weights | peer-reviewed · full-text | [Notes](#alphago-zero) |
 
 ## Full annotations
+
+<a id="experience-rot"></a>
+
+## Experience Rot: Experienced Agents Fail Where Novices Succeed
+
+**2026-11-16 · preprint · core · benchmark**
+
+[Primary source](https://arxiv.org/abs/2611.20922)
+
+**Mechanism.** Pairs the same final tasks with valid, stale or absent experience after controlled silent tool-interface changes. Tests live histories, persistent notes, retrieved notes and scripts, experience quantity, documentation placement and verification; deterministic stored-state checks distinguish actual completion from claims.
+
+**What changes:** Memory, Skills, Prompts / context. **Persistence:** both. **Learning signal:** Successful earlier tool executions, agent-written memory notes or scripts, current documentation and read-back of stored state; no parameter training.
+
+**Evaluation.** Six models, 12,624 initiated episodes, 136 excluded, three small synthetic services and paired change directions. With incomplete documentation, no/valid/stale experience yields 63/100/23% success; task-instance cluster bootstraps report one-SE errors. Stale success falls from 46% to 26% with one versus ten earlier tasks. Read-back instructions in the system/task message reach 91%/69% with complete/incomplete docs, at 6.5/10.6 calls versus 2.9/3.1 with valid experience.
+
+**Boundary.** Short synthetic tasks and isolated silent changes; successful prior-task filtering and fixed-model/change bootstrap limit generalization. Qwen largely recovers, and a reply-default change shows no harm. Incomplete-doc experiments were not preregistered; claimed registrations were not independently inspected. Most remedies use conversation history, completion reports use keyword rules, and behavioral associations do not establish why checking stops. No independent reproduction.
+
+**Code / data.** No author-linked implementation, license, setup or preregistration record was established from the inspected primary sources; no code was executed.
+
+**Topics:** memory, skills, continual-learning, evaluation, safety. **Reviewed:** full-text · 2026-11-19.
+
+[Source 1](https://arxiv.org/abs/2611.20922) · [Source 2](https://arxiv.org/html/2611.20922v1) · [Source 3](https://arxiv.org/pdf/2611.20922v1)
+
+<a id="clam"></a>
+
+## Instant Weight-Space Consolidation for Long-Term Memory in LLMs
+
+**2026-11-16 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.20759)
+
+**Mechanism.** A recurrent hypernetwork reads frozen-model session activations, gates them into a fixed-size latent state, and decodes a rank-8 LoRA adapter reused across queries. A growing raw-session buffer separately retrieves five pieces for each answer. The backbone and hypernetwork stay fixed online; effective adapter weights and retained memory change.
+
+**What changes:** Model weights, Memory. **Persistence:** across-tasks. **Learning signal:** Offline teacher-generated, memory-dependent synthetic QA trains a separate hypernetwork for each frozen backbone; online session activations update its carried latent state without gradient steps.
+
+**Evaluation.** Authors test three 2-7B backbones on 1,540 answerable LoCoMo questions and 173 sampled answerable LongMemEval-S questions; weight-space comparisons use 180 LoCoMo questions. Adding the adapter to the same buffer yields 7.1-11.0 judge-accuracy points on LoCoMo, but only 1.7-6.4 on LongMemEval-S with intervals touching or crossing zero. Qwen LongMemEval-S trails Mem0. Further controls cover oracle/missed evidence, history depth, text matching and alternative judges.
+
+**Boundary.** Gradient-free serving follows substantial per-backbone synthetic training; 10.3-second measured construction is not zero compute, and the episodic store grows with history. Abstention is excluded from benchmark evaluation. Missing mismatched-history and fixed-bias-only controls leave memory-specific gains incompletely isolated; decontamination and training-run variance are not reported. Oracle gains are near zero for Mistral, and the learned gate does not beat state-reset on that backbone. Results are source-reviewed, not reproduced.
+
+**Code / data.** Complete available 16-page arXiv v1, including Appendices A-B, five equations, fourteen figures and ten tables, read on 2026-11-19; figures and tables visually inspected. No paper-specific official code, trained CLAM checkpoint or corpus release was established from the primary record, full text and bounded exact-title search. Cited document-to-adapter initialization is not a verified CLAM release; no research code or models executed.
+
+**Topics:** memory, model-training, continual-learning, evaluation. **Reviewed:** full-text · 2026-11-19.
+
+[Source 1](https://arxiv.org/abs/2611.20759) · [Source 2](https://arxiv.org/pdf/2611.20759v1) · [Source 3](https://arxiv.org/html/2611.20759v1)
+
+<a id="context-weight-agent-adaptation"></a>
+
+## Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both
+
+**2026-11-15 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.19700)
+
+**Mechanism.** A shared online loop compares raw-trajectory replay, persistent rank-32 LoRA updates and their combinations. FIFO or Prefix retention combines with All or Successful admission; GRPO reinforces relative-reward attempts, while SDPO matches an EMA self-teacher given a successful sibling or failure feedback. Context, adapter and optimizer persist across tasks; additional within-task rounds supply unscored experience.
+
+**What changes:** Memory, Model weights. **Persistence:** both. **Learning signal:** Own interaction traces and benchmark rewards, success flags and textual feedback guide replay admission, GRPO advantages or a hindsight-conditioned self-teacher; first-round outcomes enter learning only after scoring.
+
+**Evaluation.** Qwen3.5-9B is tested on 109 tasks across Xarray, AppWorld File System, ScienceWorld Measurement and BIRD Financial, using five stream seeds and 16 parallel first-round attempts per task. Author-reported equal-world mean success is 28.8% frozen, 49.4% for Prefix–Successful replay and 51.6% with GRPO; the latter improves 14/20 world–seed pairs. SDPO effects are mixed.
+
+**Boundary.** One model and small related-task worlds bound generalization. SDPO and GRPO have different interaction and optimizer budgets, so objective superiority is unestablished. Shorter traces do not establish lower total cost, and inspection correlations do not prove a cause of gains. Grader inconsistencies appear in examples. Final-agent ablations revisit seen tasks; single-seed cross-world transfer includes substantial losses. General-capability retention and results were not independently validated.
+
+**Code / data.** Complete 34-page v1, including Appendices A–F and references, read on 2026-11-19; all 23 figures, seven tables, Algorithm 1 and numbered equations visually checked. No official implementation, code license or installation manifest was established. No research code or models executed.
+
+**Topics:** memory, model-training, continual-learning, evaluation, applications. **Reviewed:** full-text · 2026-11-19.
+
+[Source 1](https://arxiv.org/abs/2611.19700) · [Source 2](https://arxiv.org/pdf/2611.19700v1) · [Source 3](https://arxiv.org/html/2611.19700v1)
 
 <a id="self-improvement-memory"></a>
 

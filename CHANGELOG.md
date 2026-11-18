@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-19 — Consolidation, adaptation and stale experience
+
+- Added complete-source appraisals of CLAM, Context–Weight Adaptation and Experience Rot; total 207 works and 26 systems.
+- Preserved offline-training and storage costs, mixed adaptation gains, grader flaws and silent-tool-change failures with model-specific exceptions.
+- Extended three reading routes; retained unknown artifact availability and all historical inspections and weekly snapshots. No research experiments reproduced.
+
 ## 2026-11-18 — Optimizer-memory supplement
 
 - Added a complete-source appraisal of Self-Improvement Memory (SIM); total 204 works and 26 systems.

@@ -53,7 +53,10 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="memory"></a>
 
-## Memory and experience (94)
+## Memory and experience (97)
+- 2026-11-16 — [Experience Rot: Experienced Agents Fail Where Novices Succeed](papers.md#experience-rot) · core · preprint
+- 2026-11-16 — [Instant Weight-Space Consolidation for Long-Term Memory in LLMs](papers.md#clam) · core · preprint
+- 2026-11-15 — [Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](papers.md#context-weight-agent-adaptation) · core · preprint
 - 2026-11-13 — [Self-Improvement Memory Enables Continual Recursive Self-Improvement](papers.md#self-improvement-memory) · core · preprint
 - 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit) · core · preprint
 - 2026-11-12 — [Discovering Effective Agent Memory Designs through Program Evolution](papers.md#mape) · core · preprint
@@ -151,7 +154,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="skills"></a>
 
-## Skill acquisition and reuse (53)
+## Skill acquisition and reuse (54)
+- 2026-11-16 — [Experience Rot: Experienced Agents Fail Where Novices Succeed](papers.md#experience-rot) · core · preprint
 - 2026-11-10 — [Continual-ARC: Measuring Skill Acquisition over a Working Lifetime](papers.md#continual-arc) · core · preprint
 - 2026-11-05 — [Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution) · core · preprint
 - 2026-11-03 — [Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](papers.md#rescopebench) · core · preprint
@@ -365,7 +369,9 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="model-training"></a>
 
-## Learning in model weights (69)
+## Learning in model weights (71)
+- 2026-11-16 — [Instant Weight-Space Consolidation for Long-Term Memory in LLMs](papers.md#clam) · core · preprint
+- 2026-11-15 — [Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](papers.md#context-weight-agent-adaptation) · core · preprint
 - 2026-11-13 — [AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](papers.md#autorl) · core · preprint
 - 2026-11-12 — [CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](papers.md#coremem) · core · preprint
 - 2026-11-10 — [Continual-ARC: Measuring Skill Acquisition over a Working Lifetime](papers.md#continual-arc) · core · preprint
@@ -465,7 +471,10 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="continual-learning"></a>
 
-## Continual and lifelong learning (54)
+## Continual and lifelong learning (57)
+- 2026-11-16 — [Experience Rot: Experienced Agents Fail Where Novices Succeed](papers.md#experience-rot) · core · preprint
+- 2026-11-16 — [Instant Weight-Space Consolidation for Long-Term Memory in LLMs](papers.md#clam) · core · preprint
+- 2026-11-15 — [Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](papers.md#context-weight-agent-adaptation) · core · preprint
 - 2026-11-13 — [Self-Improvement Memory Enables Continual Recursive Self-Improvement](papers.md#self-improvement-memory) · core · preprint
 - 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit) · core · preprint
 - 2026-11-10 — [The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](papers.md#rsi-tax) · core · preprint
@@ -556,7 +565,10 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="evaluation"></a>
 
-## Evaluation and negative results (120)
+## Evaluation and negative results (123)
+- 2026-11-16 — [Experience Rot: Experienced Agents Fail Where Novices Succeed](papers.md#experience-rot) · core · preprint
+- 2026-11-16 — [Instant Weight-Space Consolidation for Long-Term Memory in LLMs](papers.md#clam) · core · preprint
+- 2026-11-15 — [Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](papers.md#context-weight-agent-adaptation) · core · preprint
 - 2026-11-13 — [Self-Improvement Memory Enables Continual Recursive Self-Improvement](papers.md#self-improvement-memory) · core · preprint
 - 2026-11-13 — [AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](papers.md#autorl) · core · preprint
 - 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit) · core · preprint
@@ -680,7 +692,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="safety"></a>
 
-## Safety, drift, and integrity (18)
+## Safety, drift, and integrity (19)
+- 2026-11-16 — [Experience Rot: Experienced Agents Fail Where Novices Succeed](papers.md#experience-rot) · core · preprint
 - 2026-11-03 — [Can Benign Skills Induce Misaligned Behavior in LLM Agents?](papers.md#benign-skill-misalignment) · core · preprint
 - 2026-11-02 — [A State Change Is Local, Its Consequences Are Not: Dependency-Aware State Revision for Long-Term Agent Memory](papers.md#stategraph) · core · preprint
 - 2026-10-26 — [The Right Fact, the Wrong Decision: SciValidityBench for Scientific Agent Memory](papers.md#scivaliditybench) · adjacent · preprint
@@ -702,7 +715,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="applications"></a>
 
-## Applied learning agents (53)
+## Applied learning agents (54)
+- 2026-11-15 — [Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](papers.md#context-weight-agent-adaptation) · core · preprint
 - 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit) · core · preprint
 - 2026-11-12 — [CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](papers.md#coremem) · core · preprint
 - 2026-11-03 — [Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](papers.md#rescopebench) · core · preprint

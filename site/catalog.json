@@ -4,7 +4,7 @@
     "subtitle": "A research guide to self-learning, self-improving, and self-evolving AI agents.",
     "repository": "https://github.com/duyvuleo/awesome-agents-that-learn",
     "site": "https://duyvuleo.github.io/awesome-agents-that-learn/",
-    "updated": "2026-11-18",
+    "updated": "2026-11-19",
     "schema_version": 2,
     "topics": {
       "foundations": "Foundations and boundaries",
@@ -43,6 +43,117 @@
     }
   },
   "papers": [
+    {
+      "id": "experience-rot",
+      "title": "Experience Rot: Experienced Agents Fail Where Novices Succeed",
+      "date": "2026-11-16",
+      "year": 2026,
+      "kind": "benchmark",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.20922",
+      "sources": [
+        "https://arxiv.org/abs/2611.20922",
+        "https://arxiv.org/html/2611.20922v1",
+        "https://arxiv.org/pdf/2611.20922v1"
+      ],
+      "code_url": null,
+      "code_note": "No author-linked implementation, license, setup or preregistration record was established from the inspected primary sources; no code was executed.",
+      "topics": [
+        "memory",
+        "skills",
+        "continual-learning",
+        "evaluation",
+        "safety"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "memory",
+        "skills",
+        "prompts"
+      ],
+      "persistence": "both",
+      "learning_signal": "Successful earlier tool executions, agent-written memory notes or scripts, current documentation and read-back of stored state; no parameter training.",
+      "mechanism": "Pairs the same final tasks with valid, stale or absent experience after controlled silent tool-interface changes. Tests live histories, persistent notes, retrieved notes and scripts, experience quantity, documentation placement and verification; deterministic stored-state checks distinguish actual completion from claims.",
+      "evaluation": "Six models, 12,624 initiated episodes, 136 excluded, three small synthetic services and paired change directions. With incomplete documentation, no/valid/stale experience yields 63/100/23% success; task-instance cluster bootstraps report one-SE errors. Stale success falls from 46% to 26% with one versus ten earlier tasks. Read-back instructions in the system/task message reach 91%/69% with complete/incomplete docs, at 6.5/10.6 calls versus 2.9/3.1 with valid experience.",
+      "limitations": "Short synthetic tasks and isolated silent changes; successful prior-task filtering and fixed-model/change bootstrap limit generalization. Qwen largely recovers, and a reply-default change shows no harm. Incomplete-doc experiments were not preregistered; claimed registrations were not independently inspected. Most remedies use conversation history, completion reports use keyword rules, and behavioral associations do not establish why checking stops. No independent reproduction.",
+      "review_depth": "full-text",
+      "checked": "2026-11-19",
+      "short_name": "Experience Rot"
+    },
+    {
+      "id": "clam",
+      "short_name": "CLAM",
+      "title": "Instant Weight-Space Consolidation for Long-Term Memory in LLMs",
+      "date": "2026-11-16",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.20759",
+      "sources": [
+        "https://arxiv.org/abs/2611.20759",
+        "https://arxiv.org/pdf/2611.20759v1",
+        "https://arxiv.org/html/2611.20759v1"
+      ],
+      "code_url": null,
+      "code_note": "Complete available 16-page arXiv v1, including Appendices A-B, five equations, fourteen figures and ten tables, read on 2026-11-19; figures and tables visually inspected. No paper-specific official code, trained CLAM checkpoint or corpus release was established from the primary record, full text and bounded exact-title search. Cited document-to-adapter initialization is not a verified CLAM release; no research code or models executed.",
+      "topics": [
+        "memory",
+        "model-training",
+        "continual-learning",
+        "evaluation"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "model-weights",
+        "memory"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Offline teacher-generated, memory-dependent synthetic QA trains a separate hypernetwork for each frozen backbone; online session activations update its carried latent state without gradient steps.",
+      "mechanism": "A recurrent hypernetwork reads frozen-model session activations, gates them into a fixed-size latent state, and decodes a rank-8 LoRA adapter reused across queries. A growing raw-session buffer separately retrieves five pieces for each answer. The backbone and hypernetwork stay fixed online; effective adapter weights and retained memory change.",
+      "evaluation": "Authors test three 2-7B backbones on 1,540 answerable LoCoMo questions and 173 sampled answerable LongMemEval-S questions; weight-space comparisons use 180 LoCoMo questions. Adding the adapter to the same buffer yields 7.1-11.0 judge-accuracy points on LoCoMo, but only 1.7-6.4 on LongMemEval-S with intervals touching or crossing zero. Qwen LongMemEval-S trails Mem0. Further controls cover oracle/missed evidence, history depth, text matching and alternative judges.",
+      "limitations": "Gradient-free serving follows substantial per-backbone synthetic training; 10.3-second measured construction is not zero compute, and the episodic store grows with history. Abstention is excluded from benchmark evaluation. Missing mismatched-history and fixed-bias-only controls leave memory-specific gains incompletely isolated; decontamination and training-run variance are not reported. Oracle gains are near zero for Mistral, and the learned gate does not beat state-reset on that backbone. Results are source-reviewed, not reproduced.",
+      "review_depth": "full-text",
+      "checked": "2026-11-19"
+    },
+    {
+      "id": "context-weight-agent-adaptation",
+      "short_name": "Context-Weight Adaptation",
+      "title": "Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both",
+      "date": "2026-11-15",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.19700",
+      "sources": [
+        "https://arxiv.org/abs/2611.19700",
+        "https://arxiv.org/pdf/2611.19700v1",
+        "https://arxiv.org/html/2611.19700v1"
+      ],
+      "code_url": null,
+      "code_note": "Complete 34-page v1, including Appendices A–F and references, read on 2026-11-19; all 23 figures, seven tables, Algorithm 1 and numbered equations visually checked. No official implementation, code license or installation manifest was established. No research code or models executed.",
+      "topics": [
+        "memory",
+        "model-training",
+        "continual-learning",
+        "evaluation",
+        "applications"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "memory",
+        "model-weights"
+      ],
+      "persistence": "both",
+      "learning_signal": "Own interaction traces and benchmark rewards, success flags and textual feedback guide replay admission, GRPO advantages or a hindsight-conditioned self-teacher; first-round outcomes enter learning only after scoring.",
+      "mechanism": "A shared online loop compares raw-trajectory replay, persistent rank-32 LoRA updates and their combinations. FIFO or Prefix retention combines with All or Successful admission; GRPO reinforces relative-reward attempts, while SDPO matches an EMA self-teacher given a successful sibling or failure feedback. Context, adapter and optimizer persist across tasks; additional within-task rounds supply unscored experience.",
+      "evaluation": "Qwen3.5-9B is tested on 109 tasks across Xarray, AppWorld File System, ScienceWorld Measurement and BIRD Financial, using five stream seeds and 16 parallel first-round attempts per task. Author-reported equal-world mean success is 28.8% frozen, 49.4% for Prefix–Successful replay and 51.6% with GRPO; the latter improves 14/20 world–seed pairs. SDPO effects are mixed.",
+      "limitations": "One model and small related-task worlds bound generalization. SDPO and GRPO have different interaction and optimizer budgets, so objective superiority is unestablished. Shorter traces do not establish lower total cost, and inspection correlations do not prove a cause of gains. Grader inconsistencies appear in examples. Final-agent ablations revisit seen tasks; single-seed cross-world transfer includes substantial losses. General-capability retention and results were not independently validated.",
+      "review_depth": "full-text",
+      "checked": "2026-11-19"
+    },
     {
       "id": "self-improvement-memory",
       "short_name": "SIM",
@@ -8778,6 +8889,10 @@
           "why": "Compare external experience routing with learned factual adapters; inspect forgetting, fallback retrieval, and write cost."
         },
         {
+          "paper": "clam",
+          "why": "Contrast trained gradient-free consolidation with online adapter fitting; account for the growing episodic store and mixed shared-buffer gains."
+        },
+        {
           "paper": "skillrl",
           "why": "Contrast external skills with parameter learning and teacher-derived supervision."
         },
@@ -8880,6 +8995,10 @@
         {
           "paper": "ascent",
           "why": "Compare persistent online adapter updates with external training and within-task retries."
+        },
+        {
+          "paper": "context-weight-agent-adaptation",
+          "why": "Compare raw replay, weight updates and hybrids under prequential scoring; separate matched task streams from matched compute and test retention."
         }
       ],
       "exercise": "For each loop, label which information is human-provided, pretrained, environment-verified, or model-judged."
@@ -9084,6 +9203,10 @@
         {
           "paper": "rescopebench",
           "why": "Track selective revision after silent environmental changes, separating saved knowledge from completed tasks."
+        },
+        {
+          "paper": "experience-rot",
+          "why": "Test stale self-generated experience after silent tool changes; contrast deterministic state checks with completion claims and count verification costs."
         }
       ],
       "exercise": "Specify separate measures for factual memory, procedural transfer, backward retention, cost, and safety drift. Do not collapse them into one score."

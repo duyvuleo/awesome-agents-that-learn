@@ -48,13 +48,15 @@ How can experience become useful knowledge, a procedure, or a reusable tool?
 
 7. **[Route to Remember: Adaptive Memory Selection for LLM Agents](papers.md#route-to-remember)** — Compare external experience routing with learned factual adapters; inspect forgetting, fallback retrieval, and write cost.
 
-8. **[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl)** — Contrast external skills with parameter learning and teacher-derived supervision.
+8. **[Instant Weight-Space Consolidation for Long-Term Memory in LLMs](papers.md#clam)** — Contrast trained gradient-free consolidation with online adapter fitting; account for the growing episodic store and mixed shared-buffer gains.
 
-9. **[SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](papers.md#skillflow)** — Examine whether skill use produces measurable benefit.
+9. **[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl)** — Contrast external skills with parameter learning and teacher-derived supervision.
 
-10. **[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](papers.md#skill-plus-plus)** — Separate retaining a skill from keeping it selectable as the library grows; compare routing with task success.
+10. **[SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](papers.md#skillflow)** — Examine whether skill use produces measurable benefit.
 
-11. **[Coalition-Aware Skill Reliability for Self-Evolving Agents](papers.md#coalition-skill-reliability)** — Test whether a useful skill stays useful in another bank or deployment domain.
+11. **[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](papers.md#skill-plus-plus)** — Separate retaining a skill from keeping it selectable as the library grows; compare routing with task success.
+
+12. **[Coalition-Aware Skill Reliability for Self-Evolving Agents](papers.md#coalition-skill-reliability)** — Test whether a useful skill stays useful in another bank or deployment domain.
 
 
 **Study exercise:** For three methods, write the stored artifact, admission rule, retrieval rule, revision rule, and evidence that reuse helps.
@@ -109,6 +111,8 @@ Where does supervision come from when a model helps generate its own training da
 8. **[Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](papers.md#self-harmony)** — Distinguish label-free adaptation to test questions from transfer to unseen tasks, and agreement from correctness.
 
 9. **[ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience](papers.md#ascent)** — Compare persistent online adapter updates with external training and within-task retries.
+
+10. **[Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](papers.md#context-weight-agent-adaptation)** — Compare raw replay, weight updates and hybrids under prequential scoring; separate matched task streams from matched compute and test retention.
 
 
 **Study exercise:** For each loop, label which information is human-provided, pretrained, environment-verified, or model-judged.
@@ -231,6 +235,8 @@ Does learning persist when tasks and environments change?
 13. **[MEMOREPAIR: Barrier-First Cascade Repair in Agentic Memory](papers.md#memorepair)** — Trace how a corrected source affects stored descendants and what complete provenance assumes.
 
 14. **[Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](papers.md#rescopebench)** — Track selective revision after silent environmental changes, separating saved knowledge from completed tasks.
+
+15. **[Experience Rot: Experienced Agents Fail Where Novices Succeed](papers.md#experience-rot)** — Test stale self-generated experience after silent tool changes; contrast deterministic state checks with completion claims and count verification costs.
 
 
 **Study exercise:** Specify separate measures for factual memory, procedural transfer, backward retention, cost, and safety drift. Do not collapse them into one score.

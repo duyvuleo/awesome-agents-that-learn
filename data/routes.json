@@ -65,6 +65,10 @@
         "why": "Compare external experience routing with learned factual adapters; inspect forgetting, fallback retrieval, and write cost."
       },
       {
+        "paper": "clam",
+        "why": "Contrast trained gradient-free consolidation with online adapter fitting; account for the growing episodic store and mixed shared-buffer gains."
+      },
+      {
         "paper": "skillrl",
         "why": "Contrast external skills with parameter learning and teacher-derived supervision."
       },
@@ -167,6 +171,10 @@
       {
         "paper": "ascent",
         "why": "Compare persistent online adapter updates with external training and within-task retries."
+      },
+      {
+        "paper": "context-weight-agent-adaptation",
+        "why": "Compare raw replay, weight updates and hybrids under prequential scoring; separate matched task streams from matched compute and test retention."
       }
     ],
     "exercise": "For each loop, label which information is human-provided, pretrained, environment-verified, or model-judged."
@@ -371,6 +379,10 @@
       {
         "paper": "rescopebench",
         "why": "Track selective revision after silent environmental changes, separating saved knowledge from completed tasks."
+      },
+      {
+        "paper": "experience-rot",
+        "why": "Test stale self-generated experience after silent tool changes; contrast deterministic state checks with completion claims and count verification costs."
       }
     ],
     "exercise": "Specify separate measures for factual memory, procedural transfer, backward retention, cost, and safety drift. Do not collapse them into one score."

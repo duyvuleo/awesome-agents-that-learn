@@ -3,6 +3,9 @@
 # Papers by year
 [Overview](../README.md) · [Full annotations](papers.md)
 ## 2026
+- 2026-11-16 — [Experience Rot: Experienced Agents Fail Where Novices Succeed](papers.md#experience-rot)
+- 2026-11-16 — [Instant Weight-Space Consolidation for Long-Term Memory in LLMs](papers.md#clam)
+- 2026-11-15 — [Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](papers.md#context-weight-agent-adaptation)
 - 2026-11-13 — [Self-Improvement Memory Enables Continual Recursive Self-Improvement](papers.md#self-improvement-memory)
 - 2026-11-13 — [AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](papers.md#autorl)
 - 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit)
