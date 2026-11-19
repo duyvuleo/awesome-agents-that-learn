@@ -67,3 +67,7 @@ The actual license identifies Apache-2.0 for project-owned code; NOTICE and thir
 ## 2026-11-19 — Artifact availability follow-up
 
 Full primary-source reviews of CLAM, Context–Weight Adaptation and Experience Rot did not establish author-linked research implementations with inspectable licenses and installation manifests. Their paper records retain unknown artifact status; no additional software record was inferred from a framework description, cited dependency or article license. All twenty-six historical system inspections and execution statuses remain unchanged. No software or model was installed or executed.
+
+## 2026-11-20 — Research-artifact boundaries
+
+Inspected the author-linked Self-Organized Learning repository at `882f6c70dc483aee396c4fe9d63f89253fbbb877`, including README, setup and requirements. Its public research implementation has an unresolved code license and no independently established mapping to every historical paper run; these limits are recorded in the paper's artifact note. Resolution Hypothesis and Skill Staleness did not establish paper-specific executable releases with inspectable licenses and setup. No new software record was added. All twenty-six existing system records retain their inspection dates and not-run status; no software or dataset was installed or executed.

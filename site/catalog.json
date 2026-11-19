@@ -4,7 +4,7 @@
     "subtitle": "A research guide to self-learning, self-improving, and self-evolving AI agents.",
     "repository": "https://github.com/duyvuleo/awesome-agents-that-learn",
     "site": "https://duyvuleo.github.io/awesome-agents-that-learn/",
-    "updated": "2026-11-19",
+    "updated": "2026-11-20",
     "schema_version": 2,
     "topics": {
       "foundations": "Foundations and boundaries",
@@ -43,6 +43,127 @@
     }
   },
   "papers": [
+    {
+      "id": "skill-state-maintenance",
+      "short_name": "Skill Staleness",
+      "title": "When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments",
+      "date": "2026-11-17",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.22525",
+      "sources": [
+        "https://arxiv.org/abs/2611.22525",
+        "https://arxiv.org/pdf/2611.22525v1",
+        "https://arxiv.org/html/2611.22525v1"
+      ],
+      "code_url": null,
+      "code_note": "Complete 17-page v1, Appendices A–E, five figures, fifteen tables and six numbered equations read; scientific objects visually checked. No official implementation, complete prompts, code license or installable release was established. No research code or environments executed.",
+      "topics": [
+        "skills",
+        "continual-learning",
+        "evaluation",
+        "safety",
+        "applications"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "skills"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Successful original-environment executions, replayed observations, an Opus verifier, recorded execution statistics and candidate development feedback; TB-2 repair can see failing test lines, including expected values.",
+      "mechanism": "Compares procedural and cache-heavy skill state before and after controlled environment changes. Rule-based construction records checks and source references; replay uses no model calls, while verification and repair may use an LLM. A fixed repair-first controller validates local edits, rebuilds if needed, or retains the old skill. Task-model weights and harness stay fixed.",
+      "evaluation": "Two Claude models on 38 Terminal-Bench task–change pairs, 50 applicants across five IRS forms, 51 AppWorld tasks and 41 ScienceWorld variations. Stale cached skills sometimes hurt Opus despite helping Haiku. Selective maintenance raises Haiku cached-form field accuracy from 30.5% to 97.5% and cuts procedural ScienceWorld steps from 25.6 to 16.1 at unchanged score; paired comparisons include regressions. IRS token payback versus skill retirement is estimated at 21–42 uses.",
+      "limitations": "One skill per style and mostly one execution per condition, from one model family. Style changes also remove discovery/fallback steps. TB-2 verification uses extra no-skill statistics; held-out sampled runs do not imply unseen tasks. Replay misses 17/51 labeled conflicts and can trigger unnecessary repair. AppWorld procedural success falls, and one rebuild comparison covers fewer variations. Only one maintenance event is evaluated; token payback excludes environment compute/latency and assumes stable reuse. No reproduction.",
+      "review_depth": "full-text",
+      "checked": "2026-11-20"
+    },
+    {
+      "id": "self-organized-context-learning",
+      "short_name": "Self-Organized Learning",
+      "title": "Do LLM Agents Still Need to Be Told How to Self-Improve?",
+      "date": "2026-11-17",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.23219",
+      "sources": [
+        "https://arxiv.org/abs/2611.23219",
+        "https://arxiv.org/pdf/2611.23219v1",
+        "https://arxiv.org/html/2611.23219v1",
+        "https://ssundaram21.github.io/self-org/",
+        "https://github.com/ssundaram21/self-org",
+        "https://github.com/ssundaram21/self-org/blob/882f6c70dc483aee396c4fe9d63f89253fbbb877/README.md",
+        "https://github.com/ssundaram21/self-org/blob/882f6c70dc483aee396c4fe9d63f89253fbbb877/setup.sh",
+        "https://github.com/ssundaram21/self-org/blob/882f6c70dc483aee396c4fe9d63f89253fbbb877/requirements.txt"
+      ],
+      "code_url": "https://github.com/ssundaram21/self-org",
+      "code_note": "Author-linked release inspected at 882f6c7: teacher/player runners, setup and evaluation documentation. Python >=3.10, Node >=12 (>=20 for MazeBench), npm, containers and provider access are required. No code license was established; the article license does not license the implementation. No installation, dataset download or reproduction was performed.",
+      "topics": [
+        "prompts",
+        "skills",
+        "self-play",
+        "evaluation"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "prompts",
+        "skills"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Scores and transcripts from agent-generated games, self-reflection and artifact comparisons; researchers supply the goal, allowed tools, interface documentation and resource limits. The stated main protocol withholds external evaluation feedback.",
+      "mechanism": "A frozen teacher chooses its own sequence of game generation, player testing and text edits using file, Bash and Gameplay tools. Fresh players of the same model reuse the resulting prompt and skill files. The practice schedule is agent-organized, while model weights, tool semantics and outer task boundaries stay fixed; this is context learning, not demonstrated self-modification of the improver code.",
+      "evaluation": "Six models from three families, three independent teacher sessions each, normally capped at 20 file edits and 150 gameplays. Evaluation uses 20/20 PuzzleScript-t20/t30 games, 17 ARC-AGI-3 L1 games and 16 MazeBench rooms, with 4/4/4/2 rollouts each; MazeBench measures success-weighted path length. Selected newer models improve, and Opus-5 artifacts transfer across these settings. Cross-model text raises reported t20 means from 25.4 to 47.5% for Opus-5 and 67.1 to 72.1% for GPT-6 Astra.",
+      "limitations": "Small game sets, model-based filtering for PuzzleScript/ARC and three teacher runs limit inference; reported errors are seed SDs, not confidence intervals. Rollout caps do not match total compute. Richer evaluation information improves specialization but can reduce transfer; weaker models can regress. SRL-judge scores and replay patterns are descriptive rather than causal mechanisms. Near-ceiling retention still falls from 100 to 98.8%; broad capability retention and open-domain improvement remain untested. Release-to-paper execution equivalence was not verified.",
+      "review_depth": "full-text",
+      "checked": "2026-11-20"
+    },
+    {
+      "id": "resolution-hypothesis",
+      "short_name": "Resolution Hypothesis",
+      "title": "The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements",
+      "date": "2026-11-17",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.23068",
+      "sources": [
+        "https://arxiv.org/abs/2611.23068",
+        "https://arxiv.org/pdf/2611.23068v1",
+        "https://arxiv.org/html/2611.23068v1",
+        "https://lineshogan.github.io/resolution-hypothesis/"
+      ],
+      "code_url": null,
+      "code_note": "Complete 38-page v1 and Appendices A–I read; all twelve figures, thirteen tables, seven equations and supplied prompts/skills inspected, with scientific objects visually checked. The paper promises reproducible materials and trajectory data after acceptance; no paper-specific implementation, license or setup was established from the primary record and official project page. No research code or models executed.",
+      "topics": [
+        "foundations",
+        "memory",
+        "skills",
+        "prompts",
+        "workflows",
+        "architecture",
+        "evaluation",
+        "safety"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "prompts",
+        "skills",
+        "memory",
+        "agent-code",
+        "workflows"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Execution scores, validation comparisons and trajectory judgments select or retain external artifacts; solver and proposer weights remain frozen within the evaluated protocols.",
+      "mechanism": "Separates repeated-evaluation noise from variation between independently evolved artifacts. Audits grader shortcuts and uses fixed proposal/selection pools, posterior-quality estimates and independent rollout references to examine whether selectors retain useful prompts, skills, memories or harness changes. This is an evaluation study, not a new self-modifying optimizer.",
+      "evaluation": "Authors report 1,030 evolution runs and over 2.1 million test trajectories across seven methods, six models and four benchmarks with partial grid coverage. In an eleven-task DeepSeek Terminal-Bench selection pool, execution selection has 49.7% pairwise accuracy (95% credible half-width 1.9 points), consistent with chance. Sixteen-rollout validation raises one SkillOpt-Lite comparison from 61.4% to 64.4% mean test success. A twelve-benchmark gain audit finds major grader dependence alongside surviving retrieval and harness gains.",
+      "limitations": "Candidate evidence uses two 100-skill pools and one backbone; six of eleven selection tasks overlap generation. Oracle quality is an empirical-Bayes estimate conditional on fitted priors, not known truth. Some repairs change grading or task subsets and remain imperfect; post hoc one-rule tests establish sufficiency rather than necessity. Lower process variance is not demonstrated task utility, and expanded validation lacks matched cost and reported uncertainty. The findings do not establish a universal bottleneck or independent reproduction.",
+      "review_depth": "full-text",
+      "checked": "2026-11-20"
+    },
     {
       "id": "experience-rot",
       "title": "Experience Rot: Experienced Agents Fail Where Novices Succeed",
@@ -9021,6 +9142,10 @@
           "why": "Inspect a challenger/solver curriculum and its dependence on model-derived signals."
         },
         {
+          "paper": "self-organized-context-learning",
+          "why": "Contrast agent-organized practice and text updates with weight training; identify the externally supplied goals, tools, budgets and evaluation exposure."
+        },
+        {
           "paper": "self-challenging-agents",
           "why": "Study agent-generated tool-use challenges."
         },
@@ -9137,6 +9262,10 @@
           "why": "Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee."
         },
         {
+          "paper": "resolution-hypothesis",
+          "why": "Separate proposer headroom from selection reliability and compare search variance with repeated evaluation noise; retain posterior and grader-repair assumptions."
+        },
+        {
           "paper": "beneath-surface-agent-evolution",
           "why": "Separate average success, covered tasks, regressions, component interactions and search replication."
         }
@@ -9207,6 +9336,10 @@
         {
           "paper": "experience-rot",
           "why": "Test stale self-generated experience after silent tool changes; contrast deterministic state checks with completion claims and count verification costs."
+        },
+        {
+          "paper": "skill-state-maintenance",
+          "why": "Compare runtime compensation with validated skill repair; count detector misses, rebuilds, negative outcomes and conditional maintenance payback."
         }
       ],
       "exercise": "Specify separate measures for factual memory, procedural transfer, backward retention, cost, and safety drift. Do not collapse them into one score."

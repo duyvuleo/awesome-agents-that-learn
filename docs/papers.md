@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-207 unique works. Catalog updated: 2026-11-19; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+210 unique works. Catalog updated: 2026-11-20; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -13,6 +13,9 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-17 | **Skill Staleness**<br>[When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments](https://arxiv.org/abs/2611.22525) | Compares procedural and cache-heavy skill state before and after controlled environment changes. Rule-based construction records checks and source references; replay… | Skills | preprint · full-text | [Notes](#skill-state-maintenance) |
+| 2026-11-17 | **Self-Organized Learning**<br>[Do LLM Agents Still Need to Be Told How to Self-Improve?](https://arxiv.org/abs/2611.23219) | A frozen teacher chooses its own sequence of game generation, player testing and text edits using file, Bash and Gameplay tools. Fresh players of the same model reuse… | Prompts / context, Skills | preprint · full-text | [Notes](#self-organized-context-learning) · [Code](https://github.com/ssundaram21/self-org) |
+| 2026-11-17 | **Resolution Hypothesis**<br>[The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](https://arxiv.org/abs/2611.23068) | Separates repeated-evaluation noise from variation between independently evolved artifacts. Audits grader shortcuts and uses fixed proposal/selection pools… | Prompts / context, Skills, Memory, Agent code, Workflows | preprint · full-text | [Notes](#resolution-hypothesis) |
 | 2026-11-16 | **Experience Rot**<br>[Experience Rot: Experienced Agents Fail Where Novices Succeed](https://arxiv.org/abs/2611.20922) | Pairs the same final tasks with valid, stale or absent experience after controlled silent tool-interface changes. Tests live histories, persistent notes, retrieved notes… | Memory, Skills, Prompts / context | preprint · full-text | [Notes](#experience-rot) |
 | 2026-11-16 | **CLAM**<br>[Instant Weight-Space Consolidation for Long-Term Memory in LLMs](https://arxiv.org/abs/2611.20759) | A recurrent hypernetwork reads frozen-model session activations, gates them into a fixed-size latent state, and decodes a rank-8 LoRA adapter reused across queries. A… | Model weights, Memory | preprint · full-text | [Notes](#clam) |
 | 2026-11-15 | **Context-Weight Adaptation**<br>[Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](https://arxiv.org/abs/2611.19700) | A shared online loop compares raw-trajectory replay, persistent rank-32 LoRA updates and their combinations. FIFO or Prefix retention combines with All or Successful… | Memory, Model weights | preprint · full-text | [Notes](#context-weight-agent-adaptation) |
@@ -222,6 +225,72 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2017-10-19 | **AlphaGo Zero**<br>[Mastering the game of Go without human knowledge](https://www.nature.com/articles/nature24270) | Alternates search-guided self-play with gradient updates to a shared policy/value network. Recent games are replayed to fit improved move distributions and outcomes. The… | Model weights | peer-reviewed · full-text | [Notes](#alphago-zero) |
 
 ## Full annotations
+
+<a id="skill-state-maintenance"></a>
+
+## When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments
+
+**2026-11-17 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.22525)
+
+**Mechanism.** Compares procedural and cache-heavy skill state before and after controlled environment changes. Rule-based construction records checks and source references; replay uses no model calls, while verification and repair may use an LLM. A fixed repair-first controller validates local edits, rebuilds if needed, or retains the old skill. Task-model weights and harness stay fixed.
+
+**What changes:** Skills. **Persistence:** across-tasks. **Learning signal:** Successful original-environment executions, replayed observations, an Opus verifier, recorded execution statistics and candidate development feedback; TB-2 repair can see failing test lines, including expected values.
+
+**Evaluation.** Two Claude models on 38 Terminal-Bench task–change pairs, 50 applicants across five IRS forms, 51 AppWorld tasks and 41 ScienceWorld variations. Stale cached skills sometimes hurt Opus despite helping Haiku. Selective maintenance raises Haiku cached-form field accuracy from 30.5% to 97.5% and cuts procedural ScienceWorld steps from 25.6 to 16.1 at unchanged score; paired comparisons include regressions. IRS token payback versus skill retirement is estimated at 21–42 uses.
+
+**Boundary.** One skill per style and mostly one execution per condition, from one model family. Style changes also remove discovery/fallback steps. TB-2 verification uses extra no-skill statistics; held-out sampled runs do not imply unseen tasks. Replay misses 17/51 labeled conflicts and can trigger unnecessary repair. AppWorld procedural success falls, and one rebuild comparison covers fewer variations. Only one maintenance event is evaluated; token payback excludes environment compute/latency and assumes stable reuse. No reproduction.
+
+**Code / data.** Complete 17-page v1, Appendices A–E, five figures, fifteen tables and six numbered equations read; scientific objects visually checked. No official implementation, complete prompts, code license or installable release was established. No research code or environments executed.
+
+**Topics:** skills, continual-learning, evaluation, safety, applications. **Reviewed:** full-text · 2026-11-20.
+
+[Source 1](https://arxiv.org/abs/2611.22525) · [Source 2](https://arxiv.org/pdf/2611.22525v1) · [Source 3](https://arxiv.org/html/2611.22525v1)
+
+<a id="self-organized-context-learning"></a>
+
+## Do LLM Agents Still Need to Be Told How to Self-Improve?
+
+**2026-11-17 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.23219)
+
+**Mechanism.** A frozen teacher chooses its own sequence of game generation, player testing and text edits using file, Bash and Gameplay tools. Fresh players of the same model reuse the resulting prompt and skill files. The practice schedule is agent-organized, while model weights, tool semantics and outer task boundaries stay fixed; this is context learning, not demonstrated self-modification of the improver code.
+
+**What changes:** Prompts / context, Skills. **Persistence:** across-tasks. **Learning signal:** Scores and transcripts from agent-generated games, self-reflection and artifact comparisons; researchers supply the goal, allowed tools, interface documentation and resource limits. The stated main protocol withholds external evaluation feedback.
+
+**Evaluation.** Six models from three families, three independent teacher sessions each, normally capped at 20 file edits and 150 gameplays. Evaluation uses 20/20 PuzzleScript-t20/t30 games, 17 ARC-AGI-3 L1 games and 16 MazeBench rooms, with 4/4/4/2 rollouts each; MazeBench measures success-weighted path length. Selected newer models improve, and Opus-5 artifacts transfer across these settings. Cross-model text raises reported t20 means from 25.4 to 47.5% for Opus-5 and 67.1 to 72.1% for GPT-6 Astra.
+
+**Boundary.** Small game sets, model-based filtering for PuzzleScript/ARC and three teacher runs limit inference; reported errors are seed SDs, not confidence intervals. Rollout caps do not match total compute. Richer evaluation information improves specialization but can reduce transfer; weaker models can regress. SRL-judge scores and replay patterns are descriptive rather than causal mechanisms. Near-ceiling retention still falls from 100 to 98.8%; broad capability retention and open-domain improvement remain untested. Release-to-paper execution equivalence was not verified.
+
+**Code / data.** [Official artifact](https://github.com/ssundaram21/self-org) — Author-linked release inspected at 882f6c7: teacher/player runners, setup and evaluation documentation. Python >=3.10, Node >=12 (>=20 for MazeBench), npm, containers and provider access are required. No code license was established; the article license does not license the implementation. No installation, dataset download or reproduction was performed.
+
+**Topics:** prompts, skills, self-play, evaluation. **Reviewed:** full-text · 2026-11-20.
+
+[Source 1](https://arxiv.org/abs/2611.23219) · [Source 2](https://arxiv.org/pdf/2611.23219v1) · [Source 3](https://arxiv.org/html/2611.23219v1) · [Source 4](https://ssundaram21.github.io/self-org/) · [Source 5](https://github.com/ssundaram21/self-org) · [Source 6](https://github.com/ssundaram21/self-org/blob/882f6c70dc483aee396c4fe9d63f89253fbbb877/README.md) · [Source 7](https://github.com/ssundaram21/self-org/blob/882f6c70dc483aee396c4fe9d63f89253fbbb877/setup.sh) · [Source 8](https://github.com/ssundaram21/self-org/blob/882f6c70dc483aee396c4fe9d63f89253fbbb877/requirements.txt)
+
+<a id="resolution-hypothesis"></a>
+
+## The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements
+
+**2026-11-17 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.23068)
+
+**Mechanism.** Separates repeated-evaluation noise from variation between independently evolved artifacts. Audits grader shortcuts and uses fixed proposal/selection pools, posterior-quality estimates and independent rollout references to examine whether selectors retain useful prompts, skills, memories or harness changes. This is an evaluation study, not a new self-modifying optimizer.
+
+**What changes:** Prompts / context, Skills, Memory, Agent code, Workflows. **Persistence:** across-tasks. **Learning signal:** Execution scores, validation comparisons and trajectory judgments select or retain external artifacts; solver and proposer weights remain frozen within the evaluated protocols.
+
+**Evaluation.** Authors report 1,030 evolution runs and over 2.1 million test trajectories across seven methods, six models and four benchmarks with partial grid coverage. In an eleven-task DeepSeek Terminal-Bench selection pool, execution selection has 49.7% pairwise accuracy (95% credible half-width 1.9 points), consistent with chance. Sixteen-rollout validation raises one SkillOpt-Lite comparison from 61.4% to 64.4% mean test success. A twelve-benchmark gain audit finds major grader dependence alongside surviving retrieval and harness gains.
+
+**Boundary.** Candidate evidence uses two 100-skill pools and one backbone; six of eleven selection tasks overlap generation. Oracle quality is an empirical-Bayes estimate conditional on fitted priors, not known truth. Some repairs change grading or task subsets and remain imperfect; post hoc one-rule tests establish sufficiency rather than necessity. Lower process variance is not demonstrated task utility, and expanded validation lacks matched cost and reported uncertainty. The findings do not establish a universal bottleneck or independent reproduction.
+
+**Code / data.** Complete 38-page v1 and Appendices A–I read; all twelve figures, thirteen tables, seven equations and supplied prompts/skills inspected, with scientific objects visually checked. The paper promises reproducible materials and trajectory data after acceptance; no paper-specific implementation, license or setup was established from the primary record and official project page. No research code or models executed.
+
+**Topics:** foundations, memory, skills, prompts, workflows, architecture, evaluation, safety. **Reviewed:** full-text · 2026-11-20.
+
+[Source 1](https://arxiv.org/abs/2611.23068) · [Source 2](https://arxiv.org/pdf/2611.23068v1) · [Source 3](https://arxiv.org/html/2611.23068v1) · [Source 4](https://lineshogan.github.io/resolution-hypothesis/)
 
 <a id="experience-rot"></a>
 

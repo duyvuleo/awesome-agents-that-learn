@@ -197,6 +197,10 @@
         "why": "Inspect a challenger/solver curriculum and its dependence on model-derived signals."
       },
       {
+        "paper": "self-organized-context-learning",
+        "why": "Contrast agent-organized practice and text updates with weight training; identify the externally supplied goals, tools, budgets and evaluation exposure."
+      },
+      {
         "paper": "self-challenging-agents",
         "why": "Study agent-generated tool-use challenges."
       },
@@ -313,6 +317,10 @@
         "why": "Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee."
       },
       {
+        "paper": "resolution-hypothesis",
+        "why": "Separate proposer headroom from selection reliability and compare search variance with repeated evaluation noise; retain posterior and grader-repair assumptions."
+      },
+      {
         "paper": "beneath-surface-agent-evolution",
         "why": "Separate average success, covered tasks, regressions, component interactions and search replication."
       }
@@ -383,6 +391,10 @@
       {
         "paper": "experience-rot",
         "why": "Test stale self-generated experience after silent tool changes; contrast deterministic state checks with completion claims and count verification costs."
+      },
+      {
+        "paper": "skill-state-maintenance",
+        "why": "Compare runtime compensation with validated skill repair; count detector misses, rebuilds, negative outcomes and conditional maintenance payback."
       }
     ],
     "exercise": "Specify separate measures for factual memory, procedural transfer, backward retention, cost, and safety drift. Do not collapse them into one score."

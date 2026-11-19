@@ -129,13 +129,15 @@ Can a system generate useful challenges for itself?
 
 3. **[R-Zero: Self-Evolving Reasoning LLM from Zero Data](papers.md#r-zero)** — Inspect a challenger/solver curriculum and its dependence on model-derived signals.
 
-4. **[Self-Challenging Language Model Agents](papers.md#self-challenging-agents)** — Study agent-generated tool-use challenges.
+4. **[Do LLM Agents Still Need to Be Told How to Self-Improve?](papers.md#self-organized-context-learning)** — Contrast agent-organized practice and text updates with weight training; identify the externally supplied goals, tools, budgets and evaluation exposure.
 
-5. **[Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](papers.md#agent0)** — Compare curriculum and executor co-development under tool-related objectives.
+5. **[Self-Challenging Language Model Agents](papers.md#self-challenging-agents)** — Study agent-generated tool-use challenges.
 
-6. **[Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](papers.md#search-self-play)** — Audit seed answers, external retrieval, and model verification in a search proposer–solver loop.
+6. **[Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](papers.md#agent0)** — Compare curriculum and executor co-development under tool-related objectives.
 
-7. **[Dr. Zero: Self-Evolving Search Agents without Training Data](papers.md#dr-zero)** — Examine self-evolution in search, where external information changes the feedback setting.
+7. **[Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](papers.md#search-self-play)** — Audit seed answers, external retrieval, and model verification in a search proposer–solver loop.
+
+8. **[Dr. Zero: Self-Evolving Search Agents without Training Data](papers.md#dr-zero)** — Examine self-evolution in search, where external information changes the feedback setting.
 
 
 **Study exercise:** Explain what “zero data” excludes for each method and what prior information or engineered environment remains.
@@ -197,7 +199,9 @@ What experiment would convince you that an agent learned something useful?
 
 12. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
 
-13. **[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)** — Separate average success, covered tasks, regressions, component interactions and search replication.
+13. **[The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis)** — Separate proposer headroom from selection reliability and compare search variance with repeated evaluation noise; retain posterior and grader-repair assumptions.
+
+14. **[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)** — Separate average success, covered tasks, regressions, component interactions and search replication.
 
 
 **Study exercise:** Draft a matched frozen baseline, a held-out family split, a budget ledger, and one intervention that could falsify your preferred mechanism.
@@ -237,6 +241,8 @@ Does learning persist when tasks and environments change?
 14. **[Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](papers.md#rescopebench)** — Track selective revision after silent environmental changes, separating saved knowledge from completed tasks.
 
 15. **[Experience Rot: Experienced Agents Fail Where Novices Succeed](papers.md#experience-rot)** — Test stale self-generated experience after silent tool changes; contrast deterministic state checks with completion claims and count verification costs.
+
+16. **[When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments](papers.md#skill-state-maintenance)** — Compare runtime compensation with validated skill repair; count detector misses, rebuilds, negative outcomes and conditional maintenance payback.
 
 
 **Study exercise:** Specify separate measures for factual memory, procedural transfer, backward retention, cost, and safety drift. Do not collapse them into one score.

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-20 — Selection reliability, autonomous practice and skill maintenance
+
+- Added complete-source appraisals of Resolution Hypothesis, Self-Organized Learning and Skill Staleness; total 210 works and 26 systems.
+- Qualified posterior selection evidence, surviving gains, researcher-supplied autonomy boundaries, transfer regressions and conditional maintenance costs.
+- Linked the author-released self-organized learning implementation with unknown-license and historical-version limits; extended three reading routes.
+- Preserved prior inspections and weekly snapshots. No research experiments reproduced.
+
 ## 2026-11-19 — Consolidation, adaptation and stale experience
 
 - Added complete-source appraisals of CLAM, Context–Weight Adaptation and Experience Rot; total 207 works and 26 systems.
