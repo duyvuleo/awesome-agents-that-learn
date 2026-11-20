@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-210 unique works. Catalog updated: 2026-11-20; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+213 unique works. Catalog updated: 2026-11-21; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -13,9 +13,12 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-18 | **Safe Personal RSI**<br>[Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates](https://arxiv.org/abs/2611.23651) | A fixed offline controller tests persistent prompt-block updates, confirms failures, uses temporary block or sentence rollback to guide template or LLM repair, then… | Prompts / context | preprint · full-text | [Notes](#safe-personal-rsi) |
 | 2026-11-17 | **Skill Staleness**<br>[When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments](https://arxiv.org/abs/2611.22525) | Compares procedural and cache-heavy skill state before and after controlled environment changes. Rule-based construction records checks and source references; replay… | Skills | preprint · full-text | [Notes](#skill-state-maintenance) |
 | 2026-11-17 | **Self-Organized Learning**<br>[Do LLM Agents Still Need to Be Told How to Self-Improve?](https://arxiv.org/abs/2611.23219) | A frozen teacher chooses its own sequence of game generation, player testing and text edits using file, Bash and Gameplay tools. Fresh players of the same model reuse… | Prompts / context, Skills | preprint · full-text | [Notes](#self-organized-context-learning) · [Code](https://github.com/ssundaram21/self-org) |
 | 2026-11-17 | **Resolution Hypothesis**<br>[The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](https://arxiv.org/abs/2611.23068) | Separates repeated-evaluation noise from variation between independently evolved artifacts. Audits grader shortcuts and uses fixed proposal/selection pools… | Prompts / context, Skills, Memory, Agent code, Workflows | preprint · full-text | [Notes](#resolution-hypothesis) |
+| 2026-11-17 | **BRIDGE**<br>[RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't](https://arxiv.org/abs/2611.22179) | Writes chained per-block notes beside raw conversations and embeddings, fuses BM25 and cosine rankings, then presents ten selected blocks chronologically with three… | Memory | peer-reviewed · full-text | [Notes](#rag-in-a-trenchcoat) · [Code](https://github.com/Jingyu6/rag-in-a-trenchcoat) |
+| 2026-11-17 | **DCPS**<br>[Simplicity Goes Far: Auditing Prompt Optimizers with Demonstration-Conditioned Prompt Search](https://arxiv.org/abs/2611.22605) | An external APE-style sample–generate–score–select control removes PPO updates or reflective/evolutionary search. StablePrompt retains a Top-K prompt queue; compound… | Prompts / context | preprint · full-text | [Notes](#dcps) · [Code](https://github.com/bhc6/DCPS) |
 | 2026-11-16 | **Experience Rot**<br>[Experience Rot: Experienced Agents Fail Where Novices Succeed](https://arxiv.org/abs/2611.20922) | Pairs the same final tasks with valid, stale or absent experience after controlled silent tool-interface changes. Tests live histories, persistent notes, retrieved notes… | Memory, Skills, Prompts / context | preprint · full-text | [Notes](#experience-rot) |
 | 2026-11-16 | **CLAM**<br>[Instant Weight-Space Consolidation for Long-Term Memory in LLMs](https://arxiv.org/abs/2611.20759) | A recurrent hypernetwork reads frozen-model session activations, gates them into a fixed-size latent state, and decodes a rank-8 LoRA adapter reused across queries. A… | Model weights, Memory | preprint · full-text | [Notes](#clam) |
 | 2026-11-15 | **Context-Weight Adaptation**<br>[Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](https://arxiv.org/abs/2611.19700) | A shared online loop compares raw-trajectory replay, persistent rank-32 LoRA updates and their combinations. FIFO or Prefix retention combines with All or Successful… | Memory, Model weights | preprint · full-text | [Notes](#context-weight-agent-adaptation) |
@@ -226,6 +229,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 ## Full annotations
 
+<a id="safe-personal-rsi"></a>
+
+## Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates
+
+**2026-11-18 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.23651)
+
+**Mechanism.** A fixed offline controller tests persistent prompt-block updates, confirms failures, uses temporary block or sentence rollback to guide template or LLM repair, then applies a separate empirical maximum-category-risk and utility gate. Failed or insufficient attempts keep the parent. Weights, runtime, tools and the improvement procedure stay fixed.
+
+**What changes:** Prompts / context. **Persistence:** across-tasks. **Learning signal:** Predefined risky edits, owner-authorization rules, labeled development cases, execution failures, fixed model audits and parent–candidate utility/risk comparisons guide prompt repair and admission.
+
+**Evaluation.** Synthetic draft-only email/services contain 29 cases: 16 development and 13 loop-excluded attacks. Three models and two risky edits yield 20/21 rejected attempts. A Luna repair has 0/84 attack flags and 87/87 safe completions, matching a broad handwritten rule. A repair learned on Qwen2.5-7B transfers to Qwen3-14B: flags fall 58/84 to 15/84 and safe completions rise 17/87 to 56/87. Failed source/target repairs and runtime probes are reported.
+
+**Boundary.** Case families were known and repeatedly explored; repeated replays and attempts are not independent learning replications. The Qwen static rule is narrower than the Luna comparator, and the admitted source repair fails its final authorized control. Point-estimate maximum-risk gating can hide category/total-risk increases; audits are model-dependent and utility excludes search/repair cost. Few update rounds, simulated services and sparse authorized controls do not establish longitudinal or deployed safety. No reproduction.
+
+**Code / data.** Complete 34-page v1 and Appendices A–J read; ten figures, thirteen numbered tables, two unnumbered tables, Algorithm 1 and formal decision expressions visually checked. No official implementation, raw replay release, license or installation manifest was established. No research code, models or services executed.
+
+**Topics:** prompts, evaluation, safety, applications. **Reviewed:** full-text · 2026-11-21.
+
+[Source 1](https://arxiv.org/abs/2611.23651) · [Source 2](https://arxiv.org/pdf/2611.23651v1) · [Source 3](https://arxiv.org/html/2611.23651v1)
+
 <a id="skill-state-maintenance"></a>
 
 ## When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments
@@ -291,6 +316,50 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** foundations, memory, skills, prompts, workflows, architecture, evaluation, safety. **Reviewed:** full-text · 2026-11-20.
 
 [Source 1](https://arxiv.org/abs/2611.23068) · [Source 2](https://arxiv.org/pdf/2611.23068v1) · [Source 3](https://arxiv.org/html/2611.23068v1) · [Source 4](https://lineshogan.github.io/resolution-hypothesis/)
+
+<a id="rag-in-a-trenchcoat"></a>
+
+## RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't
+
+**2026-11-17 · peer-reviewed · NeurIPS 2026 · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.22179)
+
+**Mechanism.** Writes chained per-block notes beside raw conversations and embeddings, fuses BM25 and cosine rankings, then presents ten selected blocks chronologically with three raw-text slots. Tests whether memory designs support unprompted rule use and demonstrated patterns; an extra directive-extraction pass probes presentation effects.
+
+**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Conversation content, dates and LLM-generated observation notes condition later retrieval and responses; model weights remain fixed.
+
+**Evaluation.** Three BRIDGE runs on BEAM 100K, EverMemBench and LongMemEval-S are competitive with imported matched-reader baselines; protocols and budgets differ. In the original 20-scenario probes, LangMem scores 80% versus BRIDGE 35% on positive rules, while BRIDGE scores 87.9% versus 54.5% on procedure constraints. Added domains, harder variants, graders, readers and repeated single-turn runs test robustness; rankings remain task-dependent.
+
+**Boundary.** CI overlap is not equivalence, and published-baseline comparisons do not isolate complexity or total cost. Small synthetic probes lack a stateless control; compliance does not identify causal memory benefit. Leaks, excluded or unparsed constraints and changing denominators affect interpretation. Directive extraction adds an instruction as well as presentation. Multi-turn scoring/follow-up descriptions conflict with the appendix and inspected runner. September venue metadata predates the November arXiv date, leaving first-public and weekly eligibility unresolved. No independent reproduction.
+
+**Code / data.** [Official artifact](https://github.com/Jingyu6/rag-in-a-trenchcoat) — Author-linked Apache-2.0 release inspected at e9652c4: README, actual license, requirements, public API and two multi-turn runner files. README uses Python 3.12 and hosted model access; The Graphiti baseline needs Neo4j 5. Saved-output reproduction is documented but was not run; no datasets, models or archives downloaded. Historical run equivalence remains unverified.
+
+**Topics:** memory, evaluation, foundations. **Reviewed:** full-text · 2026-11-21.
+
+[Source 1](https://arxiv.org/abs/2611.22179) · [Source 2](https://arxiv.org/pdf/2611.22179v1) · [Source 3](https://arxiv.org/html/2611.22179v1) · [Source 4](https://neurips.cc/virtual/2026/poster/151457) · [Source 5](https://github.com/Jingyu6/rag-in-a-trenchcoat) · [Source 6](https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/README.md) · [Source 7](https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/LICENSE) · [Source 8](https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/requirements.txt) · [Source 9](https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/adversarial/runner/dm_dialog.py) · [Source 10](https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/adversarial/runner/run_dm_pipeline.py)
+
+<a id="dcps"></a>
+
+## Simplicity Goes Far: Auditing Prompt Optimizers with Demonstration-Conditioned Prompt Search
+
+**2026-11-17 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.22605)
+
+**Mechanism.** An external APE-style sample–generate–score–select control removes PPO updates or reflective/evolutionary search. StablePrompt retains a Top-K prompt queue; compound pipelines greedily retain the highest validation score. Demonstrations guide proposals rather than being automatically appended at serving time; the optimizer itself does not learn.
+
+**What changes:** Prompts / context. **Persistence:** across-tasks. **Learning signal:** Labeled demonstrations condition a frozen prompt generator; training-batch rewards or validation scores select reusable prompts. Target weights remain fixed in DCPS.
+
+**Evaluation.** The Gemma StablePrompt audit averages three seeds, with two classification-family means within 0.4 points of PPO and PPO advantages on generation/MMLU. Six compound tasks on two backbones give a reported GPT-4.1-mini macro tie with GEPA at 61.14%, using 1,761 versus 3,936 average rollouts and $7.70 versus $11.34 measured macro-average API cost. Task results offset: GEPA retains reasoning/retrieval advantages, and expanding DCPS can worsen test accuracy.
+
+**Boundary.** StablePrompt reports the best test score among five training-selected prompts; subset-level intervals do not remove test-selection optimism. Compound cells are validation-selected single runs with unequal, task-specific budgets, including an extended HoVer run; macro parity is not equivalence or component attribution. Lower GPU rental cost uses different hardware and rates, while runtime can rise. Large validation–test gaps, incompletely isolated sampling variance and missing full budget sweeps remain. Source review is not reproduction.
+
+**Code / data.** [Official artifact](https://github.com/bhc6/DCPS) — Official MIT research bundle inspected at 1a4e51c, including notices, setup manifests and audit documentation. Compound code requires Python >=3.11, the vendored DSPy fork and model access; analysis declares Python >=3.12. Current ports and naming crosswalk differ from historical run archives. No installation, research-code execution, dataset download or result reproduction.
+
+**Topics:** prompts, workflows, evaluation, foundations. **Reviewed:** full-text · 2026-11-21.
+
+[Source 1](https://arxiv.org/abs/2611.22605) · [Source 2](https://arxiv.org/pdf/2611.22605v1) · [Source 3](https://arxiv.org/html/2611.22605v1) · [Source 4](https://github.com/bhc6/DCPS) · [Source 5](https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/README.md) · [Source 6](https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/LICENSE) · [Source 7](https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/THIRD_PARTY_NOTICES.md) · [Source 8](https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/reproduction/pyproject.toml) · [Source 9](https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/dcps-compound/gepa-artifact/pyproject.toml) · [Source 10](https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/stableprompt-dcps/README.md)
 
 <a id="experience-rot"></a>
 

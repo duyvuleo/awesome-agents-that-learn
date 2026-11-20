@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-21 — Prompt-search attribution, memory evaluation and safety gates
+
+- Added complete-source appraisals of DCPS, BRIDGE/RAG in a Trenchcoat and Safe Personal RSI; total 213 works and 26 systems.
+- Verified BRIDGE’s NeurIPS record and two licensed research artifacts, retaining source-date and historical-version limits.
+- Preserved test-selection optimism, unmatched budgets, missing memory controls, multi-turn reporting conflicts, static-rule parity and transfer boundaries.
+- Extended three reading routes without changing historical inspections or weekly snapshots. No research experiments reproduced.
+
 ## 2026-11-20 — Selection reliability, autonomous practice and skill maintenance
 
 - Added complete-source appraisals of Resolution Hypothesis, Self-Organized Learning and Skill Staleness; total 210 works and 26 systems.

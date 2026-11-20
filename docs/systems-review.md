@@ -71,3 +71,7 @@ Full primary-source reviews of CLAM, Context–Weight Adaptation and Experience 
 ## 2026-11-20 — Research-artifact boundaries
 
 Inspected the author-linked Self-Organized Learning repository at `882f6c70dc483aee396c4fe9d63f89253fbbb877`, including README, setup and requirements. Its public research implementation has an unresolved code license and no independently established mapping to every historical paper run; these limits are recorded in the paper's artifact note. Resolution Hypothesis and Skill Staleness did not establish paper-specific executable releases with inspectable licenses and setup. No new software record was added. All twenty-six existing system records retain their inspection dates and not-run status; no software or dataset was installed or executed.
+
+## 2026-11-21 — Licensed research bundles and runtime boundaries
+
+Inspected DCPS's MIT license, notices, audit documentation and setup manifests at `1a4e51cd8df766aa269496e409648e971be9f6c5`, and BRIDGE's Apache-2.0 license, README, requirements and multi-turn runner source at `e9652c4984880787599df3117fde8fd5a0c0af46`. Both are linked as paper artifacts; current documentation and source do not establish exact historical execution or result reproduction. Safe Personal RSI did not establish an official executable release, license or installation manifest. No additional system record was added, and all twenty-six existing inspections and not-run statuses remain unchanged. No software was installed or executed.

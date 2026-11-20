@@ -44,19 +44,21 @@ How can experience become useful knowledge, a procedure, or a reusable tool?
 
 5. **[Top-$k$ Retrieval Leaves Memory Value Undetermined](papers.md#topk-memory-value)** — Check what retrieval logs identify under a declared outcome model before interpreting memory utility scores as causal contributions.
 
-6. **[Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](papers.md#omce)** — Compare memory-utility scoring with learning when to retrieve, distill, or skip experience.
+6. **[RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't](papers.md#rag-in-a-trenchcoat)** — Separate competitive recall from applying stored rules; inspect stateless controls, partial-constraint denominators and multi-turn protocol consistency.
 
-7. **[Route to Remember: Adaptive Memory Selection for LLM Agents](papers.md#route-to-remember)** — Compare external experience routing with learned factual adapters; inspect forgetting, fallback retrieval, and write cost.
+7. **[Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](papers.md#omce)** — Compare memory-utility scoring with learning when to retrieve, distill, or skip experience.
 
-8. **[Instant Weight-Space Consolidation for Long-Term Memory in LLMs](papers.md#clam)** — Contrast trained gradient-free consolidation with online adapter fitting; account for the growing episodic store and mixed shared-buffer gains.
+8. **[Route to Remember: Adaptive Memory Selection for LLM Agents](papers.md#route-to-remember)** — Compare external experience routing with learned factual adapters; inspect forgetting, fallback retrieval, and write cost.
 
-9. **[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl)** — Contrast external skills with parameter learning and teacher-derived supervision.
+9. **[Instant Weight-Space Consolidation for Long-Term Memory in LLMs](papers.md#clam)** — Contrast trained gradient-free consolidation with online adapter fitting; account for the growing episodic store and mixed shared-buffer gains.
 
-10. **[SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](papers.md#skillflow)** — Examine whether skill use produces measurable benefit.
+10. **[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl)** — Contrast external skills with parameter learning and teacher-derived supervision.
 
-11. **[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](papers.md#skill-plus-plus)** — Separate retaining a skill from keeping it selectable as the library grows; compare routing with task success.
+11. **[SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](papers.md#skillflow)** — Examine whether skill use produces measurable benefit.
 
-12. **[Coalition-Aware Skill Reliability for Self-Evolving Agents](papers.md#coalition-skill-reliability)** — Test whether a useful skill stays useful in another bank or deployment domain.
+12. **[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](papers.md#skill-plus-plus)** — Separate retaining a skill from keeping it selectable as the library grows; compare routing with task success.
+
+13. **[Coalition-Aware Skill Reliability for Self-Evolving Agents](papers.md#coalition-skill-reliability)** — Test whether a useful skill stays useful in another bank or deployment domain.
 
 
 **Study exercise:** For three methods, write the stored artifact, admission rule, retrieval rule, revision rule, and evidence that reuse helps.
@@ -73,17 +75,19 @@ Which parts of an agent can be optimized, and who performs that optimization?
 
 3. **[GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](papers.md#gepa)** — Compare textual feedback with reward-only search.
 
-4. **[Automated Design of Agentic Systems](papers.md#adas)** — Expand the search from prompts to agent implementation code.
+4. **[Simplicity Goes Far: Auditing Prompt Optimizers with Demonstration-Conditioned Prompt Search](papers.md#dcps)** — Audit generate-and-select before crediting policy updates or reflection; distinguish macro cost–performance points from matched-budget or equivalence claims.
 
-5. **[AFlow: Automating Agentic Workflow Generation](papers.md#aflow)** — Study search over workflow operators and evaluation-driven selection.
+5. **[Automated Design of Agentic Systems](papers.md#adas)** — Expand the search from prompts to agent implementation code.
 
-6. **[Discovering Effective Agent Memory Designs through Program Evolution](papers.md#mape)** — Optimize a whole memory program around a fixed host, then audit evaluation-set selection, prompt guidance and serving-cost assumptions.
+6. **[AFlow: Automating Agentic Workflow Generation](papers.md#aflow)** — Study search over workflow operators and evaluation-driven selection.
 
-7. **[Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](papers.md#ace)** — Contrast whole-prompt replacement with incremental context updates.
+7. **[Discovering Effective Agent Memory Designs through Program Evolution](papers.md#mape)** — Optimize a whole memory program around a fixed host, then audit evaluation-set selection, prompt guidance and serving-cost assumptions.
 
-8. **[Context Language Models](papers.md#context-language-models)** — Separate native live-context editing, reusable context-management skills and parametric training; inspect their different evidence and cost metrics.
+8. **[Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](papers.md#ace)** — Contrast whole-prompt replacement with incremental context updates.
 
-9. **[HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](papers.md#harnessflow)** — Compare fixed tree-search control with the executable harnesses it optimizes, including search and deployment costs.
+9. **[Context Language Models](papers.md#context-language-models)** — Separate native live-context editing, reusable context-management skills and parametric training; inspect their different evidence and cost metrics.
+
+10. **[HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](papers.md#harnessflow)** — Compare fixed tree-search control with the executable harnesses it optimizes, including search and deployment costs.
 
 
 **Study exercise:** Make an editable/fixed component table. Include proposer, search space, selector, evaluation set, and stopping rule.
@@ -197,11 +201,13 @@ What experiment would convince you that an agent learned something useful?
 
 11. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Include integrity of the learning signal and persistence of bad updates.
 
-12. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
+12. **[Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates](papers.md#safe-personal-rsi)** — Compare empirical update gates with static authority rules; distinguish transferred prompt repairs and known-family replays from durable safety guarantees.
 
-13. **[The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis)** — Separate proposer headroom from selection reliability and compare search variance with repeated evaluation noise; retain posterior and grader-repair assumptions.
+13. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
 
-14. **[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)** — Separate average success, covered tasks, regressions, component interactions and search replication.
+14. **[The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis)** — Separate proposer headroom from selection reliability and compare search variance with repeated evaluation noise; retain posterior and grader-repair assumptions.
+
+15. **[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)** — Separate average success, covered tasks, regressions, component interactions and search replication.
 
 
 **Study exercise:** Draft a matched frozen baseline, a held-out family split, a budget ledger, and one intervention that could falsify your preferred mechanism.

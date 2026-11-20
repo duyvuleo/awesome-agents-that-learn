@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-19T22:21:17.588369+00:00",
+  "checked_at_utc": "2026-11-20T22:50:12.325672+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -2322,12 +2322,32 @@
       "title_check": "match"
     },
     {
+      "url": "https://arxiv.org/abs/2611.22179",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2611.22179",
+      "status": "reachable",
+      "expected_title": "RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't",
+      "observed_title": "RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
       "url": "https://arxiv.org/abs/2611.22525",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2611.22525",
       "status": "reachable",
       "expected_title": "When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments",
       "observed_title": "When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.22605",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2611.22605",
+      "status": "reachable",
+      "expected_title": "Simplicity Goes Far: Auditing Prompt Optimizers with Demonstration-Conditioned Prompt Search",
+      "observed_title": "Simplicity Goes Far: Auditing Prompt Optimizers with Demonstration-Conditioned Prompt Search",
       "title_similarity": 1.0,
       "title_check": "match"
     },
@@ -2348,6 +2368,16 @@
       "status": "reachable",
       "expected_title": "Do LLM Agents Still Need to Be Told How to Self-Improve?",
       "observed_title": "Do LLM Agents Still Need to Be Told How to Self-Improve?",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.23651",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2611.23651",
+      "status": "reachable",
+      "expected_title": "Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates",
+      "observed_title": "Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates",
       "title_similarity": 1.0,
       "title_check": "match"
     },
@@ -3312,9 +3342,21 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/html/2611.22179v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2611.22179v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/html/2611.22525v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2611.22525v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2611.22605v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2611.22605v1",
       "status": "reachable"
     },
     {
@@ -3327,6 +3369,12 @@
       "url": "https://arxiv.org/html/2611.23219v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2611.23219v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/2611.23651v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2611.23651v1",
       "status": "reachable"
     },
     {
@@ -4404,9 +4452,21 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2611.22179v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2611.22179v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2611.22525v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2611.22525v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2611.22605v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2611.22605v1",
       "status": "reachable"
     },
     {
@@ -4419,6 +4479,12 @@
       "url": "https://arxiv.org/pdf/2611.23219v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2611.23219v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2611.23651v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2611.23651v1",
       "status": "reachable"
     },
     {
@@ -4851,6 +4917,42 @@
       "url": "https://github.com/Jasper-Yan/AgentStream",
       "http_status": 200,
       "final_url": "https://github.com/Jasper-Yan/AgentStream",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Jingyu6/rag-in-a-trenchcoat",
+      "http_status": 200,
+      "final_url": "https://github.com/Jingyu6/rag-in-a-trenchcoat",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/README.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/adversarial/runner/dm_dialog.py",
+      "http_status": 200,
+      "final_url": "https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/adversarial/runner/dm_dialog.py",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/adversarial/runner/run_dm_pipeline.py",
+      "http_status": 200,
+      "final_url": "https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/adversarial/runner/run_dm_pipeline.py",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/requirements.txt",
+      "http_status": 200,
+      "final_url": "https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/requirements.txt",
       "status": "reachable"
     },
     {
@@ -5289,6 +5391,48 @@
       "url": "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/pyproject.toml",
       "http_status": 200,
       "final_url": "https://github.com/ash-ding/MAPE/blob/9d356362094b1048a05655002059a191c8ff3d22/pyproject.toml",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/bhc6/DCPS",
+      "http_status": 200,
+      "final_url": "https://github.com/bhc6/DCPS",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/LICENSE",
+      "http_status": 200,
+      "final_url": "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/LICENSE",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/README.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/THIRD_PARTY_NOTICES.md",
+      "http_status": 200,
+      "final_url": "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/THIRD_PARTY_NOTICES.md",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/dcps-compound/gepa-artifact/pyproject.toml",
+      "http_status": 200,
+      "final_url": "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/dcps-compound/gepa-artifact/pyproject.toml",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/reproduction/pyproject.toml",
+      "http_status": 200,
+      "final_url": "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/reproduction/pyproject.toml",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/stableprompt-dcps/README.md",
+      "http_status": 200,
+      "final_url": "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/stableprompt-dcps/README.md",
       "status": "reachable"
     },
     {
@@ -6198,6 +6342,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://neurips.cc/virtual/2026/poster/151457",
+      "http_status": 200,
+      "final_url": "https://neurips.cc/virtual/2026/loc/sydney/poster/151457",
+      "status": "reachable"
+    },
+    {
       "url": "https://oatml.cs.ox.ac.uk/code.html",
       "http_status": 200,
       "final_url": "https://oatml.cs.ox.ac.uk/code.html",
@@ -6517,9 +6667,8 @@
     },
     {
       "url": "https://proceedings.neurips.cc/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html",
-      "http_status": 200,
-      "final_url": "https://proceedings.neurips.cc/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html",
-      "status": "reachable"
+      "status": "inconclusive",
+      "error": "URLError"
     },
     {
       "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/639a9a172c044fbb64175b5fad42e9a5-Paper-Conference.pdf",
@@ -6757,52 +6906,38 @@
     },
     {
       "url": "https://www.nature.com/articles/nature24270",
-      "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=7eb20ba6-dd7e-4cd1-b2a2-1244ace3e502",
-      "status": "restricted-or-transient",
-      "note": "Redirected to an access gate; source content was not verified."
+      "http_status": 503,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
-      "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=f512dfa4-7160-4898-9180-88e91ce3428f",
-      "status": "restricted-or-transient",
-      "note": "Redirected to an access gate; source content was not verified."
+      "http_status": 503,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y.pdf",
-      "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=e74fa630-bfad-47b2-9e63-fb4745f73c04",
-      "status": "restricted-or-transient",
-      "note": "Redirected to an access gate; source content was not verified."
+      "http_status": 503,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported",
-      "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported",
-      "status": "restricted-or-transient",
-      "note": "Redirected to an access gate; source content was not verified."
+      "http_status": 503,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
-      "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=a0f90d36-8069-45ef-b36a-ff85b4a7147e",
-      "status": "restricted-or-transient",
-      "note": "Redirected to an access gate; source content was not verified."
+      "http_status": 503,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
-      "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=80acac22-cf0a-4f10-8d0b-04c0fb6c1c4d",
-      "status": "restricted-or-transient",
-      "note": "Redirected to an access gate; source content was not verified."
+      "status": "inconclusive",
+      "error": "TimeoutError"
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3.pdf",
-      "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=f61038f9-7bb6-44cb-90e3-5d4fda3954db",
-      "status": "restricted-or-transient",
-      "note": "Redirected to an access gate; source content was not verified."
+      "status": "inconclusive",
+      "error": "TimeoutError"
     },
     {
       "url": "https://www.proceedings.com/content/079/079017-1754open.pdf",

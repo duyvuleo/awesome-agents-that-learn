@@ -57,6 +57,10 @@
         "why": "Check what retrieval logs identify under a declared outcome model before interpreting memory utility scores as causal contributions."
       },
       {
+        "paper": "rag-in-a-trenchcoat",
+        "why": "Separate competitive recall from applying stored rules; inspect stateless controls, partial-constraint denominators and multi-turn protocol consistency."
+      },
+      {
         "paper": "omce",
         "why": "Compare memory-utility scoring with learning when to retrieve, distill, or skip experience."
       },
@@ -103,6 +107,10 @@
       {
         "paper": "gepa",
         "why": "Compare textual feedback with reward-only search."
+      },
+      {
+        "paper": "dcps",
+        "why": "Audit generate-and-select before crediting policy updates or reflection; distinguish macro cost–performance points from matched-budget or equivalence claims."
       },
       {
         "paper": "adas",
@@ -311,6 +319,10 @@
       {
         "paper": "trusting-trust-agents",
         "why": "Include integrity of the learning signal and persistence of bad updates."
+      },
+      {
+        "paper": "safe-personal-rsi",
+        "why": "Compare empirical update gates with static authority rules; distinguish transferred prompt repairs and known-family replays from durable safety guarantees."
       },
       {
         "paper": "pace",

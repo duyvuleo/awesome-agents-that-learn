@@ -7720,5 +7720,123 @@
     "limitations": "One skill per style and mostly one execution per condition, from one model family. Style changes also remove discovery/fallback steps. TB-2 verification uses extra no-skill statistics; held-out sampled runs do not imply unseen tasks. Replay misses 17/51 labeled conflicts and can trigger unnecessary repair. AppWorld procedural success falls, and one rebuild comparison covers fewer variations. Only one maintenance event is evaluated; token payback excludes environment compute/latency and assumes stable reuse. No reproduction.",
     "review_depth": "full-text",
     "checked": "2026-11-20"
+  },
+  {
+    "id": "dcps",
+    "short_name": "DCPS",
+    "title": "Simplicity Goes Far: Auditing Prompt Optimizers with Demonstration-Conditioned Prompt Search",
+    "date": "2026-11-17",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.22605",
+    "sources": [
+      "https://arxiv.org/abs/2611.22605",
+      "https://arxiv.org/pdf/2611.22605v1",
+      "https://arxiv.org/html/2611.22605v1",
+      "https://github.com/bhc6/DCPS",
+      "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/README.md",
+      "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/LICENSE",
+      "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/THIRD_PARTY_NOTICES.md",
+      "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/reproduction/pyproject.toml",
+      "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/dcps-compound/gepa-artifact/pyproject.toml",
+      "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/stableprompt-dcps/README.md"
+    ],
+    "code_url": "https://github.com/bhc6/DCPS",
+    "code_note": "Official MIT research bundle inspected at 1a4e51c, including notices, setup manifests and audit documentation. Compound code requires Python >=3.11, the vendored DSPy fork and model access; analysis declares Python >=3.12. Current ports and naming crosswalk differ from historical run archives. No installation, research-code execution, dataset download or result reproduction.",
+    "topics": [
+      "prompts",
+      "workflows",
+      "evaluation",
+      "foundations"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "prompts"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Labeled demonstrations condition a frozen prompt generator; training-batch rewards or validation scores select reusable prompts. Target weights remain fixed in DCPS.",
+    "mechanism": "An external APE-style sample–generate–score–select control removes PPO updates or reflective/evolutionary search. StablePrompt retains a Top-K prompt queue; compound pipelines greedily retain the highest validation score. Demonstrations guide proposals rather than being automatically appended at serving time; the optimizer itself does not learn.",
+    "evaluation": "The Gemma StablePrompt audit averages three seeds, with two classification-family means within 0.4 points of PPO and PPO advantages on generation/MMLU. Six compound tasks on two backbones give a reported GPT-4.1-mini macro tie with GEPA at 61.14%, using 1,761 versus 3,936 average rollouts and $7.70 versus $11.34 measured macro-average API cost. Task results offset: GEPA retains reasoning/retrieval advantages, and expanding DCPS can worsen test accuracy.",
+    "limitations": "StablePrompt reports the best test score among five training-selected prompts; subset-level intervals do not remove test-selection optimism. Compound cells are validation-selected single runs with unequal, task-specific budgets, including an extended HoVer run; macro parity is not equivalence or component attribution. Lower GPU rental cost uses different hardware and rates, while runtime can rise. Large validation–test gaps, incompletely isolated sampling variance and missing full budget sweeps remain. Source review is not reproduction.",
+    "review_depth": "full-text",
+    "checked": "2026-11-21"
+  },
+  {
+    "id": "rag-in-a-trenchcoat",
+    "short_name": "BRIDGE",
+    "title": "RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't",
+    "date": "2026-11-17",
+    "year": 2026,
+    "kind": "paper",
+    "status": "peer-reviewed",
+    "venue": "NeurIPS 2026",
+    "url": "https://arxiv.org/abs/2611.22179",
+    "sources": [
+      "https://arxiv.org/abs/2611.22179",
+      "https://arxiv.org/pdf/2611.22179v1",
+      "https://arxiv.org/html/2611.22179v1",
+      "https://neurips.cc/virtual/2026/poster/151457",
+      "https://github.com/Jingyu6/rag-in-a-trenchcoat",
+      "https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/README.md",
+      "https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/LICENSE",
+      "https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/requirements.txt",
+      "https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/adversarial/runner/dm_dialog.py",
+      "https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/adversarial/runner/run_dm_pipeline.py"
+    ],
+    "code_url": "https://github.com/Jingyu6/rag-in-a-trenchcoat",
+    "code_note": "Author-linked Apache-2.0 release inspected at e9652c4: README, actual license, requirements, public API and two multi-turn runner files. README uses Python 3.12 and hosted model access; The Graphiti baseline needs Neo4j 5. Saved-output reproduction is documented but was not run; no datasets, models or archives downloaded. Historical run equivalence remains unverified.",
+    "topics": [
+      "memory",
+      "evaluation",
+      "foundations"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Conversation content, dates and LLM-generated observation notes condition later retrieval and responses; model weights remain fixed.",
+    "mechanism": "Writes chained per-block notes beside raw conversations and embeddings, fuses BM25 and cosine rankings, then presents ten selected blocks chronologically with three raw-text slots. Tests whether memory designs support unprompted rule use and demonstrated patterns; an extra directive-extraction pass probes presentation effects.",
+    "evaluation": "Three BRIDGE runs on BEAM 100K, EverMemBench and LongMemEval-S are competitive with imported matched-reader baselines; protocols and budgets differ. In the original 20-scenario probes, LangMem scores 80% versus BRIDGE 35% on positive rules, while BRIDGE scores 87.9% versus 54.5% on procedure constraints. Added domains, harder variants, graders, readers and repeated single-turn runs test robustness; rankings remain task-dependent.",
+    "limitations": "CI overlap is not equivalence, and published-baseline comparisons do not isolate complexity or total cost. Small synthetic probes lack a stateless control; compliance does not identify causal memory benefit. Leaks, excluded or unparsed constraints and changing denominators affect interpretation. Directive extraction adds an instruction as well as presentation. Multi-turn scoring/follow-up descriptions conflict with the appendix and inspected runner. September venue metadata predates the November arXiv date, leaving first-public and weekly eligibility unresolved. No independent reproduction.",
+    "review_depth": "full-text",
+    "checked": "2026-11-21"
+  },
+  {
+    "id": "safe-personal-rsi",
+    "short_name": "Safe Personal RSI",
+    "title": "Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates",
+    "date": "2026-11-18",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.23651",
+    "sources": [
+      "https://arxiv.org/abs/2611.23651",
+      "https://arxiv.org/pdf/2611.23651v1",
+      "https://arxiv.org/html/2611.23651v1"
+    ],
+    "code_url": null,
+    "code_note": "Complete 34-page v1 and Appendices A–J read; ten figures, thirteen numbered tables, two unnumbered tables, Algorithm 1 and formal decision expressions visually checked. No official implementation, raw replay release, license or installation manifest was established. No research code, models or services executed.",
+    "topics": [
+      "prompts",
+      "evaluation",
+      "safety",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "prompts"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Predefined risky edits, owner-authorization rules, labeled development cases, execution failures, fixed model audits and parent–candidate utility/risk comparisons guide prompt repair and admission.",
+    "mechanism": "A fixed offline controller tests persistent prompt-block updates, confirms failures, uses temporary block or sentence rollback to guide template or LLM repair, then applies a separate empirical maximum-category-risk and utility gate. Failed or insufficient attempts keep the parent. Weights, runtime, tools and the improvement procedure stay fixed.",
+    "evaluation": "Synthetic draft-only email/services contain 29 cases: 16 development and 13 loop-excluded attacks. Three models and two risky edits yield 20/21 rejected attempts. A Luna repair has 0/84 attack flags and 87/87 safe completions, matching a broad handwritten rule. A repair learned on Qwen2.5-7B transfers to Qwen3-14B: flags fall 58/84 to 15/84 and safe completions rise 17/87 to 56/87. Failed source/target repairs and runtime probes are reported.",
+    "limitations": "Case families were known and repeatedly explored; repeated replays and attempts are not independent learning replications. The Qwen static rule is narrower than the Luna comparator, and the admitted source repair fails its final authorized control. Point-estimate maximum-risk gating can hide category/total-risk increases; audits are model-dependent and utility excludes search/repair cost. Few update rounds, simulated services and sparse authorized controls do not establish longitudinal or deployed safety. No reproduction.",
+    "review_depth": "full-text",
+    "checked": "2026-11-21"
   }
 ]
