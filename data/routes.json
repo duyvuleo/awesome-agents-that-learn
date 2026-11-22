@@ -241,6 +241,10 @@
     "question": "Does a method change only the solver, or also the process that improves it?",
     "steps": [
       {
+        "paper": "goedel-machine",
+        "why": "Begin with proof-gated software self-rewrite, including the proof searcher; separate conditional switch-versus-continue optimality from practical empirical improvement."
+      },
+      {
         "paper": "stop",
         "why": "Identify how generated program improvements can feed back into the improvement procedure."
       },

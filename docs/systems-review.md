@@ -79,3 +79,7 @@ Inspected DCPS's MIT license, notices, audit documentation and setup manifests a
 ## 2026-11-22 — Infrastructure and recovery-program artifact boundaries
 
 GRAFT's author-linked anonymous page returned an HTTP-200 application shell without verified repository files, license or setup. RSIBench-Infra's official project marks code as coming soon; RoboCoEvo did not establish an official executable release. No system record or runtime validation was inferred from paper descriptions, open-weight dependencies, OCI submission design or simulator experiments. All twenty-six existing system inspections and execution records remain unchanged. No software, container, model, kernel or robot was installed or executed.
+
+## 2026-11-23 — Formal specification and historical implementations
+
+The original Gödel-machine report and author page describe a formal architecture and separately link later implementation papers. They do not establish an executable artifact, code license, installable requirements or reproduction for the reviewed arXiv v5. Those later implementations remain separate leads. No new system record was added; all twenty-six existing system inspections and not-run statuses remain unchanged. No software or prover was installed or executed.

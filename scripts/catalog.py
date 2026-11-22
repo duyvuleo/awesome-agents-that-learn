@@ -19,9 +19,10 @@ def identity(url):
     host = parts.netloc.lower()
     path = unquote(parts.path).rstrip("/")
     if host in {"arxiv.org", "export.arxiv.org"}:
-        match = re.search(r"/(?:abs|pdf|html)/(\d{4}\.\d{4,5})(?:v\d+)?(?:\.pdf)?$", path)
+        match = re.search(r"/(?:abs|pdf|html)/(\d{4}\.\d{4,5}|[a-z][a-z-]*(?:\.[A-Z]{2})?/\d{7})(?:v\d+)?(?:\.pdf)?$", path)
         if match:
-            return "arxiv:" + match[1]
+            # Legacy subject classes are redundant; retain the archive namespace.
+            return "arxiv:" + re.sub(r"\.[A-Z]{2}(?=/)", "", match[1])
     if host == "doi.org":
         return "doi:" + path.lower().lstrip("/")
     if host == "openreview.net" and parse_qs(parts.query).get("id"):

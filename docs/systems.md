@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Research papers](papers.md) · [Filter systems in the explorer](https://duyvuleo.github.io/awesome-agents-that-learn/?kind=system#catalog)
 
-26 software records. Catalog updated: 2026-11-22; individual inspection dates are recorded per entry. Systems are counted separately from the 216 research works; a paper and its software can describe the same research program. These are documentation/source inspections, not installations, reproductions, or deployment endorsements. No release date is inferred from the review date.
+26 software records. Catalog updated: 2026-11-23; individual inspection dates are recorded per entry. Systems are counted separately from the 217 research works; a paper and its software can describe the same research program. These are documentation/source inspections, not installations, reproductions, or deployment endorsements. No release date is inferred from the review date.
 
 ## Compare at a glance
 

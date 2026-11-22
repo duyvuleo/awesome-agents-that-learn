@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-216 unique works. Catalog updated: 2026-11-22; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+217 unique works. Catalog updated: 2026-11-23; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -229,6 +229,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2022-10-06 | **ReAct**<br>[ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629) | Interleaves language reasoning, tool actions and observations to revise a plan within a task. The main prompted variant keeps weights fixed; the separately evaluated… | Model weights | peer-reviewed · full-text | [Notes](#react) |
 | 2022-03-28 | **STaR**<br>[STaR: Bootstrapping Reasoning With Reasoning](https://arxiv.org/abs/2203.14465) | Generates reasoning traces, keeps traces ending in the reference answer, and fine-tunes on them. Failed problems can be retried with the answer supplied as a hint; each… | Model weights | peer-reviewed · full-text | [Notes](#star) · [Code](https://github.com/ezelikman/STaR) |
 | 2017-10-19 | **AlphaGo Zero**<br>[Mastering the game of Go without human knowledge](https://www.nature.com/articles/nature24270) | Alternates search-guided self-play with gradient updates to a shared policy/value network. Recent games are replayed to fit improved move distributions and outcomes. The… | Model weights | peer-reviewed · full-text | [Notes](#alphago-zero) |
+| 2003-09-25 | **Gödel Machine**<br>[Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements](https://arxiv.org/abs/cs/0309048) | Searches programs that construct proofs and self-rewrite proposals. A time-checked target proof must favor executing the present rewrite over continuing the current… | Agent code | technical-report · full-text | [Notes](#goedel-machine) |
 
 ## Full annotations
 
@@ -5031,3 +5032,25 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** foundations, self-play, model-training. **Reviewed:** full-text · 2026-11-09.
 
 [Source 1](https://www.nature.com/articles/nature24270) · [Source 2](https://discovery.ucl.ac.uk/id/eprint/10045895/) · [Source 3](https://www.julian.ac/papers/) · [Source 4](https://drive.google.com/file/d/1XN0QXdYKjbuMuVnQ7ASb6oxVo7DHy1Hx/view)
+
+<a id="goedel-machine"></a>
+
+## Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements
+
+**2003-09-25 · technical-report · IDSIA-19-03 / arXiv v5 (2006); related Springer variants (2005/2007) · core · paper**
+
+[Primary source](https://arxiv.org/abs/cs/0309048)
+
+**Mechanism.** Searches programs that construct proofs and self-rewrite proposals. A time-checked target proof must favor executing the present rewrite over continuing the current proof search; rewrites can persist across future interactions in one lifetime and replace policy and proof searcher, excluding hardware-reserved state.
+
+**What changes:** Agent code. **Persistence:** both. **Learning signal:** Formal proofs relative to encoded hardware, environment, cost and utility axioms, supplemented by time-labeled readable observations of machine state.
+
+**Evaluation.** Theoretical blueprint, instruction schemas, global-optimality Theorem 4.1 and conditional asymptotic BIOPS Theorem 5.1; illustrative optimization and robot scenarios, without empirical agent benchmarks. Full arXiv v5, its proofs, equations and storage diagram reviewed; published-variant metadata checked separately.
+
+**Boundary.** Optimality is relative to the encoded utility and formal system, comparing the current rewrite with continuing the current searcher. Useful changes may be unprovable or too costly to prove; BIOPS hides prior-dependent constants. Adequate real-world axioms, a first useful rewrite, practical LLM gains and human-aligned goals are not established.
+
+**Code / data.** The reviewed report specifies a formal architecture and proof-search procedure; no executable artifact, software license or setup was established for this version. The author page lists later implementation papers separately. No research code or prover was executed.
+
+**Topics:** foundations, recursive-improvement. **Reviewed:** full-text · 2026-11-23.
+
+[Source 1](https://arxiv.org/abs/cs/0309048) · [Source 2](https://arxiv.org/pdf/cs/0309048v5) · [Source 3](https://arxiv.org/html/cs/0309048v5) · [Source 4](https://people.idsia.ch/~juergen/goedelmachine.html) · [Source 5](https://link.springer.com/chapter/10.1007/978-3-540-32274-0_1) · [Source 6](https://link.springer.com/chapter/10.1007/978-3-540-68677-4_7)

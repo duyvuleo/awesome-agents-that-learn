@@ -229,3 +229,6 @@
 
 ## 2017
 - 2017-10-19 — [Mastering the game of Go without human knowledge](papers.md#alphago-zero)
+
+## 2003
+- 2003-09-25 — [Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements](papers.md#goedel-machine)

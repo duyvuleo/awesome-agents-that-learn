@@ -1,0 +1,208 @@
+{
+  "week_start": "2026-11-16",
+  "week_end": "2026-11-22",
+  "published_on": "2026-11-23",
+  "title": "Can we tell when an agent has improved?",
+  "takeaway": "Test whether apparent gains survive noisy selection, simple controls, environmental change and quality constraints.",
+  "introduction": "This week asks what an evaluation must establish before a changed artifact counts as progress. The selection audit separates search variation from execution noise; the prompt-search control tests mechanism attribution; maintenance and safety studies examine drift and risky edits; the infrastructure benchmark adds quality and resource boundaries. Curator interpretation: their common thread is separating measured improvement from selection uncertainty and the conditions under which reuse remains beneficial. Source inspection is not reproduction.",
+  "picks": [
+    {
+      "paper_id": "resolution-hypothesis",
+      "why_now": "This new audit asks whether useful proposals can be recognized before claiming a better self-improving method.",
+      "problem": "A higher validation score can reflect stochastic execution or a lucky search run.",
+      "mechanism": "Repeated artifact evaluations and independent evolution runs separate those sources; fixed candidate pools examine proposal quality and selection.",
+      "evidence": "Authors report 1,030 evolution runs and ranking instability. In one eleven-task pool, execution selection reaches 49.7% pairwise accuracy, with a 95% credible half-width of 1.9 points, consistent with chance.",
+      "limitation": "Candidate evidence uses one backbone and fitted posterior quality, with generation-task overlap. Grader repairs change some measurements; retrieval and harness gains survive. Research artifacts were promised after acceptance.",
+      "citation": {
+        "title": "The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements",
+        "short_name": "Resolution Hypothesis",
+        "date": "2026-11-17",
+        "status": "preprint",
+        "url": "https://arxiv.org/abs/2611.23068",
+        "review_depth": "full-text",
+        "checked": "2026-11-20",
+        "reviewed_sources": [
+          {
+            "url": "https://arxiv.org/pdf/2611.23068v1",
+            "version": "arXiv v1",
+            "sections": "Complete thirty-eight-page v1 and Appendices A–I; especially Sections 3–6, Table 1, candidate pools, posterior assumptions, gain-audit exceptions and validation-cost limits."
+          }
+        ]
+      },
+      "event": {
+        "kind": "new",
+        "date": "2026-11-18",
+        "occurred_at": "2026-11-17T16:57:03Z",
+        "source": "https://arxiv.org/abs/2611.23068"
+      },
+      "connections": [
+        {
+          "paper_id": "pace",
+          "short_name": "PACE",
+          "why": "Compare an explicit acceptance rule with empirical evidence that noisy selection can still discard useful changes."
+        }
+      ]
+    },
+    {
+      "paper_id": "dcps",
+      "why_now": "This new control tests what elaborate prompt optimizers add beyond generating candidates and selecting validation winners.",
+      "problem": "Complex optimization can receive credit for gains available from simpler search.",
+      "mechanism": "A frozen generator proposes prompts from random demonstrations; reward or validation scores retain them without policy updates or reflection.",
+      "evidence": "Two classification-family means lie within 0.4 points of PPO. A six-task GPT-4.1-mini macro ties GEPA at 61.14%, using 1,761 versus 3,936 average rollouts and lower measured API cost.",
+      "limitation": "StablePrompt selects the best test score among five prompts. Compound results are single runs at unequal budgets; macro parity is not equivalence. PPO and GEPA retain task-specific advantages. The MIT artifact was inspected, not executed.",
+      "citation": {
+        "title": "Simplicity Goes Far: Auditing Prompt Optimizers with Demonstration-Conditioned Prompt Search",
+        "short_name": "DCPS",
+        "date": "2026-11-17",
+        "status": "preprint",
+        "url": "https://arxiv.org/abs/2611.22605",
+        "review_depth": "full-text",
+        "checked": "2026-11-21",
+        "reviewed_sources": [
+          {
+            "url": "https://arxiv.org/pdf/2611.22605v1",
+            "version": "arXiv v1",
+            "sections": "Complete thirteen-page v1, all algorithms, equations, figures and tables; especially Sections 4–6 and Tables 1–4 on test selection, unequal budgets, costs and negative outcomes."
+          },
+          {
+            "url": "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/LICENSE",
+            "version": "Repository 1a4e51c; inspected 2026-11-21",
+            "sections": "Actual MIT license and retained third-party notice boundary; implementation was not executed."
+          }
+        ]
+      },
+      "event": {
+        "kind": "new",
+        "date": "2026-11-17",
+        "occurred_at": "2026-11-17T11:22:27Z",
+        "source": "https://arxiv.org/abs/2611.22605"
+      },
+      "connections": [
+        {
+          "paper_id": "gepa",
+          "short_name": "GEPA",
+          "why": "Read the reflective-search method, then ask whether its advantages survive matched selection and resource controls."
+        }
+      ]
+    },
+    {
+      "paper_id": "skill-state-maintenance",
+      "why_now": "This release moves from noticing stale experience to testing whether repair restores useful, economical behavior.",
+      "problem": "Unchanged success can conceal the extra work required to compensate for outdated skills.",
+      "mechanism": "Execution-derived checks replay without model calls; verification and repair can use an LLM, with rebuilding when validation rejects local fixes.",
+      "evidence": "Haiku cached-form field accuracy rises from 30.5% to 97.5%; a separate ScienceWorld condition preserves score while reducing steps from 25.6 to 16.1.",
+      "limitation": "Mostly single executions and two models bound inference. Detection misses conflicts, an AppWorld condition regresses, and only one maintenance event is tested. The 21–42-use token-payback estimate versus retirement assumes stable reuse and excludes environment cost. Artifacts remain unverified.",
+      "citation": {
+        "title": "When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments",
+        "short_name": "Skill Staleness",
+        "date": "2026-11-17",
+        "status": "preprint",
+        "url": "https://arxiv.org/abs/2611.22525",
+        "review_depth": "full-text",
+        "checked": "2026-11-20",
+        "reviewed_sources": [
+          {
+            "url": "https://arxiv.org/pdf/2611.22525v1",
+            "version": "arXiv v1",
+            "sections": "Complete seventeen-page v1 and Appendices A–E; especially Tables 4–5 and 12–15, detector misses, repair regressions, replay-only zero-call scope and conditional token payback."
+          }
+        ]
+      },
+      "event": {
+        "kind": "new",
+        "date": "2026-11-17",
+        "occurred_at": "2026-11-17T10:18:46Z",
+        "source": "https://arxiv.org/abs/2611.22525"
+      },
+      "connections": [
+        {
+          "paper_id": "experience-rot",
+          "short_name": "Experience Rot",
+          "why": "Compare skill-state repair with the harm of stale live histories, including read-back recovery and its model-call cost."
+        }
+      ]
+    },
+    {
+      "paper_id": "safe-personal-rsi",
+      "why_now": "The new report makes rejection, repair and unchanged-parent outcomes visible when assessing prompt updates.",
+      "problem": "Prompt updates can improve convenience while weakening authorization or action reporting.",
+      "mechanism": "A fixed offline controller confirms failures, uses rollback to guide repairs, and gates candidate prompts on development utility and maximum-category risk.",
+      "evidence": "It rejects 20/21 attempts from two deliberately risky edits. One Luna repair matches a broad handwritten rule at zero flags across 84 attack replays.",
+      "limitation": "Attempts are correlated, case families were known, and the gate uses point estimates. Qwen gains transfer a repair against a narrower static rule; the source-model repair fails an authorized control. Synthetic draft-only services and limited update rounds do not establish a durable safety guarantee. Artifacts remain unverified.",
+      "citation": {
+        "title": "Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates",
+        "short_name": "Safe Personal RSI",
+        "date": "2026-11-18",
+        "status": "preprint",
+        "url": "https://arxiv.org/abs/2611.23651",
+        "review_depth": "full-text",
+        "checked": "2026-11-21",
+        "reviewed_sources": [
+          {
+            "url": "https://arxiv.org/pdf/2611.23651v1",
+            "version": "arXiv v1",
+            "sections": "Complete thirty-four-page v1 and Appendices A–J; controlled-admission and repair tables, known-family reuse, static-rule parity, transferred repair, authorized control and empirical gate limits."
+          }
+        ]
+      },
+      "event": {
+        "kind": "new",
+        "date": "2026-11-18",
+        "occurred_at": "2026-11-18T00:15:38Z",
+        "source": "https://arxiv.org/abs/2611.23651"
+      },
+      "connections": [
+        {
+          "paper_id": "trusting-trust-agents",
+          "short_name": "Poisoned benchmarks",
+          "why": "Connect update admission to the integrity of feedback, then test whether a static rule already supplies the benefit."
+        }
+      ]
+    },
+    {
+      "paper_id": "rsibench-infra",
+      "why_now": "This new benchmark asks whether local software edits deliver end-to-end gains under explicit quality checks.",
+      "problem": "A faster kernel need not speed up a complete training or inference workload.",
+      "mechanism": "Fixed agents edit engines, kernels and launch configurations; submitted container layers undergo separate throughput and quality evaluation.",
+      "evidence": "Of 130 eligible configuration–task outcomes, 86 exceed 1.10× validated speedup; ten API-blocked Claude tasks are excluded. Each pair has one optimization run.",
+      "limitation": "Quality gates use finite reference outputs or local training curves. Different harnesses, modeled ceilings and excluded setup or verifier costs limit comparisons. This does not demonstrate cross-task learning or an agent using its own optimized backend. The project marks code as coming soon.",
+      "citation": {
+        "title": "RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?",
+        "short_name": "RSIBench-Infra",
+        "date": "2026-11-18",
+        "status": "preprint",
+        "url": "https://arxiv.org/abs/2611.24395",
+        "review_depth": "full-text",
+        "checked": "2026-11-22",
+        "reviewed_sources": [
+          {
+            "url": "https://arxiv.org/pdf/2611.24395v1",
+            "version": "arXiv v1",
+            "sections": "Complete twenty-two-page v1 and Appendices A–D; eligible-task denominator, single-run comparisons, task quality gates, timing boundaries, costs and analytical speed-of-light references."
+          },
+          {
+            "url": "https://rsibench-infra.github.io/",
+            "version": "Official project page inspected 2026-11-22",
+            "sections": "Code-coming-soon availability statement and descriptive analytical-ceiling/timing-boundary caveat."
+          }
+        ]
+      },
+      "event": {
+        "kind": "new",
+        "date": "2026-11-19",
+        "occurred_at": "2026-11-18T13:29:44Z",
+        "source": "https://arxiv.org/abs/2611.24395"
+      },
+      "connections": [
+        {
+          "paper_id": "rsi-tax",
+          "short_name": "RSI Tax",
+          "why": "Place throughput gains beside acquisition, validation and serving overhead before calling the optimization economically beneficial."
+        }
+      ]
+    }
+  ],
+  "older_paper": null,
+  "study_question": "For one retained artifact, which future-task split and matched controls would distinguish useful change from noisy selection, and what negative result would make you retain the parent after accounting for quality, authorization and the full cost from acquisition to serving?",
+  "corrections": []
+}

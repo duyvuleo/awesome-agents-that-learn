@@ -7947,5 +7947,41 @@
     "limitations": "No independent training-run repetitions or confidence intervals are reported. Held-out seeds test new configurations of trained tasks, not broad unseen-task or physical-robot transfer. Privileged state access, planners and strong-agent supervision bound autonomy. Some task and failure-mode outcomes regress; canning meat retains zero full success. Diagnostics use changing agent-written detectors. One-task, duration-matched ablations do not match total compute; quoted GPU hours exclude development, testing and policy training and include rescaling. Replay does not establish broad retention. No reproduction.",
     "review_depth": "full-text",
     "checked": "2026-11-22"
+  },
+  {
+    "id": "goedel-machine",
+    "title": "Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements",
+    "short_name": "Gödel Machine",
+    "date": "2003-09-25",
+    "year": 2003,
+    "kind": "paper",
+    "status": "technical-report",
+    "venue": "IDSIA-19-03 / arXiv v5 (2006); related Springer variants (2005/2007)",
+    "url": "https://arxiv.org/abs/cs/0309048",
+    "sources": [
+      "https://arxiv.org/abs/cs/0309048",
+      "https://arxiv.org/pdf/cs/0309048v5",
+      "https://arxiv.org/html/cs/0309048v5",
+      "https://people.idsia.ch/~juergen/goedelmachine.html",
+      "https://link.springer.com/chapter/10.1007/978-3-540-32274-0_1",
+      "https://link.springer.com/chapter/10.1007/978-3-540-68677-4_7"
+    ],
+    "code_url": null,
+    "code_note": "The reviewed report specifies a formal architecture and proof-search procedure; no executable artifact, software license or setup was established for this version. The author page lists later implementation papers separately. No research code or prover was executed.",
+    "topics": [
+      "foundations",
+      "recursive-improvement"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "agent-code"
+    ],
+    "persistence": "both",
+    "learning_signal": "Formal proofs relative to encoded hardware, environment, cost and utility axioms, supplemented by time-labeled readable observations of machine state.",
+    "mechanism": "Searches programs that construct proofs and self-rewrite proposals. A time-checked target proof must favor executing the present rewrite over continuing the current proof search; rewrites can persist across future interactions in one lifetime and replace policy and proof searcher, excluding hardware-reserved state.",
+    "evaluation": "Theoretical blueprint, instruction schemas, global-optimality Theorem 4.1 and conditional asymptotic BIOPS Theorem 5.1; illustrative optimization and robot scenarios, without empirical agent benchmarks. Full arXiv v5, its proofs, equations and storage diagram reviewed; published-variant metadata checked separately.",
+    "limitations": "Optimality is relative to the encoded utility and formal system, comparing the current rewrite with continuing the current searcher. Useful changes may be unprovable or too costly to prove; BIOPS hides prior-dependent constants. Adequate real-world axioms, a first useful rewrite, practical LLM gains and human-aligned goals are not established.",
+    "review_depth": "full-text",
+    "checked": "2026-11-23"
   }
 ]

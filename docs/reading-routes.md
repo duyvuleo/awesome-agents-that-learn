@@ -156,25 +156,27 @@ Can a system generate useful challenges for itself?
 
 Does a method change only the solver, or also the process that improves it?
 
-1. **[Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation](papers.md#stop)** — Identify how generated program improvements can feed back into the improvement procedure.
+1. **[Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements](papers.md#goedel-machine)** — Begin with proof-gated software self-rewrite, including the proof searcher; separate conditional switch-versus-continue optimality from practical empirical improvement.
 
-2. **[Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement](papers.md#godel-agent)** — Inspect self-referential program modification.
+2. **[Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation](papers.md#stop)** — Identify how generated program improvements can feed back into the improvement procedure.
 
-3. **[Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](papers.md#darwin-godel-machine)** — Study archive-based search and empirical selection of self-edits.
+3. **[Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement](papers.md#godel-agent)** — Inspect self-referential program modification.
 
-4. **[Hyperagents](papers.md#hyperagents)** — Trace which meta-agent components become editable and which outer controls remain fixed.
+4. **[Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](papers.md#darwin-godel-machine)** — Study archive-based search and empirical selection of self-edits.
 
-5. **[Self-Improvement Memory Enables Continual Recursive Self-Improvement](papers.md#self-improvement-memory)** — Compare memory for a fixed optimizer with optimizer-code evolution; inspect same-harness continuation controls and unmatched context costs.
+5. **[Hyperagents](papers.md#hyperagents)** — Trace which meta-agent components become editable and which outer controls remain fixed.
 
-6. **[Exo: An Architecture for Self-Improving Systems at Runtime](papers.md#exo-runtime)** — Compare runtime harness edits with the fixed mechanisms that retain history and activate replacements.
+6. **[Self-Improvement Memory Enables Continual Recursive Self-Improvement](papers.md#self-improvement-memory)** — Compare memory for a fixed optimizer with optimizer-code evolution; inspect same-harness continuation controls and unmatched context costs.
 
-7. **[ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement](papers.md#modularrsi)** — Inspect modular evolution and frozen downstream evaluation.
+7. **[Exo: An Architecture for Self-Improving Systems at Runtime](papers.md#exo-runtime)** — Compare runtime harness edits with the fixed mechanisms that retain history and activate replacements.
 
-8. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Test the assumption that an optimization benchmark is a trustworthy teacher.
+8. **[ModularRSI: Modular and Generalizable Recursive Harness Self-Improvement](papers.md#modularrsi)** — Inspect modular evolution and frozen downstream evaluation.
 
-9. **[Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](papers.md#rsi-evaluation-audit)** — Distinguish final-system gains from repeated loops and same-start comparisons of improvers.
+9. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Test the assumption that an optimization benchmark is a trustworthy teacher.
 
-10. **[RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?](papers.md#rsibench-infra)** — Separate quality-gated infrastructure speedups from demonstrated learning of an agent or improver; inspect workload, timing and analytical-ceiling boundaries.
+10. **[Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](papers.md#rsi-evaluation-audit)** — Distinguish final-system gains from repeated loops and same-start comparisons of improvers.
+
+11. **[RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?](papers.md#rsibench-infra)** — Separate quality-gated infrastructure speedups from demonstrated learning of an agent or improver; inspect workload, timing and analytical-ceiling boundaries.
 
 
 **Study exercise:** Draw the solver, proposer, selector, and evaluator separately. Highlight what can change and what evidence would demonstrate improvement of the improver.

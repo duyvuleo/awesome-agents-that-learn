@@ -76,6 +76,40 @@ class CatalogTests(unittest.TestCase):
         errors = validate_records([*records, other], load("collection.json"))
         self.assertTrue(any("duplicate primary work" in e for e in errors))
 
+    def test_legacy_arxiv_aliases_keep_archive_identity(self):
+        aliases = [
+            "https://arxiv.org/abs/cs/0309048",
+            "https://arxiv.org/pdf/cs/0309048v5.pdf",
+            "https://arxiv.org/html/cs/0309048v5",
+            "https://export.arxiv.org/abs/cs/0309048v1",
+            "https://arxiv.org/abs/cs%2F0309048v5",
+            "https://arxiv.org/abs/cs.AI/0309048v5",
+        ]
+        for url in aliases:
+            with self.subTest(url=url):
+                self.assertEqual(identity(url), "arxiv:cs/0309048")
+        self.assertEqual(identity("https://arxiv.org/pdf/hep-th/9901001v2.pdf"), "arxiv:hep-th/9901001")
+        self.assertEqual(identity("https://arxiv.org/abs/math.GT/0309048v2"), "arxiv:math/0309048")
+        for url in [
+            "https://arxiv.org/abs/math/0309048",
+            "https://arxiv.org/abs/cs/0309049",
+            "https://arxiv.org/abs/cs/0309048/supplement",
+        ]:
+            with self.subTest(url=url):
+                self.assertNotEqual(identity(url), "arxiv:cs/0309048")
+        self.assertEqual(identity("https://arxiv.org/pdf/2501.12345v2.pdf"), "arxiv:2501.12345")
+
+    def test_duplicate_legacy_arxiv_versions_rejected(self):
+        first = copy.deepcopy(load()[0])
+        first["url"] = "https://arxiv.org/abs/cs/0309048"
+        first["sources"].append(first["url"])
+        other = copy.deepcopy(first)
+        other.update(id="duplicate-legacy-work", short_name="Duplicate legacy work",
+                     url="https://export.arxiv.org/pdf/cs/0309048v5.pdf")
+        other["sources"].append(other["url"])
+        errors = validate_records([first, other], load("collection.json"))
+        self.assertTrue(any("duplicate primary work arxiv:cs/0309048" in e for e in errors))
+
     def test_openreview_identity_keeps_paper_id(self):
         self.assertEqual(identity("https://openreview.net/forum?id=abc"), identity("https://openreview.net/pdf?id=abc"))
         self.assertNotEqual(identity("https://openreview.net/forum?id=abc"), identity("https://openreview.net/forum?id=def"))

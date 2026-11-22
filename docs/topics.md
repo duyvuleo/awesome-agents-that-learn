@@ -5,7 +5,7 @@
 A work may appear in several topics; counts here are not additive.
 <a id="foundations"></a>
 
-## Foundations and boundaries (37)
+## Foundations and boundaries (38)
 - 2026-11-17 — [The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis) · core · preprint
 - 2026-11-17 — [RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't](papers.md#rag-in-a-trenchcoat) · core · peer-reviewed
 - 2026-11-17 — [Simplicity Goes Far: Auditing Prompt Optimizers with Demonstration-Conditioned Prompt Search](papers.md#dcps) · core · preprint
@@ -43,6 +43,7 @@ A work may appear in several topics; counts here are not additive.
 - 2022-10-06 — [ReAct: Synergizing Reasoning and Acting in Language Models](papers.md#react) · adjacent · peer-reviewed
 - 2022-03-28 — [STaR: Bootstrapping Reasoning With Reasoning](papers.md#star) · adjacent · peer-reviewed
 - 2017-10-19 — [Mastering the game of Go without human knowledge](papers.md#alphago-zero) · adjacent · peer-reviewed
+- 2003-09-25 — [Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements](papers.md#goedel-machine) · core · technical-report
 
 <a id="surveys"></a>
 
@@ -555,7 +556,7 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="recursive-improvement"></a>
 
-## Improving the improver (30)
+## Improving the improver (31)
 - 2026-11-18 — [RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?](papers.md#rsibench-infra) · core · preprint
 - 2026-11-13 — [Self-Improvement Memory Enables Continual Recursive Self-Improvement](papers.md#self-improvement-memory) · core · preprint
 - 2026-11-10 — [The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](papers.md#rsi-tax) · core · preprint
@@ -586,6 +587,7 @@ A work may appear in several topics; counts here are not additive.
 - 2024-10-06 — [Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement](papers.md#godel-agent) · core · peer-reviewed
 - 2023-10-03 — [Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation](papers.md#stop) · core · peer-reviewed
 - 2023-09-28 — [Promptbreeder: Self-Referential Self-Improvement via Prompt Evolution](papers.md#promptbreeder) · core · peer-reviewed
+- 2003-09-25 — [Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements](papers.md#goedel-machine) · core · technical-report
 
 <a id="evaluation"></a>
 

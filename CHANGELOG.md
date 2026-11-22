@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-23 — Weekly evidence and original self-rewrite theory
+
+- Published the November 16–22 weekly edition with five source-reviewed picks on selection reliability, controls, drift, safe updates and infrastructure quality.
+- Added a complete-source appraisal of the original Gödel Machine report as a foundational omission; total 217 works and 26 systems.
+- Qualified conditional proof guarantees, asymptotic costs and publication-version boundaries; extended the recursive-improvement route.
+- Corrected legacy arXiv URL/version deduplication with focused regression tests. Historical inspections and prior weekly snapshots remain unchanged; no research experiments reproduced.
+
 ## 2026-11-22 — Execution evidence, infrastructure and robot recovery
 
 - Added complete-source appraisals of GRAFT, RSIBench-Infra and RoboCoEvo; total 216 works and 26 systems.

@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-22T10:40:12.002627+00:00",
+  "checked_at_utc": "2026-11-22T22:19:46.633031+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -2418,6 +2418,16 @@
       "title_check": "match"
     },
     {
+      "url": "https://arxiv.org/abs/cs/0309048",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/cs/0309048",
+      "status": "reachable",
+      "expected_title": "Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements",
+      "observed_title": "Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
       "url": "https://arxiv.org/html/2210.03629v3",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2210.03629v3",
@@ -3423,6 +3433,12 @@
       "url": "https://arxiv.org/html/2611.23651v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/html/2611.23651v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/html/cs/0309048v5",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/cs/0309048v5",
       "status": "reachable"
     },
     {
@@ -4554,6 +4570,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/cs/0309048v5",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/cs/0309048v5",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/src/2608.22610v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/src/2608.22610v1",
@@ -4591,8 +4613,9 @@
     },
     {
       "url": "https://dev.mysql.com/doc/refman/8.4/en/select.html",
-      "http_status": 403,
-      "status": "restricted-or-transient"
+      "http_status": 200,
+      "final_url": "https://dev.mysql.com/doc/refman/8.4/en/select.html",
+      "status": "reachable"
     },
     {
       "url": "https://discovery.ucl.ac.uk/id/eprint/10045895/",
@@ -6353,6 +6376,20 @@
       "status": "reachable"
     },
     {
+      "url": "https://link.springer.com/chapter/10.1007/978-3-540-32274-0_1",
+      "http_status": 200,
+      "final_url": "https://link.springer.com/chapter/10.1007/978-3-540-32274-0_1?error=cookies_not_supported&code=84a40ae7-ba4e-40bf-8942-3842096c8026",
+      "status": "restricted-or-transient",
+      "note": "Redirected to an access gate; source content was not verified."
+    },
+    {
+      "url": "https://link.springer.com/chapter/10.1007/978-3-540-68677-4_7",
+      "http_status": 200,
+      "final_url": "https://link.springer.com/chapter/10.1007/978-3-540-68677-4_7?error=cookies_not_supported&code=ce8e15c7-816d-4cfa-b995-c144993c5075",
+      "status": "restricted-or-transient",
+      "note": "Redirected to an access gate; source content was not verified."
+    },
+    {
       "url": "https://meta-square.github.io/",
       "http_status": 200,
       "final_url": "https://meta-square.github.io/",
@@ -6488,6 +6525,12 @@
       "url": "https://palm-neurips-2026.github.io/",
       "http_status": 200,
       "final_url": "https://palm-neurips-2026.github.io/",
+      "status": "reachable"
+    },
+    {
+      "url": "https://people.idsia.ch/~juergen/goedelmachine.html",
+      "http_status": 200,
+      "final_url": "https://people.idsia.ch/~juergen/goedelmachine.html",
       "status": "reachable"
     },
     {
@@ -6979,21 +7022,21 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=53885675-43c3-4ab4-bf03-47b0ad3eeb3e",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=fca4cdf8-f80d-4ea3-adc8-b6d5681b814f",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=fea1f112-dec9-4bc4-9682-fbf35db7670c",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=79915c9f-d671-4155-8839-975911900523",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=9f29b6b5-dc43-41f7-a85f-c4cac705e3fc",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=a77a93f0-6184-40fe-a27c-03450c6b7ead",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -7007,21 +7050,21 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=2f1a052e-4e40-4fb2-ab11-91108fb46050",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=ba51a4ba-a46a-441d-bc86-6c3c1676023d",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=39c3cedb-7f45-4938-a5ae-9a476fe293d7",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=0eed395f-5a22-44b4-b0d9-7852e7cc426c",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=52aff165-24f5-49c6-95d8-f6875989a228",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=40ea0948-d697-48ca-a332-d952615cf5cb",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
