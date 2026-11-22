@@ -4,7 +4,7 @@
     "subtitle": "A research guide to self-learning, self-improving, and self-evolving AI agents.",
     "repository": "https://github.com/duyvuleo/awesome-agents-that-learn",
     "site": "https://duyvuleo.github.io/awesome-agents-that-learn/",
-    "updated": "2026-11-21",
+    "updated": "2026-11-22",
     "schema_version": 2,
     "topics": {
       "foundations": "Foundations and boundaries",
@@ -77,6 +77,42 @@
       "limitations": "Case families were known and repeatedly explored; repeated replays and attempts are not independent learning replications. The Qwen static rule is narrower than the Luna comparator, and the admitted source repair fails its final authorized control. Point-estimate maximum-risk gating can hide category/total-risk increases; audits are model-dependent and utility excludes search/repair cost. Few update rounds, simulated services and sparse authorized controls do not establish longitudinal or deployed safety. No reproduction.",
       "review_depth": "full-text",
       "checked": "2026-11-21"
+    },
+    {
+      "id": "rsibench-infra",
+      "short_name": "RSIBench-Infra",
+      "title": "RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?",
+      "date": "2026-11-18",
+      "year": 2026,
+      "kind": "benchmark",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.24395",
+      "sources": [
+        "https://arxiv.org/abs/2611.24395",
+        "https://arxiv.org/pdf/2611.24395v1",
+        "https://rsibench-infra.github.io/"
+      ],
+      "code_url": null,
+      "code_note": "Complete 22-page v1, Appendices A–D, five figures, eight tables (including continuation), two numbered equations and gate expressions read; scientific objects visually checked. The official project page labels code as coming soon. No paper-specific repository, code license or runnable release was established; no infrastructure, kernel, model or benchmark was executed.",
+      "topics": [
+        "recursive-improvement",
+        "workflows",
+        "evaluation",
+        "applications"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "agent-code",
+        "workflows"
+      ],
+      "persistence": "within-task",
+      "learning_signal": "Profiling traces, microbenchmarks, task-level quality checks and end-to-end performance guide externally specified software search; researchers fix workload, hardware, objectives and resource limits.",
+      "mechanism": "Fixed agents edit serving/training engines, kernels, dependencies and launch configurations, then submit a reusable OCI layer. Fresh Serve/Train jobs load that layer; a separate Benchmark job does not. Quality-gated throughput evaluates each task-specific artifact. This tests infrastructure optimization, not cross-task policy learning or redesign of the improver.",
+      "evaluation": "Twenty production-oriented tasks (16 inference, four training), up to 32 accelerators and seven model–harness configurations use one eight-hour-budget run per eligible pair. Authors report 86/130 outcomes above 1.10× validated speedup; ten Claude API-blocked tasks are excluded. The best complete-suite configuration improves 16/20 with median 1.3335×. Nine formal zeros remain in aggregates; a five-task H20 Lite subset reuses full-suite results.",
+      "limitations": "Single runs, different harnesses and partial Claude coverage preclude resolved rankings. Synthetic/fixed workloads and narrow reference-output or local training-curve gates do not establish arbitrary production quality, closed-loop robot success or convergence. Seven Faster submissions lack a confirmed new behavior label; labels are observational. SOL references are modeled, with four extrapolations and historical-boundary caveats. API cost and agent time exclude accelerator/setup/verifier overhead. No released implementation or independent reproduction was established.",
+      "review_depth": "full-text",
+      "checked": "2026-11-22"
     },
     {
       "id": "skill-state-maintenance",
@@ -241,6 +277,42 @@
       "checked": "2026-11-21"
     },
     {
+      "id": "graft",
+      "short_name": "GRAFT",
+      "title": "GRAFT: Execution-Guided Genetic Recombination for Agent Design",
+      "date": "2026-11-17",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.23509",
+      "sources": [
+        "https://arxiv.org/abs/2611.23509",
+        "https://arxiv.org/pdf/2611.23509v1",
+        "https://arxiv.org/html/2611.23509v1",
+        "https://anonymous.4open.science/r/GRAFT-B1EB/"
+      ],
+      "code_url": "https://anonymous.4open.science/r/GRAFT-B1EB/",
+      "code_note": "Complete 13-page v1, Appendices A–D, four figures, five tables, four equations and two algorithms read; scientific objects visually checked. The author-linked anonymous page returned an HTTP-200 application shell, without verified repository files, license, setup or paper-run correspondence. No research code or models executed.",
+      "topics": [
+        "architecture",
+        "workflows",
+        "evaluation"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "agent-code",
+        "workflows"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Validation fitness, correctness labels and bounded parent-specific successful/failed execution records guide external program selection and variation; the stated protocol withholds reference answers from proposals.",
+      "mechanism": "A fixed genetic search retains executable task-solving agents and cached validation evidence. Tournament selection chooses two parents; an LLM combines their code with integrated mutation, using up to three successful and six failed examples per parent. Elitist replacement keeps the strongest validation programs. Solver/optimizer weights and search rules remain fixed; this is architecture optimization rather than evolution of the improver.",
+      "evaluation": "Author-reported six-setting macro accuracy is 82.0% versus the strongest automated baseline’s 72.2%. GA-only controls change MGSM from 56.7% to 91.6% and ARC from 56.7% to 58.0%. Other optimizer/executor comparisons include losses. The held-out protocol selects by validation; a separate CRUXEval case traces output-interface repairs without a matched GA-only control.",
+      "limitations": "Independent search repetitions, much of the decoding/retry configuration and total token/runtime cost are unspecified. Bootstrap intervals for one ARC comparison do not quantify search variability. SwarmAgentic receives 50 rather than the usual 30 candidate evaluations despite matched-budget captions. Diagnostics link the large MGSM gain to answer normalization without isolating reasoning improvement. Configuration and initialization reporting is incomplete. Discovered-program transfer, distribution-shift robustness and long-horizon use are untested; no reproduction.",
+      "review_depth": "full-text",
+      "checked": "2026-11-22"
+    },
+    {
       "id": "dcps",
       "short_name": "DCPS",
       "title": "Simplicity Goes Far: Auditing Prompt Optimizers with Demonstration-Conditioned Prompt Search",
@@ -392,6 +464,43 @@
       "limitations": "One model and small related-task worlds bound generalization. SDPO and GRPO have different interaction and optimizer budgets, so objective superiority is unestablished. Shorter traces do not establish lower total cost, and inspection correlations do not prove a cause of gains. Grader inconsistencies appear in examples. Final-agent ablations revisit seen tasks; single-seed cross-world transfer includes substantial losses. General-capability retention and results were not independently validated.",
       "review_depth": "full-text",
       "checked": "2026-11-19"
+    },
+    {
+      "id": "robocoevo",
+      "short_name": "RoboCoEvo",
+      "title": "RoboCoEvo: Expanding Robot Capabilities through Agent-Policy Co-Evolution",
+      "date": "2026-11-14",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.19081",
+      "sources": [
+        "https://arxiv.org/abs/2611.19081",
+        "https://arxiv.org/pdf/2611.19081v1",
+        "https://arxiv.org/html/2611.19081v1"
+      ],
+      "code_url": null,
+      "code_note": "Complete 23-page v1 and Appendices A–E read; all eight figures, seven tables, the numbered training equation and other formal definitions visually checked. No author-linked implementation, code license or installable environment was established from the primary record/full text and bounded artifact searches. No research code, models, simulators or robots executed.",
+      "topics": [
+        "skills",
+        "model-training",
+        "continual-learning",
+        "applications"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "model-weights",
+        "skills",
+        "agent-code"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Original reference demonstrations, privileged simulator states and symbolic facts, policy failures, subtask-success checks and validated motion-planner recoveries guide program revision and VLA fine-tuning.",
+      "mechanism": "A fixed MLLM groups failures into modes and writes reusable finite-state detectors and recovery programs. Simulator restoration and failure-preserving perturbations generate successful corrective demonstrations; the VLA is fine-tuned on accumulated corrections and original data sampled 1:1. Updated-policy failures guide the next program revision. Agent-model weights and the outer procedure stay fixed; evaluated VLAs run without agent assistance.",
+      "evaluation": "Two rounds on six BEHAVIOR-1K, fifty RoboTwin and ten RoboCasa tasks, all in simulation. Authors report BEHAVIOR Q-score 0.40→0.56 and full-task success 0.23→0.34; RoboTwin/RoboCasa success rises 0.79→0.93/0.91. Single-task ablations use forty test episodes and approximately matched added-data duration; full recovery learning improves trash-task Q-score from 0.633 to 0.84, while per-failure recovery falls to 0.267.",
+      "limitations": "No independent training-run repetitions or confidence intervals are reported. Held-out seeds test new configurations of trained tasks, not broad unseen-task or physical-robot transfer. Privileged state access, planners and strong-agent supervision bound autonomy. Some task and failure-mode outcomes regress; canning meat retains zero full success. Diagnostics use changing agent-written detectors. One-task, duration-matched ablations do not match total compute; quoted GPU hours exclude development, testing and policy training and include rescaling. Replay does not establish broad retention. No reproduction.",
+      "review_depth": "full-text",
+      "checked": "2026-11-22"
     },
     {
       "id": "self-improvement-memory",
@@ -9184,6 +9293,10 @@
           "why": "Study search over workflow operators and evaluation-driven selection."
         },
         {
+          "paper": "graft",
+          "why": "Compare parent-specific execution evidence with fixed genetic selection; inspect search replication, budget exceptions and interface corrections before attributing reasoning gains."
+        },
+        {
           "paper": "mape",
           "why": "Optimize a whole memory program around a fixed host, then audit evaluation-set selection, prompt guidance and serving-cost assumptions."
         },
@@ -9242,6 +9355,10 @@
         {
           "paper": "ascent",
           "why": "Compare persistent online adapter updates with external training and within-task retries."
+        },
+        {
+          "paper": "robocoevo",
+          "why": "Trace privileged simulator and planner supervision into VLA weights; distinguish two-round configuration gains from physical-robot transfer and broad retention."
         },
         {
           "paper": "context-weight-agent-adaptation",
@@ -9330,6 +9447,10 @@
         {
           "paper": "rsi-evaluation-audit",
           "why": "Distinguish final-system gains from repeated loops and same-start comparisons of improvers."
+        },
+        {
+          "paper": "rsibench-infra",
+          "why": "Separate quality-gated infrastructure speedups from demonstrated learning of an agent or improver; inspect workload, timing and analytical-ceiling boundaries."
         }
       ],
       "exercise": "Draw the solver, proposer, selector, and evaluator separately. Highlight what can change and what evidence would demonstrate improvement of the improver."

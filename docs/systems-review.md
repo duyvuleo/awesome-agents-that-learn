@@ -75,3 +75,7 @@ Inspected the author-linked Self-Organized Learning repository at `882f6c70dc483
 ## 2026-11-21 — Licensed research bundles and runtime boundaries
 
 Inspected DCPS's MIT license, notices, audit documentation and setup manifests at `1a4e51cd8df766aa269496e409648e971be9f6c5`, and BRIDGE's Apache-2.0 license, README, requirements and multi-turn runner source at `e9652c4984880787599df3117fde8fd5a0c0af46`. Both are linked as paper artifacts; current documentation and source do not establish exact historical execution or result reproduction. Safe Personal RSI did not establish an official executable release, license or installation manifest. No additional system record was added, and all twenty-six existing inspections and not-run statuses remain unchanged. No software was installed or executed.
+
+## 2026-11-22 — Infrastructure and recovery-program artifact boundaries
+
+GRAFT's author-linked anonymous page returned an HTTP-200 application shell without verified repository files, license or setup. RSIBench-Infra's official project marks code as coming soon; RoboCoEvo did not establish an official executable release. No system record or runtime validation was inferred from paper descriptions, open-weight dependencies, OCI submission design or simulator experiments. All twenty-six existing system inspections and execution records remain unchanged. No software, container, model, kernel or robot was installed or executed.

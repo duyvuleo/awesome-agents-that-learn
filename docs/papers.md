@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-213 unique works. Catalog updated: 2026-11-21; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+216 unique works. Catalog updated: 2026-11-22; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -14,14 +14,17 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-18 | **Safe Personal RSI**<br>[Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates](https://arxiv.org/abs/2611.23651) | A fixed offline controller tests persistent prompt-block updates, confirms failures, uses temporary block or sentence rollback to guide template or LLM repair, then… | Prompts / context | preprint · full-text | [Notes](#safe-personal-rsi) |
+| 2026-11-18 | **RSIBench-Infra**<br>[RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?](https://arxiv.org/abs/2611.24395) | Fixed agents edit serving/training engines, kernels, dependencies and launch configurations, then submit a reusable OCI layer. Fresh Serve/Train jobs load that layer; a… | Agent code, Workflows | preprint · full-text | [Notes](#rsibench-infra) |
 | 2026-11-17 | **Skill Staleness**<br>[When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments](https://arxiv.org/abs/2611.22525) | Compares procedural and cache-heavy skill state before and after controlled environment changes. Rule-based construction records checks and source references; replay… | Skills | preprint · full-text | [Notes](#skill-state-maintenance) |
 | 2026-11-17 | **Self-Organized Learning**<br>[Do LLM Agents Still Need to Be Told How to Self-Improve?](https://arxiv.org/abs/2611.23219) | A frozen teacher chooses its own sequence of game generation, player testing and text edits using file, Bash and Gameplay tools. Fresh players of the same model reuse… | Prompts / context, Skills | preprint · full-text | [Notes](#self-organized-context-learning) · [Code](https://github.com/ssundaram21/self-org) |
 | 2026-11-17 | **Resolution Hypothesis**<br>[The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](https://arxiv.org/abs/2611.23068) | Separates repeated-evaluation noise from variation between independently evolved artifacts. Audits grader shortcuts and uses fixed proposal/selection pools… | Prompts / context, Skills, Memory, Agent code, Workflows | preprint · full-text | [Notes](#resolution-hypothesis) |
 | 2026-11-17 | **BRIDGE**<br>[RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't](https://arxiv.org/abs/2611.22179) | Writes chained per-block notes beside raw conversations and embeddings, fuses BM25 and cosine rankings, then presents ten selected blocks chronologically with three… | Memory | peer-reviewed · full-text | [Notes](#rag-in-a-trenchcoat) · [Code](https://github.com/Jingyu6/rag-in-a-trenchcoat) |
+| 2026-11-17 | **GRAFT**<br>[GRAFT: Execution-Guided Genetic Recombination for Agent Design](https://arxiv.org/abs/2611.23509) | A fixed genetic search retains executable task-solving agents and cached validation evidence. Tournament selection chooses two parents; an LLM combines their code with… | Agent code, Workflows | preprint · full-text | [Notes](#graft) · [Code](https://anonymous.4open.science/r/GRAFT-B1EB/) |
 | 2026-11-17 | **DCPS**<br>[Simplicity Goes Far: Auditing Prompt Optimizers with Demonstration-Conditioned Prompt Search](https://arxiv.org/abs/2611.22605) | An external APE-style sample–generate–score–select control removes PPO updates or reflective/evolutionary search. StablePrompt retains a Top-K prompt queue; compound… | Prompts / context | preprint · full-text | [Notes](#dcps) · [Code](https://github.com/bhc6/DCPS) |
 | 2026-11-16 | **Experience Rot**<br>[Experience Rot: Experienced Agents Fail Where Novices Succeed](https://arxiv.org/abs/2611.20922) | Pairs the same final tasks with valid, stale or absent experience after controlled silent tool-interface changes. Tests live histories, persistent notes, retrieved notes… | Memory, Skills, Prompts / context | preprint · full-text | [Notes](#experience-rot) |
 | 2026-11-16 | **CLAM**<br>[Instant Weight-Space Consolidation for Long-Term Memory in LLMs](https://arxiv.org/abs/2611.20759) | A recurrent hypernetwork reads frozen-model session activations, gates them into a fixed-size latent state, and decodes a rank-8 LoRA adapter reused across queries. A… | Model weights, Memory | preprint · full-text | [Notes](#clam) |
 | 2026-11-15 | **Context-Weight Adaptation**<br>[Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](https://arxiv.org/abs/2611.19700) | A shared online loop compares raw-trajectory replay, persistent rank-32 LoRA updates and their combinations. FIFO or Prefix retention combines with All or Successful… | Memory, Model weights | preprint · full-text | [Notes](#context-weight-agent-adaptation) |
+| 2026-11-14 | **RoboCoEvo**<br>[RoboCoEvo: Expanding Robot Capabilities through Agent-Policy Co-Evolution](https://arxiv.org/abs/2611.19081) | A fixed MLLM groups failures into modes and writes reusable finite-state detectors and recovery programs. Simulator restoration and failure-preserving perturbations… | Model weights, Skills, Agent code | preprint · full-text | [Notes](#robocoevo) |
 | 2026-11-13 | **SIM**<br>[Self-Improvement Memory Enables Continual Recursive Self-Improvement](https://arxiv.org/abs/2611.18856) | A fixed proposer and selector read the complete problem-linked SIM record, including edit rationale, predictions, observed outcomes and provenance. Selected attempts… | Memory, Agent code | preprint · full-text | [Notes](#self-improvement-memory) |
 | 2026-11-13 | **AutoRL**<br>[AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](https://arxiv.org/abs/2611.17790) | Researchers supply data, objectives, budgets and allowed controls. Fixed-role LLM agents monitor ongoing RL, debate and check reward, loss or data changes, then… | Model weights, Workflows | preprint · full-text | [Notes](#autorl) |
 | 2026-11-12 | **Migration Agent Audit**<br>[Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](https://arxiv.org/abs/2611.16143) | Stores generated migration attempts with provenance and evidence grades, retrieves positive or counter-examples, and updates strategy selection while keeping the base… | Memory, Workflows | preprint · full-text | [Notes](#self-learning-migration-audit) |
@@ -251,6 +254,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Source 1](https://arxiv.org/abs/2611.23651) · [Source 2](https://arxiv.org/pdf/2611.23651v1) · [Source 3](https://arxiv.org/html/2611.23651v1)
 
+<a id="rsibench-infra"></a>
+
+## RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?
+
+**2026-11-18 · preprint · core · benchmark**
+
+[Primary source](https://arxiv.org/abs/2611.24395)
+
+**Mechanism.** Fixed agents edit serving/training engines, kernels, dependencies and launch configurations, then submit a reusable OCI layer. Fresh Serve/Train jobs load that layer; a separate Benchmark job does not. Quality-gated throughput evaluates each task-specific artifact. This tests infrastructure optimization, not cross-task policy learning or redesign of the improver.
+
+**What changes:** Agent code, Workflows. **Persistence:** within-task. **Learning signal:** Profiling traces, microbenchmarks, task-level quality checks and end-to-end performance guide externally specified software search; researchers fix workload, hardware, objectives and resource limits.
+
+**Evaluation.** Twenty production-oriented tasks (16 inference, four training), up to 32 accelerators and seven model–harness configurations use one eight-hour-budget run per eligible pair. Authors report 86/130 outcomes above 1.10× validated speedup; ten Claude API-blocked tasks are excluded. The best complete-suite configuration improves 16/20 with median 1.3335×. Nine formal zeros remain in aggregates; a five-task H20 Lite subset reuses full-suite results.
+
+**Boundary.** Single runs, different harnesses and partial Claude coverage preclude resolved rankings. Synthetic/fixed workloads and narrow reference-output or local training-curve gates do not establish arbitrary production quality, closed-loop robot success or convergence. Seven Faster submissions lack a confirmed new behavior label; labels are observational. SOL references are modeled, with four extrapolations and historical-boundary caveats. API cost and agent time exclude accelerator/setup/verifier overhead. No released implementation or independent reproduction was established.
+
+**Code / data.** Complete 22-page v1, Appendices A–D, five figures, eight tables (including continuation), two numbered equations and gate expressions read; scientific objects visually checked. The official project page labels code as coming soon. No paper-specific repository, code license or runnable release was established; no infrastructure, kernel, model or benchmark was executed.
+
+**Topics:** recursive-improvement, workflows, evaluation, applications. **Reviewed:** full-text · 2026-11-22.
+
+[Source 1](https://arxiv.org/abs/2611.24395) · [Source 2](https://arxiv.org/pdf/2611.24395v1) · [Source 3](https://rsibench-infra.github.io/)
+
 <a id="skill-state-maintenance"></a>
 
 ## When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments
@@ -339,6 +364,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 [Source 1](https://arxiv.org/abs/2611.22179) · [Source 2](https://arxiv.org/pdf/2611.22179v1) · [Source 3](https://arxiv.org/html/2611.22179v1) · [Source 4](https://neurips.cc/virtual/2026/poster/151457) · [Source 5](https://github.com/Jingyu6/rag-in-a-trenchcoat) · [Source 6](https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/README.md) · [Source 7](https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/LICENSE) · [Source 8](https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/requirements.txt) · [Source 9](https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/adversarial/runner/dm_dialog.py) · [Source 10](https://github.com/Jingyu6/rag-in-a-trenchcoat/blob/e9652c4984880787599df3117fde8fd5a0c0af46/adversarial/runner/run_dm_pipeline.py)
 
+<a id="graft"></a>
+
+## GRAFT: Execution-Guided Genetic Recombination for Agent Design
+
+**2026-11-17 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.23509)
+
+**Mechanism.** A fixed genetic search retains executable task-solving agents and cached validation evidence. Tournament selection chooses two parents; an LLM combines their code with integrated mutation, using up to three successful and six failed examples per parent. Elitist replacement keeps the strongest validation programs. Solver/optimizer weights and search rules remain fixed; this is architecture optimization rather than evolution of the improver.
+
+**What changes:** Agent code, Workflows. **Persistence:** across-tasks. **Learning signal:** Validation fitness, correctness labels and bounded parent-specific successful/failed execution records guide external program selection and variation; the stated protocol withholds reference answers from proposals.
+
+**Evaluation.** Author-reported six-setting macro accuracy is 82.0% versus the strongest automated baseline’s 72.2%. GA-only controls change MGSM from 56.7% to 91.6% and ARC from 56.7% to 58.0%. Other optimizer/executor comparisons include losses. The held-out protocol selects by validation; a separate CRUXEval case traces output-interface repairs without a matched GA-only control.
+
+**Boundary.** Independent search repetitions, much of the decoding/retry configuration and total token/runtime cost are unspecified. Bootstrap intervals for one ARC comparison do not quantify search variability. SwarmAgentic receives 50 rather than the usual 30 candidate evaluations despite matched-budget captions. Diagnostics link the large MGSM gain to answer normalization without isolating reasoning improvement. Configuration and initialization reporting is incomplete. Discovered-program transfer, distribution-shift robustness and long-horizon use are untested; no reproduction.
+
+**Code / data.** [Official artifact](https://anonymous.4open.science/r/GRAFT-B1EB/) — Complete 13-page v1, Appendices A–D, four figures, five tables, four equations and two algorithms read; scientific objects visually checked. The author-linked anonymous page returned an HTTP-200 application shell, without verified repository files, license, setup or paper-run correspondence. No research code or models executed.
+
+**Topics:** architecture, workflows, evaluation. **Reviewed:** full-text · 2026-11-22.
+
+[Source 1](https://arxiv.org/abs/2611.23509) · [Source 2](https://arxiv.org/pdf/2611.23509v1) · [Source 3](https://arxiv.org/html/2611.23509v1) · [Source 4](https://anonymous.4open.science/r/GRAFT-B1EB/)
+
 <a id="dcps"></a>
 
 ## Simplicity Goes Far: Auditing Prompt Optimizers with Demonstration-Conditioned Prompt Search
@@ -426,6 +473,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** memory, model-training, continual-learning, evaluation, applications. **Reviewed:** full-text · 2026-11-19.
 
 [Source 1](https://arxiv.org/abs/2611.19700) · [Source 2](https://arxiv.org/pdf/2611.19700v1) · [Source 3](https://arxiv.org/html/2611.19700v1)
+
+<a id="robocoevo"></a>
+
+## RoboCoEvo: Expanding Robot Capabilities through Agent-Policy Co-Evolution
+
+**2026-11-14 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.19081)
+
+**Mechanism.** A fixed MLLM groups failures into modes and writes reusable finite-state detectors and recovery programs. Simulator restoration and failure-preserving perturbations generate successful corrective demonstrations; the VLA is fine-tuned on accumulated corrections and original data sampled 1:1. Updated-policy failures guide the next program revision. Agent-model weights and the outer procedure stay fixed; evaluated VLAs run without agent assistance.
+
+**What changes:** Model weights, Skills, Agent code. **Persistence:** across-tasks. **Learning signal:** Original reference demonstrations, privileged simulator states and symbolic facts, policy failures, subtask-success checks and validated motion-planner recoveries guide program revision and VLA fine-tuning.
+
+**Evaluation.** Two rounds on six BEHAVIOR-1K, fifty RoboTwin and ten RoboCasa tasks, all in simulation. Authors report BEHAVIOR Q-score 0.40→0.56 and full-task success 0.23→0.34; RoboTwin/RoboCasa success rises 0.79→0.93/0.91. Single-task ablations use forty test episodes and approximately matched added-data duration; full recovery learning improves trash-task Q-score from 0.633 to 0.84, while per-failure recovery falls to 0.267.
+
+**Boundary.** No independent training-run repetitions or confidence intervals are reported. Held-out seeds test new configurations of trained tasks, not broad unseen-task or physical-robot transfer. Privileged state access, planners and strong-agent supervision bound autonomy. Some task and failure-mode outcomes regress; canning meat retains zero full success. Diagnostics use changing agent-written detectors. One-task, duration-matched ablations do not match total compute; quoted GPU hours exclude development, testing and policy training and include rescaling. Replay does not establish broad retention. No reproduction.
+
+**Code / data.** Complete 23-page v1 and Appendices A–E read; all eight figures, seven tables, the numbered training equation and other formal definitions visually checked. No author-linked implementation, code license or installable environment was established from the primary record/full text and bounded artifact searches. No research code, models, simulators or robots executed.
+
+**Topics:** skills, model-training, continual-learning, applications. **Reviewed:** full-text · 2026-11-22.
+
+[Source 1](https://arxiv.org/abs/2611.19081) · [Source 2](https://arxiv.org/pdf/2611.19081v1) · [Source 3](https://arxiv.org/html/2611.19081v1)
 
 <a id="self-improvement-memory"></a>
 

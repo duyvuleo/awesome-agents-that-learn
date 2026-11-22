@@ -81,13 +81,15 @@ Which parts of an agent can be optimized, and who performs that optimization?
 
 6. **[AFlow: Automating Agentic Workflow Generation](papers.md#aflow)** — Study search over workflow operators and evaluation-driven selection.
 
-7. **[Discovering Effective Agent Memory Designs through Program Evolution](papers.md#mape)** — Optimize a whole memory program around a fixed host, then audit evaluation-set selection, prompt guidance and serving-cost assumptions.
+7. **[GRAFT: Execution-Guided Genetic Recombination for Agent Design](papers.md#graft)** — Compare parent-specific execution evidence with fixed genetic selection; inspect search replication, budget exceptions and interface corrections before attributing reasoning gains.
 
-8. **[Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](papers.md#ace)** — Contrast whole-prompt replacement with incremental context updates.
+8. **[Discovering Effective Agent Memory Designs through Program Evolution](papers.md#mape)** — Optimize a whole memory program around a fixed host, then audit evaluation-set selection, prompt guidance and serving-cost assumptions.
 
-9. **[Context Language Models](papers.md#context-language-models)** — Separate native live-context editing, reusable context-management skills and parametric training; inspect their different evidence and cost metrics.
+9. **[Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](papers.md#ace)** — Contrast whole-prompt replacement with incremental context updates.
 
-10. **[HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](papers.md#harnessflow)** — Compare fixed tree-search control with the executable harnesses it optimizes, including search and deployment costs.
+10. **[Context Language Models](papers.md#context-language-models)** — Separate native live-context editing, reusable context-management skills and parametric training; inspect their different evidence and cost metrics.
+
+11. **[HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](papers.md#harnessflow)** — Compare fixed tree-search control with the executable harnesses it optimizes, including search and deployment costs.
 
 
 **Study exercise:** Make an editable/fixed component table. Include proposer, search space, selector, evaluation set, and stopping rule.
@@ -116,7 +118,9 @@ Where does supervision come from when a model helps generate its own training da
 
 9. **[ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience](papers.md#ascent)** — Compare persistent online adapter updates with external training and within-task retries.
 
-10. **[Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](papers.md#context-weight-agent-adaptation)** — Compare raw replay, weight updates and hybrids under prequential scoring; separate matched task streams from matched compute and test retention.
+10. **[RoboCoEvo: Expanding Robot Capabilities through Agent-Policy Co-Evolution](papers.md#robocoevo)** — Trace privileged simulator and planner supervision into VLA weights; distinguish two-round configuration gains from physical-robot transfer and broad retention.
+
+11. **[Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](papers.md#context-weight-agent-adaptation)** — Compare raw replay, weight updates and hybrids under prequential scoring; separate matched task streams from matched compute and test retention.
 
 
 **Study exercise:** For each loop, label which information is human-provided, pretrained, environment-verified, or model-judged.
@@ -169,6 +173,8 @@ Does a method change only the solver, or also the process that improves it?
 8. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Test the assumption that an optimization benchmark is a trustworthy teacher.
 
 9. **[Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](papers.md#rsi-evaluation-audit)** — Distinguish final-system gains from repeated loops and same-start comparisons of improvers.
+
+10. **[RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?](papers.md#rsibench-infra)** — Separate quality-gated infrastructure speedups from demonstrated learning of an agent or improver; inspect workload, timing and analytical-ceiling boundaries.
 
 
 **Study exercise:** Draw the solver, proposer, selector, and evaluator separately. Highlight what can change and what evidence would demonstrate improvement of the improver.

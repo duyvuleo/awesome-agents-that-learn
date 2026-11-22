@@ -159,11 +159,12 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="skills"></a>
 
-## Skill acquisition and reuse (57)
+## Skill acquisition and reuse (58)
 - 2026-11-17 — [When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments](papers.md#skill-state-maintenance) · core · preprint
 - 2026-11-17 — [Do LLM Agents Still Need to Be Told How to Self-Improve?](papers.md#self-organized-context-learning) · core · preprint
 - 2026-11-17 — [The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis) · core · preprint
 - 2026-11-16 — [Experience Rot: Experienced Agents Fail Where Novices Succeed](papers.md#experience-rot) · core · preprint
+- 2026-11-14 — [RoboCoEvo: Expanding Robot Capabilities through Agent-Policy Co-Evolution](papers.md#robocoevo) · core · preprint
 - 2026-11-10 — [Continual-ARC: Measuring Skill Acquisition over a Working Lifetime](papers.md#continual-arc) · core · preprint
 - 2026-11-05 — [Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution) · core · preprint
 - 2026-11-03 — [Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](papers.md#rescopebench) · core · preprint
@@ -285,8 +286,10 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="workflows"></a>
 
-## Workflow improvement (37)
+## Workflow improvement (39)
+- 2026-11-18 — [RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?](papers.md#rsibench-infra) · core · preprint
 - 2026-11-17 — [The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis) · core · preprint
+- 2026-11-17 — [GRAFT: Execution-Guided Genetic Recombination for Agent Design](papers.md#graft) · core · preprint
 - 2026-11-17 — [Simplicity Goes Far: Auditing Prompt Optimizers with Demonstration-Conditioned Prompt Search](papers.md#dcps) · core · preprint
 - 2026-11-13 — [Self-Improvement Memory Enables Continual Recursive Self-Improvement](papers.md#self-improvement-memory) · core · preprint
 - 2026-11-13 — [AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](papers.md#autorl) · core · preprint
@@ -326,8 +329,9 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="architecture"></a>
 
-## Agent architecture (54)
+## Agent architecture (55)
 - 2026-11-17 — [The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis) · core · preprint
+- 2026-11-17 — [GRAFT: Execution-Guided Genetic Recombination for Agent Design](papers.md#graft) · core · preprint
 - 2026-11-13 — [AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](papers.md#autorl) · core · preprint
 - 2026-11-12 — [Discovering Effective Agent Memory Designs through Program Evolution](papers.md#mape) · core · preprint
 - 2026-11-05 — [Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution) · core · preprint
@@ -384,9 +388,10 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="model-training"></a>
 
-## Learning in model weights (71)
+## Learning in model weights (72)
 - 2026-11-16 — [Instant Weight-Space Consolidation for Long-Term Memory in LLMs](papers.md#clam) · core · preprint
 - 2026-11-15 — [Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](papers.md#context-weight-agent-adaptation) · core · preprint
+- 2026-11-14 — [RoboCoEvo: Expanding Robot Capabilities through Agent-Policy Co-Evolution](papers.md#robocoevo) · core · preprint
 - 2026-11-13 — [AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](papers.md#autorl) · core · preprint
 - 2026-11-12 — [CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](papers.md#coremem) · core · preprint
 - 2026-11-10 — [Continual-ARC: Measuring Skill Acquisition over a Working Lifetime](papers.md#continual-arc) · core · preprint
@@ -487,11 +492,12 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="continual-learning"></a>
 
-## Continual and lifelong learning (58)
+## Continual and lifelong learning (59)
 - 2026-11-17 — [When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments](papers.md#skill-state-maintenance) · core · preprint
 - 2026-11-16 — [Experience Rot: Experienced Agents Fail Where Novices Succeed](papers.md#experience-rot) · core · preprint
 - 2026-11-16 — [Instant Weight-Space Consolidation for Long-Term Memory in LLMs](papers.md#clam) · core · preprint
 - 2026-11-15 — [Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](papers.md#context-weight-agent-adaptation) · core · preprint
+- 2026-11-14 — [RoboCoEvo: Expanding Robot Capabilities through Agent-Policy Co-Evolution](papers.md#robocoevo) · core · preprint
 - 2026-11-13 — [Self-Improvement Memory Enables Continual Recursive Self-Improvement](papers.md#self-improvement-memory) · core · preprint
 - 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit) · core · preprint
 - 2026-11-10 — [The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](papers.md#rsi-tax) · core · preprint
@@ -549,7 +555,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="recursive-improvement"></a>
 
-## Improving the improver (29)
+## Improving the improver (30)
+- 2026-11-18 — [RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?](papers.md#rsibench-infra) · core · preprint
 - 2026-11-13 — [Self-Improvement Memory Enables Continual Recursive Self-Improvement](papers.md#self-improvement-memory) · core · preprint
 - 2026-11-10 — [The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](papers.md#rsi-tax) · core · preprint
 - 2026-11-05 — [Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution) · core · preprint
@@ -582,12 +589,14 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="evaluation"></a>
 
-## Evaluation and negative results (129)
+## Evaluation and negative results (131)
 - 2026-11-18 — [Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates](papers.md#safe-personal-rsi) · core · preprint
+- 2026-11-18 — [RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?](papers.md#rsibench-infra) · core · preprint
 - 2026-11-17 — [When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments](papers.md#skill-state-maintenance) · core · preprint
 - 2026-11-17 — [Do LLM Agents Still Need to Be Told How to Self-Improve?](papers.md#self-organized-context-learning) · core · preprint
 - 2026-11-17 — [The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis) · core · preprint
 - 2026-11-17 — [RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't](papers.md#rag-in-a-trenchcoat) · core · peer-reviewed
+- 2026-11-17 — [GRAFT: Execution-Guided Genetic Recombination for Agent Design](papers.md#graft) · core · preprint
 - 2026-11-17 — [Simplicity Goes Far: Auditing Prompt Optimizers with Demonstration-Conditioned Prompt Search](papers.md#dcps) · core · preprint
 - 2026-11-16 — [Experience Rot: Experienced Agents Fail Where Novices Succeed](papers.md#experience-rot) · core · preprint
 - 2026-11-16 — [Instant Weight-Space Consolidation for Long-Term Memory in LLMs](papers.md#clam) · core · preprint
@@ -741,10 +750,12 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="applications"></a>
 
-## Applied learning agents (56)
+## Applied learning agents (58)
 - 2026-11-18 — [Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates](papers.md#safe-personal-rsi) · core · preprint
+- 2026-11-18 — [RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?](papers.md#rsibench-infra) · core · preprint
 - 2026-11-17 — [When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments](papers.md#skill-state-maintenance) · core · preprint
 - 2026-11-15 — [Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](papers.md#context-weight-agent-adaptation) · core · preprint
+- 2026-11-14 — [RoboCoEvo: Expanding Robot Capabilities through Agent-Policy Co-Evolution](papers.md#robocoevo) · core · preprint
 - 2026-11-12 — [Does a Self-Learning Migration Agent Learn? An Audited Evaluation of Evidence-Graded Experience Memory for Oracle-to-PostgreSQL Migration](papers.md#self-learning-migration-audit) · core · preprint
 - 2026-11-12 — [CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](papers.md#coremem) · core · preprint
 - 2026-11-03 — [Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments](papers.md#rescopebench) · core · preprint

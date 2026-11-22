@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-22 — Execution evidence, infrastructure and robot recovery
+
+- Added complete-source appraisals of GRAFT, RSIBench-Infra and RoboCoEvo; total 216 works and 26 systems.
+- Distinguished fixed external optimization, task-specific infrastructure changes and privileged simulator supervision from broader recursive improvement.
+- Retained budget exceptions, excluded-task denominators, modeled-ceiling limits, simulation regressions and incomplete resource accounting.
+- Extended three routes while preserving historical inspections and weekly snapshots. No research experiments reproduced.
+
 ## 2026-11-21 — Prompt-search attribution, memory evaluation and safety gates
 
 - Added complete-source appraisals of DCPS, BRIDGE/RAG in a Trenchcoat and Safe Personal RSI; total 213 works and 26 systems.

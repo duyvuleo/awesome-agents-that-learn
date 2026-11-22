@@ -121,6 +121,10 @@
         "why": "Study search over workflow operators and evaluation-driven selection."
       },
       {
+        "paper": "graft",
+        "why": "Compare parent-specific execution evidence with fixed genetic selection; inspect search replication, budget exceptions and interface corrections before attributing reasoning gains."
+      },
+      {
         "paper": "mape",
         "why": "Optimize a whole memory program around a fixed host, then audit evaluation-set selection, prompt guidance and serving-cost assumptions."
       },
@@ -179,6 +183,10 @@
       {
         "paper": "ascent",
         "why": "Compare persistent online adapter updates with external training and within-task retries."
+      },
+      {
+        "paper": "robocoevo",
+        "why": "Trace privileged simulator and planner supervision into VLA weights; distinguish two-round configuration gains from physical-robot transfer and broad retention."
       },
       {
         "paper": "context-weight-agent-adaptation",
@@ -267,6 +275,10 @@
       {
         "paper": "rsi-evaluation-audit",
         "why": "Distinguish final-system gains from repeated loops and same-start comparisons of improvers."
+      },
+      {
+        "paper": "rsibench-infra",
+        "why": "Separate quality-gated infrastructure speedups from demonstrated learning of an agent or improver; inspect workload, timing and analytical-ceiling boundaries."
       }
     ],
     "exercise": "Draw the solver, proposer, selector, and evaluator separately. Highlight what can change and what evidence would demonstrate improvement of the improver."
