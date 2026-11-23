@@ -3,8 +3,11 @@
 # Papers by year
 [Overview](../README.md) · [Full annotations](papers.md)
 ## 2026
+- 2026-11-19 — [Evolve Where It Matters: Coverage-Guided Self-Evolution of Agent Skills](papers.md#skillplumber)
+- 2026-11-19 — [How Feedback-Free Self-Evolution Reshapes Agent Skills: A Systematic Study](papers.md#skilldiff)
 - 2026-11-18 — [Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates](papers.md#safe-personal-rsi)
 - 2026-11-18 — [RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?](papers.md#rsibench-infra)
+- 2026-11-18 — [Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents](papers.md#grepmem)
 - 2026-11-17 — [When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments](papers.md#skill-state-maintenance)
 - 2026-11-17 — [Do LLM Agents Still Need to Be Told How to Self-Improve?](papers.md#self-organized-context-learning)
 - 2026-11-17 — [The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis)

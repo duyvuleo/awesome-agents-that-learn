@@ -46,19 +46,21 @@ How can experience become useful knowledge, a procedure, or a reusable tool?
 
 6. **[RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't](papers.md#rag-in-a-trenchcoat)** — Separate competitive recall from applying stored rules; inspect stateless controls, partial-constraint denominators and multi-turn protocol consistency.
 
-7. **[Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](papers.md#omce)** — Compare memory-utility scoring with learning when to retrieve, distill, or skip experience.
+7. **[Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents](papers.md#grepmem)** — Compare lossless episode logs plus offline policy training with structured memory; distinguish lexical access from successful recall, and count checkpoint selection and retrieval costs.
 
-8. **[Route to Remember: Adaptive Memory Selection for LLM Agents](papers.md#route-to-remember)** — Compare external experience routing with learned factual adapters; inspect forgetting, fallback retrieval, and write cost.
+8. **[Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](papers.md#omce)** — Compare memory-utility scoring with learning when to retrieve, distill, or skip experience.
 
-9. **[Instant Weight-Space Consolidation for Long-Term Memory in LLMs](papers.md#clam)** — Contrast trained gradient-free consolidation with online adapter fitting; account for the growing episodic store and mixed shared-buffer gains.
+9. **[Route to Remember: Adaptive Memory Selection for LLM Agents](papers.md#route-to-remember)** — Compare external experience routing with learned factual adapters; inspect forgetting, fallback retrieval, and write cost.
 
-10. **[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl)** — Contrast external skills with parameter learning and teacher-derived supervision.
+10. **[Instant Weight-Space Consolidation for Long-Term Memory in LLMs](papers.md#clam)** — Contrast trained gradient-free consolidation with online adapter fitting; account for the growing episodic store and mixed shared-buffer gains.
 
-11. **[SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](papers.md#skillflow)** — Examine whether skill use produces measurable benefit.
+11. **[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl)** — Contrast external skills with parameter learning and teacher-derived supervision.
 
-12. **[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](papers.md#skill-plus-plus)** — Separate retaining a skill from keeping it selectable as the library grows; compare routing with task success.
+12. **[SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](papers.md#skillflow)** — Examine whether skill use produces measurable benefit.
 
-13. **[Coalition-Aware Skill Reliability for Self-Evolving Agents](papers.md#coalition-skill-reliability)** — Test whether a useful skill stays useful in another bank or deployment domain.
+13. **[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](papers.md#skill-plus-plus)** — Separate retaining a skill from keeping it selectable as the library grows; compare routing with task success.
+
+14. **[Coalition-Aware Skill Reliability for Self-Evolving Agents](papers.md#coalition-skill-reliability)** — Test whether a useful skill stays useful in another bank or deployment domain.
 
 
 **Study exercise:** For three methods, write the stored artifact, admission rule, retrieval rule, revision rule, and evidence that reuse helps.
@@ -87,9 +89,13 @@ Which parts of an agent can be optimized, and who performs that optimization?
 
 9. **[Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](papers.md#ace)** — Contrast whole-prompt replacement with incremental context updates.
 
-10. **[Context Language Models](papers.md#context-language-models)** — Separate native live-context editing, reusable context-management skills and parametric training; inspect their different evidence and cost metrics.
+10. **[Evolve Where It Matters: Coverage-Guided Self-Evolution of Agent Skills](papers.md#skillplumber)** — Separate instruction-use labels from verifier-guided same-task repair; inspect frozen-skill replays and the limited contribution of cross-task revision memory.
 
-11. **[HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](papers.md#harnessflow)** — Compare fixed tree-search control with the executable harnesses it optimizes, including search and deployment costs.
+11. **[How Feedback-Free Self-Evolution Reshapes Agent Skills: A Systematic Study](papers.md#skilldiff)** — Contrast feedback-free document drift with guided repair; test content loss through restoration/deletion controls and separate marking gains from added instructions and preprocessing cost.
+
+12. **[Context Language Models](papers.md#context-language-models)** — Separate native live-context editing, reusable context-management skills and parametric training; inspect their different evidence and cost metrics.
+
+13. **[HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents](papers.md#harnessflow)** — Compare fixed tree-search control with the executable harnesses it optimizes, including search and deployment costs.
 
 
 **Study exercise:** Make an editable/fixed component table. Include proposer, search space, selector, evaluation set, and stopping rule.

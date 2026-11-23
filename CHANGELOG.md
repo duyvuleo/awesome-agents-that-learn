@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-24 — Memory access, guided repair and skill erosion
+
+- Added complete-source appraisals of GrepMem, SkillPlumber and SkillDiff; total 220 works and 26 systems.
+- Distinguished lossless storage from recall, same-task repair from held-out learning, and operational rarity from missing model knowledge.
+- Retained checkpoint-selection, negative-result, compute, replay and missing-control limits; verified two MIT research artifacts without execution.
+- Extended two reading routes and checked Safe Personal RSI's authorship-only HTML-text revision. Historical inspections and all weekly snapshots remain unchanged; no research experiments reproduced.
+
 ## 2026-11-23 — Weekly evidence and original self-rewrite theory
 
 - Published the November 16–22 weekly edition with five source-reviewed picks on selection reliability, controls, drift, safe updates and infrastructure quality.

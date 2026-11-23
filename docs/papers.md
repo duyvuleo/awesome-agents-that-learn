@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-217 unique works. Catalog updated: 2026-11-23; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+220 unique works. Catalog updated: 2026-11-24; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -13,8 +13,11 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-19 | **SkillPlumber**<br>[Evolve Where It Matters: Coverage-Guided Self-Evolution of Agent Skills](https://arxiv.org/abs/2611.25429) | A persistent per-task investigator checks earlier revision hypotheses against fresh runs, then clarifies, corrects, adds or retracts SKILL.md instructions using follow… | Skills, Memory | preprint · full-text | [Notes](#skillplumber) |
+| 2026-11-19 | **SkillDiff**<br>[How Feedback-Free Self-Evolution Reshapes Agent Skills: A Systematic Study](https://arxiv.org/abs/2611.25534) | Fixed models repeatedly replace a skill document without outcome feedback; companion scripts stay fixed. SkillDiff instead adds emphasis tags and a planning note to… | Skills | preprint · full-text | [Notes](#skilldiff) · [Code](https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills) |
 | 2026-11-18 | **Safe Personal RSI**<br>[Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates](https://arxiv.org/abs/2611.23651) | A fixed offline controller tests persistent prompt-block updates, confirms failures, uses temporary block or sentence rollback to guide template or LLM repair, then… | Prompts / context | preprint · full-text | [Notes](#safe-personal-rsi) |
 | 2026-11-18 | **RSIBench-Infra**<br>[RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?](https://arxiv.org/abs/2611.24395) | Fixed agents edit serving/training engines, kernels, dependencies and launch configurations, then submit a reusable OCI layer. Fresh Serve/Train jobs load that layer; a… | Agent code, Workflows | preprint · full-text | [Notes](#rsibench-infra) |
+| 2026-11-18 | **GrepMem**<br>[Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents](https://arxiv.org/abs/2611.25123) | Pairs policy-generated context summaries with an append-only raw interaction log. After the first compaction, the agent can search earlier text with case-insensitive… | Memory, Prompts / context, Model weights | preprint · full-text | [Notes](#grepmem) · [Code](https://github.com/limenlp/GrepMem) |
 | 2026-11-17 | **Skill Staleness**<br>[When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments](https://arxiv.org/abs/2611.22525) | Compares procedural and cache-heavy skill state before and after controlled environment changes. Rule-based construction records checks and source references; replay… | Skills | preprint · full-text | [Notes](#skill-state-maintenance) |
 | 2026-11-17 | **Self-Organized Learning**<br>[Do LLM Agents Still Need to Be Told How to Self-Improve?](https://arxiv.org/abs/2611.23219) | A frozen teacher chooses its own sequence of game generation, player testing and text edits using file, Bash and Gameplay tools. Fresh players of the same model reuse… | Prompts / context, Skills | preprint · full-text | [Notes](#self-organized-context-learning) · [Code](https://github.com/ssundaram21/self-org) |
 | 2026-11-17 | **Resolution Hypothesis**<br>[The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](https://arxiv.org/abs/2611.23068) | Separates repeated-evaluation noise from variation between independently evolved artifacts. Audits grader shortcuts and uses fixed proposal/selection pools… | Prompts / context, Skills, Memory, Agent code, Workflows | preprint · full-text | [Notes](#resolution-hypothesis) |
@@ -233,6 +236,50 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 ## Full annotations
 
+<a id="skillplumber"></a>
+
+## Evolve Where It Matters: Coverage-Guided Self-Evolution of Agent Skills
+
+**2026-11-19 · preprint · arXiv · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.25429)
+
+**Mechanism.** A persistent per-task investigator checks earlier revision hypotheses against fresh runs, then clarifies, corrects, adds or retracts SKILL.md instructions using follow, not-follow and not-covered labels. A maintainer distills investigations after three-task batches into advisory revision memory. Executors receive only the task and current skill; models, judge and host revision procedure stay fixed.
+
+**What changes:** Skills, Memory. **Persistence:** both. **Learning signal:** Execution traces, outcome-blind LLM labels of instruction applicability/adherence, and permitted deterministic-verifier feedback; later tasks also receive a library of prior revision strategies.
+
+**Evaluation.** Authors report 143/207, 146/207 and 134/207 tasks solved with GPT-5.5/Codex, Opus 4.8/Claude Code and DeepSeek-V4-Pro/OpenHands across three skill benchmarks, allowing five same-task revisions and stopping at first pass. On 52 GPT SkillsBench initial failures, coverage removal reduces recovery from 24 to 19, and frozen-skill replay means are 22 versus 17 over three runs; maintainer removal yields 23. Complete v1, appendices A-H and all scientific objects reviewed.
+
+**Boundary.** Revision and evaluation share each task; these are retry-assisted repairs, not held-out task generalization. Coverage labels are fallible, ablations/replays focus on GPT SkillsBench, and cross-model transfer uses one execution per skill. Baselines have protocol adaptations; available GPT token totals are 1.7-2.0 times larger for SkillPlumber. Order/batch sensitivity and current-task label accuracy are untested; the strategy library adds little in its ablation. Source inspection is not reproduction.
+
+**Code / data.** The full v1 paper promises future release of code, prompts, configurations, run records and analysis rules, but supplies no official artifact link. A bounded title/method-name search did not establish one; software license and setup remain unknown. No research code or models were executed.
+
+**Topics:** skills, memory, evaluation. **Reviewed:** full-text · 2026-11-24.
+
+[Source 1](https://arxiv.org/abs/2611.25429) · [Source 2](https://arxiv.org/pdf/2611.25429v1) · [Source 3](https://arxiv.org/html/2611.25429v1)
+
+<a id="skilldiff"></a>
+
+## How Feedback-Free Self-Evolution Reshapes Agent Skills: A Systematic Study
+
+**2026-11-19 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.25534)
+
+**Mechanism.** Fixed models repeatedly replace a skill document without outcome feedback; companion scripts stay fixed. SkillDiff instead adds emphasis tags and a planning note to original body items absent from ten topic-only drafts, preserving the original wording. The retained text changes execution context; model weights and the improvement procedure do not change.
+
+**What changes:** Skills. **Persistence:** across-tasks. **Learning signal:** Expert-authored skill text, topic-only model drafts and model judgments of item retention/rarity; task outcomes measure effects but do not guide rewriting or SkillDiff construction.
+
+**Evaluation.** Six models, 87 SkillsBench tasks, LogicBench and MedCalc-Bench show a reported 14.6-point mean SkillsBench loss after thirty rewrites. Restoration and approximately word-matched deletion support the value of rarely generated content; selected repeated evaluations, chains, judges, web-off and policy-domain checks test robustness. SkillDiff adds 4.8 points over same-batch original skills across six agents.
+
+**Boundary.** Ten-draft absence is a generated-text rarity proxy, not proof of missing model knowledge. SkillsBench uses one preselected skill and one rewrite chain per task; repeated execution checks cover loss/restoration for two models. SkillDiff itself has one run per task/model, no random-tag/note-only control, and costs 21 preprocessing calls plus added text. GPT rewrites and drafts can search the web. Joint code evolution, multi-skill composition and held-out task transfer remain untested; historical reproduction is unverified.
+
+**Code / data.** [Official artifact](https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills) — Complete 23-page v1, Appendices A–E, twelve figures, eighteen tables and all supplied text read; scientific objects visually checked. MIT source at db2cdbd and setup inspected. Original skills and per-run outputs are not bundled; reported curve values are not raw reproduction evidence. Historical execution inputs and analysis mapping remain unverified. No research code or models executed.
+
+**Topics:** skills, prompts, evaluation. **Reviewed:** full-text · 2026-11-24.
+
+[Source 1](https://arxiv.org/abs/2611.25534) · [Source 2](https://arxiv.org/pdf/2611.25534v1) · [Source 3](https://arxiv.org/html/2611.25534v1) · [Source 4](https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills) · [Source 5](https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills/blob/db2cdbde29e752ebc9cc81817f17400b64056c40/LICENSE) · [Source 6](https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills/blob/db2cdbde29e752ebc9cc81817f17400b64056c40/EXPERIMENTS.md) · [Source 7](https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills/blob/db2cdbde29e752ebc9cc81817f17400b64056c40/requirements.txt) · [Source 8](https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills/blob/db2cdbde29e752ebc9cc81817f17400b64056c40/experiments/distance.py)
+
 <a id="safe-personal-rsi"></a>
 
 ## Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates
@@ -276,6 +323,28 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 **Topics:** recursive-improvement, workflows, evaluation, applications. **Reviewed:** full-text · 2026-11-22.
 
 [Source 1](https://arxiv.org/abs/2611.24395) · [Source 2](https://arxiv.org/pdf/2611.24395v1) · [Source 3](https://rsibench-infra.github.io/)
+
+<a id="grepmem"></a>
+
+## Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents
+
+**2026-11-18 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.25123)
+
+**Mechanism.** Pairs policy-generated context summaries with an append-only raw interaction log. After the first compaction, the agent can search earlier text with case-insensitive regular expressions, pagination and matching-line counts. Storage preserves omitted details, while retrieved views remain bounded. Offline RL changes reusable policy weights; the experiments retain logs within each episode rather than demonstrating cross-session memory learning.
+
+**What changes:** Memory, Prompts / context, Model weights. **Persistence:** both. **Learning signal:** Complete episode interactions populate the log. Offline GRPO uses judged research-answer correctness, averaged across bundled questions, and programmatic synthetic-stream rewards; one episode-level advantage trains task actions, summaries and retrieval without separate grep supervision.
+
+**Evaluation.** Authors compare five Qwen3.5-9B strategies before and after matched-recipe RL on BCP-Multi, AMA-Bench file/stream and ContextBench KV/Log tasks. After RL, GrepMem averages 66.4% across five tasks, reaches 97.4%/95.3% on KV/Log and scores 46.9% on BCP-Multi versus SUPO's 38.1%. Stream lengths reach 968K tokens against a 32K window. Token/runtime frontiers and negative trajectory-reasoning results are reported; source reading is not reproduction.
+
+**Boundary.** Lossless storage does not ensure lexical retrieval succeeds; outputs, lines and tool budgets are bounded. One model, evaluation-informed checkpoint selection and item-level intervals do not establish training-run robustness. AMA stream gains over SUPO are not significant and cost 2.3 times as many tokens; MemGPT wins KV accuracy. Its MemGPT baseline uses BM25/substring search. Shared synthetic task families limit transfer claims; general contamination, cross-session retention and privacy controls are not established. The memory needs no index, but research tasks use a separate dense retriever.
+
+**Code / data.** [Official artifact](https://github.com/limenlp/GrepMem) — Complete 17-page arXiv v1, including Appendices A-F, references, limitations and ethics, read on 2026-11-24; all six figures, six tables and Algorithm 1 visually checked. Official README, MIT LICENSE, third-party notices, requirements and setup/method documentation inspected at observed commit b7e3744. The README reports no public trained-checkpoint links; its quick start uses the base model. No linked research code, models or datasets were executed or installed.
+
+**Topics:** memory, prompts, model-training, evaluation. **Reviewed:** full-text · 2026-11-24.
+
+[Source 1](https://arxiv.org/abs/2611.25123) · [Source 2](https://arxiv.org/html/2611.25123v1) · [Source 3](https://arxiv.org/pdf/2611.25123v1) · [Source 4](https://github.com/limenlp/GrepMem) · [Source 5](https://github.com/limenlp/GrepMem/blob/b7e3744c2f7489feac4060b379be6936960dc7bd/README.md) · [Source 6](https://github.com/limenlp/GrepMem/blob/b7e3744c2f7489feac4060b379be6936960dc7bd/docs/method.md) · [Source 7](https://github.com/limenlp/GrepMem/blob/b7e3744c2f7489feac4060b379be6936960dc7bd/docs/reproduction.md) · [Source 8](https://github.com/limenlp/GrepMem/blob/b7e3744c2f7489feac4060b379be6936960dc7bd/LICENSE) · [Source 9](https://github.com/limenlp/GrepMem/blob/b7e3744c2f7489feac4060b379be6936960dc7bd/NOTICE.md) · [Source 10](https://github.com/limenlp/GrepMem/blob/b7e3744c2f7489feac4060b379be6936960dc7bd/requirements.txt)
 
 <a id="skill-state-maintenance"></a>
 

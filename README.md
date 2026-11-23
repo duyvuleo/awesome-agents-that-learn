@@ -10,7 +10,7 @@
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/sindresorhus/awesome/blob/main/awesome.md)
 [![Validate catalog](https://github.com/duyvuleo/awesome-agents-that-learn/actions/workflows/validate-and-publish.yml/badge.svg?branch=main)](https://github.com/duyvuleo/awesome-agents-that-learn/actions/workflows/validate-and-publish.yml)
 [![License: CC0 1.0](https://img.shields.io/badge/License-CC0%201.0-315da7?style=flat-square)](LICENSE)
-[![Research works: 217](https://img.shields.io/badge/Research%20works-217-315da7?style=flat-square)](docs/papers.md)
+[![Research works: 220](https://img.shields.io/badge/Research%20works-220-315da7?style=flat-square)](docs/papers.md)
 [![Systems & frameworks: 26](https://img.shields.io/badge/Systems%20%26%20frameworks-26-0f766e?style=flat-square)](docs/systems.md)
 [![Benchmark papers: 19](https://img.shields.io/badge/Benchmark%20papers-19-b45309?style=flat-square)](docs/benchmarks.md)
 
@@ -20,9 +20,9 @@ How do agents turn experience into something useful on the next task? This colle
 
 [Explore the collection](https://duyvuleo.github.io/awesome-agents-that-learn/) · [Start reading](docs/reading-routes.md) · [Browse papers](docs/papers.md) · [Compare systems](docs/systems.md) · [Compare benchmarks](docs/benchmarks.md)
 
-**217 research works** (192 papers, 6 surveys, 19 benchmark papers) · **26 systems and frameworks** · **8 reading routes**
+**220 research works** (195 papers, 6 surveys, 19 benchmark papers) · **26 systems and frameworks** · **8 reading routes**
 
-Source review: **2026-11-23**. For research works, 217 entries include inspection of selected full-text sections and 0 are based on primary abstracts/metadata. Systems are separate project-documentation/source inspections. No linked research code was executed and no published result was independently reproduced for this release.
+Source review: **2026-11-24**. For research works, 220 entries include inspection of selected full-text sections and 0 are based on primary abstracts/metadata. Systems are separate project-documentation/source inspections. No linked research code was executed and no published result was independently reproduced for this release.
 
 ## Top Papers of the Week
 

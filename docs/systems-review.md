@@ -83,3 +83,7 @@ GRAFT's author-linked anonymous page returned an HTTP-200 application shell with
 ## 2026-11-23 — Formal specification and historical implementations
 
 The original Gödel-machine report and author page describe a formal architecture and separately link later implementation papers. They do not establish an executable artifact, code license, installable requirements or reproduction for the reviewed arXiv v5. Those later implementations remain separate leads. No new system record was added; all twenty-six existing system inspections and not-run statuses remain unchanged. No software or prover was installed or executed.
+
+## 2026-11-24 — Memory and skill research artifacts
+
+Inspected GrepMem's actual MIT license, third-party notices, README, method/setup documentation and requirements at `b7e3744c2f7489feac4060b379be6936960dc7bd`. Client, GPU-serving/training and dense-retrieval dependencies remain separate; its quickstart uses the base policy and trained-checkpoint links are not public in the inspected docs. Inspected SkillDiff's MIT license, requirements, README, experiment setup and selected pipeline source at `db2cdbde29e752ebc9cc81817f17400b64056c40`. Plotting supplied curve values does not reconstruct the unbundled original skills, raw judgments or agent runs. SkillPlumber promises a later release without establishing an official executable artifact. These are paper-specific artifact notes, not additional independent software records. All twenty-six existing system inspections and not-run statuses remain unchanged; nothing was installed or executed.

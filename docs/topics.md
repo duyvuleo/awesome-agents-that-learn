@@ -57,7 +57,9 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="memory"></a>
 
-## Memory and experience (99)
+## Memory and experience (101)
+- 2026-11-19 — [Evolve Where It Matters: Coverage-Guided Self-Evolution of Agent Skills](papers.md#skillplumber) · core · preprint
+- 2026-11-18 — [Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents](papers.md#grepmem) · core · preprint
 - 2026-11-17 — [The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis) · core · preprint
 - 2026-11-17 — [RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't](papers.md#rag-in-a-trenchcoat) · core · peer-reviewed
 - 2026-11-16 — [Experience Rot: Experienced Agents Fail Where Novices Succeed](papers.md#experience-rot) · core · preprint
@@ -160,7 +162,9 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="skills"></a>
 
-## Skill acquisition and reuse (58)
+## Skill acquisition and reuse (60)
+- 2026-11-19 — [Evolve Where It Matters: Coverage-Guided Self-Evolution of Agent Skills](papers.md#skillplumber) · core · preprint
+- 2026-11-19 — [How Feedback-Free Self-Evolution Reshapes Agent Skills: A Systematic Study](papers.md#skilldiff) · core · preprint
 - 2026-11-17 — [When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments](papers.md#skill-state-maintenance) · core · preprint
 - 2026-11-17 — [Do LLM Agents Still Need to Be Told How to Self-Improve?](papers.md#self-organized-context-learning) · core · preprint
 - 2026-11-17 — [The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis) · core · preprint
@@ -249,8 +253,10 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="prompts"></a>
 
-## Prompt and context optimization (34)
+## Prompt and context optimization (36)
+- 2026-11-19 — [How Feedback-Free Self-Evolution Reshapes Agent Skills: A Systematic Study](papers.md#skilldiff) · core · preprint
 - 2026-11-18 — [Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates](papers.md#safe-personal-rsi) · core · preprint
+- 2026-11-18 — [Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents](papers.md#grepmem) · core · preprint
 - 2026-11-17 — [Do LLM Agents Still Need to Be Told How to Self-Improve?](papers.md#self-organized-context-learning) · core · preprint
 - 2026-11-17 — [The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis) · core · preprint
 - 2026-11-17 — [Simplicity Goes Far: Auditing Prompt Optimizers with Demonstration-Conditioned Prompt Search](papers.md#dcps) · core · preprint
@@ -389,7 +395,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="model-training"></a>
 
-## Learning in model weights (72)
+## Learning in model weights (73)
+- 2026-11-18 — [Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents](papers.md#grepmem) · core · preprint
 - 2026-11-16 — [Instant Weight-Space Consolidation for Long-Term Memory in LLMs](papers.md#clam) · core · preprint
 - 2026-11-15 — [Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](papers.md#context-weight-agent-adaptation) · core · preprint
 - 2026-11-14 — [RoboCoEvo: Expanding Robot Capabilities through Agent-Policy Co-Evolution](papers.md#robocoevo) · core · preprint
@@ -591,9 +598,12 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="evaluation"></a>
 
-## Evaluation and negative results (131)
+## Evaluation and negative results (134)
+- 2026-11-19 — [Evolve Where It Matters: Coverage-Guided Self-Evolution of Agent Skills](papers.md#skillplumber) · core · preprint
+- 2026-11-19 — [How Feedback-Free Self-Evolution Reshapes Agent Skills: A Systematic Study](papers.md#skilldiff) · core · preprint
 - 2026-11-18 — [Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates](papers.md#safe-personal-rsi) · core · preprint
 - 2026-11-18 — [RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?](papers.md#rsibench-infra) · core · preprint
+- 2026-11-18 — [Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents](papers.md#grepmem) · core · preprint
 - 2026-11-17 — [When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments](papers.md#skill-state-maintenance) · core · preprint
 - 2026-11-17 — [Do LLM Agents Still Need to Be Told How to Self-Improve?](papers.md#self-organized-context-learning) · core · preprint
 - 2026-11-17 — [The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis) · core · preprint

@@ -61,6 +61,10 @@
         "why": "Separate competitive recall from applying stored rules; inspect stateless controls, partial-constraint denominators and multi-turn protocol consistency."
       },
       {
+        "paper": "grepmem",
+        "why": "Compare lossless episode logs plus offline policy training with structured memory; distinguish lexical access from successful recall, and count checkpoint selection and retrieval costs."
+      },
+      {
         "paper": "omce",
         "why": "Compare memory-utility scoring with learning when to retrieve, distill, or skip experience."
       },
@@ -131,6 +135,14 @@
       {
         "paper": "ace",
         "why": "Contrast whole-prompt replacement with incremental context updates."
+      },
+      {
+        "paper": "skillplumber",
+        "why": "Separate instruction-use labels from verifier-guided same-task repair; inspect frozen-skill replays and the limited contribution of cross-task revision memory."
+      },
+      {
+        "paper": "skilldiff",
+        "why": "Contrast feedback-free document drift with guided repair; test content loss through restoration/deletion controls and separate marking gains from added instructions and preprocessing cost."
       },
       {
         "paper": "context-language-models",

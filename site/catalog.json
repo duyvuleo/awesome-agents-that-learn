@@ -4,7 +4,7 @@
     "subtitle": "A research guide to self-learning, self-improving, and self-evolving AI agents.",
     "repository": "https://github.com/duyvuleo/awesome-agents-that-learn",
     "site": "https://duyvuleo.github.io/awesome-agents-that-learn/",
-    "updated": "2026-11-23",
+    "updated": "2026-11-24",
     "schema_version": 2,
     "topics": {
       "foundations": "Foundations and boundaries",
@@ -43,6 +43,80 @@
     }
   },
   "papers": [
+    {
+      "id": "skillplumber",
+      "title": "Evolve Where It Matters: Coverage-Guided Self-Evolution of Agent Skills",
+      "short_name": "SkillPlumber",
+      "date": "2026-11-19",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "arXiv",
+      "url": "https://arxiv.org/abs/2611.25429",
+      "sources": [
+        "https://arxiv.org/abs/2611.25429",
+        "https://arxiv.org/pdf/2611.25429v1",
+        "https://arxiv.org/html/2611.25429v1"
+      ],
+      "code_url": null,
+      "code_note": "The full v1 paper promises future release of code, prompts, configurations, run records and analysis rules, but supplies no official artifact link. A bounded title/method-name search did not establish one; software license and setup remain unknown. No research code or models were executed.",
+      "topics": [
+        "skills",
+        "memory",
+        "evaluation"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "skills",
+        "memory"
+      ],
+      "persistence": "both",
+      "learning_signal": "Execution traces, outcome-blind LLM labels of instruction applicability/adherence, and permitted deterministic-verifier feedback; later tasks also receive a library of prior revision strategies.",
+      "mechanism": "A persistent per-task investigator checks earlier revision hypotheses against fresh runs, then clarifies, corrects, adds or retracts SKILL.md instructions using follow, not-follow and not-covered labels. A maintainer distills investigations after three-task batches into advisory revision memory. Executors receive only the task and current skill; models, judge and host revision procedure stay fixed.",
+      "evaluation": "Authors report 143/207, 146/207 and 134/207 tasks solved with GPT-5.5/Codex, Opus 4.8/Claude Code and DeepSeek-V4-Pro/OpenHands across three skill benchmarks, allowing five same-task revisions and stopping at first pass. On 52 GPT SkillsBench initial failures, coverage removal reduces recovery from 24 to 19, and frozen-skill replay means are 22 versus 17 over three runs; maintainer removal yields 23. Complete v1, appendices A-H and all scientific objects reviewed.",
+      "limitations": "Revision and evaluation share each task; these are retry-assisted repairs, not held-out task generalization. Coverage labels are fallible, ablations/replays focus on GPT SkillsBench, and cross-model transfer uses one execution per skill. Baselines have protocol adaptations; available GPT token totals are 1.7-2.0 times larger for SkillPlumber. Order/batch sensitivity and current-task label accuracy are untested; the strategy library adds little in its ablation. Source inspection is not reproduction.",
+      "review_depth": "full-text",
+      "checked": "2026-11-24"
+    },
+    {
+      "id": "skilldiff",
+      "title": "How Feedback-Free Self-Evolution Reshapes Agent Skills: A Systematic Study",
+      "short_name": "SkillDiff",
+      "date": "2026-11-19",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.25534",
+      "sources": [
+        "https://arxiv.org/abs/2611.25534",
+        "https://arxiv.org/pdf/2611.25534v1",
+        "https://arxiv.org/html/2611.25534v1",
+        "https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills",
+        "https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills/blob/db2cdbde29e752ebc9cc81817f17400b64056c40/LICENSE",
+        "https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills/blob/db2cdbde29e752ebc9cc81817f17400b64056c40/EXPERIMENTS.md",
+        "https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills/blob/db2cdbde29e752ebc9cc81817f17400b64056c40/requirements.txt",
+        "https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills/blob/db2cdbde29e752ebc9cc81817f17400b64056c40/experiments/distance.py"
+      ],
+      "code_url": "https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills",
+      "code_note": "Complete 23-page v1, Appendices A–E, twelve figures, eighteen tables and all supplied text read; scientific objects visually checked. MIT source at db2cdbd and setup inspected. Original skills and per-run outputs are not bundled; reported curve values are not raw reproduction evidence. Historical execution inputs and analysis mapping remain unverified. No research code or models executed.",
+      "topics": [
+        "skills",
+        "prompts",
+        "evaluation"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "skills"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Expert-authored skill text, topic-only model drafts and model judgments of item retention/rarity; task outcomes measure effects but do not guide rewriting or SkillDiff construction.",
+      "mechanism": "Fixed models repeatedly replace a skill document without outcome feedback; companion scripts stay fixed. SkillDiff instead adds emphasis tags and a planning note to original body items absent from ten topic-only drafts, preserving the original wording. The retained text changes execution context; model weights and the improvement procedure do not change.",
+      "evaluation": "Six models, 87 SkillsBench tasks, LogicBench and MedCalc-Bench show a reported 14.6-point mean SkillsBench loss after thirty rewrites. Restoration and approximately word-matched deletion support the value of rarely generated content; selected repeated evaluations, chains, judges, web-off and policy-domain checks test robustness. SkillDiff adds 4.8 points over same-batch original skills across six agents.",
+      "limitations": "Ten-draft absence is a generated-text rarity proxy, not proof of missing model knowledge. SkillsBench uses one preselected skill and one rewrite chain per task; repeated execution checks cover loss/restoration for two models. SkillDiff itself has one run per task/model, no random-tag/note-only control, and costs 21 preprocessing calls plus added text. GPT rewrites and drafts can search the web. Joint code evolution, multi-skill composition and held-out task transfer remain untested; historical reproduction is unverified.",
+      "review_depth": "full-text",
+      "checked": "2026-11-24"
+    },
     {
       "id": "safe-personal-rsi",
       "short_name": "Safe Personal RSI",
@@ -113,6 +187,50 @@
       "limitations": "Single runs, different harnesses and partial Claude coverage preclude resolved rankings. Synthetic/fixed workloads and narrow reference-output or local training-curve gates do not establish arbitrary production quality, closed-loop robot success or convergence. Seven Faster submissions lack a confirmed new behavior label; labels are observational. SOL references are modeled, with four extrapolations and historical-boundary caveats. API cost and agent time exclude accelerator/setup/verifier overhead. No released implementation or independent reproduction was established.",
       "review_depth": "full-text",
       "checked": "2026-11-22"
+    },
+    {
+      "id": "grepmem",
+      "title": "Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents",
+      "short_name": "GrepMem",
+      "date": "2026-11-18",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.25123",
+      "sources": [
+        "https://arxiv.org/abs/2611.25123",
+        "https://arxiv.org/html/2611.25123v1",
+        "https://arxiv.org/pdf/2611.25123v1",
+        "https://github.com/limenlp/GrepMem",
+        "https://github.com/limenlp/GrepMem/blob/b7e3744c2f7489feac4060b379be6936960dc7bd/README.md",
+        "https://github.com/limenlp/GrepMem/blob/b7e3744c2f7489feac4060b379be6936960dc7bd/docs/method.md",
+        "https://github.com/limenlp/GrepMem/blob/b7e3744c2f7489feac4060b379be6936960dc7bd/docs/reproduction.md",
+        "https://github.com/limenlp/GrepMem/blob/b7e3744c2f7489feac4060b379be6936960dc7bd/LICENSE",
+        "https://github.com/limenlp/GrepMem/blob/b7e3744c2f7489feac4060b379be6936960dc7bd/NOTICE.md",
+        "https://github.com/limenlp/GrepMem/blob/b7e3744c2f7489feac4060b379be6936960dc7bd/requirements.txt"
+      ],
+      "code_url": "https://github.com/limenlp/GrepMem",
+      "code_note": "Complete 17-page arXiv v1, including Appendices A-F, references, limitations and ethics, read on 2026-11-24; all six figures, six tables and Algorithm 1 visually checked. Official README, MIT LICENSE, third-party notices, requirements and setup/method documentation inspected at observed commit b7e3744. The README reports no public trained-checkpoint links; its quick start uses the base model. No linked research code, models or datasets were executed or installed.",
+      "topics": [
+        "memory",
+        "prompts",
+        "model-training",
+        "evaluation"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "memory",
+        "prompts",
+        "model-weights"
+      ],
+      "persistence": "both",
+      "learning_signal": "Complete episode interactions populate the log. Offline GRPO uses judged research-answer correctness, averaged across bundled questions, and programmatic synthetic-stream rewards; one episode-level advantage trains task actions, summaries and retrieval without separate grep supervision.",
+      "mechanism": "Pairs policy-generated context summaries with an append-only raw interaction log. After the first compaction, the agent can search earlier text with case-insensitive regular expressions, pagination and matching-line counts. Storage preserves omitted details, while retrieved views remain bounded. Offline RL changes reusable policy weights; the experiments retain logs within each episode rather than demonstrating cross-session memory learning.",
+      "evaluation": "Authors compare five Qwen3.5-9B strategies before and after matched-recipe RL on BCP-Multi, AMA-Bench file/stream and ContextBench KV/Log tasks. After RL, GrepMem averages 66.4% across five tasks, reaches 97.4%/95.3% on KV/Log and scores 46.9% on BCP-Multi versus SUPO's 38.1%. Stream lengths reach 968K tokens against a 32K window. Token/runtime frontiers and negative trajectory-reasoning results are reported; source reading is not reproduction.",
+      "limitations": "Lossless storage does not ensure lexical retrieval succeeds; outputs, lines and tool budgets are bounded. One model, evaluation-informed checkpoint selection and item-level intervals do not establish training-run robustness. AMA stream gains over SUPO are not significant and cost 2.3 times as many tokens; MemGPT wins KV accuracy. Its MemGPT baseline uses BM25/substring search. Shared synthetic task families limit transfer claims; general contamination, cross-session retention and privacy controls are not established. The memory needs no index, but research tasks use a separate dense retriever.",
+      "review_depth": "full-text",
+      "checked": "2026-11-24"
     },
     {
       "id": "skill-state-maintenance",
@@ -9269,6 +9387,10 @@
           "why": "Separate competitive recall from applying stored rules; inspect stateless controls, partial-constraint denominators and multi-turn protocol consistency."
         },
         {
+          "paper": "grepmem",
+          "why": "Compare lossless episode logs plus offline policy training with structured memory; distinguish lexical access from successful recall, and count checkpoint selection and retrieval costs."
+        },
+        {
           "paper": "omce",
           "why": "Compare memory-utility scoring with learning when to retrieve, distill, or skip experience."
         },
@@ -9339,6 +9461,14 @@
         {
           "paper": "ace",
           "why": "Contrast whole-prompt replacement with incremental context updates."
+        },
+        {
+          "paper": "skillplumber",
+          "why": "Separate instruction-use labels from verifier-guided same-task repair; inspect frozen-skill replays and the limited contribution of cross-task revision memory."
+        },
+        {
+          "paper": "skilldiff",
+          "why": "Contrast feedback-free document drift with guided repair; test content loss through restoration/deletion controls and separate marking gains from added instructions and preprocessing cost."
         },
         {
           "paper": "context-language-models",
