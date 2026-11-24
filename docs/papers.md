@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-220 unique works. Catalog updated: 2026-11-24; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+223 unique works. Catalog updated: 2026-11-25; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -13,10 +13,13 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-20 | **Embodied-Harness**<br>[Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation](https://arxiv.org/abs/2611.27689) | A frozen Actor uses episode summaries and interaction traces to control a robot. A frozen Reflector retains task-specific diagnoses, abstracts cross-task guidance and… | Memory, Prompts / context | preprint · full-text | [Notes](#embodied-harness) |
+| 2026-11-20 | **CoEvoBench**<br>[CoEvoBench: Can LLMs Drive Recursive Co-Evolution of Agentic Systems?](https://arxiv.org/abs/2611.27116) | A fixed researcher model/CLI chooses target-model fine-tuning and harness edits within a 24-hour, four-H20 budget plus a teacher allowance. A retained model–harness pair… | Model weights, Agent code | preprint · full-text | [Notes](#coevobench) · [Code](https://github.com/AlibabaResearch/CoEvoBench) |
+| 2026-11-20 | **Acting to Learning**<br>[From Acting to Learning: Experience Selection toward Continually Learning Agents](https://arxiv.org/abs/2611.27159) | An external offline selector ranks exact distinct action-message records using base-model NLL or optimizer-aware LoRA-gradient relevance to public task families. Global… | Model weights | preprint · full-text | [Notes](#acting-to-learning) |
 | 2026-11-19 | **SkillPlumber**<br>[Evolve Where It Matters: Coverage-Guided Self-Evolution of Agent Skills](https://arxiv.org/abs/2611.25429) | A persistent per-task investigator checks earlier revision hypotheses against fresh runs, then clarifies, corrects, adds or retracts SKILL.md instructions using follow… | Skills, Memory | preprint · full-text | [Notes](#skillplumber) |
 | 2026-11-19 | **SkillDiff**<br>[How Feedback-Free Self-Evolution Reshapes Agent Skills: A Systematic Study](https://arxiv.org/abs/2611.25534) | Fixed models repeatedly replace a skill document without outcome feedback; companion scripts stay fixed. SkillDiff instead adds emphasis tags and a planning note to… | Skills | preprint · full-text | [Notes](#skilldiff) · [Code](https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills) |
 | 2026-11-18 | **Safe Personal RSI**<br>[Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates](https://arxiv.org/abs/2611.23651) | A fixed offline controller tests persistent prompt-block updates, confirms failures, uses temporary block or sentence rollback to guide template or LLM repair, then… | Prompts / context | preprint · full-text | [Notes](#safe-personal-rsi) |
-| 2026-11-18 | **RSIBench-Infra**<br>[RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?](https://arxiv.org/abs/2611.24395) | Fixed agents edit serving/training engines, kernels, dependencies and launch configurations, then submit a reusable OCI layer. Fresh Serve/Train jobs load that layer; a… | Agent code, Workflows | preprint · full-text | [Notes](#rsibench-infra) |
+| 2026-11-18 | **RSIBench-Infra**<br>[RSIBench-Infra: Can Agents Optimize Training and Inference Infrastructure at Production Scale?](https://arxiv.org/abs/2611.24395) | Fixed agents edit serving/training engines, kernels, dependencies and launch configurations, then submit a reusable OCI layer. Fresh Serve/Train jobs load that layer; a… | Agent code, Workflows | preprint · full-text | [Notes](#rsibench-infra) |
 | 2026-11-18 | **GrepMem**<br>[Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents](https://arxiv.org/abs/2611.25123) | Pairs policy-generated context summaries with an append-only raw interaction log. After the first compaction, the agent can search earlier text with case-insensitive… | Memory, Prompts / context, Model weights | preprint · full-text | [Notes](#grepmem) · [Code](https://github.com/limenlp/GrepMem) |
 | 2026-11-17 | **Skill Staleness**<br>[When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments](https://arxiv.org/abs/2611.22525) | Compares procedural and cache-heavy skill state before and after controlled environment changes. Rule-based construction records checks and source references; replay… | Skills | preprint · full-text | [Notes](#skill-state-maintenance) |
 | 2026-11-17 | **Self-Organized Learning**<br>[Do LLM Agents Still Need to Be Told How to Self-Improve?](https://arxiv.org/abs/2611.23219) | A frozen teacher chooses its own sequence of game generation, player testing and text edits using file, Bash and Gameplay tools. Fresh players of the same model reuse… | Prompts / context, Skills | preprint · full-text | [Notes](#self-organized-context-learning) · [Code](https://github.com/ssundaram21/self-org) |
@@ -236,6 +239,72 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 ## Full annotations
 
+<a id="embodied-harness"></a>
+
+## Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation
+
+**2026-11-20 · preprint · arXiv · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.27689)
+
+**Mechanism.** A frozen Actor uses episode summaries and interaction traces to control a robot. A frozen Reflector retains task-specific diagnoses, abstracts cross-task guidance and revises operational instructions between attempts. The reusable memory and execution context change; the reflection procedure and model weights stay fixed.
+
+**What changes:** Memory, Prompts / context. **Persistence:** both. **Learning signal:** Visual observations, proprioceptive states, action feedback, task outcomes and earlier execution memories inform frozen-model diagnoses and corrective instructions; outcome-generation and judging details are unspecified.
+
+**Evaluation.** Authors report 82.4% on 50 RoboTwin tasks, 94.0% spatial and 59.5% long-horizon RoboSPA averages, 94.4% on nine RMBench tasks, and 29/30 real-robot episodes across three tasks. Four harness-refinement rounds, memory/reflection ablations and backbone comparisons are reported. Complete 20-page v2 and every scientific object reviewed.
+
+**Boundary.** Memory resets, refinement/evaluation separation and feedback privileges are under-specified; held-out cross-task transfer and budget-matched retry controls are not isolated. Zero demonstrations still permits accumulated execution feedback. Results lack confidence intervals, independent-run uncertainty, compute accounting and measured safety outcomes; physical evidence uses one Piper platform and three tasks. The fixed improver is not itself shown to improve. Source inspection is not reproduction.
+
+**Code / data.** Official linked project page and its 19-page paper PDF inspected; current arXiv v2 is a separate 20-page file. No implementation repository, software license or setup manifest was linked in the inspected sources. This does not establish that no code exists. No research code, models or robots were executed.
+
+**Topics:** memory, prompts, applications. **Reviewed:** full-text · 2026-11-25.
+
+[Source 1](https://arxiv.org/abs/2611.27689) · [Source 2](https://arxiv.org/pdf/2611.27689v2) · [Source 3](https://arxiv.org/html/2611.27689v2) · [Source 4](https://embodied-harness.github.io/) · [Source 5](https://embodied-harness.github.io/assets/embodied-harness.pdf)
+
+<a id="coevobench"></a>
+
+## CoEvoBench: Can LLMs Drive Recursive Co-Evolution of Agentic Systems?
+
+**2026-11-20 · preprint · core · benchmark**
+
+[Primary source](https://arxiv.org/abs/2611.27116)
+
+**Mechanism.** A fixed researcher model/CLI chooses target-model fine-tuning and harness edits within a 24-hour, four-H20 budget plus a teacher allowance. A retained model–harness pair serves held-out tasks. The research model and outer protocol stay fixed; the tested recursion is iterative target development, not demonstrated improvement of the researcher itself.
+
+**What changes:** Model weights, Agent code. **Persistence:** across-tasks. **Learning signal:** Visible-task execution traces and rewards, aggregate selection scores, and permitted public, self-generated or fixed-teacher training data guide the researcher; a separate test partition scores the frozen submission.
+
+**Evaluation.** Five researcher configurations, five domains and two small base targets use three independent development runs each. On Qwen3.5-9B, the strongest reported weighted score is 31.23 versus Base 1.09 and the instruction-tuned/reference-harness 37.42. Component cross-evaluations show harness–weight dependence; selected trajectories show front-loaded gains. Frozen-system repeat evaluations and strict audit alternatives are reported.
+
+**Boundary.** Weak initial harnesses, small target models, differing researcher CLIs/API costs and repeatedly queried selection sets bound extrapolation. Best-so-far trajectory/order analyses do not causally isolate feedback value. Authors flag 22/75 Qwen runs; primary scoring resets weights while retaining harnesses, with a stricter reset alternative. Static audit findings do not certify absent indirect contamination. Current release documents replay, budget-metering and scoring gaps; no independent reproduction.
+
+**Code / data.** [Official artifact](https://github.com/AlibabaResearch/CoEvoBench) — Complete 28-page v1, Appendices A–M, six figures, sixteen tables, ten numbered equations and all prompts/references read; scientific objects visually checked. MIT license, notices, requirements and protocol docs inspected at d39a924. Current docs disclose incomplete final replay/comparison and protocol-enforcement gaps; the released code is not a verified historical reproduction. Nothing installed or executed.
+
+**Topics:** evaluation, model-training, workflows, recursive-improvement. **Reviewed:** full-text · 2026-11-25.
+
+[Source 1](https://arxiv.org/abs/2611.27116) · [Source 2](https://arxiv.org/pdf/2611.27116v1) · [Source 3](https://arxiv.org/html/2611.27116v1) · [Source 4](https://github.com/AlibabaResearch/CoEvoBench) · [Source 5](https://github.com/AlibabaResearch/CoEvoBench/blob/d39a924c8985806933c94777d8e969d6e756262c/README.md) · [Source 6](https://github.com/AlibabaResearch/CoEvoBench/blob/d39a924c8985806933c94777d8e969d6e756262c/LICENSE) · [Source 7](https://github.com/AlibabaResearch/CoEvoBench/blob/d39a924c8985806933c94777d8e969d6e756262c/pyproject.toml) · [Source 8](https://github.com/AlibabaResearch/CoEvoBench/blob/d39a924c8985806933c94777d8e969d6e756262c/THIRD_PARTY_NOTICES.md) · [Source 9](https://github.com/AlibabaResearch/CoEvoBench/blob/d39a924c8985806933c94777d8e969d6e756262c/docs/protocol.md) · [Source 10](https://github.com/AlibabaResearch/CoEvoBench/blob/d39a924c8985806933c94777d8e969d6e756262c/docs/operations.md)
+
+<a id="acting-to-learning"></a>
+
+## From Acting to Learning: Experience Selection toward Continually Learning Agents
+
+**2026-11-20 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.27159)
+
+**Mechanism.** An external offline selector ranks exact distinct action-message records using base-model NLL or optimizer-aware LoRA-gradient relevance to public task families. Global rules select 256 contents for three replay passes; matched rules preserve task/action quotas. Fresh LoRA students restart from the same base. Learned adapter weights persist across evaluation tasks; the executor and selection procedure stay fixed.
+
+**What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Supervised next-action labels from successful historical ALFWorld interactions; LESS-style scoring also uses gradients from 40 public placement/cleaning actions. No new teacher calls or evaluation-query answers enter the selection study.
+
+**Evaluation.** Authors train 288 Qwen3-4B students across nine selectors, two fixed pools, eight initializations and two sampling seeds on 128 development groups. Global gradient selection beats equally unconstrained random by 8.25/5.96 points. Reusing 97 checkpoints on 128 reserved groups gives equal-source gains of 7.03 points over random and 5.03 over high NLL.
+
+**Boundary.** Only one offline learning stage, one backbone and ALFWorld are tested; retention and repeated adaptation remain untested. Panels are train-derived, not official seen/unseen tests. Fixed presentations do not match tokens or compute; length controls fail. Public-support supervision is part of the gradient selector. Reserved evaluation reuses students, with descriptive crossed-seed results and no population intervals. No paper-specific public artifact was verified; source review is not reproduction.
+
+**Code / data.** Complete 21-page v1, sections 1-8, references and Appendices A-L read; all 14 figures, nine tables, fourteen equations and two algorithms visually checked. The paper describes versioned records but links no paper-specific repository; a bounded title/identifier search established none. Software license and install requirements remain unverified. No research code, models or environments executed.
+
+**Topics:** model-training, continual-learning, evaluation. **Reviewed:** full-text · 2026-11-25.
+
+[Source 1](https://arxiv.org/abs/2611.27159) · [Source 2](https://arxiv.org/pdf/2611.27159v1)
+
 <a id="skillplumber"></a>
 
 ## Evolve Where It Matters: Coverage-Guided Self-Evolution of Agent Skills
@@ -304,7 +373,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 <a id="rsibench-infra"></a>
 
-## RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?
+## RSIBench-Infra: Can Agents Optimize Training and Inference Infrastructure at Production Scale?
 
 **2026-11-18 · preprint · core · benchmark**
 
@@ -318,11 +387,11 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 **Boundary.** Single runs, different harnesses and partial Claude coverage preclude resolved rankings. Synthetic/fixed workloads and narrow reference-output or local training-curve gates do not establish arbitrary production quality, closed-loop robot success or convergence. Seven Faster submissions lack a confirmed new behavior label; labels are observational. SOL references are modeled, with four extrapolations and historical-boundary caveats. API cost and agent time exclude accelerator/setup/verifier overhead. No released implementation or independent reproduction was established.
 
-**Code / data.** Complete 22-page v1, Appendices A–D, five figures, eight tables (including continuation), two numbered equations and gate expressions read; scientific objects visually checked. The official project page labels code as coming soon. No paper-specific repository, code license or runnable release was established; no infrastructure, kernel, model or benchmark was executed.
+**Code / data.** Complete 22-page v1, Appendices A–D, five figures, eight tables (including continuation), two numbered equations and gate expressions read; scientific objects visually checked. The official project page labels code as coming soon. No paper-specific repository, code license or runnable release was established; no infrastructure, kernel, model or benchmark was executed. On 2026-11-25, v2 comparison found title/authorship changes only; Abstract-to-end text and rendered scientific pages 2–22 match v1. The original v1 review date is retained; the project still marks code as coming soon.
 
 **Topics:** recursive-improvement, workflows, evaluation, applications. **Reviewed:** full-text · 2026-11-22.
 
-[Source 1](https://arxiv.org/abs/2611.24395) · [Source 2](https://arxiv.org/pdf/2611.24395v1) · [Source 3](https://rsibench-infra.github.io/)
+[Source 1](https://arxiv.org/abs/2611.24395) · [Source 2](https://arxiv.org/pdf/2611.24395v1) · [Source 3](https://rsibench-infra.github.io/) · [Source 4](https://arxiv.org/pdf/2611.24395v2)
 
 <a id="grepmem"></a>
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-25 — Co-development, experience selection and robotic guidance
+
+- Added complete-source appraisals of CoEvoBench, Acting to Learning and Embodied-Harness; total 223 works, including 20 benchmarks, and 26 systems.
+- Distinguished fixed-researcher development, one-stage offline selection and evolving robot guidance from demonstrated improvement of the improver or continual retention.
+- Retained integrity penalties, selection/retry controls, negative results, cost and artifact-version limits; extended three reading routes.
+- Updated RSIBench-Infra's authoritative v2 title after a full text/rendered-page comparison. Historical inspection dates and all weekly snapshots remain unchanged; no research experiments reproduced.
+
 ## 2026-11-24 — Memory access, guided repair and skill erosion
 
 - Added complete-source appraisals of GrepMem, SkillPlumber and SkillDiff; total 220 works and 26 systems.

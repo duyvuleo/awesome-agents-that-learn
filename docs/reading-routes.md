@@ -62,6 +62,8 @@ How can experience become useful knowledge, a procedure, or a reusable tool?
 
 14. **[Coalition-Aware Skill Reliability for Self-Evolving Agents](papers.md#coalition-skill-reliability)** — Test whether a useful skill stays useful in another bank or deployment domain.
 
+15. **[Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation](papers.md#embodied-harness)** — Trace robot feedback into reusable memory and operational guidance; require refinement/test separation, reset rules and matched retries before attributing held-out transfer or a better improver.
+
 
 **Study exercise:** For three methods, write the stored artifact, admission rule, retrieval rule, revision rule, and evidence that reuse helps.
 
@@ -120,13 +122,15 @@ Where does supervision come from when a model helps generate its own training da
 
 7. **[AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning](papers.md#autorl)** — Separate fixed supervisory agents from the downstream model they train; audit monitoring-set reuse and full resource accounting.
 
-8. **[Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](papers.md#self-harmony)** — Distinguish label-free adaptation to test questions from transfer to unseen tasks, and agreement from correctness.
+8. **[From Acting to Learning: Experience Selection toward Continually Learning Agents](papers.md#acting-to-learning)** — Compare offline experience selectors under matched selection freedom; retain public-support supervision, unequal token budgets and the gap from one SFT stage to continual retention.
 
-9. **[ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience](papers.md#ascent)** — Compare persistent online adapter updates with external training and within-task retries.
+9. **[Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](papers.md#self-harmony)** — Distinguish label-free adaptation to test questions from transfer to unseen tasks, and agreement from correctness.
 
-10. **[RoboCoEvo: Expanding Robot Capabilities through Agent-Policy Co-Evolution](papers.md#robocoevo)** — Trace privileged simulator and planner supervision into VLA weights; distinguish two-round configuration gains from physical-robot transfer and broad retention.
+10. **[ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience](papers.md#ascent)** — Compare persistent online adapter updates with external training and within-task retries.
 
-11. **[Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](papers.md#context-weight-agent-adaptation)** — Compare raw replay, weight updates and hybrids under prequential scoring; separate matched task streams from matched compute and test retention.
+11. **[RoboCoEvo: Expanding Robot Capabilities through Agent-Policy Co-Evolution](papers.md#robocoevo)** — Trace privileged simulator and planner supervision into VLA weights; distinguish two-round configuration gains from physical-robot transfer and broad retention.
+
+12. **[Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both](papers.md#context-weight-agent-adaptation)** — Compare raw replay, weight updates and hybrids under prequential scoring; separate matched task streams from matched compute and test retention.
 
 
 **Study exercise:** For each loop, label which information is human-provided, pretrained, environment-verified, or model-judged.
@@ -182,7 +186,9 @@ Does a method change only the solver, or also the process that improves it?
 
 10. **[Auditing the Product, Not the Recursion: The Evaluation Evidence Behind Recursive Self-Improvement Claims](papers.md#rsi-evaluation-audit)** — Distinguish final-system gains from repeated loops and same-start comparisons of improvers.
 
-11. **[RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?](papers.md#rsibench-infra)** — Separate quality-gated infrastructure speedups from demonstrated learning of an agent or improver; inspect workload, timing and analytical-ceiling boundaries.
+11. **[CoEvoBench: Can LLMs Drive Recursive Co-Evolution of Agentic Systems?](papers.md#coevobench)** — Evaluate a fixed researcher developing target weights and harnesses together; distinguish held-out system gains from improving the researcher, and audit scoring, trajectory selection and integrity penalties.
+
+12. **[RSIBench-Infra: Can Agents Optimize Training and Inference Infrastructure at Production Scale?](papers.md#rsibench-infra)** — Separate quality-gated infrastructure speedups from demonstrated learning of an agent or improver; inspect workload, timing and analytical-ceiling boundaries.
 
 
 **Study exercise:** Draw the solver, proposer, selector, and evaluator separately. Highlight what can change and what evidence would demonstrate improvement of the improver.

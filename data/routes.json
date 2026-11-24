@@ -91,6 +91,10 @@
       {
         "paper": "coalition-skill-reliability",
         "why": "Test whether a useful skill stays useful in another bank or deployment domain."
+      },
+      {
+        "paper": "embodied-harness",
+        "why": "Trace robot feedback into reusable memory and operational guidance; require refinement/test separation, reset rules and matched retries before attributing held-out transfer or a better improver."
       }
     ],
     "exercise": "For three methods, write the stored artifact, admission rule, retrieval rule, revision rule, and evidence that reuse helps."
@@ -187,6 +191,10 @@
       {
         "paper": "autorl",
         "why": "Separate fixed supervisory agents from the downstream model they train; audit monitoring-set reuse and full resource accounting."
+      },
+      {
+        "paper": "acting-to-learning",
+        "why": "Compare offline experience selectors under matched selection freedom; retain public-support supervision, unequal token budgets and the gap from one SFT stage to continual retention."
       },
       {
         "paper": "self-harmony",
@@ -291,6 +299,10 @@
       {
         "paper": "rsi-evaluation-audit",
         "why": "Distinguish final-system gains from repeated loops and same-start comparisons of improvers."
+      },
+      {
+        "paper": "coevobench",
+        "why": "Evaluate a fixed researcher developing target weights and harnesses together; distinguish held-out system gains from improving the researcher, and audit scoring, trajectory selection and integrity penalties."
       },
       {
         "paper": "rsibench-infra",

@@ -7878,7 +7878,7 @@
   {
     "id": "rsibench-infra",
     "short_name": "RSIBench-Infra",
-    "title": "RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?",
+    "title": "RSIBench-Infra: Can Agents Optimize Training and Inference Infrastructure at Production Scale?",
     "date": "2026-11-18",
     "year": 2026,
     "kind": "benchmark",
@@ -7888,10 +7888,11 @@
     "sources": [
       "https://arxiv.org/abs/2611.24395",
       "https://arxiv.org/pdf/2611.24395v1",
-      "https://rsibench-infra.github.io/"
+      "https://rsibench-infra.github.io/",
+      "https://arxiv.org/pdf/2611.24395v2"
     ],
     "code_url": null,
-    "code_note": "Complete 22-page v1, Appendices A–D, five figures, eight tables (including continuation), two numbered equations and gate expressions read; scientific objects visually checked. The official project page labels code as coming soon. No paper-specific repository, code license or runnable release was established; no infrastructure, kernel, model or benchmark was executed.",
+    "code_note": "Complete 22-page v1, Appendices A–D, five figures, eight tables (including continuation), two numbered equations and gate expressions read; scientific objects visually checked. The official project page labels code as coming soon. No paper-specific repository, code license or runnable release was established; no infrastructure, kernel, model or benchmark was executed. On 2026-11-25, v2 comparison found title/authorship changes only; Abstract-to-end text and rendered scientific pages 2–22 match v1. The original v1 review date is retained; the project still marks code as coming soon.",
     "topics": [
       "recursive-improvement",
       "workflows",
@@ -8101,5 +8102,118 @@
     "limitations": "Ten-draft absence is a generated-text rarity proxy, not proof of missing model knowledge. SkillsBench uses one preselected skill and one rewrite chain per task; repeated execution checks cover loss/restoration for two models. SkillDiff itself has one run per task/model, no random-tag/note-only control, and costs 21 preprocessing calls plus added text. GPT rewrites and drafts can search the web. Joint code evolution, multi-skill composition and held-out task transfer remain untested; historical reproduction is unverified.",
     "review_depth": "full-text",
     "checked": "2026-11-24"
+  },
+  {
+    "id": "coevobench",
+    "title": "CoEvoBench: Can LLMs Drive Recursive Co-Evolution of Agentic Systems?",
+    "short_name": "CoEvoBench",
+    "date": "2026-11-20",
+    "year": 2026,
+    "kind": "benchmark",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.27116",
+    "sources": [
+      "https://arxiv.org/abs/2611.27116",
+      "https://arxiv.org/pdf/2611.27116v1",
+      "https://arxiv.org/html/2611.27116v1",
+      "https://github.com/AlibabaResearch/CoEvoBench",
+      "https://github.com/AlibabaResearch/CoEvoBench/blob/d39a924c8985806933c94777d8e969d6e756262c/README.md",
+      "https://github.com/AlibabaResearch/CoEvoBench/blob/d39a924c8985806933c94777d8e969d6e756262c/LICENSE",
+      "https://github.com/AlibabaResearch/CoEvoBench/blob/d39a924c8985806933c94777d8e969d6e756262c/pyproject.toml",
+      "https://github.com/AlibabaResearch/CoEvoBench/blob/d39a924c8985806933c94777d8e969d6e756262c/THIRD_PARTY_NOTICES.md",
+      "https://github.com/AlibabaResearch/CoEvoBench/blob/d39a924c8985806933c94777d8e969d6e756262c/docs/protocol.md",
+      "https://github.com/AlibabaResearch/CoEvoBench/blob/d39a924c8985806933c94777d8e969d6e756262c/docs/operations.md"
+    ],
+    "code_url": "https://github.com/AlibabaResearch/CoEvoBench",
+    "code_note": "Complete 28-page v1, Appendices A–M, six figures, sixteen tables, ten numbered equations and all prompts/references read; scientific objects visually checked. MIT license, notices, requirements and protocol docs inspected at d39a924. Current docs disclose incomplete final replay/comparison and protocol-enforcement gaps; the released code is not a verified historical reproduction. Nothing installed or executed.",
+    "topics": [
+      "evaluation",
+      "model-training",
+      "workflows",
+      "recursive-improvement"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights",
+      "agent-code"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Visible-task execution traces and rewards, aggregate selection scores, and permitted public, self-generated or fixed-teacher training data guide the researcher; a separate test partition scores the frozen submission.",
+    "mechanism": "A fixed researcher model/CLI chooses target-model fine-tuning and harness edits within a 24-hour, four-H20 budget plus a teacher allowance. A retained model–harness pair serves held-out tasks. The research model and outer protocol stay fixed; the tested recursion is iterative target development, not demonstrated improvement of the researcher itself.",
+    "evaluation": "Five researcher configurations, five domains and two small base targets use three independent development runs each. On Qwen3.5-9B, the strongest reported weighted score is 31.23 versus Base 1.09 and the instruction-tuned/reference-harness 37.42. Component cross-evaluations show harness–weight dependence; selected trajectories show front-loaded gains. Frozen-system repeat evaluations and strict audit alternatives are reported.",
+    "limitations": "Weak initial harnesses, small target models, differing researcher CLIs/API costs and repeatedly queried selection sets bound extrapolation. Best-so-far trajectory/order analyses do not causally isolate feedback value. Authors flag 22/75 Qwen runs; primary scoring resets weights while retaining harnesses, with a stricter reset alternative. Static audit findings do not certify absent indirect contamination. Current release documents replay, budget-metering and scoring gaps; no independent reproduction.",
+    "review_depth": "full-text",
+    "checked": "2026-11-25"
+  },
+  {
+    "id": "acting-to-learning",
+    "title": "From Acting to Learning: Experience Selection toward Continually Learning Agents",
+    "short_name": "Acting to Learning",
+    "date": "2026-11-20",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "",
+    "url": "https://arxiv.org/abs/2611.27159",
+    "sources": [
+      "https://arxiv.org/abs/2611.27159",
+      "https://arxiv.org/pdf/2611.27159v1"
+    ],
+    "code_url": null,
+    "code_note": "Complete 21-page v1, sections 1-8, references and Appendices A-L read; all 14 figures, nine tables, fourteen equations and two algorithms visually checked. The paper describes versioned records but links no paper-specific repository; a bounded title/identifier search established none. Software license and install requirements remain unverified. No research code, models or environments executed.",
+    "topics": [
+      "model-training",
+      "continual-learning",
+      "evaluation"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "model-weights"
+    ],
+    "persistence": "across-tasks",
+    "learning_signal": "Supervised next-action labels from successful historical ALFWorld interactions; LESS-style scoring also uses gradients from 40 public placement/cleaning actions. No new teacher calls or evaluation-query answers enter the selection study.",
+    "mechanism": "An external offline selector ranks exact distinct action-message records using base-model NLL or optimizer-aware LoRA-gradient relevance to public task families. Global rules select 256 contents for three replay passes; matched rules preserve task/action quotas. Fresh LoRA students restart from the same base. Learned adapter weights persist across evaluation tasks; the executor and selection procedure stay fixed.",
+    "evaluation": "Authors train 288 Qwen3-4B students across nine selectors, two fixed pools, eight initializations and two sampling seeds on 128 development groups. Global gradient selection beats equally unconstrained random by 8.25/5.96 points. Reusing 97 checkpoints on 128 reserved groups gives equal-source gains of 7.03 points over random and 5.03 over high NLL.",
+    "limitations": "Only one offline learning stage, one backbone and ALFWorld are tested; retention and repeated adaptation remain untested. Panels are train-derived, not official seen/unseen tests. Fixed presentations do not match tokens or compute; length controls fail. Public-support supervision is part of the gradient selector. Reserved evaluation reuses students, with descriptive crossed-seed results and no population intervals. No paper-specific public artifact was verified; source review is not reproduction.",
+    "review_depth": "full-text",
+    "checked": "2026-11-25"
+  },
+  {
+    "id": "embodied-harness",
+    "title": "Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation",
+    "short_name": "Embodied-Harness",
+    "date": "2026-11-20",
+    "year": 2026,
+    "kind": "paper",
+    "status": "preprint",
+    "venue": "arXiv",
+    "url": "https://arxiv.org/abs/2611.27689",
+    "sources": [
+      "https://arxiv.org/abs/2611.27689",
+      "https://arxiv.org/pdf/2611.27689v2",
+      "https://arxiv.org/html/2611.27689v2",
+      "https://embodied-harness.github.io/",
+      "https://embodied-harness.github.io/assets/embodied-harness.pdf"
+    ],
+    "code_url": null,
+    "code_note": "Official linked project page and its 19-page paper PDF inspected; current arXiv v2 is a separate 20-page file. No implementation repository, software license or setup manifest was linked in the inspected sources. This does not establish that no code exists. No research code, models or robots were executed.",
+    "topics": [
+      "memory",
+      "prompts",
+      "applications"
+    ],
+    "scope": "core",
+    "update_targets": [
+      "memory",
+      "prompts"
+    ],
+    "persistence": "both",
+    "learning_signal": "Visual observations, proprioceptive states, action feedback, task outcomes and earlier execution memories inform frozen-model diagnoses and corrective instructions; outcome-generation and judging details are unspecified.",
+    "mechanism": "A frozen Actor uses episode summaries and interaction traces to control a robot. A frozen Reflector retains task-specific diagnoses, abstracts cross-task guidance and revises operational instructions between attempts. The reusable memory and execution context change; the reflection procedure and model weights stay fixed.",
+    "evaluation": "Authors report 82.4% on 50 RoboTwin tasks, 94.0% spatial and 59.5% long-horizon RoboSPA averages, 94.4% on nine RMBench tasks, and 29/30 real-robot episodes across three tasks. Four harness-refinement rounds, memory/reflection ablations and backbone comparisons are reported. Complete 20-page v2 and every scientific object reviewed.",
+    "limitations": "Memory resets, refinement/evaluation separation and feedback privileges are under-specified; held-out cross-task transfer and budget-matched retry controls are not isolated. Zero demonstrations still permits accumulated execution feedback. Results lack confidence intervals, independent-run uncertainty, compute accounting and measured safety outcomes; physical evidence uses one Piper platform and three tasks. The fixed improver is not itself shown to improve. Source inspection is not reproduction.",
+    "review_depth": "full-text",
+    "checked": "2026-11-25"
   }
 ]
