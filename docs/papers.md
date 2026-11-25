@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-223 unique works. Catalog updated: 2026-11-25; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+225 unique works. Catalog updated: 2026-11-26; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -13,6 +13,8 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-24 | **Leto**<br>[Leto: Utility-Centric Agent Memory](https://arxiv.org/abs/2611.33005) | Leto retains conversations, indexes their source spans by extracted facts, and builds a standing user profile and task state between requests. A weighted average of an… | Memory | preprint · full-text | [Notes](#leto) |
+| 2026-11-22 | **Detection Gap**<br>[Blind to What They Can Fix: A Detection Gap in Self-Improving Agents](https://arxiv.org/abs/2611.29807) | A fixed agent revises a program, its runtime checks and its notes. The program then acts on its own. Researchers freeze it, change the environment and compare alarms on… | Agent code | preprint · full-text | [Notes](#detection-gap) |
 | 2026-11-20 | **Embodied-Harness**<br>[Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation](https://arxiv.org/abs/2611.27689) | A frozen Actor uses episode summaries and interaction traces to control a robot. A frozen Reflector retains task-specific diagnoses, abstracts cross-task guidance and… | Memory, Prompts / context | preprint · full-text | [Notes](#embodied-harness) |
 | 2026-11-20 | **CoEvoBench**<br>[CoEvoBench: Can LLMs Drive Recursive Co-Evolution of Agentic Systems?](https://arxiv.org/abs/2611.27116) | A fixed researcher model/CLI chooses target-model fine-tuning and harness edits within a 24-hour, four-H20 budget plus a teacher allowance. A retained model–harness pair… | Model weights, Agent code | preprint · full-text | [Notes](#coevobench) · [Code](https://github.com/AlibabaResearch/CoEvoBench) |
 | 2026-11-20 | **Acting to Learning**<br>[From Acting to Learning: Experience Selection toward Continually Learning Agents](https://arxiv.org/abs/2611.27159) | An external offline selector ranks exact distinct action-message records using base-model NLL or optimizer-aware LoRA-gradient relevance to public task families. Global… | Model weights | preprint · full-text | [Notes](#acting-to-learning) |
@@ -172,7 +174,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2025-09-29 | **Socratic-Zero**<br>[Socratic-Zero : Bootstrapping Reasoning via Data-Free Agent Co-evolution](https://arxiv.org/abs/2509.24726) | A fixed stronger teacher judges solver attempts and expands the curriculum; DPO updates the solver, while weighted supervised learning distills the teacher into a… | Model weights | preprint · full-text | [Notes](#socratic-zero) |
 | 2025-09-29 | **ReasoningBank**<br>[ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](https://arxiv.org/abs/2509.25140) | Extracts short strategy notes from successes and failures, appends them to persistent memory, and retrieves notes from similar prior queries. Parallel or sequential… | Memory | peer-reviewed · full-text | [Notes](#reasoningbank) · [Code](https://github.com/google-research/reasoning-bank) |
 | 2025-09-29 | **A-MemGuard**<br>[A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory](https://arxiv.org/abs/2510.02373) | Wraps a fixed agent with structured-path generation, consensus/safety validation and a separate lesson store. Query- and action-related retrieval brings previous failure… | Memory | peer-reviewed · full-text | [Notes](#a-memguard) · [Code](https://github.com/TangciuYueng/AMemGuard) |
-| 2025-08-27 | **Memory-R1**<br>[Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](https://arxiv.org/abs/2508.19828) | Uses PPO or GRPO to train a manager that adds, updates, deletes or retains memory entries, then trains an answer agent to select relevant content from retrieved… | Model weights, Memory | preprint · full-text | [Notes](#memory-r1) |
+| 2025-08-27 | **Memory-R1**<br>[Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](https://arxiv.org/abs/2508.19828) | Uses PPO or GRPO to train a manager that adds, updates, deletes or retains memory entries, then trains an answer agent to select relevant content from retrieved… | Model weights, Memory | peer-reviewed · full-text | [Notes](#memory-r1) |
 | 2025-08-26 | **ELL / StuLife**<br>[A Benchmark for Self-Evolving Agents via Experience-Driven Lifelong Learning](https://aclanthology.org/2026.findings-emnlp.770/) | Provides a synthetic, chronological campus environment with persistent calendars, bookings and other state, while raw model context resets between tasks. StuGPA combines… | Analysis / no retained update | peer-reviewed · full-text | [Notes](#ell-stulife) · [Code](https://github.com/ECNU-ICALK/ELL-StuLife) |
 | 2025-08-22 | **Memento**<br>[Memento: Fine-tuning LLM Agents without Fine-tuning LLMs](https://arxiv.org/abs/2508.16153) | A planner–executor agent retains final-state, plan and outcome cases. Retrieval uses fixed embedding similarity or a trained Q-network with top-k selection; this… | Memory, Model weights | preprint · full-text | [Notes](#memento) · [Code](https://github.com/Memento-Teams/Memento) |
 | 2025-08-10 | **Agent evolution survey**<br>[A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](https://arxiv.org/abs/2508.07407) | Connects system inputs, an agent system, environment feedback and an optimizer over a defined search space. It separates task-level from instance-level optimization and… | Analysis / no retained update | preprint · full-text | [Notes](#comprehensive-evolving-survey) · [Code](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents) |
@@ -239,6 +241,50 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 ## Full annotations
 
+<a id="leto"></a>
+
+## Leto: Utility-Centric Agent Memory
+
+**2026-11-24 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.33005)
+
+**Mechanism.** Leto retains conversations, indexes their source spans by extracted facts, and builds a standing user profile and task state between requests. A weighted average of an initial forecast and later observations helps select retrieved memories under a token budget. Unserved facts receive no outcome feedback.
+
+**What changes:** Memory. **Persistence:** across-tasks. **Learning signal:** Conversation history supplies facts and source spans. Lexical cues such as confirmations or corrections, and task grades when available, update priorities for served memories.
+
+**Evaluation.** Across five benchmarks the authors compare six memory systems, raw-history retrieval and memory-free controls. Leto scores 60.5% on PrefEval versus 44.2% for Hindsight. Raw-history retrieval leads Leto by 2.79 points on LoCoMo and trails it by 6.80 on LongMemEvalS. Leto serves fewer retrieved tokens on both.
+
+**Boundary.** The paired scores describe the whole system. Co-served memories share the outcome, and the independent contribution of utility updates, profile replay or the source index remains unresolved. Baselines serve different token counts. Retrieved-token totals omit indexing and profile generation. Even a retained message can be unreachable through the index.
+
+**Code / data.** The review covered the 13-page v1 and Appendices A–C. The linked software references identify comparison systems. A paper-specific implementation, license and runnable configuration could not be verified.
+
+**Topics:** memory, evaluation. **Reviewed:** full-text · 2026-11-26.
+
+[Source 1](https://arxiv.org/abs/2611.33005) · [Source 2](https://arxiv.org/pdf/2611.33005v1) · [Source 3](https://arxiv.org/html/2611.33005v1)
+
+<a id="detection-gap"></a>
+
+## Blind to What They Can Fix: A Detection Gap in Self-Improving Agents
+
+**2026-11-22 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.29807)
+
+**Mechanism.** A fixed agent revises a program, its runtime checks and its notes. The program then acts on its own. Researchers freeze it, change the environment and compare alarms on the same failures. A forced call tests whether the original author can repair a failure its checks missed.
+
+**What changes:** Agent code. **Persistence:** across-tasks. **Learning signal:** The authoring agent sees scores, actions, errors and traces while revising a task program. Task performance guides retention. Detection reliability is measured after the environment changes.
+
+**Evaluation.** Across five domains, standard Codex checks missed 52% of failures in Seaquest, 55% in Kangaroo, 64% in simulated autoscaling and 89% in the initial AppWorld study. They caught all eight Craftax failures from programs with checks. In a separate Seaquest repair set, Codex repaired 69 of 77 failures that raised no alarm, including programs without checks.
+
+**Boundary.** Only AppWorld’s pooled joint 95% interval places the miss rate entirely above half. Its failure criterion followed two low-yield definitions and was then tested on fresh programs. Reference monitors receive extra normal runs and can alarm on harmless changes. The ten-day deployment analysis replays recorded repairs with at most one call.
+
+**Code / data.** The paper describes registration files, frozen results and plotting scripts. A public implementation and its license or setup could not be verified. The review covered v1 and Appendix A.
+
+**Topics:** evaluation, continual-learning. **Reviewed:** full-text · 2026-11-26.
+
+[Source 1](https://arxiv.org/abs/2611.29807) · [Source 2](https://arxiv.org/pdf/2611.29807v1) · [Source 3](https://arxiv.org/html/2611.29807v1)
+
 <a id="embodied-harness"></a>
 
 ## Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation
@@ -295,7 +341,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 **What changes:** Model weights. **Persistence:** across-tasks. **Learning signal:** Supervised next-action labels from successful historical ALFWorld interactions; LESS-style scoring also uses gradients from 40 public placement/cleaning actions. No new teacher calls or evaluation-query answers enter the selection study.
 
-**Evaluation.** Authors train 288 Qwen3-4B students across nine selectors, two fixed pools, eight initializations and two sampling seeds on 128 development groups. Global gradient selection beats equally unconstrained random by 8.25/5.96 points. Reusing 97 checkpoints on 128 reserved groups gives equal-source gains of 7.03 points over random and 5.03 over high NLL.
+**Evaluation.** The authors train 288 Qwen3-4B students from two historical ALFWorld experience pools and evaluate them on 128 development groups. Global gradient selection gains 8.25 and 5.96 percentage points over global random selection in the two pools. The reserved panel evaluates 96 existing trained checkpoints and the untrained base on 128 disjoint groups. With equal weight per pool, the reported gains are 7.03 points over random and 5.03 over high NLL.
 
 **Boundary.** Only one offline learning stage, one backbone and ALFWorld are tested; retention and repeated adaptation remain untested. Panels are train-derived, not official seen/unseen tests. Fixed presentations do not match tokens or compute; length controls fail. Public-support supervision is part of the gradient selector. Reserved evaluation reuses students, with descriptive crossed-seed results and no population intervals. No paper-specific public artifact was verified; source review is not reproduction.
 
@@ -303,7 +349,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 **Topics:** model-training, continual-learning, evaluation. **Reviewed:** full-text · 2026-11-25.
 
-[Source 1](https://arxiv.org/abs/2611.27159) · [Source 2](https://arxiv.org/pdf/2611.27159v1)
+[Source 1](https://arxiv.org/abs/2611.27159) · [Source 2](https://arxiv.org/pdf/2611.27159v1) · [Source 3](https://arxiv.org/pdf/2611.27159v2)
 
 <a id="skillplumber"></a>
 
@@ -3759,7 +3805,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 ## Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning
 
-**2025-08-27 · preprint · core · paper**
+**2025-08-27 · peer-reviewed · ACL 2026 (long paper) · core · paper**
 
 [Primary source](https://arxiv.org/abs/2508.19828)
 
@@ -3775,7 +3821,7 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 **Topics:** memory, model-training. **Reviewed:** full-text · 2026-11-09.
 
-[Source 1](https://arxiv.org/abs/2508.19828) · [Source 2](https://arxiv.org/pdf/2508.19828v5)
+[Source 1](https://arxiv.org/abs/2508.19828) · [Source 2](https://arxiv.org/pdf/2508.19828v5) · [Source 3](https://aclanthology.org/2026.acl-long.583/) · [Source 4](https://aclanthology.org/2026.acl-long.583.pdf)
 
 <a id="ell-stulife"></a>
 

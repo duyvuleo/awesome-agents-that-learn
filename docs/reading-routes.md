@@ -44,25 +44,27 @@ How can experience become useful knowledge, a procedure, or a reusable tool?
 
 5. **[Top-$k$ Retrieval Leaves Memory Value Undetermined](papers.md#topk-memory-value)** — Check what retrieval logs identify under a declared outcome model before interpreting memory utility scores as causal contributions.
 
-6. **[RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't](papers.md#rag-in-a-trenchcoat)** — Separate competitive recall from applying stored rules; inspect stateless controls, partial-constraint denominators and multi-turn protocol consistency.
+6. **[Leto: Utility-Centric Agent Memory](papers.md#leto)** — Compare an item’s feedback-based priority with the observed benefit of serving memory. Track which earlier messages can reach the agent through the fact index.
 
-7. **[Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents](papers.md#grepmem)** — Compare lossless episode logs plus offline policy training with structured memory; distinguish lexical access from successful recall, and count checkpoint selection and retrieval costs.
+7. **[RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't](papers.md#rag-in-a-trenchcoat)** — Separate competitive recall from applying stored rules; inspect stateless controls, partial-constraint denominators and multi-turn protocol consistency.
 
-8. **[Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](papers.md#omce)** — Compare memory-utility scoring with learning when to retrieve, distill, or skip experience.
+8. **[Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents](papers.md#grepmem)** — Compare lossless episode logs plus offline policy training with structured memory; distinguish lexical access from successful recall, and count checkpoint selection and retrieval costs.
 
-9. **[Route to Remember: Adaptive Memory Selection for LLM Agents](papers.md#route-to-remember)** — Compare external experience routing with learned factual adapters; inspect forgetting, fallback retrieval, and write cost.
+9. **[Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents](papers.md#omce)** — Compare memory-utility scoring with learning when to retrieve, distill, or skip experience.
 
-10. **[Instant Weight-Space Consolidation for Long-Term Memory in LLMs](papers.md#clam)** — Contrast trained gradient-free consolidation with online adapter fitting; account for the growing episodic store and mixed shared-buffer gains.
+10. **[Route to Remember: Adaptive Memory Selection for LLM Agents](papers.md#route-to-remember)** — Compare external experience routing with learned factual adapters; inspect forgetting, fallback retrieval, and write cost.
 
-11. **[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl)** — Contrast external skills with parameter learning and teacher-derived supervision.
+11. **[Instant Weight-Space Consolidation for Long-Term Memory in LLMs](papers.md#clam)** — Contrast trained gradient-free consolidation with online adapter fitting; account for the growing episodic store and mixed shared-buffer gains.
 
-12. **[SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](papers.md#skillflow)** — Examine whether skill use produces measurable benefit.
+12. **[SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](papers.md#skillrl)** — Contrast external skills with parameter learning and teacher-derived supervision.
 
-13. **[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](papers.md#skill-plus-plus)** — Separate retaining a skill from keeping it selectable as the library grows; compare routing with task success.
+13. **[SkillFlow:Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents](papers.md#skillflow)** — Examine whether skill use produces measurable benefit.
 
-14. **[Coalition-Aware Skill Reliability for Self-Evolving Agents](papers.md#coalition-skill-reliability)** — Test whether a useful skill stays useful in another bank or deployment domain.
+14. **[Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](papers.md#skill-plus-plus)** — Separate retaining a skill from keeping it selectable as the library grows; compare routing with task success.
 
-15. **[Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation](papers.md#embodied-harness)** — Trace robot feedback into reusable memory and operational guidance; require refinement/test separation, reset rules and matched retries before attributing held-out transfer or a better improver.
+15. **[Coalition-Aware Skill Reliability for Self-Evolving Agents](papers.md#coalition-skill-reliability)** — Test whether a useful skill stays useful in another bank or deployment domain.
+
+16. **[Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation](papers.md#embodied-harness)** — Trace robot feedback into reusable memory and operational guidance; require refinement/test separation, reset rules and matched retries before attributing held-out transfer or a better improver.
 
 
 **Study exercise:** For three methods, write the stored artifact, admission rule, retrieval rule, revision rule, and evidence that reuse helps.
@@ -209,25 +211,27 @@ What experiment would convince you that an agent learned something useful?
 
 5. **[Large Language Model Agents Are Not Always Faithful Self-Evolvers](papers.md#experience-faithfulness)** — Distinguish a stored lesson from causal use of that lesson.
 
-6. **[Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](papers.md#artifact-to-capability)** — Distinguish changed behavior, legal actions, useful decisions, and preservation when artifacts are combined.
+6. **[Blind to What They Can Fix: A Detection Gap in Self-Improving Agents](papers.md#detection-gap)** — Score missed alarms and successful repairs on the same failed programs. Check how often each monitor also calls for repair after a harmless change.
 
-7. **[AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](papers.md#agentstream)** — Compare performance under different task-stream compositions.
+7. **[Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment](papers.md#artifact-to-capability)** — Distinguish changed behavior, legal actions, useful decisions, and preservation when artifacts are combined.
 
-8. **[The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](papers.md#rsi-tax)** — Count acquisition and validation overhead alongside serving cost, and distinguish later artifact use from causal benefit.
+8. **[AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](papers.md#agentstream)** — Compare performance under different task-stream compositions.
 
-9. **[GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](papers.md#gdpevo)** — Inspect training/test rule recombination and task-selection effects.
+9. **[The RSI Tax: When Recursive Self-Improvement Is Not Worth the Cost](papers.md#rsi-tax)** — Count acquisition and validation overhead alongside serving cost, and distinguish later artifact use from causal benefit.
 
-10. **[Phantom Gains: Auditing Self-Improvement Against a Measured Null](papers.md#phantom-gains)** — Measure a frozen null before interpreting per-problem changes.
+10. **[GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](papers.md#gdpevo)** — Inspect training/test rule recombination and task-selection effects.
 
-11. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Include integrity of the learning signal and persistence of bad updates.
+11. **[Phantom Gains: Auditing Self-Improvement Against a Measured Null](papers.md#phantom-gains)** — Measure a frozen null before interpreting per-problem changes.
 
-12. **[Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates](papers.md#safe-personal-rsi)** — Compare empirical update gates with static authority rules; distinguish transferred prompt repairs and known-family replays from durable safety guarantees.
+12. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Include integrity of the learning signal and persistence of bad updates.
 
-13. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
+13. **[Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates](papers.md#safe-personal-rsi)** — Compare empirical update gates with static authority rules; distinguish transferred prompt repairs and known-family replays from durable safety guarantees.
 
-14. **[The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis)** — Separate proposer headroom from selection reliability and compare search variance with repeated evaluation noise; retain posterior and grader-repair assumptions.
+14. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
 
-15. **[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)** — Separate average success, covered tasks, regressions, component interactions and search replication.
+15. **[The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis)** — Separate proposer headroom from selection reliability and compare search variance with repeated evaluation noise; retain posterior and grader-repair assumptions.
+
+16. **[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)** — Separate average success, covered tasks, regressions, component interactions and search replication.
 
 
 **Study exercise:** Draft a matched frozen baseline, a held-out family split, a budget ledger, and one intervention that could falsify your preferred mechanism.

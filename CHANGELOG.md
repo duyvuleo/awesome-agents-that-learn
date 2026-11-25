@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-26 — Failure detection and memory utility
+
+- Added Detection Gap and Leto, bringing the collection to 225 research works and 26 systems.
+- Connected the studies to the evaluation and memory reading routes, with controls for harmless changes, repair thresholds and shared memory feedback.
+- Clarified the training and evaluation groups in Acting to Learning v2. Verified Memory-R1’s ACL 2026 long-paper publication from the proceedings.
+
 ## 2026-11-25 — Co-development, experience selection and robotic guidance
 
 - Added complete-source appraisals of CoEvoBench, Acting to Learning and Embodied-Harness; total 223 works, including 20 benchmarks, and 26 systems.

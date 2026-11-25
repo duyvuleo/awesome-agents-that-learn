@@ -57,7 +57,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="memory"></a>
 
-## Memory and experience (102)
+## Memory and experience (103)
+- 2026-11-24 — [Leto: Utility-Centric Agent Memory](papers.md#leto) · core · preprint
 - 2026-11-20 — [Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation](papers.md#embodied-harness) · core · preprint
 - 2026-11-19 — [Evolve Where It Matters: Coverage-Guided Self-Evolution of Agent Skills](papers.md#skillplumber) · core · preprint
 - 2026-11-18 — [Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents](papers.md#grepmem) · core · preprint
@@ -144,7 +145,7 @@ A work may appear in several topics; counts here are not additive.
 - 2025-09-30 — [Mem-α: Learning Memory Construction via Reinforcement Learning](papers.md#mem-alpha) · core · preprint
 - 2025-09-29 — [ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](papers.md#reasoningbank) · core · peer-reviewed
 - 2025-09-29 — [A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory](papers.md#a-memguard) · core · peer-reviewed
-- 2025-08-27 — [Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](papers.md#memory-r1) · core · preprint
+- 2025-08-27 — [Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](papers.md#memory-r1) · core · peer-reviewed
 - 2025-08-26 — [A Benchmark for Self-Evolving Agents via Experience-Driven Lifelong Learning](papers.md#ell-stulife) · core · peer-reviewed
 - 2025-08-22 — [Memento: Fine-tuning LLM Agents without Fine-tuning LLMs](papers.md#memento) · core · preprint
 - 2025-08-08 — [Memp: Exploring Agent Procedural Memory](papers.md#memp) · core · peer-reviewed
@@ -450,7 +451,7 @@ A work may appear in several topics; counts here are not additive.
 - 2025-10-17 — [MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs](papers.md#marshal) · core · peer-reviewed
 - 2025-09-30 — [Mem-α: Learning Memory Construction via Reinforcement Learning](papers.md#mem-alpha) · core · preprint
 - 2025-09-29 — [Socratic-Zero : Bootstrapping Reasoning via Data-Free Agent Co-evolution](papers.md#socratic-zero) · core · preprint
-- 2025-08-27 — [Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](papers.md#memory-r1) · core · preprint
+- 2025-08-27 — [Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](papers.md#memory-r1) · core · peer-reviewed
 - 2025-08-08 — [Temporal Self-Rewarding Language Models: Decoupling Chosen-Rejected via Past-Future](papers.md#temporal-self-rewarding) · adjacent · peer-reviewed
 - 2025-08-07 — [R-Zero: Self-Evolving Reasoning LLM from Zero Data](papers.md#r-zero) · core · peer-reviewed
 - 2025-06-30 — [SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](papers.md#spiral) · core · peer-reviewed
@@ -505,7 +506,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="continual-learning"></a>
 
-## Continual and lifelong learning (60)
+## Continual and lifelong learning (61)
+- 2026-11-22 — [Blind to What They Can Fix: A Detection Gap in Self-Improving Agents](papers.md#detection-gap) · core · preprint
 - 2026-11-20 — [From Acting to Learning: Experience Selection toward Continually Learning Agents](papers.md#acting-to-learning) · core · preprint
 - 2026-11-17 — [When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments](papers.md#skill-state-maintenance) · core · preprint
 - 2026-11-16 — [Experience Rot: Experienced Agents Fail Where Novices Succeed](papers.md#experience-rot) · core · preprint
@@ -605,7 +607,9 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="evaluation"></a>
 
-## Evaluation and negative results (136)
+## Evaluation and negative results (138)
+- 2026-11-24 — [Leto: Utility-Centric Agent Memory](papers.md#leto) · core · preprint
+- 2026-11-22 — [Blind to What They Can Fix: A Detection Gap in Self-Improving Agents](papers.md#detection-gap) · core · preprint
 - 2026-11-20 — [CoEvoBench: Can LLMs Drive Recursive Co-Evolution of Agentic Systems?](papers.md#coevobench) · core · preprint
 - 2026-11-20 — [From Acting to Learning: Experience Selection toward Continually Learning Agents](papers.md#acting-to-learning) · core · preprint
 - 2026-11-19 — [Evolve Where It Matters: Coverage-Guided Self-Evolution of Agent Skills](papers.md#skillplumber) · core · preprint

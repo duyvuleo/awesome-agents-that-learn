@@ -4,7 +4,7 @@
     "subtitle": "A research guide to self-learning, self-improving, and self-evolving AI agents.",
     "repository": "https://github.com/duyvuleo/awesome-agents-that-learn",
     "site": "https://duyvuleo.github.io/awesome-agents-that-learn/",
-    "updated": "2026-11-25",
+    "updated": "2026-11-26",
     "schema_version": 2,
     "topics": {
       "foundations": "Foundations and boundaries",
@@ -43,6 +43,72 @@
     }
   },
   "papers": [
+    {
+      "id": "leto",
+      "title": "Leto: Utility-Centric Agent Memory",
+      "short_name": "Leto",
+      "date": "2026-11-24",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.33005",
+      "sources": [
+        "https://arxiv.org/abs/2611.33005",
+        "https://arxiv.org/pdf/2611.33005v1",
+        "https://arxiv.org/html/2611.33005v1"
+      ],
+      "code_url": null,
+      "code_note": "The review covered the 13-page v1 and Appendices A–C. The linked software references identify comparison systems. A paper-specific implementation, license and runnable configuration could not be verified.",
+      "topics": [
+        "memory",
+        "evaluation"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "memory"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Conversation history supplies facts and source spans. Lexical cues such as confirmations or corrections, and task grades when available, update priorities for served memories.",
+      "mechanism": "Leto retains conversations, indexes their source spans by extracted facts, and builds a standing user profile and task state between requests. A weighted average of an initial forecast and later observations helps select retrieved memories under a token budget. Unserved facts receive no outcome feedback.",
+      "evaluation": "Across five benchmarks the authors compare six memory systems, raw-history retrieval and memory-free controls. Leto scores 60.5% on PrefEval versus 44.2% for Hindsight. Raw-history retrieval leads Leto by 2.79 points on LoCoMo and trails it by 6.80 on LongMemEvalS. Leto serves fewer retrieved tokens on both.",
+      "limitations": "The paired scores describe the whole system. Co-served memories share the outcome, and the independent contribution of utility updates, profile replay or the source index remains unresolved. Baselines serve different token counts. Retrieved-token totals omit indexing and profile generation. Even a retained message can be unreachable through the index.",
+      "review_depth": "full-text",
+      "checked": "2026-11-26"
+    },
+    {
+      "id": "detection-gap",
+      "title": "Blind to What They Can Fix: A Detection Gap in Self-Improving Agents",
+      "short_name": "Detection Gap",
+      "date": "2026-11-22",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.29807",
+      "sources": [
+        "https://arxiv.org/abs/2611.29807",
+        "https://arxiv.org/pdf/2611.29807v1",
+        "https://arxiv.org/html/2611.29807v1"
+      ],
+      "code_url": null,
+      "code_note": "The paper describes registration files, frozen results and plotting scripts. A public implementation and its license or setup could not be verified. The review covered v1 and Appendix A.",
+      "topics": [
+        "evaluation",
+        "continual-learning"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "agent-code"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "The authoring agent sees scores, actions, errors and traces while revising a task program. Task performance guides retention. Detection reliability is measured after the environment changes.",
+      "mechanism": "A fixed agent revises a program, its runtime checks and its notes. The program then acts on its own. Researchers freeze it, change the environment and compare alarms on the same failures. A forced call tests whether the original author can repair a failure its checks missed.",
+      "evaluation": "Across five domains, standard Codex checks missed 52% of failures in Seaquest, 55% in Kangaroo, 64% in simulated autoscaling and 89% in the initial AppWorld study. They caught all eight Craftax failures from programs with checks. In a separate Seaquest repair set, Codex repaired 69 of 77 failures that raised no alarm, including programs without checks.",
+      "limitations": "Only AppWorld’s pooled joint 95% interval places the miss rate entirely above half. Its failure criterion followed two low-yield definitions and was then tested on fresh programs. Reference monitors receive extra normal runs and can alarm on harmless changes. The ten-day deployment analysis replays recorded repairs with at most one call.",
+      "review_depth": "full-text",
+      "checked": "2026-11-26"
+    },
     {
       "id": "embodied-harness",
       "title": "Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation",
@@ -135,7 +201,8 @@
       "url": "https://arxiv.org/abs/2611.27159",
       "sources": [
         "https://arxiv.org/abs/2611.27159",
-        "https://arxiv.org/pdf/2611.27159v1"
+        "https://arxiv.org/pdf/2611.27159v1",
+        "https://arxiv.org/pdf/2611.27159v2"
       ],
       "code_url": null,
       "code_note": "Complete 21-page v1, sections 1-8, references and Appendices A-L read; all 14 figures, nine tables, fourteen equations and two algorithms visually checked. The paper describes versioned records but links no paper-specific repository; a bounded title/identifier search established none. Software license and install requirements remain unverified. No research code, models or environments executed.",
@@ -151,7 +218,7 @@
       "persistence": "across-tasks",
       "learning_signal": "Supervised next-action labels from successful historical ALFWorld interactions; LESS-style scoring also uses gradients from 40 public placement/cleaning actions. No new teacher calls or evaluation-query answers enter the selection study.",
       "mechanism": "An external offline selector ranks exact distinct action-message records using base-model NLL or optimizer-aware LoRA-gradient relevance to public task families. Global rules select 256 contents for three replay passes; matched rules preserve task/action quotas. Fresh LoRA students restart from the same base. Learned adapter weights persist across evaluation tasks; the executor and selection procedure stay fixed.",
-      "evaluation": "Authors train 288 Qwen3-4B students across nine selectors, two fixed pools, eight initializations and two sampling seeds on 128 development groups. Global gradient selection beats equally unconstrained random by 8.25/5.96 points. Reusing 97 checkpoints on 128 reserved groups gives equal-source gains of 7.03 points over random and 5.03 over high NLL.",
+      "evaluation": "The authors train 288 Qwen3-4B students from two historical ALFWorld experience pools and evaluate them on 128 development groups. Global gradient selection gains 8.25 and 5.96 percentage points over global random selection in the two pools. The reserved panel evaluates 96 existing trained checkpoints and the untrained base on 128 disjoint groups. With equal weight per pool, the reported gains are 7.03 points over random and 5.03 over high NLL.",
       "limitations": "Only one offline learning stage, one backbone and ALFWorld are tested; retention and repeated adaptation remain untested. Panels are train-derived, not official seen/unseen tests. Fixed presentations do not match tokens or compute; length controls fail. Public-support supervision is part of the gradient selector. Reserved evaluation reuses students, with descriptive crossed-seed results and no population intervals. No paper-specific public artifact was verified; source review is not reproduction.",
       "review_depth": "full-text",
       "checked": "2026-11-25"
@@ -5982,12 +6049,14 @@
       "date": "2025-08-27",
       "year": 2025,
       "kind": "paper",
-      "status": "preprint",
-      "venue": "",
+      "status": "peer-reviewed",
+      "venue": "ACL 2026 (long paper)",
       "url": "https://arxiv.org/abs/2508.19828",
       "sources": [
         "https://arxiv.org/abs/2508.19828",
-        "https://arxiv.org/pdf/2508.19828v5"
+        "https://arxiv.org/pdf/2508.19828v5",
+        "https://aclanthology.org/2026.acl-long.583/",
+        "https://aclanthology.org/2026.acl-long.583.pdf"
       ],
       "code_url": null,
       "code_note": "Code availability not verified in this review.",
@@ -9497,6 +9566,10 @@
           "why": "Check what retrieval logs identify under a declared outcome model before interpreting memory utility scores as causal contributions."
         },
         {
+          "paper": "leto",
+          "why": "Compare an item’s feedback-based priority with the observed benefit of serving memory. Track which earlier messages can reach the agent through the fact index."
+        },
+        {
           "paper": "rag-in-a-trenchcoat",
           "why": "Separate competitive recall from applying stored rules; inspect stateless controls, partial-constraint denominators and multi-turn protocol consistency."
         },
@@ -9775,6 +9848,10 @@
         {
           "paper": "experience-faithfulness",
           "why": "Distinguish a stored lesson from causal use of that lesson."
+        },
+        {
+          "paper": "detection-gap",
+          "why": "Score missed alarms and successful repairs on the same failed programs. Check how often each monitor also calls for repair after a harmless change."
         },
         {
           "paper": "artifact-to-capability",

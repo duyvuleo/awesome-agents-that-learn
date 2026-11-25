@@ -57,6 +57,10 @@
         "why": "Check what retrieval logs identify under a declared outcome model before interpreting memory utility scores as causal contributions."
       },
       {
+        "paper": "leto",
+        "why": "Compare an item’s feedback-based priority with the observed benefit of serving memory. Track which earlier messages can reach the agent through the fact index."
+      },
+      {
         "paper": "rag-in-a-trenchcoat",
         "why": "Separate competitive recall from applying stored rules; inspect stateless controls, partial-constraint denominators and multi-turn protocol consistency."
       },
@@ -335,6 +339,10 @@
       {
         "paper": "experience-faithfulness",
         "why": "Distinguish a stored lesson from causal use of that lesson."
+      },
+      {
+        "paper": "detection-gap",
+        "why": "Score missed alarms and successful repairs on the same failed programs. Check how often each monitor also calls for repair after a harmless change."
       },
       {
         "paper": "artifact-to-capability",

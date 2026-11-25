@@ -3,6 +3,8 @@
 # Papers by year
 [Overview](../README.md) · [Full annotations](papers.md)
 ## 2026
+- 2026-11-24 — [Leto: Utility-Centric Agent Memory](papers.md#leto)
+- 2026-11-22 — [Blind to What They Can Fix: A Detection Gap in Self-Improving Agents](papers.md#detection-gap)
 - 2026-11-20 — [Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation](papers.md#embodied-harness)
 - 2026-11-20 — [CoEvoBench: Can LLMs Drive Recursive Co-Evolution of Agentic Systems?](papers.md#coevobench)
 - 2026-11-20 — [From Acting to Learning: Experience Selection toward Continually Learning Agents](papers.md#acting-to-learning)

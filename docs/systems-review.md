@@ -91,3 +91,7 @@ Inspected GrepMem's actual MIT license, third-party notices, README, method/setu
 ## 2026-11-25 — Benchmark release and robotic project boundaries
 
 Inspected CoEvoBench's actual MIT license, retained third-party notices, Python manifest, README, protocol and operations documentation at `d39a924c8985806933c94777d8e969d6e756262c`. Python 3.11+, uv, separate Docker/NVIDIA serving/training environments, benchmark engines/data and model weights are required beyond its core package. Current documentation explicitly records unfinished final replay/comparison, metric/preset mismatches, operator-enforced teacher budget and incomplete checkpoint hashing. These are public release limits, not verified historical execution failures. Embodied-Harness's project supplies a distinct paper PDF but no linked implementation/license/setup; Acting to Learning establishes none. RSIBench-Infra still labels code as coming soon. No new system record was inferred, and all twenty-six existing inspection dates and not-run statuses remain unchanged. No software, model, simulator or robot was installed or executed.
+
+## 2026-11-26 — Artifact availability
+
+The Detection Gap paper describes frozen results and registration files. Leto names repositories for comparison systems. Neither source established a public, paper-specific implementation with a verifiable license and setup. Both entries therefore link the reviewed papers. The software catalog counts 26 projects.
