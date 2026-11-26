@@ -164,7 +164,9 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="skills"></a>
 
-## Skill acquisition and reuse (60)
+## Skill acquisition and reuse (62)
+- 2026-11-25 — [What Does Skill Lift Actually Measure? A Source-Code-Level Audit and Noise-Aware Reanalysis of SkillsBench](papers.md#skill-lift-audit) · core · preprint
+- 2026-11-24 — [VISE: Verifier-Independent Skill Self-Evolution with Feedback from Tool Implementations](papers.md#vise) · core · preprint
 - 2026-11-19 — [Evolve Where It Matters: Coverage-Guided Self-Evolution of Agent Skills](papers.md#skillplumber) · core · preprint
 - 2026-11-19 — [How Feedback-Free Self-Evolution Reshapes Agent Skills: A Systematic Study](papers.md#skilldiff) · core · preprint
 - 2026-11-17 — [When Agent Skills Go Stale: Runtime Behavior and Selective Maintenance in Evolving Environments](papers.md#skill-state-maintenance) · core · preprint
@@ -228,7 +230,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="tools"></a>
 
-## Tool creation and learning (23)
+## Tool creation and learning (24)
+- 2026-11-24 — [VISE: Verifier-Independent Skill Self-Evolution with Feedback from Tool Implementations](papers.md#vise) · core · preprint
 - 2026-11-03 — [Stabilizing On-Policy Targeted Guidance in Agentic Reinforcement Learning](papers.md#targeted-guidance) · core · preprint
 - 2026-10-30 — [Learning to Live: A Step Toward Lifelong Embodied Intelligence](papers.md#life-embodied) · core · preprint
 - 2026-10-26 — [Back to Basics: A Skill-Centric Approach to Generalist Web Agents](papers.md#miniweb) · core · preprint
@@ -571,7 +574,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="recursive-improvement"></a>
 
-## Improving the improver (32)
+## Improving the improver (33)
+- 2026-11-24 — [RecurSciBench: Benchmarking Recursive Self-Improvement in Data-Driven Scientific Research](papers.md#recurscibench) · core · preprint
 - 2026-11-20 — [CoEvoBench: Can LLMs Drive Recursive Co-Evolution of Agentic Systems?](papers.md#coevobench) · core · preprint
 - 2026-11-18 — [RSIBench-Infra: Can Agents Optimize Training and Inference Infrastructure at Production Scale?](papers.md#rsibench-infra) · core · preprint
 - 2026-11-13 — [Self-Improvement Memory Enables Continual Recursive Self-Improvement](papers.md#self-improvement-memory) · core · preprint
@@ -607,7 +611,10 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="evaluation"></a>
 
-## Evaluation and negative results (138)
+## Evaluation and negative results (141)
+- 2026-11-25 — [What Does Skill Lift Actually Measure? A Source-Code-Level Audit and Noise-Aware Reanalysis of SkillsBench](papers.md#skill-lift-audit) · core · preprint
+- 2026-11-24 — [VISE: Verifier-Independent Skill Self-Evolution with Feedback from Tool Implementations](papers.md#vise) · core · preprint
+- 2026-11-24 — [RecurSciBench: Benchmarking Recursive Self-Improvement in Data-Driven Scientific Research](papers.md#recurscibench) · core · preprint
 - 2026-11-24 — [Leto: Utility-Centric Agent Memory](papers.md#leto) · core · preprint
 - 2026-11-22 — [Blind to What They Can Fix: A Detection Gap in Self-Improving Agents](papers.md#detection-gap) · core · preprint
 - 2026-11-20 — [CoEvoBench: Can LLMs Drive Recursive Co-Evolution of Agentic Systems?](papers.md#coevobench) · core · preprint
@@ -775,7 +782,8 @@ A work may appear in several topics; counts here are not additive.
 
 <a id="applications"></a>
 
-## Applied learning agents (59)
+## Applied learning agents (60)
+- 2026-11-24 — [RecurSciBench: Benchmarking Recursive Self-Improvement in Data-Driven Scientific Research](papers.md#recurscibench) · core · preprint
 - 2026-11-20 — [Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation](papers.md#embodied-harness) · core · preprint
 - 2026-11-18 — [Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates](papers.md#safe-personal-rsi) · core · preprint
 - 2026-11-18 — [RSIBench-Infra: Can Agents Optimize Training and Inference Infrastructure at Production Scale?](papers.md#rsibench-infra) · core · preprint

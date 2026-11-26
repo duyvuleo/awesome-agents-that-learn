@@ -4,7 +4,7 @@
     "subtitle": "A research guide to self-learning, self-improving, and self-evolving AI agents.",
     "repository": "https://github.com/duyvuleo/awesome-agents-that-learn",
     "site": "https://duyvuleo.github.io/awesome-agents-that-learn/",
-    "updated": "2026-11-26",
+    "updated": "2026-11-27",
     "schema_version": 2,
     "topics": {
       "foundations": "Foundations and boundaries",
@@ -43,6 +43,107 @@
     }
   },
   "papers": [
+    {
+      "id": "skill-lift-audit",
+      "title": "What Does Skill Lift Actually Measure? A Source-Code-Level Audit and Noise-Aware Reanalysis of SkillsBench",
+      "short_name": "Skill Lift Audit",
+      "date": "2026-11-25",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.33943",
+      "sources": [
+        "https://arxiv.org/abs/2611.33943",
+        "https://arxiv.org/pdf/2611.33943v1",
+        "https://github.com/rrrrr4788/skillsbench-lift-reanalysis"
+      ],
+      "code_url": "https://github.com/rrrrr4788/skillsbench-lift-reanalysis",
+      "code_note": "The paper links its MIT-licensed reanalysis. The README specifies Python 3.10+ and five scientific Python dependencies. Controlled grader checks also require upstream task files. Inspected release documentation at eef0fae. Raw upstream trajectories and original review exports are external.",
+      "topics": [
+        "evaluation",
+        "skills"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "none"
+      ],
+      "persistence": "not-applicable",
+      "learning_signal": "The audit uses existing trials with and without skills, source inspection of task graders, and held-out trials for estimating the value of a skill-selection decision.",
+      "mechanism": "The authors pair trials by agent configuration and task, shuffle condition labels within cells and compare replay estimates with estimates using separate decision and scoring trials. The study measures how sparse outcomes affect conclusions about individual skills and policies for loading them.",
+      "evaluation": "Across 7,554 trials and 1,421 paired cells, 26 of 83 tasks showed a positive effect after multiple-testing correction. None showed a significant decrease. One baseline-cutoff policy gained 2.92 percentage points over always loading skills on same-trial replay. Its held-out gain was 0.12 points (95% interval −0.67 to +0.93).",
+      "limitations": "At most three trials per condition limit power. Cells selected for apparent harm still averaged −9.9 points on held-out trials. Only 1,202 cells qualified for trial splitting, and earlier exploration informed the policy choices. The audit estimates policy value on two historical exports. Prospective agent behavior under revised instructions remains untested.",
+      "review_depth": "full-text",
+      "checked": "2026-11-27"
+    },
+    {
+      "id": "vise",
+      "title": "VISE: Verifier-Independent Skill Self-Evolution with Feedback from Tool Implementations",
+      "short_name": "VISE",
+      "date": "2026-11-24",
+      "year": 2026,
+      "kind": "paper",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.32480",
+      "sources": [
+        "https://arxiv.org/abs/2611.32480",
+        "https://arxiv.org/pdf/2611.32480v1"
+      ],
+      "code_url": null,
+      "code_note": "The review covered the 23-page v1 and Appendices A–G. Public references identify comparison tools. A paper-specific implementation, license and setup could not be verified.",
+      "topics": [
+        "skills",
+        "tools",
+        "evaluation"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "skills"
+      ],
+      "persistence": "both",
+      "learning_signal": "The user request, an execution trace without a task grade, and source lines from available helper scripts supply feedback on how the skill uses its tools.",
+      "mechanism": "VISE extracts tool capabilities, calling conditions and outputs from implementation code. It uses that evidence to edit specific instructions in a Markdown skill. The revised skill is frozen for evaluation on the original task and related variants.",
+      "evaluation": "On a 60-task TraceEvo subset, revision raised mean success across three executions from 49.45% to 57.78%. Both conditions solved the same number of tasks at least once (46 of 60). Across four starting methods, the authors also evaluated transfer to 233 variants derived from 81 parent tasks.",
+      "limitations": "The main comparison adds an extra refinement stage to previously evolved skills. VISE has complete scores on 177 or 179 of 183 tasks, depending on the method. Execution repeats measure the reliability of a finished skill. The study leaves open how much of the gain survives equal refinement budgets or transfers to unrelated task families.",
+      "review_depth": "full-text",
+      "checked": "2026-11-27"
+    },
+    {
+      "id": "recurscibench",
+      "title": "RecurSciBench: Benchmarking Recursive Self-Improvement in Data-Driven Scientific Research",
+      "short_name": "RecurSciBench",
+      "date": "2026-11-24",
+      "year": 2026,
+      "kind": "benchmark",
+      "status": "preprint",
+      "venue": "",
+      "url": "https://arxiv.org/abs/2611.32508",
+      "sources": [
+        "https://arxiv.org/abs/2611.32508",
+        "https://arxiv.org/pdf/2611.32508v1"
+      ],
+      "code_url": null,
+      "code_note": "Section 6 identifies a benchmark platform. Its public web entry returned an application shell. A downloadable implementation, license and runnable setup for the reviewed report could not be verified.",
+      "topics": [
+        "evaluation",
+        "recursive-improvement",
+        "applications"
+      ],
+      "scope": "core",
+      "update_targets": [
+        "memory",
+        "skills",
+        "agent-code"
+      ],
+      "persistence": "across-tasks",
+      "learning_signal": "Source-task interactions, analysis traces and, for some systems, evaluator scores guide evolution. Systems differ in access to those scores and in how they select a final state.",
+      "mechanism": "Four scientific agents retain changes in research memory, skills or harness code. The benchmark freezes each evolved state and its initial counterpart, then starts a fresh copy for each held-out modeling task. Earlier test tasks cannot update later copies.",
+      "evaluation": "The authors construct 96 tasks in four scientific domains. Across four systems and six source settings, mean task-relative gains ranged from −3.34% to +2.62%. Half of the 24 evolved states declined overall. Every state regressed on at least eight tasks in the 20-task test panel.",
+      "limitations": "Two settings exclude a task with no valid run. Up to three executions per state estimate test variability conditional on the selected state. The study uses one backbone and different search budgets, feedback access and editable components. It leaves the contribution of each change and the variability across independent evolution runs unresolved.",
+      "review_depth": "full-text",
+      "checked": "2026-11-27"
+    },
     {
       "id": "leto",
       "title": "Leto: Utility-Centric Agent Memory",
@@ -9818,6 +9919,10 @@
           "why": "Evaluate a fixed researcher developing target weights and harnesses together; distinguish held-out system gains from improving the researcher, and audit scoring, trajectory selection and integrity penalties."
         },
         {
+          "paper": "recurscibench",
+          "why": "Compare each frozen scientific agent with its starting state. Count the held-out tasks it loses even when its average improves."
+        },
+        {
           "paper": "rsibench-infra",
           "why": "Separate quality-gated infrastructure speedups from demonstrated learning of an agent or improver; inspect workload, timing and analytical-ceiling boundaries."
         }
@@ -9872,6 +9977,10 @@
         {
           "paper": "phantom-gains",
           "why": "Measure a frozen null before interpreting per-problem changes."
+        },
+        {
+          "paper": "skill-lift-audit",
+          "why": "Ask whether a skill gate still improves outcomes when different trials choose and score its decision."
         },
         {
           "paper": "trusting-trust-agents",

@@ -3,6 +3,9 @@
 # Papers by year
 [Overview](../README.md) · [Full annotations](papers.md)
 ## 2026
+- 2026-11-25 — [What Does Skill Lift Actually Measure? A Source-Code-Level Audit and Noise-Aware Reanalysis of SkillsBench](papers.md#skill-lift-audit)
+- 2026-11-24 — [VISE: Verifier-Independent Skill Self-Evolution with Feedback from Tool Implementations](papers.md#vise)
+- 2026-11-24 — [RecurSciBench: Benchmarking Recursive Self-Improvement in Data-Driven Scientific Research](papers.md#recurscibench)
 - 2026-11-24 — [Leto: Utility-Centric Agent Memory](papers.md#leto)
 - 2026-11-22 — [Blind to What They Can Fix: A Detection Gap in Self-Improving Agents](papers.md#detection-gap)
 - 2026-11-20 — [Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation](papers.md#embodied-harness)

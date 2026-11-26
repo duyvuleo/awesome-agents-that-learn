@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-27 — Testing what a retained change improves
+
+- Added VISE, RecurSciBench and Skill Lift Audit, bringing the catalog to 228 works, including 21 benchmarks.
+- Extended the evaluation and recursive-improvement routes with examples of held-out skill selection and task-level regressions after scientific agent evolution.
+
 ## 2026-11-26 — Failure detection and memory utility
 
 - Added Detection Gap and Leto, bringing the collection to 225 research works and 26 systems.

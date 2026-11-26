@@ -190,7 +190,9 @@ Does a method change only the solver, or also the process that improves it?
 
 11. **[CoEvoBench: Can LLMs Drive Recursive Co-Evolution of Agentic Systems?](papers.md#coevobench)** — Evaluate a fixed researcher developing target weights and harnesses together; distinguish held-out system gains from improving the researcher, and audit scoring, trajectory selection and integrity penalties.
 
-12. **[RSIBench-Infra: Can Agents Optimize Training and Inference Infrastructure at Production Scale?](papers.md#rsibench-infra)** — Separate quality-gated infrastructure speedups from demonstrated learning of an agent or improver; inspect workload, timing and analytical-ceiling boundaries.
+12. **[RecurSciBench: Benchmarking Recursive Self-Improvement in Data-Driven Scientific Research](papers.md#recurscibench)** — Compare each frozen scientific agent with its starting state. Count the held-out tasks it loses even when its average improves.
+
+13. **[RSIBench-Infra: Can Agents Optimize Training and Inference Infrastructure at Production Scale?](papers.md#rsibench-infra)** — Separate quality-gated infrastructure speedups from demonstrated learning of an agent or improver; inspect workload, timing and analytical-ceiling boundaries.
 
 
 **Study exercise:** Draw the solver, proposer, selector, and evaluator separately. Highlight what can change and what evidence would demonstrate improvement of the improver.
@@ -223,15 +225,17 @@ What experiment would convince you that an agent learned something useful?
 
 11. **[Phantom Gains: Auditing Self-Improvement Against a Measured Null](papers.md#phantom-gains)** — Measure a frozen null before interpreting per-problem changes.
 
-12. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Include integrity of the learning signal and persistence of bad updates.
+12. **[What Does Skill Lift Actually Measure? A Source-Code-Level Audit and Noise-Aware Reanalysis of SkillsBench](papers.md#skill-lift-audit)** — Ask whether a skill gate still improves outcomes when different trials choose and score its decision.
 
-13. **[Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates](papers.md#safe-personal-rsi)** — Compare empirical update gates with static authority rules; distinguish transferred prompt repairs and known-family replays from durable safety guarantees.
+13. **[Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks](papers.md#trusting-trust-agents)** — Include integrity of the learning signal and persistence of bad updates.
 
-14. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
+14. **[Safe Personal RSI: Evaluating and Repairing Personal-Agent Updates](papers.md#safe-personal-rsi)** — Compare empirical update gates with static authority rules; distinguish transferred prompt repairs and known-family replays from durable safety guarantees.
 
-15. **[The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis)** — Separate proposer headroom from selection reliability and compare search variance with repeated evaluation noise; retain posterior and grader-repair assumptions.
+15. **[PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents](papers.md#pace)** — Inspect statistical acceptance under noisy feedback and the limits of a per-candidate guarantee.
 
-16. **[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)** — Separate average success, covered tasks, regressions, component interactions and search replication.
+16. **[The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements](papers.md#resolution-hypothesis)** — Separate proposer headroom from selection reliability and compare search variance with repeated evaluation noise; retain posterior and grader-repair assumptions.
+
+17. **[Beneath the Surface: What We Overlook When We Talk About Agent Evolution](papers.md#beneath-surface-agent-evolution)** — Separate average success, covered tasks, regressions, component interactions and search replication.
 
 
 **Study exercise:** Draft a matched frozen baseline, a held-out family split, a budget ledger, and one intervention that could falsify your preferred mechanism.

@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-25T22:08:47.436831+00:00",
+  "checked_at_utc": "2026-11-26T22:27:18.852094+00:00",
   "scope": "all-catalog-and-weekly-sources",
   "limitations": "HTTP success and title matching do not validate scientific claims, code completeness, licensing, or reproducibility. Restricted/transient and inconclusive responses require manual review.",
   "results": [
@@ -2500,12 +2500,42 @@
       "title_check": "match"
     },
     {
+      "url": "https://arxiv.org/abs/2611.32480",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2611.32480",
+      "status": "reachable",
+      "expected_title": "VISE: Verifier-Independent Skill Self-Evolution with Feedback from Tool Implementations",
+      "observed_title": "VISE: Verifier-Independent Skill Self-Evolution with Feedback from Tool Implementations",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.32508",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2611.32508",
+      "status": "reachable",
+      "expected_title": "RecurSciBench: Benchmarking Recursive Self-Improvement in Data-Driven Scientific Research",
+      "observed_title": "RecurSciBench: Benchmarking Recursive Self-Improvement in Data-Driven Scientific Research",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
       "url": "https://arxiv.org/abs/2611.33005",
       "http_status": 200,
       "final_url": "https://arxiv.org/abs/2611.33005",
       "status": "reachable",
       "expected_title": "Leto: Utility-Centric Agent Memory",
       "observed_title": "Leto: Utility-Centric Agent Memory",
+      "title_similarity": 1.0,
+      "title_check": "match"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.33943",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2611.33943",
+      "status": "reachable",
+      "expected_title": "What Does Skill Lift Actually Measure? A Source-Code-Level Audit and Noise-Aware Reanalysis of SkillsBench",
+      "observed_title": "What Does Skill Lift Actually Measure? A Source-Code-Level Audit and Noise-Aware Reanalysis of SkillsBench",
       "title_similarity": 1.0,
       "title_check": "match"
     },
@@ -4758,9 +4788,27 @@
       "status": "reachable"
     },
     {
+      "url": "https://arxiv.org/pdf/2611.32480v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2611.32480v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2611.32508v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2611.32508v1",
+      "status": "reachable"
+    },
+    {
       "url": "https://arxiv.org/pdf/2611.33005v1",
       "http_status": 200,
       "final_url": "https://arxiv.org/pdf/2611.33005v1",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2611.33943v1",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/pdf/2611.33943v1",
       "status": "reachable"
     },
     {
@@ -5197,8 +5245,9 @@
     },
     {
       "url": "https://github.com/Greysahy/permemsafe/blob/58e73467bb70d773cd3d1133deed8b78b91dedeb/README.md",
-      "http_status": 502,
-      "status": "restricted-or-transient"
+      "http_status": 200,
+      "final_url": "https://github.com/Greysahy/permemsafe/blob/58e73467bb70d773cd3d1133deed8b78b91dedeb/README.md",
+      "status": "reachable"
     },
     {
       "url": "https://github.com/IQuestLab/ModularRSI",
@@ -5322,8 +5371,9 @@
     },
     {
       "url": "https://github.com/LeapLabTHU/ExpeL/blob/main/LICENSE",
-      "http_status": 500,
-      "status": "restricted-or-transient"
+      "http_status": 200,
+      "final_url": "https://github.com/LeapLabTHU/ExpeL/blob/main/LICENSE",
+      "status": "reachable"
     },
     {
       "url": "https://github.com/LitaoGuo/How-Self-Evolution-Reshapes-Skills",
@@ -5363,8 +5413,9 @@
     },
     {
       "url": "https://github.com/Makr-Xie/MemComposer/blob/d5ae0af809348d40d774127107ac6bd56418f504/LICENSE",
-      "http_status": 500,
-      "status": "restricted-or-transient"
+      "http_status": 200,
+      "final_url": "https://github.com/Makr-Xie/MemComposer/blob/d5ae0af809348d40d774127107ac6bd56418f504/LICENSE",
+      "status": "reachable"
     },
     {
       "url": "https://github.com/Makr-Xie/MemComposer/blob/d5ae0af809348d40d774127107ac6bd56418f504/README.md",
@@ -5776,8 +5827,9 @@
     },
     {
       "url": "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/THIRD_PARTY_NOTICES.md",
-      "http_status": 500,
-      "status": "restricted-or-transient"
+      "http_status": 200,
+      "final_url": "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/THIRD_PARTY_NOTICES.md",
+      "status": "reachable"
     },
     {
       "url": "https://github.com/bhc6/DCPS/blob/1a4e51cd8df766aa269496e409648e971be9f6c5/dcps-compound/gepa-artifact/pyproject.toml",
@@ -5829,9 +5881,8 @@
     },
     {
       "url": "https://github.com/caixd-220529/LifelongAgentBench",
-      "http_status": 200,
-      "final_url": "https://github.com/caixd-220529/LifelongAgentBench",
-      "status": "reachable"
+      "http_status": 502,
+      "status": "restricted-or-transient"
     },
     {
       "url": "https://github.com/chengxuphd/phantom-gains",
@@ -6338,6 +6389,12 @@
       "status": "reachable"
     },
     {
+      "url": "https://github.com/rrrrr4788/skillsbench-lift-reanalysis",
+      "http_status": 200,
+      "final_url": "https://github.com/rrrrr4788/skillsbench-lift-reanalysis",
+      "status": "reachable"
+    },
+    {
       "url": "https://github.com/rux001/HyperSkill",
       "http_status": 200,
       "final_url": "https://github.com/rux001/HyperSkill",
@@ -6694,14 +6751,14 @@
     {
       "url": "https://link.springer.com/chapter/10.1007/978-3-540-32274-0_1",
       "http_status": 200,
-      "final_url": "https://link.springer.com/chapter/10.1007/978-3-540-32274-0_1?error=cookies_not_supported&code=91e36908-9390-4a53-9b83-9c68d289ac15",
+      "final_url": "https://link.springer.com/chapter/10.1007/978-3-540-32274-0_1?error=cookies_not_supported&code=264c35f7-36f1-420e-80a6-567afd788402",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://link.springer.com/chapter/10.1007/978-3-540-68677-4_7",
       "http_status": 200,
-      "final_url": "https://link.springer.com/chapter/10.1007/978-3-540-68677-4_7?error=cookies_not_supported&code=27e956f9-8a3a-4cfc-b247-78f8015eb528",
+      "final_url": "https://link.springer.com/chapter/10.1007/978-3-540-68677-4_7?error=cookies_not_supported&code=01ca652f-3ae1-4c37-9b30-3594f62a4de3",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -7338,21 +7395,21 @@
     {
       "url": "https://www.nature.com/articles/nature24270",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=86bef360-a6c7-4d73-ad56-f52cbd34b5bf",
+      "final_url": "https://www.nature.com/articles/nature24270?error=cookies_not_supported&code=ef37a999-826d-4348-898d-194ea91b3bff",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=61b47976-f631-4d3b-a6dd-723d1f12825c",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y?error=cookies_not_supported&code=b0fa3708-a139-4262-bb7a-682fd397d93c",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-024-07566-y.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=57d57615-14c2-4b4f-aaf9-8520d3cb1502",
+      "final_url": "https://www.nature.com/articles/s41586-024-07566-y.pdf?error=cookies_not_supported&code=4c308edb-167d-4d18-9c75-af851aff58bc",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
@@ -7366,21 +7423,21 @@
     {
       "url": "https://www.nature.com/articles/s41586-025-08661-4",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=28e01edc-8306-4232-87b3-240e8c427e1d",
+      "final_url": "https://www.nature.com/articles/s41586-025-08661-4?error=cookies_not_supported&code=848871c3-9ed5-4d49-acc2-4a1705ec9104",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=c12352b3-0d50-4e15-a536-b83d1dc4ba65",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3?error=cookies_not_supported&code=ba9cd827-bee5-4172-b2ee-23c8866ec1a4",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },
     {
       "url": "https://www.nature.com/articles/s41586-025-08905-3.pdf",
       "http_status": 200,
-      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=31f786ea-47ed-4413-8b92-cc471958fb6e",
+      "final_url": "https://www.nature.com/articles/s41586-025-08905-3.pdf?error=cookies_not_supported&code=82a116b3-a8bc-4371-86f8-d955dafbcf3d",
       "status": "restricted-or-transient",
       "note": "Redirected to an access gate; source content was not verified."
     },

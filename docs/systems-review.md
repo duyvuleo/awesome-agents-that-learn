@@ -95,3 +95,7 @@ Inspected CoEvoBench's actual MIT license, retained third-party notices, Python 
 ## 2026-11-26 — Artifact availability
 
 The Detection Gap paper describes frozen results and registration files. Leto names repositories for comparison systems. Neither source established a public, paper-specific implementation with a verifiable license and setup. Both entries therefore link the reviewed papers. The software catalog counts 26 projects.
+
+## 2026-11-27 — Skill audit release and scientific benchmark access
+
+The [Skill Lift Audit release](https://github.com/rrrrr4788/skillsbench-lift-reanalysis/tree/eef0fae38200676cee61ae345a057793bb668b78) documents analysis from normalized tables and identifies upstream inputs needed for the grader checks. Its software has an MIT license and requires Python 3.10+ with NumPy, pandas, SciPy, Matplotlib and openpyxl. Upstream materials retain their own terms. The review covered the README, license and requirements. RecurSciBench names a hosted platform whose entry page returned an application shell. VISE identifies comparison tools. The latter two checks did not establish paper-specific code releases with a license and runnable configuration. No research software was executed.

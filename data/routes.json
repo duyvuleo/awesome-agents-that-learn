@@ -309,6 +309,10 @@
         "why": "Evaluate a fixed researcher developing target weights and harnesses together; distinguish held-out system gains from improving the researcher, and audit scoring, trajectory selection and integrity penalties."
       },
       {
+        "paper": "recurscibench",
+        "why": "Compare each frozen scientific agent with its starting state. Count the held-out tasks it loses even when its average improves."
+      },
+      {
         "paper": "rsibench-infra",
         "why": "Separate quality-gated infrastructure speedups from demonstrated learning of an agent or improver; inspect workload, timing and analytical-ceiling boundaries."
       }
@@ -363,6 +367,10 @@
       {
         "paper": "phantom-gains",
         "why": "Measure a frozen null before interpreting per-problem changes."
+      },
+      {
+        "paper": "skill-lift-audit",
+        "why": "Ask whether a skill gate still improves outcomes when different trials choose and score its decision."
       },
       {
         "paper": "trusting-trust-agents",

@@ -5,7 +5,7 @@
 
 [Overview](../README.md) · [Topics](topics.md) · [Reading routes](reading-routes.md) · [Explorer](https://duyvuleo.github.io/awesome-agents-that-learn/)
 
-225 unique works. Catalog updated: 2026-11-26; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
+228 unique works. Catalog updated: 2026-11-27; individual inspection dates are recorded per entry. Dates use first linked preprint submission when available; venue status is recorded separately. Full-text means selected relevant sections were inspected, not a complete peer review. No paper's results were independently reproduced for this collection.
 
 ## Paper index
 
@@ -13,6 +13,9 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 
 | Source date | Paper / research work | Learning mechanism (preview) | What changes | Source / inspection | Links |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-25 | **Skill Lift Audit**<br>[What Does Skill Lift Actually Measure? A Source-Code-Level Audit and Noise-Aware Reanalysis of SkillsBench](https://arxiv.org/abs/2611.33943) | The authors pair trials by agent configuration and task, shuffle condition labels within cells and compare replay estimates with estimates using separate decision and… | Analysis / no retained update | preprint · full-text | [Notes](#skill-lift-audit) · [Code](https://github.com/rrrrr4788/skillsbench-lift-reanalysis) |
+| 2026-11-24 | **VISE**<br>[VISE: Verifier-Independent Skill Self-Evolution with Feedback from Tool Implementations](https://arxiv.org/abs/2611.32480) | VISE extracts tool capabilities, calling conditions and outputs from implementation code. It uses that evidence to edit specific instructions in a Markdown skill. The… | Skills | preprint · full-text | [Notes](#vise) |
+| 2026-11-24 | **RecurSciBench**<br>[RecurSciBench: Benchmarking Recursive Self-Improvement in Data-Driven Scientific Research](https://arxiv.org/abs/2611.32508) | Four scientific agents retain changes in research memory, skills or harness code. The benchmark freezes each evolved state and its initial counterpart, then starts a… | Memory, Skills, Agent code | preprint · full-text | [Notes](#recurscibench) |
 | 2026-11-24 | **Leto**<br>[Leto: Utility-Centric Agent Memory](https://arxiv.org/abs/2611.33005) | Leto retains conversations, indexes their source spans by extracted facts, and builds a standing user profile and task state between requests. A weighted average of an… | Memory | preprint · full-text | [Notes](#leto) |
 | 2026-11-22 | **Detection Gap**<br>[Blind to What They Can Fix: A Detection Gap in Self-Improving Agents](https://arxiv.org/abs/2611.29807) | A fixed agent revises a program, its runtime checks and its notes. The program then acts on its own. Researchers freeze it, change the environment and compare alarms on… | Agent code | preprint · full-text | [Notes](#detection-gap) |
 | 2026-11-20 | **Embodied-Harness**<br>[Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation](https://arxiv.org/abs/2611.27689) | A frozen Actor uses episode summaries and interaction traces to control a robot. A frozen Reflector retains task-specific diagnoses, abstracts cross-task guidance and… | Memory, Prompts / context | preprint · full-text | [Notes](#embodied-harness) |
@@ -240,6 +243,72 @@ Scan the table, then follow **Notes** for the full mechanism, evaluation boundar
 | 2003-09-25 | **Gödel Machine**<br>[Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements](https://arxiv.org/abs/cs/0309048) | Searches programs that construct proofs and self-rewrite proposals. A time-checked target proof must favor executing the present rewrite over continuing the current… | Agent code | technical-report · full-text | [Notes](#goedel-machine) |
 
 ## Full annotations
+
+<a id="skill-lift-audit"></a>
+
+## What Does Skill Lift Actually Measure? A Source-Code-Level Audit and Noise-Aware Reanalysis of SkillsBench
+
+**2026-11-25 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.33943)
+
+**Mechanism.** The authors pair trials by agent configuration and task, shuffle condition labels within cells and compare replay estimates with estimates using separate decision and scoring trials. The study measures how sparse outcomes affect conclusions about individual skills and policies for loading them.
+
+**What changes:** Analysis / no retained update. **Persistence:** not-applicable. **Learning signal:** The audit uses existing trials with and without skills, source inspection of task graders, and held-out trials for estimating the value of a skill-selection decision.
+
+**Evaluation.** Across 7,554 trials and 1,421 paired cells, 26 of 83 tasks showed a positive effect after multiple-testing correction. None showed a significant decrease. One baseline-cutoff policy gained 2.92 percentage points over always loading skills on same-trial replay. Its held-out gain was 0.12 points (95% interval −0.67 to +0.93).
+
+**Boundary.** At most three trials per condition limit power. Cells selected for apparent harm still averaged −9.9 points on held-out trials. Only 1,202 cells qualified for trial splitting, and earlier exploration informed the policy choices. The audit estimates policy value on two historical exports. Prospective agent behavior under revised instructions remains untested.
+
+**Code / data.** [Official artifact](https://github.com/rrrrr4788/skillsbench-lift-reanalysis) — The paper links its MIT-licensed reanalysis. The README specifies Python 3.10+ and five scientific Python dependencies. Controlled grader checks also require upstream task files. Inspected release documentation at eef0fae. Raw upstream trajectories and original review exports are external.
+
+**Topics:** evaluation, skills. **Reviewed:** full-text · 2026-11-27.
+
+[Source 1](https://arxiv.org/abs/2611.33943) · [Source 2](https://arxiv.org/pdf/2611.33943v1) · [Source 3](https://github.com/rrrrr4788/skillsbench-lift-reanalysis)
+
+<a id="vise"></a>
+
+## VISE: Verifier-Independent Skill Self-Evolution with Feedback from Tool Implementations
+
+**2026-11-24 · preprint · core · paper**
+
+[Primary source](https://arxiv.org/abs/2611.32480)
+
+**Mechanism.** VISE extracts tool capabilities, calling conditions and outputs from implementation code. It uses that evidence to edit specific instructions in a Markdown skill. The revised skill is frozen for evaluation on the original task and related variants.
+
+**What changes:** Skills. **Persistence:** both. **Learning signal:** The user request, an execution trace without a task grade, and source lines from available helper scripts supply feedback on how the skill uses its tools.
+
+**Evaluation.** On a 60-task TraceEvo subset, revision raised mean success across three executions from 49.45% to 57.78%. Both conditions solved the same number of tasks at least once (46 of 60). Across four starting methods, the authors also evaluated transfer to 233 variants derived from 81 parent tasks.
+
+**Boundary.** The main comparison adds an extra refinement stage to previously evolved skills. VISE has complete scores on 177 or 179 of 183 tasks, depending on the method. Execution repeats measure the reliability of a finished skill. The study leaves open how much of the gain survives equal refinement budgets or transfers to unrelated task families.
+
+**Code / data.** The review covered the 23-page v1 and Appendices A–G. Public references identify comparison tools. A paper-specific implementation, license and setup could not be verified.
+
+**Topics:** skills, tools, evaluation. **Reviewed:** full-text · 2026-11-27.
+
+[Source 1](https://arxiv.org/abs/2611.32480) · [Source 2](https://arxiv.org/pdf/2611.32480v1)
+
+<a id="recurscibench"></a>
+
+## RecurSciBench: Benchmarking Recursive Self-Improvement in Data-Driven Scientific Research
+
+**2026-11-24 · preprint · core · benchmark**
+
+[Primary source](https://arxiv.org/abs/2611.32508)
+
+**Mechanism.** Four scientific agents retain changes in research memory, skills or harness code. The benchmark freezes each evolved state and its initial counterpart, then starts a fresh copy for each held-out modeling task. Earlier test tasks cannot update later copies.
+
+**What changes:** Memory, Skills, Agent code. **Persistence:** across-tasks. **Learning signal:** Source-task interactions, analysis traces and, for some systems, evaluator scores guide evolution. Systems differ in access to those scores and in how they select a final state.
+
+**Evaluation.** The authors construct 96 tasks in four scientific domains. Across four systems and six source settings, mean task-relative gains ranged from −3.34% to +2.62%. Half of the 24 evolved states declined overall. Every state regressed on at least eight tasks in the 20-task test panel.
+
+**Boundary.** Two settings exclude a task with no valid run. Up to three executions per state estimate test variability conditional on the selected state. The study uses one backbone and different search budgets, feedback access and editable components. It leaves the contribution of each change and the variability across independent evolution runs unresolved.
+
+**Code / data.** Section 6 identifies a benchmark platform. Its public web entry returned an application shell. A downloadable implementation, license and runnable setup for the reviewed report could not be verified.
+
+**Topics:** evaluation, recursive-improvement, applications. **Reviewed:** full-text · 2026-11-27.
+
+[Source 1](https://arxiv.org/abs/2611.32508) · [Source 2](https://arxiv.org/pdf/2611.32508v1)
 
 <a id="leto"></a>
 
